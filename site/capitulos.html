@@ -691,12 +691,13 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
   window.TCD_ORIGEN = origen;
 
   /* ── píxel ─────────────────────────────── */
-  function px(ev, datos) { try { if (window.fbq) fbq('track', ev, datos || {}); } catch (e) {} }
-  function pxc(ev, datos) { try { if (window.fbq) fbq('trackCustom', ev, datos || {}); } catch (e) {} }
+  /* Solo al píxel de TCD: GHL puede tener otro píxel en la misma página. */
+  function px(ev, datos) { try { if (window.fbq) C.pixel ? fbq('trackSingle', C.pixel, ev, datos || {}) : fbq('track', ev, datos || {}); } catch (e) {} }
+  function pxc(ev, datos) { try { if (window.fbq) C.pixel ? fbq('trackSingleCustom', C.pixel, ev, datos || {}) : fbq('trackCustom', ev, datos || {}); } catch (e) {} }
   window.px = px; window.pxc = pxc;
   if (C.pixel && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', C.pixel); fbq('track', 'PageView');
+    fbq('init', C.pixel); px('PageView');
     px('ViewContent', { content_name: pagina, content_category: origen || 'directo' });
   }
 
