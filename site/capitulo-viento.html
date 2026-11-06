@@ -403,7 +403,7 @@ window.TCD = {
 
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
-    numero:     '',   // El Número · 27
+    numero:     '/checkout',   // El Número · 27 · el checkout de GHL (embudo Subir tus Precios)
     obra:       '',   // El Número + los 8 libros · 97
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
@@ -759,7 +759,7 @@ html:not(.js) .lector-nav{display:none}
   document.querySelectorAll('[data-compra]').forEach(function (a) {
     var k = a.getAttribute('data-compra');
     var link = (C.pagos || {})[k];
-    if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
+    if (link) { a.href = link; if (!/^\/|^https?:\/\/(www\.)?tuclinica\.digital/.test(link)) { a.target = '_blank'; a.rel = 'noopener'; } }
     else {
       var msg = 'Hola Javo, quiero ' + (NOMBRES[k] || k) + ' (' + (P[k] || '') + ' USD).' + (origen ? ' Vengo por ' + origen + '.' : '');
       a.href = wa(msg); a.target = '_blank'; a.rel = 'noopener';

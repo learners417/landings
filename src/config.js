@@ -45,7 +45,7 @@ window.TCD = {
 
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
-    numero:     '',   // El Número · 27
+    numero:     '/checkout',   // El Número · 27 · el checkout de GHL (embudo Subir tus Precios)
     obra:       '',   // El Número + los 8 libros · 97
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997

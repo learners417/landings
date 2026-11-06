@@ -54,7 +54,7 @@
   document.querySelectorAll('[data-compra]').forEach(function (a) {
     var k = a.getAttribute('data-compra');
     var link = (C.pagos || {})[k];
-    if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
+    if (link) { a.href = link; if (!/^\/|^https?:\/\/(www\.)?tuclinica\.digital/.test(link)) { a.target = '_blank'; a.rel = 'noopener'; } }
     else {
       var msg = 'Hola Javo, quiero ' + (NOMBRES[k] || k) + ' (' + (P[k] || '') + ' USD).' + (origen ? ' Vengo por ' + origen + '.' : '');
       a.href = wa(msg); a.target = '_blank'; a.rel = 'noopener';
