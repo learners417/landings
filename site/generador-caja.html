@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Los consultantes que ya tienes · Javo Katz</title>
+<meta name="description" content="Antes de invertir en publicidad, mira tu base. Los 5 mensajes exactos para volver a hablarles esta semana.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Los consultantes que ya tienes">
+<meta property="og:description" content="Antes de invertir en publicidad, mira tu base. Los 5 mensajes exactos para volver a hablarles esta semana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   JAVO KATZ · el sistema de las páginas
+   Papel cálido, tinta, oro mate solo en líneas, versalitas y numerales.
+   Cormorant Garamond para los títulos (la letra de Las 7 libertades),
+   Manrope para leer. Nada por debajo de 16 px.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  color-scheme: light;
+  --papel:#F4EEE3;
+  --papel-2:#FBF8F1;
+  --papel-3:#EDE5D6;
+  --tinta:#2B2724;
+  --tinta-2:#5A534A;
+  --linea:#DCD2C1;
+  --oro:#A8875A;
+  --oro-texto:#7A5F33;
+  --verde:#2F5638;
+  --rojo:#9C3626;
+  --lago:#1B4A66; --montana:#A64B2E; --viento:#9A6E1F; --rio:#1F6E6E; --bosque:#1E3A2B;
+  --sanadores:#3E4C43; --heroe:#2B2724; --libertades:#874B45;
+  --f-titulo:"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --f-texto:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-lectura:"Lora", Georgia, serif;
+  --r:22px;
+  --sombra:0 1px 0 rgba(43,39,36,.04), 0 28px 60px -36px rgba(43,39,36,.42);
+  --e:cubic-bezier(.2,.7,.2,1);
+}
+/* las páginas son de papel: si el teléfono está en modo oscuro, siguen claras */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme: light; } }
+:root[data-theme="dark"]{ color-scheme: light; }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-weight:500;font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+@media (min-width:900px){ body{font-size:20px} }
+img,svg,video{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+em{font-style:italic}
+::selection{background:#E7D6B4}
+:focus-visible{outline:2px solid var(--oro-texto);outline-offset:3px;border-radius:8px}
+
+/* el grano del papel: apenas, para que no parezca pantalla */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .15 0 0 0 0 .13 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── estructura ───────────────────────────── */
+.wrap{width:100%;max-width:760px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.ancho{max-width:1120px}
+.sec{padding-block:clamp(72px,12vw,128px);position:relative}
+.sec.junto{padding-top:0}
+.centro{text-align:center}
+.centro .lead,.centro .kick{margin-inline:auto}
+
+/* la barra de arriba */
+.top{position:fixed;top:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.con-linea{border-bottom-color:var(--linea)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px max(20px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{font-family:var(--f-titulo);font-size:24px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.marca small{display:block;font-family:var(--f-texto);font-size:16px;letter-spacing:.12em;color:var(--oro-texto);font-weight:700;margin-top:-2px}
+.top .btn{min-height:46px;padding:10px 20px;font-size:16px}
+@media (max-width:520px){ .top .btn{display:none} }
+
+/* ── tipografía ───────────────────────────── */
+.kick{display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:22px}
+.kick::before{content:"";width:34px;height:1px;background:var(--oro)}
+.centro .kick::after{content:"";width:34px;height:1px;background:var(--oro)}
+.t1{font-size:clamp(50px,13vw,96px);line-height:.98;letter-spacing:-.02em}
+.t2{font-size:clamp(40px,9.6vw,68px);line-height:1.02}
+.t3{font-size:clamp(30px,6.4vw,42px);line-height:1.1}
+.t1 em,.t2 em,.t3 em{color:var(--oro-texto)}
+.sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(27px,6.2vw,38px);line-height:1.18;color:var(--tinta-2);margin-top:18px;text-wrap:balance}
+.lead{font-size:clamp(20px,4.6vw,23px);line-height:1.5;color:var(--tinta-2);max-width:34em;margin-top:24px;text-wrap:pretty}
+.lead b,.lead strong{color:var(--tinta);font-weight:700}
+.texto p+p{margin-top:18px}
+.texto p{text-wrap:pretty}
+.num{font-family:var(--f-titulo);font-variant-numeric:lining-nums tabular-nums;color:var(--oro-texto)}
+.regla{border:0;height:1px;background:var(--oro);opacity:.55;width:56px;margin:28px 0}
+.centro .regla{margin-inline:auto}
+
+/* ── botones ──────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:16px 30px;border-radius:999px;background:var(--tinta);color:var(--papel-2);text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.01em;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(168,135,90,.55),0 18px 34px -20px rgba(43,39,36,.7);transition:transform .25s var(--e),box-shadow .25s var(--e),background .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(168,135,90,.8),0 24px 40px -22px rgba(43,39,36,.75)}
+.btn:active{transform:translateY(0)}
+.btn .fl{transition:transform .25s var(--e)}
+.btn:hover .fl{transform:translateX(4px)}
+.btn.claro{background:var(--papel-2);color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+.btn.wa{background:var(--verde);color:var(--papel-2);box-shadow:inset 0 0 0 1px rgba(168,135,90,.45),0 18px 34px -20px rgba(47,86,56,.7)}
+.btn.wa:hover{background:#264730}
+.btn.wa svg{width:22px;height:22px;flex:none}
+.btn.ancho-total{width:100%}
+@media (max-width:420px){ .btn{padding-left:22px;padding-right:22px;font-size:17px;gap:10px} }
+.micro{font-size:16px;color:var(--tinta-2);margin-top:14px;line-height:1.45}
+.micro b{color:var(--tinta)}
+.botones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:34px}
+.centro .botones{justify-content:center}
+.link{font-weight:700;text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px;text-decoration-thickness:1px}
+
+/* ── aparecer al bajar ────────────────────── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+
+/* ── tarjeta ──────────────────────────────── */
+.card{background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+
+/* ── lo que se tacha y lo que se tilda ────── */
+.frases{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
+.frases li{position:relative;font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,5.6vw,32px);line-height:1.2;padding-left:44px;color:var(--tinta-2)}
+.frases li::before{content:"";position:absolute;left:0;top:.42em;width:26px;height:26px;border-radius:50%;border:1px solid var(--rojo);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239C3626' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/14px no-repeat}
+.frases li span{background-image:linear-gradient(var(--rojo),var(--rojo));background-repeat:no-repeat;background-size:0 2px;background-position:0 58%;transition:background-size 1s var(--e) .35s}
+.frases li.in span{background-size:100% 2px}
+.si{display:flex;gap:16px;align-items:flex-start;margin-top:30px;font-size:clamp(21px,4.8vw,24px);line-height:1.4;font-weight:600}
+.si::before{content:"";flex:0 0 30px;height:30px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/16px no-repeat;margin-top:2px}
+
+/* ── el teléfono con la app ───────────────── */
+.tel{position:relative;width:300px;flex:0 0 auto;aspect-ratio:9/19.2;border-radius:52px;background:#1D1B18;padding:11px;box-shadow:0 0 0 1px #3A3631,inset 0 0 0 2px #46413A,0 60px 90px -50px rgba(43,39,36,.75),0 30px 50px -40px rgba(43,39,36,.6);margin-inline:auto}
+.tel::before{content:"";position:absolute;right:-3px;top:150px;width:3px;height:70px;border-radius:0 3px 3px 0;background:#2E2A26}
+.pant{position:relative;height:100%;border-radius:42px;overflow:hidden;background:#FAF5EA;color:#2A2118;display:flex;flex-direction:column;font-size:15px;line-height:1.4}
+.isla{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:20px;background:#0E0D0C;z-index:3}
+.estado{display:flex;justify-content:space-between;align-items:center;padding:15px 26px 6px;font-weight:700;font-size:14px;letter-spacing:.02em}
+.estado i{display:inline-flex;gap:4px;align-items:center;font-style:normal}
+.estado svg{width:17px;height:12px}
+.app-head{padding:16px 20px 10px;display:flex;justify-content:space-between;align-items:center}
+.app-head b{font-family:var(--f-titulo);font-size:27px;font-weight:600}
+.cint{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A5F33;border:1px solid rgba(176,130,46,.45);border-radius:999px;padding:5px 10px}
+.cint::before{content:"";width:16px;height:6px;border-radius:2px;background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(42,33,24,.35)}
+.app-body{flex:1;overflow:hidden;padding:4px 16px 0;position:relative}
+.vista{position:absolute;inset:4px 16px 0;opacity:0;transform:translateY(10px);transition:opacity .45s var(--e),transform .45s var(--e);pointer-events:none}
+.vista.on{opacity:1;transform:none;pointer-events:auto}
+.app-card{background:#FFFDF7;border:1px solid rgba(176,130,46,.32);border-radius:20px;padding:16px}
+.app-k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8E6824}
+.app-t{font-family:var(--f-titulo);font-weight:600;font-size:25px;line-height:1.08;margin:6px 0 4px}
+.app-m{font-size:13.5px;color:rgba(42,33,24,.72)}
+.app-btn{margin-top:12px;display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#2A2118;color:#FAF5EA;font-weight:800;font-size:13.5px;letter-spacing:.14em}
+.dias{margin-top:12px;display:grid;gap:7px}
+.dia{display:flex;align-items:center;gap:10px;font-size:13.5px;padding:8px 10px;border-radius:12px;background:#F5EFE1}
+.dia b{font-family:var(--f-titulo);font-size:18px;color:#8E6824;width:14px;text-align:center}
+.dia.on{background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(176,130,46,.5)}
+.dia .lk{margin-left:auto;width:14px;height:14px;opacity:.5}
+.campo{display:block;margin-top:9px;font-size:13px;color:rgba(42,33,24,.75)}
+.campo input{display:block;width:100%;margin-top:4px;height:40px;border:1px solid rgba(176,130,46,.4);border-radius:12px;background:#FFFDF7;padding:0 12px;font:700 16px var(--f-texto);color:#2A2118}
+.campo input:focus{outline:2px solid #B0822E;outline-offset:0}
+.grande{margin-top:12px;text-align:center;padding:12px;border-radius:16px;background:#F5EFE1}
+.grande span{display:block;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8E6824}
+.grande b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:46px;line-height:1.05}
+.chat{display:flex;flex-direction:column;gap:9px;padding-top:4px}
+.msg{max-width:88%;padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.4;opacity:0;transform:translateY(6px);transition:opacity .4s var(--e),transform .4s var(--e)}
+.msg.in{opacity:1;transform:none}
+.msg.yo{align-self:flex-end;background:#2A2118;color:#FAF5EA;border-bottom-right-radius:5px}
+.msg.ia{align-self:flex-start;background:#FFFDF7;border:1px solid rgba(176,130,46,.3);border-bottom-left-radius:5px}
+.msg.ia i{display:block;font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8E6824;margin-bottom:2px}
+.chip{align-self:flex-start;font-size:13px;font-weight:700;border:1px solid rgba(42,33,24,.25);border-radius:999px;padding:7px 11px;background:#FFFDF7}
+.tabs{display:flex;justify-content:space-around;padding:10px 8px 20px;border-top:1px solid rgba(176,130,46,.25);background:#FFFDF7}
+.tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(42,33,24,.5);cursor:pointer;padding:4px 6px}
+.tabs button svg{width:22px;height:22px}
+.tabs button.on{color:#2A2118}
+.tabs button.on svg{stroke:#B0822E}
+.toca{display:flex;justify-content:center;gap:10px;margin-top:24px;flex-wrap:wrap}
+.toca button{border:1px solid var(--linea);background:var(--papel-2);border-radius:999px;padding:12px 18px;font-weight:700;font-size:16px;cursor:pointer;transition:all .25s var(--e)}
+.toca button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
+.nota{font-size:16px;color:var(--tinta-2);margin-top:16px;line-height:1.5}
+
+/* ── la cuenta ────────────────────────────── */
+.cuenta{margin-top:40px;padding:clamp(22px,5vw,34px)}
+.cuenta .filas{display:grid;gap:22px}
+.rango label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:700;font-size:18px}
+.rango label small{display:block;font-weight:500;font-size:16px;color:var(--tinta-2)}
+.rango output{font-family:var(--f-titulo);font-size:30px;font-weight:600;color:var(--tinta);white-space:nowrap}
+.rango input[type=range]{width:100%;margin-top:10px;accent-color:var(--tinta);height:28px}
+.resultado{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.res{border-radius:18px;padding:18px;background:var(--papel)}
+.res span{display:block;font-size:16px;font-weight:700;color:var(--tinta-2)}
+.res b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(46px,11vw,64px);line-height:1;margin-top:6px}
+.res.real{background:var(--tinta);color:var(--papel-2)}
+.res.real span{color:#D9CBB0}
+.res.real b{color:#F1E3C6}
+.veredicto{margin-top:20px;font-size:19px;line-height:1.5}
+.veredicto b{font-weight:800}
+
+/* ── el camino de 5 días ──────────────────── */
+.ruta{list-style:none;margin:44px 0 0;padding:0 0 0 46px;position:relative}
+.ruta::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--linea)}
+.ruta::after{content:"";position:absolute;left:15px;top:8px;width:1px;height:var(--avance,0%);max-height:calc(100% - 16px);background:var(--oro);transition:height .2s linear}
+.paso{position:relative;padding-bottom:34px}
+.paso:last-child{padding-bottom:0}
+.paso::before{content:attr(data-n);font-variant-numeric:lining-nums;position:absolute;left:-46px;top:0;width:31px;height:31px;border-radius:50%;background:var(--papel);border:1px solid var(--oro);display:grid;place-items:center;font-family:var(--f-titulo);font-size:19px;font-weight:600;color:var(--oro-texto)}
+.paso.in::before{background:var(--tinta);color:#F1E3C6;border-color:var(--tinta);transition:all .5s var(--e)}
+.paso h3{font-size:clamp(28px,6vw,36px);line-height:1.1}
+.paso .min{font-size:16px;font-weight:700;color:var(--oro-texto);letter-spacing:.06em;margin-top:2px}
+.paso p{margin-top:10px;color:var(--tinta-2)}
+.paso p b{color:var(--tinta)}
+
+/* ── lo que recibes ───────────────────────── */
+.items{display:grid;gap:14px;margin-top:40px}
+@media (min-width:760px){ .items{grid-template-columns:1fr 1fr} }
+.item{display:flex;gap:18px;align-items:flex-start;padding:22px}
+.item .ic{flex:0 0 50px;height:50px;border-radius:16px;border:1px solid var(--oro);display:grid;place-items:center}
+.item .ic svg{width:24px;height:24px;stroke:var(--tinta);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.item b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:26px;line-height:1.12}
+.item p{margin-top:6px;font-size:17px;line-height:1.5;color:var(--tinta-2)}
+.item.libro .ic{border:0;width:50px;height:auto;flex-basis:50px}
+.item.libro .ic img{width:50px;border-radius:2px 5px 5px 2px;box-shadow:6px 8px 16px -8px rgba(0,0,0,.5)}
+
+/* ── testimonios ──────────────────────────── */
+.testi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+@media (max-width:759px){
+  .testi{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .testi::-webkit-scrollbar{display:none}
+  .testi .tv{flex:0 0 58%;scroll-snap-align:center}
+}
+.desliza{display:none;text-align:center;font-size:16px;color:var(--tinta-2);margin-top:2px}
+@media (max-width:759px){ .desliza{display:block} }
+.tv{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#2B2724;border:0;padding:0;cursor:pointer;box-shadow:var(--sombra)}
+.tv video,.tv img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s var(--e),opacity .3s}
+.tv:hover video,.tv:hover img{transform:scale(1.04);opacity:1}
+.tv .play{position:absolute;inset:auto auto 14px 14px;width:52px;height:52px;border-radius:50%;background:rgba(251,248,241,.94);display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(0,0,0,.6)}
+.tv .play::before{content:"";margin-left:4px;border-left:15px solid var(--tinta);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.capturas{display:grid;gap:12px;margin-top:14px;grid-template-columns:repeat(3,1fr);align-items:start}
+@media (max-width:759px){
+  .capturas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 26px;scrollbar-width:none}
+  .capturas::-webkit-scrollbar{display:none}
+  .capturas img{flex:0 0 80%;scroll-snap-align:center}
+}
+.capturas img{width:100%;border-radius:14px;border:1px solid var(--linea);box-shadow:var(--sombra);background:var(--papel-2)}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(20,18,16,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb .caja{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;border-radius:18px;overflow:hidden;background:#000}
+.lb .caja.h{width:min(960px,100%);aspect-ratio:16/9}
+.lb video,.lb iframe{width:100%;height:100%;border:0;display:block}
+.lb .cerrar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;width:52px;height:52px;border-radius:50%;border:0;background:#FBF8F1;font-size:28px;line-height:1;cursor:pointer}
+
+/* ── autor ────────────────────────────────── */
+.autor{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;padding:clamp(22px,5vw,32px)}
+@media (max-width:520px){ .autor{grid-template-columns:1fr} }
+.autor img.foto{width:120px;height:120px;object-fit:cover;border-radius:50%;box-shadow:0 0 0 1px var(--oro),0 0 0 7px var(--papel-2),0 0 0 8px var(--linea)}
+.autor b{font-family:var(--f-titulo);font-size:30px;font-weight:600;display:block;line-height:1.1}
+.autor .rol{font-size:16px;font-weight:700;color:var(--oro-texto);letter-spacing:.06em;margin-top:4px}
+.autor p.bio{margin-top:14px;font-size:18px;color:var(--tinta-2)}
+.estante{display:grid;grid-template-columns:repeat(8,minmax(0,46px));gap:6px;margin-top:18px;align-items:end}
+.estante img{width:100%;border-radius:1px 3px 3px 1px;box-shadow:4px 6px 12px -6px rgba(0,0,0,.55)}
+
+/* ── la oferta ────────────────────────────── */
+.planes{display:grid;gap:18px;margin-top:44px}
+@media (min-width:860px){ .planes{grid-template-columns:1fr 1.12fr;align-items:stretch} }
+.plan{padding:clamp(24px,5vw,34px);display:flex;flex-direction:column;position:relative}
+.plan.fuerte{border:1px solid var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.plan .cinta{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap}
+.plan .nom{font-family:var(--f-titulo);font-size:clamp(32px,7vw,40px);font-weight:600;line-height:1.05;text-wrap:balance}
+.plan .que{font-size:17px;color:var(--tinta-2);margin-top:6px}
+.plan .precio{display:flex;align-items:baseline;gap:10px;margin-top:20px;flex-wrap:wrap}
+.plan .precio b{font-family:var(--f-titulo);font-weight:600;font-size:clamp(64px,15vw,84px);line-height:.9}
+.plan .precio small{font-size:18px;font-weight:700;color:var(--tinta-2)}
+.plan .antes{font-size:17px;color:var(--tinta-2);margin-top:8px}
+.plan .antes s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.plan ul{list-style:none;margin:22px 0 26px;padding:0;display:grid;gap:12px;align-content:start;flex:1}
+.plan li{position:relative;padding-left:34px;font-size:17px;line-height:1.45}
+.plan li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.plan .tapas{display:flex;margin:18px 0 4px;padding-left:10px}
+.plan .tapas img{width:46px;margin-left:-10px;border-radius:1px 3px 3px 1px;box-shadow:4px 6px 12px -6px rgba(0,0,0,.6);transition:transform .35s var(--e)}
+.plan:hover .tapas img{transform:translateY(-4px)}
+.plan .tapas img:nth-child(2n):hover{transform:translateY(-8px)}
+.seguro{display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;color:var(--tinta-2);margin-top:14px}
+.seguro svg{flex:0 0 22px;width:22px;height:22px;stroke:var(--verde);fill:none;stroke-width:1.8}
+
+/* ── preguntas ────────────────────────────── */
+.faq{margin-top:36px;border-top:1px solid var(--linea)}
+.fq{border-bottom:1px solid var(--linea)}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;background:none;border:0;padding:22px 0;font-weight:700;font-size:19px;cursor:pointer}
+.fq button i{flex:0 0 32px;height:32px;border-radius:50%;border:1px solid var(--oro);position:relative;font-style:normal;transition:transform .35s var(--e)}
+.fq button i::before,.fq button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--tinta);transform:translate(-50%,-50%)}
+.fq button i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--e)}
+.fq.op button i{transform:rotate(180deg)}
+.fq.op button i::after{transform:translate(-50%,-50%) rotate(0)}
+.fq .r{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--e)}
+.fq.op .r{grid-template-rows:1fr}
+.fq .r>div{overflow:hidden}
+.fq .r p{padding:0 0 22px;color:var(--tinta-2);font-size:18px}
+
+/* ── cierre y pie ─────────────────────────── */
+.frase-final{font-family:var(--f-titulo);font-size:clamp(46px,11vw,80px);line-height:1;letter-spacing:-.02em}
+.frase-final em{color:var(--oro-texto)}
+.pie{border-top:1px solid var(--linea);padding:40px 0 calc(120px + env(safe-area-inset-bottom,0px));text-align:center;font-size:16px;color:var(--tinta-2)}
+.pie p+p{margin-top:10px}
+.pie a{color:var(--tinta-2)}
+
+/* la barra que acompaña en el teléfono */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .45s var(--e)}
+.barra.on{transform:none}
+.barra .btn{width:100%;min-height:58px}
+@media (min-width:900px){ .barra{display:none} }
+
+/* el aviso que aparece abajo cuando algo se copia o se envía */
+.aviso{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:90;background:var(--tinta);color:var(--papel-2);padding:12px 20px;border-radius:999px;font-weight:700;font-size:16px;transition:all .35s var(--e);pointer-events:none}
+.aviso.on{opacity:1;transform:translate(-50%,0)}
+
+/* los números de los círculos y las cifras grandes, siempre de pie (la Cormorant los trae «antiguos») */
+.tres b,.piso .pn,.paso-g .n,.dl b,.el-libro b{font-variant-numeric:lining-nums}
+
+/* ── GHL: fondo parejo aunque meta la página en una caja; la barra fija deja su lugar ── */
+html,body{overflow-x:hidden;overflow-x:clip}
+.c-section,.c-row,.c-column,.c-wrapper,.hl_page-preview--content,.preview-container{background:var(--papel)!important}
+.top + main{padding-top:78px}
+.sin-pago,.con-pago{display:none}
+img[data-img]:not([src]){visibility:hidden}
+/* el estante */
+.estante{display:grid;grid-template-columns:repeat(8,minmax(0,46px));gap:6px;margin-top:18px;align-items:end}
+/* el menú del pie: todas las páginas se conocen */
+.pie nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin-bottom:14px}
+.pie nav a{padding:8px 2px;font-weight:700;color:var(--tinta);text-decoration:none}
+.pie nav a:hover{text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px}
+html{font-variant-numeric:lining-nums}
+
+/* ── v2 · el muro, las fotos, las capturas, los lomos ── */
+.testi .tv.extra{display:none}
+.testi.todos .tv.extra{display:block}
+.mas{display:flex;justify-content:center;margin-top:18px}
+.tv img{width:100%;height:100%;object-fit:cover}
+.tv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,18,16,.38));pointer-events:none}
+.tv .play{z-index:2}
+@media (min-width:760px){ .testi{grid-template-columns:repeat(4,1fr)} }
+@media (min-width:1100px){ .testi.seis{grid-template-columns:repeat(6,1fr)} }
+.capturas img.cap{cursor:zoom-in}
+.lb .caja.img{aspect-ratio:auto;width:auto;max-width:min(560px,100%);max-height:88vh;background:none;overflow:auto}
+.lb .caja.img img{width:100%;height:auto;border-radius:14px}
+.fotos-banda{overflow:hidden;padding-block:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.cinta-fotos{display:flex;gap:12px;width:max-content;animation:pasa 70s linear infinite}
+.fotos-banda:hover .cinta-fotos{animation-play-state:paused}
+.cinta-fotos img{height:clamp(170px,26vw,250px);width:auto;border-radius:16px;box-shadow:0 18px 30px -22px rgba(43,39,36,.6);background:var(--papel-3);flex:none}
+@keyframes pasa{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){ .cinta-fotos{animation:none} .fotos-banda{overflow-x:auto} }
+.lomos{display:flex;height:4px;border-radius:4px;overflow:hidden;max-width:220px}
+.lomos i{flex:1}
+.lomos i:nth-child(1){background:var(--lago)}.lomos i:nth-child(2){background:var(--montana)}.lomos i:nth-child(3){background:var(--viento)}.lomos i:nth-child(4){background:var(--rio)}.lomos i:nth-child(5){background:var(--bosque)}.lomos i:nth-child(6){background:var(--sanadores)}.lomos i:nth-child(7){background:var(--libertades)}.lomos i:nth-child(8){background:var(--tinta)}
+.centro .lomos{margin-inline:auto}
+.pie .lomos{margin:0 auto 22px}
+
+</style>
+<script>
+/* ════════════════════════════════════════════════════════════════
+   TODO LO QUE SE CAMBIA, VIVE AQUÍ. Es el mismo bloque en todas las páginas.
+   Si cambias un link o un precio, cámbialo igual en las 7 páginas.
+   Si un link de pago está vacío, el botón abre tu WhatsApp con el producto escrito.
+   ════════════════════════════════════════════════════════════════ */
+window.TCD = {
+
+  /* Las páginas del ecosistema, en GHL (tuclinica.digital). */
+  inicio:      '/inicio',
+  agenda:      '/instala-tu-clinica',
+  preparacion: '/preparacion',
+  libros:      '/libros',
+  numero:      '/el-numero',
+  appPagina:   '/app',
+  gracias:     '/gracias',
+  recursos:    '/recursos-gratuitos',
+  generador:   '/generador-pp',
+  appMedida:   '/app-745191',
+
+  /* Los primeros capítulos, también en GHL. */
+  capitulo:  '/capitulos',     // el índice: «¿Por cuál libro empiezas?»
+  cap:       '/capitulo-',     // + lago, montana, viento, rio, bosque, sanadores, heroe o libertades
+
+  /* Las colecciones. */
+  sur:       '/lo-que-el-sur-te-ensena',
+  heroe:     '/heroe-descapado',
+  materias:  '/materias-pendientes',
+  intangibles: '/intangibles',
+  cdl:       '/clinica-del-lider',
+
+  /* Los libros para descargar: súbelos a GHL (Sitios → Medios) y pega aquí el link de cada uno.
+     Si un link está vacío, el botón abre tu WhatsApp para que se lo mandes tú. */
+  descargas: {
+    'Sanadores-Libres-Javo-Katz.pdf':              '',
+    'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
+    'Lo-que-la-montana-te-ensena-Javo-Katz.pdf':   '',
+    'Lo-que-el-viento-te-ensena-Javo-Katz.pdf':    '',
+    'Lo-que-el-rio-te-ensena-Javo-Katz.pdf':       '',
+    'Lo-que-el-bosque-te-ensena-Javo-Katz.pdf':    '',
+    'Heroe-descapado-Javo-Katz.pdf':               '',
+    'Las-7-libertades-fundamentales-Javo-Katz.pdf':'',
+    'Los-8-libros-Javo-Katz.zip':                  ''
+  },
+  img:       '',
+
+  /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
+  pagos: {
+    numero:     '',   // El Número · 27
+    obra:       '',   // El Número + los 8 libros · 97
+    verde:      '',   // La app · Tu Sistema · 497
+    negro:      '',   // La app · El Programa Completo · 997
+    sanadores:  '',   // Sanadores Libres · 33
+    lago:       '',   // Lo que el lago te enseña · 27
+    montana:    '',   // Lo que la montaña te enseña · 27
+    viento:     '',   // Lo que el viento te enseña · 27
+    rio:        '',   // Lo que el río te enseña · 27
+    bosque:     '',   // Lo que el bosque te enseña · 27
+    heroe:      '',   // Héroe descapado · 47
+    libertades: '',   // Las 7 libertades fundamentales · 37
+    apaga:      '',   // La Clínica del Líder · Apaga la cabeza · 33
+    ejeSolo:    '',   // La Clínica del Líder · El Eje Solo · 333
+    ejeAcomp:   ''    // La Clínica del Líder · El Eje Acompañado · 999
+  },
+
+  /* Los precios, en dólares. */
+  precios: {
+    numero: 27, obra: 97, verde: 497, negro: 997,
+    sanadores: 33, lago: 27, montana: 27, viento: 27, rio: 27, bosque: 27,
+    heroe: 47, libertades: 37,
+    apaga: 33, ejeSolo: 333, ejeAcomp: 999
+  },
+
+  /* Tu WhatsApp, solo números, con código de país. */
+  whatsapp: '5492944217689',
+
+  comunidad: 'https://www.skool.com/aprendedores-4619/about?ref=465a1ed1cf944d65a86766f0cd39eba2',
+  app:       'https://app.tuclinica.digital',
+  instagram: 'https://www.instagram.com/javieremilianok/',
+  foto:      'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg',
+  pixel:     '1306012398373458',
+  /* Los testimonios: v = video tuyo (filesafe), y = YouTube. Se muestran en este orden. */
+  media: 'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/',
+  testimonios: [['v','6ac4236b195f9172ed95c91c'],['v','6ad260a5f9a985d42cbe18a8'],['y','U7ablyCr2_Y'],['v','6abc83aa6c64b8e488a2f025'],['v','6ab9e5fa5597aeb9d7f13c31'],['y','FjW8chAxRPk'],['v','6ab9b6e65597aeb9d7eca5b7'],['v','6ab9ba4abe703c7b30305435'],['y','cdcGh-oIV9Y'],['v','6aa0b1e2fb76acb4a93c0ffd'],['v','6ab9e143b4d207ff9d0c5bc7'],['y','0q4Ah_PL_1w'],['v','6ab9e2aac13d4373c2d28d8a'],['v','6ab9df5c5597aeb9d7f0b331'],['y','siIRcFF_Fzc'],['v','6aa0b40116ed327815b69e1a'],['v','6ad263a2fdbcf67570a0b065'],['y','8yGijdiMzJE'],['v','6ad2646686f4a10b2fa62ae0'],['v','6ab9dcba5597aeb9d7f076da'],['y','syL0QvfQHJ4'],['v','6ab9d97f5597aeb9d7f02cd7'],['v','6abaf9f3c13d4373c2ef5b47'],['y','ZYdiTIIDl6g'],['v','6abaf9a37ef452865a2fd7b4'],['v','6abb018672844d8ecf2e9e54'],['v','689fb4467bb59edaff12c342'],['v','689fb4467bb59e069512c341'],['v','689fb44669618cd2effbd32b'],['v','6ad263a41de0b9886006376a']],
+  /* Fotos de eventos y rodajes, y capturas de mensajes de clientes. */
+  fotos: ['6a3f2d42d50c4ff184edb838.jpeg','6a7e0125c0662ee5c46bb552.jpg','693dba4697c0236220e081ea.jpg','6a3f2d42e2763b2eec24a60c.jpeg','6a7d3d929115899f03677541.png','6a7e00e4494aefa6d8297657.jpg','67a95b7bfc7685e4ad16a204.png','67a8027f9769a75cfe604f9b.png','67a8027f9769a71ac3604f9c.png','67a8027ffc768597de1360da.png','67a8027f4325e15ee6581091.png','67a8027f4325e17938581092.png','67a8027f8f9e7e4c006b47f6.png'],
+  capturas: ['6a3f2d4ae2763b2eec24a678.jpeg','6790e3b22aa71a8f8b682154.jpeg','67a8080cfc76856ca1136421.jpeg']
+};
+
+</script>
+<style>
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
+.video{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;box-shadow:var(--sombra);background:var(--papel-3);margin-top:34px}
+.video iframe,.video>button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video>button{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:clamp(16px,4vw,36px);padding:clamp(18px,5vw,52px);background:var(--papel-3);box-shadow:inset 0 0 0 1px var(--linea);text-align:left;cursor:pointer;font:inherit;color:var(--tinta)}
+.video .cara{position:relative;width:clamp(104px,24vw,190px);aspect-ratio:1}
+.video .cara img{width:100%;height:100%;object-fit:cover;border-radius:50%;background:var(--papel-2);box-shadow:0 0 0 1px var(--oro),0 0 0 7px var(--papel-2),0 0 0 8px var(--linea)}
+.video .play{position:absolute;right:-4px;bottom:-4px;width:clamp(46px,9vw,64px);aspect-ratio:1;border-radius:50%;background:var(--tinta);display:grid;place-items:center;box-shadow:0 0 0 4px var(--papel-3),0 14px 26px -14px rgba(43,39,36,.8);transition:transform .35s var(--e)}
+.video .play::before{content:"";margin-left:5px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent var(--papel-2)}
+.video>button:hover .play,.video>button:focus-visible .play{transform:scale(1.08)}
+.video .pt{display:block;font-family:var(--f-titulo);font-size:clamp(25px,6vw,44px);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+.video .dur{display:inline-block;margin-top:12px;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.cuentas{margin-top:34px;padding:clamp(22px,5vw,32px)}
+.cuentas .fila{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--linea);font-size:18px;line-height:1.4}
+.cuentas .fila b{flex:none;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1;font-variant-numeric:lining-nums}
+.cuentas .total{border-bottom:0;padding-bottom:0}
+.cuentas .total span{font-weight:800}
+.cuentas .total b{color:var(--oro-texto);font-size:44px}
+.cuentas .ej{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:6px}
+.modelos{display:grid;gap:14px;margin-top:34px}
+@media (min-width:700px){ .modelos{grid-template-columns:1fr 1fr} }
+.modelo{padding:24px}
+.modelo span{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.modelo.antes span{color:var(--tinta-2)} .modelo.despues span{color:var(--verde)}
+.modelo b{display:block;font-family:var(--f-titulo);font-size:clamp(44px,10vw,56px);font-weight:600;line-height:1;margin-top:10px;font-variant-numeric:lining-nums}
+.modelo p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
+.modelo.despues{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.dentro{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:10px}
+.dentro li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:16px}
+.dentro b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15}
+.dentro span{flex:none;font-size:16px;font-weight:700;color:var(--oro-texto)}
+@media (max-width:520px){ .dentro li{flex-direction:column;align-items:flex-start;gap:2px} }
+.nota-c{margin-top:22px;font-size:18px;color:var(--tinta-2)}
+.nota-c b{color:var(--tinta)}
+.otro{margin-top:18px;font-size:17px}
+</style>
+</head>
+<body data-pagina="generador-caja" data-pagos="">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" data-link="comunidad" href="#"><span>Quiero los 5 mensajes</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap">
+  <span class="kick rv">Reactivación</span>
+  <h1 class="t1 rv d1">Los consultantes que ya tienes <em>valen más.</em></h1>
+  <p class="lead rv d2">Antes de invertir en publicidad, mira tu base: personas que ya confiaron en ti. <b>Los 5 mensajes exactos para volver a hablarles esta semana.</b></p>
+  <div class="video rv d2" data-yt="qzioGaxuD_U" data-titulo="Los consultantes que ya tienes">
+   <button type="button" aria-label="Ver el video: Los 5 mensajes, uno por uno">
+    <span class="cara"><img data-foto data-ancho="400" alt="" width="190" height="190"><span class="play" aria-hidden="true"></span></span>
+    <span><span class="pt">Los 5 mensajes, uno por uno</span><span class="dur">Video · 10 min</span></span>
+   </button>
+  </div>
+  <div class="botones rv d3"><a class="btn" data-link="comunidad" href="#"><span>Quiero los 5 mensajes</span> <span class="fl">→</span></a></div>
+  <p class="micro rv d3">Sin costo, dentro de la comunidad.</p>
+ </div>
+</section>
+
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">La cuenta</span>
+  <h2 class="t2 rv">El ingreso <em>que ya tienes cerca.</em></h2>
+  <div class="cuentas card rv">
+   <span class="ej">Un ejemplo</span>
+   <div class="fila"><span>Personas que atendiste alguna vez</span><b>100</b></div>
+   <div class="fila"><span>Si vuelve el 15 %</span><b>15</b></div>
+   <div class="fila"><span>Inversión en publicidad</span><b>0 USD</b></div>
+   <div class="fila total"><span>A 150 USD cada una</span><b>2.250 USD</b></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">Por qué no volvieron</span>
+  <h2 class="t2 rv">Les faltó <em>una invitación.</em></h2>
+  <ol class="ruta">
+   <li class="paso rv" data-n="1"><h3>Faltó un próximo paso claro</h3><p>La consulta terminó bien y nadie dijo qué seguía. La vida hizo el resto.</p></li>
+   <li class="paso rv" data-n="2"><h3>Volver sin explicar les cuesta</h3><p>Para no explicar la ausencia, esperan. Un mensaje tuyo que no la menciona les abre la puerta.</p></li>
+   <li class="paso rv" data-n="3"><h3>Tu mensaje les da permiso</h3><p>Cuando escribes tú primero, sienten alivio: pueden volver sin explicar nada.</p></li>
+  </ol>
+  <p class="nota-c rv">Los 5 mensajes son una secuencia de 10 días, con el texto exacto. Cada uno cumple una función.</p>
+ </div>
+</section>
+
+
+<!-- ═══ LA COMUNIDAD ═══ -->
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">La comunidad</span>
+  <h2 class="t2 rv">Entra <em>sin costo.</em></h2>
+  <p class="lead rv">Profesionales que atienden 1 a 1 y construyen su consulta con sistemas. Adentro tienes las herramientas:</p>
+  <ul class="dentro rv">
+   <li><b>Calculadora de tu hora real</b><span>2 minutos</span></li>
+   <li><b>Los 5 mensajes de reactivación</b><span>listos para enviar</span></li>
+   <li><b>Checklist de automatización</b><span>12 procesos</span></li>
+   <li><b>Tu protocolo, paso a paso</b><span>resultado, tiempo y método</span></li>
+   <li><b>Guía de precios</b><span>por especialidad</span></li>
+   <li><b>Neuro-Escáner IA</b><span>tu patrón con el precio</span></li>
+  </ul>
+  <div class="botones rv"><a class="btn" data-link="comunidad" href="#"><span>Entrar a la comunidad</span> <span class="fl">→</span></a></div>
+ </div>
+</section>
+
+<!-- ═══ QUIÉN ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="autor card rv">
+   <img class="foto" data-foto data-ancho="240" alt="Javo Katz" width="120" height="120">
+   <div>
+    <b>Javo Katz</b>
+    <p class="rol">Mentor y autor · Bariloche, Patagonia</p>
+    <p class="bio">Hace más de 6 años acompaña a profesionales que atienden 1 a 1. Más de 50, de Latinoamérica, España y EE. UU., ya trabajaron con él.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec centro" data-barra-hasta>
+ <div class="wrap">
+  <hr class="regla">
+  <p class="frase-final rv">Escríbeles <em>esta semana.</em></p>
+  <div class="botones rv"><a class="btn" data-link="comunidad" href="#"><span>Quiero los 5 mensajes</span> <span class="fl">→</span></a></div>
+  <p class="otro rv">¿Quieres que lo instalemos juntos? <a class="link" data-link="agenda" data-hash="#agenda" href="#">Agenda tu diagnóstico</a></p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+ <p>Los números de esta página son un ejemplo para hacer la cuenta.</p>
+</div></footer>
+
+<div class="barra"><a class="btn" data-link="comunidad" href="#"><span>Quiero los 5 mensajes</span></a></div>
+
+<script>window.TCD_IMGS={};</script>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   Lo que hacen todas las páginas: precios y links desde config.js,
+   el píxel, lo que aparece al bajar, las preguntas, los testimonios.
+   ═══════════════════════════════════════════════════════════════ */
+(function () {
+  var C = window.TCD || {};
+  var P = C.precios || {};
+  var pagina = document.body.getAttribute('data-pagina') || 'pagina';
+
+  var NOMBRES = {
+    numero: 'El Número', obra: 'El Número + los 8 libros', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
+    viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
+    heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
+    apaga: 'Apaga la cabeza de La Clínica del Líder', ejeSolo: 'El Eje Solo de La Clínica del Líder', ejeAcomp: 'El Eje Acompañado de La Clínica del Líder'
+  };
+  window.TCD_NOMBRES = NOMBRES;
+
+  /* de dónde viene: la palabra del carrusel o del reel (?p=PALABRA) */
+  var origen = '';
+  try {
+    var q = new URLSearchParams(location.search);
+    origen = (q.get('p') || q.get('utm_content') || '').toUpperCase().replace(/[^A-ZÑ0-9_-]/g, '').slice(0, 24);
+    if (origen) sessionStorage.setItem('tcd_origen', origen); else origen = sessionStorage.getItem('tcd_origen') || '';
+  } catch (e) {}
+  window.TCD_ORIGEN = origen;
+
+  /* ── píxel ─────────────────────────────── */
+  function px(ev, datos) { try { if (window.fbq) fbq('track', ev, datos || {}); } catch (e) {} }
+  function pxc(ev, datos) { try { if (window.fbq) fbq('trackCustom', ev, datos || {}); } catch (e) {} }
+  window.px = px; window.pxc = pxc;
+  if (C.pixel && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.pixel); fbq('track', 'PageView');
+    px('ViewContent', { content_name: pagina, content_category: origen || 'directo' });
+  }
+
+  /* ── WhatsApp ──────────────────────────── */
+  function wa(texto) { return 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent(texto); }
+  window.wa = wa;
+
+  /* ── precios ───────────────────────────── */
+  document.querySelectorAll('[data-precio]').forEach(function (el) {
+    var k = el.getAttribute('data-precio');
+    if (P[k] != null) el.textContent = P[k];
+  });
+  document.querySelectorAll('[data-suma]').forEach(function (el) {
+    var t = 0; el.getAttribute('data-suma').split(',').forEach(function (k) { t += +(P[k.trim()] || 0); });
+    el.textContent = t;
+  });
+
+  /* ── botones de compra ─────────────────── */
+  document.querySelectorAll('[data-compra]').forEach(function (a) {
+    var k = a.getAttribute('data-compra');
+    var link = (C.pagos || {})[k];
+    if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
+    else {
+      var msg = 'Hola Javo, quiero ' + (NOMBRES[k] || k) + ' (' + (P[k] || '') + ' USD).' + (origen ? ' Vengo por ' + origen + '.' : '');
+      a.href = wa(msg); a.target = '_blank'; a.rel = 'noopener';
+    }
+    a.addEventListener('click', function () {
+      px('InitiateCheckout', { value: P[k] || 0, currency: 'USD', content_name: k, content_category: origen || 'directo' });
+    });
+  });
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = wa(a.getAttribute('data-wa')); a.target = '_blank'; a.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-link]').forEach(function (a) {
+    var k = a.getAttribute('data-link'); if (C[k]) a.href = C[k] + (a.getAttribute('data-hash') || '');
+  });
+  /* imágenes: van dentro de la página (window.TCD_IMGS) */
+  document.querySelectorAll('[data-img]').forEach(function (im) {
+    var k = im.getAttribute('data-img'), E = window.TCD_IMGS || {};
+    im.src = E[k] || ((C.img || '') + k);
+    im.addEventListener('error', function () { if (im.hasAttribute('data-quita-si-falla')) im.style.display = 'none'; });
+  });
+  /* aviso de pago: PayPal si hay links, WhatsApp si todavía no */
+  var claves = (document.body.getAttribute('data-pagos') || '').split(' ').filter(Boolean);
+  var hayPago = claves.some(function (k) { return (C.pagos || {})[k]; });
+  document.querySelectorAll(hayPago ? '.con-pago' : '.sin-pago').forEach(function (e) { e.style.display = 'flex'; });
+
+  /* ── aparecer al bajar ─────────────────── */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: .12 }) : null;
+  document.querySelectorAll('.rv,.frases li,.paso').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  /* la barra de arriba gana su línea al bajar; la de abajo aparece pasada la portada */
+  var top = document.querySelector('.top'), barra = document.querySelector('.barra');
+  var desde = document.querySelector('[data-barra-desde]'), hasta = document.querySelector('[data-barra-hasta]');
+  function alBajar() {
+    var y = window.scrollY;
+    if (top) top.classList.toggle('con-linea', y > 8);
+    if (barra && desde) {
+      var a = desde.getBoundingClientRect().bottom < 0;
+      var b = hasta ? hasta.getBoundingClientRect().top < window.innerHeight * .9 && hasta.getBoundingClientRect().bottom > 0 : false;
+      barra.classList.toggle('on', a && !b);
+    }
+    document.querySelectorAll('.ruta').forEach(function (r) {
+      var rc = r.getBoundingClientRect(), h = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (h * .7 - rc.top) / rc.height));
+      r.style.setProperty('--avance', (p * 100).toFixed(1) + '%');
+    });
+  }
+  window.addEventListener('scroll', alBajar, { passive: true }); alBajar();
+
+  /* ── preguntas ─────────────────────────── */
+  document.querySelectorAll('.fq button').forEach(function (b) {
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function () {
+      var f = b.parentNode, o = f.classList.toggle('op');
+      b.setAttribute('aria-expanded', o ? 'true' : 'false');
+      if (o) pxc('Pregunta', { pregunta: b.textContent.trim().slice(0, 60) });
+    });
+  });
+
+  /* ── imágenes livianas: el CDN de GHL las entrega en webp y al tamaño justo ── */
+  function opt(u, w) { return 'https://images.leadconnectorhq.com/image/f_webp/q_72/r_' + w + '/u_' + u; }
+  function imgOpt(im, u, w) {
+    im.src = opt(u, w); im.decoding = 'async';
+    im.addEventListener('error', function f() { im.removeEventListener('error', f); im.src = u; });
+  }
+  window.TCD_IMG = imgOpt;
+  document.querySelectorAll('[data-foto]').forEach(function (i) { if (C.foto) imgOpt(i, C.foto, +(i.getAttribute('data-ancho') || 640)); });
+
+  /* ── el muro de testimonios: se arma solo desde config.js ── */
+  var M = C.media || '';
+  document.querySelectorAll('[data-muro]').forEach(function (box) {
+    var lista = (C.testimonios || []).slice();
+    var desde = +(box.getAttribute('data-desde') || 0); if (desde) lista = lista.slice(desde).concat(lista.slice(0, desde));
+    var max = +(box.getAttribute('data-max') || lista.length); lista = lista.slice(0, max);
+    var ver = +(box.getAttribute('data-muro') || 8);
+    lista.forEach(function (t, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'tv' + (i >= ver ? ' extra' : '');
+      b.setAttribute('aria-label', 'Ver testimonio');
+      if (t[0] === 'y') {
+        b.setAttribute('data-yt', t[1]); b.setAttribute('data-horizontal', '');
+        b.innerHTML = '<img loading="lazy" decoding="async" alt="" src="https://i.ytimg.com/vi/' + t[1] + '/hqdefault.jpg"><span class="play"></span>';
+      } else {
+        var u = M + t[1] + '.mp4'; b.setAttribute('data-mp4', u);
+        b.innerHTML = '<video muted playsinline preload="none" data-src="' + u + '"></video><span class="play"></span>';
+      }
+      box.appendChild(b);
+    });
+    if (lista.length > ver) {
+      var m = document.createElement('div'); m.className = 'mas';
+      m.innerHTML = '<button type="button" class="btn claro"><span>Ver los ' + lista.length + ' testimonios</span></button>';
+      box.parentNode.insertBefore(m, box.nextSibling);
+      m.querySelector('button').addEventListener('click', function () {
+        box.classList.add('todos'); m.remove(); pxc('MuroCompleto', { pagina: pagina });
+        box.querySelectorAll('.extra video[data-src]').forEach(function (v) { if (vio) vio.observe(v); });
+      });
+    }
+  });
+  /* las capturas de mensajes */
+  document.querySelectorAll('[data-capturas]').forEach(function (box) {
+    (C.capturas || []).forEach(function (f) {
+      var im = document.createElement('img'); im.alt = 'Mensaje de un cliente'; im.loading = 'lazy'; im.className = 'cap';
+      imgOpt(im, M + f, 720); box.appendChild(im);
+    });
+  });
+  /* las fotos de eventos y rodajes: una cinta que pasa sola */
+  document.querySelectorAll('[data-fotos]').forEach(function (box) {
+    var t = document.createElement('div'); t.className = 'cinta-fotos';
+    var fs = C.fotos || [];
+    fs.concat(fs).forEach(function (f, i) {
+      var im = document.createElement('img'); im.alt = i < fs.length ? 'Javo Katz en eventos y rodajes' : ''; im.loading = 'lazy';
+      imgOpt(im, M + f, 560); t.appendChild(im);
+    });
+    box.appendChild(t);
+  });
+
+  /* ── testimonios: el primer cuadro se carga al verse, el video se abre grande ── */
+  var vio = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var v = e.target; v.src = v.getAttribute('data-src') + '#t=0.6'; v.preload = 'metadata'; vio.unobserve(v);
+    });
+  }, { rootMargin: '200px' }) : null;
+  document.querySelectorAll('.tv:not(.extra) video[data-src]').forEach(function (v) {
+    v.muted = true; v.playsInline = true;
+    v.addEventListener('error', function () { var b = v.closest('.tv'); if (b) b.style.display = 'none'; });
+    vio ? vio.observe(v) : (v.src = v.getAttribute('data-src') + '#t=0.6');
+  });
+  document.querySelectorAll('img[data-quita-si-falla]').forEach(function (im) {
+    im.addEventListener('error', function () { im.style.display = 'none'; });
+  });
+  var lb = document.querySelector('.lb');
+  function cerrar() { if (!lb) return; lb.classList.remove('on'); lb.querySelector('.caja').innerHTML = ''; lb.querySelector('.caja').classList.remove('img'); document.body.style.overflow = ''; }
+  if (lb) {
+    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('cerrar')) cerrar(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+    document.querySelectorAll('.tv').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var caja = lb.querySelector('.caja'), mp4 = b.getAttribute('data-mp4'), yt = b.getAttribute('data-yt');
+        caja.classList.toggle('h', !!yt && b.hasAttribute('data-horizontal'));
+        caja.innerHTML = mp4 ? '<video src="' + mp4 + '" controls autoplay playsinline></video>'
+          : '<iframe src="https://www.youtube-nocookie.com/embed/' + yt + '?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Testimonio"></iframe>';
+        lb.classList.add('on'); document.body.style.overflow = 'hidden';
+        pxc('Testimonio', { pagina: pagina });
+      });
+    });
+  }
+
+  /* ── capturas: se agrandan al tocar ── */
+  document.querySelectorAll('img.cap').forEach(function (im) {
+    im.addEventListener('click', function () { if (!lb) return; var c = lb.querySelector('.caja'); c.classList.add('img'); c.innerHTML = '<img src="' + im.src + '" alt="">'; lb.classList.add('on'); document.body.style.overflow = 'hidden'; });
+  });
+  /* ── los números cuentan al aparecer ── */
+  var cuenta = 'IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  document.querySelectorAll('[data-count]').forEach(function (b) {
+    if (!cuenta) return;
+    var n = +b.getAttribute('data-count'), suf = b.getAttribute('data-suf') || '';
+    var o = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return; o.disconnect(); var t0 = null;
+      function st(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); k = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(n * k).toLocaleString('es') + suf; if (k < 1) requestAnimationFrame(st); }
+      requestAnimationFrame(st);
+    }, { threshold: .5 });
+    o.observe(b);
+  });
+
+  /* ── aviso corto ───────────────────────── */
+  window.aviso = function (t) {
+    var a = document.querySelector('.aviso'); if (!a) { a = document.createElement('div'); a.className = 'aviso'; document.body.appendChild(a); }
+    a.textContent = t; a.classList.add('on'); clearTimeout(a._t); a._t = setTimeout(function () { a.classList.remove('on'); }, 2400);
+  };
+
+  /* ── la cuenta: tu hora real neta ──────── */
+  document.querySelectorAll('[data-cuenta]').forEach(function (box) {
+    var $ = function (s) { return box.querySelector(s); };
+    var ins = box.querySelectorAll('input[type=range]');
+    var tocado = false;
+    function plata(n) { return '$' + Math.round(n).toLocaleString('es'); }
+    function calc() {
+      var precio = +$('[name=precio]').value, ses = +$('[name=sesiones]').value, extra = +$('[name=extra]').value, gastos = +$('[name=gastos]').value;
+      $('[data-o=precio]').textContent = plata(precio);
+      $('[data-o=sesiones]').textContent = ses;
+      $('[data-o=extra]').textContent = extra + ' h';
+      $('[data-o=gastos]').textContent = plata(gastos);
+      var semanas = 4.33, ingreso = precio * ses * semanas, horas = (ses + extra) * semanas;
+      var real = horas ? (ingreso - gastos) / horas : 0;
+      $('[data-o=cobras]').textContent = plata(precio);
+      $('[data-o=real]').textContent = plata(Math.max(real, 0));
+      var pct = precio ? Math.round(real / precio * 100) : 0;
+      var anual = Math.round(extra * 48);
+      $('[data-o=veredicto]').innerHTML = 'Por cada hora de tu vida que le das a tu trabajo te quedan <b>' + plata(Math.max(real, 0)) + '</b>: el <b>' + Math.max(pct, 0) + ' %</b> de lo que dice tu tarifa. Y al año trabajas <b>' + anual.toLocaleString('es') + ' horas</b> que nadie te paga.';
+    }
+    ins.forEach(function (i) { i.addEventListener('input', function () { calc(); if (!tocado) { tocado = true; pxc('Cuenta', { pagina: pagina }); } }); });
+    calc();
+  });
+
+  /* ── el teléfono con la app ────────────── */
+  document.querySelectorAll('[data-tel]').forEach(function (tel) {
+    var vistas = tel.querySelectorAll('.vista'), tabs = tel.querySelectorAll('.tabs button');
+    var afuera = document.querySelectorAll('[data-toca]');
+    var chatHecho = false;
+    function ir(id) {
+      vistas.forEach(function (v) { v.classList.toggle('on', v.getAttribute('data-v') === id); });
+      tabs.forEach(function (t) { t.classList.toggle('on', t.getAttribute('data-ir') === id); });
+      afuera.forEach(function (t) { t.classList.toggle('on', t.getAttribute('data-toca') === id); });
+      if (id === 'mentor') chat();
+    }
+    function chat() {
+      if (chatHecho) return; chatHecho = true;
+      var c = tel.querySelector('.chat'); if (!c) return;
+      var guion = JSON.parse(c.getAttribute('data-guion') || '[]');
+      guion.forEach(function (m, i) {
+        setTimeout(function () {
+          var d = document.createElement('div'); d.className = 'msg ' + m[0];
+          d.innerHTML = (m[0] === 'ia' && m[2] ? '<i>' + m[2] + '</i>' : '') + m[1];
+          c.appendChild(d); requestAnimationFrame(function () { requestAnimationFrame(function () { d.classList.add('in'); }); });
+        }, 500 + i * 1500);
+      });
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { ir(t.getAttribute('data-ir')); pxc('App', { vista: t.getAttribute('data-ir') }); }); });
+    afuera.forEach(function (t) { t.addEventListener('click', function () { ir(t.getAttribute('data-toca')); pxc('App', { vista: t.getAttribute('data-toca') }); }); });
+    /* la cuenta del teléfono */
+    var f = tel.querySelectorAll('.campo input');
+    function cuentaTel() {
+      var p = +f[0].value || 0, s = +f[1].value || 0, x = +f[2].value || 0;
+      var r = (s + x) ? (p * s) / (s + x) : 0;
+      var o = tel.querySelector('[data-o=tel-real]'); if (o) o.textContent = '$' + Math.round(r);
+      var n = tel.querySelector('[data-o=tel-nota]'); if (n) n.textContent = 'Cobras $' + Math.round(p) + ' por sesión. Al año, ' + Math.round(x * 48).toLocaleString('es') + ' horas sin cobrar.';
+    }
+    f.forEach(function (i) { i.addEventListener('input', cuentaTel); }); if (f.length) cuentaTel();
+    ir(tel.getAttribute('data-inicio') || 'hoy');
+  });
+})();
+
+</script>
+<script>
+(function(){
+  var pag=document.body.getAttribute('data-pagina');
+  document.querySelectorAll('[data-yt]').forEach(function(v){
+    var b=v.querySelector('button'); if(!b) return;
+    b.addEventListener('click',function(){
+      v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1" title="'+(v.getAttribute('data-titulo')||'Video')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      if(window.pxc) pxc('VerVideo',{content_name:pag});
+    });
+  });
+  document.querySelectorAll('[data-link="comunidad"]').forEach(function(a){
+    a.addEventListener('click',function(){ if(window.pxc) pxc('IrComunidad',{content_name:pag}); });
+  });
+})();
+</script>
+</body>
+</html>

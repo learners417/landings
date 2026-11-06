@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Las 7 libertades fundamentales · El primer capítulo · Javo Katz</title>
+<meta name="description" content="Lee el primer capítulo de Las 7 libertades fundamentales, de Javo Katz, aquí mismo y sin costo.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="book">
+<meta property="og:title" content="Las 7 libertades fundamentales · el primer capítulo">
+<meta property="og:description" content="Lee el primer capítulo de Las 7 libertades fundamentales, de Javo Katz, aquí mismo y sin costo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   JAVO KATZ · el sistema de las páginas
+   Papel cálido, tinta, oro mate solo en líneas, versalitas y numerales.
+   Cormorant Garamond para los títulos (la letra de Las 7 libertades),
+   Manrope para leer. Nada por debajo de 16 px.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  color-scheme: light;
+  --papel:#F4EEE3;
+  --papel-2:#FBF8F1;
+  --papel-3:#EDE5D6;
+  --tinta:#2B2724;
+  --tinta-2:#5A534A;
+  --linea:#DCD2C1;
+  --oro:#A8875A;
+  --oro-texto:#7A5F33;
+  --verde:#2F5638;
+  --rojo:#9C3626;
+  --lago:#1B4A66; --montana:#A64B2E; --viento:#9A6E1F; --rio:#1F6E6E; --bosque:#1E3A2B;
+  --sanadores:#3E4C43; --heroe:#2B2724; --libertades:#874B45;
+  --f-titulo:"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --f-texto:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-lectura:"Lora", Georgia, serif;
+  --r:22px;
+  --sombra:0 1px 0 rgba(43,39,36,.04), 0 28px 60px -36px rgba(43,39,36,.42);
+  --e:cubic-bezier(.2,.7,.2,1);
+}
+/* las páginas son de papel: si el teléfono está en modo oscuro, siguen claras */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme: light; } }
+:root[data-theme="dark"]{ color-scheme: light; }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-weight:500;font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+@media (min-width:900px){ body{font-size:20px} }
+img,svg,video{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+em{font-style:italic}
+::selection{background:#E7D6B4}
+:focus-visible{outline:2px solid var(--oro-texto);outline-offset:3px;border-radius:8px}
+
+/* el grano del papel: apenas, para que no parezca pantalla */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .15 0 0 0 0 .13 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── estructura ───────────────────────────── */
+.wrap{width:100%;max-width:760px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.ancho{max-width:1120px}
+.sec{padding-block:clamp(72px,12vw,128px);position:relative}
+.sec.junto{padding-top:0}
+.centro{text-align:center}
+.centro .lead,.centro .kick{margin-inline:auto}
+
+/* la barra de arriba */
+.top{position:fixed;top:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.con-linea{border-bottom-color:var(--linea)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px max(20px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{font-family:var(--f-titulo);font-size:24px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.marca small{display:block;font-family:var(--f-texto);font-size:16px;letter-spacing:.12em;color:var(--oro-texto);font-weight:700;margin-top:-2px}
+.top .btn{min-height:46px;padding:10px 20px;font-size:16px}
+@media (max-width:520px){ .top .btn{display:none} }
+
+/* ── tipografía ───────────────────────────── */
+.kick{display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:22px}
+.kick::before{content:"";width:34px;height:1px;background:var(--oro)}
+.centro .kick::after{content:"";width:34px;height:1px;background:var(--oro)}
+.t1{font-size:clamp(50px,13vw,96px);line-height:.98;letter-spacing:-.02em}
+.t2{font-size:clamp(40px,9.6vw,68px);line-height:1.02}
+.t3{font-size:clamp(30px,6.4vw,42px);line-height:1.1}
+.t1 em,.t2 em,.t3 em{color:var(--oro-texto)}
+.sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(27px,6.2vw,38px);line-height:1.18;color:var(--tinta-2);margin-top:18px;text-wrap:balance}
+.lead{font-size:clamp(20px,4.6vw,23px);line-height:1.5;color:var(--tinta-2);max-width:34em;margin-top:24px;text-wrap:pretty}
+.lead b,.lead strong{color:var(--tinta);font-weight:700}
+.texto p+p{margin-top:18px}
+.texto p{text-wrap:pretty}
+.num{font-family:var(--f-titulo);font-variant-numeric:lining-nums tabular-nums;color:var(--oro-texto)}
+.regla{border:0;height:1px;background:var(--oro);opacity:.55;width:56px;margin:28px 0}
+.centro .regla{margin-inline:auto}
+
+/* ── botones ──────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:16px 30px;border-radius:999px;background:var(--tinta);color:var(--papel-2);text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.01em;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(168,135,90,.55),0 18px 34px -20px rgba(43,39,36,.7);transition:transform .25s var(--e),box-shadow .25s var(--e),background .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(168,135,90,.8),0 24px 40px -22px rgba(43,39,36,.75)}
+.btn:active{transform:translateY(0)}
+.btn .fl{transition:transform .25s var(--e)}
+.btn:hover .fl{transform:translateX(4px)}
+.btn.claro{background:var(--papel-2);color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+.btn.wa{background:var(--verde);color:var(--papel-2);box-shadow:inset 0 0 0 1px rgba(168,135,90,.45),0 18px 34px -20px rgba(47,86,56,.7)}
+.btn.wa:hover{background:#264730}
+.btn.wa svg{width:22px;height:22px;flex:none}
+.btn.ancho-total{width:100%}
+@media (max-width:420px){ .btn{padding-left:22px;padding-right:22px;font-size:17px;gap:10px} }
+.micro{font-size:16px;color:var(--tinta-2);margin-top:14px;line-height:1.45}
+.micro b{color:var(--tinta)}
+.botones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:34px}
+.centro .botones{justify-content:center}
+.link{font-weight:700;text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px;text-decoration-thickness:1px}
+
+/* ── aparecer al bajar ────────────────────── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+
+/* ── tarjeta ──────────────────────────────── */
+.card{background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+
+/* ── lo que se tacha y lo que se tilda ────── */
+.frases{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
+.frases li{position:relative;font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,5.6vw,32px);line-height:1.2;padding-left:44px;color:var(--tinta-2)}
+.frases li::before{content:"";position:absolute;left:0;top:.42em;width:26px;height:26px;border-radius:50%;border:1px solid var(--rojo);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239C3626' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/14px no-repeat}
+.frases li span{background-image:linear-gradient(var(--rojo),var(--rojo));background-repeat:no-repeat;background-size:0 2px;background-position:0 58%;transition:background-size 1s var(--e) .35s}
+.frases li.in span{background-size:100% 2px}
+.si{display:flex;gap:16px;align-items:flex-start;margin-top:30px;font-size:clamp(21px,4.8vw,24px);line-height:1.4;font-weight:600}
+.si::before{content:"";flex:0 0 30px;height:30px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/16px no-repeat;margin-top:2px}
+
+/* ── el teléfono con la app ───────────────── */
+.tel{position:relative;width:300px;flex:0 0 auto;aspect-ratio:9/19.2;border-radius:52px;background:#1D1B18;padding:11px;box-shadow:0 0 0 1px #3A3631,inset 0 0 0 2px #46413A,0 60px 90px -50px rgba(43,39,36,.75),0 30px 50px -40px rgba(43,39,36,.6);margin-inline:auto}
+.tel::before{content:"";position:absolute;right:-3px;top:150px;width:3px;height:70px;border-radius:0 3px 3px 0;background:#2E2A26}
+.pant{position:relative;height:100%;border-radius:42px;overflow:hidden;background:#FAF5EA;color:#2A2118;display:flex;flex-direction:column;font-size:15px;line-height:1.4}
+.isla{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:20px;background:#0E0D0C;z-index:3}
+.estado{display:flex;justify-content:space-between;align-items:center;padding:15px 26px 6px;font-weight:700;font-size:14px;letter-spacing:.02em}
+.estado i{display:inline-flex;gap:4px;align-items:center;font-style:normal}
+.estado svg{width:17px;height:12px}
+.app-head{padding:16px 20px 10px;display:flex;justify-content:space-between;align-items:center}
+.app-head b{font-family:var(--f-titulo);font-size:27px;font-weight:600}
+.cint{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A5F33;border:1px solid rgba(176,130,46,.45);border-radius:999px;padding:5px 10px}
+.cint::before{content:"";width:16px;height:6px;border-radius:2px;background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(42,33,24,.35)}
+.app-body{flex:1;overflow:hidden;padding:4px 16px 0;position:relative}
+.vista{position:absolute;inset:4px 16px 0;opacity:0;transform:translateY(10px);transition:opacity .45s var(--e),transform .45s var(--e);pointer-events:none}
+.vista.on{opacity:1;transform:none;pointer-events:auto}
+.app-card{background:#FFFDF7;border:1px solid rgba(176,130,46,.32);border-radius:20px;padding:16px}
+.app-k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8E6824}
+.app-t{font-family:var(--f-titulo);font-weight:600;font-size:25px;line-height:1.08;margin:6px 0 4px}
+.app-m{font-size:13.5px;color:rgba(42,33,24,.72)}
+.app-btn{margin-top:12px;display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#2A2118;color:#FAF5EA;font-weight:800;font-size:13.5px;letter-spacing:.14em}
+.dias{margin-top:12px;display:grid;gap:7px}
+.dia{display:flex;align-items:center;gap:10px;font-size:13.5px;padding:8px 10px;border-radius:12px;background:#F5EFE1}
+.dia b{font-family:var(--f-titulo);font-size:18px;color:#8E6824;width:14px;text-align:center}
+.dia.on{background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(176,130,46,.5)}
+.dia .lk{margin-left:auto;width:14px;height:14px;opacity:.5}
+.campo{display:block;margin-top:9px;font-size:13px;color:rgba(42,33,24,.75)}
+.campo input{display:block;width:100%;margin-top:4px;height:40px;border:1px solid rgba(176,130,46,.4);border-radius:12px;background:#FFFDF7;padding:0 12px;font:700 16px var(--f-texto);color:#2A2118}
+.campo input:focus{outline:2px solid #B0822E;outline-offset:0}
+.grande{margin-top:12px;text-align:center;padding:12px;border-radius:16px;background:#F5EFE1}
+.grande span{display:block;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8E6824}
+.grande b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:46px;line-height:1.05}
+.chat{display:flex;flex-direction:column;gap:9px;padding-top:4px}
+.msg{max-width:88%;padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.4;opacity:0;transform:translateY(6px);transition:opacity .4s var(--e),transform .4s var(--e)}
+.msg.in{opacity:1;transform:none}
+.msg.yo{align-self:flex-end;background:#2A2118;color:#FAF5EA;border-bottom-right-radius:5px}
+.msg.ia{align-self:flex-start;background:#FFFDF7;border:1px solid rgba(176,130,46,.3);border-bottom-left-radius:5px}
+.msg.ia i{display:block;font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8E6824;margin-bottom:2px}
+.chip{align-self:flex-start;font-size:13px;font-weight:700;border:1px solid rgba(42,33,24,.25);border-radius:999px;padding:7px 11px;background:#FFFDF7}
+.tabs{display:flex;justify-content:space-around;padding:10px 8px 20px;border-top:1px solid rgba(176,130,46,.25);background:#FFFDF7}
+.tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(42,33,24,.5);cursor:pointer;padding:4px 6px}
+.tabs button svg{width:22px;height:22px}
+.tabs button.on{color:#2A2118}
+.tabs button.on svg{stroke:#B0822E}
+.toca{display:flex;justify-content:center;gap:10px;margin-top:24px;flex-wrap:wrap}
+.toca button{border:1px solid var(--linea);background:var(--papel-2);border-radius:999px;padding:12px 18px;font-weight:700;font-size:16px;cursor:pointer;transition:all .25s var(--e)}
+.toca button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
+.nota{font-size:16px;color:var(--tinta-2);margin-top:16px;line-height:1.5}
+
+/* ── la cuenta ────────────────────────────── */
+.cuenta{margin-top:40px;padding:clamp(22px,5vw,34px)}
+.cuenta .filas{display:grid;gap:22px}
+.rango label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:700;font-size:18px}
+.rango label small{display:block;font-weight:500;font-size:16px;color:var(--tinta-2)}
+.rango output{font-family:var(--f-titulo);font-size:30px;font-weight:600;color:var(--tinta);white-space:nowrap}
+.rango input[type=range]{width:100%;margin-top:10px;accent-color:var(--tinta);height:28px}
+.resultado{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.res{border-radius:18px;padding:18px;background:var(--papel)}
+.res span{display:block;font-size:16px;font-weight:700;color:var(--tinta-2)}
+.res b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(46px,11vw,64px);line-height:1;margin-top:6px}
+.res.real{background:var(--tinta);color:var(--papel-2)}
+.res.real span{color:#D9CBB0}
+.res.real b{color:#F1E3C6}
+.veredicto{margin-top:20px;font-size:19px;line-height:1.5}
+.veredicto b{font-weight:800}
+
+/* ── el camino de 5 días ──────────────────── */
+.ruta{list-style:none;margin:44px 0 0;padding:0 0 0 46px;position:relative}
+.ruta::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--linea)}
+.ruta::after{content:"";position:absolute;left:15px;top:8px;width:1px;height:var(--avance,0%);max-height:calc(100% - 16px);background:var(--oro);transition:height .2s linear}
+.paso{position:relative;padding-bottom:34px}
+.paso:last-child{padding-bottom:0}
+.paso::before{content:attr(data-n);font-variant-numeric:lining-nums;position:absolute;left:-46px;top:0;width:31px;height:31px;border-radius:50%;background:var(--papel);border:1px solid var(--oro);display:grid;place-items:center;font-family:var(--f-titulo);font-size:19px;font-weight:600;color:var(--oro-texto)}
+.paso.in::before{background:var(--tinta);color:#F1E3C6;border-color:var(--tinta);transition:all .5s var(--e)}
+.paso h3{font-size:clamp(28px,6vw,36px);line-height:1.1}
+.paso .min{font-size:16px;font-weight:700;color:var(--oro-texto);letter-spacing:.06em;margin-top:2px}
+.paso p{margin-top:10px;color:var(--tinta-2)}
+.paso p b{color:var(--tinta)}
+
+/* ── lo que recibes ───────────────────────── */
+.items{display:grid;gap:14px;margin-top:40px}
+@media (min-width:760px){ .items{grid-template-columns:1fr 1fr} }
+.item{display:flex;gap:18px;align-items:flex-start;padding:22px}
+.item .ic{flex:0 0 50px;height:50px;border-radius:16px;border:1px solid var(--oro);display:grid;place-items:center}
+.item .ic svg{width:24px;height:24px;stroke:var(--tinta);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.item b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:26px;line-height:1.12}
+.item p{margin-top:6px;font-size:17px;line-height:1.5;color:var(--tinta-2)}
+.item.libro .ic{border:0;width:50px;height:auto;flex-basis:50px}
+.item.libro .ic img{width:50px;border-radius:2px 5px 5px 2px;box-shadow:6px 8px 16px -8px rgba(0,0,0,.5)}
+
+/* ── testimonios ──────────────────────────── */
+.testi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+@media (max-width:759px){
+  .testi{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .testi::-webkit-scrollbar{display:none}
+  .testi .tv{flex:0 0 58%;scroll-snap-align:center}
+}
+.desliza{display:none;text-align:center;font-size:16px;color:var(--tinta-2);margin-top:2px}
+@media (max-width:759px){ .desliza{display:block} }
+.tv{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#2B2724;border:0;padding:0;cursor:pointer;box-shadow:var(--sombra)}
+.tv video,.tv img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s var(--e),opacity .3s}
+.tv:hover video,.tv:hover img{transform:scale(1.04);opacity:1}
+.tv .play{position:absolute;inset:auto auto 14px 14px;width:52px;height:52px;border-radius:50%;background:rgba(251,248,241,.94);display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(0,0,0,.6)}
+.tv .play::before{content:"";margin-left:4px;border-left:15px solid var(--tinta);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.capturas{display:grid;gap:12px;margin-top:14px;grid-template-columns:repeat(3,1fr);align-items:start}
+@media (max-width:759px){
+  .capturas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 26px;scrollbar-width:none}
+  .capturas::-webkit-scrollbar{display:none}
+  .capturas img{flex:0 0 80%;scroll-snap-align:center}
+}
+.capturas img{width:100%;border-radius:14px;border:1px solid var(--linea);box-shadow:var(--sombra);background:var(--papel-2)}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(20,18,16,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb .caja{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;border-radius:18px;overflow:hidden;background:#000}
+.lb .caja.h{width:min(960px,100%);aspect-ratio:16/9}
+.lb video,.lb iframe{width:100%;height:100%;border:0;display:block}
+.lb .cerrar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;width:52px;height:52px;border-radius:50%;border:0;background:#FBF8F1;font-size:28px;line-height:1;cursor:pointer}
+
+/* ── autor ────────────────────────────────── */
+.autor{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;padding:clamp(22px,5vw,32px)}
+@media (max-width:520px){ .autor{grid-template-columns:1fr} }
+.autor img.foto{width:120px;height:120px;object-fit:cover;border-radius:50%;box-shadow:0 0 0 1px var(--oro),0 0 0 7px var(--papel-2),0 0 0 8px var(--linea)}
+.autor b{font-family:var(--f-titulo);font-size:30px;font-weight:600;display:block;line-height:1.1}
+.autor .rol{font-size:16px;font-weight:700;color:var(--oro-texto);letter-spacing:.06em;margin-top:4px}
+.autor p.bio{margin-top:14px;font-size:18px;color:var(--tinta-2)}
+.estante{display:grid;grid-template-columns:repeat(8,minmax(0,46px));gap:6px;margin-top:18px;align-items:end}
+.estante img{width:100%;border-radius:1px 3px 3px 1px;box-shadow:4px 6px 12px -6px rgba(0,0,0,.55)}
+
+/* ── la oferta ────────────────────────────── */
+.planes{display:grid;gap:18px;margin-top:44px}
+@media (min-width:860px){ .planes{grid-template-columns:1fr 1.12fr;align-items:stretch} }
+.plan{padding:clamp(24px,5vw,34px);display:flex;flex-direction:column;position:relative}
+.plan.fuerte{border:1px solid var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.plan .cinta{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap}
+.plan .nom{font-family:var(--f-titulo);font-size:clamp(32px,7vw,40px);font-weight:600;line-height:1.05;text-wrap:balance}
+.plan .que{font-size:17px;color:var(--tinta-2);margin-top:6px}
+.plan .precio{display:flex;align-items:baseline;gap:10px;margin-top:20px;flex-wrap:wrap}
+.plan .precio b{font-family:var(--f-titulo);font-weight:600;font-size:clamp(64px,15vw,84px);line-height:.9}
+.plan .precio small{font-size:18px;font-weight:700;color:var(--tinta-2)}
+.plan .antes{font-size:17px;color:var(--tinta-2);margin-top:8px}
+.plan .antes s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.plan ul{list-style:none;margin:22px 0 26px;padding:0;display:grid;gap:12px;align-content:start;flex:1}
+.plan li{position:relative;padding-left:34px;font-size:17px;line-height:1.45}
+.plan li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.plan .tapas{display:flex;margin:18px 0 4px;padding-left:10px}
+.plan .tapas img{width:46px;margin-left:-10px;border-radius:1px 3px 3px 1px;box-shadow:4px 6px 12px -6px rgba(0,0,0,.6);transition:transform .35s var(--e)}
+.plan:hover .tapas img{transform:translateY(-4px)}
+.plan .tapas img:nth-child(2n):hover{transform:translateY(-8px)}
+.seguro{display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;color:var(--tinta-2);margin-top:14px}
+.seguro svg{flex:0 0 22px;width:22px;height:22px;stroke:var(--verde);fill:none;stroke-width:1.8}
+
+/* ── preguntas ────────────────────────────── */
+.faq{margin-top:36px;border-top:1px solid var(--linea)}
+.fq{border-bottom:1px solid var(--linea)}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;background:none;border:0;padding:22px 0;font-weight:700;font-size:19px;cursor:pointer}
+.fq button i{flex:0 0 32px;height:32px;border-radius:50%;border:1px solid var(--oro);position:relative;font-style:normal;transition:transform .35s var(--e)}
+.fq button i::before,.fq button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--tinta);transform:translate(-50%,-50%)}
+.fq button i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--e)}
+.fq.op button i{transform:rotate(180deg)}
+.fq.op button i::after{transform:translate(-50%,-50%) rotate(0)}
+.fq .r{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--e)}
+.fq.op .r{grid-template-rows:1fr}
+.fq .r>div{overflow:hidden}
+.fq .r p{padding:0 0 22px;color:var(--tinta-2);font-size:18px}
+
+/* ── cierre y pie ─────────────────────────── */
+.frase-final{font-family:var(--f-titulo);font-size:clamp(46px,11vw,80px);line-height:1;letter-spacing:-.02em}
+.frase-final em{color:var(--oro-texto)}
+.pie{border-top:1px solid var(--linea);padding:40px 0 calc(120px + env(safe-area-inset-bottom,0px));text-align:center;font-size:16px;color:var(--tinta-2)}
+.pie p+p{margin-top:10px}
+.pie a{color:var(--tinta-2)}
+
+/* la barra que acompaña en el teléfono */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .45s var(--e)}
+.barra.on{transform:none}
+.barra .btn{width:100%;min-height:58px}
+@media (min-width:900px){ .barra{display:none} }
+
+/* el aviso que aparece abajo cuando algo se copia o se envía */
+.aviso{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:90;background:var(--tinta);color:var(--papel-2);padding:12px 20px;border-radius:999px;font-weight:700;font-size:16px;transition:all .35s var(--e);pointer-events:none}
+.aviso.on{opacity:1;transform:translate(-50%,0)}
+
+/* los números de los círculos y las cifras grandes, siempre de pie (la Cormorant los trae «antiguos») */
+.tres b,.piso .pn,.paso-g .n,.dl b,.el-libro b{font-variant-numeric:lining-nums}
+
+/* ── GHL: fondo parejo aunque meta la página en una caja; la barra fija deja su lugar ── */
+html,body{overflow-x:hidden;overflow-x:clip}
+.c-section,.c-row,.c-column,.c-wrapper,.hl_page-preview--content,.preview-container{background:var(--papel)!important}
+.top + main{padding-top:78px}
+.sin-pago,.con-pago{display:none}
+img[data-img]:not([src]){visibility:hidden}
+/* el estante */
+.estante{display:grid;grid-template-columns:repeat(8,minmax(0,46px));gap:6px;margin-top:18px;align-items:end}
+/* el menú del pie: todas las páginas se conocen */
+.pie nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin-bottom:14px}
+.pie nav a{padding:8px 2px;font-weight:700;color:var(--tinta);text-decoration:none}
+.pie nav a:hover{text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px}
+html{font-variant-numeric:lining-nums}
+
+/* ── v2 · el muro, las fotos, las capturas, los lomos ── */
+.testi .tv.extra{display:none}
+.testi.todos .tv.extra{display:block}
+.mas{display:flex;justify-content:center;margin-top:18px}
+.tv img{width:100%;height:100%;object-fit:cover}
+.tv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,18,16,.38));pointer-events:none}
+.tv .play{z-index:2}
+@media (min-width:760px){ .testi{grid-template-columns:repeat(4,1fr)} }
+@media (min-width:1100px){ .testi.seis{grid-template-columns:repeat(6,1fr)} }
+.capturas img.cap{cursor:zoom-in}
+.lb .caja.img{aspect-ratio:auto;width:auto;max-width:min(560px,100%);max-height:88vh;background:none;overflow:auto}
+.lb .caja.img img{width:100%;height:auto;border-radius:14px}
+.fotos-banda{overflow:hidden;padding-block:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.cinta-fotos{display:flex;gap:12px;width:max-content;animation:pasa 70s linear infinite}
+.fotos-banda:hover .cinta-fotos{animation-play-state:paused}
+.cinta-fotos img{height:clamp(170px,26vw,250px);width:auto;border-radius:16px;box-shadow:0 18px 30px -22px rgba(43,39,36,.6);background:var(--papel-3);flex:none}
+@keyframes pasa{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){ .cinta-fotos{animation:none} .fotos-banda{overflow-x:auto} }
+.lomos{display:flex;height:4px;border-radius:4px;overflow:hidden;max-width:220px}
+.lomos i{flex:1}
+.lomos i:nth-child(1){background:var(--lago)}.lomos i:nth-child(2){background:var(--montana)}.lomos i:nth-child(3){background:var(--viento)}.lomos i:nth-child(4){background:var(--rio)}.lomos i:nth-child(5){background:var(--bosque)}.lomos i:nth-child(6){background:var(--sanadores)}.lomos i:nth-child(7){background:var(--libertades)}.lomos i:nth-child(8){background:var(--tinta)}
+.centro .lomos{margin-inline:auto}
+.pie .lomos{margin:0 auto 22px}
+
+</style>
+<script>
+/* ════════════════════════════════════════════════════════════════
+   TODO LO QUE SE CAMBIA, VIVE AQUÍ. Es el mismo bloque en todas las páginas.
+   Si cambias un link o un precio, cámbialo igual en las 7 páginas.
+   Si un link de pago está vacío, el botón abre tu WhatsApp con el producto escrito.
+   ════════════════════════════════════════════════════════════════ */
+window.TCD = {
+
+  /* Las páginas del ecosistema, en GHL (tuclinica.digital). */
+  inicio:      '/inicio',
+  agenda:      '/instala-tu-clinica',
+  preparacion: '/preparacion',
+  libros:      '/libros',
+  numero:      '/el-numero',
+  appPagina:   '/app',
+  gracias:     '/gracias',
+  recursos:    '/recursos-gratuitos',
+  generador:   '/generador-pp',
+  appMedida:   '/app-745191',
+
+  /* Los primeros capítulos, también en GHL. */
+  capitulo:  '/capitulos',     // el índice: «¿Por cuál libro empiezas?»
+  cap:       '/capitulo-',     // + lago, montana, viento, rio, bosque, sanadores, heroe o libertades
+
+  /* Las colecciones. */
+  sur:       '/lo-que-el-sur-te-ensena',
+  heroe:     '/heroe-descapado',
+  materias:  '/materias-pendientes',
+  intangibles: '/intangibles',
+  cdl:       '/clinica-del-lider',
+
+  /* Los libros para descargar: súbelos a GHL (Sitios → Medios) y pega aquí el link de cada uno.
+     Si un link está vacío, el botón abre tu WhatsApp para que se lo mandes tú. */
+  descargas: {
+    'Sanadores-Libres-Javo-Katz.pdf':              '',
+    'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
+    'Lo-que-la-montana-te-ensena-Javo-Katz.pdf':   '',
+    'Lo-que-el-viento-te-ensena-Javo-Katz.pdf':    '',
+    'Lo-que-el-rio-te-ensena-Javo-Katz.pdf':       '',
+    'Lo-que-el-bosque-te-ensena-Javo-Katz.pdf':    '',
+    'Heroe-descapado-Javo-Katz.pdf':               '',
+    'Las-7-libertades-fundamentales-Javo-Katz.pdf':'',
+    'Los-8-libros-Javo-Katz.zip':                  ''
+  },
+  img:       '',
+
+  /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
+  pagos: {
+    numero:     '',   // El Número · 27
+    obra:       '',   // El Número + los 8 libros · 97
+    verde:      '',   // La app · Tu Sistema · 497
+    negro:      '',   // La app · El Programa Completo · 997
+    sanadores:  '',   // Sanadores Libres · 33
+    lago:       '',   // Lo que el lago te enseña · 27
+    montana:    '',   // Lo que la montaña te enseña · 27
+    viento:     '',   // Lo que el viento te enseña · 27
+    rio:        '',   // Lo que el río te enseña · 27
+    bosque:     '',   // Lo que el bosque te enseña · 27
+    heroe:      '',   // Héroe descapado · 47
+    libertades: '',   // Las 7 libertades fundamentales · 37
+    apaga:      '',   // La Clínica del Líder · Apaga la cabeza · 33
+    ejeSolo:    '',   // La Clínica del Líder · El Eje Solo · 333
+    ejeAcomp:   ''    // La Clínica del Líder · El Eje Acompañado · 999
+  },
+
+  /* Los precios, en dólares. */
+  precios: {
+    numero: 27, obra: 97, verde: 497, negro: 997,
+    sanadores: 33, lago: 27, montana: 27, viento: 27, rio: 27, bosque: 27,
+    heroe: 47, libertades: 37,
+    apaga: 33, ejeSolo: 333, ejeAcomp: 999
+  },
+
+  /* Tu WhatsApp, solo números, con código de país. */
+  whatsapp: '5492944217689',
+
+  comunidad: 'https://www.skool.com/aprendedores-4619/about?ref=465a1ed1cf944d65a86766f0cd39eba2',
+  app:       'https://app.tuclinica.digital',
+  instagram: 'https://www.instagram.com/javieremilianok/',
+  foto:      'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg',
+  pixel:     '1306012398373458',
+  /* Los testimonios: v = video tuyo (filesafe), y = YouTube. Se muestran en este orden. */
+  media: 'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/',
+  testimonios: [['v','6ac4236b195f9172ed95c91c'],['v','6ad260a5f9a985d42cbe18a8'],['y','U7ablyCr2_Y'],['v','6abc83aa6c64b8e488a2f025'],['v','6ab9e5fa5597aeb9d7f13c31'],['y','FjW8chAxRPk'],['v','6ab9b6e65597aeb9d7eca5b7'],['v','6ab9ba4abe703c7b30305435'],['y','cdcGh-oIV9Y'],['v','6aa0b1e2fb76acb4a93c0ffd'],['v','6ab9e143b4d207ff9d0c5bc7'],['y','0q4Ah_PL_1w'],['v','6ab9e2aac13d4373c2d28d8a'],['v','6ab9df5c5597aeb9d7f0b331'],['y','siIRcFF_Fzc'],['v','6aa0b40116ed327815b69e1a'],['v','6ad263a2fdbcf67570a0b065'],['y','8yGijdiMzJE'],['v','6ad2646686f4a10b2fa62ae0'],['v','6ab9dcba5597aeb9d7f076da'],['y','syL0QvfQHJ4'],['v','6ab9d97f5597aeb9d7f02cd7'],['v','6abaf9f3c13d4373c2ef5b47'],['y','ZYdiTIIDl6g'],['v','6abaf9a37ef452865a2fd7b4'],['v','6abb018672844d8ecf2e9e54'],['v','689fb4467bb59edaff12c342'],['v','689fb4467bb59e069512c341'],['v','689fb44669618cd2effbd32b'],['v','6ad263a41de0b9886006376a']],
+  /* Fotos de eventos y rodajes, y capturas de mensajes de clientes. */
+  fotos: ['6a3f2d42d50c4ff184edb838.jpeg','6a7e0125c0662ee5c46bb552.jpg','693dba4697c0236220e081ea.jpg','6a3f2d42e2763b2eec24a60c.jpeg','6a7d3d929115899f03677541.png','6a7e00e4494aefa6d8297657.jpg','67a95b7bfc7685e4ad16a204.png','67a8027f9769a75cfe604f9b.png','67a8027f9769a71ac3604f9c.png','67a8027ffc768597de1360da.png','67a8027f4325e15ee6581091.png','67a8027f4325e17938581092.png','67a8027f8f9e7e4c006b47f6.png'],
+  capturas: ['6a3f2d4ae2763b2eec24a678.jpeg','6790e3b22aa71a8f8b682154.jpeg','67a8080cfc76856ca1136421.jpeg']
+};
+
+</script>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   El lector del primer capítulo: una página por vez, como un libro.
+   Lora para leer, Cormorant para los títulos. Nada por debajo de 16 px.
+   ═══════════════════════════════════════════════════════════════ */
+.sin-pago,.con-pago{display:none}
+
+/* la barra de arriba: volver, el libro, la página */
+.lector-top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.lt-in{max-width:880px;margin:0 auto;padding:10px max(14px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:12px}
+.lt-volver{flex:0 0 44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--linea);color:var(--tinta);background:var(--papel-2)}
+.lt-volver svg{width:22px;height:22px}
+.lt-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
+.lt-t b{font-family:var(--f-titulo);font-size:21px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lt-t span{font-size:16px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.lt-btn{min-height:46px;padding:8px 20px;font-size:16px;white-space:nowrap}
+@media (max-width:600px){ .lt-btn{display:none} }
+.lt-prog{height:3px}
+.lt-prog i{display:block;height:100%;width:0;background:var(--c,var(--oro));transition:width .45s var(--e)}
+
+/* las hojas */
+.lector{max-width:680px;margin:0 auto;padding:clamp(30px,5vw,60px) max(20px,env(safe-area-inset-left,0px)) calc(150px + env(safe-area-inset-bottom,0px))}
+.hoja+.hoja{margin-top:64px;padding-top:64px;border-top:1px solid var(--linea)}
+.js .hoja{display:none}
+.js .hoja+.hoja{margin-top:0;padding-top:0;border-top:0}
+.js .hoja.on{display:block;animation:hoja .5s var(--e)}
+@keyframes hoja{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){ .js .hoja.on{animation:none} }
+
+.hoja p{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.75;margin-top:1em;text-wrap:pretty}
+.hoja>p:first-child{margin-top:0}
+.hoja b{font-weight:600}
+.hoja .k{font-family:var(--f-texto);font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);margin:0 0 12px;line-height:1.4}
+.hoja h1{font-family:var(--f-titulo);font-size:clamp(46px,11.5vw,70px);line-height:1.02;font-weight:500;letter-spacing:-.015em;text-wrap:balance}
+.hoja h2{font-family:var(--f-titulo);font-size:clamp(36px,8.4vw,50px);line-height:1.06;font-weight:500;margin-bottom:6px;text-wrap:balance}
+.hoja h3{font-family:var(--f-titulo);font-size:32px;line-height:1.1;font-weight:600}
+.hoja .sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(24px,5.6vw,29px);line-height:1.28;color:var(--tinta-2);margin-top:8px}
+.hoja h2+p:not(.sub),.hoja .sub+p{margin-top:22px}
+.hoja .poema{margin:30px 0;padding:4px 0 4px 22px;border-left:1px solid var(--oro)}
+.hoja .poema p{font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,31px);line-height:1.3;margin:0}
+.hoja .gran{font-family:var(--f-titulo);font-size:clamp(31px,7.4vw,42px);line-height:1.14;text-align:center;margin:40px 0 10px;padding:24px 0;border-top:1px solid var(--oro);border-bottom:1px solid var(--oro);text-wrap:balance}
+.hoja .frase{margin:9vh 0 4vh;text-align:center}
+.hoja .frase blockquote{margin:0;font-family:var(--f-titulo);font-style:italic;font-size:clamp(29px,7vw,40px);line-height:1.24;text-wrap:balance}
+.hoja .frase figcaption{margin-top:22px;font-size:16px;font-weight:700;letter-spacing:.08em;color:var(--oro-texto)}
+.hoja ol,.hoja ul{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.7;padding-left:1.4em;margin:1em 0 0}
+.hoja li+li{margin-top:.55em}
+
+/* portadillas: partes, capítulos, dedicatoria */
+.hoja.portadilla{text-align:center;padding-top:9vh;min-height:56vh}
+.hoja.portadilla .poema{border-left:0;padding-left:0;margin-top:40px}
+.hoja.portadilla .sub{max-width:24em;margin-inline:auto}
+.hoja.portadilla h1+.sub,.hoja.portadilla h1+.poema{margin-top:22px}
+.hoja.dedicatoria{text-align:center;padding-top:12vh;min-height:56vh}
+.hoja .dedi{font-family:var(--f-titulo);font-style:italic;font-size:clamp(26px,6.2vw,33px);line-height:1.35;max-width:22em;margin-inline:auto}
+
+/* tu acción */
+.accion{margin-top:34px;padding:22px 22px 24px;border:1px solid var(--linea);border-left:4px solid var(--verde);border-radius:6px 18px 18px 6px;background:var(--papel-2)}
+.accion .k{color:var(--verde);margin-bottom:4px}
+.accion ol{margin-top:4px}
+
+/* los ejercicios */
+.ej-caja,.obra-ej,.tabla-ej{margin-top:30px;padding:22px;border:1px dashed color-mix(in srgb,var(--oro) 70%,transparent);border-radius:18px;background:var(--papel-2)}
+.ej-k{font-family:var(--f-texto) !important;font-size:16px !important;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin:0 !important}
+.ej-q{font-family:var(--f-texto) !important;font-size:18px !important;font-weight:600;margin-top:14px !important}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips button{min-height:46px;padding:8px 16px;border-radius:999px;border:1px solid var(--linea);background:var(--papel);font-size:17px;font-weight:700;cursor:pointer;transition:all .2s}
+.chips button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
+.chips.nums button{min-width:46px;padding:8px 0}
+.semanas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+@media (min-width:560px){ .semanas{grid-template-columns:repeat(6,1fr)} }
+.semanas label{display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:700;color:var(--tinta-2);text-align:center}
+.semanas input,.tabla-ej input{width:100%;min-height:46px;border:1px solid var(--linea);border-radius:12px;background:var(--papel);font:inherit;font-size:18px;text-align:center;color:var(--tinta)}
+.ej-caja .suma{font-family:var(--f-texto);font-size:18px;margin-top:14px}
+.ej-caja .suma b{font-family:var(--f-titulo);font-size:30px;color:var(--oro-texto)}
+.tabla-ej{padding:10px;overflow-x:auto}
+.tabla-ej table{width:100%;border-collapse:collapse;font-size:16px}
+.tabla-ej th,.tabla-ej td{padding:10px 8px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:middle}
+.tabla-ej thead th{font-weight:800;font-size:16px;color:var(--oro-texto)}
+.tabla-ej tbody th{font-weight:600}
+.tabla-ej td{width:26%}
+.tabla-ej td.luego{background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(168,135,90,.12) 8px 9px)}
+.obra-ej h3{margin-top:4px}
+.ej-nota{font-family:var(--f-texto) !important;font-size:17px !important;color:var(--tinta-2);margin-top:6px !important}
+.campo-ej{display:block;margin-top:18px}
+.campo-ej b{display:block;font-size:18px;font-weight:800}
+.campo-ej span{display:block;font-size:17px;color:var(--tinta-2);line-height:1.45;margin-top:2px}
+.campo-ej textarea{display:block;width:100%;margin-top:10px;border:1px solid var(--linea);border-radius:12px;padding:10px 14px;font-family:var(--f-lectura);font-size:19px;line-height:34px;color:var(--tinta);resize:vertical;
+  background:var(--papel) repeating-linear-gradient(transparent 0 33px,rgba(168,135,90,.3) 33px 34px);background-attachment:local;background-position:0 10px}
+.hoja .cuenta{margin-top:28px}
+
+/* la portada del lector */
+.hoja.inicio{text-align:center;padding-top:14px}
+.ini-tapa{width:min(250px,60vw);margin:0 auto 30px;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4);transform:rotate(-2deg)}
+.hoja.inicio h1{font-size:clamp(40px,10vw,60px)}
+.hoja.inicio .sub{max-width:22em;margin-inline:auto}
+.hoja .ini-meta{font-family:var(--f-texto);font-size:17px;color:var(--tinta-2);margin:20px auto 26px}
+.hoja.inicio .btn{min-width:240px}
+
+/* el final: seguir con el libro */
+.hoja.fin{text-align:center;padding-top:6px}
+.fin-tapa{width:min(170px,42vw);margin:0 auto 24px;border-radius:2px 5px 5px 2px;box-shadow:14px 20px 34px -18px rgba(20,18,16,.6)}
+.hoja .fin-lead{font-family:var(--f-texto);font-size:19px;color:var(--tinta-2);max-width:26em;margin:10px auto 0}
+.ofertas{display:grid;gap:16px;margin-top:30px;text-align:left}
+.of{position:relative;padding:24px 22px 22px;border:1px solid var(--linea);border-radius:20px;background:var(--papel-2);box-shadow:var(--sombra)}
+.of.fuerte{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.of .cinta{position:absolute;top:-14px;left:22px;background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.of-t{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.1}
+.of p{font-family:var(--f-texto);font-size:18px;line-height:1.5;color:var(--tinta-2);margin:8px 0 18px}
+.of s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.hoja .solo-libro,.hoja .otro{font-family:var(--f-texto);font-size:17px;margin-top:20px;text-align:center}
+.hoja .seguro{font-family:var(--f-texto)}
+
+/* los botones de abajo */
+.lector-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;justify-content:center;padding:12px max(14px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transition:transform .35s var(--e)}
+.lector-nav .btn{min-height:58px}
+.lector-nav [data-ir="-1"]{flex:0 0 58px;padding:0}
+.lector-nav [data-ir="1"]{flex:1;max-width:420px}
+.lector-nav [data-ir="-1"]:disabled{opacity:.35;pointer-events:none}
+.lector-nav.oculta{transform:translateY(110%)}
+html:not(.js) .lector-nav{display:none}
+
+/* elegir el libro */
+.elegir{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+@media (min-width:760px){ .elegir{grid-template-columns:repeat(4,1fr);gap:18px} }
+.el-libro{display:flex;flex-direction:column;gap:6px;padding:16px 14px 18px;border:1px solid var(--linea);border-radius:18px;background:var(--papel-2);text-decoration:none;box-shadow:var(--sombra);transition:transform .3s var(--e),border-color .3s}
+.el-libro:hover{transform:translateY(-4px);border-color:var(--tinta)}
+.el-libro img{width:78%;margin:0 auto 10px;border-radius:1px 4px 4px 1px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6)}
+.el-serie{font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--oro-texto);line-height:1.3}
+.el-libro b{font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.1}
+.el-que{font-size:16px;font-weight:700;margin-top:auto;padding-top:6px}
+
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-pagina="capitulo-libertades" data-libro="libertades" style="--c:var(--libertades)">
+
+<header class="lector-top"><div class="lt-in">
+  <a class="lt-volver" data-link="libros" data-hash="#libertades" href="#" aria-label="Volver a los libros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="lt-t"><b>Las 7 libertades fundamentales</b><span data-pag>1 de 13</span></div>
+  <a class="btn lt-btn" data-compra="libertades" href="#"><span>Lo quiero · <span data-precio="libertades">37</span> USD</span></a>
+ </div><div class="lt-prog"><i></i></div></header>
+
+<main class="lector" data-total="13">
+ <section class="hoja inicio on" id="p1" aria-label="Portada">
+  <img class="ini-tapa" data-img="tapas/libertades-grande.webp" alt="Tapa de Las 7 libertades fundamentales" width="640" height="982" fetchpriority="high">
+  <p class="k">Las siete juntas</p>
+  <h1>Las 7 libertades fundamentales</h1>
+  <p class="sub">Cómo se construye una vida libre</p>
+  <p class="ini-meta">Lee el primer capítulo, aquí mismo y sin costo · 5 minutos</p>
+  <button class="btn" type="button" data-ir="1"><span>Empezar a leer</span> <span class="fl">→</span></button>
+ </section>
+<section class="hoja dedicatoria" id="p2" aria-label="Página 2">
+<p class="dedi">Para Diego, mi hermano, que levanta edificios y me sostuvo cuando yo no podía.</p>
+<p class="dedi">Y para Genaro.</p>
+</section>
+<section class="hoja solo-frase" id="p3" aria-label="Página 3">
+<figure class="frase"><blockquote>Al hombre se le puede arrebatar todo salvo una cosa: la última de las libertades humanas, la elección de la actitud personal ante un conjunto de circunstancias, para decidir su propio camino.</blockquote><figcaption>Viktor Frankl · <i>El hombre en busca de sentido</i></figcaption></figure>
+</section>
+<section class="hoja portadilla" id="p4" aria-label="Página 4">
+<p class="k">Apertura</p>
+<h1>El plano</h1>
+<p class="sub">De dónde nace el libro y cómo se lee.</p>
+</section>
+<section class="hoja portadilla" id="p5" aria-label="Página 5">
+<p class="k">Capítulo 1</p><h1>Una noche en Bariloche</h1>
+<p class="sub">Diego y los suyos viajaron para estar una sola noche en mis treinta. Quién es, qué construye y por qué este libro está hecho con su mirada.</p>
+</section>
+<section class="hoja " id="p6" aria-label="Página 6">
+<p class="k">MI HERMANO</p>
+<h2>Veinte años mayor</h2>
+<p>Diego es mi hermano por parte de padre y me lleva veinte años. Es arquitecto y maestro mayor de obras, y levantó varios edificios.</p>
+<p>Te lo presento por su oficio, porque con ese oficio está construido este libro. Un arquitecto dibuja lo que todavía no existe, y un maestro mayor de obras se encarga de que eso que alguien dibujó se sostenga de verdad, con hormigón, con hierro y con la gravedad tirando hacia abajo todos los días del año.</p>
+<p>Su mirada y nuestras conversaciones me ayudaron mucho. Hoy miro con esos ojos casi todo, y veo lo mismo en un edificio, en un negocio y en una vida: se piensan enteros antes de empezar, se levantan en orden y tienen que aguantar el peso que les toca.</p>
+<p>Le dedico este libro por algo que hizo en los días en que yo no podía. Te lo cuento ahora, en orden, como pasó.</p>
+</section>
+<section class="hoja " id="p7" aria-label="Página 7">
+<p class="k">HISTORIA</p>
+<h2>Jueves, viernes, sábado, martes</h2>
+<p>En el invierno de 2025, mi mamá estuvo en terapia intensiva en Buenos Aires.</p>
+<p>Llegó al hospital un jueves, y el viernes la vi despierta. El sábado la durmieron. Ailu, mi compañera, sostenía desde Bariloche la empresa y la casa, y yo estaba en Buenos Aires.</p>
+<p>El martes, mi mamá despertó.</p>
+<p>—Mi chiquito.</p>
+<p>Y lloramos los dos.</p>
+<p>Fueron semanas, nada más, y fueron de los peores momentos de mi vida. Estaba agotado. Y quería pasarlo solo, como siempre, tan solo que ni siquiera le había contado a Diego.</p>
+<p>En esas semanas, Ailu lo llamó, y Diego llegó al hospital.</p>
+<p>Lloré en sus brazos. Me contuvo, me alentó y estuvo conmigo.</p>
+<p>Esos días, Genaro, mi sobrino, cumplía quince, y compartimos su cumpleaños.</p>
+<p class="gran">«Sin Diego no lo habría superado.»</p>
+</section>
+<section class="hoja " id="p8" aria-label="Página 8">
+<p class="k">COMO SIEMPRE</p>
+<h2>La llamada que no hice</h2>
+<p>Es martes por la noche y te enteras de algo grave. Antes de hablar con nadie ya armaste un plan para resolverlo solo, y hasta ensayaste qué vas a contestar cuando te pregunten cómo estás. «Bien, tranquilo, lo tengo controlado».</p>
+<p>Si te reconoces, te entiendo. Yo lo tenía tan entrenado que ni lo veía. De toda esa historia, las dos palabras que más me hacen pensar hoy son «como siempre».</p>
+<p>Pasarlo solo tiene buena fama. Se parece a la fortaleza, a no molestar, a tener todo bajo control. Y se paga caro, porque se paga en el peor momento, cuando la carga es más grande y las fuerzas son más chicas.</p>
+<p>A mí me sostuvo una llamada que no hice yo. La hizo Ailu.</p>
+<p>Hay días en que lo más fuerte que puedes hacer es dejar que alguien llame por ti.</p>
+</section>
+<section class="hoja " id="p9" aria-label="Página 9">
+<p class="k">UNA NOCHE</p>
+<h2>Viajaron para una sola noche</h2>
+<p>Después, Diego y los suyos viajaron hasta Bariloche para pasar una sola noche conmigo, en mis treinta.</p>
+<p>Yo aprendí de niño que las horas no vuelven, y en el capítulo 15 te cuento con quién. Desde entonces las cuento de otra manera. Un dinero prestado se devuelve y un favor se paga, y una noche que alguien te dio no tiene repuesto.</p>
+<p>Diego y los suyos me dieron eso, una noche. De esa noche me quedo con lo más simple, que vinieron.</p>
+<p>Piensa en la última vez que alguien hizo lugar en su vida solo para estar contigo. Ese tiempo también sostiene tu obra, aunque no figure en ningún plano.</p>
+<p>Hoy escribo este libro con treinta años, y lo empiezo por ahí.</p>
+</section>
+<section class="hoja " id="p10" aria-label="Página 10">
+<p class="k">LA CORDADA</p>
+<h2>Atados a la misma cuerda</h2>
+<p>En la montaña, los que suben atados a la misma cuerda forman una cordada. Si uno resbala, el otro lo sostiene con su peso, y en los tramos difíciles se sube así, atados.</p>
+<p>Diego fue mi cordada. Lo fue aunque yo no le había avisado que estaba subiendo un tramo así. Ailu tiró de la cuerda, y él respondió.</p>
+<p>Hay tramos de la vida que no se suben solo, por más preparado que estés. Una enfermedad en la familia, una pérdida, un negocio que se cae, un hijo que te necesita entero. Ahí te sostiene el que está atado contigo, sepa o no de montañas.</p>
+<p>Y ojo, que la cordada se arma antes del tramo difícil. Se arma en las conversaciones de un martes cualquiera, en las llamadas que parecen no tener motivo y en los cumpleaños a los que vas.</p>
+<p>Al final de este capítulo te voy a pedir que escribas quién fue tu cordada. Si te cuesta encontrar un nombre, escribe eso, que también es un dato.</p>
+</section>
+<section class="hoja " id="p11" aria-label="Página 11">
+<p class="k">SU MIRADA</p>
+<h2>Con ojos de constructor</h2>
+<p>Antes de que alguien clave la primera pala, el edificio ya existe entero en el plano. Después se estudia el suelo, y la obra se levanta en un orden que no se discute. Primero los cimientos, después la estructura, la envolvente y las instalaciones. Nadie empieza por el techo, por más apuro que tenga, porque el techo necesita algo que lo sostenga, y eso que lo sostiene necesita, a su vez, un suelo que alguien estudió antes de mover la primera máquina.</p>
+<p>Así está hecho este libro. Arranca por el plano y por el terreno, el planeta de donde venimos, y solo después levanta tus siete libertades, en el mismo orden en que se levanta una obra.</p>
+<p>Es la mirada de alguien que levanta edificios, puesta sobre una vida. La de Diego.</p>
+<p>Cuando te pregunte por la tuya, te voy a preguntar como pregunta un constructor. Qué hay en el plano, cómo está el suelo, qué estás levantando primero y si eso que levantaste aguanta el peso que le pusiste encima.</p>
+</section>
+<section class="hoja " id="p12" aria-label="Página 12">
+<div class="obra-ej"><p class="k">Tu obra</p><h3>Tu cordada</h3><p class="ej-nota">Escríbelo aquí mismo, con fecha.</p><label class="campo-ej"><b>Quién te sostuvo</b><span>El nombre de quien fue tu cordada cuando no podías solo, y qué estaba pasando en tu vida.</span><textarea rows="4" aria-label="Quién te sostuvo"></textarea></label><label class="campo-ej"><b>Qué hizo por ti</b><span>Lo que hizo, con hechos. Si nunca se lo dijiste, díselo esta semana.</span><textarea rows="4" aria-label="Qué hizo por ti"></textarea></label></div>
+</section>
+ <section class="hoja fin" id="p13" aria-label="Seguir leyendo">
+  <img class="fin-tapa" data-img="tapas/libertades-grande.webp" alt="Tapa de Las 7 libertades fundamentales" width="640" height="982" loading="lazy">
+  <p class="k">Hasta aquí, el primer capítulo</p>
+  <h2>¿Seguimos?</h2>
+  <p class="fin-lead">Lo que leíste es el comienzo. El resto del camino está en el libro.</p>
+  <div class="ofertas">
+   <div class="of fuerte">
+    <b class="of-t">Las 7 libertades fundamentales</b>
+    <p>El libro entero, en digital, para descargar al instante.</p>
+    <a class="btn ancho-total" data-compra="libertades" href="#"><span>Lo quiero · <span data-precio="libertades">37</span> USD</span></a>
+   </div>
+   <div class="of">
+    <span class="cinta">La obra completa</span>
+    <b class="of-t">Los 8 libros + El Número</b>
+    <p>Este y los otros siete, más tus 5 días en mi app. Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
+    <a class="btn claro ancho-total" data-compra="obra" href="#"><span>Los 8 + la app · <span data-precio="obra">97</span> USD</span></a>
+   </div>
+  </div>
+  <p class="seguro con-pago"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+  <p class="seguro sin-pago"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+  <p class="otro"><a class="link" data-link="capitulo" href="#">Leer otro primer capítulo</a> · <a class="link" data-link="libros" data-hash="#libertades" href="#">Ver todos los libros</a></p>
+ </section>
+</main>
+
+<nav class="lector-nav" aria-label="Pasar de página">
+  <button class="btn claro" type="button" data-ir="-1" aria-label="Página anterior"><span class="fl">←</span></button>
+  <button class="btn" type="button" data-ir="1"><span data-sig>Seguir leyendo</span> <span class="fl">→</span></button>
+</nav>
+
+<script>window.TCD_IMGS={"tapas/libertades-grande.webp": "data:image/webp;base64,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"};</script>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   Lo que hacen todas las páginas: precios y links desde config.js,
+   el píxel, lo que aparece al bajar, las preguntas, los testimonios.
+   ═══════════════════════════════════════════════════════════════ */
+(function () {
+  var C = window.TCD || {};
+  var P = C.precios || {};
+  var pagina = document.body.getAttribute('data-pagina') || 'pagina';
+
+  var NOMBRES = {
+    numero: 'El Número', obra: 'El Número + los 8 libros', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
+    viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
+    heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
+    apaga: 'Apaga la cabeza de La Clínica del Líder', ejeSolo: 'El Eje Solo de La Clínica del Líder', ejeAcomp: 'El Eje Acompañado de La Clínica del Líder'
+  };
+  window.TCD_NOMBRES = NOMBRES;
+
+  /* de dónde viene: la palabra del carrusel o del reel (?p=PALABRA) */
+  var origen = '';
+  try {
+    var q = new URLSearchParams(location.search);
+    origen = (q.get('p') || q.get('utm_content') || '').toUpperCase().replace(/[^A-ZÑ0-9_-]/g, '').slice(0, 24);
+    if (origen) sessionStorage.setItem('tcd_origen', origen); else origen = sessionStorage.getItem('tcd_origen') || '';
+  } catch (e) {}
+  window.TCD_ORIGEN = origen;
+
+  /* ── píxel ─────────────────────────────── */
+  function px(ev, datos) { try { if (window.fbq) fbq('track', ev, datos || {}); } catch (e) {} }
+  function pxc(ev, datos) { try { if (window.fbq) fbq('trackCustom', ev, datos || {}); } catch (e) {} }
+  window.px = px; window.pxc = pxc;
+  if (C.pixel && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.pixel); fbq('track', 'PageView');
+    px('ViewContent', { content_name: pagina, content_category: origen || 'directo' });
+  }
+
+  /* ── WhatsApp ──────────────────────────── */
+  function wa(texto) { return 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent(texto); }
+  window.wa = wa;
+
+  /* ── precios ───────────────────────────── */
+  document.querySelectorAll('[data-precio]').forEach(function (el) {
+    var k = el.getAttribute('data-precio');
+    if (P[k] != null) el.textContent = P[k];
+  });
+  document.querySelectorAll('[data-suma]').forEach(function (el) {
+    var t = 0; el.getAttribute('data-suma').split(',').forEach(function (k) { t += +(P[k.trim()] || 0); });
+    el.textContent = t;
+  });
+
+  /* ── botones de compra ─────────────────── */
+  document.querySelectorAll('[data-compra]').forEach(function (a) {
+    var k = a.getAttribute('data-compra');
+    var link = (C.pagos || {})[k];
+    if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
+    else {
+      var msg = 'Hola Javo, quiero ' + (NOMBRES[k] || k) + ' (' + (P[k] || '') + ' USD).' + (origen ? ' Vengo por ' + origen + '.' : '');
+      a.href = wa(msg); a.target = '_blank'; a.rel = 'noopener';
+    }
+    a.addEventListener('click', function () {
+      px('InitiateCheckout', { value: P[k] || 0, currency: 'USD', content_name: k, content_category: origen || 'directo' });
+    });
+  });
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = wa(a.getAttribute('data-wa')); a.target = '_blank'; a.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-link]').forEach(function (a) {
+    var k = a.getAttribute('data-link'); if (C[k]) a.href = C[k] + (a.getAttribute('data-hash') || '');
+  });
+  /* imágenes: van dentro de la página (window.TCD_IMGS) */
+  document.querySelectorAll('[data-img]').forEach(function (im) {
+    var k = im.getAttribute('data-img'), E = window.TCD_IMGS || {};
+    im.src = E[k] || ((C.img || '') + k);
+    im.addEventListener('error', function () { if (im.hasAttribute('data-quita-si-falla')) im.style.display = 'none'; });
+  });
+  /* aviso de pago: PayPal si hay links, WhatsApp si todavía no */
+  var claves = (document.body.getAttribute('data-pagos') || '').split(' ').filter(Boolean);
+  var hayPago = claves.some(function (k) { return (C.pagos || {})[k]; });
+  document.querySelectorAll(hayPago ? '.con-pago' : '.sin-pago').forEach(function (e) { e.style.display = 'flex'; });
+
+  /* ── aparecer al bajar ─────────────────── */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: .12 }) : null;
+  document.querySelectorAll('.rv,.frases li,.paso').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  /* la barra de arriba gana su línea al bajar; la de abajo aparece pasada la portada */
+  var top = document.querySelector('.top'), barra = document.querySelector('.barra');
+  var desde = document.querySelector('[data-barra-desde]'), hasta = document.querySelector('[data-barra-hasta]');
+  function alBajar() {
+    var y = window.scrollY;
+    if (top) top.classList.toggle('con-linea', y > 8);
+    if (barra && desde) {
+      var a = desde.getBoundingClientRect().bottom < 0;
+      var b = hasta ? hasta.getBoundingClientRect().top < window.innerHeight * .9 && hasta.getBoundingClientRect().bottom > 0 : false;
+      barra.classList.toggle('on', a && !b);
+    }
+    document.querySelectorAll('.ruta').forEach(function (r) {
+      var rc = r.getBoundingClientRect(), h = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (h * .7 - rc.top) / rc.height));
+      r.style.setProperty('--avance', (p * 100).toFixed(1) + '%');
+    });
+  }
+  window.addEventListener('scroll', alBajar, { passive: true }); alBajar();
+
+  /* ── preguntas ─────────────────────────── */
+  document.querySelectorAll('.fq button').forEach(function (b) {
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function () {
+      var f = b.parentNode, o = f.classList.toggle('op');
+      b.setAttribute('aria-expanded', o ? 'true' : 'false');
+      if (o) pxc('Pregunta', { pregunta: b.textContent.trim().slice(0, 60) });
+    });
+  });
+
+  /* ── imágenes livianas: el CDN de GHL las entrega en webp y al tamaño justo ── */
+  function opt(u, w) { return 'https://images.leadconnectorhq.com/image/f_webp/q_72/r_' + w + '/u_' + u; }
+  function imgOpt(im, u, w) {
+    im.src = opt(u, w); im.decoding = 'async';
+    im.addEventListener('error', function f() { im.removeEventListener('error', f); im.src = u; });
+  }
+  window.TCD_IMG = imgOpt;
+  document.querySelectorAll('[data-foto]').forEach(function (i) { if (C.foto) imgOpt(i, C.foto, +(i.getAttribute('data-ancho') || 640)); });
+
+  /* ── el muro de testimonios: se arma solo desde config.js ── */
+  var M = C.media || '';
+  document.querySelectorAll('[data-muro]').forEach(function (box) {
+    var lista = (C.testimonios || []).slice();
+    var desde = +(box.getAttribute('data-desde') || 0); if (desde) lista = lista.slice(desde).concat(lista.slice(0, desde));
+    var max = +(box.getAttribute('data-max') || lista.length); lista = lista.slice(0, max);
+    var ver = +(box.getAttribute('data-muro') || 8);
+    lista.forEach(function (t, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'tv' + (i >= ver ? ' extra' : '');
+      b.setAttribute('aria-label', 'Ver testimonio');
+      if (t[0] === 'y') {
+        b.setAttribute('data-yt', t[1]); b.setAttribute('data-horizontal', '');
+        b.innerHTML = '<img loading="lazy" decoding="async" alt="" src="https://i.ytimg.com/vi/' + t[1] + '/hqdefault.jpg"><span class="play"></span>';
+      } else {
+        var u = M + t[1] + '.mp4'; b.setAttribute('data-mp4', u);
+        b.innerHTML = '<video muted playsinline preload="none" data-src="' + u + '"></video><span class="play"></span>';
+      }
+      box.appendChild(b);
+    });
+    if (lista.length > ver) {
+      var m = document.createElement('div'); m.className = 'mas';
+      m.innerHTML = '<button type="button" class="btn claro"><span>Ver los ' + lista.length + ' testimonios</span></button>';
+      box.parentNode.insertBefore(m, box.nextSibling);
+      m.querySelector('button').addEventListener('click', function () {
+        box.classList.add('todos'); m.remove(); pxc('MuroCompleto', { pagina: pagina });
+        box.querySelectorAll('.extra video[data-src]').forEach(function (v) { if (vio) vio.observe(v); });
+      });
+    }
+  });
+  /* las capturas de mensajes */
+  document.querySelectorAll('[data-capturas]').forEach(function (box) {
+    (C.capturas || []).forEach(function (f) {
+      var im = document.createElement('img'); im.alt = 'Mensaje de un cliente'; im.loading = 'lazy'; im.className = 'cap';
+      imgOpt(im, M + f, 720); box.appendChild(im);
+    });
+  });
+  /* las fotos de eventos y rodajes: una cinta que pasa sola */
+  document.querySelectorAll('[data-fotos]').forEach(function (box) {
+    var t = document.createElement('div'); t.className = 'cinta-fotos';
+    var fs = C.fotos || [];
+    fs.concat(fs).forEach(function (f, i) {
+      var im = document.createElement('img'); im.alt = i < fs.length ? 'Javo Katz en eventos y rodajes' : ''; im.loading = 'lazy';
+      imgOpt(im, M + f, 560); t.appendChild(im);
+    });
+    box.appendChild(t);
+  });
+
+  /* ── testimonios: el primer cuadro se carga al verse, el video se abre grande ── */
+  var vio = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var v = e.target; v.src = v.getAttribute('data-src') + '#t=0.6'; v.preload = 'metadata'; vio.unobserve(v);
+    });
+  }, { rootMargin: '200px' }) : null;
+  document.querySelectorAll('.tv:not(.extra) video[data-src]').forEach(function (v) {
+    v.muted = true; v.playsInline = true;
+    v.addEventListener('error', function () { var b = v.closest('.tv'); if (b) b.style.display = 'none'; });
+    vio ? vio.observe(v) : (v.src = v.getAttribute('data-src') + '#t=0.6');
+  });
+  document.querySelectorAll('img[data-quita-si-falla]').forEach(function (im) {
+    im.addEventListener('error', function () { im.style.display = 'none'; });
+  });
+  var lb = document.querySelector('.lb');
+  function cerrar() { if (!lb) return; lb.classList.remove('on'); lb.querySelector('.caja').innerHTML = ''; lb.querySelector('.caja').classList.remove('img'); document.body.style.overflow = ''; }
+  if (lb) {
+    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('cerrar')) cerrar(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+    document.querySelectorAll('.tv').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var caja = lb.querySelector('.caja'), mp4 = b.getAttribute('data-mp4'), yt = b.getAttribute('data-yt');
+        caja.classList.toggle('h', !!yt && b.hasAttribute('data-horizontal'));
+        caja.innerHTML = mp4 ? '<video src="' + mp4 + '" controls autoplay playsinline></video>'
+          : '<iframe src="https://www.youtube-nocookie.com/embed/' + yt + '?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Testimonio"></iframe>';
+        lb.classList.add('on'); document.body.style.overflow = 'hidden';
+        pxc('Testimonio', { pagina: pagina });
+      });
+    });
+  }
+
+  /* ── capturas: se agrandan al tocar ── */
+  document.querySelectorAll('img.cap').forEach(function (im) {
+    im.addEventListener('click', function () { if (!lb) return; var c = lb.querySelector('.caja'); c.classList.add('img'); c.innerHTML = '<img src="' + im.src + '" alt="">'; lb.classList.add('on'); document.body.style.overflow = 'hidden'; });
+  });
+  /* ── los números cuentan al aparecer ── */
+  var cuenta = 'IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  document.querySelectorAll('[data-count]').forEach(function (b) {
+    if (!cuenta) return;
+    var n = +b.getAttribute('data-count'), suf = b.getAttribute('data-suf') || '';
+    var o = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return; o.disconnect(); var t0 = null;
+      function st(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); k = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(n * k).toLocaleString('es') + suf; if (k < 1) requestAnimationFrame(st); }
+      requestAnimationFrame(st);
+    }, { threshold: .5 });
+    o.observe(b);
+  });
+
+  /* ── aviso corto ───────────────────────── */
+  window.aviso = function (t) {
+    var a = document.querySelector('.aviso'); if (!a) { a = document.createElement('div'); a.className = 'aviso'; document.body.appendChild(a); }
+    a.textContent = t; a.classList.add('on'); clearTimeout(a._t); a._t = setTimeout(function () { a.classList.remove('on'); }, 2400);
+  };
+
+  /* ── la cuenta: tu hora real neta ──────── */
+  document.querySelectorAll('[data-cuenta]').forEach(function (box) {
+    var $ = function (s) { return box.querySelector(s); };
+    var ins = box.querySelectorAll('input[type=range]');
+    var tocado = false;
+    function plata(n) { return '$' + Math.round(n).toLocaleString('es'); }
+    function calc() {
+      var precio = +$('[name=precio]').value, ses = +$('[name=sesiones]').value, extra = +$('[name=extra]').value, gastos = +$('[name=gastos]').value;
+      $('[data-o=precio]').textContent = plata(precio);
+      $('[data-o=sesiones]').textContent = ses;
+      $('[data-o=extra]').textContent = extra + ' h';
+      $('[data-o=gastos]').textContent = plata(gastos);
+      var semanas = 4.33, ingreso = precio * ses * semanas, horas = (ses + extra) * semanas;
+      var real = horas ? (ingreso - gastos) / horas : 0;
+      $('[data-o=cobras]').textContent = plata(precio);
+      $('[data-o=real]').textContent = plata(Math.max(real, 0));
+      var pct = precio ? Math.round(real / precio * 100) : 0;
+      var anual = Math.round(extra * 48);
+      $('[data-o=veredicto]').innerHTML = 'Por cada hora de tu vida que le das a tu trabajo te quedan <b>' + plata(Math.max(real, 0)) + '</b>: el <b>' + Math.max(pct, 0) + ' %</b> de lo que dice tu tarifa. Y al año trabajas <b>' + anual.toLocaleString('es') + ' horas</b> que nadie te paga.';
+    }
+    ins.forEach(function (i) { i.addEventListener('input', function () { calc(); if (!tocado) { tocado = true; pxc('Cuenta', { pagina: pagina }); } }); });
+    calc();
+  });
+
+  /* ── el teléfono con la app ────────────── */
+  document.querySelectorAll('[data-tel]').forEach(function (tel) {
+    var vistas = tel.querySelectorAll('.vista'), tabs = tel.querySelectorAll('.tabs button');
+    var afuera = document.querySelectorAll('[data-toca]');
+    var chatHecho = false;
+    function ir(id) {
+      vistas.forEach(function (v) { v.classList.toggle('on', v.getAttribute('data-v') === id); });
+      tabs.forEach(function (t) { t.classList.toggle('on', t.getAttribute('data-ir') === id); });
+      afuera.forEach(function (t) { t.classList.toggle('on', t.getAttribute('data-toca') === id); });
+      if (id === 'mentor') chat();
+    }
+    function chat() {
+      if (chatHecho) return; chatHecho = true;
+      var c = tel.querySelector('.chat'); if (!c) return;
+      var guion = JSON.parse(c.getAttribute('data-guion') || '[]');
+      guion.forEach(function (m, i) {
+        setTimeout(function () {
+          var d = document.createElement('div'); d.className = 'msg ' + m[0];
+          d.innerHTML = (m[0] === 'ia' && m[2] ? '<i>' + m[2] + '</i>' : '') + m[1];
+          c.appendChild(d); requestAnimationFrame(function () { requestAnimationFrame(function () { d.classList.add('in'); }); });
+        }, 500 + i * 1500);
+      });
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { ir(t.getAttribute('data-ir')); pxc('App', { vista: t.getAttribute('data-ir') }); }); });
+    afuera.forEach(function (t) { t.addEventListener('click', function () { ir(t.getAttribute('data-toca')); pxc('App', { vista: t.getAttribute('data-toca') }); }); });
+    /* la cuenta del teléfono */
+    var f = tel.querySelectorAll('.campo input');
+    function cuentaTel() {
+      var p = +f[0].value || 0, s = +f[1].value || 0, x = +f[2].value || 0;
+      var r = (s + x) ? (p * s) / (s + x) : 0;
+      var o = tel.querySelector('[data-o=tel-real]'); if (o) o.textContent = '$' + Math.round(r);
+      var n = tel.querySelector('[data-o=tel-nota]'); if (n) n.textContent = 'Cobras $' + Math.round(p) + ' por sesión. Al año, ' + Math.round(x * 48).toLocaleString('es') + ' horas sin cobrar.';
+    }
+    f.forEach(function (i) { i.addEventListener('input', cuentaTel); }); if (f.length) cuentaTel();
+    ir(tel.getAttribute('data-inicio') || 'hoy');
+  });
+})();
+
+</script>
+<script>
+/* El lector: una hoja por vez. Botones, flechas del teclado y deslizar con el dedo.
+   La hoja en la que vas queda en la dirección (#p5), así al volver sigues donde estabas. */
+(function () {
+  var hojas = [].slice.call(document.querySelectorAll('.hoja'));
+  if (!hojas.length) return;
+  var total = hojas.length, i = 0;
+  var pag = document.querySelector('[data-pag]'), prog = document.querySelector('.lt-prog i');
+  var nav = document.querySelector('.lector-nav');
+  var ant = nav && nav.querySelector('[data-ir="-1"]'), sig = nav && nav.querySelector('[data-ir="1"]');
+  var sigT = nav && nav.querySelector('[data-sig]');
+  var libro = document.body.getAttribute('data-libro') || '';
+  var hecho = {};
+
+  function ir(n, quieto) {
+    n = Math.max(0, Math.min(total - 1, n));
+    hojas[i].classList.remove('on');
+    i = n;
+    hojas[i].classList.add('on');
+    if (pag) pag.textContent = (i + 1) + ' de ' + total;
+    if (prog) prog.style.width = (i / (total - 1) * 100) + '%';
+    if (ant) ant.disabled = i === 0;
+    if (nav) nav.classList.toggle('oculta', i === 0);
+    if (sig) sig.style.display = i === total - 1 ? 'none' : '';
+    if (sigT) sigT.textContent = i === total - 2 ? 'Terminar' : 'Seguir leyendo';
+    if (!quieto) window.scrollTo(0, 0);
+    try { history.replaceState(null, '', i ? '#p' + (i + 1) : location.pathname + location.search); } catch (e) {}
+    if (i === 1 && !hecho.a) { hecho.a = 1; if (window.pxc) pxc('EmpezoCapitulo', { content_name: libro }); }
+    if (i === total - 1 && !hecho.b) { hecho.b = 1; if (window.pxc) pxc('TerminoCapitulo', { content_name: libro }); }
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('[data-ir]') : null;
+    if (!b) return;
+    e.preventDefault();
+    ir(i + (+b.getAttribute('data-ir')));
+  });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target; if (t && t.closest && t.closest('input,textarea,select')) return;
+    if (e.key === 'ArrowRight') ir(i + 1);
+    if (e.key === 'ArrowLeft') ir(i - 1);
+  });
+
+  /* deslizar con el dedo, solo si el gesto es claramente de costado */
+  var x0 = null, y0 = 0, t0 = 0;
+  document.addEventListener('touchstart', function (e) {
+    var el = e.target; if (el && el.closest && el.closest('input,textarea,.cuenta,.chips,.semanas,.tabla-ej')) { x0 = null; return; }
+    var t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 == null) return;
+    var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (Math.abs(dx) > 70 && Math.abs(dy) < 50 && Date.now() - t0 < 700) ir(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  }, { passive: true });
+
+  /* los ejercicios: elegir una opción, sumar las semanas */
+  document.querySelectorAll('[data-chips] .chips').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      g.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    });
+  });
+  document.querySelectorAll('[data-semanas]').forEach(function (c) {
+    var out = c.querySelector('[data-suma-horas]');
+    c.addEventListener('input', function () {
+      var s = 0; c.querySelectorAll('input').forEach(function (x) { s += +x.value || 0; });
+      out.textContent = s;
+    });
+  });
+
+  /* qué aviso de pago se ve */
+  var C = window.TCD || {};
+  var hay = C.pagos && (C.pagos.obra || C.pagos[libro]);
+  document.querySelectorAll(hay ? '.con-pago' : '.sin-pago').forEach(function (e) { e.style.display = 'flex'; });
+
+  var m = /^#p(\d+)$/.exec(location.hash);
+  hojas.forEach(function (h) { h.classList.remove('on'); });
+  ir(m ? +m[1] - 1 : 0, true);
+})();
+
+</script>
+</body>
+</html>

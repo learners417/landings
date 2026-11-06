@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Héroe descapado · la trilogía · Javo Katz</title>
+<meta name="description" content="La capa, El camino y Liderarte: el método El Eje, de punta a punta, en 84 días. En preparación.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Héroe descapado · la trilogía">
+<meta property="og:description" content="84 días para salir del agotamiento y recuperar tu sueño, tu casa y tu cabeza, sin parar tu negocio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ── colecciones ── */
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
+.tapas-fila{display:flex;justify-content:center;align-items:flex-end;gap:clamp(6px,1.6vw,14px);margin:40px auto 0;max-width:680px}
+.tapas-fila img{width:calc(20% - 8px);border-radius:2px 5px 5px 2px;box-shadow:12px 18px 30px -16px rgba(20,18,16,.6),inset 5px 0 7px -5px rgba(0,0,0,.4);transition:transform .5s var(--e)}
+.tapas-fila img:nth-child(even){transform:translateY(-10px)}
+.tapas-fila:hover img{transform:none}
+.dos{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){ .dos{grid-template-columns:1.15fr .85fr;gap:56px} }
+.tapa-sola{max-width:300px;width:100%;margin:0 auto}
+.tapa-sola img{width:100%;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4)}
+.para,.obra{padding:clamp(24px,5vw,40px)}
+.para-t{margin-top:4px;font-family:var(--f-titulo);font-size:clamp(27px,6vw,36px);line-height:1.2;text-wrap:balance}
+.obra-t{margin-top:14px;font-size:19px;color:var(--tinta-2)}
+.obra .seguro{justify-content:flex-start}
+.materias{list-style:none;margin:40px auto 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:900px}
+@media (min-width:760px){ .materias{grid-template-columns:repeat(4,1fr)} }
+.materias li{display:flex;align-items:baseline;gap:14px;padding:22px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+.materias b{font-family:var(--f-titulo);font-size:40px;font-weight:600;line-height:1;color:var(--oro-texto);font-variant-numeric:lining-nums}
+.materias span{font-family:var(--f-titulo);font-size:clamp(26px,6vw,32px);font-weight:600;line-height:1.1}
+
+
+
+/* ── los libros ── */
+.libros{display:grid;gap:22px;margin-top:44px}
+
+.libro-card{display:grid;grid-template-columns:118px 1fr;column-gap:20px;row-gap:18px;padding:clamp(20px,4.6vw,34px);scroll-margin-top:90px;position:relative;overflow:hidden}
+
+.libro-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+
+.lc-tapa{grid-row:1;grid-column:1}
+
+.lc-tapa img{width:100%;border-radius:2px 5px 5px 2px;box-shadow:12px 18px 30px -16px rgba(20,18,16,.6),inset 5px 0 7px -5px rgba(0,0,0,.4);transition:transform .5s var(--e)}
+
+.libro-card:hover .lc-tapa img{transform:rotate(-2deg) translateY(-4px)}
+
+.lc-cab{grid-row:1;grid-column:2;align-self:center}
+
+.lc-cuerpo{grid-row:2;grid-column:1 / -1}
+@media (min-width:760px){
+  .libro-card{grid-template-columns:230px 1fr;column-gap:40px;row-gap:10px}
+  .lc-tapa{grid-row:1 / span 2;align-self:start}
+  .lc-cab{align-self:end}
+  .lc-cuerpo{grid-row:2;grid-column:2}
+}
+
+.lc-serie{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+
+.lc-tit{font-family:var(--f-titulo);font-size:clamp(30px,6.6vw,44px);font-weight:600;line-height:1.04;margin-top:6px}
+
+.lc-sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(21px,4.6vw,25px);line-height:1.2;color:var(--tinta-2);margin-top:8px}
+
+.lc-lib{display:flex;align-items:center;gap:10px;font-size:17px;color:var(--tinta-2)}
+
+.lc-lib::before{content:"";flex:0 0 12px;height:12px;border-radius:50%;background:var(--c)}
+
+.lc-lib b{color:var(--tinta);font-weight:800}
+
+.lc-pro{margin-top:14px;font-size:18px;line-height:1.6;text-wrap:pretty}
+
+.lc-pro+.lc-pro{margin-top:10px}
+
+.lc-meta{margin-top:14px;font-size:16px;color:var(--tinta-2)}
+
+.lc-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+.lc-btns .btn{min-height:56px;padding:12px 24px;font-size:17px}
+@media (max-width:520px){ .lc-btns .btn{width:100%} }
+
+.libro-card:target,.libro-card.marcado{animation:marca 2.4s var(--e)}
+
+.junto-app{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:16px;font-weight:700;color:var(--verde)}
+
+.junto-app::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+</style>
+</head>
+<body data-pagina="heroe" data-pagos="" style="--c:var(--heroe)">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga la trilogía de Héroe descapado." href="#"><span>Avísame</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap ancho">
+  <div class="dos">
+   <div>
+    <span class="kick rv">En preparación · la trilogía</span>
+    <h1 class="t1 rv d1">Héroe <em>descapado.</em></h1>
+    <p class="lead rv d2">84 días para salir del agotamiento y recuperar tu sueño, tu casa y tu cabeza, <b>sin parar tu negocio.</b></p>
+    <div class="botones rv d3">
+     <a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga la trilogía de Héroe descapado." href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v9H9l-4 3z"/></svg><span>Avísame cuando salga</span></a>
+    </div>
+    <p class="micro rv d3">Te escribo yo, por WhatsApp, el día que sale.</p>
+   </div>
+   <div class="tapa-sola rv d2"><img data-img="tapas/heroe-grande.webp" alt="Tapa de Héroe descapado" width="480" height="736"></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LOS TRES TOMOS ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Tres tomos, un método</span>
+  <h2 class="t2 rv">El Eje, <em>de punta a punta.</em></h2>
+  <ol class="ruta">
+   <li class="paso rv" data-n="1"><h3>La capa</h3><p class="min">Tomo 1</p><p>Por qué sacártela.</p></li>
+   <li class="paso rv" data-n="2"><h3>El camino</h3><p class="min">Tomo 2</p><p>Cuántas capas hay, dónde están y cuál es tu herida.</p></li>
+   <li class="paso rv" data-n="3"><h3>Liderarte</h3><p class="min">Tomo 3</p><p>Cómo sacártela y liderar desde ahí.</p></li>
+  </ol>
+  <p class="nota rv">Día por día, desde el día 0, con ejercicios, respiraciones, tareas y revisiones. Junto a la app, para marcar dónde estás y a dónde llegas.</p>
+ </div>
+</section>
+
+<!-- ═══ PARA QUIÉN ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="para card rv">
+   <span class="kick">Para quién es</span>
+   <p class="para-t">Para quien logró resultados afuera y siente que el éxito le está cobrando adentro: el cansancio, el sueño, la casa, la cabeza.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ MIENTRAS TANTO ═══ -->
+<section class="sec">
+ <div class="wrap ancho">
+  <span class="kick rv">Mientras tanto</span>
+  <h2 class="t2 rv">El libro <em>ya está.</em></h2>
+  <p class="lead rv">La trilogía crece desde este libro. Puedes empezar hoy.</p>
+  <div class="libros">
+<article class="libro-card card rv" id="heroe" style="--c:var(--heroe)">
+    <div class="lc-tapa"><img data-img="tapas/heroe.webp" alt="Tapa de Héroe descapado" width="640" height="982" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">El método El Eje</span>
+     <h3 class="lc-tit">Héroe descapado</h3>
+     <p class="lc-sub">84 días para recuperar tu sueño, tu casa y tu cabeza sin parar tu negocio</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad espiritual</b> · el eje</span></p>
+     <p class="lc-pro">Llegaste lejos. Tu negocio funciona y otras personas dependen de lo que decides. Llevas la capa del que rinde, resuelve y nunca pide. Aquí aprendes a sacártela, o a ponértela solo cuando tú decides.</p>
+     <p class="lc-pro">Va hondo, con ejercicios, puntajes y respiraciones de cinco a veinte minutos por día, hasta aclarar lo que buscas cuando todo funciona: el sentido de tu vida.</p>
+     <p class="lc-meta">556 páginas · en digital, para descargar al instante</p>
+     <div class="lc-btns">
+      <a class="btn" data-compra="heroe" href="#"><span>Lo quiero · <span data-precio="heroe">47</span> USD</span></a>
+      <a class="btn claro" data-link="cap" data-hash="heroe" href="#">Leer el comienzo</a>
+     </div>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec centro" data-barra-hasta>
+ <div class="wrap">
+  <hr class="regla">
+  <p class="frase-final rv">Sácate la capa <em>sin parar tu negocio.</em></p>
+  <div class="botones rv"><a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga la trilogía de Héroe descapado." href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v9H9l-4 3z"/></svg><span>Avísame cuando salga</span></a></div>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+</div></footer>
+
+<div class="barra"><a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga la trilogía de Héroe descapado." href="#"><span>Avísame cuando salga</span></a></div>
+
+<script>/*BASE_JS*/</script>
+</body>
+</html>

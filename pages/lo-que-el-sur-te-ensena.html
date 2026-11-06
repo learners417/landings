@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lo que el sur te enseña · Javo Katz</title>
+<meta name="description" content="Cinco libros, cinco paisajes de la Patagonia y 33 lecciones en cada uno: uno por cada sistema de tu clínica digital.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lo que el sur te enseña · Javo Katz">
+<meta property="og:description" content="Cinco libros, cinco paisajes, 33 lecciones en cada uno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ── colecciones ── */
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
+.tapas-fila{display:flex;justify-content:center;align-items:flex-end;gap:clamp(6px,1.6vw,14px);margin:40px auto 0;max-width:680px}
+.tapas-fila img{width:calc(20% - 8px);border-radius:2px 5px 5px 2px;box-shadow:12px 18px 30px -16px rgba(20,18,16,.6),inset 5px 0 7px -5px rgba(0,0,0,.4);transition:transform .5s var(--e)}
+.tapas-fila img:nth-child(even){transform:translateY(-10px)}
+.tapas-fila:hover img{transform:none}
+.dos{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){ .dos{grid-template-columns:1.15fr .85fr;gap:56px} }
+.tapa-sola{max-width:300px;width:100%;margin:0 auto}
+.tapa-sola img{width:100%;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4)}
+.para,.obra{padding:clamp(24px,5vw,40px)}
+.para-t{margin-top:4px;font-family:var(--f-titulo);font-size:clamp(27px,6vw,36px);line-height:1.2;text-wrap:balance}
+.obra-t{margin-top:14px;font-size:19px;color:var(--tinta-2)}
+.obra .seguro{justify-content:flex-start}
+.materias{list-style:none;margin:40px auto 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:900px}
+@media (min-width:760px){ .materias{grid-template-columns:repeat(4,1fr)} }
+.materias li{display:flex;align-items:baseline;gap:14px;padding:22px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+.materias b{font-family:var(--f-titulo);font-size:40px;font-weight:600;line-height:1;color:var(--oro-texto);font-variant-numeric:lining-nums}
+.materias span{font-family:var(--f-titulo);font-size:clamp(26px,6vw,32px);font-weight:600;line-height:1.1}
+
+
+
+/* ── los libros ── */
+.libros{display:grid;gap:22px;margin-top:44px}
+
+.libro-card{display:grid;grid-template-columns:118px 1fr;column-gap:20px;row-gap:18px;padding:clamp(20px,4.6vw,34px);scroll-margin-top:90px;position:relative;overflow:hidden}
+
+.libro-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+
+.lc-tapa{grid-row:1;grid-column:1}
+
+.lc-tapa img{width:100%;border-radius:2px 5px 5px 2px;box-shadow:12px 18px 30px -16px rgba(20,18,16,.6),inset 5px 0 7px -5px rgba(0,0,0,.4);transition:transform .5s var(--e)}
+
+.libro-card:hover .lc-tapa img{transform:rotate(-2deg) translateY(-4px)}
+
+.lc-cab{grid-row:1;grid-column:2;align-self:center}
+
+.lc-cuerpo{grid-row:2;grid-column:1 / -1}
+@media (min-width:760px){
+  .libro-card{grid-template-columns:230px 1fr;column-gap:40px;row-gap:10px}
+  .lc-tapa{grid-row:1 / span 2;align-self:start}
+  .lc-cab{align-self:end}
+  .lc-cuerpo{grid-row:2;grid-column:2}
+}
+
+.lc-serie{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+
+.lc-tit{font-family:var(--f-titulo);font-size:clamp(30px,6.6vw,44px);font-weight:600;line-height:1.04;margin-top:6px}
+
+.lc-sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(21px,4.6vw,25px);line-height:1.2;color:var(--tinta-2);margin-top:8px}
+
+.lc-lib{display:flex;align-items:center;gap:10px;font-size:17px;color:var(--tinta-2)}
+
+.lc-lib::before{content:"";flex:0 0 12px;height:12px;border-radius:50%;background:var(--c)}
+
+.lc-lib b{color:var(--tinta);font-weight:800}
+
+.lc-pro{margin-top:14px;font-size:18px;line-height:1.6;text-wrap:pretty}
+
+.lc-pro+.lc-pro{margin-top:10px}
+
+.lc-meta{margin-top:14px;font-size:16px;color:var(--tinta-2)}
+
+.lc-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+.lc-btns .btn{min-height:56px;padding:12px 24px;font-size:17px}
+@media (max-width:520px){ .lc-btns .btn{width:100%} }
+
+.libro-card:target,.libro-card.marcado{animation:marca 2.4s var(--e)}
+
+.junto-app{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:16px;font-weight:700;color:var(--verde)}
+
+.junto-app::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+</style>
+</head>
+<body data-pagina="sur" data-pagos="">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" data-link="cap" data-hash="lago" href="#"><span>Leer el primer capítulo</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap ancho centro">
+  <span class="kick rv">La colección · 5 libros</span>
+  <h1 class="t1 rv d1">Lo que el sur <em>te enseña.</em></h1>
+  <p class="lead rv d2">Cinco paisajes de la Patagonia y 33 lecciones en cada uno. Cada libro acompaña uno de los 5 sistemas de tu clínica digital y se lee solo, en el orden que quieras.</p>
+  <div class="tapas-fila rv d2" aria-hidden="true">
+   <img data-img="tapas/lago.webp" alt="" width="340" height="510"><img data-img="tapas/montana.webp" alt="" width="340" height="510"><img data-img="tapas/viento.webp" alt="" width="340" height="510"><img data-img="tapas/rio.webp" alt="" width="340" height="510"><img data-img="tapas/bosque.webp" alt="" width="340" height="510">
+  </div>
+  <div class="botones rv d3">
+   <a class="btn" data-link="cap" data-hash="lago" href="#"><span>Leer el primer capítulo</span> <span class="fl">→</span></a>
+  </div>
+  <p class="micro rv d3">Empieza por <i>Lo que el lago te enseña</i>, aquí mismo y sin costo.</p>
+ </div>
+</section>
+
+<!-- ═══ UN LIBRO POR SISTEMA ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Un libro por sistema</span>
+  <h2 class="t2 rv">Del lago <em>al bosque.</em></h2>
+  <ol class="ruta">
+   <li class="paso rv" data-n="1"><h3>Lo que el lago te enseña</h3><p class="min">Tu reset</p><p>33 lecciones para mirarte antes de moverte.</p></li>
+   <li class="paso rv" data-n="2"><h3>Lo que la montaña te enseña</h3><p class="min">Tu programa de 1.000 USD</p><p>33 lecciones para subir por etapas hasta la cumbre.</p></li>
+   <li class="paso rv" data-n="3"><h3>Lo que el viento te enseña</h3><p class="min">Tu captación</p><p>33 lecciones para que tu voz llegue lejos.</p></li>
+   <li class="paso rv" data-n="4"><h3>Lo que el río te enseña</h3><p class="min">Tu propia app</p><p>33 lecciones para que todo corra solo.</p></li>
+   <li class="paso rv" data-n="5"><h3>Lo que el bosque te enseña</h3><p class="min">Tu ecosistema circular</p><p>33 lecciones de marca personal y de vida desde la Patagonia.</p></li>
+  </ol>
+  <p class="nota rv">Cada lección trae un dato con su fuente, una escena y una acción para esta semana.</p>
+ </div>
+</section>
+
+<!-- ═══ LOS CINCO ═══ -->
+<section class="sec" id="libros">
+ <div class="wrap ancho">
+  <span class="kick rv">Los cinco</span>
+  <h2 class="t2 rv">Uno por cada <em>paisaje.</em></h2>
+  <div class="libros">
+<article class="libro-card card rv" id="lago" style="--c:var(--lago)">
+    <div class="lc-tapa"><img data-img="tapas/lago.webp" alt="Tapa de Lo que el lago te enseña" width="640" height="960" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">Lo que el sur te enseña · 1</span>
+     <h3 class="lc-tit">Lo que el lago te enseña</h3>
+     <p class="lc-sub">33 lecciones para mirarte antes de moverte</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad mental</b> · los cimientos</span></p>
+     <p class="lc-pro">Antes de cambiar tu precio o tus horarios, mírate. Son 33 lecciones que nacen en el Nahuel Huapi, un lago que en 2011 quedó cubierto de ceniza y volvió a aclarar. Cada una trae un dato verificado, una escena y una acción para esta semana.</p>
+     <p class="lc-pro">Al final tienes tu protocolo escrito, para llegar entero a cada sesión y a tu casa.</p>
+     <p class="lc-meta">268 páginas · en digital, para descargar al instante</p>
+     <span class="junto-app">Viene dentro de El Número, con mi app</span>
+     <div class="lc-btns">
+      <a class="btn" data-compra="lago" href="#"><span>Lo quiero · <span data-precio="lago">27</span> USD</span></a>
+      <a class="btn claro" data-link="cap" data-hash="lago" href="#">Leer el primer capítulo</a>
+     </div>
+    </div>
+   </article>
+<article class="libro-card card rv" id="montana" style="--c:var(--montana)">
+    <div class="lc-tapa"><img data-img="tapas/montana.webp" alt="Tapa de Lo que la montaña te enseña" width="640" height="960" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">Lo que el sur te enseña · 2</span>
+     <h3 class="lc-tit">Lo que la montaña te enseña</h3>
+     <p class="lc-sub">33 lecciones para subir por etapas hasta la cumbre</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad financiera</b> · el presupuesto</span></p>
+     <p class="lc-pro">Ya sabes llevar a una persona lejos. Ahora toca ponerle a ese camino cumbre, etapas, precio y fecha. Son 33 lecciones, escritas mirando la montaña desde Bariloche, para convertir lo que ya haces en un programa.</p>
+     <p class="lc-pro">Cada una parte de un dato, como el glaciar del Tronador que se mide desde 1953, pasa por casos reales de mentoría y termina en una acción para esta semana.</p>
+     <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
+     <div class="lc-btns">
+      <a class="btn" data-compra="montana" href="#"><span>Lo quiero · <span data-precio="montana">27</span> USD</span></a>
+      <a class="btn claro" data-link="cap" data-hash="montana" href="#">Leer el primer capítulo</a>
+     </div>
+    </div>
+   </article>
+<article class="libro-card card rv" id="viento" style="--c:var(--viento)">
+    <div class="lc-tapa"><img data-img="tapas/viento.webp" alt="Tapa de Lo que el viento te enseña" width="640" height="960" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">Lo que el sur te enseña · 3</span>
+     <h3 class="lc-tit">Lo que el viento te enseña</h3>
+     <p class="lc-sub">33 lecciones para que tu voz llegue lejos</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad emocional</b> · la envolvente</span></p>
+     <p class="lc-pro">Tus consultantes llegan por recomendación. Ahora quieres que también te encuentre quien todavía no te conoce. Son 33 lecciones para armar tu captación mirando el viento desde Bariloche, donde un cóndor voló más de 170 kilómetros sin aletear.</p>
+     <p class="lc-pro">Cada una trae un dato con su fuente, una escena y una acción para esta semana.</p>
+     <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
+     <div class="lc-btns">
+      <a class="btn" data-compra="viento" href="#"><span>Lo quiero · <span data-precio="viento">27</span> USD</span></a>
+      <a class="btn claro" data-link="cap" data-hash="viento" href="#">Leer el primer capítulo</a>
+     </div>
+    </div>
+   </article>
+<article class="libro-card card rv" id="rio" style="--c:var(--rio)">
+    <div class="lc-tapa"><img data-img="tapas/rio.webp" alt="Tapa de Lo que el río te enseña" width="640" height="960" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">Lo que el sur te enseña · 4</span>
+     <h3 class="lc-tit">Lo que el río te enseña</h3>
+     <p class="lc-sub">33 lecciones para que todo corra solo</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad energética</b> · las instalaciones</span></p>
+     <p class="lc-pro">Explicas lo mismo cada semana y contestas a toda hora. Aquí armas tu propia app, con la inteligencia artificial como herramienta, para que todo corra solo y recuperes tus noches. Sigues al Limay, el río que nace en el Nahuel Huapi y, ya con otro nombre, llega hasta el Atlántico.</p>
+     <p class="lc-pro">Cada lección trae un dato verificado, una escena real y tres acciones concretas.</p>
+     <p class="lc-meta">268 páginas · en digital, para descargar al instante</p>
+     <div class="lc-btns">
+      <a class="btn" data-compra="rio" href="#"><span>Lo quiero · <span data-precio="rio">27</span> USD</span></a>
+      <a class="btn claro" data-link="cap" data-hash="rio" href="#">Leer el primer capítulo</a>
+     </div>
+    </div>
+   </article>
+<article class="libro-card card rv" id="bosque" style="--c:var(--bosque)">
+    <div class="lc-tapa"><img data-img="tapas/bosque.webp" alt="Tapa de Lo que el bosque te enseña" width="640" height="960" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">Lo que el sur te enseña · 5</span>
+     <h3 class="lc-tit">Lo que el bosque te enseña</h3>
+     <p class="lc-sub">33 lecciones de marca personal y de vida desde la Patagonia</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad de tiempo</b> · la vida útil</span></p>
+     <p class="lc-pro">Tu agenda está llena y tu trabajo es bueno. Este libro te muestra cómo construir, con lo que ya eres, tu marca personal y una vida con tiempo para los tuyos.</p>
+     <p class="lc-pro">Son 33 lecciones nacidas caminando el bosque, donde el alerce crece menos de un milímetro por año y dura siglos. Cada una trae una escena real y una acción para esta semana.</p>
+     <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
+     <div class="lc-btns">
+      <a class="btn" data-compra="bosque" href="#"><span>Lo quiero · <span data-precio="bosque">27</span> USD</span></a>
+      <a class="btn claro" data-link="cap" data-hash="bosque" href="#">Leer el primer capítulo</a>
+     </div>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LA OBRA COMPLETA ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="obra card rv">
+   <span class="kick">La obra completa</span>
+   <h2 class="t3">Los 8 libros <em>y mi app.</em></h2>
+   <p class="obra-t">Los cinco del sur, <i>Sanadores Libres</i>, <i>Héroe descapado</i> y <i>Las 7 libertades fundamentales</i>, con tus primeros 5 días en mi app. Sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
+   <div class="botones"><a class="btn" data-compra="obra" href="#"><span>Los 8 + la app · <span data-precio="obra">97</span> USD</span> <span class="fl">→</span></a></div>
+   <p class="seguro con-pago"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+   <p class="seguro sin-pago"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LO QUE CUENTAN ═══ -->
+<section class="sec">
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">Lo que cuentan</span>
+   <h2 class="t2 rv">Profesionales que hicieron <em>el camino conmigo.</em></h2>
+  </div>
+  <div class="testi" data-muro="4" data-desde="9"></div>
+  <p class="desliza">Desliza para ver más →</p>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec centro" data-barra-hasta>
+ <div class="wrap">
+  <hr class="regla">
+  <p class="frase-final rv">Empieza <em>por el lago.</em></p>
+  <div class="botones rv"><a class="btn" data-link="cap" data-hash="lago" href="#"><span>Leer el primer capítulo</span> <span class="fl">→</span></a></div>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+</div></footer>
+
+<div class="barra"><a class="btn" data-link="cap" data-hash="lago" href="#"><span>Leer el primer capítulo</span></a></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+
+<script>/*BASE_JS*/</script>
+</body>
+</html>

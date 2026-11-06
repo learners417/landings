@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Recursos sin costo · Javo Katz</title>
+<meta name="description" content="Seis herramientas con resultado en minutos, tu plan de 10.000 USD, la comunidad y el primer capítulo de cada libro.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Recursos sin costo · Javo Katz">
+<meta property="og:description" content="Herramientas, comunidad y casos reales para profesionales que atienden 1 a 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(24px,5vw,48px)}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.tres div{padding:16px 6px;text-align:center;font-size:16px;font-weight:700;line-height:1.3}
+.tres div+div{border-left:1px solid var(--linea)}
+.tres b{display:block;font-family:var(--f-titulo);font-size:40px;font-weight:600;line-height:1;color:var(--oro-texto)}
+
+/* el plan, destacado */
+.plan-g{display:grid;gap:24px;align-items:center;padding:clamp(24px,5vw,40px);border-top:6px solid var(--montana)}
+@media (min-width:880px){ .plan-g{grid-template-columns:1.2fr 1fr} }
+.plan-g h2{font-size:clamp(36px,8vw,52px);line-height:1.04}
+.plan-g ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.plan-g li{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;font-size:18px;line-height:1.45}
+.plan-g li b{display:block;font-weight:800}
+.plan-g li span.n{width:38px;height:38px;border-radius:50%;border:1px solid var(--oro);display:grid;place-items:center;font-family:var(--f-titulo);font-size:21px;font-weight:600;color:var(--oro-texto)}
+
+/* las herramientas */
+.herr{display:grid;gap:14px;margin-top:40px}
+@media (min-width:700px){ .herr{grid-template-columns:1fr 1fr} }
+@media (min-width:1080px){ .herr{grid-template-columns:repeat(3,1fr)} }
+.h{position:relative;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;padding:22px;background:var(--papel-2);border:1px solid var(--linea);border-radius:20px;text-decoration:none;color:inherit;transition:transform .3s var(--e),border-color .3s,box-shadow .3s}
+.h:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 26px 44px -32px rgba(43,39,36,.55)}
+.h .ic{width:56px;height:56px;border-radius:16px;background:var(--c);display:grid;place-items:center}
+.h .ic svg{width:26px;height:26px;stroke:#FBF8F1;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.h .eti{font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.h b{display:block;font-family:var(--f-titulo);font-size:27px;font-weight:600;line-height:1.08;margin-top:2px}
+.h p{margin-top:6px;font-size:17px;line-height:1.45;color:var(--tinta-2)}
+.h .res{display:inline-block;margin-top:10px;font-size:16px;font-weight:800;color:var(--verde)}
+.h.empieza{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta)}
+.h.empieza::after{content:"Empieza aquí";position:absolute;top:-13px;right:18px;background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+
+/* la comunidad */
+.comu{display:grid;gap:28px;padding:clamp(24px,5vw,40px)}
+@media (min-width:880px){ .comu{grid-template-columns:1fr 1fr;align-items:center} }
+.modulos{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.modulos li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 16px;border-radius:14px;background:var(--papel);font-size:17px;font-weight:700}
+.modulos li span{font-size:16px;font-weight:800;color:var(--verde);white-space:nowrap}
+.modulos li.niv span{color:var(--oro-texto)}
+
+/* el libro */
+.libro-g{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center;padding:clamp(22px,5vw,34px)}
+@media (max-width:520px){ .libro-g{grid-template-columns:96px 1fr;gap:16px} }
+.libro-g img{width:100%;border-radius:2px 5px 5px 2px;box-shadow:12px 18px 30px -16px rgba(20,18,16,.6)}
+.libro-g h3{font-size:clamp(28px,6.6vw,38px);line-height:1.06}
+.libro-g p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
+</style>
+</head>
+<body data-pagina="recursos" data-pagos="">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" data-link="generador" href="#"><span>Hacer mi plan</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap">
+  <span class="kick rv">Recursos sin costo</span>
+  <h1 class="t1 rv d1">Empieza hoy, <em>con tus números.</em></h1>
+  <p class="lead rv d2">Herramientas que te dan un resultado en minutos, la comunidad y casos reales. <b>Para profesionales que atienden 1 a 1 hace años.</b></p>
+  <div class="botones rv d3">
+   <a class="btn" data-link="generador" href="#"><span>Hacer mi plan de 10.000 USD</span> <span class="fl">→</span></a>
+   <a class="btn claro" href="#herramientas">Ver las herramientas</a>
+  </div>
+  <div class="tres rv">
+   <div><b data-count="6">6</b>herramientas</div>
+   <div><b>60 s</b>tu plan</div>
+   <div><b data-count="8">8</b>primeros capítulos</div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ EL PLAN ═══ -->
+<section class="sec junto">
+ <div class="wrap ancho">
+  <div class="plan-g card rv">
+   <div>
+    <span class="kick">El más pedido</span>
+    <h2>Tu plan para llevar tu facturación a <em>10.000 USD al mes.</em></h2>
+    <p class="lead">Respondes 7 preguntas y te llevas tu plan con tus números. Te lo mando también por WhatsApp.</p>
+    <div class="botones"><a class="btn" data-link="generador" href="#"><span>Hacer mi plan</span> <span class="fl">→</span></a></div>
+   </div>
+   <ul>
+    <li><span class="n">1</span><span><b>Tu techo real</b>Cuántas sesiones necesitas a tu precio de hoy.</span></li>
+    <li><span class="n">2</span><span><b>Tu programa de 1.000 USD</b>Un borrador con nombre, etapas y contenidos.</span></li>
+    <li><span class="n">3</span><span><b>Tu cuenta</b>Lo que facturas y las horas que trabajas en cada modelo.</span></li>
+    <li><span class="n">4</span><span><b>Tus 3 pasos de esta semana</b>En orden, para empezar hoy.</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LAS HERRAMIENTAS ═══ -->
+<section class="sec" id="herramientas">
+ <div class="wrap ancho">
+  <span class="kick rv">Seis herramientas</span>
+  <h2 class="t2 rv">Pones tus datos, <em>ves tu resultado.</em></h2>
+  <p class="lead rv">Empieza por tu hora real. Después, los 5 mensajes: dan resultado esta misma semana.</p>
+  <div class="herr">
+   <a class="h empieza rv" style="--c:var(--lago)" href="https://tuclinica.digital/phr"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M10 2h4"/></svg></span><span><span class="eti">Hora real</span><b>Cuánto ganas de verdad por hora</b><p>Con tus sesiones, tus horas sin cobrar y tus gastos.</p><span class="res">2 minutos</span></span></a>
+   <a class="h rv d1" style="--c:var(--montana)" href="https://tuclinica.digital/generador-caja"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/><path d="M9 10h6"/></svg></span><span><span class="eti">Caja</span><b>Los 5 mensajes de reactivación</b><p>Para volver a hablar con consultantes que dejaron de venir.</p><span class="res">Listos para enviar</span></span></a>
+   <a class="h rv d2" style="--c:var(--rio)" href="https://tuclinica.digital/automatizar"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.5-5.8"/><path d="M4 4v5h5"/></svg></span><span><span class="eti">Sistema</span><b>Lo que puedes automatizar</b><p>Doce procesos de tu semana, con la herramienta para cada uno.</p><span class="res">12 procesos</span></span></a>
+   <a class="h rv" style="--c:var(--bosque)" href="https://tuclinica.digital/creatuprotocolo"><span class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="m9 11.5 2 2 4-4M9 17h6"/></svg></span><span><span class="eti">Protocolo</span><b>De sesiones sueltas a un protocolo</b><p>Una plantilla para ofrecer tu trabajo como un camino con etapas.</p><span class="res">Plantilla lista</span></span></a>
+   <a class="h rv d2" style="--c:var(--libertades)" href="https://tuclinica.digital/guiadeprecios"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M17 7.5c0-1.9-2.2-3.5-5-3.5s-5 1.6-5 3.5 2.2 3 5 3.5 5 1.6 5 3.5-2.2 3.5-5 3.5-5-1.6-5-3.5"/></svg></span><span><span class="eti">Precio</span><b>Tu precio correcto</b><p>La fórmula y las respuestas a las 3 objeciones que más escuchas.</p><span class="res">Con las respuestas</span></span></a>
+   <a class="h rv" style="--c:var(--sanadores)" href="https://tuclinica.digital/impostor"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.7 1.3 4.3 1.3 6 0"/></svg></span><span><span class="eti">Creencias</span><b>El patrón que te frena</b><p>Identificas una creencia que te limita y el primer paso para cortarla.</p><span class="res">Personalizado</span></span></a>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LA COMUNIDAD ═══ -->
+<section class="sec junto">
+ <div class="wrap ancho">
+  <div class="comu card rv">
+   <div>
+    <span class="kick">La comunidad</span>
+    <h2 class="t2">Directores <em>de clínicas.</em></h2>
+    <p class="lead">Donde profesionales que atienden 1 a 1 arman sistemas que trabajan mientras ellos atienden. Los jueves, en vivo, traes tu caso y te vas con un plan.</p>
+    <div class="botones"><a class="btn" data-link="comunidad" href="#" target="_blank" rel="noopener"><span>Entrar a la comunidad</span> <span class="fl">→</span></a></div>
+   </div>
+   <ul class="modulos">
+    <li>Bienvenida <span>Sin costo</span></li>
+    <li>Diagnóstico: tu cuello de botella <span>Sin costo</span></li>
+    <li>Sala de urgencias <span>Sin costo</span></li>
+    <li class="niv">Sistemas <span>Nivel 2</span></li>
+    <li class="niv">Marketing <span>Nivel 3</span></li>
+    <li class="niv">Conversión <span>Nivel 4</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LO QUE CUENTAN ═══ -->
+<section class="sec">
+ <div class="wrap ancho">
+  <span class="kick rv">Casos reales</span>
+  <h2 class="t2 rv">Lo que pasa cuando <em>el modelo cambia.</em></h2>
+  <div class="testi" data-muro="8" data-desde="2"></div>
+  <p class="desliza">Desliza para ver más →</p>
+  <div class="capturas" data-capturas></div>
+ </div>
+</section>
+
+<!-- ═══ EL LIBRO ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="libro-g card rv">
+   <img data-img="tapas/sanadores-chica.webp" alt="Tapa de Sanadores Libres" width="320" height="452" loading="lazy">
+   <div>
+    <span class="kick">El libro madre</span>
+    <h3>Sanadores Libres</h3>
+    <p>De autoempleado a director de tu clínica digital. El primer capítulo se lee aquí, sin costo, página por página.</p>
+    <div class="botones" style="margin-top:18px"><a class="btn claro" data-link="cap" data-hash="sanadores" href="#"><span>Leer el primer capítulo</span> <span class="fl">→</span></a></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec junto">
+ <div class="wrap centro">
+  <div class="lomos rv" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <h2 class="t2 rv" style="margin-top:28px">¿Quieres que lo veamos <em>en tu caso?</em></h2>
+  <p class="lead rv">En 45 minutos conmigo vemos tus números y te vas con tu plan de acción.</p>
+  <div class="botones rv"><a class="btn" data-link="agenda" href="#"><span>Agendar mi diagnóstico</span> <span class="fl">→</span></a></div>
+  <p class="micro rv">o empieza por la app con <a class="link" data-link="numero" href="#">El Número</a>, <b><span data-precio="numero">27</span> USD</b></p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+ <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+</div></footer>
+
+<div class="barra"><a class="btn" data-link="generador" href="#"><span>Hacer mi plan de 10.000 USD</span></a></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+
+<script>/*BASE_JS*/</script>
+</body>
+</html>

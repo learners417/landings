@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gracias · Javo Katz</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F4EEE3">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+.gracias{padding-top:clamp(30px,7vw,72px)}
+.paso-g{display:grid;grid-template-columns:52px 1fr;gap:18px;margin-top:34px;padding:clamp(22px,5vw,32px)}
+.paso-g .n{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--tinta);color:#F1E3C6;font-family:var(--f-titulo);font-size:28px;font-weight:600}
+.paso-g h2{font-size:clamp(30px,6.6vw,40px);line-height:1.08}
+.paso-g p{margin-top:10px;font-size:18px;color:var(--tinta-2)}
+@media (max-width:520px){ .paso-g{grid-template-columns:1fr} }
+.correo{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.correo input{flex:1 1 240px;min-height:58px;border:1px solid var(--linea);border-radius:16px;padding:0 18px;font:inherit;font-size:18px;background:var(--papel);color:var(--tinta)}
+.correo input:focus{outline:2px solid var(--oro-texto);outline-offset:2px}
+.correo .btn{flex:1 1 220px}
+.descargas{display:grid;gap:12px;margin-top:20px}
+@media (min-width:720px){ .descargas{grid-template-columns:1fr 1fr} }
+.dl{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:center;padding:14px;border:1px solid var(--linea);border-radius:16px;background:var(--papel);text-decoration:none;transition:border-color .25s,transform .25s var(--e)}
+.dl:hover{border-color:var(--tinta);transform:translateY(-2px)}
+.dl img{width:64px;border-radius:1px 3px 3px 1px;box-shadow:5px 8px 14px -8px rgba(0,0,0,.55)}
+.dl b{display:block;font-family:var(--f-titulo);font-size:23px;font-weight:600;line-height:1.1}
+.dl span{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:16px;font-weight:800;color:var(--verde)}
+.dl span::before{content:"";width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232F5638' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/18px no-repeat}
+.oculto{display:none !important}
+.ayuda{margin-top:44px;text-align:center;font-size:17px;color:var(--tinta-2)}
+</style>
+</head>
+<body data-pagos="" data-pagina="gracias">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="libros" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+</div></header>
+
+<main>
+<section class="sec gracias">
+ <div class="wrap">
+  <span class="kick rv">Listo</span>
+  <h1 class="t1 rv d1">Gracias. <em>Ya es tuyo.</em></h1>
+  <p class="lead rv d2" data-que>Aquí tienes todo lo que necesitas para empezar hoy.</p>
+
+  <!-- 1 · la app (El Número y la obra completa) -->
+  <div class="paso-g card rv oculto" data-para="numero obra">
+   <div class="n">1</div>
+   <div>
+    <h2>Entra a la app</h2>
+    <p>En unos minutos te llega un correo para entrar a <b>app.tuclinica.digital</b>. Revisa también spam y promociones. Si en una hora no llegó, escribe aquí tu correo y mándamelo por WhatsApp: te lo activo ese mismo día.</p>
+    <form class="correo" data-correo>
+     <input type="email" name="correo" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo">
+     <button class="btn" type="submit"><span>Mandar por WhatsApp</span> <span class="fl">→</span></button>
+    </form>
+    <p>Tus 21 días empiezan cuando entras por primera vez.</p>
+   </div>
+  </div>
+
+  <!-- 2 · los libros -->
+  <div class="paso-g card rv">
+   <div class="n" data-n-libros>2</div>
+   <div>
+    <h2 data-titulo-libros>Descarga tus libros</h2>
+    <p>En PDF, con su tapa. Guárdalos en tu celular o en tu computadora; son tuyos.</p>
+    <div class="descargas">
+     <a class="dl oculto" data-libro="sanadores" data-desc="Sanadores-Libres-Javo-Katz.pdf" href="#" download><img data-img="tapas/sanadores-chica.webp" alt="" width="320" height="452"><div><b>Sanadores Libres</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="lago" data-desc="Lo-que-el-lago-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/lago-chica.webp" alt="" width="320" height="480"><div><b>Lo que el lago te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="montana" data-desc="Lo-que-la-montana-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/montana-chica.webp" alt="" width="320" height="480"><div><b>Lo que la montaña te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="viento" data-desc="Lo-que-el-viento-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/viento-chica.webp" alt="" width="320" height="480"><div><b>Lo que el viento te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="rio" data-desc="Lo-que-el-rio-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/rio-chica.webp" alt="" width="320" height="480"><div><b>Lo que el río te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="bosque" data-desc="Lo-que-el-bosque-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/bosque-chica.webp" alt="" width="320" height="480"><div><b>Lo que el bosque te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="heroe" data-desc="Heroe-descapado-Javo-Katz.pdf" href="#" download><img data-img="tapas/heroe-chica.webp" alt="" width="320" height="491"><div><b>Héroe descapado</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="libertades" data-desc="Las-7-libertades-fundamentales-Javo-Katz.pdf" href="#" download><img data-img="tapas/libertades-chica.webp" alt="" width="320" height="491"><div><b>Las 7 libertades fundamentales</b><span>Descargar</span></div></a>
+    </div>
+    <div class="botones oculto" data-zip style="margin-top:18px"><a class="btn claro" data-desc="Los-8-libros-Javo-Katz.zip" href="#" download><span>Los 8 juntos, en un archivo · 16 MB</span></a></div>
+   </div>
+  </div>
+
+  <!-- 3 · la comunidad -->
+  <div class="paso-g card rv">
+   <div class="n" data-n-comunidad>3</div>
+   <div>
+    <h2>Súmate a la comunidad</h2>
+    <p>Ahí están los profesionales que leen estos libros y hacen el camino. Entra, preséntate y cuéntanos por qué libro empiezas.</p>
+    <div class="botones" style="margin-top:20px"><a class="btn claro" data-link="comunidad" href="#" target="_blank" rel="noopener">Entrar a la comunidad <span class="fl">→</span></a></div>
+   </div>
+  </div>
+
+  <p class="ayuda rv">¿Algo no se descarga o no te llegó el acceso? <a class="link" data-wa="Hola Javo, ya pagué y necesito ayuda con mi acceso." href="#">Escríbeme por WhatsApp</a>.</p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+</div></footer>
+
+
+<script>
+(function(){
+  var C=window.TCD||{}, P=C.precios||{};
+  var LIBROS=['sanadores','lago','montana','viento','rio','bosque','heroe','libertades'];
+  var NOM={numero:'El Número',obra:'la obra completa',sanadores:'Sanadores Libres',lago:'Lo que el lago te enseña',montana:'Lo que la montaña te enseña',viento:'Lo que el viento te enseña',rio:'Lo que el río te enseña',bosque:'Lo que el bosque te enseña',heroe:'Héroe descapado',libertades:'Las 7 libertades fundamentales'};
+  var c='';
+  try{c=(new URLSearchParams(location.search).get('c')||'').toLowerCase();}catch(e){}
+  if(!NOM[c]) c='';
+  var libros = c==='obra' ? LIBROS : c==='numero' ? ['lago'] : (c ? [c] : []);
+  var conApp = c==='numero' || c==='obra';
+  document.querySelectorAll('[data-desc]').forEach(function(a){
+    var D=C.descargas||{}, k=a.getAttribute('data-desc'), u=(typeof D==='object')?(D[k]||''):(D?D+k:'');
+    if(u){ a.href=u; return; }
+    a.removeAttribute('download');
+    a.href='https://wa.me/'+(C.whatsapp||'')+'?text='+encodeURIComponent('Hola Javo, ya pagué. ¿Me mandas mi libro? ('+k.replace(/-Javo-Katz\.(pdf|zip)$/,'').replace(/-/g,' ')+')');
+    a.target='_blank'; a.rel='noopener';
+  });
+
+  document.querySelectorAll('[data-para]').forEach(function(el){ if(el.getAttribute('data-para').split(' ').indexOf(c)>=0) el.classList.remove('oculto'); });
+  if(c==='obra') document.querySelector('[data-zip]').classList.remove('oculto');
+  libros.forEach(function(k){ var a=document.querySelector('.dl[data-libro="'+k+'"]'); if(a) a.classList.remove('oculto'); });
+  if(!conApp){ document.querySelector('[data-n-libros]').textContent='1'; document.querySelector('[data-n-comunidad]').textContent='2'; }
+  var t=document.querySelector('[data-titulo-libros]');
+  if(libros.length===1) t.textContent='Descarga tu libro';
+  var que=document.querySelector('[data-que]');
+  if(c==='numero') que.innerHTML='Compraste <b>El Número</b>. Entra a la app y descarga <i>Lo que el lago te enseña</i>.';
+  else if(c==='obra') que.innerHTML='Compraste <b>la obra completa</b>: los 8 libros y El Número. Empieza por la app y descarga tus libros.';
+  else if(c) que.innerHTML='Compraste <b>'+NOM[c]+'</b>. Descárgalo aquí abajo.';
+  else {
+    que.innerHTML='Si llegaste aquí después de pagar, escríbeme por WhatsApp y te paso tus links ahora mismo.';
+    document.querySelector('.descargas').closest('.paso-g').classList.add('oculto');
+    document.querySelector('[data-n-comunidad]').textContent='1';
+  }
+
+  /* el correo para la app viaja por WhatsApp, escrito por la persona */
+  var f=document.querySelector('[data-correo]');
+  if(f) f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=(f.correo.value||'').trim(); if(!v) return;
+    var msg='Hola Javo, ya pagué '+(c==='obra'?'la obra completa':'El Número')+'. Mi correo para entrar a la app es: '+v;
+    window.open('https://wa.me/'+(C.whatsapp||'')+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  });
+
+  /* la compra, una sola vez por sesión */
+  window.TCD_COMPRA = c ? { value: P[c]||0, currency:'USD', content_name:c } : null;
+})();
+</script>
+<script>/*BASE_JS*/</script>
+<script>
+(function(){ var d=window.TCD_COMPRA; if(!d) return;
+  try{ var k='tcd_compra_'+d.content_name; if(sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); }catch(e){}
+  if(window.px) px('Purchase', d);
+})();
+</script>
+</body>
+</html>

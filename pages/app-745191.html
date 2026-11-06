@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tu app a medida · Javo Katz</title>
+<meta name="description" content="Tu método, tus ejercicios y tu IA en el celular de cada consultante, con tu marca. Lista en 21 días, con fecha por escrito.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convierte tu consulta en tu propia app">
+<meta property="og:description" content="Tu método, tus ejercicios y tu IA en el celular de cada consultante, con tu marca.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ── portada ── */
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(48px,8vw,88px)}
+.portada .grid{display:grid;gap:44px;align-items:center}
+@media (min-width:980px){ .portada .grid{grid-template-columns:1.08fr .92fr;gap:56px} }
+.escena{position:relative;max-width:440px;margin:0 auto;width:100%;display:grid;place-items:center;padding-bottom:40px}
+.escena .tel{animation:flota 7s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){ .escena .tel{animation:none} }
+@media (max-width:560px){ .escena .tel{zoom:.86} }
+.escena .ficha{position:absolute;left:0;bottom:0;z-index:3;background:var(--papel-2);border:1px solid var(--linea);border-radius:18px;padding:14px 18px;box-shadow:var(--sombra);max-width:58%}
+.escena .ficha span{display:block;font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto)}
+.escena .ficha b{display:block;font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.15;margin-top:2px}
+@media (max-width:560px){ .escena .ficha{position:relative;left:auto;bottom:auto;margin:-28px auto 0;max-width:80%;text-align:center} }
+/* ── hoy y con tu app ── */
+.canjes{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:14px}
+.canje{display:grid;gap:12px;padding:22px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+@media (min-width:760px){ .canje{grid-template-columns:1fr 1fr;gap:28px;align-items:start} }
+.canje span{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.canje .hoy span{color:var(--rojo)}
+.canje .luego span{color:var(--verde)}
+.canje p{margin-top:4px;font-size:18px;line-height:1.5}
+.canje .hoy p{color:var(--tinta-2)}
+/* ── con fecha por escrito ── */
+.pacto-app{padding:clamp(24px,5vw,40px);text-align:center}
+.pacto-app p.texto-p{margin:14px auto 0;max-width:30em;font-size:19px;color:var(--tinta-2)}
+.pacto-app .tres{margin-top:30px}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.tres div{padding:16px 6px;text-align:center;font-size:16px;font-weight:700;line-height:1.3}
+.tres div+div{border-left:1px solid var(--linea)}
+.tres b{display:block;font-family:var(--f-titulo);font-size:40px;font-weight:600;line-height:1;color:var(--oro-texto)}
+</style>
+</head>
+<body data-pagina="app-medida" data-pagos="">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Agendar diagnóstico</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap ancho"><div class="grid">
+  <div>
+   <span class="kick rv">Tu app a medida</span>
+   <h1 class="t1 rv d1">Convierte tu consulta <em>en tu propia app.</em></h1>
+   <p class="lead rv d2">Tu método, tus ejercicios y tu IA en el celular de cada consultante, con tu marca. <b>Lista en 21 días, con fecha por escrito.</b></p>
+   <div class="botones rv d3">
+    <a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Quiero mi diagnóstico sin costo</span> <span class="fl">→</span></a>
+   </div>
+   <p class="micro rv d3">Te recibirá Javo personalmente.</p>
+  </div>
+  <div class="escena rv d2">
+   <div class="tel"><div class="pant">
+    <div class="isla"></div>
+    <div class="estado"><span>9:41</span><i><svg viewBox="0 0 17 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 4h2v7H9zM13 1h2v10h-2z" fill="#2A2118"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#2A2118" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="#2A2118"/></svg></i></div>
+    <div class="app-head"><b>Hoy</b><span class="cint">Semana 3</span></div>
+    <div class="app-body"><div class="vista on" style="position:static">
+     <div class="app-card">
+      <div class="app-k">Tu sesión de hoy</div>
+      <div class="app-t">Tu plan de la semana</div>
+      <div class="app-m">20 min · con tu profesional</div>
+      <div class="app-btn">EMPEZAR</div>
+     </div>
+     <div class="dias">
+      <div class="dia"><b>1</b>Tu bienvenida <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+      <div class="dia"><b>2</b>Tu evaluación <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+      <div class="dia on"><b>3</b>Tu plan de la semana</div>
+      <div class="dia"><b>4</b>Tu seguimiento<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="dia"><b>5</b>Tu cierre<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+     </div>
+    </div></div>
+    <div class="tabs"><button class="on" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hoy</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19c4-1 4-13 8-14s4 13 8 14"/></svg>Camino</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14v9H9l-4 3z"/></svg>Tu IA</button></div>
+   </div></div>
+   <div class="ficha"><span>Con tu marca</span><b>Todo a tu nombre</b></div>
+  </div>
+ </div></div>
+</section>
+
+<!-- ═══ HOY Y CON TU APP ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Lo que cambia</span>
+  <h2 class="t2 rv">Más tiempo, más orden, <em>más profesional.</em></h2>
+  <ul class="canjes">
+   <li class="canje rv"><div class="hoy"><span>Hoy</span><p>Armas cada plan a mano, en Word o en una planilla.</p></div><div class="luego"><span>Con tu app</span><p>Tu IA lo arma con tu método y tú lo revisas.</p></div></li>
+   <li class="canje rv"><div class="hoy"><span>Hoy</span><p>Mandas PDFs y audios por WhatsApp, a cualquier hora.</p></div><div class="luego"><span>Con tu app</span><p>Tus videos, ejercicios y planes en el celular de cada consultante. Tu WhatsApp, libre.</p></div></li>
+   <li class="canje rv"><div class="hoy"><span>Hoy</span><p>Cada consultante vive en una carpeta distinta.</p></div><div class="luego"><span>Con tu app</span><p>Cada consultante con su ficha y sus sesiones, en un solo lugar.</p></div></li>
+   <li class="canje rv"><div class="hoy"><span>Hoy</span><p>Te ves menos profesional de lo que eres.</p></div><div class="luego"><span>Con tu app</span><p>Tu marca, en la app que tus consultantes abren todos los días.</p></div></li>
+  </ul>
+ </div>
+</section>
+
+<!-- ═══ LO QUE LLEVA ADENTRO ═══ -->
+<section class="sec">
+ <div class="wrap ancho">
+  <span class="kick rv">Lo que lleva adentro</span>
+  <h2 class="t2 rv">Tu método, <em>tal como lo das.</em></h2>
+  <div class="items">
+   <div class="item card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18h4v-4h4v-4h4V6h4"/></svg></div><div><b>Tu programa, por etapas</b><p>Tus sesiones, tus videos y tus ejercicios, en el orden en que los das.</p></div></div>
+   <div class="item card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/><path d="M9 10h6"/></svg></div><div><b>Tu IA, con tu tono</b><p>Responde y arma planes con tu método, para que tú solo revises.</p></div></div>
+   <div class="item card rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><div><b>Las fichas de tus consultantes</b><p>Cada sesión cargada y cada avance a la vista.</p></div></div>
+   <div class="item card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><div><b>Dos revisiones incluidas</b><p>Después de recibirla, la ajustamos dos veces sin costo.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CÓMO SE ARMA ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Cómo se arma</span>
+  <h2 class="t2 rv">Tú atiendes. <em>Nosotros la construimos.</em></h2>
+  <ol class="ruta">
+   <li class="paso rv" data-n="1"><h3>Tu diagnóstico</h3><p class="min">45 minutos, conmigo</p><p>Vemos tu método, tus materiales y lo que necesita tu app.</p></li>
+   <li class="paso rv" data-n="2"><h3>La construimos</h3><p class="min">Nuestro equipo</p><p>Tu programa, tus videos y tu IA adentro, con tu marca.</p></li>
+   <li class="paso rv" data-n="3"><h3>La recibes funcionando</h3><p class="min">Día 21</p><p>Con fecha por escrito, lista para tus consultantes.</p></li>
+   <li class="paso rv" data-n="4"><h3>La ajustamos</h3><p class="min">Dos revisiones</p><p>Incluidas, para que quede como la quieres.</p></li>
+  </ol>
+ </div>
+</section>
+
+<!-- ═══ CON FECHA POR ESCRITO ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="pacto-app card rv">
+   <span class="kick">Con fecha por escrito</span>
+   <h2 class="t3">La recibes funcionando <em>en 21 días.</em></h2>
+   <p class="texto-p">La mitad al empezar y la otra mitad cuando la recibes funcionando.</p>
+   <div class="tres">
+    <div><b>21</b>días, con fecha</div>
+    <div><b>50 %</b>al recibirla</div>
+    <div><b>2</b>revisiones incluidas</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LO QUE CUENTAN ═══ -->
+<section class="sec">
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">Lo que cuentan</span>
+   <h2 class="t2 rv">Profesionales que ya <em>trabajan con su app.</em></h2>
+  </div>
+  <div class="testi" data-muro="4" data-desde="14"></div>
+  <p class="desliza">Desliza para ver más →</p>
+  <div class="capturas" data-capturas></div>
+ </div>
+</section>
+
+<!-- ═══ PREGUNTAS ═══ -->
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">Preguntas</span>
+  <h2 class="t2 rv">Antes <em>de agendar.</em></h2>
+  <div class="faq rv">
+   <div class="fq"><button type="button">¿Cuánto cuesta?<i></i></button><div class="r"><div><p>Depende de tu método y de lo que lleva adentro. Te lo digo en el diagnóstico, con fecha y por escrito.</p></div></div></div>
+   <div class="fq"><button type="button">¿Sirve si tengo todo en Word, Excel y PDFs?<i></i></button><div class="r"><div><p>Es el caso ideal: tu método ya existe. Lo pasamos a tu app.</p></div></div></div>
+   <div class="fq"><button type="button">¿Necesito saber de tecnología?<i></i></button><div class="r"><div><p>La construimos nosotros. Tú la revisas y la usas con tus consultantes.</p></div></div></div>
+   <div class="fq"><button type="button">¿De quién es la app?<i></i></button><div class="r"><div><p>Tuya: todo a tu nombre.</p></div></div></div>
+   <div class="fq"><button type="button">¿Y si además quiero los 5 sistemas?<i></i></button><div class="r"><div><p>La app es el sistema 4. En el diagnóstico vemos si te conviene solo la app o los 5 sistemas, con mentoría o instalación.</p></div></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec centro" data-barra-hasta>
+ <div class="wrap">
+  <hr class="regla">
+  <p class="frase-final rv">Tu consulta, <em>en tu propia app.</em></p>
+  <div class="botones rv"><a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Quiero mi diagnóstico sin costo</span> <span class="fl">→</span></a></div>
+  <p class="micro rv">Te recibirá Javo personalmente.</p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+ <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+</div></footer>
+
+<div class="barra"><a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Quiero mi diagnóstico</span></a></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+
+<script>/*BASE_JS*/</script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Montaje en GHL · Javo Katz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+:root{--papel:#F4EEE3;--papel-2:#FBF8F1;--papel-3:#EDE5D6;--tinta:#2B2724;--tinta-2:#5A534A;--linea:#DCD2C1;--oro:#A8875A;--oro-texto:#7A5F33;--verde:#2F5638;--verde-hondo:#264730;--rojo:#9C3626;--f-titulo:'Cormorant Garamond',Georgia,serif;--f-texto:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;--r:22px;--e:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0}
+html{background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:18px;line-height:1.55;font-weight:500;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+body{min-height:100vh}
+em{font-style:italic;color:var(--oro-texto)}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+
+header.cab-panel{padding:44px 0 26px}
+.kick{display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-texto)}
+.kick::before{content:"";width:34px;height:1px;background:var(--oro)}
+h1{font-family:var(--f-titulo);font-weight:500;font-size:clamp(52px,12vw,84px);line-height:.98;letter-spacing:-.02em;margin-top:16px}
+.lead{font-size:20px;color:var(--tinta-2);margin-top:14px;max-width:34em}
+.avance{margin-top:26px;display:flex;align-items:center;gap:18px}
+.avance b{font-family:var(--f-titulo);font-size:48px;font-weight:600;line-height:1}
+.avance span{font-size:17px;color:var(--tinta-2)}
+.barra-av{flex:1;height:6px;border-radius:6px;background:var(--papel-3);overflow:hidden;min-width:80px}
+.barra-av i{display:block;height:100%;width:0;background:var(--verde);transition:width .5s var(--e)}
+
+nav.tabs{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+nav.tabs .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:12px;padding-bottom:12px;scrollbar-width:none}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--linea);background:var(--papel-2);font-size:16px;font-weight:800;color:var(--tinta);text-decoration:none;white-space:nowrap}
+nav.tabs a small{font-size:16px;font-weight:700;color:var(--oro-texto)}
+nav.tabs a.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
+nav.tabs a.on small{color:#F1E3C6}
+
+section.vista{display:none;padding:34px 0 120px}
+section.vista.on{display:block}
+h2{font-family:var(--f-titulo);font-weight:500;font-size:clamp(38px,8vw,54px);line-height:1.02;letter-spacing:-.01em}
+.bajada{font-size:19px;color:var(--tinta-2);margin-top:10px;max-width:36em}
+
+.pasos{list-style:none;padding:0;margin-top:30px;display:grid;gap:14px}
+.pasos li{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:22px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r)}
+.pasos .n{width:44px;height:44px;border-radius:50%;border:1px solid var(--oro);display:grid;place-items:center;font-family:var(--f-titulo);font-size:24px;font-weight:600;color:var(--oro-texto)}
+.pasos b{display:block;font-family:var(--f-titulo);font-size:28px;font-weight:600;line-height:1.1}
+.pasos p{margin-top:6px;font-size:18px;color:var(--tinta-2)}
+.pasos q{quotes:"«" "»";font-weight:700;color:var(--tinta)}
+
+.filas{display:grid;gap:14px;margin-top:28px}
+.fila{padding:22px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:0 18px 36px -32px rgba(43,39,36,.5);transition:border-color .3s,background .3s}
+.fila.hecha{background:#EEF2EA;border-color:#C9D8C8}
+.fila .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ruta{font-family:var(--f-titulo);font-size:clamp(28px,6.4vw,36px);font-weight:600;line-height:1.05;word-break:break-all}
+.tipo{flex:none;font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid}
+.tipo.nueva{color:var(--verde);border-color:var(--verde)}
+.tipo.reemplaza{color:var(--tinta);border-color:var(--tinta)}
+.tipo.capa{color:var(--oro-texto);border-color:var(--oro)}
+.nom{margin-top:4px;font-size:18px;font-weight:700}
+.nota{margin-top:6px;font-size:17px;color:var(--tinta-2)}
+.acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;align-items:center}
+.b{min-height:48px;padding:10px 18px;border-radius:999px;border:1px solid var(--tinta);background:var(--papel-2);font-size:16px;font-weight:800}
+.b:hover{background:var(--papel-3)}
+.b.prim{background:var(--tinta);color:var(--papel-2);box-shadow:inset 0 0 0 1px rgba(168,135,90,.55)}
+.b.prim:hover{background:#3a3430}
+.b.ok{background:var(--verde);border-color:var(--verde);color:var(--papel-2)}
+.lista{margin-left:auto;min-height:48px;display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:999px;border:1px solid var(--linea);background:var(--papel);font-size:16px;font-weight:800}
+.lista i{width:26px;height:26px;border-radius:50%;border:1px solid var(--tinta-2);display:grid;place-items:center}
+.lista[aria-pressed="true"]{border-color:var(--verde);color:var(--verde)}
+.lista[aria-pressed="true"] i{background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--verde)}
+
+.extra{margin-top:16px;padding:22px;border:1px solid var(--oro);border-radius:var(--r);background:var(--papel-2)}
+.extra .eti{font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto)}
+.extra b{display:block;font-family:var(--f-titulo);font-size:28px;font-weight:600;line-height:1.1;margin-top:6px}
+.extra p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
+.extra code{display:block;margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--papel);border:1px solid var(--linea);font:600 16px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--tinta);word-break:break-all}
+.extra .acciones{margin-top:12px}
+
+.pend{list-style:none;padding:0;margin-top:26px;display:grid;gap:14px}
+.pend li{padding:22px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r)}
+.pend b{display:block;font-family:var(--f-titulo);font-size:28px;font-weight:600;line-height:1.1}
+.pend p{margin-top:6px;font-size:18px;color:var(--tinta-2)}
+.sig{margin-top:26px}
+
+.velo{position:fixed;inset:0;z-index:50;background:rgba(43,39,36,.55);display:none;align-items:center;justify-content:center;padding:14px}
+.velo.on{display:flex}
+.caja{width:min(980px,100%);max-height:calc(100vh - 28px);display:flex;flex-direction:column;background:var(--papel);border-radius:var(--r);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+.caja .bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--linea);background:var(--papel-2)}
+.caja .bar .ruta{font-size:26px;margin-right:auto}
+.marco{flex:1;overflow:auto;display:flex;justify-content:center;background:var(--papel-3);padding:14px}
+.marco iframe{border:0;background:#fff;border-radius:18px;width:390px;max-width:100%;height:min(780px,calc(100vh - 140px));box-shadow:0 20px 40px -24px rgba(43,39,36,.6)}
+.marco.ancho iframe{width:100%}
+.caja textarea{flex:1;min-height:50vh;margin:14px;padding:14px;border:1px solid var(--linea);border-radius:14px;background:var(--papel-2);font:500 16px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--tinta);resize:none}
+.caja .ayuda{padding:0 16px 16px;font-size:17px;color:var(--tinta-2)}
+
+.aviso{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;z-index:60;max-width:calc(100% - 28px);padding:14px 20px;border-radius:16px;background:var(--tinta);color:var(--papel-2);font-size:17px;font-weight:700;box-shadow:0 20px 40px -20px rgba(0,0,0,.5);transition:opacity .3s,transform .3s var(--e);pointer-events:none}
+.aviso.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:560px){ .lista{margin-left:0} }
+</style>
+</head>
+<body>
+
+<header class="cab-panel"><div class="wrap">
+ <span class="kick">Tu Clínica Digital · Javo Katz</span>
+ <h1>Montaje <em>en GHL.</em></h1>
+ <p class="lead">Todas tus páginas, en orden. En cada una: copias el código, lo pegas y publicas.</p>
+ <div class="avance"><b id="hechas">0</b><span>de <span id="total">0</span> listas</span><div class="barra-av"><i id="barra"></i></div></div>
+</div></header>
+
+<nav class="tabs" aria-label="Pasos"><div class="wrap">
+ <a href="#como" data-tab="como">Cómo se pega</a>
+ <a href="#hoy" data-tab="hoy">1 · Hoy <small data-cuenta="hoy"></small></a>
+ <a href="#reemplazar" data-tab="reemplazar">2 · Reemplazar <small data-cuenta="reemplazar"></small></a>
+ <a href="#nuevas" data-tab="nuevas">3 · Nuevas <small data-cuenta="nuevas"></small></a>
+ <a href="#pendientes" data-tab="pendientes">4 · Me pasas</a>
+</div></nav>
+
+<main>
+<section class="vista" id="v-como"><div class="wrap">
+ <h2>Cómo se pega <em>una página.</em></h2>
+ <p class="bajada">Lo mismo para todas. Cinco pasos.</p>
+ <ol class="pasos">
+  <li><span class="n">1</span><div><b>Abre la página en GHL</b><p>Sitios → el sitio donde está /libros. Si la página ya existe, ábrela. Si es nueva, <q>+ Página</q> con la ruta exacta de aquí.</p></div></li>
+  <li><span class="n">2</span><div><b>Un solo bloque</b><p>Borra lo que tenga y agrega un elemento <q>Código personalizado</q> (Custom Code), a ancho completo.</p></div></li>
+  <li><span class="n">3</span><div><b>Pega el código</b><p>Aquí tocas <q>Copiar código</q> y lo pegas en ese bloque. Guardas.</p></div></li>
+  <li><span class="n">4</span><div><b>Título y descripción</b><p>En la configuración de la página, sección SEO, pegas el título y la descripción de aquí. Publicas.</p></div></li>
+  <li><span class="n">5</span><div><b>Mírala y márcala</b><p>Abres la ruta en tu teléfono. Si se ve bien, aquí tocas <q>Lista</q>.</p></div></li>
+ </ol>
+ <div class="sig"><a class="b prim" href="#hoy" style="display:inline-flex;align-items:center;text-decoration:none">Empezar por Hoy →</a></div>
+</div></section>
+
+<section class="vista" id="v-hoy"><div class="wrap">
+ <h2>Hoy, <em>antes de encender la campaña.</em></h2>
+ <p class="bajada">La campaña ya está armada en Meta y pausada. Estas dos páginas van primero.</p>
+ <div class="filas" data-filas="hoy"></div>
+ <div class="extra">
+  <span class="eti">El calendario</span>
+  <b>Que quien agenda llegue a la preparación</b>
+  <p>En GHL: Calendarios → tu calendario del diagnóstico → Confirmación → Redirigir a una URL. Pega esta:</p>
+  <code id="url-cal">https://tuclinica.digital/preparacion?first_name={{contact.first_name}}</code>
+  <div class="acciones"><button class="b prim" data-copiar-txt="url-cal">Copiar la URL</button></div>
+ </div>
+ <div class="extra">
+  <span class="eti">La campaña</span>
+  <b>TCD · Instalación, lista para encender</b>
+  <p>Conjunto Instalación · ECU: 40 USD por día y 4 anuncios activos (INS-01, 02, 04 y 05). Con estas dos páginas publicadas, la enciendes tú y, en el conjunto, pones la fecha de fin: 18 de diciembre.</p>
+ </div>
+</div></section>
+
+<section class="vista" id="v-reemplazar"><div class="wrap">
+ <h2>Las que <em>ya existen.</em></h2>
+ <p class="bajada">Abres cada una, cambias el código y el título.</p>
+ <div class="filas" data-filas="reemplazar"></div>
+</div></section>
+
+<section class="vista" id="v-nuevas"><div class="wrap">
+ <h2>Las <em>nuevas.</em></h2>
+ <p class="bajada"><q style="quotes:'«' '»'">+ Página</q> con la ruta exacta, en el mismo sitio donde está /libros.</p>
+ <div class="filas" data-filas="nuevas"></div>
+</div></section>
+
+<section class="vista" id="v-pendientes"><div class="wrap">
+ <h2>Lo que <em>me pasas.</em></h2>
+ <p class="bajada">Con esto te devuelvo las páginas con todo puesto.</p>
+ <ul class="pend">
+  <li><b>Los links de pago</b><p>El Número · El Número + los 8 libros · la app (497 y 997) · los 8 libros · La Clínica del Líder (33, 333 y 999). Mientras no estén, cada botón abre tu WhatsApp con la elección escrita.</p></li>
+  <li><b>Los PDF de los libros</b><p>Los 8 libros y el zip, subidos a Medios de GHL. Me pasas cada link.</p></li>
+ </ul>
+</div></section>
+</main>
+
+<div class="velo" id="velo" role="dialog" aria-modal="true"><div class="caja" id="caja"></div></div>
+<div class="aviso" id="aviso" role="status"></div>
+
+<script>
+(function(){
+  var DATOS = /*DATOS*/[];
+  var MARK = /*MARK*/"";
+  var CLAVE = 'montaje-ghl-v1';
+  var cache = {};
+  var hechas = {};
+  try { (JSON.parse(localStorage.getItem(CLAVE) || '[]') || []).forEach(function(r){ hechas[r] = 1; }); } catch(e) {}
+
+  function guardar(){ try { localStorage.setItem(CLAVE, JSON.stringify(Object.keys(hechas))); } catch(e) {} }
+  function el(t, c, h){ var e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* ── las filas ── */
+  var TIPO = { nueva: 'Nueva', reemplaza: 'Reemplaza', capa: 'Capa' };
+  DATOS.forEach(function(d){
+    var caja = document.querySelector('[data-filas="' + d.tab + '"]'); if (!caja) return;
+    var f = el('article', 'fila');
+    f.innerHTML =
+      '<div class="top"><span class="ruta">' + esc(d.ruta) + '</span><span class="tipo ' + d.tipo + '">' + TIPO[d.tipo] + '</span></div>' +
+      '<p class="nom">' + esc(d.nombre) + '</p>' + (d.nota ? '<p class="nota">' + esc(d.nota) + '</p>' : '') +
+      '<div class="acciones">' +
+        '<button class="b prim" data-a="codigo">Copiar código</button>' +
+        (d.tipo !== 'capa' ? '<button class="b" data-a="ver">Ver</button>' : '') +
+        (d.titulo ? '<button class="b" data-a="titulo">Título</button>' : '') +
+        (d.desc ? '<button class="b" data-a="desc">Descripción</button>' : '') +
+        '<button class="lista" data-a="lista" aria-pressed="false"><i></i>Lista</button>' +
+      '</div>';
+    f._d = d;
+    caja.appendChild(f);
+    marcar(f, !!hechas[d.ruta]);
+  });
+
+  function marcar(f, si){
+    f.classList.toggle('hecha', si);
+    f.querySelector('.lista').setAttribute('aria-pressed', si ? 'true' : 'false');
+  }
+  function contar(){
+    var n = DATOS.filter(function(d){ return hechas[d.ruta]; }).length;
+    document.getElementById('hechas').textContent = n;
+    document.getElementById('total').textContent = DATOS.length;
+    document.getElementById('barra').style.width = (DATOS.length ? n / DATOS.length * 100 : 0) + '%';
+    ['hoy', 'reemplazar', 'nuevas'].forEach(function(t){
+      var de = DATOS.filter(function(d){ return d.tab === t; });
+      var ok = de.filter(function(d){ return hechas[d.ruta]; }).length;
+      var s = document.querySelector('[data-cuenta="' + t + '"]'); if (s) s.textContent = ok + '/' + de.length;
+    });
+  }
+  contar();
+
+  /* ── el código, ya cargado ── */
+  function traer(d){
+    if (cache[d.archivo]) return Promise.resolve(cache[d.archivo]);
+    return fetch('paginas/' + d.archivo).then(function(r){ return r.text(); }).then(function(t){
+      t = t.split(MARK).join(''); cache[d.archivo] = t; return t;
+    });
+  }
+  (function precargar(i){ if (i >= DATOS.length) return; traer(DATOS[i]).then(function(){ precargar(i + 1); }, function(){ precargar(i + 1); }); })(0);
+
+  /* ── copiar ── */
+  function copiarYa(t){
+    var ta = document.createElement('textarea');
+    ta.value = t; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:2px;height:2px;opacity:0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { ta.setSelectionRange(0, t.length); } catch(e) {}
+    var ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
+    ta.remove();
+    if (ok) return Promise.resolve(true);
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t).then(function(){ return true; }, function(){ return false; });
+    return Promise.resolve(false);
+  }
+  function aviso(txt){ var a = document.getElementById('aviso'); a.textContent = txt; a.classList.add('on'); clearTimeout(aviso._t); aviso._t = setTimeout(function(){ a.classList.remove('on'); }, 2600); }
+  function brillo(b, txt){ var o = b.textContent; b.classList.add('ok'); b.textContent = txt; setTimeout(function(){ b.classList.remove('ok'); b.textContent = o; }, 1800); }
+
+  function copiarCodigo(d, b){
+    var t = cache[d.archivo];
+    if (t != null) {
+      copiarYa(t).then(function(ok){ if (ok) { brillo(b, 'Copiado'); aviso('Copiado ' + d.ruta + ' · ahora pégalo en GHL'); } else abrirCodigo(d, t); });
+    } else {
+      b.textContent = 'Cargando…';
+      traer(d).then(function(t){ b.textContent = 'Copiar código'; copiarYa(t).then(function(ok){ if (ok) { brillo(b, 'Copiado'); aviso('Copiado ' + d.ruta + ' · ahora pégalo en GHL'); } else abrirCodigo(d, t); }); },
+        function(){ b.textContent = 'Copiar código'; aviso('No pude abrir el código. Prueba de nuevo.'); });
+    }
+  }
+
+  /* ── ventanas ── */
+  var velo = document.getElementById('velo'), caja = document.getElementById('caja');
+  function cerrar(){ velo.classList.remove('on'); caja.innerHTML = ''; }
+  velo.addEventListener('click', function(e){ if (e.target === velo) cerrar(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') cerrar(); });
+
+  function abrirVer(d){
+    caja.innerHTML = '<div class="bar"><span class="ruta">' + esc(d.ruta) + '</span>' +
+      '<button class="b" data-v="tel">Teléfono</button><button class="b" data-v="pc">Computadora</button>' +
+      '<button class="b prim" data-v="copiar">Copiar código</button><button class="b" data-v="cerrar">Cerrar</button></div>' +
+      '<div class="marco" id="marco"><iframe title="Vista de ' + esc(d.ruta) + '" src="paginas/' + encodeURIComponent(d.archivo) + '"></iframe></div>' +
+      '<p class="ayuda" style="padding-top:12px">Aquí no cargan el calendario, los videos ni tu foto: en tu dominio, sí.</p>';
+    velo.classList.add('on');
+    caja.querySelector('[data-v="tel"]').onclick = function(){ document.getElementById('marco').classList.remove('ancho'); };
+    caja.querySelector('[data-v="pc"]').onclick = function(){ document.getElementById('marco').classList.add('ancho'); };
+    caja.querySelector('[data-v="copiar"]').onclick = function(){ copiarCodigo(d, this); };
+    caja.querySelector('[data-v="cerrar"]').onclick = cerrar;
+  }
+  function abrirCodigo(d, t){
+    caja.innerHTML = '<div class="bar"><span class="ruta">' + esc(d.ruta) + '</span><button class="b prim" data-v="sel">Seleccionar todo</button><button class="b" data-v="cerrar">Cerrar</button></div>' +
+      '<textarea readonly spellcheck="false"></textarea><p class="ayuda">Tu navegador no me deja copiar solo. Toca «Seleccionar todo» y después presiona Cmd + C en Mac, o Ctrl + C en Windows.</p>';
+    var ta = caja.querySelector('textarea'); ta.value = t;
+    velo.classList.add('on');
+    caja.querySelector('[data-v="sel"]').onclick = function(){ ta.focus(); ta.select(); try { ta.setSelectionRange(0, ta.value.length); } catch(e) {} };
+    caja.querySelector('[data-v="cerrar"]').onclick = cerrar;
+  }
+
+  /* ── los botones de cada fila ── */
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    var cp = b.getAttribute('data-copiar-txt');
+    if (cp) { var t = document.getElementById(cp).textContent; copiarYa(t).then(function(ok){ ok ? (brillo(b, 'Copiada'), aviso('Copiada la URL del calendario')) : abrirCodigo({ ruta: 'La URL' }, t); }); return; }
+    var f = b.closest('.fila'); if (!f) return;
+    var d = f._d, a = b.getAttribute('data-a');
+    if (a === 'codigo') copiarCodigo(d, b);
+    else if (a === 'ver') abrirVer(d);
+    else if (a === 'titulo' || a === 'desc') {
+      var txt = a === 'titulo' ? d.titulo : d.desc;
+      copiarYa(txt).then(function(ok){ ok ? (brillo(b, 'Copiado'), aviso((a === 'titulo' ? 'Título' : 'Descripción') + ' de ' + d.ruta + ' copiado')) : abrirCodigo(d, txt); });
+    }
+    else if (a === 'lista') {
+      if (hechas[d.ruta]) delete hechas[d.ruta]; else hechas[d.ruta] = 1;
+      marcar(f, !!hechas[d.ruta]); guardar(); contar();
+    }
+  });
+
+  /* ── las pestañas, en el #nombre ── */
+  var VISTAS = ['como', 'hoy', 'reemplazar', 'nuevas', 'pendientes'];
+  function mostrar(){
+    var h = (location.hash || '').replace('#', '');
+    if (VISTAS.indexOf(h) < 0) h = 'como';
+    VISTAS.forEach(function(v){
+      document.getElementById('v-' + v).classList.toggle('on', v === h);
+      var a = document.querySelector('[data-tab="' + v + '"]'); if (a) a.classList.toggle('on', v === h);
+    });
+    var a = document.querySelector('[data-tab="' + h + '"]'); if (a && a.scrollIntoView) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }
+  window.addEventListener('hashchange', function(){ mostrar(); window.scrollTo(0, 0); });
+  mostrar();
+})();
+</script>
+</body>
+</html>

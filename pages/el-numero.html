@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>El Número · tus primeros 5 días en mi app · Javo Katz</title>
+<meta name="description" content="En cinco días, dentro de mi app y con el Mentor, subes tu precio sin culpa y sabes qué contestar cuando te lo preguntan. Con Lo que el lago te enseña adentro.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="El Número · tus primeros 5 días en mi app">
+<meta property="og:description" content="Tu techo no está en el mercado. Está en lo que aprendiste sobre el dinero antes de elegir tu profesión.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ── portada ── */
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(56px,9vw,96px)}
+.portada .grid{display:grid;gap:44px;align-items:center}
+@media (min-width:980px){ .portada .grid{grid-template-columns:1.08fr .92fr;gap:56px} }
+.escena{--z:.94;position:relative;height:calc(640px * var(--z) + 100px);max-width:520px;margin:0 auto;width:100%}
+@media (max-width:560px){ .escena{--z:.74} }
+@media (max-width:360px){ .escena{--z:.66} }
+.escena .libro{position:absolute;left:2%;top:7%;width:46%;transform:rotate(-6deg);border-radius:2px 6px 6px 2px;box-shadow:16px 22px 36px -18px rgba(20,18,16,.6),inset 6px 0 8px -6px rgba(0,0,0,.4);z-index:1}
+.escena .tel{position:absolute;right:2%;top:0;z-index:2;animation:flota 7s ease-in-out infinite;zoom:var(--z)}
+@keyframes flota{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){ .escena .tel{animation:none} }
+.escena .sello{position:absolute;left:0;top:calc(640px * var(--z) - 20px);z-index:3;background:var(--papel-2);border:1px solid var(--linea);border-radius:18px;padding:14px 18px;box-shadow:var(--sombra);max-width:52%}
+.escena .sello span{display:block;font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto)}
+.escena .sello b{display:block;font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.15;margin-top:2px}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.tres div{padding:16px 6px;text-align:center;font-size:16px;font-weight:700;line-height:1.3}
+.tres div+div{border-left:1px solid var(--linea)}
+.tres b{display:block;font-variant-numeric:lining-nums;font-family:var(--f-titulo);font-size:36px;font-weight:600;line-height:1;color:var(--oro-texto)}
+/* ── la app por dentro ── */
+.dentro .grid{display:grid;gap:40px;align-items:center;margin-top:36px}
+@media (min-width:900px){ .dentro .grid{grid-template-columns:auto 1fr;gap:64px} }
+.puntos{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.puntos li{border-left:1px solid var(--oro);padding-left:20px}
+.puntos b{display:block;font-family:var(--f-titulo);font-size:28px;font-weight:600;line-height:1.1}
+.puntos p{margin-top:6px;color:var(--tinta-2);font-size:18px}
+.sin-pago,.con-pago{display:none}
+</style>
+</head>
+<body data-pagos="numero obra" data-pagina="el-numero">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="libros" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" href="#entrar"><span>Empezar · <span data-precio="numero">27</span> USD</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap ancho"><div class="grid">
+  <div>
+   <span class="kick rv">El Número · 5 días</span>
+   <h1 class="t1 rv d1">Tu techo no está en el mercado.</h1>
+   <p class="sub rv d2">Está en lo que aprendiste sobre el dinero antes de elegir tu profesión.</p>
+   <p class="lead rv d3">En cinco días, dentro de mi app y con el Mentor, <b>subes tu precio sin culpa y sabes qué contestar cuando te lo preguntan.</b></p>
+   <div class="botones rv d4"><a class="btn" href="#entrar">Empezar mis 5 días <span class="fl">→</span></a></div>
+   <p class="micro rv d4"><b><span data-precio="numero">27</span> USD</b> · entras hoy · 21 días para hacerlo · con <i>Lo que el lago te enseña</i> adentro</p>
+  </div>
+  <div class="escena rv d2" aria-label="La app de Tu Clínica Digital en un teléfono, junto al libro Lo que el lago te enseña">
+   <img class="libro" data-img="tapas/lago.webp" alt="Tapa del libro Lo que el lago te enseña" width="640" height="960">
+   <div class="tel" aria-hidden="true"><div class="pant">
+    <div class="isla"></div>
+    <div class="estado"><span>9:41</span><i><svg viewBox="0 0 17 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 4h2v7H9zM13 1h2v10h-2z" fill="#2A2118"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#2A2118" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="#2A2118"/><rect x="22.5" y="4" width="2" height="4" rx="1" fill="#2A2118" opacity=".5"/></svg></i></div>
+    <div class="app-head"><b>Hoy</b><span class="cint">Blanco</span></div>
+    <div class="app-body"><div class="vista on" style="position:static">
+     <div class="app-card">
+      <div class="app-k">Día 1 · la sesión de hoy</div>
+      <div class="app-t">Tu punto de partida</div>
+      <div class="app-m">75 min · con el Mentor</div>
+      <div class="app-btn">COMENZAR</div>
+     </div>
+     <div class="dias">
+      <div class="dia on"><b>1</b>Tu punto de partida</div>
+      <div class="dia"><b>2</b>Tu árbol y el dinero<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="dia"><b>3</b>Cómo te frenas<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="dia"><b>4</b>Tu protocolo<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="dia"><b>5</b>Tu precio nuevo<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+     </div>
+    </div></div>
+    <div class="tabs"><button class="on" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hoy</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19c4-1 4-13 8-14s4 13 8 14"/></svg>Camino</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14v9H9l-4 3z"/></svg>Mentor</button></div>
+   </div></div>
+   <div class="sello"><span>Al día 5</span><b>Tu precio nuevo, sellado</b></div>
+  </div>
+ </div>
+ <div class="tres rv">
+  <div><b>5</b>sesiones guiadas</div>
+  <div><b>30</b>consultas con el Mentor</div>
+  <div><b>1</b>libro completo adentro</div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══ LA CREENCIA ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Lo que no nos enseñaron</span>
+  <h2 class="t2 rv">Sabes cuánto deberías cobrar. <em>Lo que cuesta es decirlo.</em></h2>
+  <p class="lead rv">Subir el precio parece una decisión de números. Y en el momento de decirlo deciden por ti frases que escuchaste mucho antes de atender a nadie:</p>
+  <ul class="frases">
+   <li><span>«De eso no se habla en la mesa.»</span></li>
+   <li><span>«Hay que romperse el lomo para ganarlo.»</span></li>
+   <li><span>«Las personas buenas no piensan en dinero.»</span></li>
+  </ul>
+  <p class="lead rv">Por eso dices el número y, antes de que la otra persona respire, ya agregaste «si te parece mucho, lo vemos».</p>
+  <p class="si rv">En cinco días desarmas esas frases y escribes tu precio con las tuyas.</p>
+ </div>
+</section>
+
+<!-- ═══ LA CUENTA ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">La cuenta del día 1</span>
+  <h2 class="t2 rv">¿Cuánto te queda de verdad <em>por cada hora?</em></h2>
+  <p class="lead rv">Mueve tus números. Es la primera cuenta que haces en la app.</p>
+  <div class="cuenta card rv" data-cuenta>
+   <div class="filas">
+    <div class="rango"><label for="c1"><span>Cobras por sesión</span><output data-o="precio">$50</output></label><input id="c1" type="range" name="precio" min="10" max="250" step="5" value="50"></div>
+    <div class="rango"><label for="c2"><span>Sesiones por semana</span><output data-o="sesiones">25</output></label><input id="c2" type="range" name="sesiones" min="3" max="45" step="1" value="25"></div>
+    <div class="rango"><label for="c3"><span>Horas que trabajas sin cobrar<small>mensajes, notas, agenda, traslados</small></span><output data-o="extra">12 h</output></label><input id="c3" type="range" name="extra" min="0" max="30" step="1" value="12"></div>
+    <div class="rango"><label for="c4"><span>Gastos del mes para trabajar<small>consultorio, plataformas, formación</small></span><output data-o="gastos">$400</output></label><input id="c4" type="range" name="gastos" min="0" max="2500" step="50" value="400"></div>
+   </div>
+   <div class="resultado">
+    <div class="res"><span>Lo que cobras</span><b data-o="cobras">$50</b></div>
+    <div class="res real"><span>Tu hora real neta</span><b data-o="real">$31</b></div>
+   </div>
+   <p class="veredicto" data-o="veredicto"></p>
+  </div>
+  <p class="nota rv">En la app guardas este número el día 1. El día 5 decides tu precio nuevo con él delante.</p>
+ </div>
+</section>
+
+<!-- ═══ LOS 5 DÍAS ═══ -->
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">Tus 5 días</span>
+  <h2 class="t2 rv">Cinco sesiones. <em>Un precio nuevo, dicho en voz alta.</em></h2>
+  <ol class="ruta">
+   <li class="paso" data-n="1"><h3>Tu punto de partida</h3><div class="min">75 MINUTOS</div><p>Contestas tu medición de entrada y haces la cuenta de arriba con tus números reales. <b>Sales con tu hora real neta, escrita donde la ves.</b></p></li>
+   <li class="paso" data-n="2"><h3>Tu árbol y el dinero</h3><div class="min">75 MINUTOS</div><p>Escribes las frases sobre el dinero que escuchaste en tu casa y cómo vivió el dinero cada uno de los tuyos. <b>Sales con el techo de tu familia a la vista y tu permiso escrito.</b></p></li>
+   <li class="paso" data-n="3"><h3>Cómo te frenas y cómo te empujas</h3><div class="min">60 MINUTOS</div><p>Miras las situaciones de tu semana que te sacan de eje y dónde las sientes en el cuerpo. <b>Sales con tus tres disparadores, con nombre.</b></p></li>
+   <li class="paso" data-n="4"><h3>Tu protocolo, escrito por ti</h3><div class="min">45 MINUTOS</div><p>Para cada disparador eliges qué haces en su lugar, en menos de cinco minutos. <b>Sales con tu plan para los días difíciles: si pasa esto, hago esto otro.</b></p></li>
+   <li class="paso" data-n="5"><h3>Tu precio nuevo</h3><div class="min">75 MINUTOS</div><p>Pones lado a lado tu hora real neta y tu precio de hoy, escribes el nuevo y lo dices tres veces en voz alta. <b>Sales con tu precio sellado, tu link de pago y tus consultantes en tres grupos: siguen, suben y sueltas.</b></p></li>
+  </ol>
+  <p class="nota rv">Cada sesión la haces el día que elijas. Tienes 21 días para las cinco.</p>
+ </div>
+</section>
+
+<!-- ═══ LA APP POR DENTRO ═══ -->
+<section class="sec dentro junto">
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">La app por dentro</span>
+   <h2 class="t2 rv">Tócala. <em>Así se ve tu día.</em></h2>
+   <div class="toca rv"><button type="button" data-toca="hoy">Hoy</button><button type="button" data-toca="numero">Mi número</button><button type="button" data-toca="mentor">El Mentor</button></div>
+  </div>
+  <div class="grid">
+   <div class="tel rv" data-tel data-inicio="hoy"><div class="pant">
+    <div class="isla"></div>
+    <div class="estado"><span>9:41</span><i><svg viewBox="0 0 17 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 4h2v7H9zM13 1h2v10h-2z" fill="#2A2118"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#2A2118" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="#2A2118"/></svg></i></div>
+    <div class="app-head"><b>Tu Clínica</b><span class="cint">Blanco</span></div>
+    <div class="app-body">
+     <div class="vista" data-v="hoy">
+      <div class="app-card">
+       <div class="app-k">Día 5 · la sesión de hoy</div>
+       <div class="app-t">Tu precio nuevo</div>
+       <div class="app-m">75 min · con el Mentor</div>
+       <div class="app-btn">COMENZAR</div>
+      </div>
+      <div class="dias">
+       <div class="dia"><b>1</b>Tu punto de partida <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+       <div class="dia"><b>2</b>Tu árbol y el dinero <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+       <div class="dia"><b>3</b>Cómo te frenas <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+       <div class="dia"><b>4</b>Tu protocolo <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+       <div class="dia on"><b>5</b>Tu precio nuevo</div>
+      </div>
+     </div>
+     <div class="vista" data-v="numero">
+      <div class="app-k" style="margin-top:4px">Tu hora real neta</div>
+      <label class="campo">Cobras por sesión (USD)<input type="number" inputmode="decimal" value="50" aria-label="Cobras por sesión"></label>
+      <label class="campo">Sesiones por semana<input type="number" inputmode="decimal" value="25" aria-label="Sesiones por semana"></label>
+      <label class="campo">Horas por semana sin cobrar<input type="number" inputmode="decimal" value="12" aria-label="Horas por semana sin cobrar"></label>
+      <div class="grande"><span>Te quedan por hora</span><b data-o="tel-real">$34</b></div>
+      <p class="app-m" style="margin-top:8px;text-align:center" data-o="tel-nota"></p>
+     </div>
+     <div class="vista" data-v="mentor">
+      <div class="chat" data-guion='[["chip-yo","Hazme de paciente: dime está caro"],["ia","Mmm… está caro. ¿No tienes algo más económico?","El Mentor, de paciente"],["yo","Entiendo. Son tres meses y terminas con tu plan andando. Son 900 dólares."],["ia","Dijiste el número una vez. Ahora otra vez, sin «entiendo» al principio, y después te callas.","El Mentor"]]'></div>
+     </div>
+    </div>
+    <div class="tabs"><button type="button" data-ir="hoy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hoy</button><button type="button" data-ir="numero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Mi número</button><button type="button" data-ir="mentor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14v9H9l-4 3z"/></svg>Mentor</button></div>
+   </div></div>
+   <ul class="puntos">
+    <li class="rv"><b>Hoy</b><p>Una sola sesión por día, con su botón para empezar. Lo que ya hiciste queda marcado.</p></li>
+    <li class="rv d1"><b>Mi número</b><p>Tu hora real neta, siempre a mano. Es el número con el que decides tu precio.</p></li>
+    <li class="rv d2"><b>El Mentor</b><p>Practicas tu precio hasta que sale solo. Tiene un botón que dice «Hazme de paciente: dime está caro».</p></li>
+   </ul>
+  </div>
+  <p class="nota centro rv">Así conversa el Mentor. Adentro conoce tu caso: tu número, tu árbol y tu protocolo.</p>
+ </div>
+</section>
+
+<!-- ═══ LO QUE RECIBES ═══ -->
+<section class="sec">
+ <div class="wrap ancho">
+  <span class="kick rv">Lo que recibes hoy</span>
+  <h2 class="t2 rv">Todo lo que necesitas <em>para decir tu número.</em></h2>
+  <div class="items">
+   <div class="item card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18h4v-4h4v-4h4V6h4"/></svg></div><div><b>Tus 5 sesiones guiadas</b><p>Paso a paso, en tu celular o en tu computadora, de 45 a 75 minutos cada una.</p></div></div>
+   <div class="item card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/><path d="M9 10h6"/></svg></div><div><b>El Mentor, 30 consultas</b><p>Entrenado con mi método. Te hace de consultante difícil hasta que tu precio sale sin pedir perdón.</p></div></div>
+   <div class="item card rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><div><b>Tu hora real neta</b><p>La cuenta que te muestra cuánto te queda de verdad por hora, guardada en tu app.</p></div></div>
+   <div class="item card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></div><div><b>Tu precio sellado y tu link de pago</b><p>El día 5 tu número queda firmado en la app, con su link para cobrar.</p></div></div>
+   <div class="item libro card rv"><div class="ic"><img data-img="tapas/lago-chica.webp" alt="" width="320" height="480"></div><div><b>Lo que el lago te enseña</b><p>Mi libro, completo y en digital: 33 lecciones para mirarte antes de moverte. Es el libro de tus 5 días.</p></div></div>
+   <div class="item card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><div><b>21 días de acceso</b><p>Para hacer tus cinco sesiones a tu ritmo, el día que elijas.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LO QUE CUENTAN ═══ -->
+<section class="sec junto">
+ <div class="wrap ancho">
+  <span class="kick rv">Lo que cuentan</span>
+  <h2 class="t2 rv">Profesionales que hicieron <em>el camino conmigo.</em></h2>
+  <p class="lead rv">Tus 5 días son el primer tramo del camino de 90 días. Esto cuentan quienes lo recorrieron completo.</p>
+  <div class="testi" data-muro="8" data-desde="6"></div>
+  <p class="desliza">Desliza para ver más →</p>
+  <div class="capturas" data-capturas></div>
+ </div>
+</section>
+
+<!-- ═══ QUIÉN SOY ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="autor card rv">
+   <img class="foto" data-foto alt="Javo Katz" width="120" height="120" loading="lazy" data-quita-si-falla>
+   <div>
+    <b>Javo Katz</b>
+    <div class="rol">Mentor · autor de <i>Sanadores Libres</i></div>
+    <p class="bio">Vengo de una familia de sanadores: mi mamá es psicoanalista y mi abuelo fue médico. Me recibí de abogado a los veintidós, y hace más de seis años acompaño a profesionales que atienden 1 a 1: más de cincuenta, en Latinoamérica, España y Estados Unidos. Construí esta app con inteligencia artificial para que lo que trabajamos en mis mentorías se pueda hacer cada día, desde el celular.</p>
+    <div class="estante" aria-label="Mis ocho libros">
+     <img data-img="tapas/sanadores-chica.webp" alt="Sanadores Libres" width="320" height="452"><img data-img="tapas/lago-chica.webp" alt="Lo que el lago te enseña" width="320" height="480"><img data-img="tapas/montana-chica.webp" alt="Lo que la montaña te enseña" width="320" height="480"><img data-img="tapas/viento-chica.webp" alt="Lo que el viento te enseña" width="320" height="480"><img data-img="tapas/rio-chica.webp" alt="Lo que el río te enseña" width="320" height="480"><img data-img="tapas/bosque-chica.webp" alt="Lo que el bosque te enseña" width="320" height="480"><img data-img="tapas/heroe-chica.webp" alt="Héroe descapado" width="320" height="491"><img data-img="tapas/libertades-chica.webp" alt="Las 7 libertades fundamentales" width="320" height="491">
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LA OFERTA ═══ -->
+<section class="sec" id="entrar" data-barra-hasta>
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">Entra hoy</span>
+   <h2 class="t2 rv">Elige <em>cómo empiezas.</em></h2>
+  </div>
+  <div class="planes">
+   <div class="plan card rv">
+    <div class="nom">El Número</div>
+    <div class="que">Tus primeros 5 días en la app</div>
+    <div class="precio"><b class="num" data-precio="numero">27</b><small>USD · pago único</small></div>
+    <ul>
+     <li>Tus 5 sesiones guiadas</li>
+     <li>El Mentor, 30 consultas</li>
+     <li>Tu hora real neta y tu precio sellado</li>
+     <li><i>Lo que el lago te enseña</i>, en digital</li>
+     <li>21 días de acceso</li>
+    </ul>
+    <a class="btn claro ancho-total" data-compra="numero" href="#">Empezar con El Número <span class="fl">→</span></a>
+   </div>
+   <div class="plan card fuerte rv d1">
+    <span class="cinta">La obra completa</span>
+    <div class="nom">El Número + los 8 libros</div>
+    <div class="que">La app y toda mi biblioteca</div>
+    <div class="precio"><b class="num" data-precio="obra">97</b><small>USD · pago único</small></div>
+    <div class="antes">Los 8 libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s></div>
+    <div class="tapas" aria-hidden="true"><img data-img="tapas/sanadores-chica.webp" alt=""><img data-img="tapas/lago-chica.webp" alt=""><img data-img="tapas/montana-chica.webp" alt=""><img data-img="tapas/viento-chica.webp" alt=""><img data-img="tapas/rio-chica.webp" alt=""><img data-img="tapas/bosque-chica.webp" alt=""><img data-img="tapas/heroe-chica.webp" alt=""><img data-img="tapas/libertades-chica.webp" alt=""></div>
+    <ul>
+     <li>Todo lo de El Número</li>
+     <li><i>Sanadores Libres</i>, el método completo</li>
+     <li>La colección <i>Lo que el sur te enseña</i>: el lago, la montaña, el viento, el río y el bosque</li>
+     <li><i>Héroe descapado</i> y <i>Las 7 libertades fundamentales</i></li>
+     <li>Los 8 en digital, para descargar al instante</li>
+    </ul>
+    <a class="btn ancho-total" data-compra="obra" href="#">Quiero la obra completa <span class="fl">→</span></a>
+   </div>
+  </div>
+  <p class="seguro con-pago rv"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+  <p class="seguro sin-pago rv"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+  <p class="micro centro rv">Después de pagar se abre tu página con los libros para descargar y los pasos para entrar a la app.</p>
+ </div>
+</section>
+
+<!-- ═══ PREGUNTAS ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Preguntas</span>
+  <h2 class="t2 rv">Antes de <em>entrar.</em></h2>
+  <div class="faq rv">
+   <div class="fq"><button type="button">¿Cómo entro a la app?<i></i></button><div class="r"><div><p>Después de pagar te llega un correo para entrar a la app. Si en una hora no llegó, me escribes por WhatsApp desde la página que se abre y te la activo ese mismo día.</p></div></div></div>
+   <div class="fq"><button type="button">¿Cuánto tiempo me pide?<i></i></button><div class="r"><div><p>Cinco sesiones de 45 a 75 minutos. Las haces el día que elijas, dentro de tus 21 días.</p></div></div></div>
+   <div class="fq"><button type="button">¿Es para mí?<i></i></button><div class="r"><div><p>Es para quien atiende personas 1 a 1 y cobra por sesión: terapeutas, coaches, nutricionistas, entrenadores, médicos. Si sabes cuánto deberías cobrar y te cuesta decirlo, es para ti.</p></div></div></div>
+   <div class="fq"><button type="button">¿Necesito saber de tecnología?<i></i></button><div class="r"><div><p>Si usas WhatsApp, puedes usar la app. Funciona en el celular y en la computadora, desde el navegador.</p></div></div></div>
+   <div class="fq"><button type="button">¿Cómo recibo los libros?<i></i></button><div class="r"><div><p>En PDF, en la página que se abre después de pagar. Los descargas al instante y son tuyos. Para escribir en ellos, imprímelos o usa una tableta.</p></div></div></div>
+   <div class="fq"><button type="button">¿Qué pasa después de los 5 días?<i></i></button><div class="r"><div><p>Tu número queda sellado en la app y ves el resto del camino de 90 días. Si quieres seguir, sigues con la app completa. <a class="link" data-link="appPagina" href="#">Mírala aquí</a>.</p></div></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec junto">
+ <div class="wrap centro">
+  <hr class="regla rv">
+  <p class="frase-final rv">Los que curan <em>merecen vivir de curar.</em></p>
+  <div class="botones rv"><a class="btn" href="#entrar">Empezar mis 5 días <span class="fl">→</span></a></div>
+  <p class="micro rv"><b><span data-precio="numero">27</span> USD</b> · o la app y los 8 libros por <b><span data-precio="obra">97</span> USD</b></p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+ <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+</div></footer>
+
+<div class="barra"><a class="btn" href="#entrar"><span>Empezar mis 5 días · <span data-precio="numero">27</span> USD</span></a></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+
+
+<script>
+(function(){
+document.querySelectorAll('.chat').forEach(function(c){var g=JSON.parse(c.getAttribute('data-guion'));c.setAttribute('data-guion',JSON.stringify(g.map(function(m){return m[0]==='chip-yo'?['yo',m[1]]:m})));});})();
+</script>
+<script>/*BASE_JS*/</script>
+</body>
+</html>

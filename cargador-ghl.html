@@ -1,0 +1,14 @@
+<script>
+/* Javo Katz · trae esta página desde las landings. Es igual en todas las páginas de GHL. */
+(function () {
+  if (window.__tcdCarga) return; window.__tcdCarga = 1;
+  var base = 'https://__HOST__';
+  var url = base + (location.pathname.replace(/\/+$/, '') || '/inicio');
+  document.documentElement.style.background = '#F4EEE3';
+  var s = document.createElement('style'); s.textContent = 'body{opacity:0}';
+  (document.head || document.documentElement).appendChild(s);
+  fetch(url).then(function (r) { if (!r.ok) throw r.status; return r.text(); })
+    .then(function (h) { document.open(); document.write(h); document.close(); })
+    .catch(function () { location.replace(url + location.search); });
+})();
+</script>

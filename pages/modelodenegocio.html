@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Un precio sano · Javo Katz</title>
+<meta name="description" content="Lo que sostiene tu precio y los 3 pasos para subirlo con método.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Un precio sano">
+<meta property="og:description" content="Lo que sostiene tu precio y los 3 pasos para subirlo con método.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
+.video{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;box-shadow:var(--sombra);background:var(--papel-3);margin-top:34px}
+.video iframe,.video>button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video>button{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:clamp(16px,4vw,36px);padding:clamp(18px,5vw,52px);background:var(--papel-3);box-shadow:inset 0 0 0 1px var(--linea);text-align:left;cursor:pointer;font:inherit;color:var(--tinta)}
+.video .cara{position:relative;width:clamp(104px,24vw,190px);aspect-ratio:1}
+.video .cara img{width:100%;height:100%;object-fit:cover;border-radius:50%;background:var(--papel-2);box-shadow:0 0 0 1px var(--oro),0 0 0 7px var(--papel-2),0 0 0 8px var(--linea)}
+.video .play{position:absolute;right:-4px;bottom:-4px;width:clamp(46px,9vw,64px);aspect-ratio:1;border-radius:50%;background:var(--tinta);display:grid;place-items:center;box-shadow:0 0 0 4px var(--papel-3),0 14px 26px -14px rgba(43,39,36,.8);transition:transform .35s var(--e)}
+.video .play::before{content:"";margin-left:5px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent var(--papel-2)}
+.video>button:hover .play,.video>button:focus-visible .play{transform:scale(1.08)}
+.video .pt{display:block;font-family:var(--f-titulo);font-size:clamp(25px,6vw,44px);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+.video .dur{display:inline-block;margin-top:12px;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.cuentas{margin-top:34px;padding:clamp(22px,5vw,32px)}
+.cuentas .fila{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--linea);font-size:18px;line-height:1.4}
+.cuentas .fila b{flex:none;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1;font-variant-numeric:lining-nums}
+.cuentas .total{border-bottom:0;padding-bottom:0}
+.cuentas .total span{font-weight:800}
+.cuentas .total b{color:var(--oro-texto);font-size:44px}
+.cuentas .ej{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:6px}
+.modelos{display:grid;gap:14px;margin-top:34px}
+@media (min-width:700px){ .modelos{grid-template-columns:1fr 1fr} }
+.modelo{padding:24px}
+.modelo span{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.modelo.antes span{color:var(--tinta-2)} .modelo.despues span{color:var(--verde)}
+.modelo b{display:block;font-family:var(--f-titulo);font-size:clamp(44px,10vw,56px);font-weight:600;line-height:1;margin-top:10px;font-variant-numeric:lining-nums}
+.modelo p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
+.modelo.despues{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.dentro{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:10px}
+.dentro li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:16px}
+.dentro b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15}
+.dentro span{flex:none;font-size:16px;font-weight:700;color:var(--oro-texto)}
+@media (max-width:520px){ .dentro li{flex-direction:column;align-items:flex-start;gap:2px} }
+.nota-c{margin-top:22px;font-size:18px;color:var(--tinta-2)}
+.nota-c b{color:var(--tinta)}
+.otro{margin-top:18px;font-size:17px}
+</style>
+</head>
+<body data-pagina="modelodenegocio" data-pagos="">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" data-link="comunidad" href="#"><span>Ver la guía de precios</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap">
+  <span class="kick rv">Precio</span>
+  <h1 class="t1 rv d1">Un precio sano <em>es parte del cuidado.</em></h1>
+  <p class="lead rv d2">Un precio sano te deja energía para sostener a quien acompañas. <b>Así se calcula, y así se sube.</b></p>
+  <div class="video rv d2" data-yt="wD5V5MAJPO4" data-titulo="Un precio sano">
+   <button type="button" aria-label="Ver el video: Tu precio, paso a paso">
+    <span class="cara"><img data-foto data-ancho="400" alt="" width="190" height="190"><span class="play" aria-hidden="true"></span></span>
+    <span><span class="pt">Tu precio, paso a paso</span><span class="dur">Video · 11 min</span></span>
+   </button>
+  </div>
+  <div class="botones rv d3"><a class="btn" data-link="comunidad" href="#"><span>Ver la guía de precios</span> <span class="fl">→</span></a></div>
+  <p class="micro rv d3">Sin costo, dentro de la comunidad.</p>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">Lo que sostiene tu precio</span>
+  <h2 class="t2 rv">Tu precio cubre <em>4 cosas.</em></h2>
+  <ol class="ruta">
+   <li class="paso rv" data-n="1"><h3>La hora de sesión</h3><p>La única que se ve, y la que casi todos cuentan.</p></li>
+   <li class="paso rv" data-n="2"><h3>Tu formación</h3><p>Años de estudio, cursos y supervisión, presentes en cada decisión.</p></li>
+   <li class="paso rv" data-n="3"><h3>La gestión invisible</h3><p>WhatsApp, notas, coordinación y seguimiento: horas reales.</p></li>
+   <li class="paso rv" data-n="4"><h3>Tu sostenibilidad</h3><p>Descanso, ahorro y futuro, para seguir acompañando por años.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">Los 3 pasos</span>
+  <h2 class="t2 rv">Cómo subir tu precio <em>con método.</em></h2>
+  <ol class="ruta">
+   <li class="paso rv" data-n="1"><h3>Parte del valor</h3><p>Del resultado que das, más que del costo de tu hora.</p></li>
+   <li class="paso rv" data-n="2"><h3>Estrénalo con quien llega</h3><p>El precio nuevo arranca con las personas que empiezan desde hoy.</p></li>
+   <li class="paso rv" data-n="3"><h3>Dilo una vez</h3><p>Con calma, y espera la respuesta.</p></li>
+  </ol>
+ </div>
+</section>
+
+
+<!-- ═══ LA COMUNIDAD ═══ -->
+<section class="sec">
+ <div class="wrap">
+  <span class="kick rv">La comunidad</span>
+  <h2 class="t2 rv">Entra <em>sin costo.</em></h2>
+  <p class="lead rv">Profesionales que atienden 1 a 1 y construyen su consulta con sistemas. Adentro tienes las herramientas:</p>
+  <ul class="dentro rv">
+   <li><b>Calculadora de tu hora real</b><span>2 minutos</span></li>
+   <li><b>Los 5 mensajes de reactivación</b><span>listos para enviar</span></li>
+   <li><b>Checklist de automatización</b><span>12 procesos</span></li>
+   <li><b>Tu protocolo, paso a paso</b><span>resultado, tiempo y método</span></li>
+   <li><b>Guía de precios</b><span>por especialidad</span></li>
+   <li><b>Neuro-Escáner IA</b><span>tu patrón con el precio</span></li>
+  </ul>
+  <div class="botones rv"><a class="btn" data-link="comunidad" href="#"><span>Entrar a la comunidad</span> <span class="fl">→</span></a></div>
+ </div>
+</section>
+
+<!-- ═══ QUIÉN ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <div class="autor card rv">
+   <img class="foto" data-foto data-ancho="240" alt="Javo Katz" width="120" height="120">
+   <div>
+    <b>Javo Katz</b>
+    <p class="rol">Mentor y autor · Bariloche, Patagonia</p>
+    <p class="bio">Hace más de 6 años acompaña a profesionales que atienden 1 a 1. Más de 50, de Latinoamérica, España y EE. UU., ya trabajaron con él.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec centro" data-barra-hasta>
+ <div class="wrap">
+  <hr class="regla">
+  <p class="frase-final rv">Pon <em>tu precio.</em></p>
+  <div class="botones rv"><a class="btn" data-link="comunidad" href="#"><span>Ver la guía de precios</span> <span class="fl">→</span></a></div>
+  <p class="otro rv">¿Quieres que lo instalemos juntos? <a class="link" data-link="agenda" data-hash="#agenda" href="#">Agenda tu diagnóstico</a></p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+</div></footer>
+
+<div class="barra"><a class="btn" data-link="comunidad" href="#"><span>Ver la guía de precios</span></a></div>
+
+<script>/*BASE_JS*/</script>
+<script>
+(function(){
+  var pag=document.body.getAttribute('data-pagina');
+  document.querySelectorAll('[data-yt]').forEach(function(v){
+    var b=v.querySelector('button'); if(!b) return;
+    b.addEventListener('click',function(){
+      v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1" title="'+(v.getAttribute('data-titulo')||'Video')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      if(window.pxc) pxc('VerVideo',{content_name:pag});
+    });
+  });
+  document.querySelectorAll('[data-link="comunidad"]').forEach(function(a){
+    a.addEventListener('click',function(){ if(window.pxc) pxc('IrComunidad',{content_name:pag}); });
+  });
+})();
+</script>
+</body>
+</html>

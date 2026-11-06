@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La app de Tu Clínica Digital · Javo Katz</title>
+<meta name="description" content="Una app que te lleva paso a paso de las sesiones sueltas a tu programa de 1.000 USD, con un Mentor que conoce tu caso.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La app de Tu Clínica Digital">
+<meta property="og:description" content="De las sesiones sueltas a tu programa de 1.000 USD, paso a paso y con un Mentor que conoce tu caso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ── portada ── */
+.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(48px,8vw,88px)}
+.portada .grid{display:grid;gap:44px;align-items:center}
+@media (min-width:980px){ .portada .grid{grid-template-columns:1.08fr .92fr;gap:56px} }
+.escena{position:relative;max-width:440px;margin:0 auto;width:100%;display:grid;place-items:center;padding-bottom:40px}
+.escena .tel{animation:flota 7s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){ .escena .tel{animation:none} }
+@media (max-width:560px){ .escena .tel{zoom:.86} }
+.escena .sello{position:absolute;left:0;bottom:0;z-index:3;background:var(--papel-2);border:1px solid var(--linea);border-radius:18px;padding:14px 18px;box-shadow:var(--sombra);max-width:58%}
+.escena .sello span{display:block;font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto)}
+.escena .sello b{display:block;font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.15;margin-top:2px}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.tres div{padding:16px 6px;text-align:center;font-size:16px;font-weight:700;line-height:1.3}
+.tres div+div{border-left:1px solid var(--linea)}
+.tres b{display:block;font-family:var(--f-titulo);font-size:38px;font-weight:600;line-height:1;color:var(--oro-texto)}
+
+/* ── la app por dentro ── */
+.dentro .grid{display:grid;gap:40px;align-items:center;margin-top:36px}
+@media (min-width:900px){ .dentro .grid{grid-template-columns:auto 1fr;gap:64px} }
+.puntos{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.puntos li{border-left:1px solid var(--oro);padding-left:20px}
+.puntos b{display:block;font-family:var(--f-titulo);font-size:28px;font-weight:600;line-height:1.1}
+.puntos p{margin-top:6px;color:var(--tinta-2);font-size:18px}
+.pieza{display:flex;align-items:center;gap:10px;font-size:13.5px;padding:8px 10px;border-radius:12px;background:#F5EFE1;margin-top:7px}
+.pieza i{font-style:normal;margin-left:auto;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.pieza i.ok{color:#2F5638}
+.pieza i.no{color:rgba(42,33,24,.45)}
+.barra-adn{height:8px;border-radius:8px;background:#EDE5D6;overflow:hidden;margin:8px 0 4px}
+.barra-adn span{display:block;height:100%;width:57%;background:#2A2118;border-radius:8px}
+
+/* ── los cinturones ── */
+.cintos{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin-top:40px;align-items:end}
+.cinto{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cinto i{display:block;width:100%;height:16px;border-radius:4px;background:var(--b);box-shadow:inset 0 0 0 1px rgba(43,39,36,.22),0 8px 14px -10px rgba(43,39,36,.6);position:relative;overflow:hidden;opacity:0;transform:translateY(10px);transition:opacity .6s var(--e),transform .6s var(--e);transition-delay:calc(var(--n) * 90ms)}
+.cinto i::after{content:"";position:absolute;right:0;top:0;bottom:0;width:26%;background:var(--p,transparent)}
+.cintos.in .cinto i{opacity:1;transform:none}
+.cinto b{font-family:var(--f-titulo);font-size:20px;font-weight:600;color:var(--oro-texto);font-variant-numeric:lining-nums}
+.hitos{display:grid;gap:12px;margin-top:34px}
+@media (min-width:760px){ .hitos{grid-template-columns:repeat(3,1fr)} }
+.hito{padding:20px 22px}
+.hito span{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.hito b{display:block;font-family:var(--f-titulo);font-size:26px;font-weight:600;line-height:1.12;margin-top:4px}
+
+/* ── los planes ── */
+.planes.de3{grid-template-columns:1fr}
+@media (min-width:1000px){ .planes.de3{grid-template-columns:1fr 1.08fr 1fr;align-items:stretch} }
+.plan .precio small{white-space:nowrap}
+
+/* ── el puente ── */
+.puente{display:grid;gap:22px;align-items:center;padding:clamp(26px,5vw,40px)}
+@media (min-width:860px){ .puente{grid-template-columns:1fr auto} }
+.puente h2{font-size:clamp(34px,7.4vw,48px);line-height:1.05}
+.puente p{margin-top:12px;color:var(--tinta-2);font-size:19px}
+</style>
+</head>
+<body data-pagina="app" data-pagos="numero verde negro">
+
+<header class="top"><div class="top-in">
+  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
+  <a class="btn" href="#planes"><span>Ver los planes</span></a>
+</div></header>
+
+<main>
+<!-- ═══ PORTADA ═══ -->
+<section class="portada" data-barra-desde>
+ <div class="wrap ancho"><div class="grid">
+  <div>
+   <span class="kick rv">La app de Tu Clínica Digital</span>
+   <h1 class="t1 rv d1">Diseñé una app para que armes <em>tu programa de 1.000 USD.</em></h1>
+   <p class="sub rv d2">Paso a paso, con un Mentor que conoce tu caso.</p>
+   <p class="lead rv d3">Cada sesión te deja una pieza de tu negocio terminada y guardada: tu precio, tu método, tu oferta, tu página, tu campaña. <b>En tu celular o en tu computadora, el día que elijas.</b></p>
+   <div class="botones rv d4">
+    <a class="btn" href="#planes"><span>Ver los planes</span> <span class="fl">→</span></a>
+    <a class="btn claro" data-link="numero" href="#"><span>Empezar por <span data-precio="numero">27</span> USD</span></a>
+   </div>
+  </div>
+  <div class="escena rv d2" aria-hidden="true">
+   <div class="tel"><div class="pant">
+    <div class="isla"></div>
+    <div class="estado"><span>9:41</span><i><svg viewBox="0 0 17 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 4h2v7H9zM13 1h2v10h-2z" fill="#2A2118"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#2A2118" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="#2A2118"/></svg></i></div>
+    <div class="app-head"><b>Hoy</b><span class="cint">Verde</span></div>
+    <div class="app-body"><div class="vista on" style="position:static">
+     <div class="app-card">
+      <div class="app-k">Día 23 · la sesión de hoy</div>
+      <div class="app-t">Tu oferta de 1.000 USD</div>
+      <div class="app-m">45 min · con el Mentor</div>
+      <div class="app-btn">COMENZAR</div>
+     </div>
+     <div class="dias">
+      <div class="dia"><b>1</b>Tu precio nuevo <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+      <div class="dia"><b>2</b>Tu método <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+      <div class="dia on"><b>3</b>Tu oferta</div>
+      <div class="dia"><b>4</b>Tu página y tu campaña<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="dia"><b>5</b>Tu clínica en marcha<svg class="lk" viewBox="0 0 24 24" fill="none" stroke="#2A2118" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+     </div>
+    </div></div>
+    <div class="tabs"><button class="on" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hoy</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19c4-1 4-13 8-14s4 13 8 14"/></svg>Camino</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14v9H9l-4 3z"/></svg>Mentor</button></div>
+   </div></div>
+   <div class="sello"><span>Pieza sellada</span><b>Tu método, con nombre y etapas</b></div>
+  </div>
+ </div>
+ <div class="tres rv">
+  <div><b>90</b>días de camino</div>
+  <div><b>14</b>piezas de tu negocio</div>
+  <div><b>9</b>cinturones</div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══ EL CAMINO ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">El camino</span>
+  <h2 class="t2 rv">De tu precio <em>a tu clínica en marcha.</em></h2>
+  <p class="lead rv">Un solo camino, en orden. Cada tramo se abre cuando terminaste el anterior.</p>
+  <ol class="ruta">
+   <li class="paso" data-n="1"><h3>Tu precio nuevo</h3><div class="min">EL NÚMERO · LOS 3 PLANES</div><p>Cinco sesiones para calcular tu hora real neta, desarmar lo que aprendiste del dinero y decir tu precio en voz alta. <b>Sales con tu precio sellado.</b></p></li>
+   <li class="paso" data-n="2"><h3>Tu método y tu oferta</h3><div class="min">DESDE TU SISTEMA</div><p>Le pones nombre y etapas a lo que ya haces, y lo conviertes en un programa de 1.000 USD. <b>Sales con tu método y tu oferta escritos.</b></p></li>
+   <li class="paso" data-n="3"><h3>Tu página y tu campaña</h3><div class="min">DESDE TU SISTEMA</div><p>Armas tu página, tus anuncios y tus contenidos con el Creador de la app. <b>Sales con tu campaña lista para salir.</b></p></li>
+   <li class="paso" data-n="4"><h3>Tu clínica en marcha</h3><div class="min">EL PROGRAMA COMPLETO</div><p>Entrenas tus llamadas de venta con IA, ordenas a tus consultantes en Mi Clínica y escribes cómo entregas tu programa. <b>Sales con tu sistema andando.</b></p></li>
+  </ol>
+ </div>
+</section>
+
+<!-- ═══ LA APP POR DENTRO ═══ -->
+<section class="sec dentro">
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">La app por dentro</span>
+   <h2 class="t2 rv">Tócala. <em>Así se ve tu día.</em></h2>
+   <div class="toca rv"><button type="button" data-toca="hoy">Hoy</button><button type="button" data-toca="adn">Mi ADN</button><button type="button" data-toca="mentor">El Mentor</button></div>
+  </div>
+  <div class="grid">
+   <div class="tel rv" data-tel data-inicio="hoy"><div class="pant">
+    <div class="isla"></div>
+    <div class="estado"><span>9:41</span><i><svg viewBox="0 0 17 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 4h2v7H9zM13 1h2v10h-2z" fill="#2A2118"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#2A2118" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="#2A2118"/></svg></i></div>
+    <div class="app-head"><b>Tu Clínica</b><span class="cint">Verde</span></div>
+    <div class="app-body">
+     <div class="vista" data-v="hoy">
+      <div class="app-card">
+       <div class="app-k">Día 23 · la sesión de hoy</div>
+       <div class="app-t">Tu oferta de 1.000 USD</div>
+       <div class="app-m">45 min · con el Mentor</div>
+       <div class="app-btn">COMENZAR</div>
+      </div>
+      <div class="dias">
+       <div class="dia"><b>1</b>Tu precio nuevo <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+       <div class="dia"><b>2</b>Tu método <span style="margin-left:auto;color:#2F5638;font-weight:800">✓</span></div>
+       <div class="dia on"><b>3</b>Tu oferta</div>
+       <div class="dia"><b>4</b>Tu página y tu campaña</div>
+      </div>
+     </div>
+     <div class="vista" data-v="adn">
+      <div class="app-k" style="margin-top:4px">Tu ADN · 8 de 14 sellados</div>
+      <div class="barra-adn"><span></span></div>
+      <div class="pieza">Tu historia<i class="ok">Sellado</i></div>
+      <div class="pieza">Tu precio digno<i class="ok">Sellado</i></div>
+      <div class="pieza">A quién sirves<i class="ok">Sellado</i></div>
+      <div class="pieza">Tu método<i class="ok">Sellado</i></div>
+      <div class="pieza">Tu oferta<i class="no">Hoy</i></div>
+      <div class="pieza">Tu script de ventas<i class="no">Pronto</i></div>
+     </div>
+     <div class="vista" data-v="mentor">
+      <div class="chat" data-guion='[["yo","No sé si cobrar 800 o 1.000 por el programa."],["ia","¿Qué cambia en la vida de tu consultante al terminar? Escríbelo en una línea.","El Mentor"],["yo","Duerme toda la noche y vuelve a entrenar sin dolor."],["ia","Eso vale más que doce sesiones sueltas. Sostén los 1.000 y abre con esa frase.","El Mentor"]]'></div>
+     </div>
+    </div>
+    <div class="tabs"><button type="button" data-ir="hoy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hoy</button><button type="button" data-ir="adn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3c0 6 8 6 8 12s-8 6-8 6M16 3c0 6-8 6-8 12"/></svg>ADN</button><button type="button" data-ir="mentor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14v9H9l-4 3z"/></svg>Mentor</button></div>
+   </div></div>
+   <ul class="puntos">
+    <li class="rv"><b>Hoy</b><p>Una sola sesión por día, con su botón para empezar. Lo que ya hiciste queda marcado.</p></li>
+    <li class="rv d1"><b>Mi ADN</b><p>Las 14 piezas de tu negocio: tu historia, tu precio, tu método, tu oferta. Cada sesión sella una.</p></li>
+    <li class="rv d2"><b>El Mentor</b><p>Conoce tu caso, tu número y tu método. Te devuelve al paso que toca, sin rodeos.</p></li>
+   </ul>
+  </div>
+  <p class="nota centro rv">Así conversa el Mentor. Adentro trabaja con lo que ya sellaste.</p>
+ </div>
+</section>
+
+<!-- ═══ LOS CINTURONES ═══ -->
+<section class="sec junto">
+ <div class="wrap ancho">
+  <span class="kick rv">Los cinturones</span>
+  <h2 class="t2 rv">Se ganan con hechos, <em>como en el dojo.</em></h2>
+  <p class="lead rv">Nueve cinturones, del blanco al negro. Cada uno se gana con un hecho que se puede mostrar.</p>
+  <div class="cintos rv" aria-label="Los nueve cinturones, del blanco al negro">
+   <div class="cinto" style="--n:0;--b:#FFFDF7"><i></i><b>1</b></div>
+   <div class="cinto" style="--n:1;--b:#FFFDF7;--p:#E2B53D"><i></i><b>2</b></div>
+   <div class="cinto" style="--n:2;--b:#E2B53D"><i></i><b>3</b></div>
+   <div class="cinto" style="--n:3;--b:#E2B53D;--p:#3F7A4C"><i></i><b>4</b></div>
+   <div class="cinto" style="--n:4;--b:#3F7A4C"><i></i><b>5</b></div>
+   <div class="cinto" style="--n:5;--b:#3F7A4C;--p:#2E5E8C"><i></i><b>6</b></div>
+   <div class="cinto" style="--n:6;--b:#2E5E8C"><i></i><b>7</b></div>
+   <div class="cinto" style="--n:7;--b:#9C3626"><i></i><b>8</b></div>
+   <div class="cinto" style="--n:8;--b:#1D1B18"><i></i><b>9</b></div>
+  </div>
+  <div class="hitos">
+   <div class="hito card rv"><span>Punta amarilla</span><b>Tu precio nuevo, sellado</b></div>
+   <div class="hito card rv d1"><span>Más adelante</span><b>Tu campaña al aire</b></div>
+   <div class="hito card rv d2"><span>Más adelante</span><b>La captura de tu primera venta</b></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ LOS PLANES ═══ -->
+<section class="sec" id="planes" data-barra-hasta>
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">Los planes</span>
+   <h2 class="t2 rv">Elige <em>hasta dónde llegas.</em></h2>
+   <p class="lead rv">Empiezas por donde quieras y subes desde la app cuando quieras.</p>
+  </div>
+  <div class="planes de3">
+   <div class="plan card rv">
+    <div class="nom">El Número</div>
+    <div class="que">Tus primeros 5 días</div>
+    <div class="precio"><b class="num" data-precio="numero">27</b><small>USD · pago único</small></div>
+    <ul>
+     <li>Tus 5 sesiones guiadas</li>
+     <li>Tu hora real neta y tu precio sellado</li>
+     <li>El Mentor, 30 consultas</li>
+     <li><i>Lo que el lago te enseña</i>, en digital</li>
+     <li>21 días de acceso</li>
+    </ul>
+    <a class="btn claro ancho-total" data-link="numero" href="#">Ver El Número <span class="fl">→</span></a>
+   </div>
+   <div class="plan card fuerte rv d1">
+    <span class="cinta">Mi recomendación</span>
+    <div class="nom">Tu Sistema</div>
+    <div class="que">Hasta tu campaña al aire</div>
+    <div class="precio"><b class="num" data-precio="verde">497</b><small>USD</small></div>
+    <ul>
+     <li>Todo lo de El Número</li>
+     <li>Tu método y tu oferta de 1.000 USD</li>
+     <li>Tu página y tu campaña, paso a paso</li>
+     <li>El Creador de contenidos y campañas</li>
+     <li>El Mentor, 10 consultas por semana</li>
+     <li>12 de las 14 piezas de tu ADN</li>
+    </ul>
+    <a class="btn ancho-total" data-compra="verde" href="#">Quiero Tu Sistema <span class="fl">→</span></a>
+   </div>
+   <div class="plan card rv d2">
+    <div class="nom">El Programa Completo</div>
+    <div class="que">El camino entero de 90 días</div>
+    <div class="precio"><b class="num" data-precio="negro">997</b><small>USD</small></div>
+    <ul>
+     <li>Todo lo de Tu Sistema</li>
+     <li>Entrenadores con IA para tus llamadas de venta</li>
+     <li>Mi Clínica: tus consultantes en un solo lugar</li>
+     <li>Tu script de ventas y tu protocolo de entrega</li>
+     <li>Las 14 piezas de tu ADN</li>
+    </ul>
+    <a class="btn claro ancho-total" data-compra="negro" href="#">Quiero el Programa <span class="fl">→</span></a>
+   </div>
+  </div>
+  <p class="seguro con-pago rv"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+  <p class="seguro sin-pago rv"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+ </div>
+</section>
+
+<!-- ═══ LO QUE CUENTAN ═══ -->
+<section class="sec junto">
+ <div class="wrap ancho">
+  <span class="kick rv">Lo que cuentan</span>
+  <h2 class="t2 rv">Profesionales que hicieron <em>el camino conmigo.</em></h2>
+  <div class="testi" data-muro="8" data-desde="12"></div>
+  <p class="desliza">Desliza para ver más →</p>
+  <div class="capturas" data-capturas></div>
+ </div>
+</section>
+
+<!-- ═══ EL PUENTE ═══ -->
+<section class="sec junto">
+ <div class="wrap ancho">
+  <div class="puente card rv">
+   <div>
+    <span class="kick">Si prefieres no hacerlo solo</span>
+    <h2>Lo construimos juntos <em>o lo montamos nosotros.</em></h2>
+    <p>Mentoría o instalación: tus 5 sistemas en 90 días, conmigo y mi equipo.</p>
+   </div>
+   <a class="btn" data-link="agenda" href="#"><span>Agendar mi diagnóstico</span> <span class="fl">→</span></a>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ PREGUNTAS ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <span class="kick rv">Preguntas</span>
+  <h2 class="t2 rv">Antes de <em>entrar.</em></h2>
+  <div class="faq rv">
+   <div class="fq"><button type="button">¿Puedo empezar por El Número y subir después?<i></i></button><div class="r"><div><p>Sí. Desde la app pasas a Tu Sistema o al Programa Completo cuando quieras, y sigues desde donde estabas.</p></div></div></div>
+   <div class="fq"><button type="button">¿Necesito saber de tecnología?<i></i></button><div class="r"><div><p>Si usas WhatsApp, puedes usar la app. Funciona en el celular y en la computadora, desde el navegador.</p></div></div></div>
+   <div class="fq"><button type="button">¿Qué es el Mentor?<i></i></button><div class="r"><div><p>Una inteligencia artificial entrenada con mi método. Conoce tu caso y lo que ya sellaste, y te lleva al paso que toca.</p></div></div></div>
+   <div class="fq"><button type="button">¿Es para mí?<i></i></button><div class="r"><div><p>Es para quien atiende personas 1 a 1 hace años: terapeutas, coaches, nutricionistas, entrenadores, médicos. Si quieres pasar de las sesiones sueltas a tu programa, es para ti.</p></div></div></div>
+   <div class="fq"><button type="button">¿Cómo entro después de pagar?<i></i></button><div class="r"><div><p>Te llega un correo para entrar a la app. Si en una hora no llegó, escríbeme por WhatsApp y te la activo ese mismo día.</p></div></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="sec junto">
+ <div class="wrap centro">
+  <hr class="regla rv">
+  <p class="frase-final rv">Tu clínica, <em>paso a paso.</em></p>
+  <div class="botones rv"><a class="btn" href="#planes"><span>Ver los planes</span> <span class="fl">→</span></a></div>
+  <p class="micro rv">o empieza por <a class="link" data-link="numero" href="#">El Número</a>, <b><span data-precio="numero">27</span> USD</b></p>
+ </div>
+</section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
+ <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+</div></footer>
+
+<div class="barra"><a class="btn" href="#planes"><span>Ver los planes</span></a></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+
+<script>/*BASE_JS*/</script>
+</body>
+</html>

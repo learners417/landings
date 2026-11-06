@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Las 7 libertades fundamentales · El primer capítulo · Javo Katz</title>
+<meta name="description" content="Lee el primer capítulo de Las 7 libertades fundamentales, de Javo Katz, aquí mismo y sin costo.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="book">
+<meta property="og:title" content="Las 7 libertades fundamentales · el primer capítulo">
+<meta property="og:description" content="Lee el primer capítulo de Las 7 libertades fundamentales, de Javo Katz, aquí mismo y sin costo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   El lector del primer capítulo: una página por vez, como un libro.
+   Lora para leer, Cormorant para los títulos. Nada por debajo de 16 px.
+   ═══════════════════════════════════════════════════════════════ */
+.sin-pago,.con-pago{display:none}
+
+/* la barra de arriba: volver, el libro, la página */
+.lector-top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.lt-in{max-width:880px;margin:0 auto;padding:10px max(14px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:12px}
+.lt-volver{flex:0 0 44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--linea);color:var(--tinta);background:var(--papel-2)}
+.lt-volver svg{width:22px;height:22px}
+.lt-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
+.lt-t b{font-family:var(--f-titulo);font-size:21px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lt-t span{font-size:16px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.lt-btn{min-height:46px;padding:8px 20px;font-size:16px;white-space:nowrap}
+@media (max-width:600px){ .lt-btn{display:none} }
+.lt-prog{height:3px}
+.lt-prog i{display:block;height:100%;width:0;background:var(--c,var(--oro));transition:width .45s var(--e)}
+
+/* las hojas */
+.lector{max-width:680px;margin:0 auto;padding:clamp(30px,5vw,60px) max(20px,env(safe-area-inset-left,0px)) calc(150px + env(safe-area-inset-bottom,0px))}
+.hoja+.hoja{margin-top:64px;padding-top:64px;border-top:1px solid var(--linea)}
+.js .hoja{display:none}
+.js .hoja+.hoja{margin-top:0;padding-top:0;border-top:0}
+.js .hoja.on{display:block;animation:hoja .5s var(--e)}
+@keyframes hoja{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){ .js .hoja.on{animation:none} }
+
+.hoja p{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.75;margin-top:1em;text-wrap:pretty}
+.hoja>p:first-child{margin-top:0}
+.hoja b{font-weight:600}
+.hoja .k{font-family:var(--f-texto);font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);margin:0 0 12px;line-height:1.4}
+.hoja h1{font-family:var(--f-titulo);font-size:clamp(46px,11.5vw,70px);line-height:1.02;font-weight:500;letter-spacing:-.015em;text-wrap:balance}
+.hoja h2{font-family:var(--f-titulo);font-size:clamp(36px,8.4vw,50px);line-height:1.06;font-weight:500;margin-bottom:6px;text-wrap:balance}
+.hoja h3{font-family:var(--f-titulo);font-size:32px;line-height:1.1;font-weight:600}
+.hoja .sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(24px,5.6vw,29px);line-height:1.28;color:var(--tinta-2);margin-top:8px}
+.hoja h2+p:not(.sub),.hoja .sub+p{margin-top:22px}
+.hoja .poema{margin:30px 0;padding:4px 0 4px 22px;border-left:1px solid var(--oro)}
+.hoja .poema p{font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,31px);line-height:1.3;margin:0}
+.hoja .gran{font-family:var(--f-titulo);font-size:clamp(31px,7.4vw,42px);line-height:1.14;text-align:center;margin:40px 0 10px;padding:24px 0;border-top:1px solid var(--oro);border-bottom:1px solid var(--oro);text-wrap:balance}
+.hoja .frase{margin:9vh 0 4vh;text-align:center}
+.hoja .frase blockquote{margin:0;font-family:var(--f-titulo);font-style:italic;font-size:clamp(29px,7vw,40px);line-height:1.24;text-wrap:balance}
+.hoja .frase figcaption{margin-top:22px;font-size:16px;font-weight:700;letter-spacing:.08em;color:var(--oro-texto)}
+.hoja ol,.hoja ul{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.7;padding-left:1.4em;margin:1em 0 0}
+.hoja li+li{margin-top:.55em}
+
+/* portadillas: partes, capítulos, dedicatoria */
+.hoja.portadilla{text-align:center;padding-top:9vh;min-height:56vh}
+.hoja.portadilla .poema{border-left:0;padding-left:0;margin-top:40px}
+.hoja.portadilla .sub{max-width:24em;margin-inline:auto}
+.hoja.portadilla h1+.sub,.hoja.portadilla h1+.poema{margin-top:22px}
+.hoja.dedicatoria{text-align:center;padding-top:12vh;min-height:56vh}
+.hoja .dedi{font-family:var(--f-titulo);font-style:italic;font-size:clamp(26px,6.2vw,33px);line-height:1.35;max-width:22em;margin-inline:auto}
+
+/* tu acción */
+.accion{margin-top:34px;padding:22px 22px 24px;border:1px solid var(--linea);border-left:4px solid var(--verde);border-radius:6px 18px 18px 6px;background:var(--papel-2)}
+.accion .k{color:var(--verde);margin-bottom:4px}
+.accion ol{margin-top:4px}
+
+/* los ejercicios */
+.ej-caja,.obra-ej,.tabla-ej{margin-top:30px;padding:22px;border:1px dashed color-mix(in srgb,var(--oro) 70%,transparent);border-radius:18px;background:var(--papel-2)}
+.ej-k{font-family:var(--f-texto) !important;font-size:16px !important;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin:0 !important}
+.ej-q{font-family:var(--f-texto) !important;font-size:18px !important;font-weight:600;margin-top:14px !important}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips button{min-height:46px;padding:8px 16px;border-radius:999px;border:1px solid var(--linea);background:var(--papel);font-size:17px;font-weight:700;cursor:pointer;transition:all .2s}
+.chips button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
+.chips.nums button{min-width:46px;padding:8px 0}
+.semanas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+@media (min-width:560px){ .semanas{grid-template-columns:repeat(6,1fr)} }
+.semanas label{display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:700;color:var(--tinta-2);text-align:center}
+.semanas input,.tabla-ej input{width:100%;min-height:46px;border:1px solid var(--linea);border-radius:12px;background:var(--papel);font:inherit;font-size:18px;text-align:center;color:var(--tinta)}
+.ej-caja .suma{font-family:var(--f-texto);font-size:18px;margin-top:14px}
+.ej-caja .suma b{font-family:var(--f-titulo);font-size:30px;color:var(--oro-texto)}
+.tabla-ej{padding:10px;overflow-x:auto}
+.tabla-ej table{width:100%;border-collapse:collapse;font-size:16px}
+.tabla-ej th,.tabla-ej td{padding:10px 8px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:middle}
+.tabla-ej thead th{font-weight:800;font-size:16px;color:var(--oro-texto)}
+.tabla-ej tbody th{font-weight:600}
+.tabla-ej td{width:26%}
+.tabla-ej td.luego{background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(168,135,90,.12) 8px 9px)}
+.obra-ej h3{margin-top:4px}
+.ej-nota{font-family:var(--f-texto) !important;font-size:17px !important;color:var(--tinta-2);margin-top:6px !important}
+.campo-ej{display:block;margin-top:18px}
+.campo-ej b{display:block;font-size:18px;font-weight:800}
+.campo-ej span{display:block;font-size:17px;color:var(--tinta-2);line-height:1.45;margin-top:2px}
+.campo-ej textarea{display:block;width:100%;margin-top:10px;border:1px solid var(--linea);border-radius:12px;padding:10px 14px;font-family:var(--f-lectura);font-size:19px;line-height:34px;color:var(--tinta);resize:vertical;
+  background:var(--papel) repeating-linear-gradient(transparent 0 33px,rgba(168,135,90,.3) 33px 34px);background-attachment:local;background-position:0 10px}
+.hoja .cuenta{margin-top:28px}
+
+/* la portada del lector */
+.hoja.inicio{text-align:center;padding-top:14px}
+.ini-tapa{width:min(250px,60vw);margin:0 auto 30px;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4);transform:rotate(-2deg)}
+.hoja.inicio h1{font-size:clamp(40px,10vw,60px)}
+.hoja.inicio .sub{max-width:22em;margin-inline:auto}
+.hoja .ini-meta{font-family:var(--f-texto);font-size:17px;color:var(--tinta-2);margin:20px auto 26px}
+.hoja.inicio .btn{min-width:240px}
+
+/* el final: seguir con el libro */
+.hoja.fin{text-align:center;padding-top:6px}
+.fin-tapa{width:min(170px,42vw);margin:0 auto 24px;border-radius:2px 5px 5px 2px;box-shadow:14px 20px 34px -18px rgba(20,18,16,.6)}
+.hoja .fin-lead{font-family:var(--f-texto);font-size:19px;color:var(--tinta-2);max-width:26em;margin:10px auto 0}
+.ofertas{display:grid;gap:16px;margin-top:30px;text-align:left}
+.of{position:relative;padding:24px 22px 22px;border:1px solid var(--linea);border-radius:20px;background:var(--papel-2);box-shadow:var(--sombra)}
+.of.fuerte{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.of .cinta{position:absolute;top:-14px;left:22px;background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.of-t{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.1}
+.of p{font-family:var(--f-texto);font-size:18px;line-height:1.5;color:var(--tinta-2);margin:8px 0 18px}
+.of s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.hoja .solo-libro,.hoja .otro{font-family:var(--f-texto);font-size:17px;margin-top:20px;text-align:center}
+.hoja .seguro{font-family:var(--f-texto)}
+
+/* los botones de abajo */
+.lector-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;justify-content:center;padding:12px max(14px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transition:transform .35s var(--e)}
+.lector-nav .btn{min-height:58px}
+.lector-nav [data-ir="-1"]{flex:0 0 58px;padding:0}
+.lector-nav [data-ir="1"]{flex:1;max-width:420px}
+.lector-nav [data-ir="-1"]:disabled{opacity:.35;pointer-events:none}
+.lector-nav.oculta{transform:translateY(110%)}
+html:not(.js) .lector-nav{display:none}
+
+/* elegir el libro */
+.elegir{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+@media (min-width:760px){ .elegir{grid-template-columns:repeat(4,1fr);gap:18px} }
+.el-libro{display:flex;flex-direction:column;gap:6px;padding:16px 14px 18px;border:1px solid var(--linea);border-radius:18px;background:var(--papel-2);text-decoration:none;box-shadow:var(--sombra);transition:transform .3s var(--e),border-color .3s}
+.el-libro:hover{transform:translateY(-4px);border-color:var(--tinta)}
+.el-libro img{width:78%;margin:0 auto 10px;border-radius:1px 4px 4px 1px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6)}
+.el-serie{font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--oro-texto);line-height:1.3}
+.el-libro b{font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.1}
+.el-que{font-size:16px;font-weight:700;margin-top:auto;padding-top:6px}
+
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-pagina="capitulo-libertades" data-libro="libertades" style="--c:var(--libertades)">
+
+<header class="lector-top"><div class="lt-in">
+  <a class="lt-volver" data-link="libros" data-hash="#libertades" href="#" aria-label="Volver a los libros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="lt-t"><b>Las 7 libertades fundamentales</b><span data-pag>1 de 13</span></div>
+  <a class="btn lt-btn" data-compra="libertades" href="#"><span>Lo quiero · <span data-precio="libertades">37</span> USD</span></a>
+ </div><div class="lt-prog"><i></i></div></header>
+
+<main class="lector" data-total="13">
+ <section class="hoja inicio on" id="p1" aria-label="Portada">
+  <img class="ini-tapa" data-img="tapas/libertades-grande.webp" alt="Tapa de Las 7 libertades fundamentales" width="640" height="982" fetchpriority="high">
+  <p class="k">Las siete juntas</p>
+  <h1>Las 7 libertades fundamentales</h1>
+  <p class="sub">Cómo se construye una vida libre</p>
+  <p class="ini-meta">Lee el primer capítulo, aquí mismo y sin costo · 5 minutos</p>
+  <button class="btn" type="button" data-ir="1"><span>Empezar a leer</span> <span class="fl">→</span></button>
+ </section>
+<section class="hoja dedicatoria" id="p2" aria-label="Página 2">
+<p class="dedi">Para Diego, mi hermano, que levanta edificios y me sostuvo cuando yo no podía.</p>
+<p class="dedi">Y para Genaro.</p>
+</section>
+<section class="hoja solo-frase" id="p3" aria-label="Página 3">
+<figure class="frase"><blockquote>Al hombre se le puede arrebatar todo salvo una cosa: la última de las libertades humanas, la elección de la actitud personal ante un conjunto de circunstancias, para decidir su propio camino.</blockquote><figcaption>Viktor Frankl · <i>El hombre en busca de sentido</i></figcaption></figure>
+</section>
+<section class="hoja portadilla" id="p4" aria-label="Página 4">
+<p class="k">Apertura</p>
+<h1>El plano</h1>
+<p class="sub">De dónde nace el libro y cómo se lee.</p>
+</section>
+<section class="hoja portadilla" id="p5" aria-label="Página 5">
+<p class="k">Capítulo 1</p><h1>Una noche en Bariloche</h1>
+<p class="sub">Diego y los suyos viajaron para estar una sola noche en mis treinta. Quién es, qué construye y por qué este libro está hecho con su mirada.</p>
+</section>
+<section class="hoja " id="p6" aria-label="Página 6">
+<p class="k">MI HERMANO</p>
+<h2>Veinte años mayor</h2>
+<p>Diego es mi hermano por parte de padre y me lleva veinte años. Es arquitecto y maestro mayor de obras, y levantó varios edificios.</p>
+<p>Te lo presento por su oficio, porque con ese oficio está construido este libro. Un arquitecto dibuja lo que todavía no existe, y un maestro mayor de obras se encarga de que eso que alguien dibujó se sostenga de verdad, con hormigón, con hierro y con la gravedad tirando hacia abajo todos los días del año.</p>
+<p>Su mirada y nuestras conversaciones me ayudaron mucho. Hoy miro con esos ojos casi todo, y veo lo mismo en un edificio, en un negocio y en una vida: se piensan enteros antes de empezar, se levantan en orden y tienen que aguantar el peso que les toca.</p>
+<p>Le dedico este libro por algo que hizo en los días en que yo no podía. Te lo cuento ahora, en orden, como pasó.</p>
+</section>
+<section class="hoja " id="p7" aria-label="Página 7">
+<p class="k">HISTORIA</p>
+<h2>Jueves, viernes, sábado, martes</h2>
+<p>En el invierno de 2025, mi mamá estuvo en terapia intensiva en Buenos Aires.</p>
+<p>Llegó al hospital un jueves, y el viernes la vi despierta. El sábado la durmieron. Ailu, mi compañera, sostenía desde Bariloche la empresa y la casa, y yo estaba en Buenos Aires.</p>
+<p>El martes, mi mamá despertó.</p>
+<p>—Mi chiquito.</p>
+<p>Y lloramos los dos.</p>
+<p>Fueron semanas, nada más, y fueron de los peores momentos de mi vida. Estaba agotado. Y quería pasarlo solo, como siempre, tan solo que ni siquiera le había contado a Diego.</p>
+<p>En esas semanas, Ailu lo llamó, y Diego llegó al hospital.</p>
+<p>Lloré en sus brazos. Me contuvo, me alentó y estuvo conmigo.</p>
+<p>Esos días, Genaro, mi sobrino, cumplía quince, y compartimos su cumpleaños.</p>
+<p class="gran">«Sin Diego no lo habría superado.»</p>
+</section>
+<section class="hoja " id="p8" aria-label="Página 8">
+<p class="k">COMO SIEMPRE</p>
+<h2>La llamada que no hice</h2>
+<p>Es martes por la noche y te enteras de algo grave. Antes de hablar con nadie ya armaste un plan para resolverlo solo, y hasta ensayaste qué vas a contestar cuando te pregunten cómo estás. «Bien, tranquilo, lo tengo controlado».</p>
+<p>Si te reconoces, te entiendo. Yo lo tenía tan entrenado que ni lo veía. De toda esa historia, las dos palabras que más me hacen pensar hoy son «como siempre».</p>
+<p>Pasarlo solo tiene buena fama. Se parece a la fortaleza, a no molestar, a tener todo bajo control. Y se paga caro, porque se paga en el peor momento, cuando la carga es más grande y las fuerzas son más chicas.</p>
+<p>A mí me sostuvo una llamada que no hice yo. La hizo Ailu.</p>
+<p>Hay días en que lo más fuerte que puedes hacer es dejar que alguien llame por ti.</p>
+</section>
+<section class="hoja " id="p9" aria-label="Página 9">
+<p class="k">UNA NOCHE</p>
+<h2>Viajaron para una sola noche</h2>
+<p>Después, Diego y los suyos viajaron hasta Bariloche para pasar una sola noche conmigo, en mis treinta.</p>
+<p>Yo aprendí de niño que las horas no vuelven, y en el capítulo 15 te cuento con quién. Desde entonces las cuento de otra manera. Un dinero prestado se devuelve y un favor se paga, y una noche que alguien te dio no tiene repuesto.</p>
+<p>Diego y los suyos me dieron eso, una noche. De esa noche me quedo con lo más simple, que vinieron.</p>
+<p>Piensa en la última vez que alguien hizo lugar en su vida solo para estar contigo. Ese tiempo también sostiene tu obra, aunque no figure en ningún plano.</p>
+<p>Hoy escribo este libro con treinta años, y lo empiezo por ahí.</p>
+</section>
+<section class="hoja " id="p10" aria-label="Página 10">
+<p class="k">LA CORDADA</p>
+<h2>Atados a la misma cuerda</h2>
+<p>En la montaña, los que suben atados a la misma cuerda forman una cordada. Si uno resbala, el otro lo sostiene con su peso, y en los tramos difíciles se sube así, atados.</p>
+<p>Diego fue mi cordada. Lo fue aunque yo no le había avisado que estaba subiendo un tramo así. Ailu tiró de la cuerda, y él respondió.</p>
+<p>Hay tramos de la vida que no se suben solo, por más preparado que estés. Una enfermedad en la familia, una pérdida, un negocio que se cae, un hijo que te necesita entero. Ahí te sostiene el que está atado contigo, sepa o no de montañas.</p>
+<p>Y ojo, que la cordada se arma antes del tramo difícil. Se arma en las conversaciones de un martes cualquiera, en las llamadas que parecen no tener motivo y en los cumpleaños a los que vas.</p>
+<p>Al final de este capítulo te voy a pedir que escribas quién fue tu cordada. Si te cuesta encontrar un nombre, escribe eso, que también es un dato.</p>
+</section>
+<section class="hoja " id="p11" aria-label="Página 11">
+<p class="k">SU MIRADA</p>
+<h2>Con ojos de constructor</h2>
+<p>Antes de que alguien clave la primera pala, el edificio ya existe entero en el plano. Después se estudia el suelo, y la obra se levanta en un orden que no se discute. Primero los cimientos, después la estructura, la envolvente y las instalaciones. Nadie empieza por el techo, por más apuro que tenga, porque el techo necesita algo que lo sostenga, y eso que lo sostiene necesita, a su vez, un suelo que alguien estudió antes de mover la primera máquina.</p>
+<p>Así está hecho este libro. Arranca por el plano y por el terreno, el planeta de donde venimos, y solo después levanta tus siete libertades, en el mismo orden en que se levanta una obra.</p>
+<p>Es la mirada de alguien que levanta edificios, puesta sobre una vida. La de Diego.</p>
+<p>Cuando te pregunte por la tuya, te voy a preguntar como pregunta un constructor. Qué hay en el plano, cómo está el suelo, qué estás levantando primero y si eso que levantaste aguanta el peso que le pusiste encima.</p>
+</section>
+<section class="hoja " id="p12" aria-label="Página 12">
+<div class="obra-ej"><p class="k">Tu obra</p><h3>Tu cordada</h3><p class="ej-nota">Escríbelo aquí mismo, con fecha.</p><label class="campo-ej"><b>Quién te sostuvo</b><span>El nombre de quien fue tu cordada cuando no podías solo, y qué estaba pasando en tu vida.</span><textarea rows="4" aria-label="Quién te sostuvo"></textarea></label><label class="campo-ej"><b>Qué hizo por ti</b><span>Lo que hizo, con hechos. Si nunca se lo dijiste, díselo esta semana.</span><textarea rows="4" aria-label="Qué hizo por ti"></textarea></label></div>
+</section>
+ <section class="hoja fin" id="p13" aria-label="Seguir leyendo">
+  <img class="fin-tapa" data-img="tapas/libertades-grande.webp" alt="Tapa de Las 7 libertades fundamentales" width="640" height="982" loading="lazy">
+  <p class="k">Hasta aquí, el primer capítulo</p>
+  <h2>¿Seguimos?</h2>
+  <p class="fin-lead">Lo que leíste es el comienzo. El resto del camino está en el libro.</p>
+  <div class="ofertas">
+   <div class="of fuerte">
+    <b class="of-t">Las 7 libertades fundamentales</b>
+    <p>El libro entero, en digital, para descargar al instante.</p>
+    <a class="btn ancho-total" data-compra="libertades" href="#"><span>Lo quiero · <span data-precio="libertades">37</span> USD</span></a>
+   </div>
+   <div class="of">
+    <span class="cinta">La obra completa</span>
+    <b class="of-t">Los 8 libros + El Número</b>
+    <p>Este y los otros siete, más tus 5 días en mi app. Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
+    <a class="btn claro ancho-total" data-compra="obra" href="#"><span>Los 8 + la app · <span data-precio="obra">97</span> USD</span></a>
+   </div>
+  </div>
+  <p class="seguro con-pago"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+  <p class="seguro sin-pago"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+  <p class="otro"><a class="link" data-link="capitulo" href="#">Leer otro primer capítulo</a> · <a class="link" data-link="libros" data-hash="#libertades" href="#">Ver todos los libros</a></p>
+ </section>
+</main>
+
+<nav class="lector-nav" aria-label="Pasar de página">
+  <button class="btn claro" type="button" data-ir="-1" aria-label="Página anterior"><span class="fl">←</span></button>
+  <button class="btn" type="button" data-ir="1"><span data-sig>Seguir leyendo</span> <span class="fl">→</span></button>
+</nav>
+
+<script>/*BASE_JS*/</script>
+<script>
+/* El lector: una hoja por vez. Botones, flechas del teclado y deslizar con el dedo.
+   La hoja en la que vas queda en la dirección (#p5), así al volver sigues donde estabas. */
+(function () {
+  var hojas = [].slice.call(document.querySelectorAll('.hoja'));
+  if (!hojas.length) return;
+  var total = hojas.length, i = 0;
+  var pag = document.querySelector('[data-pag]'), prog = document.querySelector('.lt-prog i');
+  var nav = document.querySelector('.lector-nav');
+  var ant = nav && nav.querySelector('[data-ir="-1"]'), sig = nav && nav.querySelector('[data-ir="1"]');
+  var sigT = nav && nav.querySelector('[data-sig]');
+  var libro = document.body.getAttribute('data-libro') || '';
+  var hecho = {};
+
+  function ir(n, quieto) {
+    n = Math.max(0, Math.min(total - 1, n));
+    hojas[i].classList.remove('on');
+    i = n;
+    hojas[i].classList.add('on');
+    if (pag) pag.textContent = (i + 1) + ' de ' + total;
+    if (prog) prog.style.width = (i / (total - 1) * 100) + '%';
+    if (ant) ant.disabled = i === 0;
+    if (nav) nav.classList.toggle('oculta', i === 0);
+    if (sig) sig.style.display = i === total - 1 ? 'none' : '';
+    if (sigT) sigT.textContent = i === total - 2 ? 'Terminar' : 'Seguir leyendo';
+    if (!quieto) window.scrollTo(0, 0);
+    try { history.replaceState(null, '', i ? '#p' + (i + 1) : location.pathname + location.search); } catch (e) {}
+    if (i === 1 && !hecho.a) { hecho.a = 1; if (window.pxc) pxc('EmpezoCapitulo', { content_name: libro }); }
+    if (i === total - 1 && !hecho.b) { hecho.b = 1; if (window.pxc) pxc('TerminoCapitulo', { content_name: libro }); }
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('[data-ir]') : null;
+    if (!b) return;
+    e.preventDefault();
+    ir(i + (+b.getAttribute('data-ir')));
+  });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target; if (t && t.closest && t.closest('input,textarea,select')) return;
+    if (e.key === 'ArrowRight') ir(i + 1);
+    if (e.key === 'ArrowLeft') ir(i - 1);
+  });
+
+  /* deslizar con el dedo, solo si el gesto es claramente de costado */
+  var x0 = null, y0 = 0, t0 = 0;
+  document.addEventListener('touchstart', function (e) {
+    var el = e.target; if (el && el.closest && el.closest('input,textarea,.cuenta,.chips,.semanas,.tabla-ej')) { x0 = null; return; }
+    var t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 == null) return;
+    var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (Math.abs(dx) > 70 && Math.abs(dy) < 50 && Date.now() - t0 < 700) ir(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  }, { passive: true });
+
+  /* los ejercicios: elegir una opción, sumar las semanas */
+  document.querySelectorAll('[data-chips] .chips').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      g.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    });
+  });
+  document.querySelectorAll('[data-semanas]').forEach(function (c) {
+    var out = c.querySelector('[data-suma-horas]');
+    c.addEventListener('input', function () {
+      var s = 0; c.querySelectorAll('input').forEach(function (x) { s += +x.value || 0; });
+      out.textContent = s;
+    });
+  });
+
+  /* qué aviso de pago se ve */
+  var C = window.TCD || {};
+  var hay = C.pagos && (C.pagos.obra || C.pagos[libro]);
+  document.querySelectorAll(hay ? '.con-pago' : '.sin-pago').forEach(function (e) { e.style.display = 'flex'; });
+
+  var m = /^#p(\d+)$/.exec(location.hash);
+  hojas.forEach(function (h) { h.classList.remove('on'); });
+  ir(m ? +m[1] - 1 : 0, true);
+})();
+
+</script>
+</body>
+</html>

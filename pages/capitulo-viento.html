@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lo que el viento te enseña · El primer capítulo · Javo Katz</title>
+<meta name="description" content="Lee el primer capítulo de Lo que el viento te enseña, de Javo Katz, aquí mismo y sin costo.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="book">
+<meta property="og:title" content="Lo que el viento te enseña · el primer capítulo">
+<meta property="og:description" content="Lee el primer capítulo de Lo que el viento te enseña, de Javo Katz, aquí mismo y sin costo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@500;600;700;800&display=swap">
+<style>/*BASE_CSS*/</style>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   El lector del primer capítulo: una página por vez, como un libro.
+   Lora para leer, Cormorant para los títulos. Nada por debajo de 16 px.
+   ═══════════════════════════════════════════════════════════════ */
+.sin-pago,.con-pago{display:none}
+
+/* la barra de arriba: volver, el libro, la página */
+.lector-top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.lt-in{max-width:880px;margin:0 auto;padding:10px max(14px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:12px}
+.lt-volver{flex:0 0 44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--linea);color:var(--tinta);background:var(--papel-2)}
+.lt-volver svg{width:22px;height:22px}
+.lt-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
+.lt-t b{font-family:var(--f-titulo);font-size:21px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lt-t span{font-size:16px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.lt-btn{min-height:46px;padding:8px 20px;font-size:16px;white-space:nowrap}
+@media (max-width:600px){ .lt-btn{display:none} }
+.lt-prog{height:3px}
+.lt-prog i{display:block;height:100%;width:0;background:var(--c,var(--oro));transition:width .45s var(--e)}
+
+/* las hojas */
+.lector{max-width:680px;margin:0 auto;padding:clamp(30px,5vw,60px) max(20px,env(safe-area-inset-left,0px)) calc(150px + env(safe-area-inset-bottom,0px))}
+.hoja+.hoja{margin-top:64px;padding-top:64px;border-top:1px solid var(--linea)}
+.js .hoja{display:none}
+.js .hoja+.hoja{margin-top:0;padding-top:0;border-top:0}
+.js .hoja.on{display:block;animation:hoja .5s var(--e)}
+@keyframes hoja{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){ .js .hoja.on{animation:none} }
+
+.hoja p{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.75;margin-top:1em;text-wrap:pretty}
+.hoja>p:first-child{margin-top:0}
+.hoja b{font-weight:600}
+.hoja .k{font-family:var(--f-texto);font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);margin:0 0 12px;line-height:1.4}
+.hoja h1{font-family:var(--f-titulo);font-size:clamp(46px,11.5vw,70px);line-height:1.02;font-weight:500;letter-spacing:-.015em;text-wrap:balance}
+.hoja h2{font-family:var(--f-titulo);font-size:clamp(36px,8.4vw,50px);line-height:1.06;font-weight:500;margin-bottom:6px;text-wrap:balance}
+.hoja h3{font-family:var(--f-titulo);font-size:32px;line-height:1.1;font-weight:600}
+.hoja .sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(24px,5.6vw,29px);line-height:1.28;color:var(--tinta-2);margin-top:8px}
+.hoja h2+p:not(.sub),.hoja .sub+p{margin-top:22px}
+.hoja .poema{margin:30px 0;padding:4px 0 4px 22px;border-left:1px solid var(--oro)}
+.hoja .poema p{font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,31px);line-height:1.3;margin:0}
+.hoja .gran{font-family:var(--f-titulo);font-size:clamp(31px,7.4vw,42px);line-height:1.14;text-align:center;margin:40px 0 10px;padding:24px 0;border-top:1px solid var(--oro);border-bottom:1px solid var(--oro);text-wrap:balance}
+.hoja .frase{margin:9vh 0 4vh;text-align:center}
+.hoja .frase blockquote{margin:0;font-family:var(--f-titulo);font-style:italic;font-size:clamp(29px,7vw,40px);line-height:1.24;text-wrap:balance}
+.hoja .frase figcaption{margin-top:22px;font-size:16px;font-weight:700;letter-spacing:.08em;color:var(--oro-texto)}
+.hoja ol,.hoja ul{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.7;padding-left:1.4em;margin:1em 0 0}
+.hoja li+li{margin-top:.55em}
+
+/* portadillas: partes, capítulos, dedicatoria */
+.hoja.portadilla{text-align:center;padding-top:9vh;min-height:56vh}
+.hoja.portadilla .poema{border-left:0;padding-left:0;margin-top:40px}
+.hoja.portadilla .sub{max-width:24em;margin-inline:auto}
+.hoja.portadilla h1+.sub,.hoja.portadilla h1+.poema{margin-top:22px}
+.hoja.dedicatoria{text-align:center;padding-top:12vh;min-height:56vh}
+.hoja .dedi{font-family:var(--f-titulo);font-style:italic;font-size:clamp(26px,6.2vw,33px);line-height:1.35;max-width:22em;margin-inline:auto}
+
+/* tu acción */
+.accion{margin-top:34px;padding:22px 22px 24px;border:1px solid var(--linea);border-left:4px solid var(--verde);border-radius:6px 18px 18px 6px;background:var(--papel-2)}
+.accion .k{color:var(--verde);margin-bottom:4px}
+.accion ol{margin-top:4px}
+
+/* los ejercicios */
+.ej-caja,.obra-ej,.tabla-ej{margin-top:30px;padding:22px;border:1px dashed color-mix(in srgb,var(--oro) 70%,transparent);border-radius:18px;background:var(--papel-2)}
+.ej-k{font-family:var(--f-texto) !important;font-size:16px !important;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin:0 !important}
+.ej-q{font-family:var(--f-texto) !important;font-size:18px !important;font-weight:600;margin-top:14px !important}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips button{min-height:46px;padding:8px 16px;border-radius:999px;border:1px solid var(--linea);background:var(--papel);font-size:17px;font-weight:700;cursor:pointer;transition:all .2s}
+.chips button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
+.chips.nums button{min-width:46px;padding:8px 0}
+.semanas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+@media (min-width:560px){ .semanas{grid-template-columns:repeat(6,1fr)} }
+.semanas label{display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:700;color:var(--tinta-2);text-align:center}
+.semanas input,.tabla-ej input{width:100%;min-height:46px;border:1px solid var(--linea);border-radius:12px;background:var(--papel);font:inherit;font-size:18px;text-align:center;color:var(--tinta)}
+.ej-caja .suma{font-family:var(--f-texto);font-size:18px;margin-top:14px}
+.ej-caja .suma b{font-family:var(--f-titulo);font-size:30px;color:var(--oro-texto)}
+.tabla-ej{padding:10px;overflow-x:auto}
+.tabla-ej table{width:100%;border-collapse:collapse;font-size:16px}
+.tabla-ej th,.tabla-ej td{padding:10px 8px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:middle}
+.tabla-ej thead th{font-weight:800;font-size:16px;color:var(--oro-texto)}
+.tabla-ej tbody th{font-weight:600}
+.tabla-ej td{width:26%}
+.tabla-ej td.luego{background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(168,135,90,.12) 8px 9px)}
+.obra-ej h3{margin-top:4px}
+.ej-nota{font-family:var(--f-texto) !important;font-size:17px !important;color:var(--tinta-2);margin-top:6px !important}
+.campo-ej{display:block;margin-top:18px}
+.campo-ej b{display:block;font-size:18px;font-weight:800}
+.campo-ej span{display:block;font-size:17px;color:var(--tinta-2);line-height:1.45;margin-top:2px}
+.campo-ej textarea{display:block;width:100%;margin-top:10px;border:1px solid var(--linea);border-radius:12px;padding:10px 14px;font-family:var(--f-lectura);font-size:19px;line-height:34px;color:var(--tinta);resize:vertical;
+  background:var(--papel) repeating-linear-gradient(transparent 0 33px,rgba(168,135,90,.3) 33px 34px);background-attachment:local;background-position:0 10px}
+.hoja .cuenta{margin-top:28px}
+
+/* la portada del lector */
+.hoja.inicio{text-align:center;padding-top:14px}
+.ini-tapa{width:min(250px,60vw);margin:0 auto 30px;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4);transform:rotate(-2deg)}
+.hoja.inicio h1{font-size:clamp(40px,10vw,60px)}
+.hoja.inicio .sub{max-width:22em;margin-inline:auto}
+.hoja .ini-meta{font-family:var(--f-texto);font-size:17px;color:var(--tinta-2);margin:20px auto 26px}
+.hoja.inicio .btn{min-width:240px}
+
+/* el final: seguir con el libro */
+.hoja.fin{text-align:center;padding-top:6px}
+.fin-tapa{width:min(170px,42vw);margin:0 auto 24px;border-radius:2px 5px 5px 2px;box-shadow:14px 20px 34px -18px rgba(20,18,16,.6)}
+.hoja .fin-lead{font-family:var(--f-texto);font-size:19px;color:var(--tinta-2);max-width:26em;margin:10px auto 0}
+.ofertas{display:grid;gap:16px;margin-top:30px;text-align:left}
+.of{position:relative;padding:24px 22px 22px;border:1px solid var(--linea);border-radius:20px;background:var(--papel-2);box-shadow:var(--sombra)}
+.of.fuerte{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
+.of .cinta{position:absolute;top:-14px;left:22px;background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.of-t{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.1}
+.of p{font-family:var(--f-texto);font-size:18px;line-height:1.5;color:var(--tinta-2);margin:8px 0 18px}
+.of s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.hoja .solo-libro,.hoja .otro{font-family:var(--f-texto);font-size:17px;margin-top:20px;text-align:center}
+.hoja .seguro{font-family:var(--f-texto)}
+
+/* los botones de abajo */
+.lector-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;justify-content:center;padding:12px max(14px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transition:transform .35s var(--e)}
+.lector-nav .btn{min-height:58px}
+.lector-nav [data-ir="-1"]{flex:0 0 58px;padding:0}
+.lector-nav [data-ir="1"]{flex:1;max-width:420px}
+.lector-nav [data-ir="-1"]:disabled{opacity:.35;pointer-events:none}
+.lector-nav.oculta{transform:translateY(110%)}
+html:not(.js) .lector-nav{display:none}
+
+/* elegir el libro */
+.elegir{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+@media (min-width:760px){ .elegir{grid-template-columns:repeat(4,1fr);gap:18px} }
+.el-libro{display:flex;flex-direction:column;gap:6px;padding:16px 14px 18px;border:1px solid var(--linea);border-radius:18px;background:var(--papel-2);text-decoration:none;box-shadow:var(--sombra);transition:transform .3s var(--e),border-color .3s}
+.el-libro:hover{transform:translateY(-4px);border-color:var(--tinta)}
+.el-libro img{width:78%;margin:0 auto 10px;border-radius:1px 4px 4px 1px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6)}
+.el-serie{font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--oro-texto);line-height:1.3}
+.el-libro b{font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.1}
+.el-que{font-size:16px;font-weight:700;margin-top:auto;padding-top:6px}
+
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-pagina="capitulo-viento" data-libro="viento" style="--c:var(--viento)">
+
+<header class="lector-top"><div class="lt-in">
+  <a class="lt-volver" data-link="libros" data-hash="#viento" href="#" aria-label="Volver a los libros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="lt-t"><b>Lo que el viento te enseña</b><span data-pag>1 de 17</span></div>
+  <a class="btn lt-btn" data-compra="viento" href="#"><span>Lo quiero · <span data-precio="viento">27</span> USD</span></a>
+ </div><div class="lt-prog"><i></i></div></header>
+
+<main class="lector" data-total="17">
+ <section class="hoja inicio on" id="p1" aria-label="Portada">
+  <img class="ini-tapa" data-img="tapas/viento-grande.webp" alt="Tapa de Lo que el viento te enseña" width="640" height="960" fetchpriority="high">
+  <p class="k">Lo que el sur te enseña · 3</p>
+  <h1>Lo que el viento te enseña</h1>
+  <p class="sub">33 lecciones para que tu voz llegue lejos</p>
+  <p class="ini-meta">Lee el primer capítulo, aquí mismo y sin costo · 8 minutos</p>
+  <button class="btn" type="button" data-ir="1"><span>Empezar a leer</span> <span class="fl">→</span></button>
+ </section>
+<section class="hoja " id="p2" aria-label="Página 2">
+<h2>La obra de este libro</h2>
+<p class="sub">La envolvente · tu libertad emocional</p>
+<p>En una obra como las de Diego, la envolvente recibe el clima: muros, techo y ventanas. La fachada es lo que ve la ciudad, y la aislación, lo que vive quien está dentro.</p>
+<p>El Nahuel Huapi lo enseña: arriba sopla el viento del oeste, y el agua del fondo, según el registro mundial de lagos, se queda entre siete y ocho grados todo el año.</p>
+<p>En tu clínica, la fachada es tu anuncio, tu video y tu precio, dicho una vez. La aislación es el silencio que sostienes después del número.</p>
+<p>Se levanta con cuidado, porque lo malo pesa más. En 2001, Roy Baumeister y tres colegas revisaron la investigación en psicología: en casi todo lo que se estudió, lo malo deja más huella que lo bueno.</p>
+<p>Así, un «no» te llega, lo sientes, y tu precio sigue en su lugar. Esa es tu libertad emocional.</p>
+</section>
+<section class="hoja " id="p3" aria-label="Página 3">
+<h2>Introducción</h2>
+<div class="poema"><p>Al viento se le ve</p><p>en lo que mueve.</p><p>A ti se te ve</p><p>en cada persona</p><p>que acompañaste.</p></div>
+</section>
+<section class="hoja " id="p4" aria-label="Página 4">
+<p>En Bariloche, al viento lo ves antes de sentirlo. El Nahuel Huapi se llena de crestas blancas y, sobre la cordillera, aparecen unas nubes lisas con forma de plato que parecen quietas en el cielo. Aquí el viento es parte de la conversación de todos los días. Se mira, se comenta y se tiene en cuenta antes de salir.</p>
+<p>Desde aquí acompaño a profesionales de Latinoamérica, España y Estados Unidos: ya son más de cincuenta. Y te confieso algo de entrada: a mí el marketing no me gusta tanto. Lo que más me gusta, por lejos, son las ventas.</p>
+</section>
+<section class="hoja " id="p5" aria-label="Página 5">
+<p>Soy abogado: me recibí a los veintidós. Después estudié economía, marketing, ventas y comunicación, porque nada de eso venía con el título, y hace más de seis años que trabajo con profesionales que atienden uno a uno. Vengo de una familia de sanadores, y a ninguno le enseñaron a ofrecer lo que hace. A mí tampoco. No nos lo enseñaron a propósito, y se puede aprender.</p>
+<p>Mi marca personal la resumo en una frase: aprendo a liderarme y te comparto todo. Este libro es parte de eso. Lo que te cuento aquí lo uso en mis anuncios, en mis llamadas de venta y en las mentorías de cada semana, y algunas cosas las aprendí equivocándome.</p>
+</section>
+<section class="hoja " id="p6" aria-label="Página 6">
+<p>Lo escribí pensando en ti, que atiendes uno a uno hace años. Tu agenda está llena, tus consultantes te recomiendan, y aun así cada persona nueva depende de que alguien hable bien de ti ese mes. El boca en boca es hermoso, y lo manejan otros. Un mes llega y otro no.</p>
+<p>Este libro trabaja el tercer sistema de <i>Sanadores Libres</i>: tu captación. Es el circuito que trae hasta tu llamada a quien ya te está buscando: un anuncio que lleva a tu video, una página, un formulario que filtra, una agenda que confirma y una llamada donde se decide. En ese libro está en el Movimiento III, en los capítulos 17 y 18, y las frases que te vas a decir en el camino están en el 21. Aquí lo abro en treinta y tres lecciones.</p>
+<p>Elegí el viento para hablar de captación porque hace lo mismo que tu voz cuando sale bien: es invisible y se nota en todo lo que mueve. Una vela que se infla, una manga de aeropuerto estirada, un árbol que creció inclinado. Con tu mensaje pasa igual. Nadie ve el anuncio que alguien leyó por la noche; lo que ves es a esa persona agendando una llamada al día siguiente.</p>
+<p>Y hay un ave que aparece varias veces en este libro: el cóndor. Se sostiene arriba usando el viento, casi sin aletear. Para mí es la imagen de lo que quiero para ti: una captación que te sostenga como el viento lo sostiene a él, para que vivas por encima de la rueda de las horas y bajes cuando toca, a la llamada o a la sesión. El resto del tiempo es para tu vida.</p>
+</section>
+<section class="hoja " id="p7" aria-label="Página 7">
+<p>El libro tiene tres partes: <b>Origen</b>, a quién le hablas; <b>Alcance</b>, cómo llegas lejos, y <b>Llegada</b>, cómo se decide.</p>
+<p>Cada capítulo arranca con un dato del viento, y a mí varios me dejaron pensando un buen rato. Después viene qué dice ese dato de ti y de tu consulta, una escena, la confrontación y una acción concreta. La confrontación va con firmeza y con amor a la vez.</p>
+<p>Los datos del viento tienen su fuente, y la nombro en cada capítulo. Cuando algo es observación y no medición, también te lo aviso. Y cuando te muestro números de mis campañas, te digo que son míos y que la muestra es chica: te sirven para orientarte hasta que tengas los tuyos.</p>
+<p>Las escenas salen de mis mentorías, de mis campañas y de lo que pasa en cualquier consulta.</p>
+</section>
+<section class="hoja " id="p8" aria-label="Página 8">
+<p>Te recomiendo un capítulo por día, o uno por semana si quieres ir instalando cada pieza. Cada acción se hace y se escribe aquí mismo, con lo que pasó. Este libro se usa con lápiz: tus anuncios, tus mensajes y tu llamada se escriben en estas páginas.</p>
+<p>Es el tercero de la colección «Lo que el sur te enseña». El lago te enseña a mirarte antes de moverte, y la montaña, a subir por etapas. El viento viene a enseñarte cómo llega lejos una voz: la tuya, hasta la persona que la está buscando.</p>
+<p>Empezamos por el principio: saber a quién le hablas.</p>
+</section>
+<section class="hoja portadilla" id="p9" aria-label="Página 9">
+<p class="k">Parte 1</p>
+<h1>Origen: a quién le hablas</h1>
+<div class="poema"><p>Quien te busca</p><p>trae su propio viento.</p><p>Escúchalo entero</p><p>antes de hablar.</p></div>
+</section>
+<section class="hoja " id="p10" aria-label="Página 10">
+<p class="k">Capítulo 1</p>
+<h2>Empieza por saber a quién le hablas</h2>
+<p class="sub">En la Patagonia, el viento viene casi siempre del oeste</p>
+<p>René Garreaud, un climatólogo de la Universidad de Chile que estudia el clima de esta región, lo explica con una frase que a mí me ordenó la cabeza: la Patagonia es la única tierra del hemisferio sur que se mete de lleno en el corazón del cinturón de vientos del oeste. En esa franja del planeta casi todo es océano. El viento corre sobre el mar, y la tierra que se le cruza en el medio es la nuestra.</p>
+<p>Por eso en Bariloche casi siempre sopla del oeste. Llega desde el Pacífico, sube la cordillera y baja hacia el lago. Cuando alguien dice «hoy hay viento», nadie pregunta de dónde viene. Ya lo sabemos todos.</p>
+</section>
+<section class="hoja " id="p11" aria-label="Página 11">
+<p>Ese viento tiene una dirección clara y la sostiene todo el año. Tu mensaje, muchas veces, no.</p>
+<p>En tu consultorio sabes perfectamente a quién acompañas mejor. Lo sabes por cómo llega, por lo que ya intentó, por la pregunta que te hace en la primera sesión. Y después escribes un anuncio para «personas que quieren sentirse mejor». Les hablas a todos a la vez, y cada uno siente que el mensaje es para otro.</p>
+<p>En mis anuncios, la primera frase dice a quién le hablo: «Si atiendes uno a uno hace años». Fíjate que nombra una conducta, algo que la persona hace todos los días. Las profesiones las nombro después, para dar autoridad. El filtro es lo que la persona hace.</p>
+</section>
+<section class="hoja " id="p12" aria-label="Página 12">
+<p>Un jueves, en la mentoría de ventas, David trajo el mensaje que les iba a mandar a sus contactos. David acompaña a líderes de empresas, y su mensaje nombraba desde la primera línea el 360, esa evaluación en la que te califican tu jefe, tus pares y tu equipo.</p>
+<p>Lo leí y le dije que ese mensaje ya filtraba desde el inicio: «El que sabe lo que es un 360 ya quedó dentro». Y se me escapó en inglés: «Está very good».</p>
+<p>Piensa en lo que hace esa palabra. Un gerente que recibió su 360 la semana pasada la lee y siente que le hablan a él. El resto ni se detiene, y está perfecto que no se detenga. Una sola palabra de su mundo hizo el trabajo de diez frases bonitas.</p>
+</section>
+<section class="hoja " id="p13" aria-label="Página 13">
+<p>Escúchame, que esta es la base de todo lo que sigue. ¿A quién le estás hablando hoy?</p>
+<p>Si tu respuesta es «a todos los que lo necesiten», mira lo que te da esa respuesta. Mientras les hablas a todos, nadie te puede decir que no, porque nunca nombraste a nadie. Te ahorras elegir, y elegir duele porque deja personas fuera. Ese es el beneficio oculto.</p>
+<p>Y tiene un precio que ya estás pagando. Te escribe cualquiera, contestas a cualquiera, y terminas atendiendo a quien llegó primero en vez de a quien mejor acompañas. Después te quejas de los mensajes que recibes. ¿Desde dónde los estás llamando?</p>
+</section>
+<section class="hoja " id="p14" aria-label="Página 14">
+<p>Lo que sí funciona es pensar a tu consultante ideal como una conducta. Lo que hace, lo que ya probó, lo que le pasó. Con los míos suena así: «Atiende uno a uno hace años». «Sus consultantes lo recomiendan». «Ya invirtió en formarse». Eso se puede escribir en una línea, y una línea así se reconoce en un segundo.</p>
+<p>Empieza por tus mejores consultantes de verdad, los que te daban ganas de ir a trabajar, y busca qué tienen en común.</p>
+</section>
+<section class="hoja " id="p15" aria-label="Página 15">
+
+</section>
+<section class="hoja " id="p16" aria-label="Página 16">
+<div class="accion"><p class="k">Tu acción</p><ol><li><b>Elige a tus tres mejores consultantes.</b> Escribe su nombre, qué hacían cuando llegaron y qué les pasó para que te buscaran.</li><li><b>Encuentra la conducta que comparten.</b> Escríbela en una frase que empiece con «atiende…», «ya probó…» o «le pasó…».</li><li><b>Arma tu primera línea.</b> «Si tú…» más esa conducta, y úsala para abrir tu próximo anuncio o tu próximo mensaje.</li></ol></div>
+<p>Si esa frase deja a alguien fuera, está funcionando.</p>
+</section>
+ <section class="hoja fin" id="p17" aria-label="Seguir leyendo">
+  <img class="fin-tapa" data-img="tapas/viento-grande.webp" alt="Tapa de Lo que el viento te enseña" width="640" height="960" loading="lazy">
+  <p class="k">Hasta aquí, el primer capítulo</p>
+  <h2>¿Seguimos?</h2>
+  <p class="fin-lead">Lo que leíste es el comienzo. El resto del camino está en el libro.</p>
+  <div class="ofertas">
+   <div class="of fuerte">
+    <b class="of-t">Lo que el viento te enseña</b>
+    <p>El libro entero, en digital, para descargar al instante.</p>
+    <a class="btn ancho-total" data-compra="viento" href="#"><span>Lo quiero · <span data-precio="viento">27</span> USD</span></a>
+   </div>
+   <div class="of">
+    <span class="cinta">La obra completa</span>
+    <b class="of-t">Los 8 libros + El Número</b>
+    <p>Este y los otros siete, más tus 5 días en mi app. Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
+    <a class="btn claro ancho-total" data-compra="obra" href="#"><span>Los 8 + la app · <span data-precio="obra">97</span> USD</span></a>
+   </div>
+  </div>
+  <p class="seguro con-pago"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+  <p class="seguro sin-pago"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+  <p class="otro"><a class="link" data-link="capitulo" href="#">Leer otro primer capítulo</a> · <a class="link" data-link="libros" data-hash="#viento" href="#">Ver todos los libros</a></p>
+ </section>
+</main>
+
+<nav class="lector-nav" aria-label="Pasar de página">
+  <button class="btn claro" type="button" data-ir="-1" aria-label="Página anterior"><span class="fl">←</span></button>
+  <button class="btn" type="button" data-ir="1"><span data-sig>Seguir leyendo</span> <span class="fl">→</span></button>
+</nav>
+
+<script>/*BASE_JS*/</script>
+<script>
+/* El lector: una hoja por vez. Botones, flechas del teclado y deslizar con el dedo.
+   La hoja en la que vas queda en la dirección (#p5), así al volver sigues donde estabas. */
+(function () {
+  var hojas = [].slice.call(document.querySelectorAll('.hoja'));
+  if (!hojas.length) return;
+  var total = hojas.length, i = 0;
+  var pag = document.querySelector('[data-pag]'), prog = document.querySelector('.lt-prog i');
+  var nav = document.querySelector('.lector-nav');
+  var ant = nav && nav.querySelector('[data-ir="-1"]'), sig = nav && nav.querySelector('[data-ir="1"]');
+  var sigT = nav && nav.querySelector('[data-sig]');
+  var libro = document.body.getAttribute('data-libro') || '';
+  var hecho = {};
+
+  function ir(n, quieto) {
+    n = Math.max(0, Math.min(total - 1, n));
+    hojas[i].classList.remove('on');
+    i = n;
+    hojas[i].classList.add('on');
+    if (pag) pag.textContent = (i + 1) + ' de ' + total;
+    if (prog) prog.style.width = (i / (total - 1) * 100) + '%';
+    if (ant) ant.disabled = i === 0;
+    if (nav) nav.classList.toggle('oculta', i === 0);
+    if (sig) sig.style.display = i === total - 1 ? 'none' : '';
+    if (sigT) sigT.textContent = i === total - 2 ? 'Terminar' : 'Seguir leyendo';
+    if (!quieto) window.scrollTo(0, 0);
+    try { history.replaceState(null, '', i ? '#p' + (i + 1) : location.pathname + location.search); } catch (e) {}
+    if (i === 1 && !hecho.a) { hecho.a = 1; if (window.pxc) pxc('EmpezoCapitulo', { content_name: libro }); }
+    if (i === total - 1 && !hecho.b) { hecho.b = 1; if (window.pxc) pxc('TerminoCapitulo', { content_name: libro }); }
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('[data-ir]') : null;
+    if (!b) return;
+    e.preventDefault();
+    ir(i + (+b.getAttribute('data-ir')));
+  });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target; if (t && t.closest && t.closest('input,textarea,select')) return;
+    if (e.key === 'ArrowRight') ir(i + 1);
+    if (e.key === 'ArrowLeft') ir(i - 1);
+  });
+
+  /* deslizar con el dedo, solo si el gesto es claramente de costado */
+  var x0 = null, y0 = 0, t0 = 0;
+  document.addEventListener('touchstart', function (e) {
+    var el = e.target; if (el && el.closest && el.closest('input,textarea,.cuenta,.chips,.semanas,.tabla-ej')) { x0 = null; return; }
+    var t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 == null) return;
+    var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    if (Math.abs(dx) > 70 && Math.abs(dy) < 50 && Date.now() - t0 < 700) ir(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  }, { passive: true });
+
+  /* los ejercicios: elegir una opción, sumar las semanas */
+  document.querySelectorAll('[data-chips] .chips').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      g.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    });
+  });
+  document.querySelectorAll('[data-semanas]').forEach(function (c) {
+    var out = c.querySelector('[data-suma-horas]');
+    c.addEventListener('input', function () {
+      var s = 0; c.querySelectorAll('input').forEach(function (x) { s += +x.value || 0; });
+      out.textContent = s;
+    });
+  });
+
+  /* qué aviso de pago se ve */
+  var C = window.TCD || {};
+  var hay = C.pagos && (C.pagos.obra || C.pagos[libro]);
+  document.querySelectorAll(hay ? '.con-pago' : '.sin-pago').forEach(function (e) { e.style.display = 'flex'; });
+
+  var m = /^#p(\d+)$/.exec(location.hash);
+  hojas.forEach(function (h) { h.classList.remove('on'); });
+  ir(m ? +m[1] - 1 : 0, true);
+})();
+
+</script>
+</body>
+</html>
