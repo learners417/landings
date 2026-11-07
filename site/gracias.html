@@ -479,7 +479,7 @@ window.TCD = {
   <h1 class="t1 rv d1">Gracias. <em>Ya es tuyo.</em></h1>
   <p class="lead rv d2" data-que>Aquí tienes todo lo que necesitas para empezar hoy.</p>
 
-  <!-- 1 · la app (El Número y la obra completa) -->
+  <!-- 1 · la app (Tu Precio Nuevo; El Número quedó retirada) -->
   <div class="paso-g card rv oculto" data-para="numero obra">
    <div class="n">1</div>
    <div>
@@ -539,7 +539,7 @@ window.TCD = {
 (function(){
   var C=window.TCD||{}, P=C.precios||{};
   var LIBROS=['sanadores','lago','montana','viento','rio','bosque','heroe','libertades'];
-  var NOM={numero:'El Número',obra:'la obra completa',sanadores:'Sanadores Libres',lago:'Lo que el lago te enseña',montana:'Lo que la montaña te enseña',viento:'Lo que el viento te enseña',rio:'Lo que el río te enseña',bosque:'Lo que el bosque te enseña',heroe:'Héroe descapado',libertades:'Las 7 libertades fundamentales'};
+  var NOM={numero:'El Número',obra:'Tu Precio Nuevo',sanadores:'Sanadores Libres',lago:'Lo que el lago te enseña',montana:'Lo que la montaña te enseña',viento:'Lo que el viento te enseña',rio:'Lo que el río te enseña',bosque:'Lo que el bosque te enseña',heroe:'Héroe descapado',libertades:'Las 7 libertades fundamentales'};
   var c='';
   try{c=(new URLSearchParams(location.search).get('c')||'').toLowerCase();}catch(e){}
   if(!NOM[c]) c='';
@@ -561,7 +561,7 @@ window.TCD = {
   if(libros.length===1) t.textContent='Descarga tu libro';
   var que=document.querySelector('[data-que]');
   if(c==='numero') que.innerHTML='Compraste <b>El Número</b>. Entra a la app y descarga <i>Lo que el lago te enseña</i>.';
-  else if(c==='obra') que.innerHTML='Compraste <b>la obra completa</b>: los 8 libros y El Número. Empieza por la app y descarga tus libros.';
+  else if(c==='obra') que.innerHTML='Compraste <b>Tu Precio Nuevo</b>: tus 8 libros y tu acceso a la app. Empieza por la app y descarga tus libros.';
   else if(c) que.innerHTML='Compraste <b>'+NOM[c]+'</b>. Descárgalo aquí abajo.';
   else {
     que.innerHTML='Si llegaste aquí después de pagar, escríbeme por WhatsApp y te paso tus links ahora mismo.';
