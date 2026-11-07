@@ -278,6 +278,9 @@ html:not(.js) .lector-nav{display:none}
 
   function ir(n, quieto) {
     n = Math.max(0, Math.min(total - 1, n));
+    /* la puerta: antes de pasar de la portada, nombre y correo (base.js · TCD_PUERTA) */
+    var puerta = window.TCD_PUERTA, destino = n, pedir = false;
+    if (n > 0 && puerta && !puerta.abierta) { pedir = true; n = 0; }
     hojas[i].classList.remove('on');
     i = n;
     hojas[i].classList.add('on');
@@ -291,6 +294,7 @@ html:not(.js) .lector-nav{display:none}
     try { history.replaceState(null, '', i ? '#p' + (i + 1) : location.pathname + location.search); } catch (e) {}
     if (i === 1 && !hecho.a) { hecho.a = 1; if (window.pxc) pxc('EmpezoCapitulo', { content_name: libro }); }
     if (i === total - 1 && !hecho.b) { hecho.b = 1; if (window.pxc) pxc('TerminoCapitulo', { content_name: libro }); }
+    if (pedir) puerta.pedir(function () { ir(destino); }, quieto);
   }
 
   document.addEventListener('click', function (e) {

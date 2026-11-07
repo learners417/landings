@@ -287,3 +287,66 @@
     ir(tel.getAttribute('data-inicio') || 'hoy');
   });
 })();
+
+/* La puerta de los primeros capítulos: nombre y correo antes de leer.
+   Formulario de GHL «Lectores · primer capítulo» (TCD.formLectores); al enviarlo arranca el flujo
+   «Lectores · 10 días». Quien ya lo dejó en este navegador, o llega desde un correo con ?lector=1,
+   lee directo. Si el formulario no carga en 12 segundos, aparece un link para leer igual. */
+(function () {
+  var C = window.TCD || {};
+  var ID = C.formLectores;
+  var portada = document.querySelector('.hoja.inicio');
+  if (!ID || !portada) return;
+  var CLAVE = 'tcd_lector';
+  var libro = document.body.getAttribute('data-libro') || '';
+  function guardar() { try { localStorage.setItem(CLAVE, '1'); } catch (e) {} }
+  function yaEs() { try { return localStorage.getItem(CLAVE) === '1'; } catch (e) { return false; } }
+  try { if (new URLSearchParams(location.search).get('lector') === '1') guardar(); } catch (e) {}
+
+  var caja = null, ifr = null, alAbrir = null, cargo = false;
+  function armar() {
+    if (caja) return;
+    caja = document.createElement('div');
+    caja.className = 'puerta';
+    caja.innerHTML =
+      '<p class="puerta-t">Antes de empezar</p>' +
+      '<p class="puerta-b">Déjame tu nombre y tu correo. Lees este capítulo ahora mismo y, día por día, te mando el primer capítulo de mis otros libros, con su ejercicio.</p>' +
+      '<iframe title="Tu nombre y tu correo" id="inline-' + ID + '" data-form-id="' + ID + '"' +
+      ' data-layout="{\'id\':\'INLINE\'}" data-layout-iframe-id="inline-' + ID + '" data-trigger-type="alwaysShow"' +
+      ' data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="Lectores · primer capítulo"' +
+      ' src="https://api.leadconnectorhq.com/widget/form/' + ID + '" style="width:100%;height:340px;border:none;display:block;background:transparent"></iframe>' +
+      '<p class="puerta-alt" hidden>¿No ves el formulario? <a class="link" href="#" data-puerta-saltar>Empieza a leer aquí</a>.</p>';
+    var btn = portada.querySelector('[data-ir="1"]');
+    if (btn) { btn.insertAdjacentElement('afterend', caja); btn.style.display = 'none'; }
+    else portada.appendChild(caja);
+    ifr = caja.querySelector('iframe');
+    if (!document.querySelector('script[src*="form_embed.js"]')) {
+      var s = document.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true;
+      document.body.appendChild(s);
+    }
+    setTimeout(function () { if (!cargo && caja) caja.querySelector('.puerta-alt').hidden = false; }, 12000);
+    caja.querySelector('[data-puerta-saltar]').addEventListener('click', function (e) { e.preventDefault(); abrir(false); });
+    if (window.pxc) pxc('VioPuerta', { content_name: libro });
+  }
+  function abrir(conCorreo) {
+    if (conCorreo) { guardar(); if (window.px) px('Lead', { content_name: 'capitulo-' + libro }); }
+    if (caja) { caja.remove(); caja = null; ifr = null; }
+    var btn = portada.querySelector('[data-ir="1"]'); if (btn) btn.style.display = '';
+    window.TCD_PUERTA.abierta = true;
+    var f = alAbrir; alAbrir = null; if (f) f();
+  }
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (!ifr || !Array.isArray(d) || e.source !== ifr.contentWindow) return;
+    if (d[0] === 'highlevel.setHeight' && d[1] && d[1].height) { cargo = true; ifr.style.height = (d[1].height + 6) + 'px'; }
+    if (d[0] === 'iframeLoaded' || d[0] === 'fetch-sticky-contacts' || d[0] === 'fetch-query-params') cargo = true;
+    if (d[0] === 'set-sticky-contacts') abrir(true);
+  });
+  window.TCD_PUERTA = {
+    abierta: yaEs(),
+    pedir: function (cb, quieto) {
+      alAbrir = cb; armar();
+      if (!quieto) try { caja.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+    }
+  };
+})();

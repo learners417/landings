@@ -33,6 +33,11 @@ window.TCD = {
      Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
      Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
   librosPorCorreo: false,
+
+  /* La puerta de los primeros capítulos: el id del formulario de GHL «Lectores · primer capítulo».
+     Con el id puesto, cada capítulo pide nombre y correo antes de leer y arranca el flujo «Lectores · 10 días».
+     Vacío: los capítulos se leen sin pedir nada. */
+  formLectores: '',
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
