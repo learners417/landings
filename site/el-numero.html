@@ -387,8 +387,11 @@ window.TCD = {
   intangibles: '/intangibles',
   cdl:       '/clinica-del-lider',
 
-  /* Los libros para descargar: súbelos a GHL (Sitios → Medios) y pega aquí el link de cada uno.
-     Si un link está vacío, el botón abre tu WhatsApp para que se lo mandes tú. */
+  /* Los libros NO se pegan aquí: este código es público y cualquiera vería los links.
+     Los manda el correo de entrega de GHL apenas entra el pago de Tu Precio Nuevo.
+     Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
+     Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
+  librosPorCorreo: false,
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',

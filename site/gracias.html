@@ -384,8 +384,11 @@ window.TCD = {
   intangibles: '/intangibles',
   cdl:       '/clinica-del-lider',
 
-  /* Los libros para descargar: súbelos a GHL (Sitios → Medios) y pega aquí el link de cada uno.
-     Si un link está vacío, el botón abre tu WhatsApp para que se lo mandes tú. */
+  /* Los libros NO se pegan aquí: este código es público y cualquiera vería los links.
+     Los manda el correo de entrega de GHL apenas entra el pago de Tu Precio Nuevo.
+     Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
+     Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
+  librosPorCorreo: false,
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
@@ -489,7 +492,7 @@ window.TCD = {
      <input type="email" name="correo" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo">
      <button class="btn" type="submit"><span>Mandar por WhatsApp</span> <span class="fl">→</span></button>
     </form>
-    <p>Tus 21 días empiezan cuando entras por primera vez.</p>
+    <p>Tus 5 días de Tu Precio Nuevo empiezan cuando entras por primera vez.</p>
    </div>
   </div>
 
@@ -554,16 +557,26 @@ window.TCD = {
   });
 
   document.querySelectorAll('[data-para]').forEach(function(el){ if(el.getAttribute('data-para').split(' ').indexOf(c)>=0) el.classList.remove('oculto'); });
-  if(c==='obra') document.querySelector('[data-zip]').classList.remove('oculto');
+  if(c==='obra' && !C.librosPorCorreo) document.querySelector('[data-zip]').classList.remove('oculto');
   libros.forEach(function(k){ var a=document.querySelector('.dl[data-libro="'+k+'"]'); if(a) a.classList.remove('oculto'); });
   if(!conApp){ document.querySelector('[data-n-libros]').textContent='1'; document.querySelector('[data-n-comunidad]').textContent='2'; }
   var t=document.querySelector('[data-titulo-libros]');
   if(libros.length===1) t.textContent='Descarga tu libro';
   var que=document.querySelector('[data-que]');
   if(c==='numero') que.innerHTML='Compraste <b>El Número</b>. Entra a la app y descarga <i>Lo que el lago te enseña</i>.';
-  else if(c==='obra') que.innerHTML='Compraste <b>Tu Precio Nuevo</b>: tus 8 libros y tu acceso a la app. Empieza por la app y descarga tus libros.';
+  else if(c==='obra') que.innerHTML='Compraste <b>Tu Precio Nuevo</b>: tus 8 libros y 5 días en la app. Empieza por la app y descarga tus libros.';
   else if(c) que.innerHTML='Compraste <b>'+NOM[c]+'</b>. Descárgalo aquí abajo.';
-  else {
+  /* Tu Precio Nuevo con el correo de entrega andando: los libros llegan por correo, no quedan en la página */
+  if(c==='obra' && C.librosPorCorreo){
+    que.innerHTML='Compraste <b>Tu Precio Nuevo</b>: tus 8 libros y 5 días en la app. Empieza por la app; los libros ya van camino a tu correo.';
+    t.textContent='Tus libros te llegan por correo';
+    var bajada=t.parentNode.querySelector('p');
+    if(bajada) bajada.textContent='Te mandé los 8 libros en PDF, con su tapa, al correo con el que pagaste. Llegan en unos minutos: revisa también spam y promociones. Guarda ese correo, los enlaces quedan ahí.';
+    document.querySelector('.descargas').classList.add('oculto');
+    var ay=document.querySelector('p.ayuda');
+    if(ay && ay.firstChild && ay.firstChild.nodeType===3) ay.firstChild.nodeValue='¿No te llegó el correo o el acceso? ';
+  }
+  else if(!c){
     que.innerHTML='Si llegaste aquí después de pagar, escríbeme por WhatsApp y te paso tus links ahora mismo.';
     document.querySelector('.descargas').closest('.paso-g').classList.add('oculto');
     document.querySelector('[data-n-comunidad]').textContent='1';
