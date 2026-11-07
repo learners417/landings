@@ -2,10 +2,14 @@
 
 Flujo de GHL «Lectores · 10 días». Arranca cuando alguien deja su nombre y su correo en el formulario
 «Lectores · primer capítulo» (id `s3o93G3fWK3VrO6Gin1n`), la puerta de cada primer capítulo.
-Etiqueta `lector-capitulos`. Sale del flujo si recibe la etiqueta `compro-tu-precio-nuevo`.
+Etiqueta `lector-capitulos`. Sale del flujo apenas paga Tu Precio Nuevo, Mentoría 90 días o Instalación 90 días
+(objetivo de GHL «Payment Received», estado «Conseguido»). Sin reentrada: cada persona lo recibe una sola vez.
 Aprobado por Javo el 7 nov 2026: un correo por día, 10 días, y se corta si compra.
 
-Remitente: Javo Katz. Todos los links llevan `?lector=1` (abre el capítulo sin volver a pedir el correo)
+Workflow: `c53377a6-7c1f-43a8-8273-18a7798872d9`. Los 10 correos ya están cargados; queda en borrador
+hasta que Javo los lea y diga «prende».
+
+Remitente: Javo Katz, `javo@notificaciones.tuclinica.digital`. Todos los links llevan `?lector=1` (abre el capítulo sin volver a pedir el correo)
 y `utm_source=correo&utm_medium=email&utm_campaign=lectores&utm_content=dN`.
 
 Base de los links: `https://tuclinica.digital`
