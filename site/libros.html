@@ -864,7 +864,14 @@ window.TCD = {
 <script>
 (function () {
   if (new URLSearchParams(location.search).get('desde') !== 'diagnostico') return;
-  try { if (!sessionStorage.getItem('tcd_nocalifica')) { sessionStorage.setItem('tcd_nocalifica', '1'); if (window.pxc) pxc('NoCalifica', { origen: 'diagnostico' }); } } catch (e) {}
+  // NoCalifica una vez por visita: espera a que base.js deje listo el píxel (corre después de este bloque)
+  var vueltas = 0;
+  (function marcar() {
+    try { if (sessionStorage.getItem('tcd_nocalifica')) return; } catch (e) {}
+    if (!window.pxc) { if (vueltas++ < 40) setTimeout(marcar, 250); return; }
+    try { sessionStorage.setItem('tcd_nocalifica', '1'); } catch (e) {}
+    pxc('NoCalifica', { origen: 'diagnostico' });
+  })();
   if (document.getElementById('tcd-desde-diag')) return;
   var destino = document.querySelector('section.portada .wrap') || document.querySelector('main');
   if (!destino) return;
