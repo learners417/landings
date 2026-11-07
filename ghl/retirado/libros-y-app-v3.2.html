@@ -1,0 +1,167 @@
+<script>
+/* TCD · Libros y App · v3.2 (6 nov 2026)
+   1. Llegada desde el diagnóstico: bienvenida + NoCalifica a Meta.
+   2. Un solo producto en /libros: los 8 libros + la app, 97 USD. «El Número» pasa a llamarse «Tu Precio Nuevo» y viene dentro.
+   3. En todas las páginas de este embudo, los enlaces a «El Número» (página retirada) llevan a los 8 libros + la app, 97 USD.
+   3.1 Fuera de /libros también queda una sola oferta: los capítulos muestran solo la obra completa, los libros sueltos llevan a la obra y la app ya no dice «desde 27 USD».
+   3.2 La oferta de 97 se llama «Tu Precio Nuevo»: los 8 libros y 5 días en la app con el Mentor. */
+(function(){
+  var ruta = location.pathname;
+  var q = new URLSearchParams(location.search);
+
+  /* 1. Llegada desde el diagnóstico */
+  if (/^\/libros/.test(ruta) && q.get('desde') === 'diagnostico') {
+    (function marcar(){
+      var n = 0;
+      (function intento(){
+        if (window.fbq) {
+          var ya = false;
+          try { ya = !!sessionStorage.getItem('tcd_nocalifica'); } catch(e) {}
+          if (!ya) {
+            fbq('trackCustom', 'NoCalifica', { origen: 'diagnostico' });
+            try { sessionStorage.setItem('tcd_nocalifica', '1'); } catch(e) {}
+          }
+        } else if (n++ < 40) { setTimeout(intento, 250); }
+      })();
+    })();
+    var bienvenida = function(){
+      if (document.getElementById('tcd-desde-diag')) return true;
+      var destino = document.querySelector('section.portada .wrap') || document.querySelector('main');
+      if (!destino) return false;
+      var d = document.createElement('div');
+      d.id = 'tcd-desde-diag';
+      d.setAttribute('style', 'border:1px solid rgba(43,39,36,.18);border-radius:22px;padding:20px 24px;margin:0 0 32px;background:rgba(251,248,241,.85);color:#2b2724;text-align:left;max-width:720px;');
+      d.innerHTML = '<div style="font-family:\'Cormorant Garamond\',Cormorant,Georgia,serif;font-size:30px;line-height:1.15;margin-bottom:8px">Gracias por contarme.</div>'
+        + '<div style="font-family:Manrope,system-ui,sans-serif;font-size:19px;line-height:1.5">Por lo que me contaste, tu mejor paso hoy es empezar por aquí: Tu Precio Nuevo, mis 8 libros y 5 días en mi app con el Mentor, por 97 USD.</div>';
+      destino.insertBefore(d, destino.firstChild);
+      return true;
+    };
+    var intentos = 0;
+    (function poner(){ if (!bienvenida() && intentos++ < 40) setTimeout(poner, 250); })();
+    setTimeout(bienvenida, 2500);
+  }
+
+  /* 2 y 3. Un solo producto y el nombre nuevo */
+  var NOMBRE = 'Tu Precio Nuevo';
+  var arreglar = function(){
+    var hecho = false;
+
+    /* menú y enlaces sueltos a la página retirada */
+    var esLibros = /^\/libros/.test(ruta);
+    var esApp = /^\/app(\/|$)/.test(ruta);
+    document.querySelectorAll('nav a[data-link="numero"], nav a[href$="/el-numero"]').forEach(function(a){ a.style.display = 'none'; hecho = true; });
+    document.querySelectorAll('p.micro').forEach(function(p){
+      if (!p.querySelector('a[data-link="numero"], a[href$="/el-numero"]')) return;
+      if (esLibros || esApp) { p.style.display = 'none'; }
+      else { p.innerHTML = 'o empieza por <a class="link" href="/libros">' + NOMBRE + '</a>, <b>97 USD</b>'; }
+      hecho = true;
+    });
+    if (!esLibros && !esApp) {
+      document.querySelectorAll('a[data-link="numero"], a[href$="/el-numero"]').forEach(function(a){
+        if (a.closest('nav') || a.closest('p.micro')) return;
+        a.removeAttribute('data-link');
+        a.setAttribute('href', '/libros');
+        a.textContent = a.textContent.replace(/El Número\s*·\s*27\s*USD/, NOMBRE + ' · 97 USD').replace(/El Número/, NOMBRE);
+        hecho = true;
+      });
+    }
+
+    /* 3.1 fuera de /libros: una sola oferta */
+    if (!esLibros) {
+      var LIBRO = /^(sanadores|lago|montana|viento|rio|bosque|heroe|libertades)$/;
+      var ofertas = document.querySelector('.ofertas');
+      if (ofertas && !ofertas.getAttribute('data-tcd')) {
+        var fuerte = ofertas.querySelector('.of.fuerte');
+        var obraBtn = ofertas.querySelector('[data-compra="obra"]');
+        var obraOf = obraBtn && obraBtn.closest('.of');
+        if (fuerte && obraOf && fuerte !== obraOf) {
+          ofertas.setAttribute('data-tcd', '1');
+          fuerte.style.display = 'none';
+          obraOf.classList.add('fuerte');
+          var tit = obraOf.querySelector('.of-t'); if (tit) tit.textContent = NOMBRE;
+          var pp = obraOf.querySelector('p');
+          if (pp) {
+            var tachado = pp.querySelector('s');
+            pp.textContent = 'Este libro, los otros 7 y 5 días en mi app con el Mentor para calcular tu hora real y subir tu precio sin culpa. ';
+            if (tachado) { pp.appendChild(document.createTextNode('Los libros sueltos suman ')); pp.appendChild(tachado); pp.appendChild(document.createTextNode('.')); }
+          }
+          obraBtn.classList.remove('claro');
+          var solo = ofertas.querySelector('.solo-libro'); if (solo) solo.style.display = 'none';
+          hecho = true;
+        }
+      }
+      document.querySelectorAll('[data-compra]').forEach(function(a){
+        var k = a.getAttribute('data-compra');
+        if (!LIBRO.test(k) || a.closest('.solo-libro')) return;
+        var b = a.cloneNode(false);
+        b.removeAttribute('data-compra'); b.removeAttribute('target'); b.removeAttribute('rel');
+        b.setAttribute('href', '/libros#obra');
+        b.innerHTML = '<span>Viene en ' + NOMBRE + ' · 97 USD</span>';
+        a.parentNode.replaceChild(b, a);
+        hecho = true;
+      });
+      document.querySelectorAll('.junto-app').forEach(function(j){ j.textContent = 'Viene en ' + NOMBRE + ', con mi app'; });
+      document.querySelectorAll('[data-compra="obra"]').forEach(function(o){
+        var h = o.getAttribute('href') || '';
+        var n = h.replace(encodeURIComponent('El Número + los 8 libros'), encodeURIComponent(NOMBRE));
+        if (n !== h) o.setAttribute('href', n);
+      });
+      document.querySelectorAll('p').forEach(function(el){
+        if (!/desde 27 USD/.test(el.textContent) || el.querySelector('a')) return;
+        el.textContent = el.textContent.replace(/,?\s*desde 27 USD\.?/, '. Viene con ' + NOMBRE + ', 97 USD.');
+        hecho = true;
+      });
+    }
+
+    if (!/^\/libros/.test(ruta)) return hecho;
+    var obra = document.querySelector('[data-compra="obra"]');
+    if (!obra) return false;
+    if (document.documentElement.getAttribute('data-tcd-un-producto')) return true;
+    document.documentElement.setAttribute('data-tcd-un-producto', '1');
+
+    /* cada libro lleva a la obra completa */
+    document.querySelectorAll('.lc-btns [data-compra]').forEach(function(a){
+      var b = a.cloneNode(false);
+      b.removeAttribute('data-compra'); b.removeAttribute('target'); b.removeAttribute('rel');
+      b.setAttribute('href', '#obra');
+      b.innerHTML = '<span>Viene en ' + NOMBRE + ' · 97 USD</span>';
+      a.parentNode.replaceChild(b, a);
+    });
+    var junto = document.querySelector('.junto-app');
+    if (junto) junto.textContent = 'Viene en ' + NOMBRE + ', con mi app';
+
+    /* la tarjeta de El Número sale: queda una sola oferta */
+    var planObra = obra.closest('.plan');
+    document.querySelectorAll('#obra .plan').forEach(function(p){ if (p !== planObra) p.style.display = 'none'; });
+    var planes = document.querySelector('#obra .planes');
+    if (planes) { planes.style.gridTemplateColumns = 'minmax(0, 560px)'; planes.style.justifyContent = 'center'; }
+    var nom = planObra.querySelector('.nom');
+    if (nom) nom.textContent = NOMBRE;
+    planObra.querySelectorAll('li').forEach(function(li){
+      if (/El Número/.test(li.textContent)) li.textContent = 'Tus 5 días en la app, con el Mentor, para calcular tu hora real y subir tu precio';
+    });
+    obra.setAttribute('href', (obra.getAttribute('href') || '').replace(encodeURIComponent('El Número + los 8 libros'), encodeURIComponent(NOMBRE)));
+
+    /* «¿Por cuál empiezo?» y la pregunta frecuente */
+    document.querySelectorAll('li a[data-link="numero"], li a[href$="/el-numero"]').forEach(function(a){
+      var b = a.cloneNode(true);
+      b.removeAttribute('data-link');
+      b.setAttribute('href', '#obra');
+      var s = b.querySelector('span');
+      if (s) s.textContent = NOMBRE + ' · 97 USD →';
+      a.parentNode.replaceChild(b, a);
+    });
+    document.querySelectorAll('.fq').forEach(function(f){
+      var bt = f.querySelector('button');
+      if (!bt || !/El Número/.test(bt.textContent)) return;
+      bt.childNodes.forEach(function(n){ if (n.nodeType === 3 && /El Número/.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace('El Número', NOMBRE); });
+      var p = f.querySelector('.r p');
+      if (p) p.textContent = 'Mis 8 libros y tus primeros 5 días en mi app, con el Mentor, para calcular tu hora real y subir tu precio sin culpa. 97 USD, pago único.';
+    });
+    return true;
+  };
+  var vueltas = 0;
+  (function correr(){ if (!arreglar() && vueltas++ < 40) setTimeout(correr, 250); })();
+  setTimeout(arreglar, 1500);
+})();
+</script>

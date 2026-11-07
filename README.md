@@ -48,6 +48,8 @@ Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 - `tools.py` · arma las 6 páginas de herramientas · `port_capitulos.py` · arma los capítulos
 - `cargador.js` y `ghl-linea.html` · cómo llegan las páginas a GHL
 - `panel.py` · el panel de montaje manual (respaldo) · `site/` · lo que sirve el cargador (no se edita a mano)
+- `ghl/retirado/` · copias de parches que vivían en el código de seguimiento de un embudo y ya pasaron a las páginas
+  (el de Libros y App v3.2 salió de GHL el 6 nov 2026; los cambios de página se hacen aquí, no con parches)
 
 ## Reglas del estándar
 Letra de 16 px o más · papel, sin fondo negro, sin degradés ni brillos · oro solo en líneas de 1 px,
