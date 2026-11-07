@@ -403,8 +403,8 @@ window.TCD = {
 
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
-    numero:     '/checkout',   // El Número · 27 · el checkout de GHL (embudo Subir tus Precios)
-    obra:       '',   // El Número + los 8 libros · 97
+    numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
+    obra:       '',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33
@@ -579,9 +579,9 @@ window.TCD = {
      <p class="lc-pro">Antes de cambiar tu precio o tus horarios, mírate. Son 33 lecciones que nacen en el Nahuel Huapi, un lago que en 2011 quedó cubierto de ceniza y volvió a aclarar. Cada una trae un dato verificado, una escena y una acción para esta semana.</p>
      <p class="lc-pro">Al final tienes tu protocolo escrito, para llegar entero a cada sesión y a tu casa.</p>
      <p class="lc-meta">268 páginas · en digital, para descargar al instante</p>
-     <span class="junto-app">Viene dentro de El Número, con mi app</span>
+     <span class="junto-app">Viene en Tu Precio Nuevo, con mi app</span>
      <div class="lc-btns">
-      <a class="btn" data-compra="lago" href="#"><span>Lo quiero · <span data-precio="lago">27</span> USD</span></a>
+      <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Viene en Tu Precio Nuevo</span> <span class="fl">→</span></a>
       <a class="btn claro" data-link="cap" data-hash="lago" href="#">Leer el primer capítulo</a>
      </div>
     </div>
@@ -599,7 +599,7 @@ window.TCD = {
      <p class="lc-pro">Cada una parte de un dato, como el glaciar del Tronador que se mide desde 1953, pasa por casos reales de mentoría y termina en una acción para esta semana.</p>
      <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
      <div class="lc-btns">
-      <a class="btn" data-compra="montana" href="#"><span>Lo quiero · <span data-precio="montana">27</span> USD</span></a>
+      <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Viene en Tu Precio Nuevo</span> <span class="fl">→</span></a>
       <a class="btn claro" data-link="cap" data-hash="montana" href="#">Leer el primer capítulo</a>
      </div>
     </div>
@@ -617,7 +617,7 @@ window.TCD = {
      <p class="lc-pro">Cada una trae un dato con su fuente, una escena y una acción para esta semana.</p>
      <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
      <div class="lc-btns">
-      <a class="btn" data-compra="viento" href="#"><span>Lo quiero · <span data-precio="viento">27</span> USD</span></a>
+      <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Viene en Tu Precio Nuevo</span> <span class="fl">→</span></a>
       <a class="btn claro" data-link="cap" data-hash="viento" href="#">Leer el primer capítulo</a>
      </div>
     </div>
@@ -635,7 +635,7 @@ window.TCD = {
      <p class="lc-pro">Cada lección trae un dato verificado, una escena real y tres acciones concretas.</p>
      <p class="lc-meta">268 páginas · en digital, para descargar al instante</p>
      <div class="lc-btns">
-      <a class="btn" data-compra="rio" href="#"><span>Lo quiero · <span data-precio="rio">27</span> USD</span></a>
+      <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Viene en Tu Precio Nuevo</span> <span class="fl">→</span></a>
       <a class="btn claro" data-link="cap" data-hash="rio" href="#">Leer el primer capítulo</a>
      </div>
     </div>
@@ -653,7 +653,7 @@ window.TCD = {
      <p class="lc-pro">Son 33 lecciones nacidas caminando el bosque, donde el alerce crece menos de un milímetro por año y dura siglos. Cada una trae una escena real y una acción para esta semana.</p>
      <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
      <div class="lc-btns">
-      <a class="btn" data-compra="bosque" href="#"><span>Lo quiero · <span data-precio="bosque">27</span> USD</span></a>
+      <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Viene en Tu Precio Nuevo</span> <span class="fl">→</span></a>
       <a class="btn claro" data-link="cap" data-hash="bosque" href="#">Leer el primer capítulo</a>
      </div>
     </div>
@@ -700,7 +700,7 @@ window.TCD = {
 
 <footer class="pie"><div class="wrap">
  <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="appPagina" href="#">La app</a><a data-link="numero" href="#">El Número</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
  <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
 </div></footer>
 
@@ -719,7 +719,7 @@ window.TCD = {
   var pagina = document.body.getAttribute('data-pagina') || 'pagina';
 
   var NOMBRES = {
-    numero: 'El Número', obra: 'El Número + los 8 libros', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    numero: 'El Número', obra: 'Tu Precio Nuevo', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
     sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
     viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
     heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',

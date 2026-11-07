@@ -45,8 +45,8 @@ window.TCD = {
 
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
-    numero:     '/checkout',   // El Número · 27 · el checkout de GHL (embudo Subir tus Precios)
-    obra:       '',   // El Número + los 8 libros · 97
+    numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
+    obra:       '',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33

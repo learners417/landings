@@ -403,8 +403,8 @@ window.TCD = {
 
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
-    numero:     '/checkout',   // El Número · 27 · el checkout de GHL (embudo Subir tus Precios)
-    obra:       '',   // El Número + los 8 libros · 97
+    numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
+    obra:       '',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33
@@ -656,7 +656,7 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
 </main>
 
 <footer class="pie"><div class="wrap">
- <p><a data-link="libros" href="#">Los libros</a> · <a data-link="numero" href="#">El Número</a></p>
+ <p><a data-link="libros" href="#">Los libros</a> · <a data-link="libros" data-hash="#obra" href="#">Tu Precio Nuevo</a></p>
  <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
  <p>Este sitio no forma parte de Meta ni está avalado por Meta.</p>
 </div></footer>
@@ -673,7 +673,7 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
   var pagina = document.body.getAttribute('data-pagina') || 'pagina';
 
   var NOMBRES = {
-    numero: 'El Número', obra: 'El Número + los 8 libros', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    numero: 'El Número', obra: 'Tu Precio Nuevo', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
     sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
     viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
     heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
