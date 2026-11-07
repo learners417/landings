@@ -417,7 +417,7 @@ window.TCD = {
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
     numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
-    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97 · PayPal, desde el 7 nov 2026
+    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33
@@ -449,6 +449,8 @@ window.TCD = {
   instagram: 'https://www.instagram.com/javieremilianok/',
   foto:      'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg',
   pixel:     '1306012398373458',
+  /* Clarity (Microsoft): grabaciones y mapas de calor. Si GHL ya lo cargó en la página, no se carga dos veces. */
+  clarity:   'z9r79a8723',
   /* Los testimonios: v = video tuyo (filesafe), y = YouTube. Se muestran en este orden. */
   media: 'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/',
   testimonios: [['v','6ac4236b195f9172ed95c91c'],['v','6ad260a5f9a985d42cbe18a8'],['y','U7ablyCr2_Y'],['v','6abc83aa6c64b8e488a2f025'],['v','6ab9e5fa5597aeb9d7f13c31'],['y','FjW8chAxRPk'],['v','6ab9b6e65597aeb9d7eca5b7'],['v','6ab9ba4abe703c7b30305435'],['y','cdcGh-oIV9Y'],['v','6aa0b1e2fb76acb4a93c0ffd'],['v','6ab9e143b4d207ff9d0c5bc7'],['y','0q4Ah_PL_1w'],['v','6ab9e2aac13d4373c2d28d8a'],['v','6ab9df5c5597aeb9d7f0b331'],['y','siIRcFF_Fzc'],['v','6aa0b40116ed327815b69e1a'],['v','6ad263a2fdbcf67570a0b065'],['y','8yGijdiMzJE'],['v','6ad2646686f4a10b2fa62ae0'],['v','6ab9dcba5597aeb9d7f076da'],['y','syL0QvfQHJ4'],['v','6ab9d97f5597aeb9d7f02cd7'],['v','6abaf9f3c13d4373c2ef5b47'],['y','ZYdiTIIDl6g'],['v','6abaf9a37ef452865a2fd7b4'],['v','6abb018672844d8ecf2e9e54'],['v','689fb4467bb59edaff12c342'],['v','689fb4467bb59e069512c341'],['v','689fb44669618cd2effbd32b'],['v','6ad263a41de0b9886006376a']],
@@ -456,6 +458,25 @@ window.TCD = {
   fotos: ['6a3f2d42d50c4ff184edb838.jpeg','6a7e0125c0662ee5c46bb552.jpg','693dba4697c0236220e081ea.jpg','6a3f2d42e2763b2eec24a60c.jpeg','6a7d3d929115899f03677541.png','6a7e00e4494aefa6d8297657.jpg','67a95b7bfc7685e4ad16a204.png','67a8027f9769a75cfe604f9b.png','67a8027f9769a71ac3604f9c.png','67a8027ffc768597de1360da.png','67a8027f4325e15ee6581091.png','67a8027f4325e17938581092.png','67a8027f8f9e7e4c006b47f6.png'],
   capturas: ['6a3f2d4ae2763b2eec24a678.jpeg','6790e3b22aa71a8f8b682154.jpeg','67a8080cfc76856ca1136421.jpeg']
 };
+
+/* Tu Precio Nuevo se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
+   «los libros te llegan por correo». Mientras librosPorCorreo sea false, el botón de 97 abre tu WhatsApp.
+   El día que pase a true, cambian juntos el botón (PayPal) y /gracias (los libros llegan por correo). */
+if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
+
+</script>
+<script>
+/* Clarity (Microsoft): grabaciones y mapas de calor, proyecto en config.js.
+   Si la página ya lo trae (el código de seguimiento de GHL), no se carga dos veces.
+   En las vistas previas no se carga. */
+(function (w, d, id) {
+  if (!id || w.clarity || /claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) return;
+  w.clarity = function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
+  var s = d.createElement('script');
+  s.async = true;
+  s.src = 'https://www.clarity.ms/tag/' + id;
+  (d.head || d.documentElement).appendChild(s);
+})(window, document, (window.TCD || {}).clarity);
 
 </script>
 <style>
@@ -627,9 +648,11 @@ window.TCD = {
   window.TCD_ORIGEN = origen;
 
   /* ── píxel ─────────────────────────────── */
-  /* Solo al píxel de TCD: GHL puede tener otro píxel en la misma página. */
-  function px(ev, datos) { try { if (window.fbq) C.pixel ? fbq('trackSingle', C.pixel, ev, datos || {}) : fbq('track', ev, datos || {}); } catch (e) {} }
-  function pxc(ev, datos) { try { if (window.fbq) C.pixel ? fbq('trackSingleCustom', C.pixel, ev, datos || {}) : fbq('trackCustom', ev, datos || {}); } catch (e) {} }
+  /* Solo al píxel de TCD: GHL puede tener otro píxel en la misma página.
+     Cada evento va también a Clarity con el mismo nombre (PageView y ViewContent no: Clarity ya cuenta las visitas). */
+  function cl(ev) { try { if (window.clarity && ev !== 'PageView' && ev !== 'ViewContent') clarity('event', ev); } catch (e) {} }
+  function px(ev, datos) { cl(ev); try { if (window.fbq) C.pixel ? fbq('trackSingle', C.pixel, ev, datos || {}) : fbq('track', ev, datos || {}); } catch (e) {} }
+  function pxc(ev, datos) { cl(ev); try { if (window.fbq) C.pixel ? fbq('trackSingleCustom', C.pixel, ev, datos || {}) : fbq('trackCustom', ev, datos || {}); } catch (e) {} }
   window.px = px; window.pxc = pxc;
   if (C.pixel && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
