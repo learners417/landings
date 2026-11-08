@@ -313,19 +313,12 @@
     caja.innerHTML =
       '<p class="puerta-t">Antes de empezar</p>' +
       '<p class="puerta-b">Déjame tu nombre y tu correo. Lees este capítulo ahora mismo y, día por día, te mando el primer capítulo de mis otros libros, con su ejercicio.</p>' +
-      '<iframe title="Tu nombre y tu correo" id="inline-' + ID + '" data-form-id="' + ID + '"' +
-      ' data-layout="{\'id\':\'INLINE\'}" data-layout-iframe-id="inline-' + ID + '" data-trigger-type="alwaysShow"' +
-      ' data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="Lectores · primer capítulo"' +
-      ' src="https://api.leadconnectorhq.com/widget/form/' + ID + '" style="width:100%;height:340px;border:none;display:block;background:transparent"></iframe>' +
+      '<iframe title="Tu nombre y tu correo" src="' + formSrc(ID, '') + '" style="width:100%;height:340px;border:none;display:block;background:transparent"></iframe>' +
       '<p class="puerta-alt" hidden>¿No ves el formulario? <a class="link" href="#" data-puerta-saltar>Empieza a leer aquí</a>.</p>';
     var btn = portada.querySelector('[data-ir="1"]');
     if (btn) { btn.insertAdjacentElement('afterend', caja); btn.style.display = 'none'; }
     else portada.appendChild(caja);
     ifr = caja.querySelector('iframe');
-    if (!document.querySelector('script[src*="form_embed.js"]')) {
-      var s = document.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true;
-      document.body.appendChild(s);
-    }
     setTimeout(function () { if (!cargo && caja) caja.querySelector('.puerta-alt').hidden = false; }, 12000);
     caja.querySelector('[data-puerta-saltar]').addEventListener('click', function (e) { e.preventDefault(); abrir(false); });
     if (window.pxc) pxc('VioPuerta', { content_name: libro });
@@ -360,11 +353,13 @@
   document.querySelectorAll('[data-linea97]').forEach(function (el) { el.textContent = C.linea97; });
 })();
 
-/* form_embed.js de GHL esconde todo iframe de formulario que no se declare «en línea»: estos atributos lo dejan visible. */
-function enLinea(id, nombre) {
-  return ' id="inline-' + id + '" data-form-id="' + id + '" data-layout="{\'id\':\'INLINE\'}" data-layout-iframe-id="inline-' + id + '"' +
-    ' data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate"' +
-    ' data-form-name="' + nombre + '"';
+/* Los formularios de GHL van en un iframe simple, sin form_embed.js: ese script esconde (fuera de la pantalla)
+   los formularios que aparecen después de cargar la página, y desde la segunda visita no los vuelve a mostrar.
+   La dirección lleva el dato oculto (lista, herramienta) y las UTM de la página, para la atribución en GHL. */
+function formSrc(id, dato) {
+  var q = dato ? [dato] : [];
+  try { new URLSearchParams(location.search).forEach(function (v, k) { if (/^utm_/.test(k)) q.push(encodeURIComponent(k) + '=' + encodeURIComponent(v)); }); } catch (e) {}
+  return 'https://api.leadconnectorhq.com/widget/form/' + id + (q.length ? '?' + q.join('&') : '');
 }
 
 /* ── Lista de espera ── botones con data-espera="<lista>" y data-espera-nombre="<cómo se llama>".
@@ -387,24 +382,21 @@ function enLinea(id, nombre) {
       f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
       f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
         '<span class="eti">Lista de espera</span><b class="espera-t"></b><p class="espera-p"></p>' +
-        '<iframe title="Lista de espera"' + enLinea(C.formEspera, 'Lista de espera') +
-        ' src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
-        '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
+        '<iframe title="Lista de espera" src="' + formSrc(C.formEspera, 'lista=' + encodeURIComponent(lista)) +
+        '" style="width:100%;height:320px;border:none;display:block;margin-top:14px;background:transparent"></iframe></div>';
       f.querySelector('.espera-t').textContent = nom.charAt(0).toUpperCase() + nom.slice(1);
       f.querySelector('.espera-p').textContent = b.getAttribute('data-espera-texto') || 'Te aviso por correo el día que abre.';
       f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(f); });
       document.addEventListener('keydown', function esc(ev) { if (ev.key === 'Escape') { cerrar(f); document.removeEventListener('keydown', esc); } });
       document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
-      if (!document.querySelector('script[src*="form_embed.js"]')) {
-        var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
-      }
     });
   });
 })();
 
 /* ── La puerta de las herramientas ── en las seis landings de /para-empezar, los botones a la comunidad piden
    nombre y correo antes de abrir Skool: formulario de GHL «Herramientas · para empezar» (TCD.formHerramientas),
-   con la herramienta en el campo oculto (?herramienta=phr). Al enviarlo, lleva a la comunidad en la misma pestaña.
+   con la herramienta en el campo oculto (?herramienta=phr). Al enviarlo, lleva a la comunidad en la misma pestaña
+   (y el mensaje de «Listo» del formulario trae su propio link a la comunidad).
    Quien ya dejó su correo en este navegador (en una herramienta o en un capítulo) entra directo.
    Si el formulario no carga en 12 segundos, aparece el link directo. No suma eventos al píxel. */
 (function () {
@@ -417,7 +409,7 @@ function enLinea(id, nombre) {
   var CLAVE = 'tcd_lector';
   function yaEs() { try { return localStorage.getItem(CLAVE) === '1'; } catch (e) { return false; } }
   function guardar() { try { localStorage.setItem(CLAVE, '1'); } catch (e) {} }
-  var f = null, ifr = null, cargo = false, alto = 0, listo = false;
+  var f = null, ifr = null, cargo = false, listo = false;
   function cerrar() {
     if (f && f.parentNode) f.parentNode.removeChild(f);
     f = null; ifr = null; document.documentElement.style.overflow = '';
@@ -436,33 +428,24 @@ function enLinea(id, nombre) {
   window.addEventListener('message', function (e) {
     var d = e.data;
     if (!ifr || !Array.isArray(d) || e.source !== ifr.contentWindow) return;
-    if (d[0] === 'highlevel.setHeight' && d[1] && d[1].height) {
-      var h = d[1].height; cargo = true; ifr.style.height = (h + 6) + 'px';
-      if (alto > 200 && h < alto * 0.6) enviado();   // el formulario pasó a su mensaje de «Listo»
-      alto = Math.max(alto, h);
-    }
     if (d[0] === 'iframeLoaded' || d[0] === 'fetch-sticky-contacts' || d[0] === 'fetch-query-params') cargo = true;
-    if (d[0] === 'set-sticky-contacts') enviado();
+    if (d[0] === 'set-sticky-contacts') enviado();   // GHL lo manda al enviar (el formulario tiene «Contacto fijo»)
   });
   function abrir() {
-    cargo = false; alto = 0; listo = false;
+    cargo = false; listo = false;
     f = document.createElement('div');
     f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', NOMBRE[pag]);
     f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
       '<span class="eti">Para empezar</span><b class="espera-t"></b>' +
       '<p class="espera-p">Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.</p>' +
-      '<iframe title="Tu nombre y tu correo"' + enLinea(C.formHerramientas, 'Herramientas · para empezar') +
-      ' src="https://api.leadconnectorhq.com/widget/form/' + C.formHerramientas + '?herramienta=' + encodeURIComponent(pag) +
-      '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe>' +
+      '<iframe title="Tu nombre y tu correo" src="' + formSrc(C.formHerramientas, 'herramienta=' + encodeURIComponent(pag)) +
+      '" style="width:100%;height:330px;border:none;display:block;margin-top:14px;background:transparent"></iframe>' +
       '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">Entra a la comunidad aquí</a>.</p></div>';
     f.querySelector('.espera-t').textContent = NOMBRE[pag];
     f.querySelector('.espera-alt a').href = C.comunidad;
     ifr = f.querySelector('iframe');
     f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(); });
     document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
-    if (!document.querySelector('script[src*="form_embed.js"]')) {
-      var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
-    }
     setTimeout(function () { if (f && !cargo) f.querySelector('.espera-alt').hidden = false; }, 12000);
   }
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && f) cerrar(); });
