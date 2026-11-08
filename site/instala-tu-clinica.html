@@ -360,6 +360,26 @@ h1 .g,h2 .g{font-style:italic}
  .hero .paso-pill{margin-top:18px}
  .player{padding-top:14px}
 }
+/* celular (aprobado el 7 nov): arriba la línea, el Paso 1 y el video entero; el título y la bajada, debajo del video.
+   La computadora no cambia: .portada solo actúa en el celular. */
+@media(max-width:640px){
+ .portada{display:flex;flex-direction:column;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding:84px 20px 0;box-shadow:0 -400px 0 400px var(--bg);text-align:center}
+ .portada .hero,.portada .hero .wrap{display:contents}
+ .portada .pill{order:1}
+ .portada .hero .paso-pill{order:2;margin-top:16px}
+ .portada .player{order:3;padding-top:12px}
+ .portada .hero h1{order:4;margin-top:26px}
+ .portada .sub{order:5}
+ #vsl{position:relative;max-width:min(100%,max(200px,calc((100vh - 218px) * .5625)));max-width:min(100%,max(200px,calc((100svh - 218px) * .5625)))}
+}
+/* «Toca para escucharlo»: cubre el video mientras corre sin sonido (solo aparece en el celular) */
+.vsl-son{position:absolute;top:0;right:0;bottom:0;left:0;z-index:6;display:flex;align-items:flex-end;justify-content:center;margin:0;padding:0 6px 6%;border:0;background:transparent;cursor:pointer;font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+.vsl-son[hidden]{display:none}
+.vsl-son span{display:inline-flex;align-items:center;justify-content:center;gap:8px;max-width:100%;padding:13px 17px 13px 14px;border-radius:999px;border:1px solid var(--gline);background:var(--paper);color:var(--ink);font-family:var(--fb);font-weight:700;font-size:18px;line-height:1.25;text-align:center;box-shadow:0 12px 28px -14px rgba(20,24,24,.55)}
+.vsl-son svg{flex:none;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.vsl-son:focus-visible span{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:no-preference){.vsl-son span{animation:sonar 2.6s var(--e) infinite}}
+@keyframes sonar{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
 @media(max-width:400px){#agenda .paso-pill{letter-spacing:.06em}}
 @media(max-width:380px){.ico{width:54px;height:54px;border-radius:16px}.ico svg{width:27px;height:27px}.top{gap:13px}.paso-pill::before,.paso-pill::after,.paso::before,.paso::after{width:18px}}
 @media(prefers-reduced-motion:reduce){
@@ -490,6 +510,7 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 <div class="topbar"><div class="tb-in"><span class="tb-marca">Javo Katz<small>Tu Clínica Digital</small></span><a class="tb-btn" href="#agenda" data-cta="cabecera">Agendar diagnóstico</a></div></div>
 
 <!-- ══════ PORTADA ══════ -->
+<div class="portada">
 <header class="hero">
  <div class="wrap">
   <p class="pill">Coaches, terapeutas, consultores, nutricionistas, entrenadores y médicos que atienden 1 a 1 hace años</p>
@@ -498,7 +519,45 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
   <p class="paso-pill">Paso 1 · Mira el video</p>
  </div>
 </header>
-<div class="player"><div class="wframe" id="vsl"><wistia-player media-id="6756q87ti6" aspect="0.5625"></wistia-player></div></div>
+<div class="player"><div class="wframe" id="vsl"><wistia-player media-id="6756q87ti6" aspect="0.5625"></wistia-player><button type="button" class="vsl-son" id="vsl-son" hidden><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.4L12 5.6v12.8l-4.6-3.9H4z"/><path d="M15.6 9.2a4 4 0 0 1 0 5.6"/><path d="M18.4 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>Toca para escucharlo</span></button></div></div>
+</div>
+<script>
+/* celular (aprobado el 7 nov): el video arranca solo, sin sonido, y encima queda «Toca para escucharlo».
+   Al tocar, empieza de cero y con sonido. En la computadora no cambia nada. */
+(function(){
+  if(window.__vslSon)return;window.__vslSon=1;
+  if(!(window.matchMedia&&matchMedia('(max-width:640px)').matches))return;
+  var el=document.querySelector('wistia-player[media-id="6756q87ti6"]'),b=document.getElementById('vsl-son');
+  if(!el||!b)return;
+  el.setAttribute('muted','');el.setAttribute('autoplay','');el.setAttribute('silent-autoplay','true');el.setAttribute('playsinline','');
+  var api=null,tocado=false,n=0;
+  window._wq=window._wq||[];
+  window._wq.push({id:'6756q87ti6',onReady:function(v){api=v;}});
+  function nuevo(){return typeof el.play==='function'&&('muted' in el)&&Number(el.duration)>0;}
+  function juega(p){if(p&&p.catch)p.catch(function(){});}
+  /* si el reproductor no arrancó solo, lo arranca sin sonido (si el teléfono no deja, queda el botón) */
+  function arranca(){
+    if(tocado)return;
+    try{
+      if(nuevo()){if(el.state==='beforeplay'){el.muted=true;juega(el.play());}}
+      else if(api&&api.state()==='beforeplay'){api.mute();api.play();}
+    }catch(e){}
+  }
+  /* el botón aparece cuando el reproductor ya responde, así ningún toque se pierde */
+  var iv=setInterval(function(){
+    n++;
+    if(nuevo()||api){clearInterval(iv);b.hidden=false;arranca();}
+    else if(n>100)clearInterval(iv);
+  },150);
+  b.addEventListener('click',function(){
+    tocado=true;b.hidden=true;
+    try{
+      if(nuevo()){el.muted=false;if(Number(el.volume)===0)el.volume=1;el.currentTime=0;juega(el.play());}
+      else if(api){api.unmute();if(api.volume()===0)api.volume(1);api.time(0);api.play();}
+    }catch(e){}
+  });
+})();
+</script>
 <div class="wrap"><p class="cierre"><span class="ck">El año aún no terminó</span><span class="cd">Comienza 2027 con tus sistemas instalados.</span></p></div>
 
 <!-- ══════ PASO 2 · AGENDA ══════ -->
@@ -720,22 +779,36 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 
 <script>
 /* ── retención del video → Meta (VSL25 / VSL50 / VSL75 / VSL95) ──
-   Lee el reproductor nuevo de Wistia (wistia-player) cada 2 s; si no responde, usa la API vieja. */
+   Solo cuenta lo que se mira CON sonido (cambio aprobado el 7 nov): cada segundo del video que pasa
+   con sonido se anota una vez. Lo que corre en silencio (el arranque solo del celular) no suma, y
+   saltar hacia adelante tampoco. Lee el reproductor nuevo de Wistia; si no responde, usa la API vieja. */
 (function(){
-  var hechas={};
+  if(window.__vslRet)return;window.__vslRet=1;
+  var hechas={},vistos={},suma=0,ult=null,api=null;
   function avisa(p){[25,50,75,95].forEach(function(k){if(!hechas[k]&&p>=k){hechas[k]=true;if(window.fbq)fbq('trackCustom','VSL'+k);}});}
   var el=document.querySelector('wistia-player[media-id="6756q87ti6"]');
-  if(el){
-    var iv=setInterval(function(){
-      var d=Number(el.duration),t=Number(el.currentTime);
-      if(d>0&&t>0&&!el.muted)avisa(t/d*100);
-      if(hechas[95])clearInterval(iv);
-    },2000);
-  }
   window._wq=window._wq||[];
-  window._wq.push({id:'6756q87ti6',onReady:function(v){
-    v.bind('percentwatchedchanged',function(p){if(!(v.isMuted&&v.isMuted()))avisa(p*100);});
-  }});
+  window._wq.push({id:'6756q87ti6',onReady:function(v){api=v;}});
+  function lee(){
+    if(el&&typeof el.play==='function'&&Number(el.duration)>0){
+      var corre=typeof el.paused==='boolean'?!el.paused:el.state==='playing';
+      return {d:Number(el.duration),t:Number(el.currentTime),r:Number(el.playbackRate)||1,suena:corre&&!el.muted&&Number(el.volume)!==0};
+    }
+    if(api&&api.duration()>0)return {d:api.duration(),t:api.time(),r:(api.playbackRate&&api.playbackRate())||1,suena:api.state()==='playing'&&!api.isMuted()&&api.volume()!==0};
+    return null;
+  }
+  var iv=setInterval(function(){
+    var s=lee(),w=Date.now();
+    if(s&&s.suena&&ult){
+      var dt=s.t-ult.t,dw=(w-ult.w)/1000*s.r;
+      if(dt>0&&dt<=dw+1.5){
+        for(var k=Math.floor(ult.t);k<Math.floor(s.t);k++){if(!vistos[k]){vistos[k]=1;suma++;}}
+        avisa(suma/Math.floor(s.d)*100);
+      }
+    }
+    ult=s&&s.suena?{t:s.t,w:w}:null;
+    if(hechas[95])clearInterval(iv);
+  },1000);
 })();
 
 /* ── cada botón avisa cuál fue ── */
