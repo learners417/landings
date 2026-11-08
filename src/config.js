@@ -13,7 +13,7 @@ window.TCD = {
   numero:      '/el-numero',
   appPagina:   '/libros',   // /app se retiró el 8 nov 2026: la app viene dentro de Tu nuevo precio
   gracias:     '/gracias',
-  recursos:    '/recursos-gratuitos',
+  recursos:    '/para-empezar',     // el nombre del Mapa (8 nov 2026); /recursos-gratuitos sigue andando con la misma página
   generador:   '/generador-pp',
   camino:      '/camino',        // el Mapa del viaje para el lector (8 nov 2026)
   laCima:      '/la-cima',       // 4 días en Bariloche, 17 al 20 dic; se postula agendando
@@ -51,6 +51,18 @@ window.TCD = {
      El 27 nov, con los audios de la primera tanda, pasa a:
      'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
   linea97: 'Los 8 libros y los cinco primeros días de mi app.',
+
+  /* La meditación de cada libro: su página (/libro/<x>) cuando ya tiene su video. Vacío: el link no aparece.
+     27 nov: sanadores '/libro/umbral' y lago '/libro/lago'. 15 ene: montana y viento. 1 mar: rio y bosque. */
+  meditaciones: { sanadores: '', lago: '', montana: '', viento: '', rio: '', bosque: '' },
+
+  /* Los audios del 97 (cinco mañanas con mi voz, El freno y la meditación de cada libro): true el 27 nov,
+     el mismo día que linea97 pasa a «… y cinco mañanas con mi voz». Mientras tanto, /libros no los nombra. */
+  audios97: false,
+
+  /* El video de YouTube de cada meditación (solo el id, lo que va después de watch?v=). Vacío: su página dice cuándo llega.
+     /libro/umbral, /libro/audio (Regrabar) y /libro/lago (La orilla): 27 nov · montana y viento: 15 ene · rio y bosque: 1 mar. */
+  videosMeditacion: { umbral: '', audio: '', lago: '', montana: '', viento: '', rio: '', bosque: '' },
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',

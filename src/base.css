@@ -361,3 +361,8 @@ html{font-variant-numeric:lining-nums}
 .estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
 .estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
 @media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
+/* la ficha de la estación, arriba de cada primer capítulo (8 nov 2026) */
+.ficha-est{display:flex;flex-direction:column;gap:4px;max-width:30em;margin:22px auto 0;padding:16px 18px;border:1px solid var(--linea);border-top:4px solid var(--c,var(--oro));border-radius:16px;background:var(--papel-2);text-align:left;font-family:var(--f-texto);font-size:17px;line-height:1.45;color:var(--tinta-2)}
+.ficha-est .fe-k{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
+.ficha-est b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15;color:var(--tinta)}
+.ficha-est .link{margin-top:6px;align-self:flex-start;color:var(--tinta);font-size:16px}

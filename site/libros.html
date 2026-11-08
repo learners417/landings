@@ -377,6 +377,11 @@ html{font-variant-numeric:lining-nums}
 .estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
 .estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
 @media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
+/* la ficha de la estación, arriba de cada primer capítulo (8 nov 2026) */
+.ficha-est{display:flex;flex-direction:column;gap:4px;max-width:30em;margin:22px auto 0;padding:16px 18px;border:1px solid var(--linea);border-top:4px solid var(--c,var(--oro));border-radius:16px;background:var(--papel-2);text-align:left;font-family:var(--f-texto);font-size:17px;line-height:1.45;color:var(--tinta-2)}
+.ficha-est .fe-k{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
+.ficha-est b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15;color:var(--tinta)}
+.ficha-est .link{margin-top:6px;align-self:flex-start;color:var(--tinta);font-size:16px}
 
 </style>
 <script>
@@ -395,7 +400,7 @@ window.TCD = {
   numero:      '/el-numero',
   appPagina:   '/libros',   // /app se retiró el 8 nov 2026: la app viene dentro de Tu nuevo precio
   gracias:     '/gracias',
-  recursos:    '/recursos-gratuitos',
+  recursos:    '/para-empezar',     // el nombre del Mapa (8 nov 2026); /recursos-gratuitos sigue andando con la misma página
   generador:   '/generador-pp',
   camino:      '/camino',        // el Mapa del viaje para el lector (8 nov 2026)
   laCima:      '/la-cima',       // 4 días en Bariloche, 17 al 20 dic; se postula agendando
@@ -433,6 +438,18 @@ window.TCD = {
      El 27 nov, con los audios de la primera tanda, pasa a:
      'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
   linea97: 'Los 8 libros y los cinco primeros días de mi app.',
+
+  /* La meditación de cada libro: su página (/libro/<x>) cuando ya tiene su video. Vacío: el link no aparece.
+     27 nov: sanadores '/libro/umbral' y lago '/libro/lago'. 15 ene: montana y viento. 1 mar: rio y bosque. */
+  meditaciones: { sanadores: '', lago: '', montana: '', viento: '', rio: '', bosque: '' },
+
+  /* Los audios del 97 (cinco mañanas con mi voz, El freno y la meditación de cada libro): true el 27 nov,
+     el mismo día que linea97 pasa a «… y cinco mañanas con mi voz». Mientras tanto, /libros no los nombra. */
+  audios97: false,
+
+  /* El video de YouTube de cada meditación (solo el id, lo que va después de watch?v=). Vacío: su página dice cuándo llega.
+     /libro/umbral, /libro/audio (Regrabar) y /libro/lago (La orilla): 27 nov · montana y viento: 15 ene · rio y bosque: 1 mar. */
+  videosMeditacion: { umbral: '', audio: '', lago: '', montana: '', viento: '', rio: '', bosque: '' },
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
@@ -667,14 +684,33 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 <section class="sec junto" id="libros">
  <div class="wrap ancho">
   <span class="kick rv">Los libros</span>
-  <h2 class="t2 rv">Uno por cada parte <em>de tu obra.</em></h2>
+  <h2 class="t2 rv">En el orden <em>del camino.</em></h2>
+  <p class="lead rv">Primero la base, después las cinco estaciones de los 90 días, y dos libros que te acompañan todo el recorrido. <a class="link" data-link="camino" href="#">Ver el mapa del camino</a></p>
 
   <div class="libros">
+   <article class="libro-card card rv" id="sanadores" style="--c:var(--sanadores)">
+    <div class="lc-tapa"><img data-img="tapas/sanadores.webp" alt="Tapa de Sanadores Libres" width="640" height="904" loading="lazy"></div>
+    <div class="lc-cab">
+     <span class="lc-serie">La base del camino · 90 días</span>
+     <h3 class="lc-tit">Sanadores Libres</h3>
+     <p class="lc-sub">De autoempleado a director de tu clínica digital</p>
+    </div>
+    <div class="lc-cuerpo">
+     <p class="lc-lib"><span><b>Libertad física</b> · la estructura</span></p>
+     <p class="lc-pro">Para quien atiende 1 a 1, tiene la agenda llena y sostiene su trabajo con el cuerpo. Te cuento lo que vi en más de cincuenta profesionales, desarmo las creencias que te atan a la agenda y te muestro, en orden, los cinco sistemas para convertir tu consulta en una clínica digital en noventa días.</p>
+     <p class="lc-pro">Veintitrés capítulos cortos, cada uno con tres acciones para esta semana, y códigos que te llevan a la comunidad, a la app y a un audio con mi voz.</p>
+     <p class="lc-meta">204 páginas · en digital, para descargar al instante</p>
+     <div class="lc-btns">
+      <a class="btn" href="#obra"><span>Viene en Tu nuevo precio</span> <span class="fl">→</span></a>
+      <a class="btn claro" data-link="cap" data-hash="sanadores" href="#">Leer el primer capítulo</a>
+     </div>
+    </div>
+   </article>
 
    <article class="libro-card card rv" id="lago" style="--c:var(--lago)">
     <div class="lc-tapa"><img data-img="tapas/lago.webp" alt="Tapa de Lo que el lago te enseña" width="640" height="960" loading="lazy"></div>
     <div class="lc-cab">
-     <span class="lc-serie">Lo que el sur te enseña · 1</span>
+     <span class="lc-serie">Estación 1 · días 1 a 7 · Tu reset</span>
      <h3 class="lc-tit">Lo que el lago te enseña</h3>
      <p class="lc-sub">33 lecciones para mirarte antes de moverte</p>
     </div>
@@ -691,21 +727,21 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
    </article>
 
-   <article class="libro-card card rv" id="sanadores" style="--c:var(--sanadores)">
-    <div class="lc-tapa"><img data-img="tapas/sanadores.webp" alt="Tapa de Sanadores Libres" width="640" height="904" loading="lazy"></div>
+   <article class="libro-card card rv" id="montana" style="--c:var(--montana)">
+    <div class="lc-tapa"><img data-img="tapas/montana.webp" alt="Tapa de Lo que la montaña te enseña" width="640" height="960" loading="lazy"></div>
     <div class="lc-cab">
-     <span class="lc-serie">El libro madre del método</span>
-     <h3 class="lc-tit">Sanadores Libres</h3>
-     <p class="lc-sub">De autoempleado a director de tu clínica digital</p>
+     <span class="lc-serie">Estación 2 · días 8 a 14 · Tu programa</span>
+     <h3 class="lc-tit">Lo que la montaña te enseña</h3>
+     <p class="lc-sub">33 lecciones para subir por etapas hasta la cumbre</p>
     </div>
     <div class="lc-cuerpo">
-     <p class="lc-lib"><span><b>Libertad física</b> · la estructura</span></p>
-     <p class="lc-pro">Para quien atiende 1 a 1, tiene la agenda llena y sostiene su trabajo con el cuerpo. Te cuento lo que vi en más de cincuenta profesionales, desarmo las creencias que te atan a la agenda y te muestro, en orden, los cinco sistemas para convertir tu consulta en una clínica digital en noventa días.</p>
-     <p class="lc-pro">Veintitrés capítulos cortos, cada uno con tres acciones para esta semana, y códigos que te llevan a la comunidad, a la app y a un audio con mi voz.</p>
-     <p class="lc-meta">204 páginas · en digital, para descargar al instante</p>
+     <p class="lc-lib"><span><b>Libertad financiera</b> · el presupuesto</span></p>
+     <p class="lc-pro">Ya sabes llevar a una persona lejos. Ahora toca ponerle a ese camino cumbre, etapas, precio y fecha. Son 33 lecciones, escritas mirando la montaña desde Bariloche, para convertir lo que ya haces en un programa.</p>
+     <p class="lc-pro">Cada una parte de un dato, como el glaciar del Tronador que se mide desde 1953, pasa por casos reales de mentoría y termina en una acción para esta semana.</p>
+     <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
      <div class="lc-btns">
       <a class="btn" href="#obra"><span>Viene en Tu nuevo precio</span> <span class="fl">→</span></a>
-      <a class="btn claro" data-link="cap" data-hash="sanadores" href="#">Leer el primer capítulo</a>
+      <a class="btn claro" data-link="cap" data-hash="montana" href="#">Leer el primer capítulo</a>
      </div>
     </div>
    </article>
@@ -713,7 +749,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
    <article class="libro-card card rv" id="viento" style="--c:var(--viento)">
     <div class="lc-tapa"><img data-img="tapas/viento.webp" alt="Tapa de Lo que el viento te enseña" width="640" height="960" loading="lazy"></div>
     <div class="lc-cab">
-     <span class="lc-serie">Lo que el sur te enseña · 3</span>
+     <span class="lc-serie">Estación 3 · días 15 a 56 · Tu captación</span>
      <h3 class="lc-tit">Lo que el viento te enseña</h3>
      <p class="lc-sub">33 lecciones para que tu voz llegue lejos</p>
     </div>
@@ -732,7 +768,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
    <article class="libro-card card rv" id="rio" style="--c:var(--rio)">
     <div class="lc-tapa"><img data-img="tapas/rio.webp" alt="Tapa de Lo que el río te enseña" width="640" height="960" loading="lazy"></div>
     <div class="lc-cab">
-     <span class="lc-serie">Lo que el sur te enseña · 4</span>
+     <span class="lc-serie">Estación 4 · días 57 a 70 · Tu propia app</span>
      <h3 class="lc-tit">Lo que el río te enseña</h3>
      <p class="lc-sub">33 lecciones para que todo corra solo</p>
     </div>
@@ -748,29 +784,10 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
    </article>
 
-   <article class="libro-card card rv" id="montana" style="--c:var(--montana)">
-    <div class="lc-tapa"><img data-img="tapas/montana.webp" alt="Tapa de Lo que la montaña te enseña" width="640" height="960" loading="lazy"></div>
-    <div class="lc-cab">
-     <span class="lc-serie">Lo que el sur te enseña · 2</span>
-     <h3 class="lc-tit">Lo que la montaña te enseña</h3>
-     <p class="lc-sub">33 lecciones para subir por etapas hasta la cumbre</p>
-    </div>
-    <div class="lc-cuerpo">
-     <p class="lc-lib"><span><b>Libertad financiera</b> · el presupuesto</span></p>
-     <p class="lc-pro">Ya sabes llevar a una persona lejos. Ahora toca ponerle a ese camino cumbre, etapas, precio y fecha. Son 33 lecciones, escritas mirando la montaña desde Bariloche, para convertir lo que ya haces en un programa.</p>
-     <p class="lc-pro">Cada una parte de un dato, como el glaciar del Tronador que se mide desde 1953, pasa por casos reales de mentoría y termina en una acción para esta semana.</p>
-     <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
-     <div class="lc-btns">
-      <a class="btn" href="#obra"><span>Viene en Tu nuevo precio</span> <span class="fl">→</span></a>
-      <a class="btn claro" data-link="cap" data-hash="montana" href="#">Leer el primer capítulo</a>
-     </div>
-    </div>
-   </article>
-
    <article class="libro-card card rv" id="bosque" style="--c:var(--bosque)">
     <div class="lc-tapa"><img data-img="tapas/bosque.webp" alt="Tapa de Lo que el bosque te enseña" width="640" height="960" loading="lazy"></div>
     <div class="lc-cab">
-     <span class="lc-serie">Lo que el sur te enseña · 5</span>
+     <span class="lc-serie">Estación 5 · días 71 a 84 · Tu ecosistema</span>
      <h3 class="lc-tit">Lo que el bosque te enseña</h3>
      <p class="lc-sub">33 lecciones de marca personal y de vida desde la Patagonia</p>
     </div>
@@ -823,7 +840,6 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
      </div>
     </div>
    </article>
-
   </div>
  </div>
 </section>
@@ -848,6 +864,9 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
      <li>La colección <i>Lo que el sur te enseña</i>: el lago, la montaña, el viento, el río y el bosque</li>
      <li><i>Héroe descapado</i> y <i>Las 7 libertades fundamentales</i></li>
      <li>Los cinco primeros días de mi app: ahí sellas tu nuevo precio</li>
+     <li data-audios hidden>Cinco mañanas con mi voz, una por cada día</li>
+     <li data-audios hidden>El freno: la respiración de dos minutos antes de cada sesión</li>
+     <li data-audios hidden>La meditación de cada libro, con su código QR</li>
      <li>Los 8 en digital, 2.404 páginas para descargar al instante</li>
     </ul>
     <a class="btn ancho-total" data-compra="obra" href="#">Quiero la obra completa <span class="fl">→</span></a>
@@ -1367,6 +1386,18 @@ document.querySelectorAll('[data-marca]').forEach(function(a){a.addEventListener
       }
     });
   });
+})();
+
+/* ── La meditación de cada libro ── aparece cuando su página existe (TCD.meditaciones). */
+(function () {
+  var M = (window.TCD || {}).meditaciones || {};
+  document.querySelectorAll('[data-meditacion]').forEach(function (e) {
+    var u = M[e.getAttribute('data-meditacion')];
+    if (!u) return;
+    var a = e.querySelector('a'); if (a) a.href = u;
+    e.hidden = false;
+  });
+  if ((window.TCD || {}).audios97) document.querySelectorAll('[data-audios]').forEach(function (e) { e.hidden = false; });
 })();
 
 </script>

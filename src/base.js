@@ -392,3 +392,15 @@
     });
   });
 })();
+
+/* ── La meditación de cada libro ── aparece cuando su página existe (TCD.meditaciones). */
+(function () {
+  var M = (window.TCD || {}).meditaciones || {};
+  document.querySelectorAll('[data-meditacion]').forEach(function (e) {
+    var u = M[e.getAttribute('data-meditacion')];
+    if (!u) return;
+    var a = e.querySelector('a'); if (a) a.href = u;
+    e.hidden = false;
+  });
+  if ((window.TCD || {}).audios97) document.querySelectorAll('[data-audios]').forEach(function (e) { e.hidden = false; });
+})();

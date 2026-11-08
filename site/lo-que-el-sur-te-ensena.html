@@ -376,6 +376,11 @@ html{font-variant-numeric:lining-nums}
 .estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
 .estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
 @media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
+/* la ficha de la estación, arriba de cada primer capítulo (8 nov 2026) */
+.ficha-est{display:flex;flex-direction:column;gap:4px;max-width:30em;margin:22px auto 0;padding:16px 18px;border:1px solid var(--linea);border-top:4px solid var(--c,var(--oro));border-radius:16px;background:var(--papel-2);text-align:left;font-family:var(--f-texto);font-size:17px;line-height:1.45;color:var(--tinta-2)}
+.ficha-est .fe-k{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
+.ficha-est b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15;color:var(--tinta)}
+.ficha-est .link{margin-top:6px;align-self:flex-start;color:var(--tinta);font-size:16px}
 
 </style>
 <script>
@@ -394,7 +399,7 @@ window.TCD = {
   numero:      '/el-numero',
   appPagina:   '/libros',   // /app se retiró el 8 nov 2026: la app viene dentro de Tu nuevo precio
   gracias:     '/gracias',
-  recursos:    '/recursos-gratuitos',
+  recursos:    '/para-empezar',     // el nombre del Mapa (8 nov 2026); /recursos-gratuitos sigue andando con la misma página
   generador:   '/generador-pp',
   camino:      '/camino',        // el Mapa del viaje para el lector (8 nov 2026)
   laCima:      '/la-cima',       // 4 días en Bariloche, 17 al 20 dic; se postula agendando
@@ -432,6 +437,18 @@ window.TCD = {
      El 27 nov, con los audios de la primera tanda, pasa a:
      'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
   linea97: 'Los 8 libros y los cinco primeros días de mi app.',
+
+  /* La meditación de cada libro: su página (/libro/<x>) cuando ya tiene su video. Vacío: el link no aparece.
+     27 nov: sanadores '/libro/umbral' y lago '/libro/lago'. 15 ene: montana y viento. 1 mar: rio y bosque. */
+  meditaciones: { sanadores: '', lago: '', montana: '', viento: '', rio: '', bosque: '' },
+
+  /* Los audios del 97 (cinco mañanas con mi voz, El freno y la meditación de cada libro): true el 27 nov,
+     el mismo día que linea97 pasa a «… y cinco mañanas con mi voz». Mientras tanto, /libros no los nombra. */
+  audios97: false,
+
+  /* El video de YouTube de cada meditación (solo el id, lo que va después de watch?v=). Vacío: su página dice cuándo llega.
+     /libro/umbral, /libro/audio (Regrabar) y /libro/lago (La orilla): 27 nov · montana y viento: 15 ene · rio y bosque: 1 mar. */
+  videosMeditacion: { umbral: '', audio: '', lago: '', montana: '', viento: '', rio: '', bosque: '' },
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
@@ -574,6 +591,11 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 
 .lc-pro+.lc-pro{margin-top:10px}
 
+.lc-id{display:grid;margin:16px 0 0;border-top:1px solid var(--linea)}
+.lc-id div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--linea)}
+.lc-id dt{font-size:16px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--oro-texto)}
+.lc-id dd{margin:0;font-size:17px;line-height:1.5;color:var(--tinta-2)}
+@media (max-width:420px){ .lc-id div{grid-template-columns:1fr;gap:2px} }
 .lc-meta{margin-top:14px;font-size:16px;color:var(--tinta-2)}
 
 .lc-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
@@ -618,12 +640,13 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
   <span class="kick rv">Un libro por sistema</span>
   <h2 class="t2 rv">Del lago <em>al bosque.</em></h2>
   <ol class="ruta">
-   <li class="paso rv" data-n="1"><h3>Lo que el lago te enseña</h3><p class="min">Tu reset</p><p>33 lecciones para mirarte antes de moverte.</p></li>
-   <li class="paso rv" data-n="2"><h3>Lo que la montaña te enseña</h3><p class="min">Tu programa de 1.000 USD</p><p>33 lecciones para subir por etapas hasta la cumbre.</p></li>
-   <li class="paso rv" data-n="3"><h3>Lo que el viento te enseña</h3><p class="min">Tu captación</p><p>33 lecciones para que tu voz llegue lejos.</p></li>
-   <li class="paso rv" data-n="4"><h3>Lo que el río te enseña</h3><p class="min">Tu propia app</p><p>33 lecciones para que todo corra solo.</p></li>
-   <li class="paso rv" data-n="5"><h3>Lo que el bosque te enseña</h3><p class="min">Tu ecosistema circular</p><p>33 lecciones de marca personal y de vida desde la Patagonia.</p></li>
+   <li class="paso rv" data-n="1"><h3>Lo que el lago te enseña</h3><p class="min">Días 1 a 7 · Tu reset</p><p>33 lecciones para mirarte antes de moverte.</p></li>
+   <li class="paso rv" data-n="2"><h3>Lo que la montaña te enseña</h3><p class="min">Días 8 a 14 · Tu programa</p><p>33 lecciones para subir por etapas hasta la cumbre.</p></li>
+   <li class="paso rv" data-n="3"><h3>Lo que el viento te enseña</h3><p class="min">Días 15 a 56 · Tu captación y tu llamada</p><p>33 lecciones para que tu voz llegue lejos.</p></li>
+   <li class="paso rv" data-n="4"><h3>Lo que el río te enseña</h3><p class="min">Días 57 a 70 · Tu propia app</p><p>33 lecciones para que todo corra solo.</p></li>
+   <li class="paso rv" data-n="5"><h3>Lo que el bosque te enseña</h3><p class="min">Días 71 a 84 · Tu ecosistema</p><p>33 lecciones de marca personal y de vida desde la Patagonia.</p></li>
   </ol>
+  <p class="micro rv">Son las cinco estaciones del camino de 90 días. <a class="link" data-link="camino" href="#">Ver el mapa del camino</a></p>
   <p class="nota rv">Cada lección trae un dato con su fuente, una escena y una acción para esta semana.</p>
  </div>
 </section>
@@ -643,6 +666,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
     <div class="lc-cuerpo">
      <p class="lc-lib"><span><b>Libertad mental</b> · los cimientos</span></p>
+     <dl class="lc-id"><div><dt>Estación</dt><dd>1 · días 1 a 7 · Tu reset</dd></div><div><dt>Color</dt><dd>Azul de lago profundo, con el gris de la niebla de madrugada.</dd></div><div><dt>Forma</dt><dd>Círculos, como una piedra en el agua. El mapa del libro son cinco anillos, uno por día.</dd></div><div><dt>Sonido</dt><dd>Silencio, agua y respiración. Sus canciones propias son vidalas, lentas e íntimas.</dd></div></dl>
      <p class="lc-pro">Antes de cambiar tu precio o tus horarios, mírate. Son 33 lecciones que nacen en el Nahuel Huapi, un lago que en 2011 quedó cubierto de ceniza y volvió a aclarar. Cada una trae un dato verificado, una escena y una acción para esta semana.</p>
      <p class="lc-pro">Al final tienes tu protocolo escrito, para llegar entero a cada sesión y a tu casa.</p>
      <p class="lc-meta">268 páginas · en digital, para descargar al instante</p>
@@ -662,6 +686,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
     <div class="lc-cuerpo">
      <p class="lc-lib"><span><b>Libertad financiera</b> · el presupuesto</span></p>
+     <dl class="lc-id"><div><dt>Estación</dt><dd>2 · días 8 a 14 · Tu programa</dd></div><div><dt>Color</dt><dd>Terracota de roca, con el blanco de la nieve.</dd></div><div><dt>Forma</dt><dd>Una ruta en zigzag que sube, con sus campamentos. El mapa del libro es la ruta a la cumbre.</dd></div><div><dt>Sonido</dt><dd>La respiración contada y los pasos en la nieve. Sus canciones propias son bagualas, de caja y voz de altura.</dd></div></dl>
      <p class="lc-pro">Ya sabes llevar a una persona lejos. Ahora toca ponerle a ese camino cumbre, etapas, precio y fecha. Son 33 lecciones, escritas mirando la montaña desde Bariloche, para convertir lo que ya haces en un programa.</p>
      <p class="lc-pro">Cada una parte de un dato, como el glaciar del Tronador que se mide desde 1953, pasa por casos reales de mentoría y termina en una acción para esta semana.</p>
      <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
@@ -680,6 +705,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
     <div class="lc-cuerpo">
      <p class="lc-lib"><span><b>Libertad emocional</b> · la envolvente</span></p>
+     <dl class="lc-id"><div><dt>Estación</dt><dd>3 · días 15 a 56 · Tu captación y tu llamada</dd></div><div><dt>Color</dt><dd>Ocre de estepa, con el celeste del cielo abierto.</dd></div><div><dt>Forma</dt><dd>Una espiral que sube, como el cóndor en la térmica. El mapa del libro es esa espiral.</dd></div><div><dt>Sonido</dt><dd>Voces, risas y el silbido del viento. Sus canciones propias son chacareras.</dd></div></dl>
      <p class="lc-pro">Tus consultantes llegan por recomendación. Ahora quieres que también te encuentre quien todavía no te conoce. Son 33 lecciones para armar tu captación mirando el viento desde Bariloche, donde un cóndor voló más de 170 kilómetros sin aletear.</p>
      <p class="lc-pro">Cada una trae un dato con su fuente, una escena y una acción para esta semana.</p>
      <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
@@ -698,6 +724,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
     <div class="lc-cuerpo">
      <p class="lc-lib"><span><b>Libertad energética</b> · las instalaciones</span></p>
+     <dl class="lc-id"><div><dt>Estación</dt><dd>4 · días 57 a 70 · Tu propia app</dd></div><div><dt>Color</dt><dd>Turquesa de agua de deshielo, con el gris de la piedra mojada.</dd></div><div><dt>Forma</dt><dd>Un meandro, de la naciente a la desembocadura. El mapa del libro es el río.</dd></div><div><dt>Sonido</dt><dd>El agua que corre y el rápido. Sus canciones propias son zambas, con su vaivén de agua.</dd></div></dl>
      <p class="lc-pro">Explicas lo mismo cada semana y contestas a toda hora. Aquí armas tu propia app, con la inteligencia artificial como herramienta, para que todo corra solo y recuperes tus noches. Sigues al Limay, el río que nace en el Nahuel Huapi y, ya con otro nombre, llega hasta el Atlántico.</p>
      <p class="lc-pro">Cada lección trae un dato verificado, una escena real y tres acciones concretas.</p>
      <p class="lc-meta">268 páginas · en digital, para descargar al instante</p>
@@ -716,6 +743,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </div>
     <div class="lc-cuerpo">
      <p class="lc-lib"><span><b>Libertad de tiempo</b> · la vida útil</span></p>
+     <dl class="lc-id"><div><dt>Estación</dt><dd>5 · días 71 a 84 · Tu ecosistema</dd></div><div><dt>Color</dt><dd>Verde de coihue, con la tierra húmeda del bosque.</dd></div><div><dt>Forma</dt><dd>Anillos de árbol. El mapa del libro es un árbol entero: raíces, tronco y ramas.</dd></div><div><dt>Sonido</dt><dd>Pájaros del bosque y hojas. Sus canciones propias son loncomeos, el ritmo de la Patagonia.</dd></div></dl>
      <p class="lc-pro">Tu agenda está llena y tu trabajo es bueno. Este libro te muestra cómo construir, con lo que ya eres, tu marca personal y una vida con tiempo para los tuyos.</p>
      <p class="lc-pro">Son 33 lecciones nacidas caminando el bosque, donde el alerce crece menos de un milímetro por año y dura siglos. Cada una trae una escena real y una acción para esta semana.</p>
      <p class="lc-meta">264 páginas · en digital, para descargar al instante</p>
@@ -1169,6 +1197,18 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
       }
     });
   });
+})();
+
+/* ── La meditación de cada libro ── aparece cuando su página existe (TCD.meditaciones). */
+(function () {
+  var M = (window.TCD || {}).meditaciones || {};
+  document.querySelectorAll('[data-meditacion]').forEach(function (e) {
+    var u = M[e.getAttribute('data-meditacion')];
+    if (!u) return;
+    var a = e.querySelector('a'); if (a) a.href = u;
+    e.hidden = false;
+  });
+  if ((window.TCD || {}).audios97) document.querySelectorAll('[data-audios]').forEach(function (e) { e.hidden = false; });
 })();
 
 </script>

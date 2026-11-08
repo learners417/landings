@@ -584,8 +584,13 @@
     p.classList.remove('entra'); void p.offsetWidth; p.classList.add('entra');
     [].forEach.call(p.querySelectorAll('.rv'), function (e) { e.classList.add('in'); });
     if (mover) {
-      var arriba = nav.getBoundingClientRect().top + window.scrollY - (parseFloat(getComputedStyle(nav).top) || 0);
-      if (window.scrollY > arriba + 2) window.scrollTo(0, arriba);
+      /* la barra de pantallas está pegada arriba: su lugar real es donde termina la portada */
+      var antes = nav.previousElementSibling;
+      var base = antes ? antes.getBoundingClientRect().bottom : nav.getBoundingClientRect().top;
+      var arriba = Math.max(0, base + window.scrollY - (parseFloat(getComputedStyle(nav).top) || 0));
+      if (window.scrollY > arriba + 2) {
+        try { window.scrollTo({ top: arriba, behavior: 'instant' }); } catch (e) { window.scrollTo(0, arriba); }
+      }
     }
   }
   document.addEventListener('click', function (ev) {
