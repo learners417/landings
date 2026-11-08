@@ -433,6 +433,11 @@ window.TCD = {
      el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
   formEspera: 'YX3xdi92MbG4VuM15vPk',   // «Lista de espera» (8 nov 2026): nombre, correo y el campo oculto lista (?lista=…)
 
+  /* La puerta de las seis herramientas de /para-empezar: antes de abrir Skool, nombre y correo.
+     El id del formulario de GHL «Herramientas · para empezar» (nombre, correo y el campo oculto herramienta).
+     Vacío: los botones abren la comunidad directo, como antes. */
+  formHerramientas: '0RGhK8342PTwkXk0MsCa',   // 8 nov 2026
+
   /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
      El 27 nov, con los audios de la primera tanda, pasa a:
      'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
@@ -1018,6 +1023,77 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
       if (!document.querySelector('script[src*="form_embed.js"]')) {
         var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
       }
+    });
+  });
+})();
+
+/* ── La puerta de las herramientas ── en las seis landings de /para-empezar, los botones a la comunidad piden
+   nombre y correo antes de abrir Skool: formulario de GHL «Herramientas · para empezar» (TCD.formHerramientas),
+   con la herramienta en el campo oculto (?herramienta=phr). Al enviarlo, lleva a la comunidad en la misma pestaña.
+   Quien ya dejó su correo en este navegador (en una herramienta o en un capítulo) entra directo.
+   Si el formulario no carga en 12 segundos, aparece el link directo. No suma eventos al píxel. */
+(function () {
+  var C = window.TCD || {};
+  var pag = document.body.getAttribute('data-pagina');
+  var NOMBRE = { phr: 'Tu hora real', guiadeprecios: 'Un precio sano', impostor: 'Es un meme, y se cambia',
+    creatuprotocolo: 'Vende el resultado', 'generador-caja': 'Los consultantes que ya tienes',
+    automatizar: 'Un consultorio que funciona aunque tú pares' };
+  if (!C.formHerramientas || !C.comunidad || !NOMBRE[pag]) return;
+  var CLAVE = 'tcd_lector';
+  function yaEs() { try { return localStorage.getItem(CLAVE) === '1'; } catch (e) { return false; } }
+  function guardar() { try { localStorage.setItem(CLAVE, '1'); } catch (e) {} }
+  var f = null, ifr = null, cargo = false, alto = 0, listo = false;
+  function cerrar() {
+    if (f && f.parentNode) f.parentNode.removeChild(f);
+    f = null; ifr = null; document.documentElement.style.overflow = '';
+  }
+  function enviado() {
+    if (listo) return;
+    listo = true; guardar();
+    if (f) {
+      var p = f.querySelector('.espera-p');
+      p.textContent = 'Listo. Te llevo a la comunidad. ';
+      var a = document.createElement('a'); a.className = 'link'; a.href = C.comunidad; a.textContent = 'Entrar ahora';
+      p.appendChild(a);
+    }
+    setTimeout(function () { location.assign(C.comunidad); }, 900);
+  }
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (!ifr || !Array.isArray(d) || e.source !== ifr.contentWindow) return;
+    if (d[0] === 'highlevel.setHeight' && d[1] && d[1].height) {
+      var h = d[1].height; cargo = true; ifr.style.height = (h + 6) + 'px';
+      if (alto > 200 && h < alto * 0.6) enviado();   // el formulario pasó a su mensaje de «Listo»
+      alto = Math.max(alto, h);
+    }
+    if (d[0] === 'iframeLoaded' || d[0] === 'fetch-sticky-contacts' || d[0] === 'fetch-query-params') cargo = true;
+    if (d[0] === 'set-sticky-contacts') enviado();
+  });
+  function abrir() {
+    cargo = false; alto = 0; listo = false;
+    f = document.createElement('div');
+    f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', NOMBRE[pag]);
+    f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
+      '<span class="eti">Para empezar</span><b class="espera-t"></b>' +
+      '<p class="espera-p">Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.</p>' +
+      '<iframe title="Tu nombre y tu correo" src="https://api.leadconnectorhq.com/widget/form/' + C.formHerramientas +
+      '?herramienta=' + encodeURIComponent(pag) + '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe>' +
+      '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">Entra a la comunidad aquí</a>.</p></div>';
+    f.querySelector('.espera-t').textContent = NOMBRE[pag];
+    f.querySelector('.espera-alt a').href = C.comunidad;
+    ifr = f.querySelector('iframe');
+    f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(); });
+    document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
+    if (!document.querySelector('script[src*="form_embed.js"]')) {
+      var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
+    }
+    setTimeout(function () { if (f && !cargo) f.querySelector('.espera-alt').hidden = false; }, 12000);
+  }
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && f) cerrar(); });
+  document.querySelectorAll('[data-link="comunidad"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (yaEs()) return;            // ya dejó su correo: entra directo
+      e.preventDefault(); abrir();
     });
   });
 })();

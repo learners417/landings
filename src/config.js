@@ -47,6 +47,11 @@ window.TCD = {
      el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
   formEspera: 'YX3xdi92MbG4VuM15vPk',   // «Lista de espera» (8 nov 2026): nombre, correo y el campo oculto lista (?lista=…)
 
+  /* La puerta de las seis herramientas de /para-empezar: antes de abrir Skool, nombre y correo.
+     El id del formulario de GHL «Herramientas · para empezar» (nombre, correo y el campo oculto herramienta).
+     Vacío: los botones abren la comunidad directo, como antes. */
+  formHerramientas: '0RGhK8342PTwkXk0MsCa',   // 8 nov 2026
+
   /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
      El 27 nov, con los audios de la primera tanda, pasa a:
      'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */

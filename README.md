@@ -34,6 +34,12 @@ Una misma página con dos rutas: `TAMBIEN` en publicar.py (recursos.html sale co
 La lista de espera: formulario de GHL «Lista de espera» `YX3xdi92MbG4VuM15vPk` (nombre, correo y el campo oculto
 `contact.lista_de_espera`, clave de consulta `lista`). Cada botón `data-espera="<lista>"` lo abre con su lista puesta.
 
+La puerta de las seis herramientas (8 nov 2026): formulario de GHL «Herramientas · para empezar» `0RGhK8342PTwkXk0MsCa`
+(nombre, correo y el campo oculto `contact.herramienta`, clave de consulta `herramienta`, con contacto fijo).
+En /phr, /guiadeprecios, /impostor, /creatuprotocolo, /generador-caja y /automatizar, cada botón a la comunidad lo abre
+con la ruta de la página puesta y, al enviarlo, lleva a Skool. Quien ya dejó su correo en ese navegador entra directo.
+En GHL, el flujo «Herramientas · etiqueta» suma `herramientas` y `herramienta-<ruta>`; desde el 27, «Lectores · 10 días» los toma.
+
 Si un paso de GHL tiene otra ruta pero debe mostrar una página existente, va una línea antes:
 `<script>window.TCD_PAGINA='el-numero'</script>` (así está `/el-numero-2245`).
 
