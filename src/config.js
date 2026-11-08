@@ -15,6 +15,10 @@ window.TCD = {
   gracias:     '/gracias',
   recursos:    '/recursos-gratuitos',
   generador:   '/generador-pp',
+  camino:      '/camino',        // el Mapa del viaje para el lector (8 nov 2026)
+  laCima:      '/la-cima',       // 4 días en Bariloche, 17 al 20 dic; se postula agendando
+  mastermind:  '/mastermind',    // por invitación
+  prensa:      '/prensa',
   appMedida:   '/app-745191',
 
   /* Los primeros capítulos, también en GHL. */

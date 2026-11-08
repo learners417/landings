@@ -369,13 +369,12 @@
   function cerrar(f) { if (f && f.parentNode) f.parentNode.removeChild(f); document.documentElement.style.overflow = ''; }
   bs.forEach(function (b) {
     var lista = b.getAttribute('data-espera'), nom = b.getAttribute('data-espera-nombre') || lista;
-    if (!C.formEspera) {
-      b.href = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent('Hola Javo, quiero estar en la lista de espera de ' + nom + '.');
-      b.target = '_blank'; b.rel = 'noopener';
-    }
+    var wa = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent('Hola Javo, quiero estar en la lista de espera ' +
+      (/^el /i.test(nom) ? 'del ' + nom.slice(3) : 'de ' + nom) + '.');
+    if (!C.formEspera && b.tagName === 'A') { b.href = wa; b.target = '_blank'; b.rel = 'noopener'; }
     b.addEventListener('click', function (e) {
       if (window.pxc) pxc('ListaEspera', { content_name: lista });
-      if (!C.formEspera) return;
+      if (!C.formEspera) { if (b.tagName !== 'A') window.open(wa, '_blank', 'noopener'); return; }
       e.preventDefault();
       var f = document.createElement('div');
       f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');

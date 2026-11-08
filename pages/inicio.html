@@ -15,6 +15,24 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
 <style>/*BASE_CSS*/</style>
 <style>
+
+/* ── el camino de 90 días ── */
+.estaciones{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:14px}
+@media (min-width:900px){ .estaciones{grid-template-columns:repeat(5,1fr);gap:12px} }
+.est{padding:22px 20px 20px;border-radius:var(--r);background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);border-top:6px solid var(--c)}
+.est .n{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.est b{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;color:var(--c)}
+.est .sis{display:block;margin-top:6px;font-weight:800;font-size:17px;line-height:1.3}
+.est .lib{display:block;font-size:16px;color:var(--tinta-2)}
+.est p{margin-top:10px;font-size:16px;line-height:1.45;color:var(--tinta-2)}
+.camino-pie{margin-top:18px;text-align:center;font-size:17px;color:var(--tinta-2)}
+.camino-pie b{color:var(--tinta)}
+/* ── seis formas ── */
+.puerta h3{margin-top:6px}
+.puerta .que .linea{font-weight:700;color:var(--tinta)}
+/* ── manifiesto ── */
+.manifiesto{max-width:36ch;margin:30px auto 0;font-family:var(--f-titulo);font-size:clamp(24px,5vw,30px);line-height:1.3;font-weight:500}
+
 /* ── portada ── */
 .portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
 .portada .grid{display:grid;gap:40px;align-items:center}
@@ -126,58 +144,89 @@ a.mapa-t:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 30p
  <div class="fotos-banda rv" data-fotos></div>
 </section>
 
-<!-- ═══ LAS TRES PUERTAS ═══ -->
-<section class="sec" id="puertas">
+<!-- ═══ EL CAMINO DE 90 DÍAS ═══ -->
+<section class="sec" id="camino">
  <div class="wrap ancho">
   <div class="centro">
-   <span class="kick rv">Tres formas de empezar</span>
-   <h2 class="t2 rv">¿Por dónde <em>empiezas?</em></h2>
-   <p class="lead rv">Elige según cuánto quieres hacer tú.</p>
+   <span class="kick rv">El camino</span>
+   <h2 class="t2 rv">90 días, <em>cinco estaciones.</em></h2>
+   <p class="lead rv">Del lago al bosque. En cada estación instalas un sistema de tu negocio y ganas una libertad.</p>
+  </div>
+  <ol class="estaciones">
+   <li class="est rv" style="--c:var(--lago)"><span class="n">Estación 1 · días 1 a 7</span><b>El lago</b><span class="sis">Tu reset</span><span class="lib">Libertad mental</span><p>Tu reset hecho y tu precio nuevo sellado.</p></li>
+   <li class="est rv d1" style="--c:var(--montana)"><span class="n">Estación 2 · días 8 a 14</span><b>La montaña</b><span class="sis">Tu programa</span><span class="lib">Libertad financiera</span><p>Tu oferta sellada, con su enlace de pago, y tu preventa enviada.</p></li>
+   <li class="est rv d2" style="--c:var(--viento)"><span class="n">Estación 3 · días 15 a 56</span><b>El viento</b><span class="sis">Tu captación y tu llamada</span><span class="lib">Libertad emocional</span><p>Tu agenda se confirma sola y tienes tres ventas pagas.</p></li>
+   <li class="est rv d3" style="--c:var(--rio)"><span class="n">Estación 4 · días 57 a 70</span><b>El río</b><span class="sis">Tu propia app</span><span class="lib">Libertad energética</span><p>Tu app andando y horas de tu semana recuperadas.</p></li>
+   <li class="est rv d4" style="--c:var(--bosque)"><span class="n">Estación 5 · días 71 a 84</span><b>El bosque</b><span class="sis">Tu ecosistema</span><span class="lib">Libertad de tiempo</span><p>Doce semanas de contenido programadas y tu libro.</p></li>
+  </ol>
+  <p class="camino-pie rv">Del día 85 al 90, <b>el cierre</b>: miras el camino entero y celebras lo que instalaste.</p>
+  <div class="botones centro rv"><a class="btn claro" data-link="camino" href="#"><span>Ver el mapa completo</span> <span class="fl">→</span></a></div>
+ </div>
+</section>
+
+<!-- ═══ LAS SEIS FORMAS ═══ -->
+<section class="sec junto" id="puertas">
+ <div class="wrap ancho">
+  <div class="centro">
+   <span class="kick rv">Por dónde empiezas</span>
+   <h2 class="t2 rv">Seis formas <em>de recorrerlo.</em></h2>
+   <p class="lead rv">Elige según cuánto quieres hacer tú y cuánto quieres hacer conmigo.</p>
   </div>
   <div class="puertas">
 
    <article class="puerta card rv">
-    <div class="visual"><div class="abanico">
-     <img data-img="tapas/lago-chica.webp" alt="" width="320" height="480"><img data-img="tapas/montana-chica.webp" alt="" width="320" height="480"><img data-img="tapas/sanadores-chica.webp" alt="" width="320" height="452"><img data-img="tapas/viento-chica.webp" alt="" width="320" height="480"><img data-img="tapas/libertades-chica.webp" alt="" width="320" height="491">
-    </div></div>
-    <p class="eti">Leer</p>
-    <h3>Mis 8 libros</h3>
-    <p class="que">Escritos desde Bariloche para quien atiende 1 a 1. El primer capítulo de cada uno se lee aquí, sin costo.</p>
+    <p class="eti">Para empezar · sin costo</p>
+    <h3>El primer paso</h3>
+    <p class="que">El primer capítulo de cada libro, seis herramientas con resultado en minutos y la comunidad, con un vivo cada jueves a las 19:00 (hora de Argentina).</p>
     <div class="acc">
-     <a class="btn" data-link="libros" href="#"><span>Ver los libros</span> <span class="fl">→</span></a>
+     <a class="btn claro" data-link="recursos" href="#"><span>Empezar sin costo</span> <span class="fl">→</span></a>
      <a class="link" data-link="capitulo" href="#">Leer un primer capítulo</a>
     </div>
    </article>
 
    <article class="puerta card rv d1">
-    <div class="visual"><div class="mini-app">
-     <div class="app-card">
-      <div class="app-k">Día 1 · la sesión de hoy</div>
-      <div class="app-t">Tu punto de partida</div>
-      <div class="app-m">75 min · con el Mentor</div>
-      <div class="app-btn">COMENZAR</div>
-     </div>
-    </div></div>
-    <p class="eti">Hacerlo con la app</p>
-    <h3>Mi app, paso a paso</h3>
-    <p class="que">Sesiones guiadas con un Mentor que conoce tu caso. Empiezas con tu precio nuevo en 5 días.</p>
+    <p class="eti">Tu nuevo precio · <span data-precio="obra">97</span> USD</p>
+    <h3>Los 8 libros y tu app</h3>
+    <p class="que"><span class="linea" data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> Ahí sellas tu nuevo precio en cinco días.</p>
     <div class="acc">
-     <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Empezar con Tu nuevo precio · <span data-precio="obra">97</span> USD</span> <span class="fl">→</span></a>
+     <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Empezar con Tu nuevo precio</span> <span class="fl">→</span></a>
     </div>
    </article>
 
-   <article class="puerta card fuerte rv d2">
-    <span class="cinta">Conmigo</span>
-    <div class="visual">
-     <div class="sistemas-mini" aria-hidden="true"><span class="on">1</span><i></i><span class="on">2</span><i></i><span class="on">3</span><i></i><span>4</span><i></i><span>5</span></div>
-     <span class="noventa">5 sistemas · 90 días</span>
+   <article class="puerta card rv d2">
+    <p class="eti">La app</p>
+    <h3>El camino completo, en tu celular</h3>
+    <p class="que">Después de los cinco días, la app te ofrece seguir los 90 días, una jornada por día, con el Mentor que conoce tu caso.</p>
+    <div class="acc">
+     <a class="link" data-link="libros" data-hash="#obra" href="#">Viene con Tu nuevo precio</a>
     </div>
-    <p class="eti">Hacerlo conmigo</p>
-    <h3>Mentoría o instalación</h3>
-    <p class="que">Instalamos tus 5 sistemas en 90 días. Lo construimos juntos, o lo montamos nosotros y tú te grabas y atiendes.</p>
+   </article>
+
+   <article class="puerta card fuerte rv">
+    <span class="cinta">Conmigo</span>
+    <p class="eti">El programa · 90 días</p>
+    <h3>Tus 5 sistemas, instalados</h3>
+    <p class="que">Tres formas, según quién hace el trabajo: con la app, conmigo en un grupo de siete, o montado por mi equipo a tu nombre.</p>
     <div class="acc">
      <a class="btn" data-link="agenda" href="#"><span>Agendar mi diagnóstico</span> <span class="fl">→</span></a>
-     <a class="link" data-link="agenda" data-hash="#opciones" href="#">Ver las dos formas</a>
+    </div>
+   </article>
+
+   <article class="puerta card rv d1">
+    <p class="eti">La Cima · 17 al 20 de diciembre</p>
+    <h3>4 días en Bariloche</h3>
+    <p class="que">Los más comprometidos, juntos en la Patagonia, y tu contenido grabado. Se suma a cualquiera de las formas del programa.</p>
+    <div class="acc">
+     <a class="btn claro" data-link="laCima" href="#"><span>Postularme</span> <span class="fl">→</span></a>
+    </div>
+   </article>
+
+   <article class="puerta card rv d2">
+    <p class="eti">El mastermind · por invitación</p>
+    <h3>A la mesa con los más comprometidos</h3>
+    <p class="que">Para quienes ya instalaron sus sistemas y quieren ir por más, juntos.</p>
+    <div class="acc">
+     <a class="link" data-link="mastermind" href="#">Ver el mastermind</a>
     </div>
    </article>
 
@@ -185,22 +234,17 @@ a.mapa-t:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 30p
  </div>
 </section>
 
-<!-- ═══ EL UNIVERSO ═══ -->
-<section class="sec junto" id="universo">
+<!-- ═══ LAS OTRAS LÍNEAS ═══ -->
+<section class="sec" id="universo">
  <div class="wrap ancho">
-  <span class="kick rv">Todo lo que construí</span>
-  <h2 class="t2 rv">Mi universo, <em>en un solo lugar.</em></h2>
-  <p class="lead rv">Libros, apps, mentorías y herramientas. Todo apunta a lo mismo: que vivas de lo que sabes hacer, con tiempo para tu vida.</p>
+  <span class="kick rv">Lo que viene</span>
+  <h2 class="t2 rv">Las otras líneas <em>de mi obra.</em></h2>
+  <p class="lead rv">Libros, apps y colecciones con el mismo norte: que vivas de lo que sabes hacer, con tiempo para tu vida.</p>
   <div class="mapa">
-   <a class="mapa-t doble rv" style="--c:var(--tinta)" data-link="agenda" href="#"><span class="eti">Conmigo · 90 días</span><b>Mentoría o instalación</b><p>Tus 5 sistemas instalados: lo construimos juntos o lo montamos nosotros.</p><span class="ir">Agendar mi diagnóstico →</span></a>
-   <a class="mapa-t rv d1" style="--c:var(--verde)" data-link="libros" data-hash="#obra" href="#"><span class="eti">Con la app</span><b>La app de Tu Clínica Digital</b><p>Sesiones guiadas y un Mentor que conoce tu caso. Viene con Tu nuevo precio, <span data-precio="obra">97</span> USD.</p><span class="ir">Empezar →</span></a>
-   <a class="mapa-t doble rv" style="--c:var(--lago)" data-link="libros" href="#"><span class="eti">Libres · la obra completa</span><b>Mis 8 libros</b><p>Sanadores Libres, la colección <i>Lo que el sur te enseña</i>, Héroe descapado y Las 7 libertades.</p><span class="tapitas" aria-hidden="true"><img data-img="tapas/lago-chica.webp" alt=""><img data-img="tapas/montana-chica.webp" alt=""><img data-img="tapas/viento-chica.webp" alt=""><img data-img="tapas/rio-chica.webp" alt=""><img data-img="tapas/bosque-chica.webp" alt=""></span><span class="ir">Ver los libros →</span></a>
-   <a class="mapa-t rv d1" style="--c:var(--libertades)" data-link="heroe" href="#"><span class="eti">En preparación</span><b>Héroe descapado · la trilogía</b><p><i>La capa</i>, <i>El camino</i> y <i>Liderarte</i>: el método El Eje, de punta a punta, en 84 días.</p><span class="ir">Ver la trilogía →</span></a>
-   <a class="mapa-t rv d2" style="--c:var(--viento)" data-link="materias" href="#"><span class="eti">En preparación</span><b>Materias pendientes</b><p>Lo que la escuela no te enseñó a propósito. Siete materias, un libro por materia, una habilidad por libro.</p><span class="ir">Ver la colección →</span></a>
-   <a class="mapa-t rv" style="--c:var(--sanadores)" data-link="intangibles" href="#"><span class="eti">En preparación</span><b>Intangibles</b><p>Freud, Jung, Lacan, Buda: un maestro por libro, aplicado a tu vida y a tu negocio.</p><span class="ir">Ver la colección →</span></a>
-   <a class="mapa-t rv d1" style="--c:var(--tinta-2)" data-link="cdl" href="#"><span class="eti">Para dueños y directores</span><b>La Clínica del Líder</b><p>12 semanas con el método El Eje, en una app y con un equipo profesional, medidas de punta a punta.</p><span class="ir">Ver la clínica →</span></a>
-   <a class="mapa-t rv d2" style="--c:var(--montana)" data-link="generador" href="#"><span class="eti">60 segundos</span><b>Tu plan de 10.000 USD</b><p>Siete preguntas y te llevas tu techo real, tu programa de 1.000 USD y tus 3 pasos de esta semana.</p><span class="ir">Hacer mi plan →</span></a>
-   <a class="mapa-t doble rv d3" style="--c:var(--bosque)" data-link="recursos" href="#"><span class="eti">Sin costo</span><b>Herramientas y comunidad</b><p>Seis herramientas con resultado en minutos, la comunidad y el primer capítulo de cada libro.</p><span class="ir">Ver los recursos →</span></a>
+   <a class="mapa-t rv" style="--c:var(--libertades)" data-link="heroe" href="#"><span class="eti">Para quien lidera</span><b>Héroe descapado · la trilogía</b><p><i>La capa</i>, <i>El camino</i> y <i>Liderarte</i>: el método El Eje, de punta a punta, en 84 días.</p><span class="ir">Ver la trilogía →</span></a>
+   <a class="mapa-t rv d1" style="--c:var(--tinta-2)" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span class="eti">Abre en 2027</span><b>La Clínica del Líder</b><p>12 semanas con El Eje, en una app y con un equipo profesional, medidas de punta a punta.</p><span class="ir">Anotarme en la lista de espera →</span></a>
+   <a class="mapa-t rv d2" style="--c:var(--viento)" data-espera="materias-pendientes" data-espera-nombre="Materias pendientes" href="#"><span class="eti">En preparación</span><b>Materias pendientes</b><p>Lo que la escuela no te enseñó a propósito. Siete materias, un libro por materia, una habilidad por libro.</p><span class="ir">Anotarme en la lista de espera →</span></a>
+   <a class="mapa-t rv" style="--c:var(--sanadores)" data-espera="intangibles" data-espera-nombre="Intangibles" href="#"><span class="eti">En preparación</span><b>Intangibles</b><p>Freud, Jung, Lacan, Buda: un maestro por libro, aplicado a tu vida y a tu negocio.</p><span class="ir">Anotarme en la lista de espera →</span></a>
   </div>
  </div>
 </section>
@@ -212,6 +256,7 @@ a.mapa-t:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 30p
   <span class="kick rv" style="margin-top:28px">Lo que me mueve</span>
   <h2 class="t2 rv">Lo que no nos enseñaron <em>a propósito.</em></h2>
   <p class="lead rv">El dinero, el tiempo, el cuerpo, la palabra. Lo aprendí afuera de la escuela, en más de 300 libros y en mi propio negocio. Hoy lo comparto todo.</p>
+  <p class="manifiesto rv">Somos los Sanadores Libres: profesionales que curan, cobran lo que vale su trabajo y tienen tiempo para los suyos. El precio, el método, la venta y el descanso no nos los enseñaron a propósito. Los aprendemos juntos, y empiezan aquí.</p>
   <ul class="frases-javo">
    <li class="rv">Los que curan <em>merecen vivir de curar.</em></li>
    <li class="rv d1">Firmeza y amorosidad <em>son hermanos.</em></li>
@@ -263,7 +308,7 @@ a.mapa-t:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 30p
 
 <footer class="pie"><div class="wrap">
  <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
+ <nav><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="recursos" href="#">Para empezar</a></nav>
  <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
  <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
 </div></footer>
