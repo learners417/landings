@@ -45,7 +45,7 @@ window.TCD = {
 
   /* La lista de espera (las colecciones que vienen y La Clínica del Líder, que abre en 2027):
      el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
-  formEspera: '',
+  formEspera: 'YX3xdi92MbG4VuM15vPk',   // «Lista de espera» (8 nov 2026): nombre, correo y el campo oculto lista (?lista=…)
 
   /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
      El 27 nov, con los audios de la primera tanda, pasa a:

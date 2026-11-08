@@ -379,10 +379,11 @@
       var f = document.createElement('div');
       f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
       f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
-        '<span class="eti">Lista de espera</span><b class="espera-t"></b><p>Te aviso por correo el día que abre.</p>' +
+        '<span class="eti">Lista de espera</span><b class="espera-t"></b><p class="espera-p"></p>' +
         '<iframe title="Lista de espera" src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
         '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
-      f.querySelector('.espera-t').textContent = nom;
+      f.querySelector('.espera-t').textContent = nom.charAt(0).toUpperCase() + nom.slice(1);
+      f.querySelector('.espera-p').textContent = b.getAttribute('data-espera-texto') || 'Te aviso por correo el día que abre.';
       f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(f); });
       document.addEventListener('keydown', function esc(ev) { if (ev.key === 'Escape') { cerrar(f); document.removeEventListener('keydown', esc); } });
       document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
