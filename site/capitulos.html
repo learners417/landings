@@ -1114,6 +1114,13 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
   document.querySelectorAll('[data-linea97]').forEach(function (el) { el.textContent = C.linea97; });
 })();
 
+/* form_embed.js de GHL esconde todo iframe de formulario que no se declare «en línea»: estos atributos lo dejan visible. */
+function enLinea(id, nombre) {
+  return ' id="inline-' + id + '" data-form-id="' + id + '" data-layout="{\'id\':\'INLINE\'}" data-layout-iframe-id="inline-' + id + '"' +
+    ' data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate"' +
+    ' data-form-name="' + nombre + '"';
+}
+
 /* ── Lista de espera ── botones con data-espera="<lista>" y data-espera-nombre="<cómo se llama>".
    Con TCD.formEspera abre el formulario de GHL «Lista de espera» con la lista puesta; sin él, abre tu WhatsApp. */
 (function () {
@@ -1134,7 +1141,8 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
       f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
       f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
         '<span class="eti">Lista de espera</span><b class="espera-t"></b><p class="espera-p"></p>' +
-        '<iframe title="Lista de espera" src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
+        '<iframe title="Lista de espera"' + enLinea(C.formEspera, 'Lista de espera') +
+        ' src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
         '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
       f.querySelector('.espera-t').textContent = nom.charAt(0).toUpperCase() + nom.slice(1);
       f.querySelector('.espera-p').textContent = b.getAttribute('data-espera-texto') || 'Te aviso por correo el día que abre.';
@@ -1197,8 +1205,9 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
     f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
       '<span class="eti">Para empezar</span><b class="espera-t"></b>' +
       '<p class="espera-p">Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.</p>' +
-      '<iframe title="Tu nombre y tu correo" src="https://api.leadconnectorhq.com/widget/form/' + C.formHerramientas +
-      '?herramienta=' + encodeURIComponent(pag) + '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe>' +
+      '<iframe title="Tu nombre y tu correo"' + enLinea(C.formHerramientas, 'Herramientas · para empezar') +
+      ' src="https://api.leadconnectorhq.com/widget/form/' + C.formHerramientas + '?herramienta=' + encodeURIComponent(pag) +
+      '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe>' +
       '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">Entra a la comunidad aquí</a>.</p></div>';
     f.querySelector('.espera-t').textContent = NOMBRE[pag];
     f.querySelector('.espera-alt a').href = C.comunidad;
