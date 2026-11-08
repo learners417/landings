@@ -359,6 +359,24 @@ html{font-variant-numeric:lining-nums}
 .puerta p.puerta-b{font-family:var(--f-texto);font-size:17px;line-height:1.55;color:var(--tinta-2);margin:0 0 16px}
 .puerta p.puerta-alt{font-family:var(--f-texto);font-size:16px;color:var(--tinta-2);margin:12px 0 0}
 
+/* ── lista de espera ── */
+.espera-fondo{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(43,39,36,.55)}
+.espera{position:relative;width:100%;max-width:460px;padding:30px 26px 18px;text-align:left}
+.espera .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.espera-t{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.1}
+.espera p{margin-top:8px;font-size:17px}
+.espera-x{position:absolute;top:6px;right:10px;width:44px;height:44px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--tinta)}
+
+/* ── tarjeta de estación del camino (herramientas, capítulos) ── */
+.estacion-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(20px,4vw,28px);text-decoration:none;color:inherit}
+.estacion-x img{width:96px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55);transition:transform .35s var(--e)}
+.estacion-x:hover img{transform:translateY(-4px)}
+.estacion-x .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.estacion-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:4px}
+.estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
+.estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
+@media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -374,7 +392,7 @@ window.TCD = {
   preparacion: '/preparacion',
   libros:      '/libros',
   numero:      '/el-numero',
-  appPagina:   '/app',
+  appPagina:   '/libros',   // /app se retiró el 8 nov 2026: la app viene dentro de Tu nuevo precio
   gracias:     '/gracias',
   recursos:    '/recursos-gratuitos',
   generador:   '/generador-pp',
@@ -392,7 +410,7 @@ window.TCD = {
   cdl:       '/clinica-del-lider',
 
   /* Los libros NO se pegan aquí: este código es público y cualquiera vería los links.
-     Los manda el correo de entrega de GHL apenas entra el pago de Tu Precio Nuevo.
+     Los manda el correo de entrega de GHL apenas entra el pago de Tu nuevo precio.
      Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
      Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
   librosPorCorreo: false,
@@ -401,6 +419,15 @@ window.TCD = {
      Con el id puesto, cada capítulo pide nombre y correo antes de leer y arranca el flujo «Lectores · 10 días».
      Vacío: los capítulos se leen sin pedir nada. */
   formLectores: '',
+
+  /* La lista de espera (las colecciones que vienen y La Clínica del Líder, que abre en 2027):
+     el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
+  formEspera: '',
+
+  /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
+     El 27 nov, con los audios de la primera tanda, pasa a:
+     'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
+  linea97: 'Los 8 libros y los cinco primeros días de mi app.',
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
@@ -417,7 +444,7 @@ window.TCD = {
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
     numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
-    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
+    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu nuevo precio · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33
@@ -459,7 +486,7 @@ window.TCD = {
   capturas: ['6a3f2d4ae2763b2eec24a678.jpeg','6790e3b22aa71a8f8b682154.jpeg','67a8080cfc76856ca1136421.jpeg']
 };
 
-/* Tu Precio Nuevo se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
+/* Tu nuevo precio se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
    «los libros te llegan por correo». Mientras librosPorCorreo sea false, el botón de 97 abre tu WhatsApp.
    El día que pase a true, cambian juntos el botón (PayPal) y /gracias (los libros llegan por correo). */
 if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
@@ -539,11 +566,11 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 .libro-x .ir{display:inline-block;margin-top:10px;font-size:16px;font-weight:800;color:var(--tinta)}
 </style>
 </head>
-<body data-pagina="clinica-del-lider" data-pagos="apaga ejeSolo ejeAcomp">
+<body data-pagina="clinica-del-lider" data-pagos="">
 
 <header class="top"><div class="top-in">
   <a class="marca" data-link="inicio" href="#">Javo Katz<small>La Clínica del Líder</small></a>
-  <a class="btn wa" data-wa="Hola Javo, quiero saber si La Clínica del Líder es para mí. Dirijo: … · Personas a cargo: …" href="#"><span>Quiero saber si es para mí</span></a>
+  <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span></a>
 </div></header>
 
 <main>
@@ -551,15 +578,15 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 <section class="portada" data-barra-desde>
  <div class="wrap ancho"><div class="cols">
   <div>
-   <span class="kick rv">La Clínica del Líder</span>
+   <span class="kick rv">La Clínica del Líder · abre en 2027</span>
    <h1 class="t1 rv d1">Rinde más. <em>Vive mejor.</em></h1>
    <svg class="pulso rv d1" viewBox="0 0 150 26" aria-hidden="true"><polyline points="1,13 52,13 62,3 72,23 82,13 149,13"/></svg>
    <p class="lead rv d2">Una clínica digital para dueños y directores: una app en tu teléfono, con un equipo profesional detrás. <b>12 semanas, medidas de punta a punta, para rendir más con menos desgaste.</b></p>
    <div class="botones rv d3">
-    <a class="btn wa" data-wa="Hola Javo, quiero saber si La Clínica del Líder es para mí. Dirijo: … · Personas a cargo: …" href="#"><span>Quiero saber si es para mí</span> <span class="fl">→</span></a>
+    <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span> <span class="fl">→</span></a>
     <a class="btn claro" href="#metodo"><span>Ver cómo funciona</span></a>
    </div>
-   <p class="micro rv d3">Te responde Javo, por WhatsApp.</p>
+   <p class="micro rv d3">La primera camada abre en 2027. Te aviso por correo el día que abre.</p>
   </div>
   <div class="escena rv d2" aria-hidden="true">
    <div class="tel"><div class="pant">
@@ -658,44 +685,14 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
  </div>
 </section>
 
-<!-- ═══ LOS PLANES ═══ -->
+<!-- ═══ LISTA DE ESPERA (abre en 2027) ═══ -->
 <section class="sec" id="planes">
- <div class="wrap ancho">
-  <span class="kick rv">Cómo lo haces</span>
+ <div class="wrap centro">
+  <span class="kick rv">Abre en 2027</span>
   <h2 class="t2 rv">Solo, <em>o acompañado.</em></h2>
-  <p class="lead rv">El mismo camino de 12 semanas. Cambia cuánto te acompañan.</p>
-  <div class="planes">
-   <div class="plan card rv">
-    <span class="nom">El Eje Solo</span>
-    <p class="que">Tú con el sistema.</p>
-    <div class="precio"><b data-precio="ejeSolo">333</b><small>USD · pago único</small></div>
-    <ul>
-     <li>Los 84 días, una Dosis por día</li>
-     <li>Tus mediciones del día 42 y del día 84</li>
-     <li>El Clínico: tu acompañante con IA, a cualquier hora</li>
-     <li>Tu bitácora y tus sistemas instalados</li>
-    </ul>
-    <a class="btn claro ancho-total" data-compra="ejeSolo" href="#"><span>Empezar solo</span></a>
-   </div>
-   <div class="plan card fuerte rv d1">
-    <span class="cinta">Con tu clínico</span>
-    <span class="nom">El Eje Acompañado</span>
-    <p class="que">Con un profesional que te mira cada semana.</p>
-    <div class="precio"><b data-precio="ejeAcomp">999</b><small>USD · pago único</small></div>
-    <ul>
-     <li>Todo El Eje Solo</li>
-     <li>Tu clínico de cabecera revisa tus Signos cada semana y te deja un audio personal</li>
-     <li>3 consultas en vivo 1 a 1: días 14, 42 y 80</li>
-     <li>Revisión humana de tus mediciones</li>
-     <li>Cupos limitados por camada</li>
-    </ul>
-    <a class="btn ancho-total" data-compra="ejeAcomp" href="#"><span>Quiero el Acompañado</span> <span class="fl">→</span></a>
-   </div>
-  </div>
-  <div class="contrato rv"><span>Por contrato</span><p>Tu Índice sube 25 puntos en 12 semanas, o seguimos hasta que suba.</p></div>
-  <p class="seguro con-pago rv"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
-  <p class="seguro sin-pago rv"><svg viewBox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
-  <p class="otro rv">¿Prefieres empezar por 5 noches? <a class="link" data-compra="apaga" href="#">Apaga la cabeza · <span data-precio="apaga">33</span> USD</a></p>
+  <p class="lead rv">El mismo camino de 12 semanas: con la app y El Clínico, o con un clínico de cabecera que mira tus Signos cada semana. La primera camada abre en 2027.</p>
+  <div class="botones rv"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme en la lista de espera</span> <span class="fl">→</span></a></div>
+  <p class="micro rv">Te aviso por correo el día que abre.</p>
  </div>
 </section>
 
@@ -722,7 +719,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
  <div class="wrap">
   <hr class="regla">
   <p class="frase-final rv">Una clínica que existe <em>para darte el alta.</em></p>
-  <div class="botones rv"><a class="btn wa" data-wa="Hola Javo, quiero saber si La Clínica del Líder es para mí. Dirijo: … · Personas a cargo: …" href="#"><span>Quiero saber si es para mí</span> <span class="fl">→</span></a></div>
+  <div class="botones rv"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span> <span class="fl">→</span></a></div>
  </div>
 </section>
 </main>
@@ -734,7 +731,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
  <p>La Clínica del Líder es una clínica digital: una app con un equipo profesional detrás. Ante una urgencia, comunícate con los servicios de emergencia de tu país.</p>
 </div></footer>
 
-<div class="barra"><a class="btn wa" data-wa="Hola Javo, quiero saber si La Clínica del Líder es para mí. Dirijo: … · Personas a cargo: …" href="#"><span>Quiero saber si es para mí</span></a></div>
+<div class="barra"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span></a></div>
 
 <script>window.TCD_IMGS={"tapas/heroe-chica.webp": "data:image/webp;base64,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"};</script>
 <script>
@@ -748,7 +745,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
   var pagina = document.body.getAttribute('data-pagina') || 'pagina';
 
   var NOMBRES = {
-    numero: 'El Número', obra: 'Tu Precio Nuevo', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    numero: 'El Número', obra: 'Tu nuevo precio', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
     sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
     viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
     heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
@@ -1091,6 +1088,47 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
       if (!quieto) try { caja.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
     }
   };
+})();
+
+/* ── La línea única de Tu nuevo precio (TCD.linea97) en cada [data-linea97] ── */
+(function () {
+  var C = window.TCD || {};
+  if (!C.linea97) return;
+  document.querySelectorAll('[data-linea97]').forEach(function (el) { el.textContent = C.linea97; });
+})();
+
+/* ── Lista de espera ── botones con data-espera="<lista>" y data-espera-nombre="<cómo se llama>".
+   Con TCD.formEspera abre el formulario de GHL «Lista de espera» con la lista puesta; sin él, abre tu WhatsApp. */
+(function () {
+  var C = window.TCD || {};
+  var bs = document.querySelectorAll('[data-espera]');
+  if (!bs.length) return;
+  function cerrar(f) { if (f && f.parentNode) f.parentNode.removeChild(f); document.documentElement.style.overflow = ''; }
+  bs.forEach(function (b) {
+    var lista = b.getAttribute('data-espera'), nom = b.getAttribute('data-espera-nombre') || lista;
+    if (!C.formEspera) {
+      b.href = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent('Hola Javo, quiero estar en la lista de espera de ' + nom + '.');
+      b.target = '_blank'; b.rel = 'noopener';
+    }
+    b.addEventListener('click', function (e) {
+      if (window.pxc) pxc('ListaEspera', { content_name: lista });
+      if (!C.formEspera) return;
+      e.preventDefault();
+      var f = document.createElement('div');
+      f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
+      f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
+        '<span class="eti">Lista de espera</span><b class="espera-t"></b><p>Te aviso por correo el día que abre.</p>' +
+        '<iframe title="Lista de espera" src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
+        '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
+      f.querySelector('.espera-t').textContent = nom;
+      f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(f); });
+      document.addEventListener('keydown', function esc(ev) { if (ev.key === 'Escape') { cerrar(f); document.removeEventListener('keydown', esc); } });
+      document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
+      if (!document.querySelector('script[src*="form_embed.js"]')) {
+        var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
+      }
+    });
+  });
 })();
 
 </script>

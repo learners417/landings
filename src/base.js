@@ -8,7 +8,7 @@
   var pagina = document.body.getAttribute('data-pagina') || 'pagina';
 
   var NOMBRES = {
-    numero: 'El Número', obra: 'Tu Precio Nuevo', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    numero: 'El Número', obra: 'Tu nuevo precio', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
     sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
     viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
     heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
@@ -351,4 +351,45 @@
       if (!quieto) try { caja.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
     }
   };
+})();
+
+/* ── La línea única de Tu nuevo precio (TCD.linea97) en cada [data-linea97] ── */
+(function () {
+  var C = window.TCD || {};
+  if (!C.linea97) return;
+  document.querySelectorAll('[data-linea97]').forEach(function (el) { el.textContent = C.linea97; });
+})();
+
+/* ── Lista de espera ── botones con data-espera="<lista>" y data-espera-nombre="<cómo se llama>".
+   Con TCD.formEspera abre el formulario de GHL «Lista de espera» con la lista puesta; sin él, abre tu WhatsApp. */
+(function () {
+  var C = window.TCD || {};
+  var bs = document.querySelectorAll('[data-espera]');
+  if (!bs.length) return;
+  function cerrar(f) { if (f && f.parentNode) f.parentNode.removeChild(f); document.documentElement.style.overflow = ''; }
+  bs.forEach(function (b) {
+    var lista = b.getAttribute('data-espera'), nom = b.getAttribute('data-espera-nombre') || lista;
+    if (!C.formEspera) {
+      b.href = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent('Hola Javo, quiero estar en la lista de espera de ' + nom + '.');
+      b.target = '_blank'; b.rel = 'noopener';
+    }
+    b.addEventListener('click', function (e) {
+      if (window.pxc) pxc('ListaEspera', { content_name: lista });
+      if (!C.formEspera) return;
+      e.preventDefault();
+      var f = document.createElement('div');
+      f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
+      f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
+        '<span class="eti">Lista de espera</span><b class="espera-t"></b><p>Te aviso por correo el día que abre.</p>' +
+        '<iframe title="Lista de espera" src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
+        '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
+      f.querySelector('.espera-t').textContent = nom;
+      f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(f); });
+      document.addEventListener('keydown', function esc(ev) { if (ev.key === 'Escape') { cerrar(f); document.removeEventListener('keydown', esc); } });
+      document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
+      if (!document.querySelector('script[src*="form_embed.js"]')) {
+        var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
+      }
+    });
+  });
 })();

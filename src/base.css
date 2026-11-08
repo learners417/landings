@@ -343,3 +343,21 @@ html{font-variant-numeric:lining-nums}
 .puerta p.puerta-t{font-family:var(--f-titulo);font-size:28px;line-height:1.15;color:var(--tinta);margin:0 0 8px}
 .puerta p.puerta-b{font-family:var(--f-texto);font-size:17px;line-height:1.55;color:var(--tinta-2);margin:0 0 16px}
 .puerta p.puerta-alt{font-family:var(--f-texto);font-size:16px;color:var(--tinta-2);margin:12px 0 0}
+
+/* ── lista de espera ── */
+.espera-fondo{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(43,39,36,.55)}
+.espera{position:relative;width:100%;max-width:460px;padding:30px 26px 18px;text-align:left}
+.espera .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.espera-t{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.1}
+.espera p{margin-top:8px;font-size:17px}
+.espera-x{position:absolute;top:6px;right:10px;width:44px;height:44px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--tinta)}
+
+/* ── tarjeta de estación del camino (herramientas, capítulos) ── */
+.estacion-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(20px,4vw,28px);text-decoration:none;color:inherit}
+.estacion-x img{width:96px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55);transition:transform .35s var(--e)}
+.estacion-x:hover img{transform:translateY(-4px)}
+.estacion-x .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.estacion-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:4px}
+.estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
+.estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
+@media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }

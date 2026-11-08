@@ -359,6 +359,24 @@ html{font-variant-numeric:lining-nums}
 .puerta p.puerta-b{font-family:var(--f-texto);font-size:17px;line-height:1.55;color:var(--tinta-2);margin:0 0 16px}
 .puerta p.puerta-alt{font-family:var(--f-texto);font-size:16px;color:var(--tinta-2);margin:12px 0 0}
 
+/* ── lista de espera ── */
+.espera-fondo{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(43,39,36,.55)}
+.espera{position:relative;width:100%;max-width:460px;padding:30px 26px 18px;text-align:left}
+.espera .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.espera-t{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.1}
+.espera p{margin-top:8px;font-size:17px}
+.espera-x{position:absolute;top:6px;right:10px;width:44px;height:44px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--tinta)}
+
+/* ── tarjeta de estación del camino (herramientas, capítulos) ── */
+.estacion-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(20px,4vw,28px);text-decoration:none;color:inherit}
+.estacion-x img{width:96px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55);transition:transform .35s var(--e)}
+.estacion-x:hover img{transform:translateY(-4px)}
+.estacion-x .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.estacion-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:4px}
+.estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
+.estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
+@media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -374,7 +392,7 @@ window.TCD = {
   preparacion: '/preparacion',
   libros:      '/libros',
   numero:      '/el-numero',
-  appPagina:   '/app',
+  appPagina:   '/libros',   // /app se retiró el 8 nov 2026: la app viene dentro de Tu nuevo precio
   gracias:     '/gracias',
   recursos:    '/recursos-gratuitos',
   generador:   '/generador-pp',
@@ -392,7 +410,7 @@ window.TCD = {
   cdl:       '/clinica-del-lider',
 
   /* Los libros NO se pegan aquí: este código es público y cualquiera vería los links.
-     Los manda el correo de entrega de GHL apenas entra el pago de Tu Precio Nuevo.
+     Los manda el correo de entrega de GHL apenas entra el pago de Tu nuevo precio.
      Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
      Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
   librosPorCorreo: false,
@@ -401,6 +419,15 @@ window.TCD = {
      Con el id puesto, cada capítulo pide nombre y correo antes de leer y arranca el flujo «Lectores · 10 días».
      Vacío: los capítulos se leen sin pedir nada. */
   formLectores: '',
+
+  /* La lista de espera (las colecciones que vienen y La Clínica del Líder, que abre en 2027):
+     el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
+  formEspera: '',
+
+  /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
+     El 27 nov, con los audios de la primera tanda, pasa a:
+     'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
+  linea97: 'Los 8 libros y los cinco primeros días de mi app.',
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
@@ -417,7 +444,7 @@ window.TCD = {
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
     numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
-    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
+    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu nuevo precio · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33
@@ -459,7 +486,7 @@ window.TCD = {
   capturas: ['6a3f2d4ae2763b2eec24a678.jpeg','6790e3b22aa71a8f8b682154.jpeg','67a8080cfc76856ca1136421.jpeg']
 };
 
-/* Tu Precio Nuevo se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
+/* Tu nuevo precio se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
    «los libros te llegan por correo». Mientras librosPorCorreo sea false, el botón de 97 abre tu WhatsApp.
    El día que pase a true, cambian juntos el botón (PayPal) y /gracias (los libros llegan por correo). */
 if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
@@ -620,7 +647,7 @@ html:not(.js) .lector-nav{display:none}
 <header class="lector-top"><div class="lt-in">
   <a class="lt-volver" data-link="libros" data-hash="#libertades" href="#" aria-label="Volver a los libros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
   <div class="lt-t"><b>Las 7 libertades fundamentales</b><span data-pag>1 de 13</span></div>
-  <a class="btn lt-btn" data-link="libros" data-hash="#obra" href="#"><span>Tu Precio Nuevo · <span data-precio="obra">97</span> USD</span></a>
+  <a class="btn lt-btn" data-link="libros" data-hash="#obra" href="#"><span>Tu nuevo precio · <span data-precio="obra">97</span> USD</span></a>
  </div><div class="lt-prog"><i></i></div></header>
 
 <main class="lector" data-total="13">
@@ -716,8 +743,8 @@ html:not(.js) .lector-nav{display:none}
   <div class="ofertas">
    <div class="of fuerte">
     <span class="cinta">La obra completa</span>
-    <b class="of-t">Tu Precio Nuevo</b>
-    <p>Este libro, los otros 7 y 5 días en mi app con el Mentor para calcular tu hora real y subir tu precio sin culpa. Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
+    <b class="of-t">Tu nuevo precio</b>
+    <p><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
     <a class="btn ancho-total" data-compra="obra" href="#"><span>Los 8 + la app · <span data-precio="obra">97</span> USD</span></a>
    </div>
   </div>
@@ -744,7 +771,7 @@ html:not(.js) .lector-nav{display:none}
   var pagina = document.body.getAttribute('data-pagina') || 'pagina';
 
   var NOMBRES = {
-    numero: 'El Número', obra: 'Tu Precio Nuevo', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    numero: 'El Número', obra: 'Tu nuevo precio', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
     sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
     viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
     heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
@@ -1087,6 +1114,47 @@ html:not(.js) .lector-nav{display:none}
       if (!quieto) try { caja.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
     }
   };
+})();
+
+/* ── La línea única de Tu nuevo precio (TCD.linea97) en cada [data-linea97] ── */
+(function () {
+  var C = window.TCD || {};
+  if (!C.linea97) return;
+  document.querySelectorAll('[data-linea97]').forEach(function (el) { el.textContent = C.linea97; });
+})();
+
+/* ── Lista de espera ── botones con data-espera="<lista>" y data-espera-nombre="<cómo se llama>".
+   Con TCD.formEspera abre el formulario de GHL «Lista de espera» con la lista puesta; sin él, abre tu WhatsApp. */
+(function () {
+  var C = window.TCD || {};
+  var bs = document.querySelectorAll('[data-espera]');
+  if (!bs.length) return;
+  function cerrar(f) { if (f && f.parentNode) f.parentNode.removeChild(f); document.documentElement.style.overflow = ''; }
+  bs.forEach(function (b) {
+    var lista = b.getAttribute('data-espera'), nom = b.getAttribute('data-espera-nombre') || lista;
+    if (!C.formEspera) {
+      b.href = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent('Hola Javo, quiero estar en la lista de espera de ' + nom + '.');
+      b.target = '_blank'; b.rel = 'noopener';
+    }
+    b.addEventListener('click', function (e) {
+      if (window.pxc) pxc('ListaEspera', { content_name: lista });
+      if (!C.formEspera) return;
+      e.preventDefault();
+      var f = document.createElement('div');
+      f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
+      f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
+        '<span class="eti">Lista de espera</span><b class="espera-t"></b><p>Te aviso por correo el día que abre.</p>' +
+        '<iframe title="Lista de espera" src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
+        '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
+      f.querySelector('.espera-t').textContent = nom;
+      f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(f); });
+      document.addEventListener('keydown', function esc(ev) { if (ev.key === 'Escape') { cerrar(f); document.removeEventListener('keydown', esc); } });
+      document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
+      if (!document.querySelector('script[src*="form_embed.js"]')) {
+        var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
+      }
+    });
+  });
 })();
 
 </script>

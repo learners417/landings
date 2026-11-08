@@ -359,6 +359,24 @@ html{font-variant-numeric:lining-nums}
 .puerta p.puerta-b{font-family:var(--f-texto);font-size:17px;line-height:1.55;color:var(--tinta-2);margin:0 0 16px}
 .puerta p.puerta-alt{font-family:var(--f-texto);font-size:16px;color:var(--tinta-2);margin:12px 0 0}
 
+/* ── lista de espera ── */
+.espera-fondo{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(43,39,36,.55)}
+.espera{position:relative;width:100%;max-width:460px;padding:30px 26px 18px;text-align:left}
+.espera .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.espera-t{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.1}
+.espera p{margin-top:8px;font-size:17px}
+.espera-x{position:absolute;top:6px;right:10px;width:44px;height:44px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--tinta)}
+
+/* ── tarjeta de estación del camino (herramientas, capítulos) ── */
+.estacion-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(20px,4vw,28px);text-decoration:none;color:inherit}
+.estacion-x img{width:96px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55);transition:transform .35s var(--e)}
+.estacion-x:hover img{transform:translateY(-4px)}
+.estacion-x .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.estacion-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:4px}
+.estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
+.estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
+@media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -374,7 +392,7 @@ window.TCD = {
   preparacion: '/preparacion',
   libros:      '/libros',
   numero:      '/el-numero',
-  appPagina:   '/app',
+  appPagina:   '/libros',   // /app se retiró el 8 nov 2026: la app viene dentro de Tu nuevo precio
   gracias:     '/gracias',
   recursos:    '/recursos-gratuitos',
   generador:   '/generador-pp',
@@ -392,7 +410,7 @@ window.TCD = {
   cdl:       '/clinica-del-lider',
 
   /* Los libros NO se pegan aquí: este código es público y cualquiera vería los links.
-     Los manda el correo de entrega de GHL apenas entra el pago de Tu Precio Nuevo.
+     Los manda el correo de entrega de GHL apenas entra el pago de Tu nuevo precio.
      Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
      Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
   librosPorCorreo: false,
@@ -401,6 +419,15 @@ window.TCD = {
      Con el id puesto, cada capítulo pide nombre y correo antes de leer y arranca el flujo «Lectores · 10 días».
      Vacío: los capítulos se leen sin pedir nada. */
   formLectores: '',
+
+  /* La lista de espera (las colecciones que vienen y La Clínica del Líder, que abre en 2027):
+     el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
+  formEspera: '',
+
+  /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
+     El 27 nov, con los audios de la primera tanda, pasa a:
+     'Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz.' */
+  linea97: 'Los 8 libros y los cinco primeros días de mi app.',
   descargas: {
     'Sanadores-Libres-Javo-Katz.pdf':              '',
     'Lo-que-el-lago-te-ensena-Javo-Katz.pdf':      '',
@@ -417,7 +444,7 @@ window.TCD = {
   /* Los links de pago de GHL (Pagos → Links de pago), entre las comillas. */
   pagos: {
     numero:     '',   // El Número · retirada el 6 nov 2026: su página lleva a /libros
-    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu Precio Nuevo · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
+    obra:       'https://link.fastpaydirect.com/payment-link/6aee2c6118be8d04a49be0b0',   // Tu nuevo precio · los 8 libros + 5 días en la app · 97 · se enciende con librosPorCorreo (ver al final)
     verde:      '',   // La app · Tu Sistema · 497
     negro:      '',   // La app · El Programa Completo · 997
     sanadores:  '',   // Sanadores Libres · 33
@@ -459,7 +486,7 @@ window.TCD = {
   capturas: ['6a3f2d4ae2763b2eec24a678.jpeg','6790e3b22aa71a8f8b682154.jpeg','67a8080cfc76856ca1136421.jpeg']
 };
 
-/* Tu Precio Nuevo se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
+/* Tu nuevo precio se cobra con su link solo cuando el correo de entrega anda: la página de pago promete
    «los libros te llegan por correo». Mientras librosPorCorreo sea false, el botón de 97 abre tu WhatsApp.
    El día que pase a true, cambian juntos el botón (PayPal) y /gracias (los libros llegan por correo). */
 if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
@@ -597,6 +624,16 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
  </div>
 </section>
 
+<!-- ═══ TU ESTACIÓN ═══ -->
+<section class="sec junto">
+ <div class="wrap">
+  <a class="estacion-x card rv" data-link="cap" data-hash="montana" href="#">
+   <img data-img="tapas/montana-chica.webp" alt="Lo que la montaña te enseña" width="320" height="480" loading="lazy">
+   <div><span class="eti">Estación 2 del camino · días 8 a 14</span><b>La montaña: tu programa</b><p>Esta herramienta es parte de la montaña. Su logro: tu oferta sellada, con su enlace de pago, y tu preventa enviada. Sigue con el primer capítulo de <i>Lo que la montaña te enseña</i>.</p><span class="ir">Leer el primer capítulo →</span></div>
+  </a>
+ </div>
+</section>
+
 <!-- ═══ QUIÉN ═══ -->
 <section class="sec junto">
  <div class="wrap">
@@ -631,7 +668,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 
 <div class="barra"><a class="btn" data-link="comunidad" href="#"><span>Crear mi protocolo</span></a></div>
 
-<script>window.TCD_IMGS={};</script>
+<script>window.TCD_IMGS={"tapas/montana-chica.webp": "data:image/webp;base64,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"};</script>
 <script>
 /* ═══════════════════════════════════════════════════════════════
    Lo que hacen todas las páginas: precios y links desde config.js,
@@ -643,7 +680,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
   var pagina = document.body.getAttribute('data-pagina') || 'pagina';
 
   var NOMBRES = {
-    numero: 'El Número', obra: 'Tu Precio Nuevo', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
+    numero: 'El Número', obra: 'Tu nuevo precio', verde: 'la app · Tu Sistema', negro: 'la app · El Programa Completo',
     sanadores: 'Sanadores Libres', lago: 'Lo que el lago te enseña', montana: 'Lo que la montaña te enseña',
     viento: 'Lo que el viento te enseña', rio: 'Lo que el río te enseña', bosque: 'Lo que el bosque te enseña',
     heroe: 'Héroe descapado', libertades: 'Las 7 libertades fundamentales',
@@ -986,6 +1023,47 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
       if (!quieto) try { caja.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
     }
   };
+})();
+
+/* ── La línea única de Tu nuevo precio (TCD.linea97) en cada [data-linea97] ── */
+(function () {
+  var C = window.TCD || {};
+  if (!C.linea97) return;
+  document.querySelectorAll('[data-linea97]').forEach(function (el) { el.textContent = C.linea97; });
+})();
+
+/* ── Lista de espera ── botones con data-espera="<lista>" y data-espera-nombre="<cómo se llama>".
+   Con TCD.formEspera abre el formulario de GHL «Lista de espera» con la lista puesta; sin él, abre tu WhatsApp. */
+(function () {
+  var C = window.TCD || {};
+  var bs = document.querySelectorAll('[data-espera]');
+  if (!bs.length) return;
+  function cerrar(f) { if (f && f.parentNode) f.parentNode.removeChild(f); document.documentElement.style.overflow = ''; }
+  bs.forEach(function (b) {
+    var lista = b.getAttribute('data-espera'), nom = b.getAttribute('data-espera-nombre') || lista;
+    if (!C.formEspera) {
+      b.href = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent('Hola Javo, quiero estar en la lista de espera de ' + nom + '.');
+      b.target = '_blank'; b.rel = 'noopener';
+    }
+    b.addEventListener('click', function (e) {
+      if (window.pxc) pxc('ListaEspera', { content_name: lista });
+      if (!C.formEspera) return;
+      e.preventDefault();
+      var f = document.createElement('div');
+      f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', 'Lista de espera');
+      f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
+        '<span class="eti">Lista de espera</span><b class="espera-t"></b><p>Te aviso por correo el día que abre.</p>' +
+        '<iframe title="Lista de espera" src="https://api.leadconnectorhq.com/widget/form/' + C.formEspera + '?lista=' + encodeURIComponent(lista) +
+        '" style="width:100%;height:300px;border:none;display:block;background:transparent"></iframe></div>';
+      f.querySelector('.espera-t').textContent = nom;
+      f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(f); });
+      document.addEventListener('keydown', function esc(ev) { if (ev.key === 'Escape') { cerrar(f); document.removeEventListener('keydown', esc); } });
+      document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';
+      if (!document.querySelector('script[src*="form_embed.js"]')) {
+        var sc = document.createElement('script'); sc.src = 'https://link.msgsndr.com/js/form_embed.js'; sc.async = true; document.body.appendChild(sc);
+      }
+    });
+  });
 })();
 
 </script>

@@ -50,7 +50,7 @@
   <h1 class="t1 rv d1">Gracias. <em>Ya es tuyo.</em></h1>
   <p class="lead rv d2" data-que>Aquí tienes todo lo que necesitas para empezar hoy.</p>
 
-  <!-- 1 · la app (Tu Precio Nuevo; El Número quedó retirada) -->
+  <!-- 1 · la app (Tu nuevo precio; El Número quedó retirada) -->
   <div class="paso-g card rv oculto" data-para="numero obra">
    <div class="n">1</div>
    <div>
@@ -60,7 +60,7 @@
      <input type="email" name="correo" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo">
      <button class="btn" type="submit"><span>Mandar por WhatsApp</span> <span class="fl">→</span></button>
     </form>
-    <p>Tus 5 días de Tu Precio Nuevo empiezan cuando entras por primera vez.</p>
+    <p>Tus 5 días de Tu nuevo precio empiezan cuando entras por primera vez.</p>
     <ol class="dias oculto" data-para="obra" aria-label="Tus 5 días en la app">
      <li><b>Día 1</b><span>Tu sentido y propósito</span></li>
      <li><b>Día 2</b><span>Tu rueda de la vida</span></li>
@@ -117,7 +117,7 @@
 (function(){
   var C=window.TCD||{}, P=C.precios||{};
   var LIBROS=['sanadores','lago','montana','viento','rio','bosque','heroe','libertades'];
-  var NOM={numero:'El Número',obra:'Tu Precio Nuevo',sanadores:'Sanadores Libres',lago:'Lo que el lago te enseña',montana:'Lo que la montaña te enseña',viento:'Lo que el viento te enseña',rio:'Lo que el río te enseña',bosque:'Lo que el bosque te enseña',heroe:'Héroe descapado',libertades:'Las 7 libertades fundamentales'};
+  var NOM={numero:'El Número',obra:'Tu nuevo precio',sanadores:'Sanadores Libres',lago:'Lo que el lago te enseña',montana:'Lo que la montaña te enseña',viento:'Lo que el viento te enseña',rio:'Lo que el río te enseña',bosque:'Lo que el bosque te enseña',heroe:'Héroe descapado',libertades:'Las 7 libertades fundamentales'};
   var c='';
   try{c=(new URLSearchParams(location.search).get('c')||'').toLowerCase();}catch(e){}
   if(!NOM[c]) c='';
@@ -139,11 +139,11 @@
   if(libros.length===1) t.textContent='Descarga tu libro';
   var que=document.querySelector('[data-que]');
   if(c==='numero') que.innerHTML='Compraste <b>El Número</b>. Entra a la app y descarga <i>Lo que el lago te enseña</i>.';
-  else if(c==='obra') que.innerHTML='Compraste <b>Tu Precio Nuevo</b>: tus 8 libros y 5 días en la app. Empieza por la app y descarga tus libros.';
+  else if(c==='obra') que.innerHTML='Compraste <b>Tu nuevo precio</b>: tus 8 libros y los cinco primeros días de mi app. Empieza por la app y descarga tus libros.';
   else if(c) que.innerHTML='Compraste <b>'+NOM[c]+'</b>. Descárgalo aquí abajo.';
-  /* Tu Precio Nuevo con el correo de entrega andando: los libros llegan por correo, no quedan en la página */
+  /* Tu nuevo precio con el correo de entrega andando: los libros llegan por correo, no quedan en la página */
   if(c==='obra' && C.librosPorCorreo){
-    que.innerHTML='Compraste <b>Tu Precio Nuevo</b>: tus 8 libros y 5 días en la app. Empieza por la app; los libros ya van camino a tu correo.';
+    que.innerHTML='Compraste <b>Tu nuevo precio</b>: tus 8 libros y los cinco primeros días de mi app. Empieza por la app; los libros ya van camino a tu correo.';
     t.textContent='Tus libros te llegan por correo';
     var bajada=t.parentNode.querySelector('p');
     if(bajada) bajada.textContent='Te mandé los 8 libros en PDF, con su tapa, al correo con el que pagaste. Llegan en unos minutos: revisa también spam y promociones. Guarda ese correo, los enlaces quedan ahí.';
@@ -162,7 +162,7 @@
   if(f) f.addEventListener('submit',function(e){
     e.preventDefault();
     var v=(f.correo.value||'').trim(); if(!v) return;
-    var msg='Hola Javo, ya pagué '+(c==='obra'?'Tu Precio Nuevo':'El Número')+'. Mi correo para entrar a la app es: '+v;
+    var msg='Hola Javo, ya pagué '+(c==='obra'?'Tu nuevo precio':'El Número')+'. Mi correo para entrar a la app es: '+v;
     window.open('https://wa.me/'+(C.whatsapp||'')+'?text='+encodeURIComponent(msg),'_blank','noopener');
   });
 
