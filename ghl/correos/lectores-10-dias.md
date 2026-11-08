@@ -6,10 +6,11 @@ Etiqueta `lector-capitulos`. Sale del flujo apenas paga Tu Precio Nuevo, Mentor�
 (objetivo de GHL «Payment Received», estado «Conseguido»). Sin reentrada: cada persona lo recibe una sola vez.
 Aprobado por Javo el 7 nov 2026: un correo por día, 10 días, y se corta si compra.
 Texto aprobado por Javo el 7 nov 2026 (segunda versión): el del Doc «Audios, meditaciones y recursos del camino»,
-pestaña «Correos del lector». El HTML que se pega en GHL está en `ghl/correos/html/dN.html`.
+pestaña «Correos del lector». El HTML cargado en GHL está en `ghl/correos/html/dN.html`: se pega en el código fuente
+del editor («Redacción rápida» → </>). GHL pone margen 0 en cada párrafo, por eso van párrafos vacíos entre medio.
 
-Workflow: `c53377a6-7c1f-43a8-8273-18a7798872d9`. Los 10 correos ya están cargados; queda en borrador
-hasta que Javo los lea y diga «prende».
+Workflow: `c53377a6-7c1f-43a8-8273-18a7798872d9`. Los 10 correos de esta versión se cargaron el 7 nov, con asunto,
+vista previa y texto; el flujo queda en borrador hasta el 27 nov, cuando se prende junto con la puerta de los capítulos.
 
 Remitente: Javo Katz, `javo@notificaciones.tuclinica.digital`. Todos los links llevan `?lector=1` (abre el capítulo sin volver a pedir el correo)
 y `utm_source=correo&utm_medium=email&utm_campaign=lectores&utm_content=dN`.
