@@ -498,6 +498,9 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 .vsl-son svg{flex:none;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .vsl-son:focus-visible span{outline:2px solid var(--gold);outline-offset:3px}
 @media(prefers-reduced-motion:no-preference){.vsl-son span{animation:sonar 2.6s var(--e) infinite}}
+/* GHL suma 40 px arriba (sección, fila y columna): en el celular se quitan, así el video entra entero en la primera pantalla */
+@media(max-width:640px){.c-section:has(.portada),.c-row:has(.portada),.c-column:has(.portada){padding-top:0!important}}
+@supports not selector(:has(*)){@media(max-width:640px){.portada{margin-top:-40px}}}
 @keyframes sonar{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
 </style>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" async></script>
