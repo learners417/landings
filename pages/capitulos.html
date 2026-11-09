@@ -3,151 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Lee un primer capítulo · Javo Katz</title>
-<meta name="description" content="Elige uno de los ocho libros de Javo Katz y lee su primer capítulo aquí mismo, sin costo.">
+<title>Los primeros capítulos · Javo Katz</title>
+<meta name="description" content="El primer capítulo de cada uno de los 8 libros de Javo Katz, para leer aquí mismo, página por página y sin costo.">
 <meta name="theme-color" content="#F4EEE3">
-<meta property="og:type" content="book">
-<meta property="og:title" content="Lee un primer capítulo, sin costo">
-<meta property="og:description" content="Elige uno de los ocho libros de Javo Katz y lee su primer capítulo aquí mismo, sin costo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Por cuál libro empiezas? · Javo Katz">
+<meta property="og:description" content="El primer capítulo de cada libro, para leer aquí mismo y sin costo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@500;600;700;800&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   El lector del primer capítulo: una página por vez, como un libro.
-   Lora para leer, Cormorant para los títulos. Nada por debajo de 16 px.
-   ═══════════════════════════════════════════════════════════════ */
-.sin-pago,.con-pago{display:none}
-
-/* la barra de arriba: volver, el libro, la página */
-.lector-top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
-.lt-in{max-width:880px;margin:0 auto;padding:10px max(14px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:12px}
-.lt-volver{flex:0 0 44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--linea);color:var(--tinta);background:var(--papel-2)}
-.lt-volver svg{width:22px;height:22px}
-.lt-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
-.lt-t b{font-family:var(--f-titulo);font-size:21px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lt-t span{font-size:16px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
-.lt-btn{min-height:46px;padding:8px 20px;font-size:16px;white-space:nowrap}
-@media (max-width:600px){ .lt-btn{display:none} }
-.lt-prog{height:3px}
-.lt-prog i{display:block;height:100%;width:0;background:var(--c,var(--oro));transition:width .45s var(--e)}
-
-/* las hojas */
-.lector{max-width:680px;margin:0 auto;padding:clamp(30px,5vw,60px) max(20px,env(safe-area-inset-left,0px)) calc(150px + env(safe-area-inset-bottom,0px))}
-.hoja+.hoja{margin-top:64px;padding-top:64px;border-top:1px solid var(--linea)}
-.js .hoja{display:none}
-.js .hoja+.hoja{margin-top:0;padding-top:0;border-top:0}
-.js .hoja.on{display:block;animation:hoja .5s var(--e)}
-@keyframes hoja{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){ .js .hoja.on{animation:none} }
-
-.hoja p{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.75;margin-top:1em;text-wrap:pretty}
-.hoja>p:first-child{margin-top:0}
-.hoja b{font-weight:600}
-.hoja .k{font-family:var(--f-texto);font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);margin:0 0 12px;line-height:1.4}
-.hoja h1{font-family:var(--f-titulo);font-size:clamp(46px,11.5vw,70px);line-height:1.02;font-weight:500;letter-spacing:-.015em;text-wrap:balance}
-.hoja h2{font-family:var(--f-titulo);font-size:clamp(36px,8.4vw,50px);line-height:1.06;font-weight:500;margin-bottom:6px;text-wrap:balance}
-.hoja h3{font-family:var(--f-titulo);font-size:32px;line-height:1.1;font-weight:600}
-.hoja .sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(24px,5.6vw,29px);line-height:1.28;color:var(--tinta-2);margin-top:8px}
-.hoja h2+p:not(.sub),.hoja .sub+p{margin-top:22px}
-.hoja .poema{margin:30px 0;padding:4px 0 4px 22px;border-left:1px solid var(--oro)}
-.hoja .poema p{font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,31px);line-height:1.3;margin:0}
-.hoja .gran{font-family:var(--f-titulo);font-size:clamp(31px,7.4vw,42px);line-height:1.14;text-align:center;margin:40px 0 10px;padding:24px 0;border-top:1px solid var(--oro);border-bottom:1px solid var(--oro);text-wrap:balance}
-.hoja .frase{margin:9vh 0 4vh;text-align:center}
-.hoja .frase blockquote{margin:0;font-family:var(--f-titulo);font-style:italic;font-size:clamp(29px,7vw,40px);line-height:1.24;text-wrap:balance}
-.hoja .frase figcaption{margin-top:22px;font-size:16px;font-weight:700;letter-spacing:.08em;color:var(--oro-texto)}
-.hoja ol,.hoja ul{font-family:var(--f-lectura);font-size:clamp(19px,4.8vw,21px);line-height:1.7;padding-left:1.4em;margin:1em 0 0}
-.hoja li+li{margin-top:.55em}
-
-/* portadillas: partes, capítulos, dedicatoria */
-.hoja.portadilla{text-align:center;padding-top:9vh;min-height:56vh}
-.hoja.portadilla .poema{border-left:0;padding-left:0;margin-top:40px}
-.hoja.portadilla .sub{max-width:24em;margin-inline:auto}
-.hoja.portadilla h1+.sub,.hoja.portadilla h1+.poema{margin-top:22px}
-.hoja.dedicatoria{text-align:center;padding-top:12vh;min-height:56vh}
-.hoja .dedi{font-family:var(--f-titulo);font-style:italic;font-size:clamp(26px,6.2vw,33px);line-height:1.35;max-width:22em;margin-inline:auto}
-
-/* tu acción */
-.accion{margin-top:34px;padding:22px 22px 24px;border:1px solid var(--linea);border-left:4px solid var(--verde);border-radius:6px 18px 18px 6px;background:var(--papel-2)}
-.accion .k{color:var(--verde);margin-bottom:4px}
-.accion ol{margin-top:4px}
-
-/* los ejercicios */
-.ej-caja,.obra-ej,.tabla-ej{margin-top:30px;padding:22px;border:1px dashed color-mix(in srgb,var(--oro) 70%,transparent);border-radius:18px;background:var(--papel-2)}
-.ej-k{font-family:var(--f-texto) !important;font-size:16px !important;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin:0 !important}
-.ej-q{font-family:var(--f-texto) !important;font-size:18px !important;font-weight:600;margin-top:14px !important}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chips button{min-height:46px;padding:8px 16px;border-radius:999px;border:1px solid var(--linea);background:var(--papel);font-size:17px;font-weight:700;cursor:pointer;transition:all .2s}
-.chips button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
-.chips.nums button{min-width:46px;padding:8px 0}
-.semanas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
-@media (min-width:560px){ .semanas{grid-template-columns:repeat(6,1fr)} }
-.semanas label{display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:700;color:var(--tinta-2);text-align:center}
-.semanas input,.tabla-ej input{width:100%;min-height:46px;border:1px solid var(--linea);border-radius:12px;background:var(--papel);font:inherit;font-size:18px;text-align:center;color:var(--tinta)}
-.ej-caja .suma{font-family:var(--f-texto);font-size:18px;margin-top:14px}
-.ej-caja .suma b{font-family:var(--f-titulo);font-size:30px;color:var(--oro-texto)}
-.tabla-ej{padding:10px;overflow-x:auto}
-.tabla-ej table{width:100%;border-collapse:collapse;font-size:16px}
-.tabla-ej th,.tabla-ej td{padding:10px 8px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:middle}
-.tabla-ej thead th{font-weight:800;font-size:16px;color:var(--oro-texto)}
-.tabla-ej tbody th{font-weight:600}
-.tabla-ej td{width:26%}
-.tabla-ej td.luego{background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(168,135,90,.12) 8px 9px)}
-.obra-ej h3{margin-top:4px}
-.ej-nota{font-family:var(--f-texto) !important;font-size:17px !important;color:var(--tinta-2);margin-top:6px !important}
-.campo-ej{display:block;margin-top:18px}
-.campo-ej b{display:block;font-size:18px;font-weight:800}
-.campo-ej span{display:block;font-size:17px;color:var(--tinta-2);line-height:1.45;margin-top:2px}
-.campo-ej textarea{display:block;width:100%;margin-top:10px;border:1px solid var(--linea);border-radius:12px;padding:10px 14px;font-family:var(--f-lectura);font-size:19px;line-height:34px;color:var(--tinta);resize:vertical;
-  background:var(--papel) repeating-linear-gradient(transparent 0 33px,rgba(168,135,90,.3) 33px 34px);background-attachment:local;background-position:0 10px}
-.hoja .cuenta{margin-top:28px}
-
-/* la portada del lector */
-.hoja.inicio{text-align:center;padding-top:14px}
-.ini-tapa{width:min(250px,60vw);margin:0 auto 30px;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4);transform:rotate(-2deg)}
-.hoja.inicio h1{font-size:clamp(40px,10vw,60px)}
-.hoja.inicio .sub{max-width:22em;margin-inline:auto}
-.hoja .ini-meta{font-family:var(--f-texto);font-size:17px;color:var(--tinta-2);margin:20px auto 26px}
-.hoja.inicio .btn{min-width:240px}
-
-/* el final: seguir con el libro */
-.hoja.fin{text-align:center;padding-top:6px}
-.fin-tapa{width:min(170px,42vw);margin:0 auto 24px;border-radius:2px 5px 5px 2px;box-shadow:14px 20px 34px -18px rgba(20,18,16,.6)}
-.hoja .fin-lead{font-family:var(--f-texto);font-size:19px;color:var(--tinta-2);max-width:26em;margin:10px auto 0}
-.ofertas{display:grid;gap:16px;margin-top:30px;text-align:left}
-.of{position:relative;padding:24px 22px 22px;border:1px solid var(--linea);border-radius:20px;background:var(--papel-2);box-shadow:var(--sombra)}
-.of.fuerte{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
-.of .cinta{position:absolute;top:-14px;left:22px;background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
-.of-t{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.1}
-.of p{font-family:var(--f-texto);font-size:18px;line-height:1.5;color:var(--tinta-2);margin:8px 0 18px}
-.of s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
-.hoja .solo-libro,.hoja .otro{font-family:var(--f-texto);font-size:17px;margin-top:20px;text-align:center}
-.hoja .seguro{font-family:var(--f-texto)}
-
-/* los botones de abajo */
-.lector-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;justify-content:center;padding:12px max(14px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transition:transform .35s var(--e)}
-.lector-nav .btn{min-height:58px}
-.lector-nav [data-ir="-1"]{flex:0 0 58px;padding:0}
-.lector-nav [data-ir="1"]{flex:1;max-width:420px}
-.lector-nav [data-ir="-1"]:disabled{opacity:.35;pointer-events:none}
-.lector-nav.oculta{transform:translateY(110%)}
-html:not(.js) .lector-nav{display:none}
-
-/* elegir el libro */
-.elegir{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
-@media (min-width:760px){ .elegir{grid-template-columns:repeat(4,1fr);gap:18px} }
-.el-libro{display:flex;flex-direction:column;gap:6px;padding:16px 14px 18px;border:1px solid var(--linea);border-radius:18px;background:var(--papel-2);text-decoration:none;box-shadow:var(--sombra);transition:transform .3s var(--e),border-color .3s}
-.el-libro:hover{transform:translateY(-4px);border-color:var(--tinta)}
-.el-libro img{width:78%;margin:0 auto 10px;border-radius:1px 4px 4px 1px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6)}
-.el-serie{font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--oro-texto);line-height:1.3}
-.el-libro b{font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.1}
-.el-que{font-size:16px;font-weight:700;margin-top:auto;padding-top:6px}
-
+@media (min-width:1000px){ .pliego>.verso{order:-1} }
+/* en esta página, la ficha del estante abre el capítulo: el link pasa a botón */
+.ficha-libro .fl-acc .link{display:inline-block;margin-top:4px;padding:14px 20px;border-radius:12px;background:var(--tinta);color:var(--papel-2);text-decoration:none;box-shadow:inset 0 0 0 3px var(--tinta),inset 0 0 0 4px var(--oro)}
+.lista-caps .t b{font-family:var(--f-titulo);font-weight:600;font-size:24px;display:block;line-height:1.1}
+.lista-caps .t span{display:block;font-size:16px;color:var(--tinta-2);margin-top:2px}
+.lista-caps a{align-items:center}
+.lista-caps img{flex:0 0 46px;width:46px;border-radius:1px 3px 3px 1px;box-shadow:5px 8px 14px -8px rgba(20,18,16,.55)}
+.lista-caps .pg{align-self:center;margin-bottom:0}
+@media (max-width:520px){ .lista-caps .pg{display:none} .lista-caps .d{margin-left:auto} }
 </style>
-<script>document.documentElement.classList.add('js')</script>
 </head>
-<body data-pagina="capitulo">
+<body data-pagina="capitulo" data-libro-titulo="Los primeros capítulos">
 <script>
 /* la palabra del reel lleva directo a su libro: /capitulos?p=MADERA → /capitulo-bosque?p=MADERA. Los links de YouTube llevan YT- delante (YT-TRONADOR) */
 (function(){var M={MADERA:'bosque',LIMAY:'rio',RIBERA:'rio',SANADORES:'sanadores',CALMA:'lago',PATAGONIA:'lago',CARRETA:'lago',CONDOR:'viento','CÓNDOR':'viento',FINAL:'montana',HORIZONTE:'montana',TRONADOR:'montana',NACIENTE:'rio',OFICIO:'sanadores',
@@ -159,76 +37,83 @@ if(k)location.replace(((window.TCD&&TCD.cap)||'/capitulo-')+k+(p?'?p='+encodeURI
 </script>
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="libros" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-  <a class="btn" data-link="libros" href="#"><span>Los libros</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-link="libros" data-hash="#obra" href="#">Tu nuevo precio · <span data-precio="obra">97</span> USD</a>
+  </div>
 </div></header>
 
 <main>
-<section class="sec elegir-sec">
- <div class="wrap ancho">
-  <span class="kick rv">Sin costo</span>
-  <h1 class="t2 rv">¿Por cuál libro <em>empiezas?</em></h1>
-  <p class="lead rv">Están en el orden del camino de 90 días: primero la base, después las cinco estaciones. Elige uno y lee su primer capítulo aquí mismo, página por página.</p>
-  <div class="elegir rv">
-   <a class="el-libro" data-link="cap" data-hash="sanadores" href="#" style="--c:var(--sanadores)">
-    <img data-img="tapas/sanadores-chica.webp" alt="" width="320" height="452" loading="lazy">
-    <span class="el-serie">La base del camino · 90 días</span>
-    <b>Sanadores Libres</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="lago" href="#" style="--c:var(--lago)">
-    <img data-img="tapas/lago-chica.webp" alt="" width="320" height="480" loading="lazy">
-    <span class="el-serie">Estación 1 · Tu reset</span>
-    <b>Lo que el lago te enseña</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="montana" href="#" style="--c:var(--montana)">
-    <img data-img="tapas/montana-chica.webp" alt="" width="320" height="480" loading="lazy">
-    <span class="el-serie">Estación 2 · Tu programa</span>
-    <b>Lo que la montaña te enseña</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="viento" href="#" style="--c:var(--viento)">
-    <img data-img="tapas/viento-chica.webp" alt="" width="320" height="480" loading="lazy">
-    <span class="el-serie">Estación 3 · Tu captación</span>
-    <b>Lo que el viento te enseña</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="rio" href="#" style="--c:var(--rio)">
-    <img data-img="tapas/rio-chica.webp" alt="" width="320" height="480" loading="lazy">
-    <span class="el-serie">Estación 4 · Tu propia app</span>
-    <b>Lo que el río te enseña</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="bosque" href="#" style="--c:var(--bosque)">
-    <img data-img="tapas/bosque-chica.webp" alt="" width="320" height="480" loading="lazy">
-    <span class="el-serie">Estación 5 · Tu ecosistema</span>
-    <b>Lo que el bosque te enseña</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="heroe" href="#" style="--c:var(--heroe)">
-    <img data-img="tapas/heroe-chica.webp" alt="" width="320" height="491" loading="lazy">
-    <span class="el-serie">El método El Eje</span>
-    <b>Héroe descapado</b>
-    <span class="el-que">Leer la apertura →</span>
-   </a>
-   <a class="el-libro" data-link="cap" data-hash="libertades" href="#" style="--c:var(--libertades)">
-    <img data-img="tapas/libertades-chica.webp" alt="" width="320" height="491" loading="lazy">
-    <span class="el-serie">Las siete juntas</span>
-    <b>Las 7 libertades fundamentales</b>
-    <span class="el-que">Leer el primer capítulo →</span>
-   </a>
+<section class="portadilla">
+ <div class="wrap">
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">Colección Libres</p>
+    <h1>¿Por cuál libro empiezas?</h1>
+    <span class="filete"></span>
+    <p class="subtitulo">El primer capítulo de cada uno,<br>aquí mismo y sin costo.</p>
+    <p class="bajada">Están en el orden del camino de 90 días: primero la base, después las cinco estaciones y dos libros que te acompañan todo el recorrido. Toca un libro y lee su primer capítulo, página por página.</p>
+   </div>
+   <div class="verso">
+    <!--ESTANTE-->
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ 1 · LOS OCHO PRIMEROS CAPÍTULOS ═══ -->
+<section class="cap" id="lista" data-capitulo="Los ocho primeros capítulos" data-dato="de 5 a 9 minutos">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Los ocho primeros capítulos.</h2>
+   <p class="bajada">Cada uno se lee en menos de diez minutos y trae su ejercicio. Ten un lápiz a mano.</p>
+  </header>
+  <div class="cuerpo">
+   <ol class="lideres lista-caps">
+    <li id="sanadores"><a data-link="cap" data-hash="sanadores" href="#"><img data-img="tapas/sanadores-chica.webp" alt="" width="240" height="339" loading="lazy"><span class="t"><b>Sanadores Libres</b><span>La base del camino</span></span><span class="pg"></span><span class="d">9 minutos</span></a></li>
+    <li id="lago"><a data-link="cap" data-hash="lago" href="#"><img data-img="tapas/lago-chica.webp" alt="" width="240" height="360" loading="lazy"><span class="t"><b>Lo que el lago te enseña</b><span>Estación 1, tu reset</span></span><span class="pg"></span><span class="d">7 minutos</span></a></li>
+    <li id="montana"><a data-link="cap" data-hash="montana" href="#"><img data-img="tapas/montana-chica.webp" alt="" width="240" height="360" loading="lazy"><span class="t"><b>Lo que la montaña te enseña</b><span>Estación 2, tu programa</span></span><span class="pg"></span><span class="d">7 minutos</span></a></li>
+    <li id="viento"><a data-link="cap" data-hash="viento" href="#"><img data-img="tapas/viento-chica.webp" alt="" width="240" height="360" loading="lazy"><span class="t"><b>Lo que el viento te enseña</b><span>Estación 3, tu captación</span></span><span class="pg"></span><span class="d">8 minutos</span></a></li>
+    <li id="rio"><a data-link="cap" data-hash="rio" href="#"><img data-img="tapas/rio-chica.webp" alt="" width="240" height="360" loading="lazy"><span class="t"><b>Lo que el río te enseña</b><span>Estación 4, tu propia app</span></span><span class="pg"></span><span class="d">8 minutos</span></a></li>
+    <li id="bosque"><a data-link="cap" data-hash="bosque" href="#"><img data-img="tapas/bosque-chica.webp" alt="" width="240" height="360" loading="lazy"><span class="t"><b>Lo que el bosque te enseña</b><span>Estación 5, tu ecosistema</span></span><span class="pg"></span><span class="d">7 minutos</span></a></li>
+    <li id="heroe"><a data-link="cap" data-hash="heroe" href="#"><img data-img="tapas/heroe-chica.webp" alt="" width="240" height="368" loading="lazy"><span class="t"><b>Héroe descapado</b><span>La apertura</span></span><span class="pg"></span><span class="d">9 minutos</span></a></li>
+    <li id="libertades"><a data-link="cap" data-hash="libertades" href="#"><img data-img="tapas/libertades-chica.webp" alt="" width="240" height="368" loading="lazy"><span class="t"><b>Las 7 libertades fundamentales</b><span>Las siete, juntas</span></span><span class="pg"></span><span class="d">5 minutos</span></a></li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ 2 · CUANDO TERMINES ═══ -->
+<section class="cap" id="despues" data-capitulo="Cuando termines" data-dato="Tu nuevo precio">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">2</span>
+   <h2>Cuando termines.</h2>
+   <p class="bajada">Lo que leíste es el comienzo. Los 8 libros completos y los cinco primeros días de mi app están en Tu nuevo precio: en el quinto día sellas tu precio nuevo y el valor real de tu hora.</p>
+  </header>
+  <div class="cuerpo">
+   <div class="acciones" style="margin-top:0">
+    <a class="btn" data-link="libros" data-hash="#obra" href="#">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a>
+    <a class="link" data-link="libros" href="#">Ver los 8 libros</a>
+   </div>
   </div>
  </div>
 </section>
 </main>
 
-<footer class="pie"><div class="wrap">
- <p><a data-link="libros" href="#">Los libros</a> · <a data-link="libros" data-hash="#obra" href="#">Tu nuevo precio</a></p>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
- <p>Este sitio no forma parte de Meta ni está avalado por Meta.</p>
-</div></footer>
+<footer class="colofon">
+ <div class="wrap">
+  <p class="cierre">Los que curan merecen vivir de curar.</p>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="libros" href="#">Los libros</a><a data-link="camino" href="#">El camino</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="laCima" href="#">La Cima</a><a data-link="prensa" href="#">Prensa</a></nav>
+  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
+  <p class="legal">Javo Katz · Tu Clínica Digital. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<script>/*BASE_JS*/</script>
+<script>/*EDICION_JS*/</script>
 </body>
 </html>

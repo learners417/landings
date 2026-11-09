@@ -405,7 +405,7 @@ function formSrc(id, dato) {
   var pag = document.body.getAttribute('data-pagina');
   var NOMBRE = { phr: 'Tu hora real', guiadeprecios: 'Un precio sano', impostor: 'Es un meme, y se cambia',
     creatuprotocolo: 'Vende el resultado', 'generador-caja': 'Los consultantes que ya tienes',
-    automatizar: 'Un consultorio que funciona aunque tú pares' };
+    automatizar: 'Un consultorio que funciona aunque tú pares', recursos: 'La comunidad' };
   if (!C.formHerramientas || !C.comunidad || !NOMBRE[pag]) return;
   var CLAVE = 'tcd_lector';
   function yaEs() { try { return localStorage.getItem(CLAVE) === '1'; } catch (e) { return false; } }
@@ -438,7 +438,7 @@ function formSrc(id, dato) {
     f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', NOMBRE[pag]);
     f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
       '<span class="eti">Para empezar</span><b class="espera-t"></b>' +
-      '<p class="espera-p">Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.</p>' +
+      '<p class="espera-p">' + (pag === 'recursos' ? 'Déjame tu nombre y tu correo. Te llevo a la comunidad y te escribo con lo que sigue.' : 'Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.') + '</p>' +
       '<iframe title="Tu nombre y tu correo" src="' + formSrc(C.formHerramientas, 'herramienta=' + encodeURIComponent(pag)) +
       '" style="width:100%;height:330px;border:none;display:block;margin-top:14px;background:transparent"></iframe>' +
       '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">Entra a la comunidad aquí</a>.</p></div>';

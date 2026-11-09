@@ -11,7 +11,7 @@
 <meta property="og:description" content="Lo que no se toca pero te toca.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
 <style>
 /* ═══════════════════════════════════════════════════════════════
    JAVO KATZ · el sistema de las páginas
@@ -34,8 +34,8 @@
   --lago:#1B4A66; --montana:#A64B2E; --viento:#9A6E1F; --rio:#1F6E6E; --bosque:#1E3A2B;
   --sanadores:#3E4C43; --heroe:#2B2724; --libertades:#874B45;
   --f-titulo:"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
-  --f-texto:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-lectura:"Lora", Georgia, serif;
+  --f-texto:"Literata", Georgia, "Times New Roman", serif;
+  --f-lectura:"Literata", Georgia, serif;
   --r:22px;
   --sombra:0 1px 0 rgba(43,39,36,.04), 0 28px 60px -36px rgba(43,39,36,.42);
   --e:cubic-bezier(.2,.7,.2,1);
@@ -381,6 +381,21 @@ html{font-variant-numeric:lining-nums}
 .ficha-est .fe-k{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
 .ficha-est b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15;color:var(--tinta)}
 .ficha-est .link{margin-top:6px;align-self:flex-start;color:var(--tinta);font-size:16px}
+
+/* ── el puente a la Edición Libres (9 nov 2026) ──
+   Las páginas que todavía usan esta piel toman la letra de libro (Literata), el botón con su filete de oro,
+   los títulos sin la palabra dorada y los botones sin flecha. */
+body{font-weight:400}
+.btn{border-radius:14px;font-weight:600;box-shadow:inset 0 0 0 4px var(--tinta),inset 0 0 0 5px var(--oro),0 16px 30px -20px rgba(43,39,36,.7)}
+.btn:hover{background:#3A332E;box-shadow:inset 0 0 0 4px #3A332E,inset 0 0 0 5px var(--oro),0 20px 34px -20px rgba(43,39,36,.75)}
+.btn.claro{box-shadow:inset 0 0 0 1px var(--tinta)}
+.btn.wa{box-shadow:inset 0 0 0 4px var(--verde),inset 0 0 0 5px rgba(168,135,90,.7),0 16px 30px -20px rgba(47,86,56,.7)}
+.btn .fl{display:none}
+.t1 em,.t2 em,.t3 em,.frase-final em,.frases-javo em{color:inherit}
+.kick{font-weight:600;letter-spacing:.16em}
+.kick::before,.centro .kick::after{display:none}
+.cinta,.puerta .cinta,.plan .cinta{border-radius:10px;font-weight:600}
+.marca small{font-family:var(--f-texto);font-weight:600}
 
 </style>
 <script>
@@ -1038,7 +1053,7 @@ function formSrc(id, dato) {
   var pag = document.body.getAttribute('data-pagina');
   var NOMBRE = { phr: 'Tu hora real', guiadeprecios: 'Un precio sano', impostor: 'Es un meme, y se cambia',
     creatuprotocolo: 'Vende el resultado', 'generador-caja': 'Los consultantes que ya tienes',
-    automatizar: 'Un consultorio que funciona aunque tú pares' };
+    automatizar: 'Un consultorio que funciona aunque tú pares', recursos: 'La comunidad' };
   if (!C.formHerramientas || !C.comunidad || !NOMBRE[pag]) return;
   var CLAVE = 'tcd_lector';
   function yaEs() { try { return localStorage.getItem(CLAVE) === '1'; } catch (e) { return false; } }
@@ -1071,7 +1086,7 @@ function formSrc(id, dato) {
     f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', NOMBRE[pag]);
     f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
       '<span class="eti">Para empezar</span><b class="espera-t"></b>' +
-      '<p class="espera-p">Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.</p>' +
+      '<p class="espera-p">' + (pag === 'recursos' ? 'Déjame tu nombre y tu correo. Te llevo a la comunidad y te escribo con lo que sigue.' : 'Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.') + '</p>' +
       '<iframe title="Tu nombre y tu correo" src="' + formSrc(C.formHerramientas, 'herramienta=' + encodeURIComponent(pag)) +
       '" style="width:100%;height:330px;border:none;display:block;margin-top:14px;background:transparent"></iframe>' +
       '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">Entra a la comunidad aquí</a>.</p></div>';

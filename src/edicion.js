@@ -36,7 +36,7 @@
     ['laCima', 'La Cima', '4 días en Bariloche'],
     ['prensa', 'Prensa', 'para presentarme']
   ];
-  var MIA = { inicio: 'inicio', camino: 'camino', libros: 'libros', capitulos: 'capitulo', recursos: 'recursos', 'la-cima': 'laCima', prensa: 'prensa' };
+  var MIA = { inicio: 'inicio', camino: 'camino', libros: 'libros', capitulo: 'capitulo', recursos: 'recursos', 'la-cima': 'laCima', prensa: 'prensa' };
   var botones = document.querySelectorAll('[data-indice]');
   if (botones.length) {
     var ind = document.createElement('div');

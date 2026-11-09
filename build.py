@@ -6,11 +6,12 @@ def imgs(s):
     m={k:'data:image/webp;base64,'+base64.b64encode(open(I+k,'rb').read()).decode() for k in ks if os.path.exists(I+k)}
     return '<script>window.TCD_IMGS='+json.dumps(m)+';</script>'
 css=open('src/base.css').read(); cfg=open('src/config.js').read(); js=open('src/base.js').read(); cla=open('src/clarity.js').read()
-ecss=open('src/edicion.css').read(); ejs=open('src/edicion.js').read()
+ecss=open('src/edicion.css').read(); ejs=open('src/edicion.js').read(); estante=open('src/estante.html').read()
 cabeza='<script>\n'+cfg+'\n</script>\n<script>\n'+cla+'\n</script>'
 os.makedirs('dist',exist_ok=True)
 for f in sorted(p.stem for p in pathlib.Path('pages').glob('*.html')):
     s=open('pages/%s.html'%f).read()
+    s=s.replace('<!--ESTANTE-->',estante)
     if '/*EDICION_CSS*/' in s:   # la piel de la Edición Libres (9 nov 2026)
         s=s.replace('<style>/*EDICION_CSS*/</style>','<style>\n'+ecss+'\n</style>\n'+cabeza,1)
         s=s.replace('<script>/*EDICION_JS*/</script>',imgs(s)+'\n<script>\n'+js+'\n</script>\n<script>\n'+ejs+'\n</script>',1)

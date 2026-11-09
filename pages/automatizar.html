@@ -11,169 +11,148 @@
 <meta property="og:description" content="Las horas que van a la gestión, qué herramienta resuelve cada una y en qué orden, en 4 semanas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
-.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
-.video{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;box-shadow:var(--sombra);background:var(--papel-3);margin-top:34px}
-.video iframe,.video>button{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video>button{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:clamp(16px,4vw,36px);padding:clamp(18px,5vw,52px);background:var(--papel-3);box-shadow:inset 0 0 0 1px var(--linea);text-align:left;cursor:pointer;font:inherit;color:var(--tinta)}
-.video .cara{position:relative;width:clamp(104px,24vw,190px);aspect-ratio:1}
-.video .cara img{width:100%;height:100%;object-fit:cover;border-radius:50%;background:var(--papel-2);box-shadow:0 0 0 1px var(--oro),0 0 0 7px var(--papel-2),0 0 0 8px var(--linea)}
-.video .play{position:absolute;right:-4px;bottom:-4px;width:clamp(46px,9vw,64px);aspect-ratio:1;border-radius:50%;background:var(--tinta);display:grid;place-items:center;box-shadow:0 0 0 4px var(--papel-3),0 14px 26px -14px rgba(43,39,36,.8);transition:transform .35s var(--e)}
-.video .play::before{content:"";margin-left:5px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent var(--papel-2)}
-.video>button:hover .play,.video>button:focus-visible .play{transform:scale(1.08)}
-.video .pt{display:block;font-family:var(--f-titulo);font-size:clamp(25px,6vw,44px);font-weight:600;line-height:1.05;letter-spacing:-.01em}
-.video .dur{display:inline-block;margin-top:12px;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
-.cuentas{margin-top:34px;padding:clamp(22px,5vw,32px)}
-.cuentas .fila{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--linea);font-size:18px;line-height:1.4}
-.cuentas .fila b{flex:none;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1;font-variant-numeric:lining-nums}
-.cuentas .total{border-bottom:0;padding-bottom:0}
-.cuentas .total span{font-weight:800}
-.cuentas .total b{color:var(--oro-texto);font-size:44px}
-.cuentas .ej{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:6px}
-.modelos{display:grid;gap:14px;margin-top:34px}
-@media (min-width:700px){ .modelos{grid-template-columns:1fr 1fr} }
-.modelo{padding:24px}
-.modelo span{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-.modelo.antes span{color:var(--tinta-2)} .modelo.despues span{color:var(--verde)}
-.modelo b{display:block;font-family:var(--f-titulo);font-size:clamp(44px,10vw,56px);font-weight:600;line-height:1;margin-top:10px;font-variant-numeric:lining-nums}
-.modelo p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
-.modelo.despues{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
-.dentro{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:10px}
-.dentro li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:16px}
-.dentro b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15}
-.dentro span{flex:none;font-size:16px;font-weight:700;color:var(--oro-texto)}
-@media (max-width:520px){ .dentro li{flex-direction:column;align-items:flex-start;gap:2px} }
+@media (min-width:1000px){ .pliego>.verso{order:-1;display:flex;flex-direction:column;justify-content:center} }
+/* el video: una lámina con la foto de Javo; entra al tocarla */
+.video{position:relative;margin:0}
+.video>button,.video iframe{display:block;width:100%;aspect-ratio:16/10;border:0;padding:0;border-radius:4px}
+.video>button{position:relative;cursor:pointer;background:var(--papel-2);padding:9px;box-shadow:0 0 0 1px var(--linea),var(--sombra);text-align:left;font:inherit;color:var(--tinta)}
+.video>button img{width:100%;height:100%;object-fit:cover;object-position:center 22%;border-radius:2px;background:var(--papel-3)}
+.video .play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--tinta);display:grid;place-items:center;box-shadow:inset 0 0 0 4px var(--tinta),inset 0 0 0 5px var(--oro),0 18px 30px -16px rgba(20,18,16,.8);transition:transform .35s var(--e)}
+.video .play::before{content:"";margin-left:6px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--papel-2)}
+.video>button:hover .play,.video>button:focus-visible .play{transform:scale(1.06)}
+.video figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:17px}
+.video figcaption b{font-family:var(--f-titulo);font-size:23px;font-weight:600;line-height:1.15}
+.video figcaption span{flex:none;color:var(--tinta-2);font-size:16px;padding-top:4px}
+.palabra{display:inline-block;margin-top:2px;font-weight:600;letter-spacing:.12em}
+.estacion-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:start;text-decoration:none;color:inherit;padding:24px 0;border-block:1px solid var(--linea)}
+.estacion-x img{width:96px;border-radius:2px 4px 4px 2px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6)}
+.estacion-x .ol-serie{margin:0}
+.estacion-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:6px}
+.estacion-x p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
+.estacion-x .link{display:inline-block;margin-top:12px;color:var(--tinta)}
+@media (min-width:760px){ .estacion-x{grid-template-columns:130px 1fr;gap:32px} .estacion-x img{width:130px} }
+.dentro .t{font-family:var(--f-titulo);font-size:23px;font-weight:600}
 .nota-c{margin-top:22px;font-size:18px;color:var(--tinta-2)}
-.nota-c b{color:var(--tinta)}
-.otro{margin-top:18px;font-size:17px}
+.nota-c b{color:var(--tinta);font-weight:600}
 </style>
 </head>
-<body data-pagina="automatizar" data-pagos="">
+<body data-pagina="automatizar" data-pagos="" data-palabra="SISTEMA" data-libro-titulo="Un consultorio que funciona aunque tú pares">
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-  <a class="btn" data-link="comunidad" href="#"><span>Quiero el checklist</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-link="comunidad" href="#">Quiero el checklist</a>
+  </div>
 </div></header>
 
 <main>
-<!-- ═══ PORTADA ═══ -->
-<section class="portada" data-barra-desde>
+<section class="portadilla" data-barra-desde>
  <div class="wrap">
-  <span class="kick rv">Checklist</span>
-  <h1 class="t1 rv d1">Un consultorio que funciona <em>aunque tú pares.</em></h1>
-  <p class="lead rv d2">Las horas que hoy van a confirmar turnos, responder lo mismo y cobrar. <b>Qué herramienta resuelve cada una, y en qué orden, en 4 semanas.</b></p>
-  <div class="video rv d2" data-yt="THjdk3TJVek" data-titulo="Un consultorio que funciona aunque tú pares">
-   <button type="button" aria-label="Ver el video: Las 4 semanas, en orden">
-    <span class="cara"><img data-foto data-ancho="400" alt="" width="190" height="190"><span class="play" aria-hidden="true"></span></span>
-    <span><span class="pt">Las 4 semanas, en orden</span><span class="dur">Video · 12 min</span></span>
-   </button>
-  </div>
-  <div class="botones rv d3"><a class="btn" data-link="comunidad" href="#"><span>Quiero el checklist</span> <span class="fl">→</span></a></div>
-  <p class="micro rv d3">Sin costo, dentro de la comunidad.</p>
- </div>
-</section>
-
-<section class="sec">
- <div class="wrap">
-  <span class="kick rv">Los 5 procesos</span>
-  <h2 class="t2 rv">Lo que hoy <em>lleva tu tiempo.</em></h2>
-  <ol class="ruta">
-   <li class="paso rv" data-n="1"><h3>Confirmar turnos</h3><p>Mensaje por mensaje, todos los días.</p></li>
-   <li class="paso rv" data-n="2"><h3>Responder consultas nuevas</h3><p>Precio, horarios y modalidad: la misma respuesta, muchas veces por semana.</p></li>
-   <li class="paso rv" data-n="3"><h3>Recordar la consulta</h3><p>Con un recordatorio a tiempo, más personas llegan a su turno.</p></li>
-   <li class="paso rv" data-n="4"><h3>Acompañar después de la consulta</h3><p>Con seguimiento, más personas terminan su proceso.</p></li>
-   <li class="paso rv" data-n="5"><h3>Cobrar</h3><p>Pedir, esperar y confirmar cada transferencia.</p></li>
-  </ol>
-  <p class="nota-c rv">Nada de esto necesita tu formación. <b>Necesita un proceso.</b></p>
- </div>
-</section>
-
-<section class="sec">
- <div class="wrap">
-  <span class="kick rv">El orden que funciona</span>
-  <h2 class="t2 rv">Semana <em>a semana.</em></h2>
-  <ol class="ruta">
-   <li class="paso rv" data-n="1"><h3>WhatsApp Business</h3><p class="min">Semana 1</p><p>Mensajes automáticos y respuestas rápidas. Lo primero, y lo más simple.</p></li>
-   <li class="paso rv" data-n="2"><h3>Tu agenda online</h3><p class="min">Semana 2</p><p>Cargas tu calendario y compartes el enlace: cada persona elige su horario.</p></li>
-   <li class="paso rv" data-n="3"><h3>Tu secuencia de seguimiento</h3><p class="min">Semana 3</p><p>Confirmación, recordatorio y seguimiento después de la consulta, solos.</p></li>
-   <li class="paso rv" data-n="4"><h3>Palabras clave en Instagram</h3><p class="min">Semana 4</p><p>Si ya publicas, cada palabra clave abre una conversación sola.</p></li>
-  </ol>
-  <p class="nota-c rv">Sin saber de tecnología: el checklist de los 12 procesos, con la herramienta para cada uno, está en la comunidad.</p>
- </div>
-</section>
-
-
-<!-- ═══ LA COMUNIDAD ═══ -->
-<section class="sec">
- <div class="wrap">
-  <span class="kick rv">La comunidad</span>
-  <h2 class="t2 rv">Entra <em>sin costo.</em></h2>
-  <p class="lead rv">Profesionales que atienden 1 a 1 y construyen su consulta con sistemas. Adentro tienes las herramientas:</p>
-  <ul class="dentro rv">
-   <li><b>Calculadora de tu hora real</b><span>2 minutos</span></li>
-   <li><b>Los 5 mensajes de reactivación</b><span>listos para enviar</span></li>
-   <li><b>Checklist de automatización</b><span>12 procesos</span></li>
-   <li><b>Tu protocolo, paso a paso</b><span>resultado, tiempo y método</span></li>
-   <li><b>Guía de precios</b><span>por especialidad</span></li>
-   <li><b>Neuro-Escáner IA</b><span>tu patrón con el precio</span></li>
-  </ul>
-  <div class="botones rv"><a class="btn" data-link="comunidad" href="#"><span>Entrar a la comunidad</span> <span class="fl">→</span></a></div>
- </div>
-</section>
-
-<!-- ═══ TU ESTACIÓN ═══ -->
-<section class="sec junto">
- <div class="wrap">
-  <a class="estacion-x card rv" data-link="cap" data-hash="rio" href="#">
-   <img data-img="tapas/rio-chica.webp" alt="Lo que el río te enseña" width="320" height="480" loading="lazy">
-   <div><span class="eti">Estación 4 del camino · días 57 a 70</span><b>El río: tu propia app</b><p>Esta herramienta es parte del río. Su logro: tu app andando, horas de tu semana recuperadas y siete mil dólares vendidos. Sigue con el primer capítulo de <i>Lo que el río te enseña</i>.</p><span class="ir">Leer el primer capítulo →</span></div>
-  </a>
- </div>
-</section>
-
-<!-- ═══ QUIÉN ═══ -->
-<section class="sec junto">
- <div class="wrap">
-  <div class="autor card rv">
-   <img class="foto" data-foto data-ancho="240" alt="Javo Katz" width="120" height="120">
-   <div>
-    <b>Javo Katz</b>
-    <p class="rol">Mentor y autor · Bariloche, Patagonia</p>
-    <p class="bio">Hace más de 6 años acompaña a profesionales que atienden 1 a 1. Más de 50, de Latinoamérica, España y EE. UU., ya trabajaron con él.</p>
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">Para empezar · sin costo</p>
+    <h1>Un consultorio que funciona aunque tú pares.</h1>
+    <span class="filete"></span>
+    <p class="subtitulo">Qué herramienta resuelve cada tarea, y en qué orden.</p>
+    <p class="bajada">Las horas que hoy van a confirmar turnos, responder lo mismo y cobrar. <b>Cuatro semanas, una herramienta por semana.</b></p>
+    <div class="acciones">
+     <a class="btn" data-link="comunidad" href="#">Quiero el checklist</a>
+    </div>
+    <p class="aval"><img data-foto data-ancho="160" alt="" width="52" height="52" data-quita-si-falla><span>Javo Katz. Acompaño a profesionales que atienden 1 a 1: <b>más de 50</b>, en Latinoamérica, España y EE. UU.</span></p>
+   </div>
+   <div class="verso">
+    <figure class="video" data-yt="THjdk3TJVek" data-titulo="Un consultorio que funciona aunque tú pares">
+     <button type="button" aria-label="Ver el video: Las 4 semanas, en orden"><img data-foto data-ancho="1100" alt="" width="1100" height="688"><span class="play" aria-hidden="true"></span></button>
+     <figcaption><b>Las 4 semanas, en orden</b><span>12 minutos</span></figcaption>
+    </figure>
    </div>
   </div>
  </div>
 </section>
 
-<!-- ═══ CIERRE ═══ -->
-<section class="sec centro" data-barra-hasta>
- <div class="wrap">
-  <hr class="regla">
-  <p class="frase-final rv">Empieza <em>esta semana.</em></p>
-  <div class="botones rv"><a class="btn" data-link="comunidad" href="#"><span>Quiero el checklist</span> <span class="fl">→</span></a></div>
-  <p class="otro rv">¿Quieres que lo instalemos juntos? <a class="link" data-link="agenda" data-hash="#agenda" href="#">Agenda tu diagnóstico</a></p>
+<section class="cap" id="procesos" data-capitulo="Lo que hoy lleva tu tiempo" data-dato="5 procesos">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Lo que hoy lleva tu tiempo.</h2>
+  </header>
+  <div class="cuerpo">
+   <ol class="secuencia"><li><span class="sn">Proceso<b>1</b></span><div><h3>Confirmar turnos</h3><p>Mensaje por mensaje, todos los días.</p></div></li><li><span class="sn">Proceso<b>2</b></span><div><h3>Responder consultas nuevas</h3><p>Precio, horarios y modalidad: la misma respuesta, muchas veces por semana.</p></div></li><li><span class="sn">Proceso<b>3</b></span><div><h3>Recordar la consulta</h3><p>Con un recordatorio a tiempo, más personas llegan a su turno.</p></div></li><li><span class="sn">Proceso<b>4</b></span><div><h3>Acompañar después de la consulta</h3><p>Con seguimiento, más personas terminan su proceso.</p></div></li><li><span class="sn">Proceso<b>5</b></span><div><h3>Cobrar</h3><p>Pedir, esperar y confirmar cada transferencia.</p></div></li></ol>
+   <p class="nota-c">Nada de esto necesita tu formación. <b>Necesita un proceso.</b></p>
+  </div>
+ </div>
+</section>
+
+<section class="cap" id="orden" data-capitulo="El orden que funciona" data-dato="4 semanas">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">2</span>
+   <h2>Semana a semana.</h2>
+  </header>
+  <div class="cuerpo">
+   <ol class="secuencia"><li><span class="sn">Semana<b>1</b></span><div><h3>WhatsApp Business</h3><p>Mensajes automáticos y respuestas rápidas. Lo primero, y lo más simple.</p></div></li><li><span class="sn">Semana<b>2</b></span><div><h3>Tu agenda online</h3><p>Cargas tu calendario y compartes el enlace: cada persona elige su horario.</p></div></li><li><span class="sn">Semana<b>3</b></span><div><h3>Tu secuencia de seguimiento</h3><p>Confirmación, recordatorio y seguimiento después de la consulta, solos.</p></div></li><li><span class="sn">Semana<b>4</b></span><div><h3>Palabras clave en Instagram</h3><p>Si ya publicas, cada palabra clave abre una conversación sola.</p></div></li></ol>
+   <p class="nota-c">Sin saber de tecnología: el checklist de los 12 procesos, con la herramienta para cada uno.</p>
+  </div>
+ </div>
+</section>
+
+<section class="cap" id="estacion" data-capitulo="Tu estación del camino" data-dato="El río">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">3</span>
+   <h2>Esta herramienta es parte de un libro.</h2>
+  </header>
+  <div class="cuerpo">
+   <a class="estacion-x" data-link="cap" data-hash="rio" href="#" style="--c:var(--rio)">
+    <img data-img="tapas/rio-chica.webp" alt="Lo que el río te enseña" width="240" height="360" loading="lazy">
+    <div><p class="ol-serie">Estación 4 del camino, días 57 a 70</p><b>El río: tu propia app</b><p>Su logro: tu app andando y horas de tu semana recuperadas. Sigue con el primer capítulo de <i>Lo que el río te enseña</i>, aquí mismo y sin costo.</p><span class="link">Leer el primer capítulo</span></div>
+   </a>
+  </div>
+ </div>
+</section>
+
+<section class="cap" id="dentro" data-capitulo="Lo que hay adentro" data-dato="seis herramientas">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">4</span>
+   <h2>Seis herramientas, sin costo.</h2>
+   <p class="bajada">Profesionales que atienden 1 a 1 y construyen su consulta con sistemas. Al dejar tu correo, entras a todas:</p>
+  </header>
+  <div class="cuerpo">
+   <ul class="lideres dentro"><li><span class="fila"><span class="t">Calculadora de tu hora real</span><span class="pg"></span><span class="d">2 minutos</span></span></li><li><span class="fila"><span class="t">Los 5 mensajes de reactivación</span><span class="pg"></span><span class="d">listos para enviar</span></span></li><li><span class="fila"><span class="t">Checklist de automatización</span><span class="pg"></span><span class="d">12 procesos</span></span></li><li><span class="fila"><span class="t">Tu protocolo, paso a paso</span><span class="pg"></span><span class="d">resultado, tiempo y método</span></span></li><li><span class="fila"><span class="t">Guía de precios</span><span class="pg"></span><span class="d">por especialidad</span></span></li><li><span class="fila"><span class="t">Neuro-Escáner IA</span><span class="pg"></span><span class="d">tu patrón con el precio</span></span></li></ul>
+   <div class="acciones"><a class="btn" data-link="comunidad" href="#">Quiero el checklist</a></div>
+  </div>
  </div>
 </section>
 </main>
 
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
-</div></footer>
+<footer class="colofon">
+ <div class="wrap">
+  <p class="cierre">Empieza esta semana.</p>
+  <div class="acciones"><a class="btn" data-link="comunidad" href="#">Quiero el checklist</a></div>
+  <p class="micro" style="margin-top:22px">¿Prefieres que lo instalemos juntos? <a class="link" data-link="agenda" href="#">Agenda tu diagnóstico</a></p>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="recursos" href="#">Las seis herramientas</a><a data-link="libros" href="#">Los libros</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="camino" href="#">El camino</a><a data-link="agenda" href="#">Mentoría e instalación</a></nav>
+  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
+  <p class="legal">Javo Katz · Tu Clínica Digital. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<div class="barra"><a class="btn" data-link="comunidad" href="#"><span>Quiero el checklist</span></a></div>
+<div class="barra"><a class="btn" data-link="comunidad" href="#">Quiero el checklist</a></div>
 
-<script>/*BASE_JS*/</script>
+<script>/*EDICION_JS*/</script>
 <script>
 (function(){
   var pag=document.body.getAttribute('data-pagina');
   document.querySelectorAll('[data-yt]').forEach(function(v){
     var b=v.querySelector('button'); if(!b) return;
     b.addEventListener('click',function(){
-      v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1" title="'+(v.getAttribute('data-titulo')||'Video')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      b.outerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1" title="'+(v.getAttribute('data-titulo')||'Video')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
       if(window.pxc) pxc('VerVideo',{content_name:pag});
     });
   });

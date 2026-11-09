@@ -11,8 +11,8 @@
 <meta property="og:description" content="Lee el primer capítulo de Las 7 libertades fundamentales, de Javo Katz, aquí mismo y sin costo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@500;600;700;800&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
 /* ═══════════════════════════════════════════════════════════════
    El lector del primer capítulo: una página por vez, como un libro.
@@ -144,6 +144,26 @@ html:not(.js) .lector-nav{display:none}
 .el-libro b{font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1.1}
 .el-que{font-size:16px;font-weight:700;margin-top:auto;padding-top:6px}
 
+
+/* Edición Libres (9 nov 2026): la misma piel que el resto de las páginas */
+.hoja .k,.ej-k{font-weight:600 !important;letter-spacing:.14em}
+.lt-t b{font-size:22px}
+.lt-btn{padding:12px 18px !important;border-radius:12px !important;box-shadow:inset 0 0 0 3px var(--tinta),inset 0 0 0 4px var(--oro) !important}
+.lt-volver{background:transparent}
+.hoja .ini-meta,.hoja .fin-lead,.of p,.hoja .solo-libro,.hoja .otro,.ej-q,.ej-nota{font-family:var(--f-texto) !important}
+.of{border:0;border-radius:18px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea),var(--sombra)}
+.of.fuerte{box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75),var(--sombra)}
+.of .cinta{left:50%;transform:translateX(-50%);border-radius:10px;font-weight:600;letter-spacing:.12em;background:var(--tinta);color:var(--oro-claro)}
+.of-t{font-size:36px;font-weight:500}
+.accion{border:0;border-left:2px solid var(--verde);border-radius:0 12px 12px 0;box-shadow:0 0 0 1px var(--linea)}
+.lector-nav .btn{padding-block:17px}
+.lector-nav [data-ir="-1"]{padding:17px 0}
+.chips button{border-radius:12px;font-weight:600}
+.el-libro{border:0;border-radius:6px;box-shadow:0 0 0 1px var(--linea)}
+.ini-tapa{transform:none}
+.of .cinta{position:static;transform:none;display:block;background:none;color:var(--oro-texto);padding:0;margin:0 0 6px;font-size:16px;letter-spacing:.12em;white-space:normal}
+.hoja .seguro{justify-content:center;text-align:left}
+
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -250,7 +270,7 @@ html:not(.js) .lector-nav{display:none}
     <span class="cinta">La obra completa</span>
     <b class="of-t">Tu nuevo precio</b>
     <p><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
-    <a class="btn ancho-total" data-compra="obra" href="#"><span>Los 8 + la app · <span data-precio="obra">97</span> USD</span></a>
+    <a class="btn ancho-total" data-compra="obra" href="#"><span>Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</span></a>
    </div>
   </div>
   <p class="seguro con-pago"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
@@ -264,7 +284,7 @@ html:not(.js) .lector-nav{display:none}
   <button class="btn" type="button" data-ir="1"><span data-sig>Seguir leyendo</span> <span class="fl">→</span></button>
 </nav>
 
-<script>/*BASE_JS*/</script>
+<script>/*EDICION_JS*/</script>
 <script>
 /* El lector: una hoja por vez. Botones, flechas del teclado y deslizar con el dedo.
    La hoja en la que vas queda en la dirección (#p5), así al volver sigues donde estabas. */
