@@ -3,7 +3,7 @@
    Se mira el script de Clarity y no solo window.clarity: alguien puede dejar la cola armada
    sin cargarlo, y entonces sí hay que cargarlo. En las vistas previas no se carga. */
 (function (w, d, id) {
-  if (!id || /claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) return;
+  if (!id || ((w.__tcdCarga || {}).rama || 'main') !== 'main' || /claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) return;
   if (d.querySelector('script[src*="clarity.ms/"]')) return;
   w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
   var s = d.createElement('script');
