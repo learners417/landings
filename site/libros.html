@@ -407,6 +407,10 @@ img[data-img]:not([src]){visibility:hidden}
 
 @media (max-width:520px){ .oferta .lideres .pg{display:none} .oferta .lideres .d{margin-left:auto;padding-left:14px} }
 
+/* el precio en los botones: junto en la pantalla ancha, en su propia línea en el celular */
+.pr{white-space:nowrap}
+@media (max-width:520px){ .btn .pr{display:block;margin-top:3px;font-weight:500} .btn .pr .sep{display:none} }
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -579,7 +583,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
   <p class="rotulo" aria-hidden="true"></p>
   <div class="top-der">
    <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
-   <a class="btn" href="#obra">Tu nuevo precio · <span data-precio="obra">97</span> USD</a>
+   <a class="btn" href="#obra">Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></a>
   </div>
 </div></header>
 
@@ -595,7 +599,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     <p class="subtitulo">Lo heredaste.<br>En cinco días, lo cambias.</p>
     <p class="bajada"><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> En el quinto día sellas tu precio nuevo y el valor real de tu hora.</p>
     <div class="acciones">
-     <a class="btn" href="#obra">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a>
+     <a class="btn" href="#obra">Quiero Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></a>
      <a class="link" data-link="capitulo" href="#">Leer un primer capítulo, sin costo</a>
     </div>
     <p class="aval"><img data-foto data-ancho="160" alt="" width="52" height="52" data-quita-si-falla><span>Los escribí en Bariloche, después de acompañar a <b>más de 50 profesionales</b> que atienden 1 a 1.</span></p>
@@ -903,7 +907,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 <footer class="colofon">
  <div class="wrap">
   <p class="cierre">Una vida libre se construye en orden, como una obra.</p>
-  <div class="acciones"><a class="btn" href="#obra">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a></div>
+  <div class="acciones"><a class="btn" href="#obra">Quiero Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></a></div>
   <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
   <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="laCima" href="#">La Cima</a><a data-link="prensa" href="#">Prensa</a></nav>
   <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
@@ -911,7 +915,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
  </div>
 </footer>
 
-<div class="barra"><a class="btn" href="#obra">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a></div>
+<div class="barra"><a class="btn" href="#obra">Quiero Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></a></div>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
 
 <script>

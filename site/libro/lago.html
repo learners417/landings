@@ -12,283 +12,321 @@
 <meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
 <style>
 /* ═══════════════════════════════════════════════════════════════
-   JAVO KATZ · el sistema de las páginas
-   Papel cálido, tinta, oro mate solo en líneas, versalitas y numerales.
-   Cormorant Garamond para los títulos (la letra de Las 7 libertades),
-   Manrope para leer. Nada por debajo de 16 px.
+   JAVO KATZ · EDICIÓN LIBRES (9 nov 2026)
+   La página es un libro de la colección: portadilla, índice, capítulos, láminas y colofón.
+   Papel, tinta y un hilo de oro. Cormorant Garamond titula, Literata se lee. Nada por debajo de 16 px.
    ═══════════════════════════════════════════════════════════════ */
 :root{
   color-scheme: light;
-  --papel:#F4EEE3;
-  --papel-2:#FBF8F1;
-  --papel-3:#EDE5D6;
-  --tinta:#2B2724;
-  --tinta-2:#5A534A;
-  --linea:#DCD2C1;
-  --oro:#A8875A;
-  --oro-texto:#7A5F33;
-  --verde:#2F5638;
-  --rojo:#9C3626;
+  --papel:#F4EEE3; --papel-2:#FBF8F1; --papel-3:#EDE5D6;
+  --tinta:#2B2724; --tinta-2:#5A534A; --linea:#DCD2C1;
+  --oro:#A8875A; --oro-texto:#7A5F33; --oro-claro:#F1E3C6;
+  --verde:#2F5638; --rojo:#9C3626;
   --lago:#1B4A66; --montana:#A64B2E; --viento:#9A6E1F; --rio:#1F6E6E; --bosque:#1E3A2B;
   --sanadores:#3E4C43; --heroe:#2B2724; --libertades:#874B45;
-  --f-titulo:"Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
-  --f-texto:"Literata", Georgia, "Times New Roman", serif;
-  --f-lectura:"Literata", Georgia, serif;
-  --r:22px;
-  --sombra:0 1px 0 rgba(43,39,36,.04), 0 28px 60px -36px rgba(43,39,36,.42);
+  --f-titulo:"Cormorant Garamond","Cormorant",Garamond,Georgia,serif;
+  --f-texto:"Literata",Georgia,"Times New Roman",serif;
+  --f-lectura:"Literata",Georgia,serif;
   --e:cubic-bezier(.2,.7,.2,1);
+  --margen:max(22px,env(safe-area-inset-left,0px));
+  --columna:680px;
+  --sombra:0 30px 60px -40px rgba(43,39,36,.45);
 }
-/* las páginas son de papel: si el teléfono está en modo oscuro, siguen claras */
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme: light; } }
-:root[data-theme="dark"]{ color-scheme: light; }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
-body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-weight:500;font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px;font-variant-numeric:lining-nums}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-optical-sizing:auto;font-weight:400;font-size:19px;line-height:1.66;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;overflow-x:clip}
 @media (min-width:900px){ body{font-size:20px} }
 img,svg,video{max-width:100%;display:block}
 img{height:auto}
 a{color:inherit}
 button{font:inherit;color:inherit}
 p{margin:0}
-h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:500;letter-spacing:-.01em;text-wrap:balance}
-em{font-style:italic}
+h1,h2,h3,h4{margin:0;font-family:var(--f-titulo);font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+em,i{font-style:italic}
+b,strong{font-weight:600}
 ::selection{background:#E7D6B4}
-:focus-visible{outline:2px solid var(--oro-texto);outline-offset:3px;border-radius:8px}
+:focus-visible{outline:2px solid var(--oro-texto);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* el grano del papel: apenas, para que no parezca pantalla */
+/* el grano del papel */
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .15 0 0 0 0 .13 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* ── estructura ───────────────────────────── */
-.wrap{width:100%;max-width:760px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
-.ancho{max-width:1120px}
-.sec{padding-block:clamp(72px,12vw,128px);position:relative}
-.sec.junto{padding-top:0}
-.centro{text-align:center}
-.centro .lead,.centro .kick{margin-inline:auto}
+/* GHL: fondo parejo aunque meta la página en una caja */
+.c-section,.c-row,.c-column,.c-wrapper,.hl_page-preview--content,.preview-container{background:var(--papel)!important}
+img[data-img]:not([src]){visibility:hidden}
+.sin-pago,.con-pago{display:none}
 
-/* la barra de arriba */
-.top{position:fixed;top:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--papel) 96%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+/* ── la cabecera corriente ─────────────────────
+   La marca a la izquierda, el capítulo en el que estás al centro, el índice y el botón a la derecha. */
+.top{position:fixed;top:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
 .top.con-linea{border-bottom-color:var(--linea)}
-.top-in{max-width:1120px;margin:0 auto;padding:14px max(20px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:16px}
-.marca{font-family:var(--f-titulo);font-size:24px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
-.marca small{display:block;font-family:var(--f-texto);font-size:16px;letter-spacing:.12em;color:var(--oro-texto);font-weight:700;margin-top:-2px}
-.top .btn{min-height:46px;padding:10px 20px;font-size:16px}
-@media (max-width:520px){ .top .btn{display:none} }
+.top-in{max-width:1240px;margin:0 auto;height:64px;padding:0 var(--margen);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px}
+.marca{font-family:var(--f-titulo);font-size:22px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;white-space:nowrap;line-height:1}
+.rotulo{justify-self:center;font-family:var(--f-titulo);font-style:italic;font-size:21px;color:var(--tinta-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;opacity:0;transition:opacity .4s}
+.rotulo.on{opacity:1}
+.rotulo b{font-style:normal;font-weight:600;color:var(--oro-texto);margin-right:10px}
+.top-der{display:flex;align-items:center;gap:10px}
+.btn-indice{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px 0 6px;border:0;background:none;cursor:pointer;font-family:var(--f-texto);font-size:17px;font-weight:600;color:var(--tinta)}
+.btn-indice i{display:grid;gap:4px;width:20px}
+.btn-indice i::before,.btn-indice i::after{content:"";height:1px;background:var(--tinta)}
+.btn-indice i::after{width:13px}
+.top .btn{padding:12px 18px;font-size:16px;border-radius:12px;box-shadow:inset 0 0 0 3px var(--tinta),inset 0 0 0 4px var(--oro)}
+@media (max-width:899px){ .rotulo{display:none} .top-in{grid-template-columns:1fr auto} .top .btn{display:none} }
+.top + main{padding-top:64px}
 
-/* ── tipografía ───────────────────────────── */
-.kick{display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:22px}
-.kick::before{content:"";width:34px;height:1px;background:var(--oro)}
-.centro .kick::after{content:"";width:34px;height:1px;background:var(--oro)}
-.t1{font-size:clamp(50px,13vw,96px);line-height:.98;letter-spacing:-.02em}
-.t2{font-size:clamp(40px,9.6vw,68px);line-height:1.02}
-.t3{font-size:clamp(30px,6.4vw,42px);line-height:1.1}
-.t1 em,.t2 em,.t3 em{color:var(--oro-texto)}
-.sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(27px,6.2vw,38px);line-height:1.18;color:var(--tinta-2);margin-top:18px;text-wrap:balance}
-.lead{font-size:clamp(20px,4.6vw,23px);line-height:1.5;color:var(--tinta-2);max-width:34em;margin-top:24px;text-wrap:pretty}
-.lead b,.lead strong{color:var(--tinta);font-weight:700}
-.texto p+p{margin-top:18px}
-.texto p{text-wrap:pretty}
-.num{font-family:var(--f-titulo);font-variant-numeric:lining-nums tabular-nums;color:var(--oro-texto)}
-.regla{border:0;height:1px;background:var(--oro);opacity:.55;width:56px;margin:28px 0}
-.centro .regla{margin-inline:auto}
+/* ── el índice: la tabla de contenidos del libro ── */
+.indice{position:fixed;inset:0;z-index:120;background:var(--papel);overflow-y:auto;padding:0 var(--margen) 48px;opacity:0;visibility:hidden;transition:opacity .35s var(--e),visibility 0s .35s}
+.indice.on{opacity:1;visibility:visible;transition:opacity .35s var(--e)}
+.indice-in{max-width:720px;margin:0 auto}
+.indice-cab{display:flex;justify-content:space-between;align-items:center;height:64px}
+.indice-x{width:48px;height:48px;border:1px solid var(--linea);border-radius:50%;background:var(--papel-2);font-size:26px;line-height:1;cursor:pointer}
+.indice h2{font-size:clamp(52px,14vw,88px);line-height:1;margin:clamp(20px,6vh,56px) 0 10px}
+.indice .ind-sub{font-family:var(--f-titulo);font-style:italic;font-size:24px;color:var(--tinta-2)}
+.lideres{list-style:none;margin:28px 0 0;padding:0}
+.lideres li{border-bottom:1px solid var(--linea)}
+.lideres a,.lideres .fila{display:flex;align-items:baseline;gap:10px;padding:15px 0;text-decoration:none;color:var(--tinta)}
+.lideres .n{flex:0 0 auto;min-width:28px;font-family:var(--f-titulo);font-size:24px;font-weight:600;color:var(--oro-texto)}
+.lideres .t{flex:0 1 auto;font-size:19px;font-weight:500}
+.lideres .t i{color:var(--tinta-2)}
+.lideres .pg{flex:1 1 24px;min-width:24px;align-self:flex-end;margin-bottom:.42em;border-bottom:1px dotted var(--oro)}
+.lideres .d{flex:0 0 auto;font-size:17px;color:var(--tinta-2);text-align:right;max-width:46%}
+.lideres a:hover .t{text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px;text-decoration-thickness:1px}
+.indice .ind-otras{margin-top:44px;font-family:var(--f-titulo);font-size:30px;font-weight:600}
+.indice .lideres.otras .t{font-size:18px}
 
-/* ── botones ──────────────────────────────── */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:16px 30px;border-radius:999px;background:var(--tinta);color:var(--papel-2);text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.01em;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(168,135,90,.55),0 18px 34px -20px rgba(43,39,36,.7);transition:transform .25s var(--e),box-shadow .25s var(--e),background .25s}
-.btn:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(168,135,90,.8),0 24px 40px -22px rgba(43,39,36,.75)}
-.btn:active{transform:translateY(0)}
-.btn .fl{transition:transform .25s var(--e)}
-.btn:hover .fl{transform:translateX(4px)}
-.btn.claro{background:var(--papel-2);color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
-.btn.wa{background:var(--verde);color:var(--papel-2);box-shadow:inset 0 0 0 1px rgba(168,135,90,.45),0 18px 34px -20px rgba(47,86,56,.7)}
-.btn.wa:hover{background:#264730}
-.btn.wa svg{width:22px;height:22px;flex:none}
+/* ── la portadilla: la primera página ── */
+.portadilla{padding:clamp(36px,8vw,72px) 0 clamp(44px,8vw,80px)}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding-inline:var(--margen)}
+.angosto{max-width:calc(var(--columna) + 2*44px)}
+.serie{font-family:var(--f-texto);font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);line-height:1.5}
+.portadilla h1{font-size:clamp(54px,14.4vw,104px);line-height:.96;letter-spacing:-.02em;margin-top:18px}
+.filete{display:block;width:64px;height:1px;background:var(--oro);margin:26px 0}
+.subtitulo{font-family:var(--f-titulo);font-style:italic;font-size:clamp(28px,7.2vw,40px);line-height:1.16;color:var(--tinta-2);text-wrap:balance}
+.bajada{font-size:clamp(20px,4.8vw,23px);line-height:1.55;color:var(--tinta-2);max-width:31em;margin-top:22px;text-wrap:pretty}
+.bajada b{color:var(--tinta);font-weight:600}
+.acciones{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:34px}
+.aval{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:17px;line-height:1.45;color:var(--tinta-2);max-width:30em}
+.aval img{flex:0 0 52px;width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--oro),0 0 0 4px var(--papel),0 0 0 5px var(--linea)}
+.aval b{color:var(--tinta)}
+
+/* el pliego: en la pantalla ancha, la portadilla es un libro abierto */
+.pliego{display:grid;gap:44px}
+@media (min-width:1000px){
+  .pliego{grid-template-columns:1fr 1fr;gap:0;background:var(--papel-2);border-radius:6px;box-shadow:0 0 0 1px var(--linea),var(--sombra);position:relative;
+    /* los cantos de las páginas, a los dos lados */
+    outline:1px solid var(--linea);outline-offset:4px}
+  .pliego::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--linea)}
+  .pliego>.verso,.pliego>.recto{padding:clamp(48px,5vw,76px) clamp(40px,4.6vw,72px)}
+  .pliego>.recto{display:flex;flex-direction:column;justify-content:center}
+  .pliego>.verso{display:flex;flex-direction:column;justify-content:center}
+  .portadilla{padding:28px 0 56px}
+  .pliego h1{font-size:clamp(64px,6.2vw,92px)}
+  .pliego .subtitulo{font-size:clamp(28px,2.6vw,36px)}
+}
+
+/* ── los botones ── el único objeto oscuro de la página */
+.btn{display:inline-block;vertical-align:middle;padding:19px 28px;border-radius:14px;background:var(--tinta);color:var(--papel-2);text-decoration:none;font-family:var(--f-texto);font-weight:600;font-size:18px;line-height:1.25;text-align:center;border:0;cursor:pointer;
+  box-shadow:inset 0 0 0 4px var(--tinta),inset 0 0 0 5px var(--oro),0 16px 30px -20px rgba(43,39,36,.7);transition:transform .25s var(--e),background .25s,box-shadow .25s}
+.btn:hover{background:#3A332E;box-shadow:inset 0 0 0 4px #3A332E,inset 0 0 0 5px var(--oro),0 20px 34px -20px rgba(43,39,36,.75);transform:translateY(-1px)}
+.btn:active{transform:none}
+.btn small{font-size:16px;font-weight:500;opacity:.86}
+.btn svg{display:inline-block;vertical-align:-5px;margin-right:10px}
+.btn.claro{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+.btn.claro:hover{background:var(--papel-2)}
+.btn.wa{background:var(--verde);box-shadow:inset 0 0 0 4px var(--verde),inset 0 0 0 5px rgba(168,135,90,.7),0 16px 30px -20px rgba(47,86,56,.7)}
+.btn.wa:hover{background:#264730;box-shadow:inset 0 0 0 4px #264730,inset 0 0 0 5px rgba(168,135,90,.7)}
 .btn.ancho-total{width:100%}
-@media (max-width:420px){ .btn{padding-left:22px;padding-right:22px;font-size:17px;gap:10px} }
-.micro{font-size:16px;color:var(--tinta-2);margin-top:14px;line-height:1.45}
+@media (max-width:520px){ .acciones .btn{width:100%} .btn{padding-left:20px;padding-right:20px} }
+.link{font-weight:600;text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:6px;text-decoration-thickness:1px}
+.link:hover{text-decoration-color:var(--tinta)}
+.micro{font-size:16px;line-height:1.5;color:var(--tinta-2)}
 .micro b{color:var(--tinta)}
-.botones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:34px}
-.centro .botones{justify-content:center}
-.link{font-weight:700;text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px;text-decoration-thickness:1px}
 
-/* ── aparecer al bajar ────────────────────── */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
-.rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
-@media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+/* ── los capítulos ──
+   En el teléfono: el número, el título y la bajada, uno debajo del otro.
+   En la pantalla ancha: el número en el margen y el texto en una columna de libro. */
+.cap{padding-block:clamp(76px,12vw,140px) 0;position:relative}
+.cap:last-of-type{padding-bottom:clamp(76px,12vw,140px)}
+.cap-in{width:100%;max-width:1240px;margin:0 auto;padding-inline:var(--margen);display:grid;grid-template-columns:minmax(0,1fr)}
+.cap-cab{max-width:var(--columna)}
+.cap-n{display:flex;align-items:center;gap:16px;font-family:var(--f-titulo);font-size:40px;font-weight:500;line-height:1;color:var(--oro-texto)}
+.cap-n::after{content:"";width:44px;height:1px;background:var(--oro)}
+.cap h2{font-size:clamp(42px,10.6vw,72px);line-height:1;margin-top:18px}
+.cap .sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,34px);line-height:1.2;color:var(--tinta-2);margin-top:14px;text-wrap:balance}
+.cap .bajada{margin-top:22px}
+.cuerpo{margin-top:clamp(36px,6vw,52px);max-width:var(--columna)}
+.cuerpo>p+p{margin-top:18px}
+.cuerpo p{text-wrap:pretty}
+.ancho{margin-top:clamp(36px,6vw,56px);min-width:0}
+@media (min-width:1000px){
+  .cap-in{grid-template-columns:minmax(150px,1fr) minmax(0,var(--columna)) minmax(80px,1.25fr);column-gap:clamp(32px,4vw,64px)}
+  .cap-cab,.cuerpo{grid-column:2}
+  .ancho{grid-column:2 / 4}
+  .ancho.todo{grid-column:1 / 4}
+  .cap-n{grid-column:1;position:absolute;flex-direction:column;align-items:flex-end;gap:14px;font-size:84px;transform:translateX(calc(-100% - 40px))}
+  .cap-cab{position:relative}
+  .cap-n::after{width:1px;height:56px}
+}
+/* la nota al margen: la fuente de cada dato */
+.nota{display:block;margin-top:14px;padding-left:14px;border-left:1px solid var(--oro);font-size:16px;line-height:1.5;color:var(--tinta-2);font-style:italic}
+@media (min-width:1000px){ .cuerpo .nota.margen{position:absolute;right:0;width:calc((100% - var(--columna)) / 2.25 - 40px);margin-top:-2.6em} }
 
-/* ── tarjeta ──────────────────────────────── */
-.card{background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
+/* la capitular: la primera letra de un relato */
+.capitular::first-letter{float:left;font-family:var(--f-titulo);font-weight:500;font-size:4.6em;line-height:.82;padding:.06em .1em 0 0;color:var(--tinta)}
 
-/* ── lo que se tacha y lo que se tilda ────── */
-.frases{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
-.frases li{position:relative;font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,5.6vw,32px);line-height:1.2;padding-left:44px;color:var(--tinta-2)}
-.frases li::before{content:"";position:absolute;left:0;top:.42em;width:26px;height:26px;border-radius:50%;border:1px solid var(--rojo);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239C3626' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/14px no-repeat}
-.frases li span{background-image:linear-gradient(var(--rojo),var(--rojo));background-repeat:no-repeat;background-size:0 2px;background-position:0 58%;transition:background-size 1s var(--e) .35s}
-.frases li.in span{background-size:100% 2px}
-.si{display:flex;gap:16px;align-items:flex-start;margin-top:30px;font-size:clamp(21px,4.8vw,24px);line-height:1.4;font-weight:600}
-.si::before{content:"";flex:0 0 30px;height:30px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/16px no-repeat;margin-top:2px}
+/* ── el estante: los 8 libros, del ancho de sus páginas ── */
+.estante{position:relative}
+.tabla{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:clamp(252px,64vw,380px);padding:0 2px;border-bottom:7px solid var(--papel-3);box-shadow:0 1px 0 var(--linea),0 18px 26px -22px rgba(43,39,36,.55)}
+.lomo{--k:clamp(.062px,.016vw,.1px);position:relative;flex:0 0 auto;width:calc(var(--pag) * var(--k) + clamp(21px,4.4vw,30px));height:calc(var(--alto,1) * 92%);border:0;padding:0;border-radius:2px 2px 0 0;background:var(--c);color:var(--tx,var(--papel-2));cursor:pointer;
+  box-shadow:inset 0 0 0 1px rgba(43,39,36,.10),inset 3px 0 0 rgba(255,255,255,.07),inset -3px 0 0 rgba(0,0,0,.08);
+  transform:translateY(0);transition:transform .45s var(--e)}
+.lomo::before,.lomo::after{content:"";position:absolute;left:5px;right:5px;height:1px;background:var(--hilo,rgba(241,227,198,.7))}
+.lomo::before{top:12px}
+.lomo::after{bottom:12px}
+.lomo .lt{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) rotate(180deg);writing-mode:vertical-rl;white-space:nowrap;font-family:var(--f-titulo);font-weight:600;font-size:clamp(16px,4.2vw,23px);letter-spacing:.03em;line-height:1}
+.lomo .ln{position:absolute;left:0;right:0;top:22px;text-align:center;font-family:var(--f-titulo);font-weight:600;font-size:16px;line-height:1;opacity:.85}
+.lomo.claro{box-shadow:inset 0 0 0 1px var(--linea),inset 3px 0 0 rgba(255,255,255,.5),inset -3px 0 0 rgba(0,0,0,.04)}
+.lomo.claro::before,.lomo.claro::after{background:var(--oro)}
+.lomo .pie-lomo{position:absolute;left:0;right:0;bottom:0;height:17%;background:var(--bajo,transparent)}
+.lomo.con-bajo .lt{top:49%}
+.lomo .sol{position:absolute;left:50%;top:19px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:1px solid currentColor;opacity:.75}
+.lomo .estratos{position:absolute;left:0;right:0;bottom:16%;height:20%;display:flex;flex-direction:column}
+.lomo .estratos i{flex:1}
+.lomo[aria-pressed="true"]{transform:translateY(-16px)}
+.lomo:hover{transform:translateY(-6px)}
+.lomo[aria-pressed="true"]:hover{transform:translateY(-16px)}
+.lomo:focus-visible{outline-offset:4px}
+/* la entrada: los libros se acomodan en el estante, uno por uno */
+.estante.llega .lomo{transform:translateY(calc(100% + 12px));opacity:0}
+.estante.llega .tabla{overflow:hidden}
+.estante .lomo{transition:transform .7s cubic-bezier(.2,.9,.25,1.05),opacity .4s}
+@media (prefers-reduced-motion:reduce){ .estante .lomo{transition:none} .estante.llega .lomo{transform:none;opacity:1} }
 
-/* ── el teléfono con la app ───────────────── */
-.tel{position:relative;width:300px;flex:0 0 auto;aspect-ratio:9/19.2;border-radius:52px;background:#1D1B18;padding:11px;box-shadow:0 0 0 1px #3A3631,inset 0 0 0 2px #46413A,0 60px 90px -50px rgba(43,39,36,.75),0 30px 50px -40px rgba(43,39,36,.6);margin-inline:auto}
-.tel::before{content:"";position:absolute;right:-3px;top:150px;width:3px;height:70px;border-radius:0 3px 3px 0;background:#2E2A26}
-.pant{position:relative;height:100%;border-radius:42px;overflow:hidden;background:#FAF5EA;color:#2A2118;display:flex;flex-direction:column;font-size:15px;line-height:1.4}
-.isla{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:20px;background:#0E0D0C;z-index:3}
-.estado{display:flex;justify-content:space-between;align-items:center;padding:15px 26px 6px;font-weight:700;font-size:14px;letter-spacing:.02em}
-.estado i{display:inline-flex;gap:4px;align-items:center;font-style:normal}
-.estado svg{width:17px;height:12px}
-.app-head{padding:16px 20px 10px;display:flex;justify-content:space-between;align-items:center}
-.app-head b{font-family:var(--f-titulo);font-size:27px;font-weight:600}
-.cint{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A5F33;border:1px solid rgba(176,130,46,.45);border-radius:999px;padding:5px 10px}
-.cint::before{content:"";width:16px;height:6px;border-radius:2px;background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(42,33,24,.35)}
-.app-body{flex:1;overflow:hidden;padding:4px 16px 0;position:relative}
-.vista{position:absolute;inset:4px 16px 0;opacity:0;transform:translateY(10px);transition:opacity .45s var(--e),transform .45s var(--e);pointer-events:none}
-.vista.on{opacity:1;transform:none;pointer-events:auto}
-.app-card{background:#FFFDF7;border:1px solid rgba(176,130,46,.32);border-radius:20px;padding:16px}
-.app-k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8E6824}
-.app-t{font-family:var(--f-titulo);font-weight:600;font-size:25px;line-height:1.08;margin:6px 0 4px}
-.app-m{font-size:13.5px;color:rgba(42,33,24,.72)}
-.app-btn{margin-top:12px;display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#2A2118;color:#FAF5EA;font-weight:800;font-size:13.5px;letter-spacing:.14em}
-.dias{margin-top:12px;display:grid;gap:7px}
-.dia{display:flex;align-items:center;gap:10px;font-size:13.5px;padding:8px 10px;border-radius:12px;background:#F5EFE1}
-.dia b{font-family:var(--f-titulo);font-size:18px;color:#8E6824;width:14px;text-align:center}
-.dia.on{background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(176,130,46,.5)}
-.dia .lk{margin-left:auto;width:14px;height:14px;opacity:.5}
-.campo{display:block;margin-top:9px;font-size:13px;color:rgba(42,33,24,.75)}
-.campo input{display:block;width:100%;margin-top:4px;height:40px;border:1px solid rgba(176,130,46,.4);border-radius:12px;background:#FFFDF7;padding:0 12px;font:700 16px var(--f-texto);color:#2A2118}
-.campo input:focus{outline:2px solid #B0822E;outline-offset:0}
-.grande{margin-top:12px;text-align:center;padding:12px;border-radius:16px;background:#F5EFE1}
-.grande span{display:block;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8E6824}
-.grande b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:46px;line-height:1.05}
-.chat{display:flex;flex-direction:column;gap:9px;padding-top:4px}
-.msg{max-width:88%;padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.4;opacity:0;transform:translateY(6px);transition:opacity .4s var(--e),transform .4s var(--e)}
-.msg.in{opacity:1;transform:none}
-.msg.yo{align-self:flex-end;background:#2A2118;color:#FAF5EA;border-bottom-right-radius:5px}
-.msg.ia{align-self:flex-start;background:#FFFDF7;border:1px solid rgba(176,130,46,.3);border-bottom-left-radius:5px}
-.msg.ia i{display:block;font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8E6824;margin-bottom:2px}
-.chip{align-self:flex-start;font-size:13px;font-weight:700;border:1px solid rgba(42,33,24,.25);border-radius:999px;padding:7px 11px;background:#FFFDF7}
-.tabs{display:flex;justify-content:space-around;padding:10px 8px 20px;border-top:1px solid rgba(176,130,46,.25);background:#FFFDF7}
-.tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(42,33,24,.5);cursor:pointer;padding:4px 6px}
-.tabs button svg{width:22px;height:22px}
-.tabs button.on{color:#2A2118}
-.tabs button.on svg{stroke:#B0822E}
-.toca{display:flex;justify-content:center;gap:10px;margin-top:24px;flex-wrap:wrap}
-.toca button{border:1px solid var(--linea);background:var(--papel-2);border-radius:999px;padding:12px 18px;font-weight:700;font-size:16px;cursor:pointer;transition:all .25s var(--e)}
-.toca button.on{background:var(--tinta);color:var(--papel-2);border-color:var(--tinta)}
-.nota{font-size:16px;color:var(--tinta-2);margin-top:16px;line-height:1.5}
+/* la ficha del libro elegido, debajo del estante */
+.ficha-libro{display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:start;margin-top:26px;min-height:206px}
+.ficha-libro img{width:104px;border-radius:2px 4px 4px 2px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6),inset 4px 0 6px -4px rgba(0,0,0,.4)}
+.ficha-libro .fl-serie{font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto);line-height:1.4}
+.ficha-libro .fl-tit{font-family:var(--f-titulo);font-size:clamp(28px,6.6vw,34px);font-weight:600;line-height:1.04;margin-top:6px}
+.ficha-libro .fl-sub{font-family:var(--f-titulo);font-style:italic;font-size:21px;line-height:1.25;color:var(--tinta-2);margin-top:6px}
+.ficha-libro .fl-frase{margin-top:12px;font-size:17px;line-height:1.5}
+.ficha-libro .fl-acc{margin-top:12px;font-size:17px}
+.ficha-libro .fl-cambia{transition:opacity .3s}
+.ficha-libro.cambia .fl-cambia{opacity:0}
+@media (min-width:1000px){ .ficha-libro{grid-template-columns:132px 1fr;gap:26px} .ficha-libro img{width:132px} }
 
-/* ── la cuenta ────────────────────────────── */
-.cuenta{margin-top:40px;padding:clamp(22px,5vw,34px)}
-.cuenta .filas{display:grid;gap:22px}
-.rango label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:700;font-size:18px}
-.rango label small{display:block;font-weight:500;font-size:16px;color:var(--tinta-2)}
-.rango output{font-family:var(--f-titulo);font-size:30px;font-weight:600;color:var(--tinta);white-space:nowrap}
-.rango input[type=range]{width:100%;margin-top:10px;accent-color:var(--tinta);height:28px}
-.resultado{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
-.res{border-radius:18px;padding:18px;background:var(--papel)}
-.res span{display:block;font-size:16px;font-weight:700;color:var(--tinta-2)}
-.res b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(46px,11vw,64px);line-height:1;margin-top:6px}
-.res.real{background:var(--tinta);color:var(--papel-2)}
-.res.real span{color:#D9CBB0}
-.res.real b{color:#F1E3C6}
-.veredicto{margin-top:20px;font-size:19px;line-height:1.5}
-.veredicto b{font-weight:800}
+/* ── el catálogo: los libros, uno debajo del otro, con su tapa ── */
+.catalogo{border-top:1px solid var(--linea)}
+.obra-libro{display:grid;grid-template-columns:96px 1fr;gap:20px;padding:30px 0;border-bottom:1px solid var(--linea);scroll-margin-top:84px}
+.obra-libro img{width:96px;border-radius:2px 4px 4px 2px;box-shadow:10px 14px 24px -14px rgba(20,18,16,.6),inset 4px 0 6px -4px rgba(0,0,0,.4)}
+.ol-serie{font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto);line-height:1.4}
+.ol-tit{font-family:var(--f-titulo);font-size:clamp(30px,7vw,42px);font-weight:600;line-height:1.02;margin-top:6px}
+.ol-sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(21px,5vw,25px);line-height:1.2;color:var(--tinta-2);margin-top:6px}
+.ol-txt{min-width:0}
+.ol-cuerpo{grid-column:1 / -1}
+.ol-cuerpo p{font-size:18px;line-height:1.62}
+.ol-cuerpo p+p{margin-top:10px}
+.ol-lib{display:flex;gap:10px;align-items:baseline;color:var(--tinta-2);font-size:17px!important}
+.ol-lib::before{content:"";flex:0 0 11px;height:11px;border-radius:50%;background:var(--c);transform:translateY(-1px)}
+.ol-pie{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 18px;margin-top:16px!important}
+.ol-pie span{font-size:16px;color:var(--tinta-2)}
+.obra-libro.marcado{animation:marca 2.4s var(--e)}
+@keyframes marca{0%,40%{background:#F1E6CF}100%{background:transparent}}
+@media (min-width:760px){
+  .obra-libro{grid-template-columns:150px 1fr;gap:12px 36px;padding:38px 0}
+  .obra-libro img{width:150px;grid-row:1 / span 2}
+  .ol-cuerpo{grid-column:2}
+}
 
-/* ── el camino de 5 días ──────────────────── */
-.ruta{list-style:none;margin:44px 0 0;padding:0 0 0 46px;position:relative}
-.ruta::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--linea)}
-.ruta::after{content:"";position:absolute;left:15px;top:8px;width:1px;height:var(--avance,0%);max-height:calc(100% - 16px);background:var(--oro);transition:height .2s linear}
-.paso{position:relative;padding-bottom:34px}
-.paso:last-child{padding-bottom:0}
-.paso::before{content:attr(data-n);font-variant-numeric:lining-nums;position:absolute;left:-46px;top:0;width:31px;height:31px;border-radius:50%;background:var(--papel);border:1px solid var(--oro);display:grid;place-items:center;font-family:var(--f-titulo);font-size:19px;font-weight:600;color:var(--oro-texto)}
-.paso.in::before{background:var(--tinta);color:#F1E3C6;border-color:var(--tinta);transition:all .5s var(--e)}
-.paso h3{font-size:clamp(28px,6vw,36px);line-height:1.1}
-.paso .min{font-size:16px;font-weight:700;color:var(--oro-texto);letter-spacing:.06em;margin-top:2px}
-.paso p{margin-top:10px;color:var(--tinta-2)}
-.paso p b{color:var(--tinta)}
+/* ── la ficha: la oferta, la única tarjeta de la página ── */
+.oferta{position:relative;max-width:640px;background:var(--papel-2);border-radius:18px;padding:clamp(28px,6vw,44px) clamp(22px,5.4vw,44px);
+  box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75),var(--sombra)}
+.of-nom{font-family:var(--f-titulo);font-size:clamp(40px,10vw,56px);font-weight:500;line-height:1}
+.of-linea{font-family:var(--f-titulo);font-style:italic;font-size:clamp(23px,5.6vw,28px);line-height:1.25;color:var(--tinta-2);margin-top:12px}
+.oferta .lideres{margin-top:24px;border-top:1px solid var(--linea)}
+.oferta .lideres .fila{padding:13px 0}
+.oferta .lideres .t{font-size:17px;line-height:1.4}
+.oferta .lideres .d{font-size:16px}
+.of-precio{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin-top:26px}
+.of-precio b{font-family:var(--f-titulo);font-weight:600;font-size:clamp(76px,19vw,104px);line-height:.85;letter-spacing:-.02em}
+.of-precio span{font-size:18px;font-weight:600}
+.of-precio small{font-size:17px;color:var(--tinta-2);width:100%}
+.of-antes{font-size:17px;color:var(--tinta-2);margin-top:10px}
+.of-antes s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.oferta .btn{margin-top:26px}
+.seguro{align-items:center;gap:10px;font-size:16px;color:var(--tinta-2);margin-top:14px;line-height:1.45}
+.seguro svg{flex:0 0 22px;width:22px;height:22px;stroke:var(--verde);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* ── lo que recibes ───────────────────────── */
-.items{display:grid;gap:14px;margin-top:40px}
-@media (min-width:760px){ .items{grid-template-columns:1fr 1fr} }
-.item{display:flex;gap:18px;align-items:flex-start;padding:22px}
-.item .ic{flex:0 0 50px;height:50px;border-radius:16px;border:1px solid var(--oro);display:grid;place-items:center}
-.item .ic svg{width:24px;height:24px;stroke:var(--tinta);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.item b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:26px;line-height:1.12}
-.item p{margin-top:6px;font-size:17px;line-height:1.5;color:var(--tinta-2)}
-.item.libro .ic{border:0;width:50px;height:auto;flex-basis:50px}
-.item.libro .ic img{width:50px;border-radius:2px 5px 5px 2px;box-shadow:6px 8px 16px -8px rgba(0,0,0,.5)}
+/* ── la secuencia: días, pasos, estaciones (solo donde hay orden) ── */
+.secuencia{list-style:none;margin:0;padding:0;counter-reset:s}
+.secuencia li{position:relative;display:grid;grid-template-columns:70px 1fr;gap:0 18px;padding:22px 0;border-top:1px solid var(--linea)}
+.secuencia li:last-child{border-bottom:1px solid var(--linea)}
+.secuencia .sn{font-family:var(--f-titulo);font-size:19px;font-weight:600;color:var(--oro-texto);line-height:1.3;padding-top:6px}
+.secuencia .sn b{display:block;font-size:46px;font-weight:500;line-height:.9;color:var(--oro-texto)}
+.secuencia h3{font-size:clamp(28px,6.6vw,36px);line-height:1.08}
+.secuencia p{margin-top:6px;color:var(--tinta-2);font-size:18px;line-height:1.55}
+.secuencia li.sello h3{color:var(--tinta)}
+.secuencia li.sello::before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:2px;background:var(--oro)}
+@media (min-width:760px){ .secuencia li{grid-template-columns:110px 1fr} .secuencia li.sello::before{left:-22px} }
 
-/* ── testimonios ──────────────────────────── */
-.testi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+/* ── las voces: testimonios como láminas ── */
+.testi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media (max-width:759px){
-  .testi{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .testi{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1 * var(--margen));padding:6px var(--margen) 22px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .testi::-webkit-scrollbar{display:none}
-  .testi .tv{flex:0 0 58%;scroll-snap-align:center}
+  .testi .tv{flex:0 0 56%;scroll-snap-align:center}
 }
-.desliza{display:none;text-align:center;font-size:16px;color:var(--tinta-2);margin-top:2px}
+@media (min-width:1100px){ .testi.seis{grid-template-columns:repeat(6,1fr)} }
+.testi .tv.extra{display:none}
+.testi.todos .tv.extra{display:block}
+.tv{position:relative;aspect-ratio:9/16;border:0;padding:8px 8px 34px;background:var(--papel-2);border-radius:4px;cursor:pointer;box-shadow:0 0 0 1px var(--linea),0 18px 30px -24px rgba(43,39,36,.55);transition:transform .35s var(--e)}
+.tv:hover{transform:translateY(-3px)}
+.tv video,.tv img{width:100%;height:100%;object-fit:cover;border-radius:2px;background:var(--papel-3)}
+.tv .play{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:var(--tinta);white-space:nowrap}
+.tv .play::before{content:"";width:0;height:0;border-left:10px solid var(--tinta);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.tv .play::after{content:"Escuchar"}
+.desliza{display:none;font-size:16px;color:var(--tinta-2)}
 @media (max-width:759px){ .desliza{display:block} }
-.tv{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#2B2724;border:0;padding:0;cursor:pointer;box-shadow:var(--sombra)}
-.tv video,.tv img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s var(--e),opacity .3s}
-.tv:hover video,.tv:hover img{transform:scale(1.04);opacity:1}
-.tv .play{position:absolute;inset:auto auto 14px 14px;width:52px;height:52px;border-radius:50%;background:rgba(251,248,241,.94);display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(0,0,0,.6)}
-.tv .play::before{content:"";margin-left:4px;border-left:15px solid var(--tinta);border-top:9px solid transparent;border-bottom:9px solid transparent}
-.capturas{display:grid;gap:12px;margin-top:14px;grid-template-columns:repeat(3,1fr);align-items:start}
+.mas{display:flex;justify-content:flex-start;margin-top:22px}
+.capturas{display:grid;gap:14px;margin-top:28px;grid-template-columns:repeat(3,1fr);align-items:start}
 @media (max-width:759px){
-  .capturas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 26px;scrollbar-width:none}
+  .capturas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--margen));padding:6px var(--margen) 22px;scrollbar-width:none}
   .capturas::-webkit-scrollbar{display:none}
-  .capturas img{flex:0 0 80%;scroll-snap-align:center}
+  .capturas img{flex:0 0 78%;scroll-snap-align:center}
 }
-.capturas img{width:100%;border-radius:14px;border:1px solid var(--linea);box-shadow:var(--sombra);background:var(--papel-2)}
-.lb{position:fixed;inset:0;z-index:80;background:rgba(20,18,16,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.capturas img{width:100%;border-radius:4px;padding:8px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:130;background:rgba(43,39,36,.94);display:none;align-items:center;justify-content:center;padding:20px}
 .lb.on{display:flex}
-.lb .caja{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;border-radius:18px;overflow:hidden;background:#000}
+.lb .caja{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;border-radius:6px;overflow:hidden;background:#1d1a17}
 .lb .caja.h{width:min(960px,100%);aspect-ratio:16/9}
+.lb .caja.img{aspect-ratio:auto;width:auto;max-width:min(560px,100%);max-height:88vh;background:none;overflow:auto}
+.lb .caja.img img{width:100%;height:auto;border-radius:4px}
 .lb video,.lb iframe{width:100%;height:100%;border:0;display:block}
-.lb .cerrar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;width:52px;height:52px;border-radius:50%;border:0;background:#FBF8F1;font-size:28px;line-height:1;cursor:pointer}
+.lb .cerrar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;width:52px;height:52px;border-radius:50%;border:0;background:var(--papel-2);font-size:28px;line-height:1;cursor:pointer}
 
-/* ── autor ────────────────────────────────── */
-.autor{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;padding:clamp(22px,5vw,32px)}
-@media (max-width:520px){ .autor{grid-template-columns:1fr} }
-.autor img.foto{width:120px;height:120px;object-fit:cover;border-radius:50%;box-shadow:0 0 0 1px var(--oro),0 0 0 7px var(--papel-2),0 0 0 8px var(--linea)}
-.autor b{font-family:var(--f-titulo);font-size:30px;font-weight:600;display:block;line-height:1.1}
-.autor .rol{font-size:16px;font-weight:700;color:var(--oro-texto);letter-spacing:.06em;margin-top:4px}
-.autor p.bio{margin-top:14px;font-size:18px;color:var(--tinta-2)}
-.estante{display:grid;grid-template-columns:repeat(8,minmax(0,46px));gap:6px;margin-top:18px;align-items:end}
-.estante img{width:100%;border-radius:1px 3px 3px 1px;box-shadow:4px 6px 12px -6px rgba(0,0,0,.55)}
+/* ── quién escribe ── */
+.autor{display:grid;gap:30px}
+.autor .lamina{margin:0;max-width:380px}
+.autor .lamina img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:4px;padding:10px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea),var(--sombra)}
+.autor figcaption{margin-top:12px;font-style:italic;font-size:16px;color:var(--tinta-2)}
+.autor .lideres{margin-top:26px;border-top:1px solid var(--linea)}
+.autor .lideres .fila{padding:12px 0}
+.autor .lideres .t{font-size:18px}
+.autor .lideres .d{font-family:var(--f-titulo);font-size:24px;font-weight:600;color:var(--tinta)}
+.firma{margin-top:26px;font-family:var(--f-titulo);font-style:italic;font-size:26px;line-height:1.25}
+@media (min-width:1000px){ .autor{grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:56px;align-items:start} }
 
-/* ── la oferta ────────────────────────────── */
-.planes{display:grid;gap:18px;margin-top:44px}
-@media (min-width:860px){ .planes{grid-template-columns:1fr 1.12fr;align-items:stretch} }
-.plan{padding:clamp(24px,5vw,34px);display:flex;flex-direction:column;position:relative}
-.plan.fuerte{border:1px solid var(--tinta);box-shadow:0 0 0 1px var(--tinta),var(--sombra)}
-.plan .cinta{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--tinta);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap}
-.plan .nom{font-family:var(--f-titulo);font-size:clamp(32px,7vw,40px);font-weight:600;line-height:1.05;text-wrap:balance}
-.plan .que{font-size:17px;color:var(--tinta-2);margin-top:6px}
-.plan .precio{display:flex;align-items:baseline;gap:10px;margin-top:20px;flex-wrap:wrap}
-.plan .precio b{font-family:var(--f-titulo);font-weight:600;font-size:clamp(64px,15vw,84px);line-height:.9}
-.plan .precio small{font-size:18px;font-weight:700;color:var(--tinta-2)}
-.plan .antes{font-size:17px;color:var(--tinta-2);margin-top:8px}
-.plan .antes s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
-.plan ul{list-style:none;margin:22px 0 26px;padding:0;display:grid;gap:12px;align-content:start;flex:1}
-.plan li{position:relative;padding-left:34px;font-size:17px;line-height:1.45}
-.plan li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
-.plan .tapas{display:flex;margin:18px 0 4px;padding-left:10px}
-.plan .tapas img{width:46px;margin-left:-10px;border-radius:1px 3px 3px 1px;box-shadow:4px 6px 12px -6px rgba(0,0,0,.6);transition:transform .35s var(--e)}
-.plan:hover .tapas img{transform:translateY(-4px)}
-.plan .tapas img:nth-child(2n):hover{transform:translateY(-8px)}
-.seguro{display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;color:var(--tinta-2);margin-top:14px}
-.seguro svg{flex:0 0 22px;width:22px;height:22px;stroke:var(--verde);fill:none;stroke-width:1.8}
-
-/* ── preguntas ────────────────────────────── */
-.faq{margin-top:36px;border-top:1px solid var(--linea)}
+/* ── preguntas ── */
+.faq{border-top:1px solid var(--linea)}
 .fq{border-bottom:1px solid var(--linea)}
-.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;background:none;border:0;padding:22px 0;font-weight:700;font-size:19px;cursor:pointer}
-.fq button i{flex:0 0 32px;height:32px;border-radius:50%;border:1px solid var(--oro);position:relative;font-style:normal;transition:transform .35s var(--e)}
-.fq button i::before,.fq button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--tinta);transform:translate(-50%,-50%)}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;background:none;border:0;padding:22px 0;font-weight:600;font-size:19px;line-height:1.4;cursor:pointer}
+.fq button i{flex:0 0 30px;height:30px;border-radius:50%;border:1px solid var(--oro);position:relative;font-style:normal;transition:transform .35s var(--e)}
+.fq button i::before,.fq button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:var(--tinta);transform:translate(-50%,-50%)}
 .fq button i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--e)}
 .fq.op button i{transform:rotate(180deg)}
 .fq.op button i::after{transform:translate(-50%,-50%) rotate(0)}
@@ -297,106 +335,82 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .fq .r>div{overflow:hidden}
 .fq .r p{padding:0 0 22px;color:var(--tinta-2);font-size:18px}
 
-/* ── cierre y pie ─────────────────────────── */
-.frase-final{font-family:var(--f-titulo);font-size:clamp(46px,11vw,80px);line-height:1;letter-spacing:-.02em}
-.frase-final em{color:var(--oro-texto)}
-.pie{border-top:1px solid var(--linea);padding:40px 0 calc(120px + env(safe-area-inset-bottom,0px));text-align:center;font-size:16px;color:var(--tinta-2)}
-.pie p+p{margin-top:10px}
-.pie a{color:var(--tinta-2)}
+/* ── el colofón: el cierre del libro ── */
+.colofon{padding:clamp(80px,12vw,140px) 0 calc(130px + env(safe-area-inset-bottom,0px));text-align:center;border-top:1px solid var(--linea);margin-top:clamp(76px,12vw,140px)}
+.colofon .cierre{font-family:var(--f-titulo);font-size:clamp(40px,10vw,72px);line-height:1.02;max-width:15em;margin:0 auto;text-wrap:balance}
+.colofon .acciones{justify-content:center}
+.lomitos{display:flex;justify-content:center;gap:3px;height:46px;align-items:flex-end;margin:clamp(64px,10vw,100px) auto 26px}
+.lomitos i{width:9px;border-radius:1px 1px 0 0;background:var(--c);box-shadow:inset 0 0 0 1px rgba(43,39,36,.08)}
+.colofon nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 22px;max-width:760px;margin:0 auto}
+.colofon nav a{padding:8px 2px;font-size:17px;font-weight:500;text-decoration:none}
+.colofon nav a:hover{text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px}
+.colofon .nota-final{max-width:34em;margin:30px auto 0;font-style:italic;font-size:16px;line-height:1.55;color:var(--tinta-2)}
+.colofon .legal{max-width:40em;margin:14px auto 0;font-size:16px;line-height:1.5;color:var(--tinta-2)}
 
-/* la barra que acompaña en el teléfono */
-.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .45s var(--e)}
+/* ── la barra que acompaña en el teléfono ── */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px var(--margen) calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .45s var(--e)}
 .barra.on{transform:none}
-.barra .btn{width:100%;min-height:58px}
+.barra .btn{width:100%;padding-block:17px}
 @media (min-width:900px){ .barra{display:none} }
 
-/* el aviso que aparece abajo cuando algo se copia o se envía */
-.aviso{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:90;background:var(--tinta);color:var(--papel-2);padding:12px 20px;border-radius:999px;font-weight:700;font-size:16px;transition:all .35s var(--e);pointer-events:none}
+/* el aviso corto */
+.aviso{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:140;background:var(--tinta);color:var(--papel-2);padding:12px 20px;border-radius:12px;font-weight:600;font-size:16px;transition:all .35s var(--e);pointer-events:none}
 .aviso.on{opacity:1;transform:translate(-50%,0)}
 
-/* los números de los círculos y las cifras grandes, siempre de pie (la Cormorant los trae «antiguos») */
-.tres b,.piso .pn,.paso-g .n,.dl b,.el-libro b{font-variant-numeric:lining-nums}
-
-/* ── GHL: fondo parejo aunque meta la página en una caja; la barra fija deja su lugar ── */
-html,body{overflow-x:hidden;overflow-x:clip}
-.c-section,.c-row,.c-column,.c-wrapper,.hl_page-preview--content,.preview-container{background:var(--papel)!important}
-.top + main{padding-top:78px}
-.sin-pago,.con-pago{display:none}
-img[data-img]:not([src]){visibility:hidden}
-/* el estante */
-.estante{display:grid;grid-template-columns:repeat(8,minmax(0,46px));gap:6px;margin-top:18px;align-items:end}
-/* el menú del pie: todas las páginas se conocen */
-.pie nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin-bottom:14px}
-.pie nav a{padding:8px 2px;font-weight:700;color:var(--tinta);text-decoration:none}
-.pie nav a:hover{text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px}
-html{font-variant-numeric:lining-nums}
-
-/* ── v2 · el muro, las fotos, las capturas, los lomos ── */
-.testi .tv.extra{display:none}
-.testi.todos .tv.extra{display:block}
-.mas{display:flex;justify-content:center;margin-top:18px}
-.tv img{width:100%;height:100%;object-fit:cover}
-.tv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,18,16,.38));pointer-events:none}
-.tv .play{z-index:2}
-@media (min-width:760px){ .testi{grid-template-columns:repeat(4,1fr)} }
-@media (min-width:1100px){ .testi.seis{grid-template-columns:repeat(6,1fr)} }
-.capturas img.cap{cursor:zoom-in}
-.lb .caja.img{aspect-ratio:auto;width:auto;max-width:min(560px,100%);max-height:88vh;background:none;overflow:auto}
-.lb .caja.img img{width:100%;height:auto;border-radius:14px}
-.fotos-banda{overflow:hidden;padding-block:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.cinta-fotos{display:flex;gap:12px;width:max-content;animation:pasa 70s linear infinite}
-.fotos-banda:hover .cinta-fotos{animation-play-state:paused}
-.cinta-fotos img{height:clamp(170px,26vw,250px);width:auto;border-radius:16px;box-shadow:0 18px 30px -22px rgba(43,39,36,.6);background:var(--papel-3);flex:none}
-@keyframes pasa{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){ .cinta-fotos{animation:none} .fotos-banda{overflow-x:auto} }
-.lomos{display:flex;height:4px;border-radius:4px;overflow:hidden;max-width:220px}
-.lomos i{flex:1}
-.lomos i:nth-child(1){background:var(--lago)}.lomos i:nth-child(2){background:var(--montana)}.lomos i:nth-child(3){background:var(--viento)}.lomos i:nth-child(4){background:var(--rio)}.lomos i:nth-child(5){background:var(--bosque)}.lomos i:nth-child(6){background:var(--sanadores)}.lomos i:nth-child(7){background:var(--libertades)}.lomos i:nth-child(8){background:var(--tinta)}
-.centro .lomos{margin-inline:auto}
-.pie .lomos{margin:0 auto 22px}
-/* la puerta de los primeros capítulos */
-.puerta{margin:26px auto 0;max-width:520px;text-align:left;border:1px solid var(--linea);border-radius:22px;background:var(--papel-2);padding:22px 20px 16px}
-.puerta p.puerta-t{font-family:var(--f-titulo);font-size:28px;line-height:1.15;color:var(--tinta);margin:0 0 8px}
-.puerta p.puerta-b{font-family:var(--f-texto);font-size:17px;line-height:1.55;color:var(--tinta-2);margin:0 0 16px}
-.puerta p.puerta-alt{font-family:var(--f-texto);font-size:16px;color:var(--tinta-2);margin:12px 0 0}
-
-/* ── lista de espera ── */
+/* ── las ventanas: lista de espera y la puerta de las herramientas ── */
 .espera-fondo{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(43,39,36,.55)}
-.espera{position:relative;width:100%;max-width:460px;padding:30px 26px 18px;text-align:left}
-.espera .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
-.espera-t{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.1}
-.espera p{margin-top:8px;font-size:17px}
-.espera-x{position:absolute;top:6px;right:10px;width:44px;height:44px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--tinta)}
+.espera{position:relative;width:100%;max-width:470px;padding:32px 26px 18px;text-align:left;background:var(--papel-2);border-radius:18px;box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.6),var(--sombra)}
+.espera .eti{display:block;font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.espera-t{display:block;margin-top:8px;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.08}
+.espera p{margin-top:10px;font-size:17px;line-height:1.5}
+.espera-x{position:absolute;top:10px;right:12px;width:44px;height:44px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--tinta)}
+/* la puerta de los primeros capítulos */
+.puerta{margin:26px auto 0;max-width:520px;text-align:left;border-radius:18px;background:var(--papel-2);padding:24px 22px 16px;box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.6)}
+.puerta p.puerta-t{font-family:var(--f-titulo);font-size:30px;line-height:1.12;color:var(--tinta);margin:0 0 8px}
+.puerta p.puerta-b{font-size:17px;line-height:1.55;color:var(--tinta-2);margin:0 0 16px}
+.puerta p.puerta-alt{font-size:16px;color:var(--tinta-2);margin:12px 0 0}
 
-/* ── tarjeta de estación del camino (herramientas, capítulos) ── */
-.estacion-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(20px,4vw,28px);text-decoration:none;color:inherit}
-.estacion-x img{width:96px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55);transition:transform .35s var(--e)}
-.estacion-x:hover img{transform:translateY(-4px)}
-.estacion-x .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
-.estacion-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:4px}
-.estacion-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
-.estacion-x .ir{display:inline-block;margin-top:10px;font-weight:800}
-@media (max-width:420px){ .estacion-x{grid-template-columns:72px 1fr;gap:16px} .estacion-x img{width:72px} }
-/* la ficha de la estación, arriba de cada primer capítulo (8 nov 2026) */
-.ficha-est{display:flex;flex-direction:column;gap:4px;max-width:30em;margin:22px auto 0;padding:16px 18px;border:1px solid var(--linea);border-top:4px solid var(--c,var(--oro));border-radius:16px;background:var(--papel-2);text-align:left;font-family:var(--f-texto);font-size:17px;line-height:1.45;color:var(--tinta-2)}
-.ficha-est .fe-k{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
-.ficha-est b{font-family:var(--f-titulo);font-size:25px;font-weight:600;line-height:1.15;color:var(--tinta)}
+/* la cinta de fotos: la vida real, en láminas */
+.fotos-banda{overflow:hidden;padding-block:6px}
+.cinta-fotos{display:flex;gap:14px;width:max-content;animation:pasa 80s linear infinite}
+.fotos-banda:hover .cinta-fotos{animation-play-state:paused}
+.cinta-fotos img{height:clamp(180px,26vw,260px);width:auto;border-radius:3px;padding:7px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);flex:none}
+@keyframes pasa{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){ .cinta-fotos{animation:none} .fotos-banda{overflow-x:auto} html{scroll-behavior:auto} }
+
+/* lo que ya no se usa en esta piel: si una página vieja lo trae, no se esconde */
+.rv{opacity:1;transform:none}
+
+/* ── lo que traen las páginas que vienen de la piel anterior ── */
+.btn:not([data-ir="-1"]) .fl{display:none}
+.card{background:var(--papel-2);border-radius:18px;box-shadow:0 0 0 1px var(--linea)}
+/* la ficha de la estación, arriba de cada primer capítulo */
+.ficha-est{display:flex;flex-direction:column;gap:4px;max-width:30em;margin:26px auto 0;padding:16px 18px 16px 20px;border-left:2px solid var(--c,var(--oro));background:var(--papel-2);border-radius:0 12px 12px 0;text-align:left;font-size:17px;line-height:1.5;color:var(--tinta-2);box-shadow:0 0 0 1px var(--linea)}
+.ficha-est .fe-k{font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.ficha-est b{font-family:var(--f-titulo);font-size:26px;font-weight:600;line-height:1.15;color:var(--tinta)}
 .ficha-est .link{margin-top:6px;align-self:flex-start;color:var(--tinta);font-size:16px}
+/* la cuenta: tu hora real */
+.cuenta{margin-top:36px;padding:clamp(22px,5vw,34px)}
+.cuenta .filas{display:grid;gap:22px}
+.rango label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:600;font-size:18px}
+.rango label small{display:block;font-weight:400;font-size:16px;color:var(--tinta-2)}
+.rango output{font-family:var(--f-titulo);font-size:32px;font-weight:600;color:var(--tinta);white-space:nowrap}
+.rango input[type=range]{width:100%;margin-top:10px;accent-color:var(--tinta);height:28px}
+.resultado{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.res{border-radius:12px;padding:18px;background:var(--papel);box-shadow:0 0 0 1px var(--linea)}
+.res span{display:block;font-size:16px;font-weight:600;color:var(--tinta-2)}
+.res b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(46px,11vw,64px);line-height:1;margin-top:6px}
+.res.real{background:var(--tinta);box-shadow:inset 0 0 0 4px var(--tinta),inset 0 0 0 5px var(--oro)}
+.res.real span{color:#D9CBB0}
+.res.real b{color:var(--oro-claro)}
+.veredicto{margin-top:20px;font-size:19px;line-height:1.55}
+.veredicto b{font-weight:700}
 
-/* ── el puente a la Edición Libres (9 nov 2026) ──
-   Las páginas que todavía usan esta piel toman la letra de libro (Literata), el botón con su filete de oro,
-   los títulos sin la palabra dorada y los botones sin flecha. */
-body{font-weight:400}
-.btn{border-radius:14px;font-weight:600;box-shadow:inset 0 0 0 4px var(--tinta),inset 0 0 0 5px var(--oro),0 16px 30px -20px rgba(43,39,36,.7)}
-.btn:hover{background:#3A332E;box-shadow:inset 0 0 0 4px #3A332E,inset 0 0 0 5px var(--oro),0 20px 34px -20px rgba(43,39,36,.75)}
-.btn.claro{box-shadow:inset 0 0 0 1px var(--tinta)}
-.btn.wa{box-shadow:inset 0 0 0 4px var(--verde),inset 0 0 0 5px rgba(168,135,90,.7),0 16px 30px -20px rgba(47,86,56,.7)}
-.btn .fl{display:none}
-.t1 em,.t2 em,.t3 em,.frase-final em,.frases-javo em{color:inherit}
-.kick{font-weight:600;letter-spacing:.16em}
-.kick::before,.centro .kick::after{display:none}
-.cinta,.puerta .cinta,.plan .cinta{border-radius:10px;font-weight:600}
-.marca small{font-family:var(--f-texto);font-weight:600}
+@media (max-width:520px){ .oferta .lideres .pg{display:none} .oferta .lideres .d{margin-left:auto;padding-left:14px} }
+
+/* el precio en los botones: junto en la pantalla ancha, en su propia línea en el celular */
+.pr{white-space:nowrap}
+@media (max-width:520px){ .btn .pr{display:block;margin-top:3px;font-weight:500} .btn .pr .sep{display:none} }
 
 </style>
 <script>
@@ -555,99 +569,107 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 
 </script>
 <style>
-.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(36px,6vw,64px)}
-
-.med{padding-top:clamp(24px,5vw,56px);padding-bottom:clamp(40px,7vw,72px)}
-.med .grid{display:grid;gap:32px;align-items:center}
-@media (min-width:900px){ .med .grid{grid-template-columns:.8fr 1.2fr;gap:56px} }
-.med-tapa{width:min(240px,58vw);margin:0 auto;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.6);transform:rotate(-2deg)}
-.palabra{display:block;font-family:var(--f-titulo);font-size:clamp(20px,4vw,24px);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
-.med h1{font-size:clamp(52px,13vw,96px);line-height:.98;color:var(--tinta)}
-.med .momento{display:inline-block;margin-top:16px;padding:8px 14px;border:1px solid var(--linea);border-top:3px solid var(--c);border-radius:12px;background:var(--papel-2);font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--oro-texto)}
-.med .lead{max-width:30em}
-.medita-video{position:relative;aspect-ratio:16/9;margin-top:34px;border-radius:var(--r);overflow:hidden;background:var(--papel-3);box-shadow:var(--sombra)}
+@media (min-width:1000px){ .pliego h1{font-size:clamp(64px,6vw,96px)} .pliego>.verso{order:-1} }
+.palabra{display:block;margin-top:14px;font-family:var(--f-titulo);font-size:clamp(20px,4vw,23px);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--ct,var(--c))}
+.momento{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta)}
+.momento::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+.medita-video{position:relative;aspect-ratio:16/9;margin-top:28px;border-radius:14px;overflow:hidden;background:var(--papel-3);box-shadow:0 0 0 1px var(--linea),var(--sombra)}
 .medita-video iframe,.medita-video button{position:absolute;inset:0;width:100%;height:100%;border:0}
 .medita-video button{display:grid;place-items:center;padding:0;cursor:pointer;background:var(--papel-3) center/cover no-repeat}
 .medita-video .play{width:76px;height:76px;border-radius:50%;background:var(--tinta);display:grid;place-items:center;box-shadow:0 0 0 6px rgba(251,248,241,.9)}
 .medita-video .play::before{content:"";margin-left:6px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent var(--papel-2)}
-.medita-video .pronto{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:24px;text-align:center;background:var(--papel-2);box-shadow:inset 0 0 0 1px var(--linea);border-radius:var(--r)}
+.medita-video .pronto{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:24px;text-align:center;background:var(--papel-2);box-shadow:inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75)}
 .medita-video .pronto b{font-family:var(--f-titulo);font-size:clamp(26px,5vw,34px);font-weight:600;line-height:1.15}
-.medita-video .pronto span{font-size:17px;color:var(--tinta-2);max-width:26em}
-.como{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
-.como li{position:relative;padding-left:26px;font-size:18px;color:var(--tinta-2)}
-.como li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--c)}
-.seguir{display:grid;gap:14px;margin-top:8px}
-@media (min-width:860px){ .seguir{grid-template-columns:1fr 1fr} }
-.seguir .card{padding:clamp(22px,4vw,30px);display:flex;flex-direction:column;gap:6px}
-.seguir .eti{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
-.seguir b{font-family:var(--f-titulo);font-size:clamp(28px,5vw,34px);font-weight:600;line-height:1.1}
-.seguir p{font-size:18px;color:var(--tinta-2)}
-.seguir .botones{margin-top:14px}
-
+.medita-video .pronto span{font-size:17px;line-height:1.5;color:var(--tinta-2);max-width:26em}
+.como{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:8px}
+.como li{position:relative;padding-left:24px;font-size:17px;color:var(--tinta-2)}
+.como li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--c)}
+.tapa-med{margin:0 auto;max-width:280px}
+.tapa-med img{display:block;width:100%;height:auto;border-radius:2px 6px 6px 2px;box-shadow:0 0 0 1px rgba(43,39,36,.06),16px 26px 46px -20px rgba(43,39,36,.6);transform:rotate(-2deg)}
+.seguir{display:grid;gap:22px}
+@media (min-width:860px){ .seguir{grid-template-columns:1fr 1fr;gap:32px;align-items:stretch} }
+.seguir>div{padding:clamp(24px,5vw,34px);border-radius:16px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);display:flex;flex-direction:column}
+.seguir>div.oferta{max-width:none;box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75),var(--sombra)}
+.seguir b{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:clamp(30px,6vw,36px);font-weight:600;line-height:1.08}
+.seguir p.t{margin-top:8px;font-size:18px;line-height:1.55;color:var(--tinta-2)}
+.seguir .acciones{margin-top:auto;padding-top:20px}
 </style>
 </head>
-<body data-pagina="libro-lago" data-pagos="">
+<body data-pagina="libro-lago" data-pagos="" data-libro-titulo="La orilla · la meditación" style="--c:var(--lago)">
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-  <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Tu nuevo precio</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-link="libros" data-hash="#obra" href="#">Tu nuevo precio</a>
+  </div>
 </div></header>
 
 <main>
-
-<!-- ═══ LA MEDITACIÓN ═══ -->
-<section class="med" data-barra-desde style="--c:var(--lago)">
- <div class="wrap ancho"><div class="grid">
-  <img class="med-tapa rv" data-img="tapas/lago.webp" alt="Tapa de Lo que el lago te enseña" width="640" height="960" fetchpriority="high">
-  <div>
-   <span class="kick rv">Lo que el lago te enseña · tu meditación</span>
-   <span class="palabra rv">Lago</span>
-   <h1 class="rv d1">La orilla</h1>
-   <p class="lead rv d2">La meditación del lago. Cierra el libro y te acompaña el día 2 del camino: parar, respirar y volver a tu centro.</p>
-   <span class="momento rv d2">Estación 1 · día 2 del camino</span>
-   <div class="medita-video rv d3" data-yt="lago"><div class="pronto" hidden><b>Llega el 27 de noviembre</b><span>El día que se publica, la escuchas aquí mismo, con este mismo código.</span></div></div>
-   <ul class="como rv">
-    <li>Con auriculares, si puedes.</li>
-    <li>En un lugar donde nadie te interrumpa estos minutos.</li>
-   </ul>
-  </div>
- </div></div>
-</section>
-
-<!-- ═══ SEGUIR ═══ -->
-<section class="sec junto" data-barra-hasta style="--c:var(--lago)">
- <div class="wrap ancho">
-  <div class="seguir">
-   <div class="card rv">
-    <span class="eti">El primer capítulo</span>
-    <b>Lo que el lago te enseña</b>
-    <p>Léelo aquí mismo, página por página, sin costo.</p>
-    <div class="botones"><a class="btn claro" data-link="cap" data-hash="lago" href="#"><span>Leer el primer capítulo</span> <span class="fl">→</span></a></div>
+<section class="portadilla" data-barra-desde>
+ <div class="wrap">
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">Lo que el lago te enseña · tu meditación</p>
+    <span class="palabra">Lago</span>
+    <h1>La orilla</h1>
+    <span class="filete"></span>
+    <p class="bajada" style="margin-top:0">La meditación del lago. Cierra el libro y te acompaña el día 2 del camino: parar, respirar y volver a tu centro.</p>
+    <span class="momento">Estación 1 · día 2 del camino</span>
+    <div class="medita-video" data-yt="lago"><div class="pronto" hidden><b>Llega el 27 de noviembre</b><span>El día que se publica, la escuchas aquí mismo, con este mismo código.</span></div></div>
+    <ul class="como"><li>Con auriculares, si puedes.</li><li>En un lugar donde nadie te interrumpa estos minutos.</li></ul>
    </div>
-   <div class="card rv d1">
-    <span class="eti">Tu nuevo precio · <span data-precio="obra">97</span> USD</span>
-    <b>Los 8 libros y tu app</b>
-    <p><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> El día 5 sellas tu precio nuevo y el valor de tu hora.</p>
-    <div class="botones"><a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Empezar con Tu nuevo precio</span> <span class="fl">→</span></a></div>
+   <div class="verso">
+    <figure class="tapa-med"><img data-img="tapas/lago-grande.webp" alt="Tapa de Lo que el lago te enseña" width="480" height="721" fetchpriority="high"></figure>
    </div>
   </div>
-  <p class="micro centro rv"><a class="link" data-link="camino" href="#">Ver el mapa del camino de 90 días</a></p>
  </div>
 </section>
 
+<!-- ═══ 1 · PARA SEGUIR ═══ -->
+<section class="cap" id="seguir" data-capitulo="Para seguir" data-dato="el libro y tu app">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Para seguir.</h2>
+   <p class="bajada">El libro de esta meditación, y el camino entero de 90 días.</p>
+  </header>
+  <div class="ancho">
+   <div class="seguir">
+    <div>
+     <p class="serie">El primer capítulo</p>
+     <b>Lo que el lago te enseña</b>
+     <p class="t">Léelo aquí mismo, página por página, sin costo.</p>
+     <div class="acciones"><a class="btn claro" data-link="cap" data-hash="lago" href="#">Leer el primer capítulo</a></div>
+    </div>
+    <div class="oferta">
+     <p class="serie">Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></p>
+     <b>Los 8 libros y tu app</b>
+     <p class="t"><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> El día 5 sellas tu precio nuevo y el valor de tu hora.</p>
+     <div class="acciones"><a class="btn" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a></div>
+    </div>
+   </div>
+   <p style="margin-top:28px"><a class="link" data-link="camino" href="#">Ver el mapa del camino de 90 días</a></p>
+  </div>
+ </div>
+</section>
 </main>
 
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="recursos" href="#">Para empezar</a></nav>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
- <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
-</div></footer>
+<footer class="colofon" data-barra-hasta>
+ <div class="wrap">
+  <p class="cierre">Tu vida es una obra.</p>
+  <div class="acciones"><a class="btn" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a><a class="link" data-link="capitulo" href="#">Leer un primer capítulo</a></div>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a></nav>
+  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
+  <p class="legal">Javo Katz · Tu Clínica Digital. Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<div class="barra"><a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Empezar con Tu nuevo precio</span></a></div>
-<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+<div class="barra"><a class="btn" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a></div>
 
-<script>window.TCD_IMGS={"tapas/lago.webp": "data:image/webp;base64,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"};</script>
+<script>window.TCD_IMGS={"tapas/lago-grande.webp": "data:image/webp;base64,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"};</script>
 <script>
 /* ═══════════════════════════════════════════════════════════════
    Lo que hacen todas las páginas: precios y links desde config.js,
@@ -1119,6 +1141,139 @@ function formSrc(id, dato) {
     e.hidden = false;
   });
   if ((window.TCD || {}).audios97) document.querySelectorAll('[data-audios]').forEach(function (e) { e.hidden = false; });
+})();
+
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   EDICIÓN LIBRES · lo que hace que la página se lea como un libro:
+   la cabecera corriente, el índice y el estante. Corre después de base.js.
+   ═══════════════════════════════════════════════════════════════ */
+(function () {
+  var C = window.TCD || {};
+  var pagina = document.body.getAttribute('data-pagina') || '';
+  var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var caps = [].slice.call(document.querySelectorAll('[data-capitulo]'));
+
+  /* ── la cabecera corriente: dice en qué capítulo estás ── */
+  var rotulo = document.querySelector('.rotulo');
+  if (rotulo && caps.length && 'IntersectionObserver' in window) {
+    var visibles = new Set();
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target); });
+      var s = caps.filter(function (c) { return visibles.has(c); })[0];
+      if (!s) { rotulo.classList.remove('on'); return; }
+      var n = s.querySelector('.cap-n');
+      rotulo.innerHTML = '';
+      if (n) { var b = document.createElement('b'); b.textContent = n.textContent.trim(); rotulo.appendChild(b); }
+      rotulo.appendChild(document.createTextNode(s.getAttribute('data-capitulo')));
+      rotulo.classList.add('on');
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    caps.forEach(function (c) { io.observe(c); });
+  }
+
+  /* ── el índice: los capítulos de esta página y las otras páginas ── */
+  var OTRAS = [
+    ['inicio', 'Inicio', 'quién soy y por dónde empezar'],
+    ['camino', 'El camino', '90 días, del lago al bosque'],
+    ['libros', 'Los libros', 'Tu nuevo precio'],
+    ['capitulo', 'Los primeros capítulos', 'para leer aquí mismo'],
+    ['recursos', 'Para empezar', 'seis herramientas'],
+    ['agenda', 'Mentoría e instalación', 'tu diagnóstico'],
+    ['laCima', 'La Cima', '4 días en Bariloche'],
+    ['prensa', 'Prensa', 'para presentarme']
+  ];
+  var MIA = { inicio: 'inicio', camino: 'camino', libros: 'libros', capitulo: 'capitulo', recursos: 'recursos', 'la-cima': 'laCima', prensa: 'prensa' };
+  var botones = document.querySelectorAll('[data-indice]');
+  if (botones.length) {
+    var ind = document.createElement('div');
+    ind.className = 'indice'; ind.setAttribute('role', 'dialog'); ind.setAttribute('aria-modal', 'true'); ind.setAttribute('aria-label', 'Índice');
+    var h = '<div class="indice-in"><div class="indice-cab"><span class="marca">Javo Katz</span>' +
+      '<button type="button" class="indice-x" aria-label="Cerrar el índice">×</button></div>' +
+      '<h2>Índice</h2><p class="ind-sub"></p><ol class="lideres">';
+    caps.forEach(function (c, i) {
+      if (!c.id) c.id = 'cap-' + (i + 1);
+      var n = c.querySelector('.cap-n');
+      h += '<li><a href="#' + c.id + '"><span class="n">' + (n ? n.textContent.trim() : i + 1) + '</span><span class="t"></span>' +
+        '<span class="pg"></span><span class="d"></span></a></li>';
+    });
+    h += '</ol><p class="ind-otras">Más de Javo Katz</p><ul class="lideres otras">';
+    OTRAS.forEach(function (o) {
+      if (!C[o[0]] || MIA[pagina] === o[0]) return;
+      h += '<li><a href="' + C[o[0]] + '"><span class="t">' + o[1] + '</span><span class="pg"></span><span class="d">' + o[2] + '</span></a></li>';
+    });
+    h += '</ul></div>';
+    ind.innerHTML = h;
+    ind.querySelector('.ind-sub').textContent = document.body.getAttribute('data-libro-titulo') || document.title.split(' · ')[0];
+    var ts = ind.querySelectorAll('ol.lideres li');
+    caps.forEach(function (c, i) {
+      ts[i].querySelector('.t').textContent = c.getAttribute('data-capitulo');
+      ts[i].querySelector('.d').textContent = c.getAttribute('data-dato') || '';
+    });
+    document.body.appendChild(ind);
+    var antes = null;
+    function abrir(b) {
+      antes = b; ind.classList.add('on'); document.documentElement.style.overflow = 'hidden';
+      setTimeout(function () { ind.querySelector('.indice-x').focus(); }, 60);
+      if (window.pxc) pxc('Indice', { pagina: pagina });
+    }
+    function cerrar() { ind.classList.remove('on'); document.documentElement.style.overflow = ''; if (antes) antes.focus(); }
+    botones.forEach(function (b) { b.addEventListener('click', function () { abrir(b); }); });
+    ind.querySelector('.indice-x').addEventListener('click', cerrar);
+    ind.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { if (a.getAttribute('href').charAt(0) === '#') cerrar(); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ind.classList.contains('on')) cerrar(); });
+  }
+
+  /* ── el estante: los 8 libros. Al tocar un lomo, el libro sale y su ficha aparece abajo ── */
+  document.querySelectorAll('[data-estante]').forEach(function (est) {
+    var lomos = [].slice.call(est.querySelectorAll('.lomo'));
+    var ficha = est.querySelector('.ficha-libro');
+    if (!lomos.length || !ficha) return;
+    var q = function (s) { return ficha.querySelector(s); };
+    function elegir(b, porUsuario) {
+      lomos.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var d = b.dataset;
+      function poner() {
+        var im = q('img'), E = window.TCD_IMGS || {};
+        if (E[d.tapa]) im.src = E[d.tapa];
+        im.alt = 'Tapa de ' + d.titulo;
+        q('.fl-serie').textContent = d.serie;
+        q('.fl-tit').textContent = d.titulo;
+        q('.fl-sub').textContent = d.sub;
+        q('.fl-frase').textContent = d.frase;
+        var a = q('[data-cap-libro]');
+        if (a) { a.href = (C.cap || '/capitulo-') + d.libro; a.textContent = d.leer || 'Leer el primer capítulo'; }
+        var v = q('[data-ver-libro]'); if (v) v.href = '#' + d.libro;
+        ficha.classList.remove('cambia');
+      }
+      if (porUsuario && !quieto) { ficha.classList.add('cambia'); setTimeout(poner, 170); } else poner();
+      if (porUsuario && window.pxc) pxc('Estante', { libro: d.libro, pagina: pagina });
+    }
+    lomos.forEach(function (b, i) {
+      b.addEventListener('click', function () { elegir(b, true); });
+      b.addEventListener('keydown', function (e) {
+        var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!k) return;
+        e.preventDefault(); var o = lomos[(i + k + lomos.length) % lomos.length]; o.focus(); elegir(o, true);
+      });
+    });
+    window.TCD_ESTANTE = function (libro) { var b = est.querySelector('.lomo[data-libro="' + libro + '"]'); if (b) elegir(b, false); };
+    var inicial = est.querySelector('.lomo[data-inicial]') || lomos[0];
+    if (quieto || !('IntersectionObserver' in window)) { elegir(inicial, false); return; }
+    /* la entrada: los libros se acomodan en el estante, uno por uno, y el primero sale */
+    est.classList.add('llega');
+    var vio = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      vio.disconnect();
+      lomos.forEach(function (b, i) { b.style.transitionDelay = (120 + i * 85) + 'ms'; });
+      requestAnimationFrame(function () { requestAnimationFrame(function () { est.classList.remove('llega'); }); });
+      setTimeout(function () {
+        lomos.forEach(function (b) { b.style.transitionDelay = ''; });
+        elegir(inicial, false);
+      }, 120 + lomos.length * 85 + 560);
+    }, { threshold: .3 });
+    vio.observe(est);
+  });
 })();
 
 </script>

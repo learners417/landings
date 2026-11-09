@@ -12,102 +12,110 @@
 <meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
-.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(36px,6vw,64px)}
-
-.med{padding-top:clamp(24px,5vw,56px);padding-bottom:clamp(40px,7vw,72px)}
-.med .grid{display:grid;gap:32px;align-items:center}
-@media (min-width:900px){ .med .grid{grid-template-columns:.8fr 1.2fr;gap:56px} }
-.med-tapa{width:min(240px,58vw);margin:0 auto;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.6);transform:rotate(-2deg)}
-.palabra{display:block;font-family:var(--f-titulo);font-size:clamp(20px,4vw,24px);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
-.med h1{font-size:clamp(52px,13vw,96px);line-height:.98;color:var(--tinta)}
-.med .momento{display:inline-block;margin-top:16px;padding:8px 14px;border:1px solid var(--linea);border-top:3px solid var(--c);border-radius:12px;background:var(--papel-2);font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--oro-texto)}
-.med .lead{max-width:30em}
-.medita-video{position:relative;aspect-ratio:16/9;margin-top:34px;border-radius:var(--r);overflow:hidden;background:var(--papel-3);box-shadow:var(--sombra)}
+@media (min-width:1000px){ .pliego h1{font-size:clamp(64px,6vw,96px)} .pliego>.verso{order:-1} }
+.palabra{display:block;margin-top:14px;font-family:var(--f-titulo);font-size:clamp(20px,4vw,23px);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--ct,var(--c))}
+.momento{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta)}
+.momento::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+.medita-video{position:relative;aspect-ratio:16/9;margin-top:28px;border-radius:14px;overflow:hidden;background:var(--papel-3);box-shadow:0 0 0 1px var(--linea),var(--sombra)}
 .medita-video iframe,.medita-video button{position:absolute;inset:0;width:100%;height:100%;border:0}
 .medita-video button{display:grid;place-items:center;padding:0;cursor:pointer;background:var(--papel-3) center/cover no-repeat}
 .medita-video .play{width:76px;height:76px;border-radius:50%;background:var(--tinta);display:grid;place-items:center;box-shadow:0 0 0 6px rgba(251,248,241,.9)}
 .medita-video .play::before{content:"";margin-left:6px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent var(--papel-2)}
-.medita-video .pronto{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:24px;text-align:center;background:var(--papel-2);box-shadow:inset 0 0 0 1px var(--linea);border-radius:var(--r)}
+.medita-video .pronto{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:24px;text-align:center;background:var(--papel-2);box-shadow:inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75)}
 .medita-video .pronto b{font-family:var(--f-titulo);font-size:clamp(26px,5vw,34px);font-weight:600;line-height:1.15}
-.medita-video .pronto span{font-size:17px;color:var(--tinta-2);max-width:26em}
-.como{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
-.como li{position:relative;padding-left:26px;font-size:18px;color:var(--tinta-2)}
-.como li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--c)}
-.seguir{display:grid;gap:14px;margin-top:8px}
-@media (min-width:860px){ .seguir{grid-template-columns:1fr 1fr} }
-.seguir .card{padding:clamp(22px,4vw,30px);display:flex;flex-direction:column;gap:6px}
-.seguir .eti{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
-.seguir b{font-family:var(--f-titulo);font-size:clamp(28px,5vw,34px);font-weight:600;line-height:1.1}
-.seguir p{font-size:18px;color:var(--tinta-2)}
-.seguir .botones{margin-top:14px}
-
+.medita-video .pronto span{font-size:17px;line-height:1.5;color:var(--tinta-2);max-width:26em}
+.como{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:8px}
+.como li{position:relative;padding-left:24px;font-size:17px;color:var(--tinta-2)}
+.como li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--c)}
+.tapa-med{margin:0 auto;max-width:280px}
+.tapa-med img{display:block;width:100%;height:auto;border-radius:2px 6px 6px 2px;box-shadow:0 0 0 1px rgba(43,39,36,.06),16px 26px 46px -20px rgba(43,39,36,.6);transform:rotate(-2deg)}
+.seguir{display:grid;gap:22px}
+@media (min-width:860px){ .seguir{grid-template-columns:1fr 1fr;gap:32px;align-items:stretch} }
+.seguir>div{padding:clamp(24px,5vw,34px);border-radius:16px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);display:flex;flex-direction:column}
+.seguir>div.oferta{max-width:none;box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75),var(--sombra)}
+.seguir b{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:clamp(30px,6vw,36px);font-weight:600;line-height:1.08}
+.seguir p.t{margin-top:8px;font-size:18px;line-height:1.55;color:var(--tinta-2)}
+.seguir .acciones{margin-top:auto;padding-top:20px}
 </style>
 </head>
-<body data-pagina="libro-lago" data-pagos="">
+<body data-pagina="libro-lago" data-pagos="" data-libro-titulo="La orilla · la meditación" style="--c:var(--lago)">
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-  <a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Tu nuevo precio</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-link="libros" data-hash="#obra" href="#">Tu nuevo precio</a>
+  </div>
 </div></header>
 
 <main>
-
-<!-- ═══ LA MEDITACIÓN ═══ -->
-<section class="med" data-barra-desde style="--c:var(--lago)">
- <div class="wrap ancho"><div class="grid">
-  <img class="med-tapa rv" data-img="tapas/lago.webp" alt="Tapa de Lo que el lago te enseña" width="640" height="960" fetchpriority="high">
-  <div>
-   <span class="kick rv">Lo que el lago te enseña · tu meditación</span>
-   <span class="palabra rv">Lago</span>
-   <h1 class="rv d1">La orilla</h1>
-   <p class="lead rv d2">La meditación del lago. Cierra el libro y te acompaña el día 2 del camino: parar, respirar y volver a tu centro.</p>
-   <span class="momento rv d2">Estación 1 · día 2 del camino</span>
-   <div class="medita-video rv d3" data-yt="lago"><div class="pronto" hidden><b>Llega el 27 de noviembre</b><span>El día que se publica, la escuchas aquí mismo, con este mismo código.</span></div></div>
-   <ul class="como rv">
-    <li>Con auriculares, si puedes.</li>
-    <li>En un lugar donde nadie te interrumpa estos minutos.</li>
-   </ul>
-  </div>
- </div></div>
-</section>
-
-<!-- ═══ SEGUIR ═══ -->
-<section class="sec junto" data-barra-hasta style="--c:var(--lago)">
- <div class="wrap ancho">
-  <div class="seguir">
-   <div class="card rv">
-    <span class="eti">El primer capítulo</span>
-    <b>Lo que el lago te enseña</b>
-    <p>Léelo aquí mismo, página por página, sin costo.</p>
-    <div class="botones"><a class="btn claro" data-link="cap" data-hash="lago" href="#"><span>Leer el primer capítulo</span> <span class="fl">→</span></a></div>
+<section class="portadilla" data-barra-desde>
+ <div class="wrap">
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">Lo que el lago te enseña · tu meditación</p>
+    <span class="palabra">Lago</span>
+    <h1>La orilla</h1>
+    <span class="filete"></span>
+    <p class="bajada" style="margin-top:0">La meditación del lago. Cierra el libro y te acompaña el día 2 del camino: parar, respirar y volver a tu centro.</p>
+    <span class="momento">Estación 1 · día 2 del camino</span>
+    <div class="medita-video" data-yt="lago"><div class="pronto" hidden><b>Llega el 27 de noviembre</b><span>El día que se publica, la escuchas aquí mismo, con este mismo código.</span></div></div>
+    <ul class="como"><li>Con auriculares, si puedes.</li><li>En un lugar donde nadie te interrumpa estos minutos.</li></ul>
    </div>
-   <div class="card rv d1">
-    <span class="eti">Tu nuevo precio · <span data-precio="obra">97</span> USD</span>
-    <b>Los 8 libros y tu app</b>
-    <p><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> El día 5 sellas tu precio nuevo y el valor de tu hora.</p>
-    <div class="botones"><a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Empezar con Tu nuevo precio</span> <span class="fl">→</span></a></div>
+   <div class="verso">
+    <figure class="tapa-med"><img data-img="tapas/lago-grande.webp" alt="Tapa de Lo que el lago te enseña" width="480" height="721" fetchpriority="high"></figure>
    </div>
   </div>
-  <p class="micro centro rv"><a class="link" data-link="camino" href="#">Ver el mapa del camino de 90 días</a></p>
  </div>
 </section>
 
+<!-- ═══ 1 · PARA SEGUIR ═══ -->
+<section class="cap" id="seguir" data-capitulo="Para seguir" data-dato="el libro y tu app">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Para seguir.</h2>
+   <p class="bajada">El libro de esta meditación, y el camino entero de 90 días.</p>
+  </header>
+  <div class="ancho">
+   <div class="seguir">
+    <div>
+     <p class="serie">El primer capítulo</p>
+     <b>Lo que el lago te enseña</b>
+     <p class="t">Léelo aquí mismo, página por página, sin costo.</p>
+     <div class="acciones"><a class="btn claro" data-link="cap" data-hash="lago" href="#">Leer el primer capítulo</a></div>
+    </div>
+    <div class="oferta">
+     <p class="serie">Tu nuevo precio · <span data-precio="obra">97</span> USD</p>
+     <b>Los 8 libros y tu app</b>
+     <p class="t"><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> El día 5 sellas tu precio nuevo y el valor de tu hora.</p>
+     <div class="acciones"><a class="btn" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a></div>
+    </div>
+   </div>
+   <p style="margin-top:28px"><a class="link" data-link="camino" href="#">Ver el mapa del camino de 90 días</a></p>
+  </div>
+ </div>
+</section>
 </main>
 
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="recursos" href="#">Para empezar</a></nav>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
- <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
-</div></footer>
+<footer class="colofon" data-barra-hasta>
+ <div class="wrap">
+  <p class="cierre">Tu vida es una obra.</p>
+  <div class="acciones"><a class="btn" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a><a class="link" data-link="capitulo" href="#">Leer un primer capítulo</a></div>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a></nav>
+  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
+  <p class="legal">Javo Katz · Tu Clínica Digital. Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<div class="barra"><a class="btn" data-link="libros" data-hash="#obra" href="#"><span>Empezar con Tu nuevo precio</span></a></div>
-<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
+<div class="barra"><a class="btn" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a></div>
 
-<script>/*BASE_JS*/</script>
+<script>/*EDICION_JS*/</script>
 <script>
 /* El video de la meditación: carga YouTube solo cuando tocas. Sin video todavía, dice cuándo llega. */
 (function () {

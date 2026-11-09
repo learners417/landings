@@ -408,6 +408,10 @@ img[data-img]:not([src]){visibility:hidden}
 
 @media (max-width:520px){ .oferta .lideres .pg{display:none} .oferta .lideres .d{margin-left:auto;padding-left:14px} }
 
+/* el precio en los botones: junto en la pantalla ancha, en su propia línea en el celular */
+.pr{white-space:nowrap}
+@media (max-width:520px){ .btn .pr{display:block;margin-top:3px;font-weight:500} .btn .pr .sep{display:none} }
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -675,7 +679,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
    </article>
    <article class="forma">
     <span class="n">2</span>
-    <div><p class="ol-serie">Tu nuevo precio · <span data-precio="obra">97</span> USD</p><h3>Los 8 libros y tu app</h3>
+    <div><p class="ol-serie">Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></p><h3>Los 8 libros y tu app</h3>
      <p class="que"><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> Ahí sellas tu precio nuevo en cinco días.</p>
      <div class="acc"><a class="btn claro" data-link="libros" data-hash="#obra" href="#">Empezar con Tu nuevo precio</a></div></div>
    </article>

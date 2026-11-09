@@ -3,118 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Materias pendientes · Javo Katz</title>
-<meta name="description" content="Lo que la escuela no te enseñó a propósito. Siete materias, un libro por materia, una habilidad por libro. En preparación.">
+<title>Materias pendientes · nueva colección · Javo Katz</title>
+<meta name="description" content="Lo que la escuela no te enseñó a propósito. Siete materias, un libro por materia, una habilidad por libro.">
 <meta name="theme-color" content="#F4EEE3">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Materias pendientes · Javo Katz">
-<meta property="og:description" content="Siete materias, un libro por materia, una habilidad por libro.">
+<meta property="og:title" content="Materias pendientes · nueva colección · Javo Katz">
+<meta property="og:description" content="Lo que la escuela no te enseñó a propósito. Siete materias, un libro por materia, una habilidad por libro.">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
-/* ── colecciones ── */
-.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(40px,7vw,72px)}
-.tapas-fila{display:flex;justify-content:center;align-items:flex-end;gap:clamp(6px,1.6vw,14px);margin:40px auto 0;max-width:680px}
-.tapas-fila img{width:calc(20% - 8px);border-radius:2px 5px 5px 2px;box-shadow:12px 18px 30px -16px rgba(20,18,16,.6),inset 5px 0 7px -5px rgba(0,0,0,.4);transition:transform .5s var(--e)}
-.tapas-fila img:nth-child(even){transform:translateY(-10px)}
-.tapas-fila:hover img{transform:none}
-.dos{display:grid;gap:40px;align-items:center}
-@media (min-width:900px){ .dos{grid-template-columns:1.15fr .85fr;gap:56px} }
-.tapa-sola{max-width:300px;width:100%;margin:0 auto}
-.tapa-sola img{width:100%;border-radius:2px 6px 6px 2px;box-shadow:18px 26px 44px -22px rgba(20,18,16,.65),inset 6px 0 8px -6px rgba(0,0,0,.4)}
-.para,.obra{padding:clamp(24px,5vw,40px)}
-.para-t{margin-top:4px;font-family:var(--f-titulo);font-size:clamp(27px,6vw,36px);line-height:1.2;text-wrap:balance}
-.obra-t{margin-top:14px;font-size:19px;color:var(--tinta-2)}
-.obra .seguro{justify-content:flex-start}
-.materias{list-style:none;margin:40px auto 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:900px}
-@media (min-width:760px){ .materias{grid-template-columns:repeat(4,1fr)} }
-.materias li{display:flex;align-items:baseline;gap:14px;padding:22px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r);box-shadow:var(--sombra)}
-.materias b{font-family:var(--f-titulo);font-size:40px;font-weight:600;line-height:1;color:var(--oro-texto);font-variant-numeric:lining-nums}
-.materias span{font-family:var(--f-titulo);font-size:clamp(26px,6vw,32px);font-weight:600;line-height:1.1}
-
+@media (min-width:1000px){ .pliego h1{font-size:clamp(62px,5.8vw,90px)} }
+/* la tarjeta de la página de enfrente */
+.tarjeta{max-width:440px;margin:0 auto;padding:clamp(28px,6vw,42px) clamp(22px,5vw,38px);background:var(--papel-2);border-radius:18px;
+  box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75),var(--sombra)}
+.tarjeta .t-tit{margin-top:8px;font-family:var(--f-titulo);font-size:clamp(34px,8vw,42px);font-weight:500;line-height:1.02}
+.tarjeta .lideres{margin-top:18px;border-top:1px solid var(--linea)}
+.tarjeta .lideres .fila{padding:11px 0}
+.tarjeta .lideres .t{font-family:var(--f-titulo);font-size:24px;font-weight:600}
+.tarjeta .lideres .d{font-family:var(--f-titulo);font-style:italic;font-size:21px}
+.tarjeta .t-pie{margin-top:16px;font-size:16px;line-height:1.5;color:var(--tinta-2)}
+.tapa-sola{margin:0 auto;max-width:300px}
+.tapa-sola img{display:block;width:100%;height:auto;border-radius:2px 6px 6px 2px;box-shadow:0 0 0 1px rgba(43,39,36,.06),14px 26px 46px -20px rgba(43,39,36,.65)}
+.tapa-sola figcaption{margin-top:16px;text-align:center;font-family:var(--f-titulo);font-style:italic;font-size:21px;color:var(--tinta-2)}
+.para{font-family:var(--f-titulo);font-size:clamp(30px,6.6vw,40px);font-weight:500;line-height:1.2;text-wrap:balance}
+.cuatro{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--linea)}
+.cuatro li{padding:20px 0;border-bottom:1px solid var(--linea);font-size:18px;line-height:1.5;color:var(--tinta-2)}
+.cuatro b{display:block;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.1;color:var(--tinta);margin-bottom:4px}
+@media (min-width:760px){ .cuatro{grid-template-columns:1fr 1fr;column-gap:40px} }
+.materias{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta)}
+.materias li{padding:20px 12px;text-align:center;box-shadow:inset -1px 0 0 var(--linea),inset 0 -1px 0 var(--linea)}
+.materias b{display:block;font-family:var(--f-titulo);font-size:42px;font-weight:500;line-height:1;color:var(--oro-texto)}
+.materias span{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:27px;font-weight:600}
+/* el libro que ya está */
+.hoja-libro{display:grid;gap:36px}
+.hoja-libro .tapa{margin:0;max-width:280px}
+.hoja-libro .tapa img{display:block;width:100%;height:auto;border-radius:2px 6px 6px 2px;box-shadow:0 0 0 1px rgba(43,39,36,.06),12px 22px 40px -18px rgba(43,39,36,.6)}
+.lib-l{font-family:var(--f-titulo);font-size:clamp(26px,5.6vw,30px);line-height:1.2;color:var(--tinta-2)}
+.lib-l b{font-weight:600;color:var(--tinta)}
+.pro{margin-top:20px}
+.pro p{font-size:19px;line-height:1.66;text-wrap:pretty}
+.pro p+p{margin-top:16px}
+.meta{margin-top:18px;font-size:16px;color:var(--tinta-2)}
+@media (min-width:860px){ .hoja-libro{grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:56px;align-items:start} }
 </style>
 </head>
-<body data-pagina="materias" data-pagos="">
+<body data-pagina="materias" data-pagos="" data-libro-titulo="Materias pendientes · nueva colección">
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-  <a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga Materias pendientes." href="#"><span>Avísame</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-espera="materias-pendientes" data-espera-nombre="Materias pendientes" data-espera-texto="Te aviso por correo el día que sale." href="#">Avísame</a>
+  </div>
 </div></header>
-
 <main>
-<!-- ═══ PORTADA ═══ -->
-<section class="portada" data-barra-desde>
- <div class="wrap ancho centro">
-  <span class="kick rv">En preparación · nueva colección</span>
-  <h1 class="t1 rv d1">Materias <em>pendientes.</em></h1>
-  <p class="lead rv d2">Lo que la escuela no te enseñó a propósito. <b>Siete materias, un libro por materia, una habilidad por libro.</b></p>
-  <div class="botones rv d3">
-   <a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga Materias pendientes." href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v9H9l-4 3z"/></svg><span>Avísame cuando salga</span></a>
-  </div>
-  <p class="micro rv d3">Te escribo yo, por WhatsApp, el día que sale.</p>
- </div>
-</section>
-
-<!-- ═══ LAS SIETE MATERIAS ═══ -->
-<section class="sec junto">
- <div class="wrap ancho">
-  <div class="centro">
-   <span class="kick rv">El primer año</span>
-   <h2 class="t2 rv">Siete materias, <em>siete libros.</em></h2>
-  </div>
-  <ol class="materias">
-   <li class="rv"><b>1</b><span>Origen</span></li>
-   <li class="rv d1"><b>2</b><span>Cuerpo</span></li>
-   <li class="rv d2"><b>3</b><span>Emoción</span></li>
-   <li class="rv d3"><b>4</b><span>Palabra</span></li>
-   <li class="rv"><b>5</b><span>Dinero</span></li>
-   <li class="rv d1"><b>6</b><span>Tiempo</span></li>
-   <li class="rv d2"><b>7</b><span>Sentido</span></li>
-  </ol>
-  <p class="nota centro rv">Cada libro te deja una habilidad concreta, lista para usar.</p>
- </div>
-</section>
-
-<!-- ═══ PARA QUIÉN ═══ -->
-<section class="sec junto">
+<section class="portadilla" data-barra-desde>
  <div class="wrap">
-  <div class="para card rv">
-   <span class="kick">Para quién es</span>
-   <p class="para-t">Para quien ya pasó por la secundaria, la universidad y los cursos de siempre, y quiere aprender lo que faltó. También para regalar.</p>
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">En preparación · nueva colección</p>
+    <h1>Materias pendientes.</h1>
+    <span class="filete"></span>
+    <p class="subtitulo">Lo que la escuela<br>no te enseñó a propósito.</p>
+    <p class="bajada">Siete materias, un libro por materia, <b>una habilidad por libro.</b></p>
+    <div class="acciones">
+     <a class="btn" data-espera="materias-pendientes" data-espera-nombre="Materias pendientes" data-espera-texto="Te aviso por correo el día que sale." href="#">Avísame cuando salga</a>
+     <a class="link" data-link="capitulo" href="#">Mientras tanto, leer un capítulo</a>
+    </div>
+    <p class="micro" style="margin-top:22px">Déjame tu nombre y tu correo. Te aviso el día que sale.</p>
+   </div>
+   <div class="verso">
+    <div class="tarjeta">
+     <p class="serie">Boletín · el primer año</p>
+     <p class="t-tit">Materias pendientes</p>
+     <ul class="lideres"><li><span class="fila"><span class="t">1 · Origen</span><span class="pg"></span><span class="d">pendiente</span></span></li><li><span class="fila"><span class="t">2 · Cuerpo</span><span class="pg"></span><span class="d">pendiente</span></span></li><li><span class="fila"><span class="t">3 · Emoción</span><span class="pg"></span><span class="d">pendiente</span></span></li><li><span class="fila"><span class="t">4 · Palabra</span><span class="pg"></span><span class="d">pendiente</span></span></li><li><span class="fila"><span class="t">5 · Dinero</span><span class="pg"></span><span class="d">pendiente</span></span></li><li><span class="fila"><span class="t">6 · Tiempo</span><span class="pg"></span><span class="d">pendiente</span></span></li><li><span class="fila"><span class="t">7 · Sentido</span><span class="pg"></span><span class="d">pendiente</span></span></li></ul>
+     <p class="t-pie">Un libro por materia, una habilidad por libro.</p>
+    </div>
+   </div>
   </div>
  </div>
 </section>
 
-<!-- ═══ MIENTRAS TANTO ═══ -->
-<section class="sec">
- <div class="wrap centro">
-  <span class="kick rv">Mientras tanto</span>
-  <h2 class="t2 rv">Mis 8 libros <em>ya están.</em></h2>
-  <p class="lead rv">El primer capítulo de cada uno se lee aquí, sin costo.</p>
-  <div class="botones rv"><a class="btn claro" data-link="capitulo" href="#"><span>Elegir un primer capítulo</span> <span class="fl">→</span></a></div>
+<section class="cap" id="materias" data-capitulo="El primer año" data-dato="siete materias">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Siete materias, siete libros.</h2>
+   <p class="bajada">Cada libro te deja una habilidad concreta, lista para usar.</p>
+  </header>
+  <div class="ancho">
+   <ol class="materias"><li><b>1</b><span>Origen</span></li><li><b>2</b><span>Cuerpo</span></li><li><b>3</b><span>Emoción</span></li><li><b>4</b><span>Palabra</span></li><li><b>5</b><span>Dinero</span></li><li><b>6</b><span>Tiempo</span></li><li><b>7</b><span>Sentido</span></li></ol>
+  </div>
  </div>
 </section>
 
-<!-- ═══ CIERRE ═══ -->
-<section class="sec centro" data-barra-hasta>
- <div class="wrap">
-  <hr class="regla">
-  <p class="frase-final rv">No nos enseñaron <em>a propósito.</em></p>
-  <div class="botones rv"><a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga Materias pendientes." href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v9H9l-4 3z"/></svg><span>Avísame cuando salga</span></a></div>
+<section class="cap" id="para" data-capitulo="Para quién es" data-dato="lo que faltó">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">2</span>
+   <h2>Para quién es.</h2>
+  </header>
+  <div class="cuerpo">
+   <p class="para">Para quien ya pasó por la secundaria, la universidad y los cursos de siempre, y quiere aprender lo que faltó. También para regalar.</p>
+  </div>
+ </div>
+</section>
+
+<section class="cap" id="mientras" data-capitulo="Mientras tanto" data-dato="8 libros">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">3</span>
+   <h2>Mis 8 libros ya están.</h2>
+   <p class="bajada">El primer capítulo de cada uno se lee aquí, sin costo. Toca un libro.</p>
+  </header>
+  <div class="ancho" style="max-width:720px">
+   <!--ESTANTE-->
+   <p style="margin-top:26px"><a class="link" data-link="libros" href="#">Ver los 8 libros y Tu nuevo precio</a></p>
+  </div>
  </div>
 </section>
 </main>
 
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
-</div></footer>
+<footer class="colofon" data-barra-hasta>
+ <div class="wrap">
+  <p class="cierre">No nos enseñaron a propósito.</p>
+  <div class="acciones"><a class="btn" data-espera="materias-pendientes" data-espera-nombre="Materias pendientes" data-espera-texto="Te aviso por correo el día que sale." href="#">Avísame cuando salga</a><a class="link" data-link="capitulo" href="#">Leer un primer capítulo</a></div>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a></nav>
+  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
+  <p class="legal">Javo Katz · Tu Clínica Digital. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<div class="barra"><a class="btn wa" data-wa="Hola Javo, quiero que me avises cuando salga Materias pendientes." href="#"><span>Avísame cuando salga</span></a></div>
+<div class="barra"><a class="btn" data-espera="materias-pendientes" data-espera-nombre="Materias pendientes" data-espera-texto="Te aviso por correo el día que sale." href="#">Avísame cuando salga</a></div>
 
-<script>/*BASE_JS*/</script>
+<script>/*EDICION_JS*/</script>
 </body>
 </html>

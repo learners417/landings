@@ -12,6 +12,8 @@ os.makedirs('dist',exist_ok=True)
 for f in sorted(p.stem for p in pathlib.Path('pages').glob('*.html')):
     s=open('pages/%s.html'%f).read()
     s=s.replace('<!--ESTANTE-->',estante)
+    # el precio en los botones: en el celular baja a su propia línea («Quiero Tu nuevo precio» / «97 USD»), nunca se parte
+    if f!='gracias': s=re.sub(r' · <span data-precio="(\w+)">(\d+)</span> USD',r'<span class="pr"><span class="sep"> · </span><span data-precio="\1">\2</span>&nbsp;USD</span>',s)
     if '/*EDICION_CSS*/' in s:   # la piel de la Edición Libres (9 nov 2026)
         s=s.replace('<style>/*EDICION_CSS*/</style>','<style>\n'+ecss+'\n</style>\n'+cabeza,1)
         s=s.replace('<script>/*EDICION_JS*/</script>',imgs(s)+'\n<script>\n'+js+'\n</script>\n<script>\n'+ejs+'\n</script>',1)

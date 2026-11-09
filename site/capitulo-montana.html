@@ -407,6 +407,10 @@ img[data-img]:not([src]){visibility:hidden}
 
 @media (max-width:520px){ .oferta .lideres .pg{display:none} .oferta .lideres .d{margin-left:auto;padding-left:14px} }
 
+/* el precio en los botones: junto en la pantalla ancha, en su propia línea en el celular */
+.pr{white-space:nowrap}
+@media (max-width:520px){ .btn .pr{display:block;margin-top:3px;font-weight:500} .btn .pr .sep{display:none} }
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -722,7 +726,7 @@ html:not(.js) .lector-nav{display:none}
 <header class="lector-top"><div class="lt-in">
   <a class="lt-volver" data-link="libros" data-hash="#montana" href="#" aria-label="Volver a los libros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></a>
   <div class="lt-t"><b>Lo que la montaña te enseña</b><span data-pag>1 de 16</span></div>
-  <a class="btn lt-btn" data-link="libros" data-hash="#obra" href="#"><span>Tu nuevo precio · <span data-precio="obra">97</span> USD</span></a>
+  <a class="btn lt-btn" data-link="libros" data-hash="#obra" href="#"><span>Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></span></a>
  </div><div class="lt-prog"><i></i></div></header>
 
 <main class="lector" data-total="16">
@@ -818,7 +822,7 @@ html:not(.js) .lector-nav{display:none}
     <span class="cinta">La obra completa</span>
     <b class="of-t">Tu nuevo precio</b>
     <p><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> Los libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
-    <a class="btn ancho-total" data-compra="obra" href="#"><span>Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</span></a>
+    <a class="btn ancho-total" data-compra="obra" href="#"><span>Quiero Tu nuevo precio<span class="pr"><span class="sep"> · </span><span data-precio="obra">97</span>&nbsp;USD</span></span></a>
    </div>
   </div>
   <p class="seguro con-pago"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>

@@ -391,3 +391,7 @@ img[data-img]:not([src]){visibility:hidden}
 .veredicto b{font-weight:700}
 
 @media (max-width:520px){ .oferta .lideres .pg{display:none} .oferta .lideres .d{margin-left:auto;padding-left:14px} }
+
+/* el precio en los botones: junto en la pantalla ancha, en su propia línea en el celular */
+.pr{white-space:nowrap}
+@media (max-width:520px){ .btn .pr{display:block;margin-top:3px;font-weight:500} .btn .pr .sep{display:none} }

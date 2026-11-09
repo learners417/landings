@@ -3,98 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>La Clínica del Líder · Javo Katz</title>
-<meta name="description" content="Una clínica digital para dueños y directores: una app y un equipo profesional. 12 semanas medidas con el método El Eje.">
+<title>La Clínica del Líder · abre en 2027 · Javo Katz</title>
+<meta name="description" content="Una clínica digital para dueños y directores: una app en tu teléfono, con un equipo profesional detrás. 12 semanas, medidas de punta a punta. Abre en 2027.">
 <meta name="theme-color" content="#F4EEE3">
 <meta property="og:type" content="website">
-<meta property="og:title" content="La Clínica del Líder">
-<meta property="og:description" content="Espejo, Jugada, Evidencia. 12 semanas medidas, con una app y un equipo profesional.">
+<meta property="og:title" content="La Clínica del Líder · Rinde más. Vive mejor.">
+<meta property="og:description" content="12 semanas, medidas de punta a punta, para rendir más con menos desgaste. Abre en 2027.">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
-/* ── La Clínica del Líder ── */
-.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(44px,7vw,80px)}
-.portada .cols{display:grid;gap:48px;align-items:center}
-@media (min-width:900px){ .portada .cols{grid-template-columns:1.08fr .92fr;gap:56px} }
-.pulso{display:block;width:150px;height:26px;margin-top:22px}
-.pulso polyline{fill:none;stroke:var(--oro);stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
-.escena{position:relative}
-.escena .tel{width:min(300px,80vw)}
+/* el teléfono de la app (el mismo de siempre) */
+.tel{position:relative;width:300px;flex:0 0 auto;aspect-ratio:9/19.2;border-radius:52px;background:#1D1B18;padding:11px;box-shadow:0 0 0 1px #3A3631,inset 0 0 0 2px #46413A,0 60px 90px -50px rgba(43,39,36,.75),0 30px 50px -40px rgba(43,39,36,.6);margin-inline:auto}
+.tel::before{content:"";position:absolute;right:-3px;top:150px;width:3px;height:70px;border-radius:0 3px 3px 0;background:#2E2A26}
+.pant{position:relative;height:100%;border-radius:42px;overflow:hidden;background:#FAF5EA;color:#2A2118;display:flex;flex-direction:column;font-size:15px;line-height:1.4}
+.isla{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:20px;background:#0E0D0C;z-index:3}
+.estado{display:flex;justify-content:space-between;align-items:center;padding:15px 26px 6px;font-weight:700;font-size:14px;letter-spacing:.02em}
+.estado i{display:inline-flex;gap:4px;align-items:center;font-style:normal}
+.estado svg{width:17px;height:12px}
+.app-head{padding:16px 20px 10px;display:flex;justify-content:space-between;align-items:center}
+.app-head b{font-family:var(--f-titulo);font-size:27px;font-weight:600}
+.cint{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A5F33;border:1px solid rgba(176,130,46,.45);border-radius:999px;padding:5px 10px}
+.cint::before{content:"";width:16px;height:6px;border-radius:2px;background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(42,33,24,.35)}
+.app-body{flex:1;overflow:hidden;padding:4px 16px 0;position:relative}
+.vista{position:absolute;inset:4px 16px 0;opacity:0;transform:translateY(10px);transition:opacity .45s var(--e),transform .45s var(--e);pointer-events:none}
+.vista.on{opacity:1;transform:none;pointer-events:auto}
+.app-card{background:#FFFDF7;border:1px solid rgba(176,130,46,.32);border-radius:20px;padding:16px}
+.app-k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8E6824}
+.app-t{font-family:var(--f-titulo);font-weight:600;font-size:25px;line-height:1.08;margin:6px 0 4px}
+.app-m{font-size:13.5px;color:rgba(42,33,24,.72)}
+.app-btn{margin-top:12px;display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;background:#2A2118;color:#FAF5EA;font-weight:800;font-size:13.5px;letter-spacing:.14em}
+.dias{margin-top:12px;display:grid;gap:7px}
+.dia{display:flex;align-items:center;gap:10px;font-size:13.5px;padding:8px 10px;border-radius:12px;background:#F5EFE1}
+.dia b{font-family:var(--f-titulo);font-size:18px;color:#8E6824;width:14px;text-align:center}
+.dia.on{background:#FFFDF7;box-shadow:inset 0 0 0 1px rgba(176,130,46,.5)}
+.dia .lk{margin-left:auto;width:14px;height:14px;opacity:.5}
+.campo{display:block;margin-top:9px;font-size:13px;color:rgba(42,33,24,.75)}
+.campo input{display:block;width:100%;margin-top:4px;height:40px;border:1px solid rgba(176,130,46,.4);border-radius:12px;background:#FFFDF7;padding:0 12px;font:700 16px var(--f-texto);color:#2A2118}
+.campo input:focus{outline:2px solid #B0822E;outline-offset:0}
+.grande{margin-top:12px;text-align:center;padding:12px;border-radius:16px;background:#F5EFE1}
+.grande span{display:block;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8E6824}
+.grande b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:46px;line-height:1.05}
+.chat{display:flex;flex-direction:column;gap:9px;padding-top:4px}
+.msg{max-width:88%;padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.4;opacity:0;transform:translateY(6px);transition:opacity .4s var(--e),transform .4s var(--e)}
+.msg.in{opacity:1;transform:none}
+.msg.yo{align-self:flex-end;background:#2A2118;color:#FAF5EA;border-bottom-right-radius:5px}
+.msg.ia{align-self:flex-start;background:#FFFDF7;border:1px solid rgba(176,130,46,.3);border-bottom-left-radius:5px}
+.msg.ia i{display:block;font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8E6824;margin-bottom:2px}
+.chip{align-self:flex-start;font-size:13px;font-weight:700;border:1px solid rgba(42,33,24,.25);border-radius:999px;padding:7px 11px;background:#FFFDF7}
+.tabs{display:flex;justify-content:space-around;padding:10px 8px 20px;border-top:1px solid rgba(176,130,46,.25);background:#FFFDF7}
+.tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(42,33,24,.5);cursor:pointer;padding:4px 6px}
+.tabs button svg{width:22px;height:22px}
+.tabs button.on{color:#2A2118}
+.tabs button.on svg{stroke:#B0822E}
+
 .pant .grande b{font-size:44px}
 .pant .dia span{margin-left:auto;font-weight:800}
-
-.si-lista{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
-.si-lista li{position:relative;padding:18px 20px 18px 58px;background:var(--papel-2);border:1px solid var(--linea);border-radius:18px;font-size:19px;line-height:1.45}
-.si-lista li::before{content:"";position:absolute;left:20px;top:20px;width:24px;height:24px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F1' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
-.filtro{margin-top:22px;font-size:18px;color:var(--tinta-2)}
-
-.eje{display:grid;gap:14px;margin-top:40px}
-@media (min-width:860px){ .eje{grid-template-columns:repeat(3,1fr)} }
-.eje .card{padding:clamp(22px,4vw,30px)}
-.eje .letra{display:block;font-family:var(--f-titulo);font-size:76px;font-weight:600;line-height:.85;color:var(--oro-texto)}
-.eje h3{font-family:var(--f-titulo);font-size:34px;font-weight:600;line-height:1.05;margin-top:10px}
-.eje p{margin-top:8px;font-size:18px;color:var(--tinta-2)}
-.eje .donde{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--linea);font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--tinta)}
-
-.viajes{display:grid;gap:16px;margin-top:40px}
-@media (min-width:860px){ .viajes{grid-template-columns:1fr 1fr} }
-.viaje{padding:clamp(22px,5vw,32px)}
-.viaje .eti{font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
-.viaje h3{font-family:var(--f-titulo);font-size:clamp(46px,10vw,60px);font-weight:600;line-height:1;margin-top:8px}
-.viaje .prom{margin-top:10px;font-size:18px;color:var(--tinta-2)}
-.semanas{list-style:none;margin:22px 0 0;padding:0}
-.semanas li{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-top:1px solid var(--linea);font-size:18px;font-weight:600}
-.semanas li b{flex:none;width:28px;font-family:var(--f-titulo);font-size:24px;font-weight:600;color:var(--oro-texto);font-variant-numeric:lining-nums}
-
-.hitos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px}
-.hitos div{padding:20px 12px;text-align:center;background:var(--papel-2);border:1px solid var(--linea);border-radius:18px}
-.hitos span{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
-.hitos b{display:block;font-family:var(--f-titulo);font-size:clamp(46px,11vw,64px);font-weight:600;line-height:1;margin:6px 0 4px;font-variant-numeric:lining-nums}
-.hitos p{font-size:16px;color:var(--tinta-2);line-height:1.3}
-.medidas{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.medidas span{padding:8px 14px;border-radius:999px;background:var(--papel-2);border:1px solid var(--linea);font-size:16px;font-weight:700}
-.fuente{margin-top:18px;font-size:16px;color:var(--tinta-2)}
-
-.contrato{margin-top:22px;padding:22px clamp(20px,4vw,28px);border:1px solid var(--oro);border-radius:var(--r);background:var(--papel-2);text-align:center}
-.contrato span{display:block;font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto)}
-.contrato p{font-family:var(--f-titulo);font-size:clamp(26px,6vw,34px);font-weight:600;line-height:1.15;margin-top:8px}
-.otro{margin-top:20px;font-size:17px;text-align:center}
-
-.libro-x{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(20px,4vw,28px);margin-top:16px;text-decoration:none;color:inherit}
-.libro-x img{width:96px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55);transition:transform .35s var(--e)}
-.libro-x:hover img{transform:translateY(-4px)}
-.libro-x .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
-.libro-x b{display:block;font-family:var(--f-titulo);font-size:32px;font-weight:600;line-height:1.05;margin-top:4px}
-.libro-x p{margin-top:6px;font-size:17px;color:var(--tinta-2)}
-.libro-x .ir{display:inline-block;margin-top:10px;font-size:16px;font-weight:800;color:var(--tinta)}
+.escena{display:flex;justify-content:center}
+.escena .tel{width:min(300px,78vw)}
+@media (min-width:1000px){ .pliego h1{font-size:clamp(62px,5.8vw,88px)} }
+.pulso{display:block;width:150px;height:26px;margin:26px 0}
+.pulso polyline{fill:none;stroke:var(--oro);stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+/* para quién */
+.si{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.si li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--linea);font-size:19px;line-height:1.5}
+.si li::before{content:"";width:16px;height:9px;margin-top:.5em;border-left:1.5px solid var(--verde);border-bottom:1.5px solid var(--verde);transform:rotate(-45deg)}
+.filtro{margin-top:20px;font-style:italic;font-size:18px;color:var(--tinta-2)}
+/* el método */
+.eje{list-style:none;margin:0;padding:0;display:grid}
+.eje li{display:grid;grid-template-columns:72px 1fr;gap:0 18px;padding:24px 0;border-top:1px solid var(--linea)}
+.eje li:last-child{border-bottom:1px solid var(--linea)}
+.eje .letra{display:block;height:64px;font-family:var(--f-titulo);font-size:76px;font-weight:500;line-height:.8;color:var(--oro-texto)}
+.eje h3{font-size:clamp(30px,6.6vw,38px);line-height:1.05}
+.eje p{margin-top:6px;font-size:18px;line-height:1.55;color:var(--tinta-2)}
+.eje .donde{display:block;margin-top:10px;font-size:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta)}
+@media (min-width:860px){ .eje{grid-template-columns:repeat(3,1fr);column-gap:36px} .eje li{grid-template-columns:1fr;border-bottom:1px solid var(--linea)} .eje .letra{margin-bottom:12px} }
+/* los dos viajes */
+.viajes{display:grid;gap:44px}
+@media (min-width:860px){ .viajes{grid-template-columns:1fr 1fr;gap:56px} }
+.viaje h3{font-size:clamp(46px,10vw,62px);line-height:1;margin-top:8px}
+.viaje .prom{margin-top:10px;font-size:18px;line-height:1.55;color:var(--tinta-2)}
+.semanas{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--linea)}
+.semanas li{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--linea);font-size:18px}
+.semanas b{flex:none;width:30px;font-family:var(--f-titulo);font-size:24px;font-weight:600;color:var(--oro-texto);font-variant-numeric:lining-nums}
+/* medido */
+.hitos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta)}
+.hitos li{padding:22px 8px;text-align:center;font-size:16px;color:var(--tinta-2)}
+.hitos li+li{box-shadow:-1px 0 0 var(--linea)}
+.hitos small{display:block;font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.hitos b{display:block;font-family:var(--f-titulo);font-size:clamp(54px,12vw,76px);font-weight:500;line-height:1;margin:6px 0 4px;color:var(--tinta);font-variant-numeric:lining-nums}
+.medidas{margin-top:24px;font-family:var(--f-titulo);font-style:italic;font-size:clamp(23px,5vw,27px);line-height:1.5;color:var(--tinta-2);text-wrap:balance}
+.fuente{margin-top:16px}
+/* quién */
+.libro-x{display:grid;grid-template-columns:84px 1fr;gap:22px;align-items:center;margin-top:30px;padding:20px 22px;background:var(--papel-2);border-radius:14px;box-shadow:0 0 0 1px var(--linea);text-decoration:none;color:var(--tinta)}
+.libro-x img{width:84px;height:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 10px 20px -10px rgba(43,39,36,.55)}
+.libro-x b{display:block;font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1.08;margin-top:4px}
+.libro-x .t{display:block;margin-top:6px;font-size:17px;color:var(--tinta-2)}
+.libro-x .ir{display:inline-block;margin-top:10px;font-size:17px;font-weight:600;text-decoration:underline;text-decoration-color:var(--oro);text-decoration-thickness:1px;text-underline-offset:6px}
+.libro-x:hover{box-shadow:0 0 0 1px var(--oro)}
 </style>
 </head>
-<body data-pagina="clinica-del-lider" data-pagos="">
+<body data-pagina="clinica-del-lider" data-pagos="" data-libro-titulo="La Clínica del Líder · abre en 2027">
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz<small>La Clínica del Líder</small></a>
-  <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#">Anotarme para 2027</a>
+  </div>
 </div></header>
 
 <main>
-<!-- ═══ PORTADA ═══ -->
-<section class="portada" data-barra-desde>
- <div class="wrap ancho"><div class="cols">
-  <div>
-   <span class="kick rv">La Clínica del Líder · abre en 2027</span>
-   <h1 class="t1 rv d1">Rinde más. <em>Vive mejor.</em></h1>
-   <svg class="pulso rv d1" viewBox="0 0 150 26" aria-hidden="true"><polyline points="1,13 52,13 62,3 72,23 82,13 149,13"/></svg>
-   <p class="lead rv d2">Una clínica digital para dueños y directores: una app en tu teléfono, con un equipo profesional detrás. <b>12 semanas, medidas de punta a punta, para rendir más con menos desgaste.</b></p>
-   <div class="botones rv d3">
-    <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span> <span class="fl">→</span></a>
-    <a class="btn claro" href="#metodo"><span>Ver cómo funciona</span></a>
+<section class="portadilla" data-barra-desde>
+ <div class="wrap">
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">La Clínica del Líder · abre en 2027</p>
+    <h1>Rinde más.<br>Vive mejor.</h1>
+    <svg class="pulso" viewBox="0 0 150 26" aria-hidden="true"><polyline points="1,13 52,13 62,3 72,23 82,13 149,13"/></svg>
+    <p class="subtitulo">Una clínica digital<br>para dueños y directores.</p>
+    <p class="bajada">Una app en tu teléfono, con un equipo profesional detrás. <b>12 semanas, medidas de punta a punta, para rendir más con menos desgaste.</b></p>
+    <div class="acciones">
+     <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#">Anotarme para 2027</a>
+     <a class="link" href="#metodo">Ver cómo funciona</a>
+    </div>
+    <p class="micro" style="margin-top:22px">La primera camada abre en 2027. Te aviso por correo el día que abre.</p>
    </div>
-   <p class="micro rv d3">La primera camada abre en 2027. Te aviso por correo el día que abre.</p>
-  </div>
-  <div class="escena rv d2" aria-hidden="true">
-   <div class="tel"><div class="pant">
+   <div class="verso">
+    <div class="escena" aria-hidden="true">
+     <div class="tel"><div class="pant">
     <div class="isla"></div>
     <div class="estado"><span>9:41</span><i><svg viewBox="0 0 17 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 4h2v7H9zM13 1h2v10h-2z" fill="#2A2118"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#2A2118" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="#2A2118"/></svg></i></div>
     <div class="app-head"><b>Hoy</b><span class="cint">Día 9</span></div>
@@ -114,133 +154,144 @@
     </div></div>
     <div class="tabs"><button class="on" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hoy</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19c4-1 4-13 8-14s4 13 8 14"/></svg>Tratamiento</button><button tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>Mi Zona</button></div>
    </div></div>
-  </div>
- </div></div>
-</section>
-
-<!-- ═══ PARA QUIÉN ═══ -->
-<section class="sec junto">
- <div class="wrap">
-  <span class="kick rv">Para quién es</span>
-  <h2 class="t2 rv">Para quien dirige <em>y sostiene a otros.</em></h2>
-  <ul class="si-lista">
-   <li class="rv">Diriges una empresa o un equipo, y las decisiones grandes pasan por ti.</li>
-   <li class="rv">Tu negocio crece, y quieres que tu energía crezca con él.</li>
-   <li class="rv">Tu cabeza sigue trabajando cuando apagas la luz.</li>
-   <li class="rv">Quieres medir tu vida con la misma seriedad con la que mides tu negocio.</li>
-  </ul>
-  <p class="filtro rv">Si todavía no tienes personas a cargo, guarda esta página para más adelante.</p>
- </div>
-</section>
-
-<!-- ═══ EL MÉTODO ═══ -->
-<section class="sec" id="metodo">
- <div class="wrap ancho">
-  <span class="kick rv">El método</span>
-  <h2 class="t2 rv">El Eje: <em>Espejo, Jugada, Evidencia.</em></h2>
-  <p class="lead rv">Te miras sin castigarte, haces un movimiento, y compruebas si pasó algo. Todos los días, entre 10 y 20 minutos.</p>
-  <div class="eje">
-   <div class="card rv"><span class="letra">E</span><h3>Espejo</h3><p>Ves lo que es, sin interpretarlo y sin castigarte: el dato, como está.</p><span class="donde">Tu Tablero</span></div>
-   <div class="card rv d1"><span class="letra">J</span><h3>Jugada</h3><p>Haces un movimiento concreto. Uno solo, hoy, del tamaño que entre en tu día.</p><span class="donde">Tu Dosis</span></div>
-   <div class="card rv d2"><span class="letra">E</span><h3>Evidencia</h3><p>Miras si pasó algo en el registro: tus números, día a día.</p><span class="donde">Tus Signos · 60 segundos</span></div>
+    </div>
+   </div>
   </div>
  </div>
 </section>
 
-<!-- ═══ EL CAMINO ═══ -->
-<section class="sec">
- <div class="wrap ancho">
-  <span class="kick rv">El camino</span>
-  <h2 class="t2 rv">84 días, <em>dos viajes.</em></h2>
-  <p class="lead rv">Primero se saca lo que te sobra. Después se construye lo que se queda.</p>
-  <div class="viajes">
-   <div class="viaje card rv">
-    <span class="eti">Viaje 1 · Días 1 a 42</span>
+<!-- ═══ 1 · PARA QUIÉN ═══ -->
+<section class="cap" id="quien-es" data-capitulo="Para quién es" data-dato="quien dirige">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Para quien dirige y sostiene a otros.</h2>
+  </header>
+  <div class="cuerpo">
+   <ul class="si">
+    <li>Diriges una empresa o un equipo, y las decisiones grandes pasan por ti.</li>
+    <li>Tu negocio crece, y quieres que tu energía crezca con él.</li>
+    <li>Tu cabeza sigue trabajando cuando apagas la luz.</li>
+    <li>Quieres medir tu vida con la misma seriedad con la que mides tu negocio.</li>
+   </ul>
+   <p class="filtro">Si todavía no tienes personas a cargo, guarda esta página para más adelante.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ 2 · EL MÉTODO ═══ -->
+<section class="cap" id="metodo" data-capitulo="El método" data-dato="El Eje">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">2</span>
+   <h2>El Eje: Espejo, Jugada, Evidencia.</h2>
+   <p class="bajada">Te miras sin castigarte, haces un movimiento, y compruebas si pasó algo. Todos los días, entre 10 y 20 minutos.</p>
+  </header>
+  <div class="ancho">
+   <ol class="eje">
+    <li><span class="letra">E</span><div><h3>Espejo</h3><p>Ves lo que es, sin interpretarlo y sin castigarte: el dato, como está.</p><span class="donde">Tu Tablero</span></div></li>
+    <li><span class="letra">J</span><div><h3>Jugada</h3><p>Haces un movimiento concreto. Uno solo, hoy, del tamaño que entre en tu día.</p><span class="donde">Tu Dosis</span></div></li>
+    <li><span class="letra">E</span><div><h3>Evidencia</h3><p>Miras si pasó algo en el registro: tus números, día a día.</p><span class="donde">Tus Signos · 60 segundos</span></div></li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ 3 · EL CAMINO ═══ -->
+<section class="cap" id="viajes" data-capitulo="El camino" data-dato="84 días">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">3</span>
+   <h2>84 días, dos viajes.</h2>
+   <p class="bajada">Primero se saca lo que te sobra. Después se construye lo que se queda.</p>
+  </header>
+  <div class="ancho viajes">
+   <div class="viaje">
+    <p class="serie">Viaje 1 · Días 1 a 42</p>
     <h3>Salir</h3>
     <p class="prom">Sueltas lo que cargabas sin ser tuyo: lo heredaste, lo aceptaste o te lo pusieron encima.</p>
-    <ol class="semanas">
-     <li><b>1</b>La noche</li><li><b>2</b>El costo</li><li><b>3</b>Lo que te apaga</li><li><b>4</b>El ruido</li><li><b>5</b>Los sí que eran no</li><li><b>6</b>El Personaje</li>
-    </ol>
+    <ol class="semanas"><li><b>1</b>La noche</li><li><b>2</b>El costo</li><li><b>3</b>Lo que te apaga</li><li><b>4</b>El ruido</li><li><b>5</b>Los sí que eran no</li><li><b>6</b>El Personaje</li></ol>
    </div>
-   <div class="viaje card rv d1">
-    <span class="eti">Viaje 2 · Días 43 a 84</span>
+   <div class="viaje">
+    <p class="serie">Viaje 2 · Días 43 a 84</p>
     <h3>Entrar</h3>
     <p class="prom">Construyes. Ahora hay lugar, y lo que instalas se queda.</p>
-    <ol class="semanas">
-     <li><b>7</b>El cuerpo</li><li><b>8</b>El trabajo</li><li><b>9</b>Los tuyos</li><li><b>10</b>Los innegociables</li><li><b>11</b>Recibir</li><li><b>12</b>Liderarte</li>
-    </ol>
+    <ol class="semanas"><li><b>7</b>El cuerpo</li><li><b>8</b>El trabajo</li><li><b>9</b>Los tuyos</li><li><b>10</b>Los innegociables</li><li><b>11</b>Recibir</li><li><b>12</b>Liderarte</li></ol>
    </div>
   </div>
  </div>
 </section>
 
-<!-- ═══ LA MEDICIÓN ═══ -->
-<section class="sec">
- <div class="wrap">
-  <span class="kick rv">Medido</span>
-  <h2 class="t2 rv">Tu número, <em>tres veces.</em></h2>
-  <p class="lead rv">Tu Tablero mide diez áreas de tu vida y las resume en un número de 0 a 100: tu Índice.</p>
-  <div class="hitos rv">
-   <div><span>Día</span><b>0</b><p>El Chequeo</p></div>
-   <div><span>Día</span><b>42</b><p>Fin del viaje 1</p></div>
-   <div><span>Día</span><b>84</b><p>El Alta</p></div>
+<!-- ═══ 4 · MEDIDO ═══ -->
+<section class="cap" id="medido" data-capitulo="Medido" data-dato="tu Índice">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">4</span>
+   <h2>Tu número, tres veces.</h2>
+   <p class="bajada">Tu Tablero mide diez áreas de tu vida y las resume en un número de 0 a 100: tu Índice.</p>
+  </header>
+  <div class="ancho">
+   <ol class="hitos">
+    <li><small>Día</small><b>0</b>El Chequeo</li>
+    <li><small>Día</small><b>42</b>Fin del viaje 1</li>
+    <li><small>Día</small><b>84</b>El Alta</li>
+   </ol>
+   <p class="medidas">Propósito · Visión · Claridad · Presencia · Límite · Verdad · Empuje · Recibir · Energía · Resultados</p>
+   <p class="nota fuente">El Chequeo del día 0 suma un instrumento clínico validado: el Inventario de Burnout de Copenhague (Kristensen y otros, 2005).</p>
   </div>
-  <div class="medidas rv"><span>Propósito</span><span>Visión</span><span>Claridad</span><span>Presencia</span><span>Límite</span><span>Verdad</span><span>Empuje</span><span>Recibir</span><span>Energía</span><span>Resultados</span></div>
-  <p class="fuente rv">El Chequeo del día 0 suma un instrumento clínico validado: el Inventario de Burnout de Copenhague (Kristensen y otros, 2005).</p>
  </div>
 </section>
 
-<!-- ═══ LISTA DE ESPERA (abre en 2027) ═══ -->
-<section class="sec" id="planes">
- <div class="wrap centro">
-  <span class="kick rv">Abre en 2027</span>
-  <h2 class="t2 rv">Solo, <em>o acompañado.</em></h2>
-  <p class="lead rv">El mismo camino de 12 semanas: con la app y El Clínico, o con un clínico de cabecera que mira tus Signos cada semana. La primera camada abre en 2027.</p>
-  <div class="botones rv"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme en la lista de espera</span> <span class="fl">→</span></a></div>
-  <p class="micro rv">Te aviso por correo el día que abre.</p>
+<!-- ═══ 5 · ABRE EN 2027 ═══ -->
+<section class="cap" id="planes" data-capitulo="Abre en 2027" data-dato="lista de espera">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">5</span>
+   <h2>Solo, o acompañado.</h2>
+   <p class="bajada">El mismo camino de 12 semanas: con la app y El Clínico, o con un clínico de cabecera que mira tus Signos cada semana. La primera camada abre en 2027.</p>
+  </header>
+  <div class="cuerpo">
+   <div class="acciones" style="margin-top:0">
+    <a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#">Anotarme en la lista de espera</a>
+   </div>
+   <p class="micro" style="margin-top:14px">Te aviso por correo el día que abre.</p>
+  </div>
  </div>
 </section>
 
-<!-- ═══ QUIÉN ═══ -->
-<section class="sec junto">
- <div class="wrap">
-  <div class="autor card rv">
-   <img class="foto" data-foto data-ancho="240" alt="Javo Katz" width="120" height="120" loading="lazy">
-   <div>
-    <b>Javo Katz</b>
-    <p class="rol">Fundador y paciente cero</p>
-    <p class="bio">Construyó La Clínica del Líder para él primero: fue su paciente cero, medido como cualquier otro. El acompañamiento clínico lo hace un equipo de profesionales.</p>
+<!-- ═══ 6 · QUIÉN LA FUNDÓ ═══ -->
+<section class="cap" id="autor" data-capitulo="Quién la fundó" data-dato="Javo Katz">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">6</span>
+   <h2>Fundador y paciente cero.</h2>
+  </header>
+  <div class="ancho">
+   <div class="autor">
+    <figure class="lamina"><img data-foto data-ancho="760" alt="Javo Katz" width="380" height="475" loading="lazy"><figcaption>Javo Katz, en Bariloche, Patagonia.</figcaption></figure>
+    <div>
+     <p class="capitular">Construí La Clínica del Líder para mí primero: fui su paciente cero, medido como cualquier otro. El acompañamiento clínico lo hace un equipo de profesionales.</p>
+     <a class="libro-x" data-link="heroe" href="#"><img data-img="tapas/heroe-chica.webp" alt="Héroe descapado" width="240" height="368" loading="lazy"><span><span class="serie">El método, también en libro</span><b>Héroe descapado</b><span class="t">La trilogía de El Eje: <i>La capa</i>, <i>El camino</i> y <i>Liderarte</i>.</span><span class="ir">Ver la trilogía</span></span></a>
+    </div>
    </div>
   </div>
-  <a class="libro-x card rv" data-link="heroe" href="#">
-   <img data-img="tapas/heroe-chica.webp" alt="Héroe descapado" width="320" height="491" loading="lazy">
-   <div><span class="eti">El método, también en libro</span><b>Héroe descapado</b><p>La trilogía de El Eje: La capa, El camino y Liderarte.</p><span class="ir">Ver la trilogía →</span></div>
-  </a>
- </div>
-</section>
-
-<!-- ═══ CIERRE ═══ -->
-<section class="sec centro" data-barra-hasta>
- <div class="wrap">
-  <hr class="regla">
-  <p class="frase-final rv">Una clínica que existe <em>para darte el alta.</em></p>
-  <div class="botones rv"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span> <span class="fl">→</span></a></div>
  </div>
 </section>
 </main>
 
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
- <p>Javo Katz · La Clínica del Líder · Bariloche, Patagonia</p>
- <p>La Clínica del Líder es una clínica digital: una app con un equipo profesional detrás. Ante una urgencia, comunícate con los servicios de emergencia de tu país.</p>
-</div></footer>
+<footer class="colofon" data-barra-hasta>
+ <div class="wrap">
+  <p class="cierre">Una clínica que existe para darte el alta.</p>
+  <div class="acciones"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#">Anotarme para 2027</a><a class="link" data-link="heroe" href="#">Ver la trilogía</a></div>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a></nav>
+  <p class="nota-final">La Clínica del Líder es una clínica digital: una app con un equipo profesional detrás. Ante una urgencia, comunícate con los servicios de emergencia de tu país.</p>
+  <p class="legal">Javo Katz · La Clínica del Líder · Bariloche, Patagonia. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<div class="barra"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#"><span>Anotarme para 2027</span></a></div>
+<div class="barra"><a class="btn" data-espera="clinica-del-lider" data-espera-nombre="La Clínica del Líder" href="#">Anotarme para 2027</a></div>
 
-<script>/*BASE_JS*/</script>
-<script>
-document.querySelectorAll('[data-wa]').forEach(function(a){ a.addEventListener('click',function(){ if(window.pxc) pxc('ContactoCdL',{content_name:'clinica-del-lider'}); }); });
-</script>
+<script>/*EDICION_JS*/</script>
 </body>
 </html>

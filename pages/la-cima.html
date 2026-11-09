@@ -8,115 +8,177 @@
 <meta name="theme-color" content="#F4EEE3">
 <meta property="og:type" content="website">
 <meta property="og:title" content="La Cima · 4 días en Bariloche · Javo Katz">
-<meta property="og:description" content="La Cima: 4 días en Bariloche, del 17 al 20 de diciembre. Recorremos las cinco estaciones en persona y te vas con tu contenido grabado.">
+<meta property="og:description" content="Del 17 al 20 de diciembre, en la Patagonia. Las cinco estaciones del camino, en persona.">
 <meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>/*EDICION_CSS*/</style>
 <style>
-.portada{padding-top:clamp(28px,6vw,64px);padding-bottom:clamp(36px,6vw,64px)}
-
-.cabeza .t1{font-size:clamp(50px,12.4vw,96px)}
-.cabeza .lead{max-width:30em}
-.fecha{display:inline-flex;flex-direction:column;gap:2px;align-items:flex-start;margin-top:26px;padding:12px 18px;border:1px solid var(--oro);border-radius:16px;background:var(--papel-2);font-size:17px;font-weight:700}
-.fecha span{color:var(--tinta-2);font-weight:600}
-.lista{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:14px}
-@media (min-width:860px){ .lista.tres-c{grid-template-columns:repeat(3,1fr)} .lista.dos-c{grid-template-columns:repeat(2,1fr)} }
-.lista li{padding:22px 22px 20px;background:var(--papel-2);border:1px solid var(--linea);border-radius:18px;font-size:18px;color:var(--tinta-2)}
-.lista b{display:block;font-family:var(--f-titulo);font-size:28px;font-weight:600;line-height:1.12;color:var(--tinta);margin-bottom:6px}
-.lista .eti{display:block;font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:4px}
-.pasos{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--linea)}
-.pasos li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--linea);font-size:18px;color:var(--tinta-2)}
-.pasos .n{font-family:var(--f-titulo);font-size:30px;font-weight:600;line-height:1;color:var(--oro-texto)}
-.pasos b{color:var(--tinta)}
-.estaciones-m{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;list-style:none;padding:0}
-.estaciones-m li{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--linea);border-radius:999px;background:var(--papel-2);font-size:16px;font-weight:700}
-.estaciones-m i{width:10px;height:10px;border-radius:50%;background:var(--c)}
-.final-c{padding-block:clamp(56px,10vw,96px);border-top:1px solid var(--linea)}
-
+/* la tarjeta de La Cima: las fechas, como en un programa impreso */
+.tarjeta{position:relative;max-width:440px;margin:0 auto;padding:clamp(30px,6vw,44px) clamp(24px,5vw,40px);text-align:center;background:var(--papel-2);border-radius:18px;
+  box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(168,135,90,.75),var(--sombra)}
+.tarjeta .serie{display:block}
+.fechas{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;font-family:var(--f-titulo);line-height:.9}
+.fechas b{font-size:clamp(92px,24vw,128px);font-weight:500;letter-spacing:-.03em;font-variant-numeric:lining-nums}
+.fechas span{display:block;width:34px;height:1px;background:var(--oro)}
+.mes{font-family:var(--f-titulo);font-style:italic;font-size:clamp(27px,6.4vw,32px);color:var(--tinta-2);margin-top:8px}
+.tarjeta .dias{list-style:none;margin:24px 0 0;padding:16px 0 0;border-top:1px solid var(--linea);display:flex;justify-content:center;flex-wrap:wrap;gap:4px 16px;font-size:16px;color:var(--tinta-2)}
+.glifos{display:flex;justify-content:center;gap:14px;margin-top:24px}
+.glifos svg{width:34px;height:34px;color:var(--c)}
+.tarjeta .lugar{margin-top:14px;font-size:17px;color:var(--tinta)}
+.tarjeta .lugar i{color:var(--tinta-2)}
+@media (min-width:1000px){ .pliego h1{font-size:clamp(60px,5.6vw,86px)} }
+.fotos{padding-top:clamp(20px,4vw,40px)}
+/* las cinco estaciones, en persona */
+.estaciones .sn svg{display:block;width:46px;height:46px;color:var(--c)}
+.estaciones h3{color:var(--ct,var(--c))}
+.estaciones .lib{display:block;margin-top:4px;font-size:17px;color:var(--tinta-2)}
+.trio{list-style:none;margin:clamp(44px,7vw,64px) 0 0;padding:0;display:grid;gap:0}
+.trio li{padding:24px 0;border-top:1px solid var(--linea)}
+.trio li:last-child{border-bottom:1px solid var(--linea)}
+.trio h3{font-size:clamp(29px,6.8vw,36px);line-height:1.08;margin-top:6px}
+.trio p{margin-top:8px;font-size:18px;line-height:1.55;color:var(--tinta-2)}
+@media (min-width:860px){ .trio{grid-template-columns:repeat(3,1fr);gap:0 36px} .trio li{border-bottom:1px solid var(--linea)} }
+.postula{margin-top:clamp(36px,6vw,48px)}
 </style>
 </head>
-<body data-pagina="la-cima" data-pagos="">
+<body data-pagina="la-cima" data-pagos="" data-libro-titulo="La Cima · 4 días en Bariloche">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="g-lago" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="32" cy="32" r="4"/><circle cx="32" cy="32" r="11"/><circle cx="32" cy="32" r="18"/><circle cx="32" cy="32" r="25"/><circle cx="32" cy="32" r="30" stroke-opacity=".45"/></g></symbol>
+<symbol id="g-montana" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><polyline points="6,56 17,44 24,49 35,30 42,35 56,10"/><circle cx="17" cy="44" r="2.2" fill="currentColor"/><circle cx="35" cy="30" r="2.2" fill="currentColor"/><circle cx="56" cy="10" r="2.6" fill="currentColor"/><path d="M4 60h56" stroke-opacity=".45"/></g></symbol>
+<symbol id="g-viento" viewBox="0 0 64 64"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M32 32 a3 3 0 0 1 6 0 a6 6 0 0 1 -12 0 a9 9 0 0 1 18 0 a12 12 0 0 1 -24 0 a15 15 0 0 1 30 0 a18 18 0 0 1 -36 0 a21 21 0 0 1 42 0"/></symbol>
+<symbol id="g-rio" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 4 C 52 10, 52 22, 30 27 S 8 42, 34 47 S 58 56, 52 62"/><path d="M18 4 C 56 12, 56 24, 34 29 S 14 42, 39 47" stroke-opacity=".45"/></g></symbol>
+<symbol id="g-bosque" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="32" cy="33" rx="5" ry="4.4"/><ellipse cx="31.5" cy="33" rx="11.5" ry="10.5"/><ellipse cx="32.5" cy="32.5" rx="18.5" ry="17"/><ellipse cx="32" cy="32" rx="26" ry="24.5"/><path d="M32 33 L52 18" stroke-opacity=".45"/></g></symbol>
+</defs></svg>
 
 <header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-  <a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Postularme</span></a>
+  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
+  <p class="rotulo" aria-hidden="true"></p>
+  <div class="top-der">
+   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
+   <a class="btn" data-link="agenda" data-hash="#agenda" href="#">Postularme</a>
+  </div>
 </div></header>
 
 <main>
-
-<!-- ═══ PORTADA ═══ -->
-<section class="portada cabeza" data-barra-desde>
+<section class="portadilla" data-barra-desde>
  <div class="wrap">
-  <span class="kick rv">La Cima</span>
-  <h1 class="t1 rv d1">4 días <em>en Bariloche.</em></h1>
-  <p class="lead rv d2">Los más comprometidos del camino, juntos en la Patagonia. Recorremos las cinco estaciones en persona, instalas lo que te falta y te vas con tu contenido grabado. <b>Se suma a cualquiera de las formas del programa.</b></p>
-  <p class="fecha rv d2">Del jueves 17 al domingo 20 de diciembre <span>Bariloche, Patagonia</span></p>
-  <div class="botones rv d3">
-   <a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Postularme</span> <span class="fl">→</span></a>
+  <div class="pliego">
+   <div class="recto">
+    <p class="serie">La Cima · Bariloche, Patagonia</p>
+    <h1>4 días en Bariloche.</h1>
+    <span class="filete"></span>
+    <p class="subtitulo">Las cinco estaciones del camino,<br>en persona.</p>
+    <p class="bajada">Los más comprometidos del camino, juntos en la Patagonia. Recorremos las cinco estaciones en persona, instalas lo que te falta y <b>te vas con tu contenido grabado.</b></p>
+    <div class="acciones">
+     <a class="btn" data-link="agenda" data-hash="#agenda" href="#">Postularme a La Cima</a>
+     <a class="link" data-link="camino" href="#">Ver el mapa del camino</a>
+    </div>
+    <p class="micro" style="margin-top:22px">Te postulas agendando una llamada conmigo. Ahí vemos juntos si es tu momento. Se suma a cualquiera de las formas del programa.</p>
+   </div>
+   <div class="verso">
+    <div class="tarjeta">
+     <span class="serie">La Cima · diciembre</span>
+     <p class="fechas" aria-label="Del 17 al 20"><b>17</b><span></span><b>20</b></p>
+     <p class="mes">de diciembre</p>
+     <ul class="dias"><li>Jueves</li><li>Viernes</li><li>Sábado</li><li>Domingo</li></ul>
+     <div class="glifos" aria-hidden="true">
+      <svg viewBox="0 0 64 64" style="--c:var(--lago)"><use href="#g-lago"/></svg>
+      <svg viewBox="0 0 64 64" style="--c:var(--montana)"><use href="#g-montana"/></svg>
+      <svg viewBox="0 0 64 64" style="--c:var(--viento)"><use href="#g-viento"/></svg>
+      <svg viewBox="0 0 64 64" style="--c:var(--rio)"><use href="#g-rio"/></svg>
+      <svg viewBox="0 0 64 64" style="--c:var(--bosque)"><use href="#g-bosque"/></svg>
+     </div>
+     <p class="lugar">Bariloche, Patagonia<br><i>por postulación</i></p>
+    </div>
+   </div>
   </div>
-  <p class="micro rv d3">Te postulas agendando una llamada conmigo. Ahí vemos juntos si es tu momento.</p>
  </div>
 </section>
 
-<!-- ═══ QUÉ PASA ═══ -->
-<section class="sec junto">
- <div class="wrap ancho">
-  <span class="kick rv">Qué pasa en esos días</span>
-  <h2 class="t2 rv">Del lago al bosque, <em>en persona.</em></h2>
-  <p class="lead rv">El mismo camino de los 90 días, con la montaña enfrente y el lago al lado. Cada día trabajamos sobre tu consulta, no sobre un ejemplo.</p>
-  <ul class="estaciones-m rv">
-   <li style="--c:var(--lago)"><i></i>El lago · tu reset</li>
-   <li style="--c:var(--montana)"><i></i>La montaña · tu programa</li>
-   <li style="--c:var(--viento)"><i></i>El viento · tu captación</li>
-   <li style="--c:var(--rio)"><i></i>El río · tu app</li>
-   <li style="--c:var(--bosque)"><i></i>El bosque · tu ecosistema</li>
-  </ul>
-  <ul class="lista tres-c">
-   <li class="rv"><span class="eti">Instalas</span><b>Lo que te falta, hecho</b>Cada sistema que todavía no está andando, lo dejamos funcionando ahí mismo, con tus datos y tus herramientas.</li>
-   <li class="rv d1"><span class="eti">Grabas</span><b>Tu contenido, listo</b>Te vas con tu contenido grabado en la Patagonia, para las semanas que vienen.</li>
-   <li class="rv d2"><span class="eti">Compartes</span><b>Una mesa de pares</b>Profesionales que atienden 1 a 1 y van en serio, juntos cuatro días. Lo que uno resuelve, lo aprenden todos.</li>
-  </ul>
+<section class="fotos" aria-label="Eventos, rodajes y mentorías en la Patagonia">
+ <div class="fotos-banda" data-fotos></div>
+</section>
+
+<!-- ═══ 1 · EN ESOS DÍAS ═══ -->
+<section class="cap" id="dias" data-capitulo="En esos días" data-dato="las cinco estaciones">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Del lago al bosque, en persona.</h2>
+   <p class="bajada">El mismo camino de los 90 días, con la montaña enfrente y el lago al lado. Cada día trabajamos sobre tu consulta, no sobre un ejemplo.</p>
+  </header>
+  <div class="ancho">
+   <ol class="secuencia estaciones">
+    <li style="--c:var(--lago)"><span class="sn"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#g-lago"/></svg></span><div><h3>El lago, tu reset</h3><span class="lib">Libertad mental</span></div></li>
+    <li style="--c:var(--montana)"><span class="sn"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#g-montana"/></svg></span><div><h3>La montaña, tu programa</h3><span class="lib">Libertad financiera</span></div></li>
+    <li style="--c:var(--viento);--ct:#7A5717"><span class="sn"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#g-viento"/></svg></span><div><h3>El viento, tu captación</h3><span class="lib">Libertad emocional</span></div></li>
+    <li style="--c:var(--rio)"><span class="sn"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#g-rio"/></svg></span><div><h3>El río, tu app</h3><span class="lib">Libertad energética</span></div></li>
+    <li style="--c:var(--bosque)"><span class="sn"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#g-bosque"/></svg></span><div><h3>El bosque, tu ecosistema</h3><span class="lib">Libertad de tiempo</span></div></li>
+   </ol>
+   <ul class="trio">
+    <li><p class="serie">Instalas</p><h3>Lo que te falta, hecho</h3><p>Cada sistema que todavía no está andando, lo dejamos funcionando ahí mismo, con tus datos y tus herramientas.</p></li>
+    <li><p class="serie">Grabas</p><h3>Tu contenido, listo</h3><p>Te vas con tu contenido grabado en la Patagonia, para las semanas que vienen.</p></li>
+    <li><p class="serie">Compartes</p><h3>Una mesa de pares</h3><p>Profesionales que atienden 1 a 1 y van en serio, juntos cuatro días. Lo que uno resuelve, lo aprenden todos.</p></li>
+   </ul>
+  </div>
  </div>
 </section>
 
-<!-- ═══ CÓMO TE POSTULAS ═══ -->
-<section class="sec junto">
- <div class="wrap">
-  <span class="kick rv">Cómo te postulas</span>
-  <h2 class="t2 rv">Tres pasos, <em>sin vueltas.</em></h2>
-  <ol class="pasos">
-   <li class="rv"><span class="n">1</span><span><b>Agendas una llamada conmigo.</b> Eliges el horario en mi agenda.</span></li>
-   <li class="rv"><span class="n">2</span><span><b>Vemos juntos tu momento.</b> Dónde está tu consulta hoy y con qué forma del programa recorres el camino.</span></li>
-   <li class="rv"><span class="n">3</span><span><b>Si es tu momento, reservas tu lugar.</b> El precio y los detalles del viaje los hablamos en la llamada.</span></li>
-  </ol>
+<!-- ═══ 2 · CÓMO TE POSTULAS ═══ -->
+<section class="cap" id="postular" data-capitulo="Cómo te postulas" data-dato="tres pasos">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">2</span>
+   <h2>Tres pasos, sin vueltas.</h2>
+   <p class="bajada">La Cima es para los más comprometidos del camino. Por eso se entra conversando.</p>
+  </header>
+  <div class="ancho">
+   <ol class="secuencia">
+    <li><span class="sn"><b>1</b></span><div><h3>Agendas una llamada conmigo</h3><p>Eliges el horario en mi agenda.</p></div></li>
+    <li><span class="sn"><b>2</b></span><div><h3>Vemos juntos tu momento</h3><p>Dónde está tu consulta hoy y con qué forma del programa recorres el camino.</p></div></li>
+    <li class="sello"><span class="sn"><b>3</b></span><div><h3>Si es tu momento, reservas tu lugar</h3><p>El precio y los detalles del viaje los hablamos en la llamada.</p></div></li>
+   </ol>
+   <div class="acciones postula">
+    <a class="btn" data-link="agenda" data-hash="#agenda" href="#">Agendar mi llamada</a>
+    <p class="micro">Te recibirá Javo personalmente.</p>
+   </div>
+  </div>
  </div>
 </section>
 
-<!-- ═══ FINAL ═══ -->
-<section class="final-c" data-barra-hasta>
- <div class="wrap centro">
-  <span class="kick rv">17 al 20 de diciembre</span>
-  <h2 class="t2 rv">Nos vemos <em>en la Patagonia.</em></h2>
-  <div class="botones rv"><a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Postularme a La Cima</span> <span class="fl">→</span></a></div>
-  <p class="micro rv"><a class="link" data-link="camino" href="#">Ver el mapa del camino</a></p>
+<!-- ═══ 3 · LO QUE CUENTAN ═══ -->
+<section class="cap" id="voces" data-capitulo="Lo que cuentan" data-dato="los que ya lo hicieron">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">3</span>
+   <h2>Más de 50 profesionales ya recorrieron el camino.</h2>
+   <p class="bajada">Coaches, terapeutas, nutricionistas, entrenadores y médicos. Toca cualquiera para escucharlo.</p>
+  </header>
+  <div class="ancho">
+   <div class="testi seis" data-muro="6"></div>
+   <p class="desliza">Desliza para ver más.</p>
+  </div>
  </div>
 </section>
-
 </main>
 
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="recursos" href="#">Para empezar</a></nav>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
- <p>Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
-</div></footer>
+<footer class="colofon" data-barra-hasta>
+ <div class="wrap">
+  <p class="cierre">Nos vemos en la Patagonia.</p>
+  <div class="acciones"><a class="btn" data-link="agenda" data-hash="#agenda" href="#">Postularme a La Cima</a><a class="link" data-link="camino" href="#">Ver el mapa del camino</a></div>
+  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
+  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="libros" href="#">Los libros</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="mastermind" href="#">El mastermind</a></nav>
+  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
+  <p class="legal">Javo Katz · Tu Clínica Digital. Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+ </div>
+</footer>
 
-<div class="barra"><a class="btn" data-link="agenda" data-hash="#agenda" href="#"><span>Postularme a La Cima</span></a></div>
+<div class="barra"><a class="btn" data-link="agenda" data-hash="#agenda" href="#">Postularme a La Cima</a></div>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
 
-<script>/*BASE_JS*/</script>
-
+<script>/*EDICION_JS*/</script>
 </body>
 </html>
