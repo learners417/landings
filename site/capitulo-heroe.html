@@ -524,7 +524,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
    Se mira el script de Clarity y no solo window.clarity: alguien puede dejar la cola armada
    sin cargarlo, y entonces sí hay que cargarlo. En las vistas previas no se carga. */
 (function (w, d, id) {
-  if (!id || /claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) return;
+  if (!id || ((w.__tcdCarga || {}).rama || 'main') !== 'main' || /claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) return;
   if (d.querySelector('script[src*="clarity.ms/"]')) return;
   w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
   var s = d.createElement('script');
@@ -861,7 +861,8 @@ html:not(.js) .lector-nav{display:none}
   function px(ev, datos) { cl(ev); try { if (window.fbq) C.pixel ? fbq('trackSingle', C.pixel, ev, datos || {}) : fbq('track', ev, datos || {}); } catch (e) {} }
   function pxc(ev, datos) { cl(ev); try { if (window.fbq) C.pixel ? fbq('trackSingleCustom', C.pixel, ev, datos || {}) : fbq('trackCustom', ev, datos || {}); } catch (e) {} }
   window.px = px; window.pxc = pxc;
-  if (C.pixel && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
+  var previa = ((window.__tcdCarga || {}).rama || 'main') !== 'main';
+  if (C.pixel && !previa && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', C.pixel); px('PageView');
     px('ViewContent', { content_name: pagina, content_category: origen || 'directo' });
