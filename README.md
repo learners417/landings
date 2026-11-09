@@ -37,8 +37,15 @@ La lista de espera: formulario de GHL «Lista de espera» `YX3xdi92MbG4VuM15vPk`
 La puerta de las seis herramientas (8 nov 2026): formulario de GHL «Herramientas · para empezar» `0RGhK8342PTwkXk0MsCa`
 (nombre, correo y el campo oculto `contact.herramienta`, clave de consulta `herramienta`, con contacto fijo).
 En /phr, /guiadeprecios, /impostor, /creatuprotocolo, /generador-caja y /automatizar, cada botón a la comunidad lo abre
-con la ruta de la página puesta y, al enviarlo, lleva a Skool. Quien ya dejó su correo en ese navegador entra directo.
-En GHL, el flujo «Herramientas · etiqueta» suma `herramientas` y `herramienta-<ruta>`; desde el 27, «Lectores · 10 días» los toma.
+con la ruta de la página puesta y, al enviarlo, lleva a Skool (y su mensaje de «Listo» trae el link a la comunidad).
+Quien ya dejó su correo en ese navegador entra directo. En GHL, el flujo publicado «Herramientas · etiqueta» suma
+`herramientas`, `carta-semanal` y `herramienta-<ruta>` (etiqueta dinámica con el campo). No entra a «Lectores · 10 días»:
+su correo 1 dice «Tu capítulo está abierto».
+
+Los tres formularios (herramientas, lista de espera y la puerta de los capítulos) van en un iframe simple, sin
+`form_embed.js`: ese script los escondía desde la segunda visita. La dirección lleva el dato oculto y las UTM de la página.
+El envío se detecta con el mensaje `set-sticky-contacts` de GHL; por eso el formulario de las herramientas y el de la
+puerta de los capítulos (`s3o93G3fWK3VrO6Gin1n`) tienen «Contacto fijo» encendido. Sin probar todavía con un envío real.
 
 Si un paso de GHL tiene otra ruta pero debe mostrar una página existente, va una línea antes:
 `<script>window.TCD_PAGINA='el-numero'</script>` (así está `/el-numero-2245`).
