@@ -76,7 +76,19 @@ Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 - `ghl/retirado/` · copias de parches que vivían en el código de seguimiento de un embudo y ya pasaron a las páginas
   (el de Libros y App v3.2 salió de GHL el 6 nov 2026; los cambios de página se hacen aquí, no con parches)
 
+## La Edición Libres (9 nov 2026, aprobada y en vivo)
+Cada página es un libro de la colección: portadilla, índice, capítulos y colofón. Las páginas nuevas piden
+`<style>/*EDICION_CSS*/</style>` y `<script>/*EDICION_JS*/</script>` (build.py pone `src/edicion.css`, `config.js`,
+`clarity.js`, `base.js` y `src/edicion.js`). Las que siguen con `/*BASE_CSS*/` toman la letra y el botón nuevos por el
+puente al final de `base.css`. Detalle del diseño: `EDICION.md`.
+- El estante de los 8 libros es uno solo: `src/estante.html`, puesto donde la página dice `<!--ESTANTE-->`.
+- Las 6 herramientas salen de `tools.py` (con su palabra, su estación y su libro): `python3 tools.py` y después armar.
+- Vista previa antes de publicar: subir a la rama `edicion` y abrir `tuclinica.digital/<ruta>?rama=edicion`
+  (el cargador trae esa rama; sin píxel ni Clarity). Purgar `@edicion` en jsDelivr como `@main`.
+- Los correos de entrega de las herramientas y de la lista de espera: `ghl/correos/herramientas-y-espera.md`.
+  Su link es `/herramienta?h=<ruta>` (`pages/herramienta.html` + `TCD.herramientas` en config.js). Falta su paso en GHL.
+
 ## Reglas del estándar
 Letra de 16 px o más · papel, sin fondo negro, sin degradés ni brillos · oro solo en líneas de 1 px,
-versalitas y numerales · castellano neutro, tuteo · nunca «gente» ni «gratis» · sin señales de falta de
+versalitas y numerales · Cormorant Garamond titula y Literata se lee · sin flechas en los botones · castellano neutro, tuteo · nunca «gente» ni «gratis» · sin señales de falta de
 dinero · datos con su fuente · sin emojis.
