@@ -24,6 +24,7 @@ Cargados los 12 correos, en dos flujos nuevos, **en borrador** (Javo los publica
   etiqueta `lista-espera` → Si/Si no por el campo «Lista de espera» (clinica-del-lider, materias-pendientes, intangibles,
   mastermind, heroe-descapado) → etiqueta `lista-<lista>` + su correo.
 
+El paso `/herramienta` existe en GHL (embudo Lead Magnets CLINICA, `0ee9b0fe-6c4f-432e-8ca8-f251f5ff4f57`).
 Remitente Javo Katz, `javo@notificaciones.tuclinica.digital`. Asunto y vista previa como arriba; el cuerpo es el HTML de
 `ghl/correos/html/h-<ruta>.html` y `e-<lista>.html` (GHL lo pasa a su letra del editor al guardar).
 El paso «seguir en Lectores · 10 días desde el correo 2» se agrega el 27 nov, cuando «Lectores · 10 días» se publica
