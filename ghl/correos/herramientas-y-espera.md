@@ -15,14 +15,16 @@ El P. D. dice la línea de Tu nuevo precio de hoy («Los 8 libros y los cinco pr
 
 ## En GHL (9 nov 2026)
 
-Cargados los 12 correos, en dos flujos nuevos, **en borrador** (Javo los publica con un clic):
+Cargados los 12 correos, en dos flujos nuevos, **publicados el 9 nov** con el clic de Javo:
 
 - **«Herramientas · entrega»** (`3951ed6a-a246-486c-a267-692d5fa7693c`): formulario «Herramientas · para empezar» →
   Si/Si no por el campo «Herramienta» (phr, guiadeprecios, impostor, generador-caja, creatuprotocolo, automatizar,
   recursos) → un correo por rama. El flujo «Herramientas · etiqueta» (publicado) sigue poniendo las etiquetas.
 - **«Lista de espera · primer correo»** (`7a8f9c51-594e-4d50-ac4e-7ddfe987fc93`): formulario «Lista de espera» →
   etiqueta `lista-espera` → Si/Si no por el campo «Lista de espera» (clinica-del-lider, materias-pendientes, intangibles,
-  mastermind, heroe-descapado) → etiqueta `lista-<lista>` + su correo.
+  mastermind, heroe-descapado) → etiqueta `lista-<lista>` + su correo. Las 6 etiquetas (`lista-espera` y las cinco
+  `lista-<lista>`) se crearon en GHL al publicarlo: el validador marca como error una etiqueta que no existe en la
+  cuenta. Una etiqueta nueva se crea desde la misma acción, con «Añadir nueva etiqueta».
 
 El paso `/herramienta` existe en GHL (embudo Lead Magnets CLINICA, `0ee9b0fe-6c4f-432e-8ca8-f251f5ff4f57`).
 Remitente Javo Katz, `javo@notificaciones.tuclinica.digital`. Asunto y vista previa como arriba; el cuerpo es el HTML de

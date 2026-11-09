@@ -94,7 +94,7 @@ Cada página es un libro de la colección: portadilla, índice, capítulos y col
   (el cargador trae esa rama; sin píxel ni Clarity). Purgar `@edicion` en jsDelivr como `@main`.
 - Los correos de entrega de las herramientas y de la lista de espera: `ghl/correos/herramientas-y-espera.md`.
   Su link es `/herramienta?h=<ruta>` (`pages/herramienta.html` + `TCD.herramientas` en config.js), con su paso en GHL desde el 9 nov.
-  Los 12 correos ya están en GHL, en dos flujos en borrador: «Herramientas · entrega» y «Lista de espera · primer correo».
+  Los 12 correos están en GHL, en dos flujos publicados el 9 nov: «Herramientas · entrega» y «Lista de espera · primer correo».
 
 ## Reglas del estándar
 Letra de 16 px o más · papel, sin fondo negro, sin degradés ni brillos · oro solo en líneas de 1 px,
