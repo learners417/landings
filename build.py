@@ -1,8 +1,16 @@
-import os,re,base64,json,pathlib
-I='/home/claude/eco/imgs/'
+import os,re,base64,json,pathlib,sys
+# Las imágenes viven en este repo. La ruta salía clavada a mano
+# (/home/claude/eco/imgs/) y el `if os.path.exists` de abajo hacía que, clonado
+# en cualquier otra carpeta, el build se armara igual y SIN NINGUNA IMAGEN:
+# 34 páginas publicadas con las tapas vacías y ningún error. Ahora la ruta sale
+# del repo, y lo que falte se avisa en pantalla y corta el build.
+I=os.path.join(os.path.dirname(os.path.abspath(__file__)),'imgs')+os.sep
+FALTAN=[]
 def imgs(s):
     # las imágenes van dentro de la página: data-img (las <img>) y data-tapa (los lomos del estante)
     ks=sorted(set(re.findall(r'data-(?:img|tapa)="([^"]+)"',s)))
+    for k in ks:
+        if not os.path.exists(I+k) and k not in FALTAN: FALTAN.append(k)
     m={k:'data:image/webp;base64,'+base64.b64encode(open(I+k,'rb').read()).decode() for k in ks if os.path.exists(I+k)}
     return '<script>window.TCD_IMGS='+json.dumps(m)+';</script>'
 css=open('src/base.css').read(); cfg=open('src/config.js').read(); js=open('src/base.js').read(); cla=open('src/clarity.js').read()
@@ -23,3 +31,9 @@ for f in sorted(p.stem for p in pathlib.Path('pages').glob('*.html')):
     assert '/*BASE' not in s and '/*EDICION' not in s, f
     open('dist/%s.html'%f,'w').write(s)
     print(f, len(s))
+
+# Una imagen que falta no se publica en silencio: el build corta acá.
+if FALTAN:
+    print('\nFALTAN %d imagen(es) en %s:' % (len(FALTAN), I))
+    for k in FALTAN: print('  ·', k)
+    sys.exit(1)
