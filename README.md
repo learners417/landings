@@ -79,14 +79,22 @@ Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 ## La Edición Libres (9 nov 2026, aprobada y en vivo)
 Cada página es un libro de la colección: portadilla, índice, capítulos y colofón. Las páginas nuevas piden
 `<style>/*EDICION_CSS*/</style>` y `<script>/*EDICION_JS*/</script>` (build.py pone `src/edicion.css`, `config.js`,
-`clarity.js`, `base.js` y `src/edicion.js`). Las que siguen con `/*BASE_CSS*/` toman la letra y el botón nuevos por el
-puente al final de `base.css`. Detalle del diseño: `EDICION.md`.
+`clarity.js`, `base.js` y `src/edicion.js`). Desde el 9 nov **todas** las páginas están en la Edición, menos `/gracias`
+(lógica del otro chat, sigue con `/*BASE_CSS*/` y el puente de `base.css`). Detalle del diseño: `EDICION.md`.
+- Generadores (en `/home/claude/scripts/`, rehacen la página desde su contenido aprobado): `camino_ed.py` (+ `camino_ed.css`,
+  el mapa con una pantalla por capítulo y pestañas), `sur_ed.py` (la colección de los 5 libros, con el abanico),
+  `cdl_ed.py` (La Clínica del Líder, con el teléfono), `proximos_ed.py` (Héroe descapado, Materias pendientes, Intangibles,
+  con la lista de espera de GHL) y `medita_ed.py` (las 7 meditaciones). /la-cima, /mastermind y /prensa se editan a mano.
+- `/el-numero`, `/app` y `/app-745191` son redirecciones (El Número y la app suelta se retiraron: llevan a Tu nuevo precio).
+- El precio en los botones (`… · <span data-precio>97</span> USD`): build.py lo envuelve en `.pr` para que en el celular
+  baje entero a su propia línea («Quiero Tu nuevo precio» / «97 USD»).
 - El estante de los 8 libros es uno solo: `src/estante.html`, puesto donde la página dice `<!--ESTANTE-->`.
 - Las 6 herramientas salen de `tools.py` (con su palabra, su estación y su libro): `python3 tools.py` y después armar.
 - Vista previa antes de publicar: subir a la rama `edicion` y abrir `tuclinica.digital/<ruta>?rama=edicion`
   (el cargador trae esa rama; sin píxel ni Clarity). Purgar `@edicion` en jsDelivr como `@main`.
 - Los correos de entrega de las herramientas y de la lista de espera: `ghl/correos/herramientas-y-espera.md`.
   Su link es `/herramienta?h=<ruta>` (`pages/herramienta.html` + `TCD.herramientas` en config.js). Falta su paso en GHL.
+  Los 12 correos ya están en GHL, en dos flujos en borrador: «Herramientas · entrega» y «Lista de espera · primer correo».
 
 ## Reglas del estándar
 Letra de 16 px o más · papel, sin fondo negro, sin degradés ni brillos · oro solo en líneas de 1 px,

@@ -11,7 +11,23 @@ correos no se tocan el día del cambio. Sale de `config.js` (`herramientas`).
 **Después del correo de entrega**, al día siguiente, el contacto sigue en «Lectores · 10 días» desde el
 correo 2 (no recibe el 1, que dice «Tu capítulo está abierto»).
 
-El P. D. es la línea de Tu nuevo precio desde el 27 nov (cuando los audios están en la app).
+El P. D. dice la línea de Tu nuevo precio de hoy («Los 8 libros y los cinco primeros días de mi app»): es verdad antes y después del 27 nov, así que no hay que tocarlo ese día.
+
+## En GHL (9 nov 2026)
+
+Cargados los 12 correos, en dos flujos nuevos, **en borrador** (Javo los publica con un clic):
+
+- **«Herramientas · entrega»** (`3951ed6a-a246-486c-a267-692d5fa7693c`): formulario «Herramientas · para empezar» →
+  Si/Si no por el campo «Herramienta» (phr, guiadeprecios, impostor, generador-caja, creatuprotocolo, automatizar,
+  recursos) → un correo por rama. El flujo «Herramientas · etiqueta» (publicado) sigue poniendo las etiquetas.
+- **«Lista de espera · primer correo»** (`7a8f9c51-594e-4d50-ac4e-7ddfe987fc93`): formulario «Lista de espera» →
+  etiqueta `lista-espera` → Si/Si no por el campo «Lista de espera» (clinica-del-lider, materias-pendientes, intangibles,
+  mastermind, heroe-descapado) → etiqueta `lista-<lista>` + su correo.
+
+Remitente Javo Katz, `javo@notificaciones.tuclinica.digital`. Asunto y vista previa como arriba; el cuerpo es el HTML de
+`ghl/correos/html/h-<ruta>.html` y `e-<lista>.html` (GHL lo pasa a su letra del editor al guardar).
+El paso «seguir en Lectores · 10 días desde el correo 2» se agrega el 27 nov, cuando «Lectores · 10 días» se publica
+(un flujo en borrador no recibe contactos).
 
 ---
 
@@ -40,7 +56,7 @@ Esta herramienta es parte del lago, la primera estación del camino. Si quieres 
 
 Javo
 
-P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz. 97 USD. Verlo — /libros#obra
+P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros y los cinco primeros días de mi app. 97 USD. Verlo — /libros#obra
 
 ### guiadeprecios · Un precio sano
 Asunto: Tu guía de precios
@@ -62,7 +78,7 @@ Esta herramienta es parte del lago, la primera estación del camino. Su libro te
 
 Javo
 
-P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz. 97 USD. Verlo — /libros#obra
+P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros y los cinco primeros días de mi app. 97 USD. Verlo — /libros#obra
 
 ### impostor · Es un meme, y se cambia
 Asunto: Tu patrón con el precio
@@ -84,7 +100,7 @@ Esta herramienta es parte del lago, la primera estación del camino.
 
 Javo
 
-P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz. 97 USD. Verlo — /libros#obra
+P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros y los cinco primeros días de mi app. 97 USD. Verlo — /libros#obra
 
 ### generador-caja · Los consultantes que ya tienes
 Asunto: Los 5 mensajes
@@ -106,7 +122,7 @@ Esta herramienta es parte de la montaña, la estación donde armas tu programa.
 
 Javo
 
-P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz. 97 USD. Verlo — /libros#obra
+P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros y los cinco primeros días de mi app. 97 USD. Verlo — /libros#obra
 
 ### creatuprotocolo · Vende el resultado
 Asunto: Tu protocolo
@@ -128,7 +144,7 @@ Esta herramienta es parte de la montaña, la estación donde armas tu programa.
 
 Javo
 
-P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz. 97 USD. Verlo — /libros#obra
+P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros y los cinco primeros días de mi app. 97 USD. Verlo — /libros#obra
 
 ### automatizar · Un consultorio que funciona aunque tú pares
 Asunto: Tu checklist de 12 procesos
@@ -150,7 +166,7 @@ Esta herramienta es parte del río, la estación donde todo empieza a correr sol
 
 Javo
 
-P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros, los cinco primeros días de mi app y cinco mañanas con mi voz. 97 USD. Verlo — /libros#obra
+P. D. Si quieres empezar ya: Tu nuevo precio. Los 8 libros y los cinco primeros días de mi app. 97 USD. Verlo — /libros#obra
 
 ### recursos · La comunidad
 Asunto: Ya estás adentro
@@ -170,7 +186,7 @@ Javo
 
 ## Lista de espera · primer correo (al instante)
 
-Lo dispara el formulario «Lista de espera» (`YX3xdi92MbG4VuM15vPk`). Rama por `contact.lista_de_espera`.
+Lo dispara el formulario «Lista de espera» (`YX3xdi92MbG4VuM15vPk`). Rama por `contact.lista_de_espera`: clinica-del-lider, materias-pendientes, intangibles, mastermind y heroe-descapado (la trilogía, desde el 9 nov).
 Etiqueta `lista-espera` y `lista-<lista>`. Al día siguiente sigue en «Lectores · 10 días» desde el correo 2.
 
 ### clinica-del-lider
@@ -226,5 +242,19 @@ Ya estás en la lista del mastermind. Se entra por invitación, y se llega recor
 El primer paso es Tu nuevo precio: los 8 libros y los cinco primeros días de mi app, donde sellas tu precio nuevo.
 
 → Ver Tu nuevo precio — /libros#obra
+
+Javo
+
+### heroe-descapado
+Asunto: Estás en la lista
+Vista previa: La trilogía de El Eje, en preparación.
+
+Hola {{contact.first_name}}:
+
+Ya estás en la lista de la trilogía *Héroe descapado*: *La capa*, *El camino* y *Liderarte*. Te escribo el día que sale el primer tomo.
+
+Mientras tanto, el libro ya está. La apertura se lee aquí mismo, sin costo.
+
+→ Leer la apertura — /capitulo-heroe?lector=1 (9 minutos)
 
 Javo

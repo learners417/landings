@@ -1,0 +1,54 @@
+{
+ "herramientas": {
+  "phr": [
+   "Tu hora real",
+   "Tres números y dos minutos."
+  ],
+  "guiadeprecios": [
+   "Tu guía de precios",
+   "Lo que sostiene tu precio, y cómo se sube."
+  ],
+  "impostor": [
+   "Tu patrón con el precio",
+   "«¿Quién soy yo para cobrar esto?» se aprende. Y se cambia."
+  ],
+  "generador-caja": [
+   "Los 5 mensajes",
+   "Para las personas que ya confiaron en ti."
+  ],
+  "creatuprotocolo": [
+   "Tu protocolo",
+   "La sesión tiene techo. El resultado, no."
+  ],
+  "automatizar": [
+   "Tu checklist de 12 procesos",
+   "Una herramienta por semana, en orden."
+  ],
+  "recursos": [
+   "Ya estás adentro",
+   "Los jueves a las 19:00, en vivo."
+  ]
+ },
+ "espera": {
+  "clinica-del-lider": [
+   "Estás en la lista",
+   "La Clínica del Líder abre en 2027."
+  ],
+  "materias-pendientes": [
+   "Estás en la lista",
+   "Lo que la escuela no te enseñó a propósito."
+  ],
+  "intangibles": [
+   "Estás en la lista",
+   "Lo que no se toca, pero te toca."
+  ],
+  "mastermind": [
+   "Estás en la lista",
+   "Se llega recorriendo el camino."
+  ],
+  "heroe-descapado": [
+   "Estás en la lista",
+   "La trilogía de El Eje, en preparación."
+  ]
+ }
+}
