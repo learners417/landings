@@ -15,14 +15,18 @@
 
   var REPO = 'learners417/landings';
   var ALIAS = { '': 'inicio' };
+  /* La vista previa: ?rama=edicion trae la página de esa rama de GitHub, para mirarla antes de publicarla.
+     En la vista previa no se cargan el píxel ni Clarity (base.js y clarity.js miran carga.rama). */
+  var rama = 'main';
+  try { var pedida = new URLSearchParams(location.search).get('rama'); if (pedida && /^[a-z0-9-]{2,30}$/.test(pedida)) rama = pedida; } catch (e) {}
   var ruta = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
   var pagina = w.TCD_PAGINA || (ruta in ALIAS ? ALIAS[ruta] : ruta);
   var archivo = '/site/' + pagina + '.html';
   var FUENTES = [
-    'https://cdn.jsdelivr.net/gh/' + REPO + '@main' + archivo,
-    'https://raw.githubusercontent.com/' + REPO + '/main' + archivo
+    'https://cdn.jsdelivr.net/gh/' + REPO + '@' + rama + archivo,
+    'https://raw.githubusercontent.com/' + REPO + '/' + rama + archivo
   ];
-  var carga = w.__tcdCarga = { pagina: pagina, inicio: Math.round(performance.now()) };
+  var carga = w.__tcdCarga = { pagina: pagina, rama: rama, inicio: Math.round(performance.now()) };
 
   /* La tapa: oculta lo visible de GHL mientras llega la página. */
   var tapa = d.getElementById('tcd-tapa');
