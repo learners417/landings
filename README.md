@@ -81,10 +81,10 @@ Cada página es un libro de la colección: portadilla, índice, capítulos y col
 `<style>/*EDICION_CSS*/</style>` y `<script>/*EDICION_JS*/</script>` (build.py pone `src/edicion.css`, `config.js`,
 `clarity.js`, `base.js` y `src/edicion.js`). Desde el 9 nov **todas** las páginas están en la Edición, menos `/gracias`
 (lógica del otro chat, sigue con `/*BASE_CSS*/` y el puente de `base.css`). Detalle del diseño: `EDICION.md`.
-- Generadores (en `/home/claude/scripts/`, rehacen la página desde su contenido aprobado): `camino_ed.py` (+ `camino_ed.css`,
-  el mapa con una pantalla por capítulo y pestañas), `sur_ed.py` (la colección de los 5 libros, con el abanico),
-  `cdl_ed.py` (La Clínica del Líder, con el teléfono), `proximos_ed.py` (Héroe descapado, Materias pendientes, Intangibles,
-  con la lista de espera de GHL) y `medita_ed.py` (las 7 meditaciones). /la-cima, /mastermind y /prensa se editan a mano.
+- La fuente de cada página es su archivo en `pages/`: todo cambio se hace ahí, a mano, y después se arma. Los generadores
+  de la migración (`camino_ed.py`, `sur_ed.py`, `cdl_ed.py`, `proximos_ed.py`, `medita_ed.py`) vivían fuera del repo y
+  quedaron atrás de `pages/` desde el 9 nov (las estaciones 1-7 · 8-14 · 15-35 · 36-84 · 85-90 se corrigieron en `pages/`):
+  no se vuelven a correr.
 - `/el-numero`, `/app` y `/app-745191` son redirecciones (El Número y la app suelta se retiraron: llevan a Tu nuevo precio).
 - El precio en los botones (`… · <span data-precio>97</span> USD`): build.py lo envuelve en `.pr` para que en el celular
   baje entero a su propia línea («Quiero Tu nuevo precio» / «97 USD»).
