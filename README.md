@@ -95,6 +95,12 @@ Cada página es un libro de la colección: portadilla, índice, capítulos y col
 - Los correos de entrega de las herramientas y de la lista de espera: `ghl/correos/herramientas-y-espera.md`.
   Su link es `/herramienta?h=<ruta>` (`pages/herramienta.html` + `TCD.herramientas` en config.js), con su paso en GHL desde el 9 nov.
   Los 12 correos están en GHL, en dos flujos publicados el 9 nov: «Herramientas · entrega» y «Lista de espera · primer correo».
+- Tu nuevo precio (97) cobra solo desde el 9 nov (`librosPorCorreo: true`): el link de pago de GHL lleva a
+  `/gracias?c=obra` y el flujo «Tu nuevo precio · entrega» (`327dd697-6e63-4f5a-8df4-0823faf7ffbc`, clon de «Acceso
+  inmediato a app») hace: «Pago recibido» del producto Tu Precio Nuevo → alta en la app (el mismo webhook de El Número)
+  → correo «Tus 8 libros» (`ghl/correos/html/obra-entrega.html`) → aviso a Javo → etiqueta `compro-97`.
+  Los libros están en una carpeta de Drive de Javo compartida por link; ese link vive solo en el correo de GHL,
+  nunca en este repo (es público). Para una edición nueva, se reemplaza el PDF dentro de esa carpeta.
 
 ## Reglas del estándar
 Letra de 16 px o más · papel, sin fondo negro, sin degradés ni brillos · oro solo en líneas de 1 px,

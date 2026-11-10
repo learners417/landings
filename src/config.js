@@ -33,10 +33,9 @@ window.TCD = {
   cdl:       '/clinica-del-lider',
 
   /* Los libros NO se pegan aquí: este código es público y cualquiera vería los links.
-     Los manda el correo de entrega de GHL apenas entra el pago de Tu nuevo precio.
-     Cuando ese correo ande, librosPorCorreo pasa a true y /gracias dice «te llegan por correo».
-     Mientras tanto, cada botón de descarga abre tu WhatsApp para que se lo mandes tú. */
-  librosPorCorreo: false,
+     Los manda el correo de entrega de GHL apenas entra el pago de Tu nuevo precio (andando desde el 9 nov 2026).
+     En false, el botón de 97 vuelve a abrir tu WhatsApp y /gracias ofrece mandar los libros a mano. */
+  librosPorCorreo: true,
 
   /* La puerta de los primeros capítulos: el id del formulario de GHL «Lectores · primer capítulo».
      Con el id puesto, cada capítulo pide nombre y correo antes de leer y arranca el flujo «Lectores · 10 días».
