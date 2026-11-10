@@ -451,9 +451,12 @@ h2{font-size:clamp(38px,9.4vw,60px);line-height:1.04;font-weight:500}
 .tcard .play::after,.bplay::after,.pausa::after{border-color:transparent transparent transparent var(--ink)}
 .checks li::before{filter:hue-rotate(40deg) saturate(.8)}
 
-/* ── dos formas de hacerlo ── */
+/* ── tres formas de hacerlo ── */
 .planes{display:grid;gap:22px;margin-top:40px}
 @media(min-width:860px){.planes{grid-template-columns:1fr 1fr;align-items:stretch}#opciones .wrap{max-width:1040px}}
+@media(min-width:860px){.planes.tres{grid-template-columns:repeat(3,1fr)}#opciones .wrap{max-width:1180px}}
+@media(min-width:860px) and (max-width:1099px){.planes.tres .plan{padding:28px 20px 24px}.planes.tres .plan li{font-size:17px}}
+#opciones .cupos{margin-top:30px;max-width:520px;padding:16px 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .plan{position:relative;display:flex;flex-direction:column;padding:30px 24px 26px;background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:0 1px 0 rgba(43,39,36,.04),0 28px 60px -36px rgba(43,39,36,.42);text-align:left}
 .plan.fuerte{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink),0 28px 60px -36px rgba(43,39,36,.5)}
 .plan .cinta{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--ink);color:#F1E3C6;font-size:16px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap}
@@ -502,6 +505,19 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 @media(max-width:640px){.c-section:has(.portada),.c-row:has(.portada),.c-column:has(.portada){padding-top:0!important}}
 @supports not selector(:has(*)){@media(max-width:640px){.portada{margin-top:-40px}}}
 @keyframes sonar{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+/* 9 nov: en el celular, la promesa arriba del video; en todas las pantallas, «Elegir mi horario» apenas termina el video */
+.promesa{display:none}
+.tras-video{max-width:500px;margin:0 auto;padding:26px 20px 4px}
+@media(max-width:640px){
+ .portada .promesa{display:block;order:2;margin:14px auto 0;max-width:20ch;font-family:var(--fd);font-weight:500;font-size:clamp(27px,7.6vw,33px);line-height:1.14;letter-spacing:-.012em;color:var(--ink);text-wrap:balance}
+ .portada .promesa .g{font-style:italic}
+ .portada .hero .paso-pill{order:3}
+ .portada .player{order:4}
+ .portada .tras-video{order:5;width:100%;padding:20px 0 0}
+ .portada .hero h1{order:6}
+ .portada .sub{order:7}
+ #vsl{max-width:min(100%,max(200px,calc((100vh - 300px) * .5625)));max-width:min(100%,max(200px,calc((100svh - 300px) * .5625)))}
+}
 </style>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" async></script>
 </head>
@@ -517,12 +533,14 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 <header class="hero">
  <div class="wrap">
   <p class="pill">Coaches, terapeutas, consultores, nutricionistas, entrenadores y médicos que atienden 1 a 1 hace años</p>
+  <p class="promesa">De las sesiones sueltas a <span class="g">tu programa de 1.000&nbsp;USD.</span></p>
   <h1><span class="w" style="--i:0">Cómo</span> <span class="w" style="--i:1">más</span> <span class="w" style="--i:2">de</span> <span class="w" style="--i:3">50&nbsp;profesionales</span> <span class="w" style="--i:4">pasaron</span> <span class="w" style="--i:5">de</span> <span class="w" style="--i:6">las</span> <span class="w" style="--i:7">sesiones</span> <span class="w" style="--i:8">sueltas</span> <span class="w" style="--i:9">a</span> <span class="g"><span class="w" style="--i:10">programas</span> <span class="w" style="--i:11">de</span> <span class="w" style="--i:12">1.000&nbsp;USD.</span></span></h1>
-  <p class="sub">Sin depender de agencias, sin subir contenido todo el día, sin perseguir a los consultantes.</p>
+  <p class="sub">Con tu programa de 1.000&nbsp;USD, tu sistema de captación automática y tu propia app.</p>
   <p class="paso-pill">Paso 1 · Mira el video</p>
  </div>
 </header>
 <div class="player"><div class="wframe" id="vsl"><wistia-player media-id="6756q87ti6" aspect="0.5625"></wistia-player><button type="button" class="vsl-son" id="vsl-son" hidden><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.4L12 5.6v12.8l-4.6-3.9H4z"/><path d="M15.6 9.2a4 4 0 0 1 0 5.6"/><path d="M18.4 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>Toca para escucharlo</span></button></div></div>
+<div class="tras-video"><a class="btn" href="#agenda" data-cta="video"><span class="bt">Elegir mi horario<svg class="fl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><small>Te recibirá Javo personalmente</small></a></div>
 </div>
 <script>
 /* celular (aprobado el 7 nov): el video arranca solo, sin sonido, y encima queda «Toca para escucharlo».
@@ -568,7 +586,7 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
  <div class="wrap">
   <p class="paso-pill">Paso 2 · Agenda tu diagnóstico</p>
   <h2 class="ag-t">Diagnóstico 1‑1 con Javo</h2>
-  <p class="filtro">En 45 minutos conozco tu situación actual en detalle y te muestro cómo se aplican los 5 sistemas a tu caso. <b>Y eliges cómo hacerlo: mentoría o instalación.</b> Te vas con tu plan de acción listo.</p>
+  <p class="filtro">En 45 minutos conozco tu situación actual en detalle y te muestro cómo se aplican los 5 sistemas a tu caso. <b>Trabajo de tres formas, desde 1.000&nbsp;USD. En la llamada eliges la tuya.</b> Te vas con tu plan de acción listo.</p>
   <p class="paso" id="elige">Elige tu horario</p>
   <p class="dosmin">Elige el día y la hora en que puedas estar presente, con cámara y buen sonido.</p>
   <div class="cal" id="cal"><iframe loading="lazy" src="https://api.leadconnectorhq.com/widget/booking/FWSjxWxwv7BOYkd40xLA" id="FWSjxWxwv7BOYkd40xLA_1788828053848" allow="payment" style="width:100%;border:none;" title="Calendario para agendar tu diagnóstico"></iframe></div>
@@ -667,13 +685,23 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
  </div>
 </section>
 
-<!-- ══════ DOS FORMAS DE HACERLO ══════ -->
+<!-- ══════ TRES FORMAS DE HACERLO ══════ -->
 <section class="band alt" id="opciones">
  <div class="wrap">
-  <p class="kicker rv">Dos formas de hacerlo</p>
+  <p class="kicker rv">Tres formas de hacerlo</p>
   <h2 class="rv cen">Tú eliges <span class="g">cómo.</span></h2>
-  <p class="intro rv cen">Los mismos 5 sistemas y la misma garantía. Cambia quién hace el trabajo.</p>
-  <div class="planes">
+  <p class="intro rv cen">Los mismos 5 sistemas. Cambia quién hace el trabajo.</p>
+  <div class="planes tres">
+   <div class="plan rv">
+    <p class="nom">La Base</p>
+    <p class="que">Lo construyes tú.</p>
+    <ul>
+     <li>Mi app te guía día por día durante los 90 días.</li>
+     <li>Mis 8 libros, con cada sistema paso a paso.</li>
+     <li>Tres sesiones conmigo, una por mes.</li>
+    </ul>
+    <p class="para">Para quien quiere <b>avanzar a su ritmo, con un plan claro.</b></p>
+   </div>
    <div class="plan rv">
     <p class="nom">Mentoría</p>
     <p class="que">Lo construimos juntos.</p>
@@ -700,6 +728,7 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
     <p class="para">Para quien tiene experiencia y poco tiempo: <b>tú te grabas y atiendes.</b></p>
    </div>
   </div>
+  <p class="cupos rv"><b>Quedan 3 cupos de instalación al precio de 2026.</b> Desde el 1 de enero, nuevos precios: mentoría 3.500&nbsp;USD e instalación 7.000&nbsp;USD.</p>
   <div class="cta-in rv"><a class="btn" href="#agenda" data-cta="opciones"><span class="bt">Quiero ver cuál me conviene<svg class="fl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><small>Lo vemos juntos en tu diagnóstico</small></a></div>
   <p class="opc-nota rv">El valor de cada una te lo digo en el diagnóstico, según tu caso.</p>
  </div>

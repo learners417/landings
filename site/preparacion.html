@@ -19,7 +19,8 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1306012398373458');
 fbq('track','PageView');
-fbq('trackCustom','AgendaConfirmada');
+/* 9 nov: «AgendaConfirmada» sale una sola vez por navegador cada 7 días (antes salía en cada visita a esta página) */
+try{var tcdK='tcd_agenda_ok',tcdT=+localStorage.getItem(tcdK)||0;if(Date.now()-tcdT>6048e5){fbq('trackCustom','AgendaConfirmada');localStorage.setItem(tcdK,String(Date.now()));}}catch(e){fbq('trackCustom','AgendaConfirmada');}
 </script>
 
 <!-- ═══ WISTIA: solo el testimonio destacado ═══ -->
@@ -320,6 +321,9 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 .foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:0 auto 12px}
 .foot-nav a{padding:8px 2px;font-family:var(--fb);font-weight:700;font-size:16px;color:var(--ink);text-decoration:none}
 .foot-nav a:hover{text-decoration:underline;text-decoration-color:var(--oro);text-underline-offset:5px}
+/* 9 nov: los cupos y los precios de 2027, debajo de los tres pasos de la llamada */
+.cupos{margin:26px auto 0;max-width:520px;padding:16px 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;font-size:17px;line-height:1.5;color:var(--muted);text-wrap:balance}
+.cupos b{color:var(--ink);font-weight:600}
 </style>
 </head>
 <body>
@@ -374,9 +378,10 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
   <h2 class="rv">Cuarenta y cinco minutos, <span class="g">conmigo.</span></h2>
   <ol class="lista">
    <li class="rv"><span class="n">1</span><p>Miramos dónde está tu negocio y <b>qué lo frena.</b></p></li>
-   <li class="rv"><span class="n">2</span><p>Te muestro las dos formas de hacerlo: <b>mentoría</b>, lo construimos juntos, o <b>instalación</b>, lo montamos nosotros. Y te digo cuál te conviene.</p></li>
+   <li class="rv"><span class="n">2</span><p>Te muestro las tres formas de hacerlo, <b>desde 1.000&nbsp;USD</b>, y te digo cuál te conviene.</p></li>
    <li class="rv"><span class="n">3</span><p>Salga como salga, <b>te vas con tu diagnóstico escrito.</b></p></li>
   </ol>
+  <p class="cupos rv"><b>Quedan 3 cupos de instalación al precio de 2026.</b> Desde el 1 de enero, nuevos precios: mentoría 3.500&nbsp;USD e instalación 7.000&nbsp;USD.</p>
   <div class="prep rv">
    <h3>Para aprovecharla al máximo</h3>
    <ul class="checks">
