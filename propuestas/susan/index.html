@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Propuesta para Susan · CREATE · Javo Katz</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="CREATE: de tu método a tu negocio. Lo que conversamos el 9 de noviembre, por escrito.">
+<meta name="theme-color" content="#F4EEE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Propuesta para Susan Chiriboga">
+<meta property="og:description" content="CREATE: de tu método a tu negocio. Diez personas a 1.000 USD al 10 de marzo.">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
+<style>
+:root{--papel:#F4EEE3;--papel-2:#FBF8F1;--papel-3:#EDE5D6;--tinta:#2B2724;--tinta-2:#5A534A;--linea:#DCD2C1;--oro:#A8875A;--oro-texto:#7A5F33;--verde:#2F5638;--create:#2C4A3F;
+--f-titulo:"Cormorant Garamond",Garamond,Georgia,serif;--f-texto:"Literata",Georgia,serif;--e:cubic-bezier(.2,.7,.2,1);--margen:max(22px,env(safe-area-inset-left,0px));--columna:680px;--sombra:0 30px 60px -40px rgba(43,39,36,.45)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px;font-variant-numeric:lining-nums}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:19px;line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (min-width:900px){body{font-size:20px}}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .15 0 0 0 0 .13 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,svg,video{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+b{font-weight:600}
+::selection{background:#E7D6B4}
+button{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--margen)}
+.etiqueta{font-size:16px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);line-height:1.4}
+
+/* cabecera: la marca, el capítulo en el que estás y un hilo de oro que avanza */
+.top{position:fixed;top:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.con-linea{border-bottom-color:var(--linea)}
+.top::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:var(--avance,0%);background:var(--oro)}
+.top-in{max-width:1240px;margin:0 auto;height:64px;padding:0 var(--margen);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px}
+.marca{font-family:var(--f-titulo);font-size:22px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.rotulo{justify-self:center;font-family:var(--f-titulo);font-style:italic;font-size:21px;color:var(--tinta-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;opacity:0;transition:opacity .4s}
+.rotulo.on{opacity:1}
+.rotulo b{font-style:normal;color:var(--oro-texto);margin-right:8px}
+.top .btn{padding:12px 18px;font-size:16px;border-radius:12px;box-shadow:inset 0 0 0 3px var(--verde),inset 0 0 0 4px rgba(168,135,90,.7)}
+@media (max-width:899px){.top .btn{display:none}.top-in{grid-template-columns:auto 1fr;gap:14px}.rotulo{justify-self:end;font-size:19px}.marca{font-size:19px}}
+main{padding-top:64px}
+
+/* portadilla */
+.portadilla{padding:clamp(36px,8vw,72px) 0 clamp(44px,8vw,80px)}
+.serie{font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);line-height:1.5}
+h1{font-size:clamp(54px,14.4vw,100px);line-height:.96;letter-spacing:-.02em;margin-top:18px}
+.filete{display:block;width:64px;height:1px;background:var(--oro);margin:26px 0}
+.subtitulo{font-family:var(--f-titulo);font-style:italic;font-size:clamp(28px,7.2vw,38px);line-height:1.16;color:var(--tinta-2)}
+.bajada{font-size:clamp(20px,4.8vw,23px);line-height:1.55;color:var(--tinta-2);max-width:31em;margin-top:22px;text-wrap:pretty}
+.bajada b{color:var(--tinta)}
+.aval{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:17px;line-height:1.45;color:var(--tinta-2);max-width:30em}
+.aval img,.reco img{flex:0 0 56px;width:56px;height:56px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--oro),0 0 0 4px var(--papel),0 0 0 5px var(--linea)}
+.aval b{color:var(--tinta)}
+.pliego{display:grid;gap:52px}
+@media (min-width:1000px){
+ .pliego{grid-template-columns:1.1fr 1fr;gap:0;background:var(--papel-2);border-radius:6px;box-shadow:0 0 0 1px var(--linea),var(--sombra);position:relative;outline:1px solid var(--linea);outline-offset:4px}
+ .pliego::before{content:"";position:absolute;top:0;bottom:0;left:52.4%;width:1px;background:var(--linea)}
+ .pliego>div{padding:clamp(48px,5vw,76px) clamp(40px,4.6vw,68px);display:flex;flex-direction:column;justify-content:center}
+ .portadilla{padding:28px 0 56px}
+ h1{font-size:clamp(64px,6vw,88px)}
+}
+
+/* la cuenta */
+.cuenta{text-align:center;margin:0}
+.personas{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,3vw,18px);max-width:340px;margin:0 auto}
+.personas i{aspect-ratio:1;border-radius:50%;box-shadow:inset 0 0 0 1px var(--oro);transition:background .5s var(--e),box-shadow .5s var(--e),transform .5s var(--e);transform:scale(.86)}
+.personas i.on{background:var(--tinta);box-shadow:inset 0 0 0 3px var(--tinta),inset 0 0 0 4px var(--oro);transform:none}
+.formula{margin-top:30px;font-family:var(--f-titulo);font-size:clamp(30px,7vw,38px);line-height:1.1;color:var(--tinta-2)}
+.total{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(72px,18vw,104px);line-height:.95;letter-spacing:-.02em;margin-top:8px}
+.total small{font-size:.26em;letter-spacing:.06em;font-weight:600;margin-left:6px}
+.cuando{margin-top:14px;font-family:var(--f-titulo);font-style:italic;font-size:24px;color:var(--tinta-2)}
+.cuando b{font-style:normal;color:var(--oro-texto)}
+
+/* capítulos */
+.cap{padding-top:clamp(84px,13vw,150px);position:relative}
+.cap-in{max-width:1240px;margin:0 auto;padding-inline:var(--margen);display:grid;grid-template-columns:minmax(0,1fr)}
+.cap-cab{max-width:var(--columna)}
+.cap-n{display:flex;align-items:center;gap:16px;font-family:var(--f-titulo);font-size:40px;font-weight:500;line-height:1;color:var(--oro-texto)}
+.cap-n::after{content:"";width:44px;height:1px;background:var(--oro)}
+.cap h2{font-size:clamp(42px,10.6vw,70px);line-height:1;margin-top:18px}
+.cap .sub{font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,33px);line-height:1.2;color:var(--tinta-2);margin-top:14px;text-wrap:balance}
+.cuerpo{margin-top:clamp(32px,6vw,48px);max-width:var(--columna)}
+.cuerpo>*+*{margin-top:20px}
+.ancho{margin-top:clamp(36px,6vw,56px);min-width:0}
+.ancho>*+*{margin-top:clamp(40px,7vw,64px)}
+@media (min-width:1000px){
+ .cap-in{grid-template-columns:minmax(150px,1fr) minmax(0,var(--columna)) minmax(80px,1.25fr);column-gap:clamp(32px,4vw,64px)}
+ .cap-cab,.cuerpo{grid-column:2}
+ .ancho{grid-column:2 / 4}
+ .cap-cab{position:relative}
+ .cap-n{position:absolute;flex-direction:column;align-items:flex-end;gap:14px;font-size:84px;transform:translateX(calc(-100% - 40px))}
+ .cap-n::after{width:1px;height:56px}
+}
+.capitular::first-letter{float:left;font-family:var(--f-titulo);font-weight:500;font-size:4.4em;line-height:.82;padding:.06em .1em 0 0}
+.nota{display:block;padding-left:14px;border-left:1px solid var(--oro);font-size:17px;line-height:1.5;color:var(--tinta-2);font-style:italic}
+.micro{font-size:16px;line-height:1.5;color:var(--tinta-2)}
+.titulo-b{font-family:var(--f-titulo);font-size:clamp(30px,7vw,40px);font-weight:500;line-height:1.08}
+
+/* 1 · lo que me dijiste y lo que hacemos */
+.escucha{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.escucha li{display:grid;gap:12px;padding:26px 0;border-bottom:1px solid var(--linea)}
+.escucha q{quotes:"«" "»";font-family:var(--f-titulo);font-style:italic;font-size:clamp(25px,6vw,31px);line-height:1.22;color:var(--tinta)}
+.escucha q::before,.escucha q::after{color:var(--oro-texto)}
+.escucha .r{display:flex;gap:12px;align-items:flex-start;font-size:18px;line-height:1.5;color:var(--tinta-2)}
+.escucha .r b{color:var(--tinta)}
+.ok{flex:0 0 22px;width:22px;height:22px;margin-top:3px;fill:none;stroke:var(--verde);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.escucha-cab{display:none}
+@media (min-width:760px){
+ .escucha-cab{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding-bottom:12px}
+ .escucha li{grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+}
+.valor{padding:0 0 clamp(28px,6vw,44px);border-bottom:1px solid var(--linea);max-width:var(--columna)}
+.piezas{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+@media (min-width:760px){.piezas{grid-template-columns:repeat(3,1fr);gap:0 36px}}
+.pieza{padding:20px 0;border-top:1px solid var(--linea)}
+.pieza svg{width:34px;height:34px;fill:none;stroke:var(--oro-texto);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;margin-bottom:12px}
+.pieza b{display:block;font-size:18px;line-height:1.3}
+.pieza span{display:block;font-size:16px;line-height:1.45;color:var(--tinta-2);margin-top:4px}
+.puente{font-size:clamp(20px,4.8vw,23px);line-height:1.55;max-width:var(--columna)}
+
+/* 2 · la tapa de su programa */
+.programa{display:grid;gap:40px;align-items:center}
+@media (min-width:760px){.programa{grid-template-columns:auto 1fr;gap:56px}}
+.tapa{position:relative;width:min(240px,64vw);aspect-ratio:2/3;margin:0 auto;border-radius:3px 7px 7px 3px;background:var(--create);color:#F4EEE3;padding:30px 24px;display:flex;flex-direction:column;justify-content:space-between;text-align:center;box-shadow:inset 7px 0 10px -6px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.06),18px 26px 40px -22px rgba(20,18,16,.75)}
+.tapa::before{content:"";position:absolute;inset:12px;border:1px solid rgba(241,227,198,.55);border-radius:2px;pointer-events:none}
+.tapa .t-sup{font-size:16px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.tapa .t-nom{font-family:var(--f-titulo);font-weight:600;font-size:clamp(40px,10.4vw,50px);letter-spacing:.04em;line-height:1}
+.tapa .t-sub{font-family:var(--f-titulo);font-style:italic;font-size:22px;margin-top:8px;opacity:.9}
+.tapa .t-aut{font-size:16px;letter-spacing:.06em;opacity:.85}
+.tapa-pie{text-align:center;margin-top:18px;font-family:var(--f-titulo);font-style:italic;font-size:21px;color:var(--tinta-2)}
+.lideres{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.lideres li{display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px solid var(--linea)}
+.lideres .t{flex:0 1 auto;font-size:18px;font-weight:600;line-height:1.4}
+.lideres .pg{flex:1 1 24px;min-width:24px;align-self:flex-end;margin-bottom:.45em;border-bottom:1px dotted var(--oro)}
+.lideres .d{flex:0 1 auto;font-size:17px;line-height:1.4;color:var(--tinta-2);text-align:right;max-width:58%}
+
+/* 3 · la regla: los cinco pasos en el tiempo */
+.regla{position:relative;padding:8px 0 0}
+.meses{position:relative;height:30px;margin-left:34px;border-bottom:1px solid var(--linea)}
+.meses span{position:absolute;bottom:6px;transform:translateX(-50%);font-family:var(--f-titulo);font-weight:600;font-size:18px;color:var(--tinta-2);text-transform:lowercase}
+.meses span:last-child{transform:none;right:0}
+.meses i{position:absolute;bottom:-1px;width:1px;height:8px;background:var(--oro)}
+.fila{display:grid;grid-template-columns:34px 1fr;align-items:center;height:38px}
+.fila b{font-family:var(--f-titulo);font-size:22px;font-weight:600;color:var(--oro-texto);line-height:1}
+.pista{position:relative;height:100%}
+.pista::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px dotted var(--linea)}
+.barra-p{position:absolute;top:50%;height:12px;margin-top:-6px;border-radius:6px;background:var(--tinta);transform-origin:left;transform:scaleX(0);transition:transform .9s var(--e)}
+.barra-p.verde{background:var(--verde)}
+.regla.on .barra-p{transform:none}
+.regla.on .fila:nth-child(3) .barra-p{transition-delay:.12s}
+.regla.on .fila:nth-child(4) .barra-p{transition-delay:.24s}
+.regla.on .fila:nth-child(5) .barra-p{transition-delay:.36s}
+.regla.on .fila:nth-child(6) .barra-p{transition-delay:.48s}
+.hitos{display:flex;justify-content:space-between;margin:12px 0 0 34px;font-size:16px;color:var(--tinta-2)}
+.hitos b{color:var(--tinta)}
+.regla-ley{display:flex;flex-wrap:wrap;gap:6px 20px;margin:12px 0 0 34px;font-size:16px;color:var(--tinta-2)}
+.regla-ley span{display:inline-flex;align-items:center;gap:8px}
+.regla-ley i{width:18px;height:8px;border-radius:4px;background:var(--tinta)}
+.regla-ley i.verde{background:var(--verde)}
+@media (prefers-reduced-motion:reduce){.barra-p{transition:none;transform:none}}
+
+.pasos{list-style:none;margin:48px 0 0!important;padding:0}
+.pasos li{display:grid;grid-template-columns:62px 1fr;gap:0 16px;padding:28px 0;border-top:1px solid var(--linea)}
+.pasos li:last-child{border-bottom:1px solid var(--linea)}
+.pasos .n{font-family:var(--f-titulo);font-size:54px;font-weight:500;line-height:.85;color:var(--oro-texto)}
+.pasos .cuando-p{font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
+.pasos h3{font-size:clamp(30px,7vw,38px);line-height:1.05;margin-top:4px}
+.pasos p{margin-top:8px;font-size:18px;line-height:1.55;color:var(--tinta-2)}
+.pasos .llevas{margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--papel-2);box-shadow:inset 0 0 0 1px var(--linea);font-size:17px;line-height:1.5;color:var(--tinta)}
+.pasos .llevas span{display:block;font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--verde);margin-bottom:2px}
+.sesion{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:999px;font-size:16px;font-weight:600;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--oro)}
+.pasos li.meta{background:var(--papel-2);border-radius:14px;border:0;margin-top:18px;padding:24px 18px;box-shadow:inset 0 0 0 1px var(--linea),inset 0 0 0 6px var(--papel-2),inset 0 0 0 7px rgba(168,135,90,.6)}
+.pasos li.meta .n{font-size:34px;line-height:1.1}
+@media (min-width:760px){.pasos li{grid-template-columns:96px 1fr;gap:0 24px}.pasos li.meta{padding:28px 24px}}
+
+/* 4 · las voces */
+.voces{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
+@media (max-width:899px){
+ .voces{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1 * var(--margen));padding:6px var(--margen) 18px;scrollbar-width:none}
+ .voces::-webkit-scrollbar{display:none}
+ .voz{flex:0 0 58%;scroll-snap-align:center}
+}
+.voz{display:block;border:0;padding:0;background:none;text-align:left;cursor:pointer;align-self:start}
+.voz .marco{position:relative;display:block;aspect-ratio:9/16;padding:8px;background:var(--papel-2);border-radius:5px;box-shadow:0 0 0 1px var(--linea),0 18px 30px -24px rgba(43,39,36,.55);transition:transform .35s var(--e)}
+.voz:hover .marco{transform:translateY(-3px)}
+.voz video{width:100%;height:100%;object-fit:cover;border-radius:3px;background:var(--papel-3)}
+.voz .play{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:rgba(251,248,241,.92);box-shadow:0 0 0 1px var(--oro),0 10px 20px -10px rgba(0,0,0,.5)}
+.voz .play::before{content:"";position:absolute;left:25px;top:20px;border-left:16px solid var(--tinta);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.voz .nom{display:block;margin-top:12px;font-weight:600;font-size:17px;line-height:1.3}
+.voz .que{display:block;font-size:16px;color:var(--tinta-2)}
+.voz.grande .marco{box-shadow:0 0 0 1px var(--oro),0 18px 30px -24px rgba(43,39,36,.55)}
+.desliza{display:none;font-size:16px;color:var(--tinta-2);margin-top:4px}
+@media (max-width:899px){.desliza{display:block}}
+.lb{position:fixed;inset:0;z-index:130;background:rgba(43,39,36,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb .caja{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;border-radius:6px;overflow:hidden;background:#1d1a17}
+.lb video{width:100%;height:100%;object-fit:contain}
+.lb .cerrar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;width:52px;height:52px;border-radius:50%;border:0;background:var(--papel-2);font-size:28px;line-height:1;cursor:pointer}
+
+/* 5 · quién hace qué */
+.tabla-wrap{border-radius:18px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea),var(--sombra);padding:6px clamp(14px,3.6vw,30px) 10px}
+table.qhq{width:100%;border-collapse:collapse;table-layout:fixed}
+.qhq col.c1{width:44%}
+@media (min-width:760px){.qhq col.c1{width:48%}}
+.qhq th,.qhq td{padding:14px 8px;border-bottom:1px solid var(--linea);vertical-align:middle;text-align:center;font-size:16px;line-height:1.35}
+.qhq th[scope=row]{text-align:left;font-weight:600;font-size:17px;padding-left:0}
+.qhq thead th{border-bottom:1px solid var(--oro);padding-top:22px;vertical-align:bottom}
+.qhq .mod{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(21px,5.4vw,30px);line-height:1.05}
+.qhq .pre{display:block;font-family:var(--f-titulo);font-weight:600;font-size:clamp(30px,8vw,46px);line-height:1;margin-top:8px}
+.qhq .pre small{font-family:var(--f-texto);font-size:16px;font-weight:600;margin-left:3px}
+.qhq .ins{background:#F3EBDC;box-shadow:inset 1px 0 0 rgba(168,135,90,.6),inset -1px 0 0 rgba(168,135,90,.6)}
+.qhq thead .ins{border-radius:12px 12px 0 0}
+.reco-t{display:inline-block;margin-bottom:8px;padding:3px 10px;border-radius:999px;font-family:var(--f-texto);font-size:16px;font-weight:600;color:var(--verde);box-shadow:inset 0 0 0 1px var(--verde)}
+.qhq .tu{color:var(--tinta-2)}
+.reco-movil,.corto{display:none}
+@media (max-width:599px){
+ .qhq col.c1{width:36%}
+ .qhq th,.qhq td{padding:12px 4px}
+ .qhq .mod{font-size:19px}
+ .qhq .pre{font-size:27px}
+ .qhq .pre small{display:block;margin:3px 0 0}
+ .qhq thead .reco-t{display:none}
+ .reco-movil{display:block;text-align:right;margin:0 0 12px}
+ .tabla-wrap{padding:4px 12px 8px}
+ .largo{display:none}.corto{display:inline}
+}
+.qhq .nos{display:inline-flex;flex-direction:column;align-items:center;gap:4px;color:var(--verde);font-weight:600}
+.qhq .nos .ok{margin:0}
+.qhq tbody tr:last-child th,.qhq tbody tr:last-child td{border-bottom:0}
+.qhq .luego td,.qhq .luego th{color:var(--tinta-2);font-weight:500}
+.una-u-otra{font-family:var(--f-titulo);font-style:italic;font-size:clamp(24px,5.6vw,30px);line-height:1.25;color:var(--tinta-2);margin-top:22px;max-width:var(--columna)}
+.reco{display:grid;grid-template-columns:auto 1fr;gap:16px 18px;align-items:start;max-width:var(--columna);padding:clamp(26px,5vw,36px) 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.reco h3{font-size:clamp(30px,7vw,40px);line-height:1.05}
+.reco p{grid-column:1 / -1;font-size:19px;line-height:1.6}
+.reco p+p{margin-top:-4px}
+.reco .firma-r{font-family:var(--f-titulo);font-style:italic;font-size:24px}
+
+/* 6 · compromiso */
+.escudo{display:flex;gap:18px;align-items:flex-start;padding:26px 24px;border-radius:18px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea),inset 0 0 0 7px var(--papel-2),inset 0 0 0 8px rgba(47,86,56,.35)}
+.escudo svg{flex:0 0 44px;width:44px;height:44px;stroke:var(--verde);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.escudo p{font-size:clamp(20px,4.8vw,23px);line-height:1.5}
+
+/* 7 · cómo seguimos */
+.sigue{list-style:none;margin:0;padding:0;position:relative}
+.sigue::before{content:"";position:absolute;left:11px;top:14px;bottom:14px;width:1px;background:var(--oro)}
+.sigue li{position:relative;padding:0 0 26px 44px}
+.sigue li::before{content:"";position:absolute;left:4px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 1px var(--oro)}
+.sigue li.hoy::before{background:var(--tinta);box-shadow:inset 0 0 0 3px var(--tinta),inset 0 0 0 4px var(--oro)}
+.sigue .cu{display:block;font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oro-texto)}
+.sigue b{display:block;font-family:var(--f-titulo);font-size:clamp(26px,6vw,32px);font-weight:500;line-height:1.15;margin-top:2px}
+.sigue span.d{display:block;font-size:17px;color:var(--tinta-2);margin-top:4px}
+
+/* botón: el único objeto oscuro */
+.btn{display:inline-block;padding:19px 28px;border-radius:14px;background:var(--verde);color:var(--papel-2);text-decoration:none;font-weight:600;font-size:18px;line-height:1.25;text-align:center;box-shadow:inset 0 0 0 4px var(--verde),inset 0 0 0 5px rgba(168,135,90,.7),0 16px 30px -20px rgba(47,86,56,.7);transition:transform .25s var(--e),background .25s}
+.btn:hover{background:#264730;transform:translateY(-1px)}
+.btn svg{display:inline-block;vertical-align:-5px;margin-right:10px;width:22px;height:22px;fill:currentColor}
+
+/* colofón */
+.colofon{padding:clamp(80px,12vw,130px) 0 calc(130px + env(safe-area-inset-bottom,0px));text-align:center;border-top:1px solid var(--linea);margin-top:clamp(84px,13vw,150px)}
+.cierre{font-family:var(--f-titulo);font-size:clamp(44px,10vw,72px);line-height:1.02;max-width:14em;margin:0 auto}
+.colofon .acc{margin-top:34px}
+.firma{margin-top:40px;font-family:var(--f-titulo);font-style:italic;font-size:28px}
+.colofon .micro{max-width:34em;margin:14px auto 0}
+
+/* barra del teléfono */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px var(--margen) calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .45s var(--e)}
+.barra.on{transform:none}
+.barra .btn{width:100%;padding-block:17px}
+@media (min-width:900px){.barra{display:none}}
+@media (max-width:520px){.colofon .btn{width:100%}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.personas i{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="ok" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9.5"/><path d="m6.8 11.4 2.9 2.9 5.6-6"/></symbol>
+ <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+
+<header class="top"><div class="top-in">
+ <span class="marca">Javo Katz</span>
+ <p class="rotulo" aria-hidden="true"></p>
+ <a class="btn" data-wa href="#"><svg aria-hidden="true"><use href="#wa"/></svg>Escríbeme</a>
+</div></header>
+
+<main>
+<section class="portadilla" id="portada">
+ <div class="wrap">
+  <div class="pliego">
+   <div>
+    <p class="serie">Propuesta para Susan Chiriboga</p>
+    <h1>De tu método a tu negocio.</h1>
+    <span class="filete"></span>
+    <p class="subtitulo">CREATE, en inglés y para Australia. Diez personas a 1.000 USD al 10 de marzo.</p>
+    <p class="bajada">Lo que conversamos el lunes 9, por escrito, para que lo leas con calma. <b>El viernes 13 lo terminamos de ajustar juntos.</b></p>
+    <p class="aval"><img src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg" alt="Javo Katz" width="56" height="56"><span><b>Javo Katz</b> · Bariloche, Patagonia. Hace más de seis años acompaño a profesionales que atienden 1 a 1: más de 50, en Latinoamérica, España y EE.&nbsp;UU.</span></p>
+   </div>
+   <div>
+    <figure class="cuenta" aria-label="Diez personas a 1.000 USD son 10.000 USD al 10 de marzo">
+     <div class="personas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+     <p class="formula"><span data-n>0</span> <span data-pal>personas</span> × 1.000 USD</p>
+     <span class="total"><span data-total>0</span><small>USD</small></span>
+     <p class="cuando">al <b>10 de marzo</b> de 2027</p>
+    </figure>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 1 · LO QUE ESCUCHÉ -->
+<section class="cap" id="escuche" data-capitulo="Lo que escuché">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">1</span>
+   <h2>Lo que escuché.</h2>
+   <p class="sub">Tus palabras, y lo que hacemos con cada una.</p>
+  </header>
+  <div class="ancho">
+   <div>
+    <div class="escucha-cab"><span class="etiqueta">Lo que me dijiste</span><span class="etiqueta">Lo que hacemos</span></div>
+    <ul class="escucha">
+     <li><q>Me falta claridad. Si vieras todas mis notas…</q><p class="r"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg><span>Ordenamos todo en <b>un solo producto, un precio y un plan de cinco pasos.</b></span></p></li>
+     <li><q>No entiendo el engranaje de cómo opera el sistema en línea.</q><p class="r"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg><span>Te lo dejamos <b>andando</b> y te enseñamos a manejarlo desde un chat.</span></p></li>
+     <li><q>Los cursos self-paced me aburren. En línea está bien, pero interactuando contigo.</q><p class="r"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg><span>Trabajamos <b>en vivo</b>: sesiones 1 a 1 conmigo y mentorías grupales tres veces por semana.</span></p></li>
+     <li><q>Me ha costado mucho estar frente a una cámara.</q><p class="r"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg><span>Grabas <b>acompañada</b>: en la instalación te dictamos cada guion en vivo, palabra por palabra.</span></p></li>
+     <li><q>Quiero generar desde algo que amo, conectado a mi historia de vida.</q><p class="r"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg><span>Tu programa nace de <b>tu método y tu libro</b>: CREATE.</span></p></li>
+     <li><q>No quiero dejar la parte presencial.</q><p class="r"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg><span>Primero online, para sumar tus primeros casos. Después, <b>los retiros</b>: Ecuador, Australia o Bariloche.</span></p></li>
+    </ul>
+   </div>
+   <div class="valor">
+    <p class="capitular">Llevaste al mundo propuestas de tu país que hoy son urgentes: los derechos de la naturaleza, la ciudadanía universal, la corresponsabilidad en la Amazonía. Y construiste un camino de conciencia. Esos dos mundos se juntan en muy pocas personas. En ti se juntan, y ahí está tu valor.</p>
+   </div>
+   <div>
+    <p class="titulo-b">Las piezas que ya tienes.</p>
+    <div class="piezas" style="margin-top:22px">
+     <div class="pieza"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.6 8.4-2.2 5-5 2.2 2.2-5z"/></svg><b>Tu método</b><span>Conscious Creation: visión, creencias, propósito, estrategia</span></div>
+     <div class="pieza"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3-1.2 6-1 9 1 3-2 6-2.2 9-1v13c-3-1.2-6-1-9 1-3-2-6-2.2-9-1z"/><path d="M12 6.5v13"/></svg><b>Tu libro y tu journal</b><span>listos, con sus prompts</span></div>
+     <div class="pieza"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16.5" cy="9" r="3"/><path d="M2.5 20c.4-3 2.8-5 5.5-5s5.1 2 5.5 5M11 20c.4-3 2.8-5 5.5-5s5.1 2 5.5 5"/></svg><b>Tus talleres</b><span>en Australia y en Ecuador</span></div>
+     <div class="pieza"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h1.5M7 8.5v7M10.5 5v14M14 8v8M17.5 10v4M21 12h-.5"/></svg><b>Tu práctica</b><span>kundalini yoga, terapias de sonido, modelos sintrópicos</span></div>
+     <div class="pieza"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.2 3.2 14.8 0 18M12 3c-3.2 3.2-3.2 14.8 0 18"/></svg><b>Tu trayectoria</b><span>diplomacia y relaciones internacionales</span></div>
+     <div class="pieza"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9.5L5 20v-4H4z"/><path d="M8 9h8M8 12.2h5"/></svg><b>Tu idioma de trabajo</b><span>el inglés</span></div>
+    </div>
+   </div>
+   <p class="puente">Lo que sigue es ordenar las piezas. Y al frente, una Susan nueva: <b>Susan empresaria</b>, la que dirige todo lo demás.</p>
+  </div>
+ </div>
+</section>
+
+<!-- 2 · TU PROGRAMA -->
+<section class="cap" id="programa" data-capitulo="Tu programa">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">2</span>
+   <h2>Una meta clara: diez personas.</h2>
+   <p class="sub">Tu programa CREATE, 1 a 1, a 1.000 USD por persona.</p>
+  </header>
+  <div class="ancho">
+   <div class="programa">
+    <div>
+     <figure class="tapa" aria-label="La tapa de tu programa CREATE">
+      <span class="t-sup">Programa 1 a 1</span>
+      <span><span class="t-nom" style="display:block">CREATE</span><span class="t-sub" style="display:block">Conscious Creation</span></span>
+      <span class="t-aut">Susan Chiriboga</span>
+     </figure>
+     <p class="tapa-pie">Tu programa, en una tapa.</p>
+    </div>
+    <div>
+     <ul class="lideres">
+      <li><span class="t">Formato</span><span class="pg"></span><span class="d">1 a 1, online</span></li>
+      <li><span class="t">Sesiones</span><span class="pg"></span><span class="d">menos de 12</span></li>
+      <li><span class="t">Precio</span><span class="pg"></span><span class="d">1.000 USD por persona</span></li>
+      <li><span class="t">Incluye</span><span class="pg"></span><span class="d">tu libro y tu journal</span></li>
+      <li><span class="t">Mercado</span><span class="pg"></span><span class="d">Australia, en inglés</span></li>
+     </ul>
+     <p class="nota" style="margin-top:18px">El detalle exacto (nombre, etapas y sesiones) lo definimos juntos en el paso 2.</p>
+    </div>
+   </div>
+   <div class="cuerpo" style="margin-left:0">
+    <p>Todo el foco en un solo producto. Tu libro y tu journal van adentro del programa, como parte de la experiencia: así ofreces algo que nadie más tiene.</p>
+    <p>Empezamos en inglés y en Australia, donde ya tienes recorrido. Online, con una inversión mínima, para sumar tus primeros casos de éxito. Los grupos, los retiros, la versión en español y el liderazgo consciente vienen después, sobre esta base.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 3 · EL PASO A PASO -->
+<section class="cap" id="pasos" data-capitulo="El paso a paso">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">3</span>
+   <h2>Cinco pasos hasta el 10 de marzo.</h2>
+   <p class="sub">Qué hacemos en cada uno, cuándo, y con qué te quedas.</p>
+  </header>
+  <div class="ancho">
+   <div class="regla" aria-label="Los cinco pasos en el tiempo, de noviembre a marzo">
+    <div class="meses" aria-hidden="true"><span style="left:9.2%">nov</span><span style="left:31.2%">dic</span><span style="left:57.1%">ene</span><span style="left:81.7%">feb</span><i style="left:18.3%"></i><i style="left:44.2%"></i><i style="left:70%"></i><i style="left:93.3%"></i><span>mar</span></div>
+    <div class="fila"><b>1</b><div class="pista"><i class="barra-p" style="left:5.8%;width:9.2%"></i></div></div>
+    <div class="fila"><b>2</b><div class="pista"><i class="barra-p" style="left:11.7%;width:10%"></i></div></div>
+    <div class="fila"><b>3</b><div class="pista"><i class="barra-p verde" style="left:18.3%;width:81.7%"></i></div></div>
+    <div class="fila"><b>4</b><div class="pista"><i class="barra-p" style="left:53.3%;width:39.2%"></i></div></div>
+    <div class="fila"><b>5</b><div class="pista"><i class="barra-p" style="left:70%;width:30%"></i></div></div>
+    <div class="hitos"><span><b>Hoy</b> · 9 nov</span><span><b>Meta</b> · 10 mar</span></div>
+    <div class="regla-ley"><span><i></i>construimos</span><span><i class="verde"></i>tus anuncios, encendidos hasta la meta</span></div>
+   </div>
+   <ol class="pasos">
+    <li><span class="n">1</span><div><span class="cuando-p">Noviembre</span><h3>Tu identidad</h3><p>Susan empresaria: tu historia, tu método y tu voz en un solo mensaje, desde tu centro.</p><span class="sesion">Sesión 1 a 1 conmigo</span><p class="llevas"><span>Te llevas</span>Tu mensaje en una frase: quién eres, a quién ayudas y cómo.</p></div></li>
+    <li><span class="n">2</span><div><span class="cuando-p">Fin de noviembre</span><h3>Tu programa</h3><p>CREATE con nombre, etapas, sesiones y precio. Y la persona exacta a la que se lo ofreces.</p><span class="sesion">Sesión 1 a 1 conmigo</span><p class="llevas"><span>Te llevas</span>Tu programa de 1.000 USD escrito, con tu libro y tu journal adentro.</p></div></li>
+    <li><span class="n">3</span><div><span class="cuando-p">Desde diciembre</span><h3>Tu sistema de captación</h3><p>Anuncios, una página que explica tu programa y tu agenda. Las personas agendan una llamada contigo, y tú eliges con quién trabajar.</p><span class="sesion">Sesión 1 a 1 conmigo</span><p class="llevas"><span>Te llevas</span>6 anuncios, tu video de venta, tu página y tu agenda. Los anuncios quedan encendidos hasta la meta.</p></div></li>
+    <li><span class="n">4</span><div><span class="cuando-p">Enero y febrero</span><h3>Tu propia app</h3><p>Tus videos, meditaciones, audios y ejercicios en un solo lugar, con un asistente de inteligencia artificial que acompaña a tus consultantes entre sesiones.</p><p class="llevas"><span>Te llevas</span>Tu app, con tu nombre, lista para tus consultantes.</p></div></li>
+    <li><span class="n">5</span><div><span class="cuando-p">Febrero y marzo</span><h3>Tu presencia digital</h3><p>Redes y contenido, al final, cuando el sistema ya vende. Tu contenido sale de tu libro.</p><p class="llevas"><span>Te llevas</span>Tu perfil ordenado y tus primeros contenidos, hechos desde tu libro.</p></div></li>
+    <li class="meta"><span class="n">10 mar</span><div><h3>Diez personas en CREATE.</h3><p>Las personas llegan por publicidad. Tu tiempo va a tus llamadas y a tus consultantes.</p></div></li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<!-- 4 · LAS VOCES -->
+<section class="cap" id="voces" data-capitulo="Quienes ya lo hicieron">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">4</span>
+   <h2>Escúchalos a ellos.</h2>
+   <p class="sub">Más de 50 profesionales ya lo hicieron conmigo. Toca cualquiera para escucharlo.</p>
+  </header>
+  <div class="ancho">
+   <div>
+    <div class="voces">
+     <button type="button" class="voz grande" data-src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6aa0b1e2fb76acb4a93c0ffd.mp4"><span class="marco"><video muted playsinline preload="metadata" src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6aa0b1e2fb76acb4a93c0ffd.mp4#t=0.5"></video><span class="play" aria-hidden="true"></span></span><span class="nom">Rosana</span><span class="que">nutricionista</span></button>
+     <button type="button" class="voz grande" data-src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6ac4236b195f9172ed95c91c.mp4"><span class="marco"><video muted playsinline preload="metadata" src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6ac4236b195f9172ed95c91c.mp4#t=0.5"></video><span class="play" aria-hidden="true"></span></span><span class="nom">Ani</span><span class="que">Ecuador</span></button>
+     <button type="button" class="voz" data-src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6ab9ba4abe703c7b30305435.mp4"><span class="marco"><video muted playsinline preload="metadata" src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6ab9ba4abe703c7b30305435.mp4#t=0.5"></video><span class="play" aria-hidden="true"></span></span><span class="nom">Karina</span></button>
+     <button type="button" class="voz" data-src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6aa0b40116ed327815b69e1a.mp4"><span class="marco"><video muted playsinline preload="metadata" src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6aa0b40116ed327815b69e1a.mp4#t=0.5"></video><span class="play" aria-hidden="true"></span></span><span class="nom">Kath</span></button>
+     <button type="button" class="voz" data-src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6ab9e5fa5597aeb9d7f13c31.mp4"><span class="marco"><video muted playsinline preload="metadata" src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6ab9e5fa5597aeb9d7f13c31.mp4#t=0.5"></video><span class="play" aria-hidden="true"></span></span><span class="nom">Majo</span></button>
+    </div>
+    <p class="desliza">Desliza para ver más.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 5 · DOS FORMAS -->
+<section class="cap" id="formas" data-capitulo="Dos formas de hacerlo">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">5</span>
+   <h2>Dos formas de hacerlo.</h2>
+   <p class="sub">El camino es el mismo. Cambia quién lo construye.</p>
+  </header>
+  <div class="ancho">
+   <div>
+    <p class="reco-movil"><span class="reco-t">Mi recomendación: la instalación</span></p>
+    <div class="tabla-wrap">
+     <table class="qhq">
+      <caption class="micro" style="caption-side:bottom;text-align:left;padding:14px 0 6px">Me quedan 3 lugares de instalación en 2026.</caption>
+      <colgroup><col class="c1"><col><col></colgroup>
+      <thead>
+       <tr><th scope="col" style="text-align:left;padding-left:0"><span class="etiqueta">Quién hace qué</span></th>
+        <th scope="col"><span class="mod">Mentoría</span><span class="pre">3.000<small>USD</small></span></th>
+        <th scope="col" class="ins"><span class="reco-t">Recomendada</span><span class="mod">Instalación</span><span class="pre">6.000<small>USD</small></span></th></tr>
+      </thead>
+      <tbody>
+       <tr><th scope="row">Sesiones 1 a 1 conmigo</th><td>3</td><td class="ins">3</td></tr>
+       <tr><th scope="row">Mentorías grupales en vivo</th><td>3 por semana</td><td class="ins">3 por semana</td></tr>
+       <tr><th scope="row">Guiones de tus 8 videos</th><td class="tu">Tú, con mi revisión</td><td class="ins"><span class="nos"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg>Nosotros</span></td></tr>
+       <tr><th scope="row">Grabar tus videos</th><td class="tu">Tú</td><td class="ins"><span class="largo">Tú, con el guion dictado en vivo</span><span class="corto">Tú, acompañada</span></td></tr>
+       <tr><th scope="row">Editar tus videos</th><td class="tu">Tú</td><td class="ins"><span class="nos"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg>Nosotros</span></td></tr>
+       <tr><th scope="row">Tu página y tu agenda</th><td class="tu">Tú</td><td class="ins"><span class="nos"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg>Nosotros</span></td></tr>
+       <tr><th scope="row">Tus anuncios</th><td class="tu">Tú</td><td class="ins"><span class="nos"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg>Nosotros</span></td></tr>
+       <tr><th scope="row">Tu app</th><td class="tu">Tú</td><td class="ins"><span class="nos"><svg class="ok" aria-hidden="true"><use href="#ok"/></svg>Nosotros</span></td></tr>
+       <tr><th scope="row">Al final lo manejas</th><td>Tú, desde un chat</td><td class="ins">Tú, desde un chat</td></tr>
+       <tr class="luego"><th scope="row">Desde el 1 de enero de 2027</th><td>3.500 USD</td><td class="ins">7.000 USD</td></tr>
+      </tbody>
+     </table>
+    </div>
+    <p class="una-u-otra">Es una o la otra: la instalación ya incluye todo lo de la mentoría.</p>
+   </div>
+   <div class="reco">
+    <img src="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg" alt="" width="56" height="56">
+    <div><span class="etiqueta">Mi recomendación</span><h3>La instalación.</h3></div>
+    <p>Viajas entre Ecuador y Australia, y tu tiempo rinde más en tu método que editando videos. Te entrego el auto andando y te enseño a manejarlo. Para grabar no estás sola: te dictamos cada guion mientras grabas con tu celular.</p>
+    <p>Si prefieres grabar en persona, Bariloche te espera: profesionales de Ecuador, Perú, Uruguay y Colombia ya vinieron a grabar conmigo. Eso se coordina aparte.</p>
+    <p class="firma-r">Javo</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 6 · MI COMPROMISO -->
+<section class="cap" id="compromiso" data-capitulo="Mi compromiso">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">6</span>
+   <h2>Mi compromiso.</h2>
+   <p class="sub">Sales con tu sistema funcionando.</p>
+  </header>
+  <div class="cuerpo">
+   <div class="escudo">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 7 9v10c0 8 5.6 14.4 13 17 7.4-2.6 13-9 13-17V9L20 4Z"/><path d="m14 20 4.5 4.5L27 16"/></svg>
+    <p>Si al 10 de marzo hiciste tu parte y tu sistema todavía no está funcionando, seguimos trabajando contigo, sin costo, hasta que funcione.</p>
+   </div>
+   <p>Por eso elijo con quién trabajo. Contigo, porque veo que vamos a lograr un resultado muy bonito.</p>
+  </div>
+ </div>
+</section>
+
+<!-- 7 · CÓMO SEGUIMOS -->
+<section class="cap" id="seguimos" data-capitulo="Cómo seguimos">
+ <div class="cap-in">
+  <header class="cap-cab">
+   <span class="cap-n">7</span>
+   <h2>Cómo seguimos.</h2>
+  </header>
+  <div class="cuerpo">
+   <ol class="sigue">
+    <li class="hoy"><span class="cu">Hoy</span><b>Lees la propuesta y escuchas los casos.</b><span class="d">Si te surge una pregunta, escríbeme.</span></li>
+    <li><span class="cu">Viernes 13 de noviembre · 14:00 en Quito</span><b>Ajustamos los detalles y eliges la forma.</b><span class="d">16:00 en Bariloche.</span></li>
+    <li><span class="cu">Al confirmar</span><b>Agendamos tu primera sesión 1 a 1: tu identidad.</b></li>
+   </ol>
+   <ul class="lideres" style="margin-top:8px">
+    <li><span class="t">Pago</span><span class="pg"></span><span class="d">un solo pago; con tarjeta de crédito, en cuotas con tu banco</span></li>
+    <li><span class="t">Valores</span><span class="pg"></span><span class="d">hasta el 19 de diciembre de 2026</span></li>
+   </ul>
+   <p class="micro">Si necesitas otra forma de pago, lo vemos el viernes.</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="colofon" id="cierre">
+ <div class="wrap">
+  <p class="cierre">Nos vemos el viernes, Susan.</p>
+  <div class="acc"><a class="btn" data-wa href="#"><svg aria-hidden="true"><use href="#wa"/></svg>Escríbeme por WhatsApp</a></div>
+  <p class="firma">Javo Katz</p>
+  <p class="micro">Propuesta preparada para Susan Chiriboga el 9 de noviembre de 2026. Valores válidos hasta el 19 de diciembre de 2026.</p>
+ </div>
+</footer>
+
+<div class="barra" aria-hidden="true"><a class="btn" data-wa href="#" tabindex="-1">Escríbeme por WhatsApp</a></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button type="button" class="cerrar" aria-label="Cerrar">×</button><div class="caja"></div></div>
+
+<script>
+(function(){
+ var wa='https://wa.me/5492944217689?text='+encodeURIComponent('Hola Javo, leí la propuesta.');
+ [].forEach.call(document.querySelectorAll('[data-wa]'),function(a){a.href=wa;a.target='_blank';a.rel='noopener'});
+ var top=document.querySelector('.top'),barra=document.querySelector('.barra'),portada=document.getElementById('portada'),cierre=document.getElementById('cierre');
+ function scroll(){
+  top.classList.toggle('con-linea',scrollY>8);
+  var h=document.documentElement.scrollHeight-innerHeight;
+  top.style.setProperty('--avance',(h>0?Math.min(100,scrollY/h*100):0)+'%');
+  var pasada=portada.getBoundingClientRect().bottom<0,alFinal=cierre.getBoundingClientRect().top<innerHeight;
+  barra.classList.toggle('on',pasada&&!alFinal);
+ }
+ addEventListener('scroll',scroll,{passive:true});scroll();
+
+ /* los testimonios: se escuchan en grande */
+ var lb=document.querySelector('.lb'),caja=lb.querySelector('.caja');
+ function cerrar(){lb.classList.remove('on');caja.innerHTML='';document.body.style.overflow=''}
+ [].forEach.call(document.querySelectorAll('.voz'),function(b){
+  b.addEventListener('click',function(){
+   caja.innerHTML='<video controls autoplay playsinline src="'+b.getAttribute('data-src')+'"></video>';
+   lb.classList.add('on');document.body.style.overflow='hidden';
+  });
+ });
+ lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('cerrar'))cerrar()});
+ addEventListener('keydown',function(e){if(e.key==='Escape')cerrar()});
+
+ if(!('IntersectionObserver' in window)){fin();document.querySelector('.regla').classList.add('on');return}
+ /* la cabecera dice en qué capítulo estás */
+ var rotulo=document.querySelector('.rotulo'),caps=[].slice.call(document.querySelectorAll('[data-capitulo]')),vis=new Set();
+ var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target)});
+  var s=caps.filter(function(c){return vis.has(c)})[0];
+  if(!s){rotulo.classList.remove('on');return}
+  rotulo.innerHTML='<b>'+s.querySelector('.cap-n').textContent+'</b>'+s.getAttribute('data-capitulo');
+  rotulo.classList.add('on');
+ },{rootMargin:'-40% 0px -55% 0px'});
+ caps.forEach(function(c){io.observe(c)});
+ /* la regla: las barras crecen cuando llegas */
+ var regla=document.querySelector('.regla');
+ new IntersectionObserver(function(es,o){if(es[0].isIntersecting){regla.classList.add('on');o.disconnect()}},{threshold:.35}).observe(regla);
+ /* la cuenta: diez personas, una por una */
+ var quieto=matchMedia('(prefers-reduced-motion: reduce)').matches,hecho=false;
+ new IntersectionObserver(function(es){
+  if(hecho||!es[0].isIntersecting)return;hecho=true;
+  if(quieto){fin();return}
+  var ps=document.querySelectorAll('.personas i'),i=0;
+  var t=setInterval(function(){
+   ps[i].classList.add('on');i++;
+   document.querySelector('[data-n]').textContent=i;
+   document.querySelector('[data-pal]').textContent=i===1?'persona':'personas';
+   document.querySelector('[data-total]').textContent=i+'.000';
+   if(i===10)clearInterval(t);
+  },230);
+ },{threshold:.4}).observe(document.querySelector('.cuenta'));
+ function fin(){
+  [].forEach.call(document.querySelectorAll('.personas i'),function(p){p.classList.add('on')});
+  document.querySelector('[data-n]').textContent='10';
+  document.querySelector('[data-total]').textContent='10.000';
+ }
+})();
+</script>
+</body>
+</html>
