@@ -140,7 +140,7 @@ Ese silencio era tuyo.
 Lo que el viento te enseña: 33 lecciones para que te escuchen y digas tu precio con calma. Es el más lúdico de los cinco: se hace en grupo y en voz alta.
 
 **Estación 3 · Tu captación y tu llamada · libertad emocional**
-Días 15 a 56: del mensaje a tres ventas pagas. Lees Sanadores Libres, capítulos 17 y 18.
+Días 15 a 35: del mensaje a tres ventas pagas. Lees Sanadores Libres, capítulos 17 y 18.
 Su logro: tu agenda se confirma sola y tienes tres ventas pagas.
 Su meditación: Planear.
 
@@ -171,7 +171,7 @@ Alumbras a todos. ¿Quién te alumbra a ti?
 Lo que el río te enseña: 33 lecciones para que tu consulta corra sin que la empujes. Es el único libro que se construye: terminas con tu propia app acompañando a tus consultantes entre sesiones.
 
 **Estación 4 · Tu propia app · libertad energética**
-Días 57 a 70. Lees Sanadores Libres, capítulo 19.
+Días 36 a 84. Lees Sanadores Libres, capítulo 19.
 Su logro: tu app andando, horas de tu semana recuperadas y siete mil dólares vendidos.
 Su meditación: El cauce.
 
@@ -198,11 +198,11 @@ Lo que antes hacía un equipo de 14 personas, hoy lo hacen mi cara, mi voz y un 
 Lo que el bosque te enseña: 33 lecciones para que tu nombre trabaje por ti. Es el único libro que termina con otro libro: el tuyo.
 
 **Estación 5 · Tu ecosistema · libertad de tiempo**
-Días 71 a 84. Lees Sanadores Libres, capítulo 20.
+Días 85 a 90. Lees Sanadores Libres, capítulo 20.
 Su logro: doce semanas de contenido programadas, tus primeras invitaciones a podcasts, lives y medios, y tu libro.
 Su meditación: Los anillos.
 
-Del día 85 al 90, el cierre: tu foto de llegada, tu testimonio y tu próximo trimestre.
+En esos seis días, el cierre: tu foto de llegada y tu plan de 180 días.
 
 Hazlo hoy: escribe tu biografía en tres líneas. Quién eres, a quién ayudas y qué cambia en su vida.
 
