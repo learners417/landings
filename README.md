@@ -63,6 +63,13 @@ Vive en `experienciaspatagonicas.com/anfitriones` (subcuenta de GHL «Experienci
 Es `fijas/anfitriones.html`: sin la piel de TCD y sin su píxel; lleva el píxel de Experiencias Patagónicas `2031253547512073`.
 En GHL el paso tiene la misma línea de siempre (`ghl-linea.html`). El calendario de 15 minutos con Ailu va en `data-cal` del bloque `#cal`.
 
+
+## Experiencias Patagónicas (/retiros) · retiros 2027
+Es `fijas/retiros.html` (copia en `site/retiros.html`): misma familia visual que /anfitriones, píxel de Experiencias Patagónicas `2031253547512073`.
+Las 7 fechas de 2027, el retiro de ejemplo (al organizador le queda el 51 %), el honorario del 12 % desde USD 1.800 y la agenda de 30 minutos con Ailu.
+Falta un dato para salir: el calendario de retiros en `data-cal` (hoy `{{CALENDARIO}}`, la página muestra el aviso). Acepta el id del calendario o su URL personalizada (slug con guiones).
+En GHL, el paso /retiros se cambia a un elemento HTML con la línea del cargador y `window.TCD_PAGINA='retiros'`.
+
 ## Dónde está cada página en GHL
 Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 `app.gohighlevel.com/v2/location/SImzaMApYvtVV8UzvlgD/funnels-websites/funnels/<embudo>/steps/<paso>/overview`
