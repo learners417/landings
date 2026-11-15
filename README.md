@@ -64,11 +64,11 @@ Es `fijas/anfitriones.html`: sin la piel de TCD y sin su píxel; lleva el píxel
 En GHL el paso tiene la misma línea de siempre (`ghl-linea.html`). El calendario de 15 minutos con Ailu va en `data-cal` del bloque `#cal`.
 
 
-## Experiencias Patagónicas (/retiros) · retiros 2027
+## Experiencias Patagónicas (/retiros-2027) · retiros 2027
 Es `fijas/retiros.html` (copia en `site/retiros.html`): misma familia visual que /anfitriones, píxel de Experiencias Patagónicas `2031253547512073`.
 Las 7 fechas de 2027, el retiro de ejemplo (al organizador le queda el 51 %), el honorario del 12 % desde USD 1.800 y la agenda de 30 minutos con Ailu.
 La agenda es el calendario «Tu evento en la Patagonia» de GHL, por su URL personalizada `agendasretiro` (`data-cal` acepta el id o el slug).
-En GHL, el paso /retiros se cambia a un elemento HTML con la línea del cargador y `window.TCD_PAGINA='retiros'`.
+Vive en GHL en el paso «RETIROS 2027» (/retiros-2027) del embudo de Experiencias Patagónicas, con la línea del cargador y `window.TCD_PAGINA='retiros'`. La /retiros nativa con el video de Ailu sigue intacta. La agenda es el calendario «Experiencias Patagónicas · 30 minutos con Ailu» (`ep-retiros-ailu`), conectado a EP-2 y EP-3.
 
 ## Dónde está cada página en GHL
 Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
