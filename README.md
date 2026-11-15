@@ -56,6 +56,11 @@ Para cambiarla: se edita `fijas/agenda.html`, se sube, y el mismo cambio se escr
 (Guardar → guardar la página → Publicar). Después se compara lo publicado con el repo: tienen que ser iguales byte a byte.
 En GHL, guardar no publica: hasta tocar «Publicar», en vivo sigue la versión anterior.
 
+## Anfitriones del Sur (/anfitriones) · la marca de Ailu
+Vive en `experienciaspatagonicas.com/anfitriones` (subcuenta de GHL «Experiencias Patagónicas» `Z2vTNR3p0cXAApYeIzF5`).
+Es `fijas/anfitriones.html`: sin la piel de TCD y sin su píxel; lleva el píxel de Experiencias Patagónicas `2031253547512073`.
+En GHL el paso tiene la misma línea de siempre (`ghl-linea.html`). El calendario de 15 minutos con Ailu va en `data-cal` del bloque `#cal`.
+
 ## Dónde está cada página en GHL
 Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 `app.gohighlevel.com/v2/location/SImzaMApYvtVV8UzvlgD/funnels-websites/funnels/<embudo>/steps/<paso>/overview`

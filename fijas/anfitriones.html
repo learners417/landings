@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anfitriones del Sur · Que tu huésped vuelva directo</title>
+<meta name="description" content="Para cabañas, apart y posadas de Bariloche. Booking te trae al huésped la primera vez; nosotros hacemos que la segunda vuelva directo a vos.">
+<link rel="canonical" href="https://experienciaspatagonicas.com/anfitriones">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..640,100&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2031253547512073');
+fbq('trackSingle','2031253547512073','PageView');
+fbq('trackSingle','2031253547512073','ViewContent',{content_name:'anfitriones-del-sur'});
+</script>
+<style>
+:root{
+  --surface:#F6F1E9;--raised:#FFFDF9;--ink:#2B2420;--muted:#665B51;--line:#E2D8CB;
+  --lenga:#9A3E25;--lenga-soft:#F1DED4;--on-lenga:#FFFDF9;
+  --lago:#1E4A54;--lago-soft:#DCE8E7;--coihue:#3B5B39;--coihue-soft:#DFE8DA;
+  --serif:"Fraunces",Georgia,serif;--sans:"Nunito Sans",system-ui,-apple-system,sans-serif;
+  --r-sm:6px;--r-md:12px;--r-lg:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--surface);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img,svg,iframe{max-width:100%}
+a{color:var(--lago)}
+h1,h2,h3{font-family:var(--serif);font-weight:520;font-variation-settings:"SOFT" 100;letter-spacing:-.01em;color:var(--ink)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.label{font:800 16px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--lenga)}
+.muted{color:var(--muted)}
+section{padding:88px 0}
+.rule{height:1px;background:var(--line);border:0;max-width:1080px;margin:0 auto}
+
+/* barra */
+.top{position:sticky;top:0;z-index:20;background:rgba(246,241,233,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand svg{width:34px;height:34px;color:var(--lenga)}
+.brand span{font:520 22px/1 var(--serif);font-variation-settings:"SOFT" 100}
+.top .btn{padding:12px 18px;font-size:16px}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:800 18px/1.2 var(--sans);text-decoration:none;border-radius:var(--r-md);padding:18px 26px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.btn:active{transform:scale(.98)}
+.btn-main{background:var(--lenga);color:var(--on-lenga)}
+.btn-main:hover{background:#86351F}
+.btn-alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-alt:hover{background:var(--raised)}
+
+/* portada */
+.hero{padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:68px;line-height:1.02;margin:18px 0 22px}
+.hero p.sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:30ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero .note{margin-top:22px;font-size:17px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--coihue);flex:none}
+
+/* el chat */
+.chat{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:0 18px 40px -28px rgba(43,36,32,.35)}
+.chat-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.chat-head .av{width:44px;height:44px;border-radius:50%;background:var(--lenga-soft);display:grid;place-items:center;color:var(--lenga)}
+.chat-head .av svg{width:24px;height:24px}
+.chat-head b{display:block;font-size:17px}
+.chat-head small{font-size:16px;color:var(--coihue)}
+.msg{max-width:86%;padding:12px 16px;border-radius:16px;font-size:17px;line-height:1.45;margin-bottom:10px;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+.msg.on{opacity:1;transform:none}
+.msg.in{background:var(--surface);border-bottom-left-radius:4px}
+.msg.out{background:var(--lago-soft);margin-left:auto;border-bottom-right-radius:4px}
+.msg time{display:block;font-size:16px;color:var(--muted);margin-top:4px}
+.typing{display:none;gap:5px;padding:14px 16px;background:var(--lago-soft);border-radius:16px;width:max-content;margin-left:auto;margin-bottom:10px}
+.typing.on{display:flex}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--lago);opacity:.4;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{50%{opacity:1;transform:translateY(-3px)}}
+.chat-foot{margin-top:6px;font-size:16px;color:var(--muted);text-align:center}
+
+/* frase */
+.frase{background:var(--lago);color:var(--raised);padding:72px 0}
+.frase p{font:520 40px/1.25 var(--serif);font-variation-settings:"SOFT" 100;max-width:24ch;color:var(--raised)}
+.frase p em{font-style:normal;color:#F1DED4}
+
+/* calculadora */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;align-items:start}
+.card{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px}
+h2{font-size:48px;line-height:1.08;margin:14px 0 16px}
+.lead{font-size:20px;color:var(--muted);max-width:46ch}
+.field{margin-bottom:26px}
+.field:last-child{margin-bottom:0}
+.field label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700;font-size:18px;margin-bottom:10px}
+.field label output{font:520 28px/1 var(--serif);color:var(--lago);font-variation-settings:"SOFT" 100;white-space:nowrap}
+.field small{display:block;font-size:16px;color:var(--muted);margin-top:8px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:var(--line);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--raised);border:3px solid var(--lenga);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--raised);border:3px solid var(--lenga);cursor:pointer}
+.mon{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+.mon button{font:800 16px/1 var(--sans);padding:9px 14px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.mon button.on{background:var(--ink);color:var(--raised)}
+.res{background:var(--lenga-soft);border-color:#E7C9BB}
+.res .big{font:520 64px/1 var(--serif);font-variation-settings:"SOFT" 100;color:var(--lenga);margin:12px 0 8px;word-break:break-word}
+.res .big.tach{position:relative;display:inline-block}
+.res p{font-size:18px}
+.split{margin-top:26px;border-top:1px solid #E7C9BB;padding-top:22px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 0;font-size:18px}
+.row b{font:520 28px/1 var(--serif);font-variation-settings:"SOFT" 100;white-space:nowrap}
+.row.verde b{color:var(--coihue)}
+.row.lago b{color:var(--lago)}
+.fine{font-size:16px;color:var(--muted);margin-top:16px}
+
+/* lo que se instala */
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+.item{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+.item svg{width:40px;height:40px;color:var(--lenga);margin-bottom:16px}
+.item h3{font-size:24px;line-height:1.2;margin-bottom:8px}
+.item p{font-size:17px;color:var(--muted)}
+
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;counter-reset:p}
+.paso{border-top:2px solid var(--ink);padding-top:20px}
+.paso .n{font:520 56px/1 var(--serif);font-variation-settings:"SOFT" 100;color:var(--lenga)}
+.paso h3{font-size:26px;margin:14px 0 8px}
+.paso p{font-size:18px;color:var(--muted)}
+
+/* oferta */
+.oferta{background:var(--raised);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.of-grid{display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center}
+.of-grid .sello{width:240px;height:240px;justify-self:center}
+.of-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.of-col{border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;background:var(--surface)}
+.of-col .label{color:var(--lago)}
+.of-col p{font-size:19px;margin-top:10px}
+.of-col.uno{background:var(--coihue-soft);border-color:#C8D6C1}
+.of-col.uno .label{color:var(--coihue)}
+.cupos{display:flex;gap:8px;margin-top:30px;flex-wrap:wrap;align-items:center}
+.cupos i{width:30px;height:30px;border-radius:8px;border:1.5px solid var(--lenga);background:transparent}
+.cupos span{font-size:17px;color:var(--muted);margin-left:8px}
+.tuyo{display:flex;gap:12px;align-items:flex-start;margin-top:26px;font-size:18px}
+.tuyo svg{flex:none;width:26px;height:26px;color:var(--coihue);margin-top:2px}
+
+/* Ailu */
+.ailu{display:grid;grid-template-columns:200px 1fr;gap:44px;align-items:center}
+.ailu .foto{width:200px;height:200px;border-radius:50%;background:var(--lenga-soft);display:grid;place-items:center;color:var(--lenga)}
+.ailu .foto span{font:520 76px/1 var(--serif);font-variation-settings:"SOFT" 100}
+.ailu blockquote{font:520 32px/1.3 var(--serif);font-variation-settings:"SOFT" 100;margin:12px 0 18px}
+.ailu p{font-size:19px;color:var(--muted);max-width:56ch}
+
+/* preguntas */
+.faq{margin-top:34px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font:520 24px/1.3 var(--serif);font-variation-settings:"SOFT" 100}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";width:14px;height:14px;border-right:2px solid var(--lenga);border-bottom:2px solid var(--lenga);transform:rotate(45deg);transition:transform .25s ease;flex:none;margin-right:6px}
+.faq details[open] summary:after{transform:rotate(-135deg)}
+.faq details p{font-size:19px;color:var(--muted);padding:0 0 24px;max-width:62ch}
+
+/* agenda */
+.agenda{background:var(--lago-soft)}
+.agenda .head{max-width:640px}
+.cal{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-lg);margin-top:34px;overflow:hidden;min-height:200px}
+.cal iframe{display:block;width:100%;border:0;min-height:720px}
+.cal .aviso{padding:40px 28px;font-size:19px;text-align:center}
+
+footer{padding:56px 0 64px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer p{font-size:16px;color:var(--muted)}
+
+/* aparición */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.draw path{stroke-dasharray:160;stroke-dashoffset:160;animation:dr 1.6s ease forwards}
+.draw path:nth-child(2){animation-delay:.5s}.draw path:nth-child(3){animation-delay:.8s}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.rv,.msg{opacity:1;transform:none;transition:none}.draw path{animation:none;stroke-dashoffset:0}}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero .wrap,.calc-grid,.of-grid,.ailu{grid-template-columns:1fr}
+  .hero h1{font-size:48px}
+  .hero p.sub{font-size:20px}
+  h2{font-size:36px}
+  .frase p{font-size:30px}
+  .items,.pasos,.of-cols{grid-template-columns:1fr}
+  .res .big{font-size:52px}
+  .of-grid .sello{width:180px;height:180px;order:-1;justify-self:start}
+  .ailu .foto{width:140px;height:140px}
+  .ailu .foto span{font-size:54px}
+  .ailu blockquote{font-size:26px}
+  .top .btn{display:none}
+  .btn{width:100%}
+  .hero .ctas{flex-direction:column}
+  .row{flex-direction:column;align-items:flex-start;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Anfitriones del Sur">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7.5 7 56.5h50z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M19.25 32h25.5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M26 56.5V48a6 6 0 0 1 12 0v8.5" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></svg>
+      <span>Anfitriones del Sur</span>
+    </a>
+    <a class="btn btn-main" href="#agenda" data-cta="barra">15 minutos con Ailu</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="label rv">Cabañas, apart y posadas de Bariloche</div>
+      <h1 class="rv">Que tu huésped vuelva directo.</h1>
+      <p class="sub rv">Booking te trae al huésped la primera vez. Nosotros hacemos que la segunda vuelva directo a vos.</p>
+      <div class="ctas rv">
+        <a class="btn btn-main" href="#agenda" data-cta="portada">Hablá 15 minutos con Ailu</a>
+        <a class="btn btn-alt" href="#calculadora" data-cta="portada-calculadora">Calculá lo que le dejás a Booking</a>
+      </div>
+      <p class="note rv"><span class="dot"></span>10 lugares de Fundador · instalación sin costo</p>
+    </div>
+    <div class="chat rv" id="chat" aria-label="Ejemplo de una consulta respondida por el asistente">
+      <div class="chat-head">
+        <div class="av"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7.5 7 56.5h50z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><path d="M26 56.5V48a6 6 0 0 1 12 0v8.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/></svg></div>
+        <div><b>Cabañas del Lago · Reservá directo</b><small>Ejemplo · responde al instante</small></div>
+      </div>
+      <div class="msg in" data-i="0">Olá! Vocês têm cabana para 4 pessoas de 12 a 16 de julho?<time>02:14</time></div>
+      <div class="typing" id="tp"><i></i><i></i><i></i></div>
+      <div class="msg out" data-i="1">Olá! Sim, temos a cabana Coihue para 4 pessoas. São 4 noites. Reservando direto, o café da manhã está incluído.<time>02:14</time></div>
+      <div class="msg out" data-i="2">Para confirmar, é só pagar o sinal neste link do Mercado Pago.<time>02:15</time></div>
+      <p class="chat-foot">El asistente contesta en su idioma, a cualquier hora, y manda el link de la seña.</p>
+    </div>
+  </div>
+</section>
+
+<div class="frase">
+  <div class="wrap"><p class="rv">Tu casa, tus huéspedes, <em>tu reserva.</em></p></div>
+</div>
+
+<section id="calculadora">
+  <div class="wrap">
+    <div class="label rv">La calculadora</div>
+    <h2 class="rv">¿Cuánto le pagaste a Booking este año?</h2>
+    <p class="lead rv">Poné tus números. La cuenta se hace en tu pantalla y queda solo en ella.</p>
+
+    <div class="calc-grid">
+      <div class="card rv">
+        <div class="field">
+          <label for="c-res">Reservas por mes que te entran por Booking <output id="o-res">10</output></label>
+          <input type="range" id="c-res" min="1" max="60" step="1" value="10">
+          <small>El promedio del año, contando temporada alta y baja.</small>
+        </div>
+        <div class="field">
+          <label for="c-noc">Noches por reserva <output id="o-noc">3</output></label>
+          <input type="range" id="c-noc" min="1" max="14" step="1" value="3">
+        </div>
+        <div class="field">
+          <label for="c-tar">Tarifa por noche <output id="o-tar">US$ 90</output></label>
+          <input type="range" id="c-tar" min="20" max="400" step="5" value="90">
+          <small><span class="mon" role="group" aria-label="Moneda"><button type="button" class="on" data-m="usd">US$</button><button type="button" data-m="ars">$ pesos</button></span></small>
+        </div>
+        <div class="field">
+          <label for="c-com">Comisión que te cobra Booking <output id="o-com">15 %</output></label>
+          <input type="range" id="c-com" min="10" max="25" step="0.5" value="15">
+          <small>Está en tu extracto de Booking. En Argentina suele rondar el 15 %.</small>
+        </div>
+        <div class="field">
+          <label for="c-dir">De cada 10 reservas, las que vuelven directo <output id="o-dir">3</output></label>
+          <input type="range" id="c-dir" min="1" max="10" step="1" value="3">
+          <small>Huéspedes que vuelven y recomendados que te escriben a vos. Probá con tu número.</small>
+        </div>
+      </div>
+
+      <div class="card res rv" aria-live="polite">
+        <div class="label">Este año le dejaste a Booking</div>
+        <div class="big" id="r-total">US$ 0</div>
+        <p class="muted" id="r-base">por 0 reservas al año.</p>
+        <div class="split">
+          <div class="label" style="color:var(--ink)">Si <span id="r-dir">3</span> de cada 10 vuelven directo</div>
+          <div class="row lago"><span>Comisión que dejás de pagarle a Booking</span><b id="r-ahorro">US$ 0</b></div>
+          <div class="row"><span>Lo que nos pagás, la mitad</span><b id="r-ads">US$ 0</b></div>
+          <div class="row verde"><span>Lo que queda en tu casa</span><b id="r-tuyo">US$ 0</b></div>
+        </div>
+        <p class="fine">Con Fundadores pagás solo por las reservas que entran directo. Las que siguen llegando por Booking no cambian.</p>
+        <a class="btn btn-main" style="margin-top:22px;width:100%" href="#agenda" data-cta="calculadora">Ver mi número con Ailu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="que-instalamos">
+  <div class="wrap">
+    <div class="label rv">Lo que te instalamos en 7 días</div>
+    <h2 class="rv">Un sistema que trabaja todo el año para tu casa.</h2>
+    <div class="items">
+      <div class="item rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="30" height="24" rx="4"/><path d="M5 13h30M14 35h12"/></svg><h3>Tu web de reservas</h3><p>Con tus fotos, en español, portugués e inglés. El mismo precio que en Booking, con un extra por reservar directo.</p></div>
+      <div class="item rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 30V11a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H13z"/><path d="M14 15h12M14 20h8"/></svg><h3>Tu WhatsApp con asistente</h3><p>Responde las 24 horas en el idioma del huésped, cotiza y manda el link de la seña. Lo que necesita tu decisión, te lo pasa a vos.</p></div>
+      <div class="item rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35s-11-9-11-18a11 11 0 0 1 22 0c0 9-11 18-11 18z"/><circle cx="20" cy="17" r="4"/></svg><h3>Tu ficha de Google</h3><p>Ordenada, con fotos, horarios y el link para reservar directo. Ahí te encuentra quien busca alojamiento en Bariloche.</p></div>
+      <div class="item rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="14" r="5"/><path d="M5 32c0-6 4.5-9 10-9s10 3 10 9"/><path d="M26 10a5 5 0 0 1 0 9M30 23c3 1 5 4 5 9"/></svg><h3>Tu base de huéspedes</h3><p>Todos los que ya se alojaron, cargados y listos para volver a escribirles. Es tuya siempre.</p></div>
+      <div class="item rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h28v20H6z"/><path d="m6 11 14 10 14-10"/></svg><h3>Mensajes automáticos</h3><p>Antes de llegar, el pedido de reseña al irse y «volvé en temporada baja» a los seis meses.</p></div>
+      <div class="item rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 33V20M16 33V12M25 33v-9M34 33V7"/></svg><h3>Tu reporte del mes</h3><p>Cuántas reservas entraron directo y cuánta comisión te ahorraste. Más una campaña por mes a tu base, de marzo a junio.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="como">
+  <div class="wrap">
+    <div class="label rv">Cómo es</div>
+    <h2 class="rv">De tu parte, veinte minutos.</h2>
+    <div class="pasos">
+      <div class="paso rv"><div class="n">1</div><h3>Hablamos 15 minutos</h3><p>Vemos tu número de Booking y si tu casa entra como Fundador.</p></div>
+      <div class="paso rv"><div class="n">2</div><h3>Nos pasás fotos y tarifas</h3><p>Con eso y los accesos, en 7 días tu sistema está andando.</p></div>
+      <div class="paso rv"><div class="n">3</div><h3>Entra la reserva directa</h3><p>Cobrás la seña con tu link y a fin de mes ves cuánto quedó en tu casa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="oferta" id="fundadores">
+  <div class="wrap">
+    <div class="of-grid">
+      <div>
+        <div class="label rv">Fundadores · 10 lugares</div>
+        <h2 class="rv">Te lo instalamos sin costo. Nos pagás la mitad que a Booking, y solo si entra la reserva.</h2>
+        <div class="of-cols">
+          <div class="of-col uno rv"><div class="label">Días 1 a 90</div><p>La mitad de tu comisión de Booking por cada reserva que entra por el sistema. Si Booking te cobra 15 %, pagás 7,5 %.</p></div>
+          <div class="of-col rv"><div class="label">Desde el día 91</div><p>Elegís: seguir con ese porcentaje o pasar a 150 USD por mes (250 USD de 16 a 30 unidades).</p></div>
+        </div>
+        <div class="cupos rv" aria-label="10 lugares de Fundador"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span>10 lugares para los primeros alojamientos</span></div>
+        <p class="tuyo rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Tu base de huéspedes y tus reseñas son tuyas siempre. Avisás con 15 días y lo dejás cuando quieras.</p>
+      </div>
+      <div class="sello rv" aria-label="Sello Reservá directo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Reservá directo · Anfitriones del Sur">
+<circle cx="120" cy="120" r="113" fill="none" stroke="#9A3E25" stroke-width="3"/>
+<circle cx="120" cy="120" r="80" fill="none" stroke="#9A3E25" stroke-width="1.5"/>
+<path fill="#9A3E25" d="M34.54 88.45 24.47 84.19 26.42 79.59Q27.14 77.91 28.34 77.34Q29.54 76.77 30.99 77.39Q31.93 77.79 32.44 78.49Q32.95 79.19 32.99 80.13Q33.04 81.06 32.56 82.19L32.36 81.97L32.61 81.39Q32.87 80.79 33.35 80.46Q33.83 80.14 34.57 80.06L38.24 79.7L37.21 82.14L33.26 82.52Q32.94 82.56 32.71 82.68Q32.49 82.8 32.32 83.01Q32.16 83.22 32.04 83.5L31.58 84.59L35.47 86.24ZM29.98 83.91 30.82 81.93Q31.19 81.04 31.03 80.44Q30.86 79.84 30.15 79.54Q29.45 79.24 28.9 79.54Q28.35 79.84 27.98 80.72L27.14 82.71Z M41.62 73.64 32.43 67.72 36.49 61.43 38.06 62.44 35.25 66.81 37.4 68.19 40.03 64.12 41.62 65.14 38.99 69.22 41.28 70.7 44.1 66.33 45.67 67.35Z M52.94 58.74Q52.37 59.37 51.72 59.86Q51.07 60.35 50.41 60.67Q49.75 60.99 49.13 61.11L48.21 59.32Q48.79 59.19 49.36 58.93Q49.93 58.68 50.47 58.28Q51.01 57.89 51.47 57.39Q52.23 56.55 52.3 55.96Q52.36 55.37 51.97 55.02Q51.75 54.82 51.5 54.78Q51.24 54.74 50.89 54.88Q50.55 55.02 50.08 55.37L48.62 56.41Q47.39 57.3 46.35 57.32Q45.31 57.35 44.4 56.52Q43.63 55.81 43.44 54.87Q43.24 53.93 43.6 52.9Q43.95 51.87 44.83 50.91Q45.34 50.35 45.92 49.93Q46.5 49.52 47.1 49.27Q47.71 49.02 48.28 48.96L49.12 50.67Q48.33 50.79 47.62 51.19Q46.91 51.59 46.3 52.27Q45.86 52.75 45.67 53.2Q45.49 53.66 45.56 54.04Q45.63 54.43 45.92 54.7Q46.26 55 46.68 54.95Q47.11 54.9 47.78 54.42L49.23 53.38Q50.5 52.47 51.53 52.41Q52.56 52.35 53.43 53.14Q54.19 53.83 54.38 54.75Q54.58 55.68 54.22 56.7Q53.86 57.73 52.94 58.74Z M61.17 50.48 54.45 41.87 60.35 37.26 61.5 38.74 57.41 41.93 58.98 43.95 62.81 40.96 63.97 42.45 60.15 45.44 61.82 47.59 65.92 44.4 67.07 45.87Z M73.37 41.74 68.22 32.11 72.62 29.75Q74.23 28.89 75.52 29.2Q76.81 29.51 77.56 30.9Q78.04 31.81 78 32.67Q77.95 33.54 77.4 34.3Q76.84 35.05 75.76 35.63L75.75 35.34L76.31 35.04Q76.88 34.73 77.46 34.78Q78.04 34.83 78.67 35.24L81.75 37.26L79.41 38.51L76.1 36.33Q75.83 36.15 75.58 36.1Q75.32 36.06 75.07 36.11Q74.81 36.17 74.53 36.32L73.5 36.88L75.49 40.61ZM72.68 35.35 74.58 34.33Q75.42 33.88 75.67 33.3Q75.92 32.73 75.55 32.05Q75.19 31.38 74.58 31.27Q73.97 31.16 73.12 31.61L71.22 32.63Z M91.35 33.63 83.3 24.76 85.74 23.96 92.03 31.09 91.29 31.33 92.17 21.87 94.51 21.1 93.22 33.02Z M102.07 30.58 105.61 19.09 107.53 18.83 113.94 29 111.55 29.32 109.86 26.48 110.9 27.02 104.49 27.87 105.35 27.08 104.48 30.26ZM106.88 21.5 105.54 26.45 105.04 25.9 109.85 25.26 109.52 25.92 106.91 21.5ZM105.65 18.15 107.11 15.22 109.46 14.9 107.26 17.93Z M130.48 29.47 132.32 18.7 136.54 19.42Q138.37 19.73 139.56 20.59Q140.74 21.44 141.21 22.76Q141.69 24.07 141.4 25.79Q141.1 27.5 140.22 28.59Q139.33 29.68 137.93 30.09Q136.53 30.51 134.7 30.19ZM133.18 27.94 134.89 28.23Q136.62 28.52 137.62 27.81Q138.62 27.1 138.92 25.36Q139.22 23.62 138.5 22.63Q137.78 21.63 136.07 21.34L134.36 21.05Z M147.68 33.3 151.14 22.94 153.42 23.7 149.96 34.06Z M157.26 36.87 162.2 27.12 166.65 29.37Q168.28 30.2 168.77 31.43Q169.25 32.67 168.54 34.08Q168.08 34.99 167.34 35.45Q166.6 35.92 165.67 35.89Q164.73 35.87 163.64 35.32L163.87 35.14L164.44 35.43Q165.02 35.72 165.31 36.22Q165.6 36.73 165.63 37.47L165.74 41.16L163.38 39.96L163.26 36Q163.25 35.68 163.14 35.44Q163.04 35.2 162.84 35.03Q162.65 34.85 162.37 34.71L161.32 34.18L159.41 37.95ZM162.1 32.63 164.02 33.6Q164.88 34.04 165.49 33.91Q166.1 33.79 166.45 33.09Q166.8 32.42 166.53 31.85Q166.27 31.28 165.42 30.85L163.49 29.88Z M171.56 44.93 178.1 36.17 184.1 40.65 182.98 42.16 178.81 39.05 177.28 41.1 181.17 44 180.04 45.52 176.15 42.61 174.52 44.8 178.68 47.91 177.56 49.41Z M186.73 58.37Q185.51 57.09 185.16 55.69Q184.8 54.3 185.25 52.94Q185.7 51.59 186.95 50.4Q188.2 49.22 189.58 48.84Q190.95 48.47 192.32 48.9Q193.69 49.33 194.91 50.61Q195.65 51.4 196.09 52.36Q196.52 53.31 196.53 54.18L194.64 54.95Q194.55 54.07 194.25 53.38Q193.95 52.69 193.42 52.13Q192.35 51.01 191.14 51.05Q189.93 51.08 188.7 52.25Q187.48 53.41 187.37 54.62Q187.26 55.84 188.32 56.96Q188.86 57.53 189.53 57.86Q190.2 58.2 191.07 58.33L190.2 60.18Q189.34 60.13 188.41 59.64Q187.48 59.15 186.73 58.37Z M195.17 68.7 202.61 63.73 200.6 60.73 202.25 59.63 207.6 67.63 205.95 68.73 203.94 65.73 196.51 70.7Z M203.33 83.85Q202.85 82.74 202.82 81.67Q202.79 80.59 203.19 79.64Q203.59 78.69 204.39 77.93Q205.19 77.16 206.36 76.66Q207.54 76.15 208.63 76.08Q209.73 76.02 210.69 76.38Q211.65 76.75 212.42 77.5Q213.18 78.26 213.66 79.37Q214.15 80.49 214.18 81.56Q214.2 82.63 213.82 83.58Q213.43 84.52 212.63 85.29Q211.84 86.06 210.67 86.56Q209.49 87.08 208.38 87.13Q207.28 87.19 206.31 86.83Q205.34 86.48 204.58 85.73Q203.81 84.98 203.33 83.85ZM205.2 83.04Q205.57 83.89 206.22 84.3Q206.86 84.72 207.75 84.71Q208.63 84.71 209.66 84.27Q210.69 83.82 211.3 83.18Q211.9 82.55 212.03 81.79Q212.15 81.02 211.79 80.18Q211.43 79.36 210.79 78.93Q210.14 78.5 209.27 78.5Q208.39 78.51 207.36 78.96Q206.33 79.41 205.72 80.04Q205.11 80.68 204.98 81.45Q204.85 82.21 205.2 83.04Z M212.7 104.89 215.15 104.53 215.52 107.01 213.07 107.38Z M211.11 123.97 221.42 130.16 221.21 132.08 209.8 135.88 210.07 133.48 213.23 132.52 212.46 133.4 213.17 126.97 213.72 128 210.84 126.39ZM218.78 130.82 214.3 128.33 214.94 127.98 214.41 132.8 213.86 132.32 218.78 130.85Z M208.35 142.33 218.79 145.55 218.26 147.25 209.37 150.66 209.5 150.26 216.65 152.47 215.99 154.6 205.55 151.37 206.07 149.69 214.97 146.29 214.86 146.67 207.69 144.46Z M202.48 158.59 212.2 163.58 208.83 170.15 207.16 169.29 209.43 164.87 207.06 163.65 204.95 167.77 203.28 166.91 205.39 162.79 201.38 160.73Z M195.28 171.14 204.24 177.4 202.86 179.36 193.91 173.11Z M187.35 181.21 193.89 187.31 196.35 184.67 197.8 186.02 191.24 193.06 189.79 191.71 192.25 189.06 185.71 182.96Z M178.14 190.14 184.71 198.87 180.72 201.87Q179.26 202.97 177.94 202.86Q176.61 202.75 175.66 201.49Q175.05 200.67 174.96 199.8Q174.87 198.94 175.3 198.11Q175.74 197.28 176.72 196.54L176.77 196.83L176.27 197.21Q175.75 197.6 175.17 197.64Q174.58 197.68 173.91 197.37L170.55 195.85L172.67 194.26L176.27 195.91Q176.57 196.03 176.82 196.04Q177.08 196.05 177.33 195.95Q177.58 195.86 177.82 195.67L178.76 194.96L176.22 191.58ZM179.81 196.35 178.09 197.64Q177.32 198.22 177.16 198.83Q177 199.43 177.47 200.05Q177.93 200.65 178.55 200.67Q179.17 200.69 179.94 200.11L181.66 198.81Z M164.56 199.35 169.79 208.95 167.68 210.1 162.45 200.5Z M150.6 205.52Q151.74 205.11 152.82 205.15Q153.9 205.2 154.82 205.66Q155.74 206.12 156.45 206.97Q157.16 207.82 157.58 209.01Q158.02 210.22 158.01 211.32Q158 212.42 157.57 213.35Q157.15 214.29 156.35 215Q155.54 215.72 154.4 216.13Q153.25 216.54 152.18 216.5Q151.11 216.45 150.19 216Q149.28 215.56 148.56 214.71Q147.85 213.86 147.42 212.67Q146.98 211.46 147 210.35Q147.01 209.24 147.43 208.3Q147.86 207.36 148.65 206.64Q149.45 205.93 150.6 205.52ZM151.29 207.44Q150.42 207.76 149.96 208.37Q149.51 208.99 149.45 209.87Q149.4 210.76 149.78 211.81Q150.16 212.87 150.75 213.52Q151.34 214.16 152.1 214.33Q152.85 214.51 153.71 214.2Q154.56 213.9 155.03 213.29Q155.5 212.67 155.55 211.8Q155.6 210.92 155.22 209.86Q154.84 208.81 154.25 208.16Q153.65 207.51 152.9 207.32Q152.14 207.14 151.29 207.44Z M138.26 209.27 139.9 220.08 138.13 220.34 131.21 213.82 131.62 213.76 132.74 221.16 130.53 221.49 128.9 210.69 130.65 210.42 137.58 216.96 137.18 217.02 136.06 209.61Z M121.06 211.06 120.77 221.99 113.28 221.78 113.33 219.91 118.52 220.05 118.59 217.49 113.74 217.36 113.79 215.47 118.64 215.6 118.72 212.87 113.53 212.73 113.58 210.86Z M102.44 209.12Q103.28 209.28 104.03 209.58Q104.79 209.88 105.41 210.28Q106.02 210.67 106.45 211.14L105.4 212.86Q104.98 212.43 104.47 212.07Q103.95 211.72 103.34 211.46Q102.73 211.21 102.06 211.08Q100.95 210.86 100.41 211.11Q99.87 211.36 99.77 211.88Q99.71 212.17 99.81 212.41Q99.92 212.65 100.21 212.87Q100.51 213.1 101.05 213.31L102.7 214.02Q104.1 214.61 104.66 215.48Q105.22 216.36 104.98 217.56Q104.78 218.6 104.08 219.25Q103.37 219.9 102.31 220.13Q101.24 220.36 99.96 220.11Q99.22 219.97 98.56 219.69Q97.91 219.41 97.38 219.02Q96.86 218.63 96.51 218.17L97.53 216.57Q98.05 217.18 98.76 217.58Q99.47 217.98 100.37 218.15Q101 218.28 101.49 218.2Q101.97 218.12 102.26 217.86Q102.56 217.61 102.64 217.21Q102.72 216.77 102.46 216.43Q102.19 216.1 101.43 215.77L99.79 215.07Q98.36 214.46 97.77 213.61Q97.18 212.76 97.4 211.6Q97.6 210.6 98.29 209.95Q98.98 209.3 100.04 209.08Q101.1 208.85 102.44 209.12Z M81.84 202.76 76.74 212.42 72.95 210.42Q71.31 209.55 70.45 208.37Q69.59 207.19 69.55 205.8Q69.51 204.4 70.32 202.86Q71.13 201.33 72.31 200.57Q73.5 199.81 74.95 199.85Q76.41 199.89 78.06 200.76ZM78.8 203.38 77.26 202.57Q75.71 201.75 74.54 202.11Q73.37 202.47 72.54 204.04Q71.72 205.6 72.09 206.77Q72.46 207.94 74 208.75L75.53 209.56Z M66.66 193.81 59.91 202.41 54.02 197.79 55.18 196.31 59.26 199.52 60.84 197.51 57.03 194.51 58.19 193.02 62.01 196.02 63.69 193.87 59.61 190.67 60.77 189.19Z M55.27 184.04 47.22 191.44 45.59 189.67 52.14 183.65 48.73 179.93 50.22 178.56Z M38.95 161Q39.34 161.76 39.56 162.54Q39.79 163.32 39.86 164.05Q39.93 164.78 39.83 165.4L37.82 165.64Q37.9 165.04 37.87 164.42Q37.83 163.79 37.65 163.15Q37.47 162.51 37.17 161.9Q36.66 160.89 36.13 160.62Q35.6 160.35 35.13 160.59Q34.87 160.72 34.74 160.95Q34.61 161.18 34.62 161.55Q34.62 161.92 34.78 162.48L35.24 164.21Q35.64 165.68 35.29 166.66Q34.95 167.65 33.86 168.2Q32.92 168.68 31.97 168.52Q31.02 168.37 30.18 167.67Q29.35 166.98 28.76 165.81Q28.41 165.14 28.23 164.45Q28.05 163.76 28.03 163.11Q28.01 162.46 28.16 161.89L30.05 161.72Q29.89 162.49 30.01 163.3Q30.13 164.11 30.55 164.92Q30.84 165.5 31.2 165.84Q31.56 166.17 31.94 166.24Q32.33 166.32 32.69 166.13Q33.09 165.93 33.19 165.51Q33.29 165.1 33.08 164.3L32.62 162.57Q32.23 161.07 32.53 160.08Q32.84 159.09 33.89 158.56Q34.8 158.1 35.74 158.24Q36.67 158.38 37.5 159.08Q38.33 159.78 38.95 161Z M32.93 145.86Q33.59 148.09 32.79 149.59Q32 151.1 29.74 151.77L23.65 153.58L22.96 151.28L29.07 149.46Q30.35 149.08 30.82 148.31Q31.3 147.54 30.97 146.44Q30.64 145.34 29.82 144.96Q29.01 144.58 27.73 144.96L21.62 146.78L20.95 144.5L27.04 142.69Q29.3 142.02 30.78 142.83Q32.27 143.63 32.93 145.86Z M29.94 133.76 19.08 134.9 18.56 129.94Q18.36 128.12 19.14 127.04Q19.92 125.96 21.49 125.79Q22.51 125.69 23.29 126.06Q24.08 126.43 24.57 127.22Q25.06 128.02 25.18 129.24L24.91 129.14L24.84 128.51Q24.77 127.86 25.04 127.35Q25.31 126.83 25.92 126.4L28.95 124.31L29.23 126.95L25.96 129.19Q25.7 129.37 25.56 129.59Q25.42 129.81 25.37 130.07Q25.33 130.33 25.36 130.64L25.48 131.81L29.69 131.37ZM23.76 131.99 23.53 129.85Q23.43 128.89 23 128.45Q22.56 128 21.79 128.08Q21.03 128.16 20.7 128.69Q20.37 129.22 20.47 130.17L20.69 132.31Z M26.93 107.38 24.48 107.01 24.85 104.53 27.3 104.89Z"/>
+<g transform="translate(73.60 72.15) scale(1.45)" style="color:#9A3E25">
+<path d="M32 7.5 7 56.5h50z" fill="none" stroke="#9A3E25" stroke-width="5" stroke-linejoin="round"/>
+<path d="M19.25 32h25.5" fill="none" stroke="#9A3E25" stroke-width="5" stroke-linecap="round"/>
+<path d="M26 56.5V48a6 6 0 0 1 12 0v8.5" fill="none" stroke="#9A3E25" stroke-width="5" stroke-linejoin="round"/>
+</g>
+</svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="ailu">
+  <div class="wrap">
+    <div class="ailu">
+      <div class="foto rv" aria-hidden="true"><span>A</span></div>
+      <div>
+        <div class="label rv">Quién está detrás</div>
+        <blockquote class="rv">«Soy Ailu. Lo que ganás con tu casa tiene que quedar en tu casa.»</blockquote>
+        <p class="rv">Produzco experiencias en la Patagonia hace más de cuatro años, vengo de la gastronomía y conozco a muchos de los anfitriones de Bariloche. Anfitriones del Sur es eso: yo, con un sistema que se instala en tu casa y trabaja la temporada entera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="preguntas">
+  <div class="wrap">
+    <div class="label rv">Preguntas</div>
+    <h2 class="rv">Lo que nos preguntan los dueños.</h2>
+    <div class="faq rv">
+      <details><summary>¿Tengo que dejar Booking?</summary><p>Seguís con Booking: te sigue trayendo huéspedes nuevos. Esto es para los que ya vinieron y para los que te recomiendan.</p></details>
+      <details><summary>¿Y la paridad de precios con Booking?</summary><p>En tu web va el mismo precio que en Booking. Reservar directo suma un extra, como late check-out o desayuno. El precio especial va solo por WhatsApp a quien ya se alojó.</p></details>
+      <details><summary>¿Cuánto tiempo me lleva a mí?</summary><p>Veinte minutos: tus fotos, tus tarifas y los accesos. La instalación la hacemos nosotros, en 7 días.</p></details>
+      <details><summary>¿Quién contesta los mensajes de noche?</summary><p>El asistente. Responde en el idioma del huésped, cotiza y manda el link de la seña. Lo que necesita tu decisión te llega a vos en el día.</p></details>
+      <details><summary>¿Cómo se cuenta una reserva directa?</summary><p>Es la que se confirma con la seña del link de Mercado Pago de tu sistema. A principio de mes te llega el reporte con cada una.</p></details>
+      <details><summary>¿Y si después quiero dejarlo?</summary><p>Avisás con 15 días y pagás solo las reservas ya confirmadas. Tu base de huéspedes te la llevás en una planilla.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="agenda" id="agenda">
+  <div class="wrap">
+    <div class="head">
+      <div class="label rv">15 minutos con Ailu</div>
+      <h2 class="rv">Elegí el día y vemos tu número.</h2>
+      <p class="lead rv">Por videollamada o en tu casa. Traé el extracto de Booking del último año, si lo tenés a mano.</p>
+    </div>
+    <div class="cal rv" id="cal" data-cal="{{CALENDARIO}}"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Anfitriones del Sur">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7.5 7 56.5h50z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M19.25 32h25.5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M26 56.5V48a6 6 0 0 1 12 0v8.5" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></svg>
+      <span>Anfitriones del Sur</span>
+    </a>
+    <p>Bariloche, Patagonia · Parte de Experiencias Patagónicas</p>
+  </div>
+</footer>
+
+<script>
+/* ── la calculadora ── */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var moneda='usd', usada=false;
+  var rango={usd:{min:20,max:400,step:5,val:90},ars:{min:20000,max:400000,step:5000,val:90000}};
+  function fmt(n){
+    n=Math.round(n);
+    var s=n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+    return (moneda==='usd'?'US$ ':'$ ')+s;
+  }
+  function calc(){
+    var res=+$('c-res').value,noc=+$('c-noc').value,tar=+$('c-tar').value,com=+$('c-com').value,dir=+$('c-dir').value;
+    $('o-res').textContent=res;$('o-noc').textContent=noc;$('o-tar').textContent=fmt(tar);
+    $('o-com').textContent=String(com).replace('.',',')+' %';$('o-dir').textContent=dir;
+    var anual=res*12, total=anual*noc*tar*com/100;
+    var ahorro=total*dir/10;
+    $('r-total').textContent=fmt(total);
+    $('r-base').textContent='por '+anual+' reservas al año de '+noc+(noc===1?' noche':' noches')+'.';
+    $('r-dir').textContent=dir;
+    $('r-ahorro').textContent=fmt(ahorro);
+    $('r-ads').textContent=fmt(ahorro/2);
+    $('r-tuyo').textContent=fmt(ahorro/2);
+  }
+  ['c-res','c-noc','c-tar','c-com','c-dir'].forEach(function(id){
+    $(id).addEventListener('input',function(){
+      calc();
+      if(!usada){usada=true;if(window.fbq)fbq('trackSingle','2031253547512073','CustomizeProduct',{content_name:'calculadora-booking'});}
+    });
+  });
+  [].forEach.call(document.querySelectorAll('.mon button'),function(b){
+    b.addEventListener('click',function(){
+      moneda=b.getAttribute('data-m');
+      [].forEach.call(document.querySelectorAll('.mon button'),function(x){x.classList.toggle('on',x===b)});
+      var r=rango[moneda],t=$('c-tar');t.min=r.min;t.max=r.max;t.step=r.step;t.value=r.val;calc();
+    });
+  });
+  calc();
+})();
+
+/* ── el chat de la portada ── */
+(function(){
+  var chat=document.getElementById('chat');if(!chat)return;
+  var m=chat.querySelectorAll('.msg'),tp=document.getElementById('tp'),hecho=false;
+  function play(){
+    if(hecho)return;hecho=true;
+    m[0].classList.add('on');
+    setTimeout(function(){tp.classList.add('on')},700);
+    setTimeout(function(){tp.classList.remove('on');m[1].classList.add('on')},2000);
+    setTimeout(function(){m[2].classList.add('on')},3100);
+  }
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){[].forEach.call(m,function(x){x.classList.add('on')});return;}
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){play();o.disconnect();}},{threshold:.3}).observe(chat);}else play();
+})();
+
+/* ── el calendario de GHL ── */
+(function(){
+  var box=document.getElementById('cal');var id=box.getAttribute('data-cal');
+  if(!/^[A-Za-z0-9]{12,}$/.test(id)){box.innerHTML='<p class="aviso">La agenda abre en unos minutos. Volvé a entrar más tarde.</p>';return;}
+  box.innerHTML='<iframe src="https://api.leadconnectorhq.com/widget/booking/'+id+'" id="'+id+'_ads" title="Agenda de 15 minutos con Ailu" scrolling="no"></iframe>';
+  var s=document.createElement('script');s.src='https://link.msgsndr.com/js/form_embed.js';s.async=true;document.body.appendChild(s);
+  var avisado=false;
+  window.addEventListener('message',function(e){
+    if(typeof e.origin!=='string'||e.origin.indexOf('leadconnectorhq')<0)return;
+    var d=e.data||{};var f=box.querySelector('iframe');
+    if(f&&d&&typeof d==='object'){var h=d.height||d.iframeHeight||(d.data&&d.data.height);if(typeof h==='number'&&h>300)f.style.minHeight=h+'px';}
+    var t=(typeof d==='string')?d:(d.type||d.event||'');t=String(t).toLowerCase();
+    if(!avisado&&(t.indexOf('book')>-1||t.indexOf('appointment')>-1)){avisado=true;if(window.fbq)fbq('trackSingle','2031253547512073','Schedule',{content_name:'anfitriones-15-min'});}
+  },false);
+})();
+
+/* ── botones y aparición ── */
+(function(){
+  [].forEach.call(document.querySelectorAll('[data-cta]'),function(a){
+    a.addEventListener('click',function(){if(window.fbq)fbq('trackSingleCustom','2031253547512073','CTA',{ubicacion:a.getAttribute('data-cta')});},{once:true});
+  });
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){[].forEach.call(els,function(e){e.classList.add('in')});return;}
+  var o=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+  [].forEach.call(els,function(e){o.observe(e)});
+})();
+</script>
+</body>
+</html>
