@@ -73,10 +73,10 @@ button{font:inherit;color:inherit}
 .p-medios>.on{opacity:1}
 .p-medios>.zoom{transform:scale(1.1)}
 .p-medios>video{transform:none;transition:opacity 1.2s var(--e)}
-.p-medios::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(22,20,18,.34)}
+.p-medios::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(22,20,18,.38)}
 .p-sobre{position:absolute;left:0;right:0;bottom:0;display:grid;gap:18px;justify-items:start;padding:24px 22px 26px}
 .p-sobre .h1{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.2)}
-.p-sobre .lead{color:#fff;max-width:34ch;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.p-sobre .lead{color:#fff;font-weight:600;max-width:34ch;text-shadow:0 1px 2px rgba(0,0,0,.25)}
 .btn.claro{background:var(--nieve);color:var(--tinta)}
 .btn.claro:hover{background:#fff}
 .portada .prueba{padding-top:20px}
