@@ -245,3 +245,37 @@
   revelar.forEach(function (x) { io.observe(x); });
   contar.forEach(function (x) { io.observe(x); });
 })();
+
+/* ═══ PAISAJE VIVO · la estantería de /libros: un libro a la vez ═══ */
+(function () {
+  var d = document, quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var est = d.querySelector('[data-estanteria]');
+  if (!est) return;
+  var tabs = [].slice.call(est.querySelectorAll('[role=tab]'));
+  function elegir(k, bajar, foco) {
+    var i = -1;
+    tabs.forEach(function (t, j) {
+      var on = t.getAttribute('aria-controls') === k; if (on) i = j;
+      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+      var p = d.getElementById(t.getAttribute('aria-controls')); if (p) p.hidden = !on;
+    });
+    if (i < 0) return;
+    var sel = est.querySelector('.tapas-sel'), t = tabs[i];
+    if (sel) sel.scrollTo({ left: t.offsetLeft - (sel.clientWidth - t.clientWidth) / 2, behavior: quieto ? 'auto' : 'smooth' });
+    if (foco) t.focus();
+    if (bajar) { var y = est.getBoundingClientRect().top + scrollY - 90; window.scrollTo({ top: y, behavior: quieto ? 'auto' : 'smooth' }); }
+    if (window.pxc) window.pxc('Libro', { libro: k });
+  }
+  window.TCD_LIBRO = elegir;
+  tabs.forEach(function (t, j) {
+    t.addEventListener('click', function () { if (t.getAttribute('aria-selected') !== 'true') elegir(t.getAttribute('aria-controls')); });
+    t.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (n) { e.preventDefault(); elegir(tabs[(j + n + tabs.length) % tabs.length].getAttribute('aria-controls'), false, true); }
+    });
+  });
+  /* los libros de la portada llevan a su ficha */
+  d.querySelectorAll('a[data-libro]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); elegir(a.getAttribute('data-libro'), true); });
+  });
+})();

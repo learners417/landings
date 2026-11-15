@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -9,323 +9,358 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tu precio no lo pusiste tú · los 8 libros de Javo Katz">
 <meta property="og:description" content="Los 8 libros y los cinco primeros días de mi app. En cinco días sellas tu precio nuevo.">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/img/obra.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
-<style>/*EDICION_CSS*/</style>
-<style>
-@media (min-width:1000px){ .pliego>.verso{order:-1} }
-.desde-diag{border-radius:14px;padding:18px 20px;margin:0 0 30px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);max-width:560px}
-.desde-diag b{display:block;font-family:var(--f-titulo);font-weight:600;font-size:28px;line-height:1.15;margin-bottom:6px}
-.desde-diag p{font-size:18px;line-height:1.5}
-.cita-libro{font-family:var(--f-titulo);font-style:italic;font-size:clamp(23px,5.4vw,27px);line-height:1.25;margin:16px 0 10px;color:var(--tinta)}
-.camino-link{margin-top:22px}
-</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Literata:ital,opsz,wght@0,7..72,400..500;1,7..72,400&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<style>/*PAISAJE_CSS*/</style>
 </head>
-<body data-pagina="libros" data-pagos="obra" data-libro-titulo="Los 8 libros y Tu nuevo precio">
-
-<header class="top"><div class="top-in">
-  <a class="marca" data-link="inicio" href="#">Javo Katz</a>
-  <p class="rotulo" aria-hidden="true"></p>
-  <div class="top-der">
-   <button type="button" class="btn-indice" data-indice><i></i>Índice</button>
-   <a class="btn" href="#obra">Tu nuevo precio · <span data-precio="obra">97</span> USD</a>
-  </div>
-</div></header>
-
+<body class="vivo" data-pagina="libros" data-pagos="obra" data-libro-titulo="Los 8 libros y Tu nuevo precio">
+<header class="top">
+  <a class="marca" data-link="inicio" href="/inicio" aria-label="Tu Clínica Digital, inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
+  <a class="ir" href="#obra"><span>Tu nuevo precio · <span data-precio="obra">97</span>&nbsp;USD</span></a>
+</header>
 <main>
-<!-- ═══ LA PORTADILLA ═══ -->
-<section class="portadilla" data-barra-desde>
- <div class="wrap">
-  <div class="pliego">
-   <div class="recto">
-    <p class="serie">Colección Libres</p>
-    <h1>Tu precio no lo pusiste tú.</h1>
-    <span class="filete"></span>
-    <p class="subtitulo">Lo heredaste.<br>En cinco días, lo cambias.</p>
-    <p class="bajada"><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> En el quinto día sellas tu precio nuevo y el valor real de tu hora.</p>
-    <div class="acciones">
-     <a class="btn" href="#obra">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a>
-     <a class="link" data-link="capitulo" href="#">Leer un primer capítulo, sin costo</a>
+<!-- 1 · Portada: la frase y los 8 libros como objetos -->
+<section class="hero libros-hero" data-barra-desde>
+  <div class="envase hero-in">
+    <div class="hero-txt">
+      <h1 class="h1"><span class="l">Tu precio</span> <span class="l">no lo pusiste tú.</span></h1>
+      <p class="sub">Lo heredaste. En cinco días, lo cambias.</p>
+      <p class="lead lectura"><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> En el quinto día sellas tu precio nuevo y el valor real de tu hora.</p>
+      <a class="btn" href="#obra"><span>Quiero Tu nuevo precio · <span data-precio="obra">97</span>&nbsp;USD</span></a>
+      <a class="enlace" data-link="capitulo" href="/capitulos">Leer un primer capítulo, sin costo</a>
+      <p class="aval"><img data-foto data-ancho="160" alt="" width="52" height="52" data-quita-si-falla><span>Los escribí en Bariloche, después de acompañar a <b>más de 50 profesionales</b> que atienden 1 a 1.</span></p>
     </div>
-    <p class="aval"><img data-foto data-ancho="160" alt="" width="52" height="52" data-quita-si-falla><span>Los escribí en Bariloche, después de acompañar a <b>más de 50 profesionales</b> que atienden 1 a 1.</span></p>
-   </div>
-
-   <div class="verso">
-    <!--ESTANTE-->
-   </div>
+    <nav class="vitrina estante" aria-label="Los 8 libros: toca uno para ver de qué trata">
+      <a class="libro3d" href="#sanadores" data-libro="sanadores" style="--c:#3F5450" aria-label="Sanadores Libres"><img data-repo="imgs/tapas/sanadores-grande.webp" alt="" width="480" height="720" fetchpriority="high"></a>
+      <a class="libro3d" href="#lago" data-libro="lago" style="--c:var(--lago)" aria-label="Lo que el lago te enseña"><img data-repo="imgs/tapas/lago-grande.webp" alt="" width="480" height="720" fetchpriority="high"></a>
+      <a class="libro3d" href="#montana" data-libro="montana" style="--c:var(--montana)" aria-label="Lo que la montaña te enseña"><img data-repo="imgs/tapas/montana-grande.webp" alt="" width="480" height="720" fetchpriority="high"></a>
+      <a class="libro3d" href="#viento" data-libro="viento" style="--c:var(--viento)" aria-label="Lo que el viento te enseña"><img data-repo="imgs/tapas/viento-grande.webp" alt="" width="480" height="720" fetchpriority="high"></a>
+      <a class="libro3d" href="#rio" data-libro="rio" style="--c:var(--rio)" aria-label="Lo que el río te enseña"><img data-repo="imgs/tapas/rio-grande.webp" alt="" width="480" height="720" loading="lazy"></a>
+      <a class="libro3d" href="#bosque" data-libro="bosque" style="--c:var(--bosque)" aria-label="Lo que el bosque te enseña"><img data-repo="imgs/tapas/bosque-grande.webp" alt="" width="480" height="720" loading="lazy"></a>
+      <a class="libro3d" href="#heroe" data-libro="heroe" style="--c:#6E5638" aria-label="Héroe descapado"><img data-repo="imgs/tapas/heroe-grande.webp" alt="" width="480" height="720" loading="lazy"></a>
+      <a class="libro3d" href="#libertades" data-libro="libertades" style="--c:#7E4A35" aria-label="Las 7 libertades fundamentales"><img data-repo="imgs/tapas/libertades-grande.webp" alt="" width="480" height="720" loading="lazy"></a>
+    </nav>
   </div>
- </div>
 </section>
-
-<!-- ═══ 1 · CINCO DÍAS ═══ -->
-<section class="cap" id="cinco-dias" data-capitulo="Cinco días, un número" data-dato="tu precio nuevo">
- <div class="cap-in">
-  <header class="cap-cab">
-   <span class="cap-n">1</span>
-   <h2>Cinco días, un número.</h2>
-   <p class="bajada">Los libros te muestran el camino entero. En mi app das el primer tramo: cinco jornadas, una por día, que terminan en tu precio nuevo dicho en voz alta.</p>
-  </header>
-  <div class="ancho">
-   <ol class="secuencia">
-    <li><span class="sn">Día<b>1</b></span><div><h3>Tu sentido</h3><p>Para qué haces lo que haces. Es el punto de partida de todo lo demás.</p></div></li>
-    <li><span class="sn">Día<b>2</b></span><div><h3>Tu rueda de la vida</h3><p>Cómo están hoy las ocho áreas de tu vida, con un número para cada una.</p></div></li>
-    <li><span class="sn">Día<b>3</b></span><div><h3>Tu creencia sobre el dinero</h3><p>La frase sobre cobrar que aprendiste en casa, y la que eliges desde hoy.</p></div></li>
-    <li><span class="sn">Día<b>4</b></span><div><h3>Tu visión de empresa</h3><p>Cómo quieres que sea tu consulta dentro de un año.</p></div></li>
-    <li class="sello"><span class="sn">Día<b>5</b></span><div><h3>Tu precio nuevo</h3><p>Lo sellas, junto con el valor real de tu hora. Desde ese día, es el número que dices.</p></div></li>
-   </ol>
+<!-- 2 · Cinco días, un número: la app real, día por día -->
+<section class="cinco banda papel" id="cinco-dias" aria-labelledby="t-cinco">
+  <div class="envase">
+    <div class="cabeza">
+      <h2 class="h2" id="t-cinco">Cinco días, un número.</h2>
+      <p class="lead lectura">Los libros te muestran el camino entero. En mi app das el primer tramo: cinco jornadas, una por día, que terminan en tu precio nuevo dicho en voz alta. Toca cada día.</p>
+    </div>
+    <div class="reco dias5" data-reco data-paisaje="lago">
+      <div class="reco-tel">
+        <div class="tel"><div class="pant">
+          <img class="on" data-repo="imgs/app/dia1.webp" alt="La app de Tu Clínica Digital, día 1: Tu punto de partida" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia2.webp" alt="La app de Tu Clínica Digital, día 2: Tu árbol y el dinero" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia3.webp" alt="La app de Tu Clínica Digital, día 3: Cómo te frenas y cómo te empujas" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia4.webp" alt="La app de Tu Clínica Digital, día 4: Tu protocolo, escrito por ti" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia5.webp" alt="La app de Tu Clínica Digital, día 5: Tu precio nuevo y lo que sueltas" width="780" height="1688" loading="lazy">
+        </div></div>
+      </div>
+      <ol class="reco-pasos" role="tablist" aria-label="Los cinco días">
+        <li class="lago">
+          <button type="button" role="tab" id="t-d1" aria-controls="d-d1" aria-selected="true"><span class="num">1</span><span class="n">Día 1</span></button>
+          <div class="reco-det" id="d-d1" role="tabpanel" aria-labelledby="t-d1">
+            <div>
+              <p class="dias">Día 1 de 5</p>
+              <h3>Tu punto de partida</h3>
+              <p class="que">Confirmas tus seis números de entrada y eliges dónde y a qué hora vas a construir esto cada día.</p>
+            </div>
+          </div>
+        </li>
+        <li class="lago">
+          <button type="button" role="tab" id="t-d2" aria-controls="d-d2" aria-selected="false" tabindex="-1"><span class="num">2</span><span class="n">Día 2</span></button>
+          <div class="reco-det" id="d-d2" role="tabpanel" aria-labelledby="t-d2" hidden>
+            <div>
+              <p class="dias">Día 2 de 5</p>
+              <h3>Tu árbol y el dinero</h3>
+              <p class="que">Escribes las frases sobre el dinero que escuchaste en tu casa y marcas el techo de tu familia.</p>
+            </div>
+          </div>
+        </li>
+        <li class="lago">
+          <button type="button" role="tab" id="t-d3" aria-controls="d-d3" aria-selected="false" tabindex="-1"><span class="num">3</span><span class="n">Día 3</span></button>
+          <div class="reco-det" id="d-d3" role="tabpanel" aria-labelledby="t-d3" hidden>
+            <div>
+              <p class="dias">Día 3 de 5</p>
+              <h3>Cómo te frenas y cómo te empujas</h3>
+              <p class="que">Haces el test, ves tu tipo y anotas las tres situaciones de tu semana que te sacan de eje.</p>
+            </div>
+          </div>
+        </li>
+        <li class="lago">
+          <button type="button" role="tab" id="t-d4" aria-controls="d-d4" aria-selected="false" tabindex="-1"><span class="num">4</span><span class="n">Día 4</span></button>
+          <div class="reco-det" id="d-d4" role="tabpanel" aria-labelledby="t-d4" hidden>
+            <div>
+              <p class="dias">Día 4 de 5</p>
+              <h3>Tu protocolo, escrito por ti</h3>
+              <p class="que">Para cada disparador, eliges un reemplazo que se haga en menos de cinco minutos.</p>
+            </div>
+          </div>
+        </li>
+        <li class="lago sello">
+          <button type="button" role="tab" id="t-d5" aria-controls="d-d5" aria-selected="false" tabindex="-1"><span class="num">5</span><span class="n">Día 5</span></button>
+          <div class="reco-det" id="d-d5" role="tabpanel" aria-labelledby="t-d5" hidden>
+            <div>
+              <p class="dias">Día 5 de 5</p>
+              <h3>Tu precio nuevo y lo que sueltas</h3>
+              <p class="que">Pones lado a lado tu hora real neta y tu precio de hoy. Sellas tu precio nuevo y lo dices en voz alta.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <p class="despues lectura nota-dias">Después del quinto día, la app te ofrece seguir el camino completo de 90 días, una jornada por día, con el Mentor que conoce tu caso. Decides tú.</p>
   </div>
-  <div class="cuerpo">
-   <p>Después del quinto día, la app te ofrece seguir el camino completo de 90 días, una jornada por día, con el Mentor que conoce tu caso. Decides tú.</p>
-  </div>
- </div>
 </section>
-
-<!-- ═══ 2 · LOS OCHO LIBROS ═══ -->
-<section class="cap" id="libros" data-capitulo="Ocho libros, un solo camino" data-dato="2.404 páginas">
- <div class="cap-in">
-  <header class="cap-cab">
-   <span class="cap-n">2</span>
-   <h2>Ocho libros, un solo camino.</h2>
-   <p class="bajada">Siete libertades, una por libro, en el orden del camino de 90 días. Cada uno se lee solo, y el primer capítulo de cada uno lo lees aquí mismo, sin costo.</p>
-   <p class="camino-link"><a class="link" data-link="camino" href="#">Ver el mapa del camino</a></p>
-  </header>
-  <div class="ancho catalogo">
-
-   <article class="obra-libro" id="sanadores" style="--c:var(--sanadores)">
-    <img data-img="tapas/sanadores.webp" alt="Tapa de Sanadores Libres" width="340" height="480" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">El libro madre del método</p>
-     <h3 class="ol-tit">Sanadores Libres</h3>
-     <p class="ol-sub">De autoempleado a director de tu clínica digital</p>
+<!-- 3 · Ocho libros, un solo camino: uno a la vez -->
+<section class="ocho banda" id="libros" aria-labelledby="t-ocho">
+  <div class="envase">
+    <div class="cabeza">
+      <h2 class="h2" id="t-ocho">Ocho libros, un solo camino.</h2>
+      <p class="lead lectura">Siete libertades, una por libro, en el orden del camino de 90 días. Cada uno se lee solo, y el primer capítulo de cada uno lo lees aquí mismo, sin costo.</p>
     </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Tengo la agenda llena y lo siento en el cuerpo.»</p>
-     <p class="ol-lib">Tu libertad física. Es la base del camino: cada estación empieza en uno de sus capítulos.</p>
-     <p>Te cuento lo que vi en más de cincuenta profesionales, desarmo las creencias que te atan a la agenda y te muestro, en orden, los cinco sistemas de tu clínica digital: un programa que tus consultantes compran completo y hacen desde una app con tu nombre.</p>
-     <p>Veintitrés capítulos cortos, cada uno con tres acciones para esta semana.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="sanadores" href="#">Leer el primer capítulo</a><span>204 páginas</span></p>
+    <div class="estanteria" data-estanteria>
+      <div class="tapas-sel" role="tablist" aria-label="Elige un libro">
+        <button type="button" role="tab" id="t-sanadores" aria-controls="sanadores" aria-selected="false" tabindex="-1" style="--c:#3F5450"><img data-repo="imgs/tapas/sanadores-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Sanadores Libres</span></button>
+        <button type="button" role="tab" id="t-lago" aria-controls="lago" aria-selected="true" style="--c:var(--lago)"><img data-repo="imgs/tapas/lago-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Lo que el lago te enseña</span></button>
+        <button type="button" role="tab" id="t-montana" aria-controls="montana" aria-selected="false" tabindex="-1" style="--c:var(--montana)"><img data-repo="imgs/tapas/montana-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Lo que la montaña te enseña</span></button>
+        <button type="button" role="tab" id="t-viento" aria-controls="viento" aria-selected="false" tabindex="-1" style="--c:var(--viento)"><img data-repo="imgs/tapas/viento-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Lo que el viento te enseña</span></button>
+        <button type="button" role="tab" id="t-rio" aria-controls="rio" aria-selected="false" tabindex="-1" style="--c:var(--rio)"><img data-repo="imgs/tapas/rio-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Lo que el río te enseña</span></button>
+        <button type="button" role="tab" id="t-bosque" aria-controls="bosque" aria-selected="false" tabindex="-1" style="--c:var(--bosque)"><img data-repo="imgs/tapas/bosque-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Lo que el bosque te enseña</span></button>
+        <button type="button" role="tab" id="t-heroe" aria-controls="heroe" aria-selected="false" tabindex="-1" style="--c:#6E5638"><img data-repo="imgs/tapas/heroe-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Héroe descapado</span></button>
+        <button type="button" role="tab" id="t-libertades" aria-controls="libertades" aria-selected="false" tabindex="-1" style="--c:#7E4A35"><img data-repo="imgs/tapas/libertades-grande.webp" alt="" width="480" height="720" loading="lazy"><span class="sr">Las 7 libertades fundamentales</span></button>
+      </div>
+      <article class="ficha" id="sanadores" role="tabpanel" aria-labelledby="t-sanadores" style="--c:#3F5450" hidden>
+        <span class="libro3d" style="--c:#3F5450"><img data-repo="imgs/tapas/sanadores-grande.webp" alt="Tapa de Sanadores Libres" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">El libro madre del método</p>
+          <h3>Sanadores Libres</h3>
+          <p class="f-sub">De autoempleado a director de tu clínica digital</p>
+          <p class="cita">«Tengo la agenda llena y lo siento en el cuerpo.»</p>
+          <p class="f-lib">Tu libertad física. Es la base del camino: cada estación empieza en uno de sus capítulos.</p>
+          <div class="lectura">
+            <p>Te cuento lo que vi en más de cincuenta profesionales, desarmo las creencias que te atan a la agenda y te muestro, en orden, los cinco sistemas de tu clínica digital: un programa que tus consultantes compran completo y hacen desde una app con tu nombre.</p>
+            <p>Veintitrés capítulos cortos, cada uno con tres acciones para esta semana.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="sanadores" href="#">Leer el primer capítulo</a><span>204 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha" id="lago" role="tabpanel" aria-labelledby="t-lago" style="--c:var(--lago)">
+        <span class="libro3d" style="--c:var(--lago)"><img data-repo="imgs/tapas/lago-grande.webp" alt="Tapa de Lo que el lago te enseña" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">Lo que el sur te enseña · 1</p>
+          <h3>Lo que el lago te enseña</h3>
+          <p class="f-sub">33 lecciones para mirarte antes de moverte</p>
+          <p class="cita">«Quiero mirarme antes de mover nada.»</p>
+          <p class="f-lib">Tu libertad mental. Estación 1 del camino, días 1 a 7: tu reset y tu precio nuevo.</p>
+          <div class="lectura">
+            <p>Son 33 lecciones que nacen en el Nahuel Huapi, un lago que en 2011 quedó cubierto de ceniza y volvió a aclarar. Cada una trae un dato verificado, una escena y una acción para esta semana.</p>
+            <p>Termina en un número: tu precio nuevo y el valor de tu hora.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="lago" href="#">Leer el primer capítulo</a><span>268 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha" id="montana" role="tabpanel" aria-labelledby="t-montana" style="--c:var(--montana)" hidden>
+        <span class="libro3d" style="--c:var(--montana)"><img data-repo="imgs/tapas/montana-grande.webp" alt="Tapa de Lo que la montaña te enseña" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">Lo que el sur te enseña · 2</p>
+          <h3>Lo que la montaña te enseña</h3>
+          <p class="f-sub">33 lecciones para subir por etapas hasta la cumbre</p>
+          <p class="cita">«Quiero convertir lo que hago en un programa.»</p>
+          <p class="f-lib">Tu libertad financiera. Estación 2, días 8 a 14: tu programa.</p>
+          <div class="lectura">
+            <p>Ya sabes llevar a una persona lejos. Ahora toca ponerle a ese camino cumbre, etapas, precio y fecha. Cada lección parte de un dato, como el glaciar del Tronador que se mide desde 1953, y termina en una acción para esta semana.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="montana" href="#">Leer el primer capítulo</a><span>264 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha clara" id="viento" role="tabpanel" aria-labelledby="t-viento" style="--c:var(--viento)" hidden>
+        <span class="libro3d" style="--c:var(--viento)"><img data-repo="imgs/tapas/viento-grande.webp" alt="Tapa de Lo que el viento te enseña" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">Lo que el sur te enseña · 3</p>
+          <h3>Lo que el viento te enseña</h3>
+          <p class="f-sub">33 lecciones para que tu voz llegue lejos</p>
+          <p class="cita">«Quiero que me encuentre quien todavía no me conoce.»</p>
+          <p class="f-lib">Tu libertad emocional. Estación 3, días 15 a 35: tu captación.</p>
+          <div class="lectura">
+            <p>Tus consultantes llegan por recomendación. Aquí armas lo que hace falta para que también te encuentre quien todavía no te conoce, mirando el viento de Bariloche, donde un cóndor voló más de 170 kilómetros sin aletear.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="viento" href="#">Leer el primer capítulo</a><span>264 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha clara" id="rio" role="tabpanel" aria-labelledby="t-rio" style="--c:var(--rio)" hidden>
+        <span class="libro3d" style="--c:var(--rio)"><img data-repo="imgs/tapas/rio-grande.webp" alt="Tapa de Lo que el río te enseña" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">Lo que el sur te enseña · 4</p>
+          <h3>Lo que el río te enseña</h3>
+          <p class="f-sub">33 lecciones para que todo corra solo</p>
+          <p class="cita">«Explico lo mismo cada semana y contesto a toda hora.»</p>
+          <p class="f-lib">Tu libertad energética. Estación 4, días 36 a 84: tu propia app.</p>
+          <div class="lectura">
+            <p>Armas tu propia app, con la inteligencia artificial como herramienta, para que todo corra solo y recuperes tus noches. Sigues al Limay, el río que nace en el Nahuel Huapi y, ya con otro nombre, llega hasta el Atlántico.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="rio" href="#">Leer el primer capítulo</a><span>268 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha" id="bosque" role="tabpanel" aria-labelledby="t-bosque" style="--c:var(--bosque)" hidden>
+        <span class="libro3d" style="--c:var(--bosque)"><img data-repo="imgs/tapas/bosque-grande.webp" alt="Tapa de Lo que el bosque te enseña" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">Lo que el sur te enseña · 5</p>
+          <h3>Lo que el bosque te enseña</h3>
+          <p class="f-sub">33 lecciones de marca personal y de vida desde la Patagonia</p>
+          <p class="cita">«Quiero una marca que dure y tiempo para los míos.»</p>
+          <p class="f-lib">Tu libertad de tiempo. Estación 5, días 85 a 90: tu ecosistema.</p>
+          <div class="lectura">
+            <p>Cómo construir, con lo que ya eres, tu marca personal y una vida con tiempo para los tuyos. Son 33 lecciones nacidas caminando el bosque, donde el alerce crece menos de un milímetro por año y dura siglos.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="bosque" href="#">Leer el primer capítulo</a><span>264 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha" id="heroe" role="tabpanel" aria-labelledby="t-heroe" style="--c:#6E5638" hidden>
+        <span class="libro3d" style="--c:#6E5638"><img data-repo="imgs/tapas/heroe-grande.webp" alt="Tapa de Héroe descapado" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">El método El Eje</p>
+          <h3>Héroe descapado</h3>
+          <p class="f-sub">84 días para recuperar tu sueño, tu casa y tu cabeza sin parar tu negocio</p>
+          <p class="cita">«Mi negocio funciona y lo que me cuesta es sostenerlo.»</p>
+          <p class="f-lib">Tu libertad espiritual. Te acompaña todo el camino.</p>
+          <div class="lectura">
+            <p>Llegaste lejos y otras personas dependen de lo que decides. Llevas la capa del que rinde, resuelve y nunca pide. Aquí aprendes a sacártela, o a ponértela solo cuando tú decides.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="heroe" href="#">Leer el comienzo</a><span>556 páginas</span></p>
+        </div>
+      </article>
+      <article class="ficha" id="libertades" role="tabpanel" aria-labelledby="t-libertades" style="--c:#7E4A35" hidden>
+        <span class="libro3d" style="--c:#7E4A35"><img data-repo="imgs/tapas/libertades-grande.webp" alt="Tapa de Las 7 libertades fundamentales" width="480" height="720" loading="lazy"></span>
+        <div class="f-txt">
+          <p class="f-serie">Las siete, juntas</p>
+          <h3>Las 7 libertades fundamentales</h3>
+          <p class="f-sub">Cómo se construye una vida libre</p>
+          <p class="cita">«Quiero mirar mi vida entera, no solo mi trabajo.»</p>
+          <p class="f-lib">Las siete libertades, en una sola obra.</p>
+          <div class="lectura">
+            <p>Tu vida es una obra: el plano es tu verdad, el terreno es el planeta y lo que levantas son tus siete libertades, de los cimientos de lo que crees al eje de tu verdad. Las mides al principio y al final.</p>
+          </div>
+          <p class="f-pie"><a class="enlace" data-link="cap" data-hash="libertades" href="#">Leer el comienzo</a><span>316 páginas</span></p>
+        </div>
+      </article>
     </div>
-   </article>
-
-   <article class="obra-libro" id="lago" style="--c:var(--lago)">
-    <img data-img="tapas/lago.webp" alt="Tapa de Lo que el lago te enseña" width="340" height="511" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">Lo que el sur te enseña · 1</p>
-     <h3 class="ol-tit">Lo que el lago te enseña</h3>
-     <p class="ol-sub">33 lecciones para mirarte antes de moverte</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Quiero mirarme antes de mover nada.»</p>
-     <p class="ol-lib">Tu libertad mental. Estación 1 del camino, días 1 a 7: tu reset y tu precio nuevo.</p>
-     <p>Son 33 lecciones que nacen en el Nahuel Huapi, un lago que en 2011 quedó cubierto de ceniza y volvió a aclarar. Cada una trae un dato verificado, una escena y una acción para esta semana.</p>
-     <p>Termina en un número: tu precio nuevo y el valor de tu hora.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="lago" href="#">Leer el primer capítulo</a><span>268 páginas</span></p>
-    </div>
-   </article>
-
-   <article class="obra-libro" id="montana" style="--c:var(--montana)">
-    <img data-img="tapas/montana.webp" alt="Tapa de Lo que la montaña te enseña" width="340" height="510" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">Lo que el sur te enseña · 2</p>
-     <h3 class="ol-tit">Lo que la montaña te enseña</h3>
-     <p class="ol-sub">33 lecciones para subir por etapas hasta la cumbre</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Quiero convertir lo que hago en un programa.»</p>
-     <p class="ol-lib">Tu libertad financiera. Estación 2, días 8 a 14: tu programa.</p>
-     <p>Ya sabes llevar a una persona lejos. Ahora toca ponerle a ese camino cumbre, etapas, precio y fecha. Cada lección parte de un dato, como el glaciar del Tronador que se mide desde 1953, y termina en una acción para esta semana.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="montana" href="#">Leer el primer capítulo</a><span>264 páginas</span></p>
-    </div>
-   </article>
-
-   <article class="obra-libro" id="viento" style="--c:var(--viento)">
-    <img data-img="tapas/viento.webp" alt="Tapa de Lo que el viento te enseña" width="340" height="510" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">Lo que el sur te enseña · 3</p>
-     <h3 class="ol-tit">Lo que el viento te enseña</h3>
-     <p class="ol-sub">33 lecciones para que tu voz llegue lejos</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Quiero que me encuentre quien todavía no me conoce.»</p>
-     <p class="ol-lib">Tu libertad emocional. Estación 3, días 15 a 35: tu captación.</p>
-     <p>Tus consultantes llegan por recomendación. Aquí armas lo que hace falta para que también te encuentre quien todavía no te conoce, mirando el viento de Bariloche, donde un cóndor voló más de 170 kilómetros sin aletear.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="viento" href="#">Leer el primer capítulo</a><span>264 páginas</span></p>
-    </div>
-   </article>
-
-   <article class="obra-libro" id="rio" style="--c:var(--rio)">
-    <img data-img="tapas/rio.webp" alt="Tapa de Lo que el río te enseña" width="340" height="511" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">Lo que el sur te enseña · 4</p>
-     <h3 class="ol-tit">Lo que el río te enseña</h3>
-     <p class="ol-sub">33 lecciones para que todo corra solo</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Explico lo mismo cada semana y contesto a toda hora.»</p>
-     <p class="ol-lib">Tu libertad energética. Estación 4, días 36 a 84: tu propia app.</p>
-     <p>Armas tu propia app, con la inteligencia artificial como herramienta, para que todo corra solo y recuperes tus noches. Sigues al Limay, el río que nace en el Nahuel Huapi y, ya con otro nombre, llega hasta el Atlántico.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="rio" href="#">Leer el primer capítulo</a><span>268 páginas</span></p>
-    </div>
-   </article>
-
-   <article class="obra-libro" id="bosque" style="--c:var(--bosque)">
-    <img data-img="tapas/bosque.webp" alt="Tapa de Lo que el bosque te enseña" width="340" height="510" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">Lo que el sur te enseña · 5</p>
-     <h3 class="ol-tit">Lo que el bosque te enseña</h3>
-     <p class="ol-sub">33 lecciones de marca personal y de vida desde la Patagonia</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Quiero una marca que dure y tiempo para los míos.»</p>
-     <p class="ol-lib">Tu libertad de tiempo. Estación 5, días 85 a 90: tu ecosistema.</p>
-     <p>Cómo construir, con lo que ya eres, tu marca personal y una vida con tiempo para los tuyos. Son 33 lecciones nacidas caminando el bosque, donde el alerce crece menos de un milímetro por año y dura siglos.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="bosque" href="#">Leer el primer capítulo</a><span>264 páginas</span></p>
-    </div>
-   </article>
-
-   <article class="obra-libro" id="heroe" style="--c:var(--heroe)">
-    <img data-img="tapas/heroe.webp" alt="Tapa de Héroe descapado" width="340" height="522" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">El método El Eje</p>
-     <h3 class="ol-tit">Héroe descapado</h3>
-     <p class="ol-sub">84 días para recuperar tu sueño, tu casa y tu cabeza sin parar tu negocio</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Mi negocio funciona y lo que me cuesta es sostenerlo.»</p>
-     <p class="ol-lib">Tu libertad espiritual. Te acompaña todo el camino.</p>
-     <p>Llegaste lejos y otras personas dependen de lo que decides. Llevas la capa del que rinde, resuelve y nunca pide. Aquí aprendes a sacártela, o a ponértela solo cuando tú decides.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="heroe" href="#">Leer el comienzo</a><span>556 páginas</span></p>
-    </div>
-   </article>
-
-   <article class="obra-libro" id="libertades" style="--c:var(--libertades)">
-    <img data-img="tapas/libertades.webp" alt="Tapa de Las 7 libertades fundamentales" width="340" height="521" loading="lazy">
-    <div class="ol-txt">
-     <p class="ol-serie">Las siete, juntas</p>
-     <h3 class="ol-tit">Las 7 libertades fundamentales</h3>
-     <p class="ol-sub">Cómo se construye una vida libre</p>
-    </div>
-    <div class="ol-cuerpo">
-     <p class="cita-libro">«Quiero mirar mi vida entera, no solo mi trabajo.»</p>
-     <p class="ol-lib">Las siete libertades, en una sola obra.</p>
-     <p>Tu vida es una obra: el plano es tu verdad, el terreno es el planeta y lo que levantas son tus siete libertades, de los cimientos de lo que crees al eje de tu verdad. Las mides al principio y al final.</p>
-     <p class="ol-pie"><a class="link" data-link="cap" data-hash="libertades" href="#">Leer el comienzo</a><span>316 páginas</span></p>
-    </div>
-   </article>
+    <p class="despues"><a class="enlace" data-link="camino" href="/camino">Ver el mapa del camino</a></p>
   </div>
- </div>
 </section>
-
-<!-- ═══ 3 · LO QUE RECIBES ═══ -->
-<section class="cap" id="obra" data-capitulo="Todo, en un solo paso" data-dato="97 USD" data-barra-hasta>
- <div class="cap-in">
-  <header class="cap-cab">
-   <span class="cap-n">3</span>
-   <h2>Todo, en un solo paso.</h2>
-   <p class="bajada">Los 8 libros, para leer en el orden que quieras, y los cinco primeros días de mi app, donde sellas tu precio nuevo.</p>
-  </header>
-  <div class="ancho">
-   <div class="oferta">
-    <h3 class="of-nom">Tu nuevo precio</h3>
-    <p class="of-linea" data-linea97>Los 8 libros y los cinco primeros días de mi app.</p>
-    <ul class="lideres">
-     <li><span class="fila"><span class="t"><i>Sanadores Libres</i>, el método completo</span><span class="pg"></span><span class="d">204 páginas</span></span></li>
-     <li><span class="fila"><span class="t">Los cinco de <i>Lo que el sur te enseña</i></span><span class="pg"></span><span class="d">1.328 páginas</span></span></li>
-     <li><span class="fila"><span class="t"><i>Héroe descapado</i> y <i>Las 7 libertades fundamentales</i></span><span class="pg"></span><span class="d">872 páginas</span></span></li>
-     <li><span class="fila"><span class="t">Los cinco primeros días de mi app</span><span class="pg"></span><span class="d">tu precio nuevo</span></span></li>
-     <li data-audios hidden><span class="fila"><span class="t">Cinco mañanas con mi voz</span><span class="pg"></span><span class="d">una por día</span></span></li>
-     <li data-audios hidden><span class="fila"><span class="t">El freno, antes de cada sesión</span><span class="pg"></span><span class="d">dos minutos</span></span></li>
-     <li data-audios hidden><span class="fila"><span class="t">La meditación de cada libro</span><span class="pg"></span><span class="d">con su código QR</span></span></li>
-    </ul>
-    <div class="of-precio"><b data-precio="obra">97</b><span>USD</span><small>Pago único. Los 8 en digital, para descargar al instante.</small></div>
-    <p class="of-antes">Los 8 libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
-    <a class="btn ancho-total" data-compra="obra" href="#">Quiero Tu nuevo precio</a>
-    <p class="seguro con-pago"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
-    <p class="seguro sin-pago"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14v9H9l-4 3z"/></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
-   </div>
-   <p class="micro" style="margin-top:18px;max-width:34em">Apenas se confirma tu pago, se abre tu página con los libros para descargar y los pasos para entrar a la app.</p>
+<!-- 4 · Todo, en un solo paso -->
+<section class="oferta-v banda papel" id="obra" data-barra-hasta aria-labelledby="t-obra">
+  <div class="envase">
+    <div class="cabeza">
+      <h2 class="h2" id="t-obra">Todo, en un solo paso.</h2>
+      <p class="lead lectura">Los 8 libros, para leer en el orden que quieras, y los cinco primeros días de mi app, donde sellas tu precio nuevo.</p>
+    </div>
+    <div class="caja-oferta">
+      <div class="forma-img estante" aria-hidden="true">
+        <span class="libro3d" style="--c:#3F5450"><img data-repo="imgs/tapas/sanadores-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:var(--lago)"><img data-repo="imgs/tapas/lago-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:var(--montana)"><img data-repo="imgs/tapas/montana-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:var(--viento)"><img data-repo="imgs/tapas/viento-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:var(--rio)"><img data-repo="imgs/tapas/rio-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:var(--bosque)"><img data-repo="imgs/tapas/bosque-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:#6E5638"><img data-repo="imgs/tapas/heroe-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+        <span class="libro3d" style="--c:#7E4A35"><img data-repo="imgs/tapas/libertades-grande.webp" alt="" width="480" height="720" loading="lazy"></span>
+      </div>
+      <div class="co-txt">
+        <h3 class="h3">Tu nuevo precio</h3>
+        <p class="lectura" data-linea97>Los 8 libros y los cinco primeros días de mi app.</p>
+        <ul class="incluye">
+          <li><span><i>Sanadores Libres</i>, el método completo</span><b>204 páginas</b></li>
+          <li><span>Los cinco de <i>Lo que el sur te enseña</i></span><b>1.328 páginas</b></li>
+          <li><span><i>Héroe descapado</i> y <i>Las 7 libertades fundamentales</i></span><b>872 páginas</b></li>
+          <li><span>Los cinco primeros días de mi app</span><b>tu precio nuevo</b></li>
+          <li data-audios hidden><span>Cinco mañanas con mi voz</span><b>una por día</b></li>
+          <li data-audios hidden><span>El freno, antes de cada sesión</span><b>dos minutos</b></li>
+          <li data-audios hidden><span>La meditación de cada libro</span><b>con su código QR</b></li>
+        </ul>
+        <p class="precio-grande"><b data-precio="obra">97</b> USD</p>
+        <p class="pago-unico">Pago único. Los 8 en digital, para descargar al instante.</p>
+        <p class="antes">Los 8 libros sueltos suman <s><span data-suma="sanadores,lago,montana,viento,rio,bosque,heroe,libertades">252</span> USD</s>.</p>
+        <a class="btn ancho" data-compra="obra" href="#">Quiero Tu nuevo precio</a>
+        <p class="seguro con-pago"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Pago seguro con PayPal. Puedes pagar con tarjeta.</p>
+        <p class="seguro sin-pago"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 6h14v9H9l-4 3z"></path></svg>El botón abre mi WhatsApp con tu elección escrita, y ahí te paso el pago.</p>
+        <p class="nota">Apenas se confirma tu pago, se abre tu página con los libros para descargar y los pasos para entrar a la app.</p>
+      </div>
+    </div>
   </div>
- </div>
 </section>
-
-<!-- ═══ 4 · LO QUE CUENTAN ═══ -->
-<section class="cap" id="voces" data-capitulo="Lo que cuentan" data-dato="30 voces">
- <div class="cap-in">
-  <header class="cap-cab">
-   <span class="cap-n">4</span>
-   <h2>Más de 50 profesionales hicieron el camino conmigo.</h2>
-   <p class="bajada">Coaches, terapeutas, nutricionistas, entrenadores y médicos. Toca cualquiera para escucharlo.</p>
-  </header>
-  <div class="ancho">
-   <div class="testi" data-muro="8"></div>
-   <p class="desliza">Desliza para ver más.</p>
-   <div class="capturas" data-capturas></div>
+<!-- 5 · Lo que cuentan -->
+<section class="voces banda" id="voces" aria-labelledby="t-voces">
+  <div class="envase cabeza">
+    <h2 class="h2" id="t-voces">Más de 50 profesionales hicieron el camino conmigo.</h2>
+    <p class="lead">Coaches, terapeutas, nutricionistas, entrenadores y médicos. Toca cualquiera para escucharlo.</p>
   </div>
- </div>
+  <div class="riel" data-muro="8" data-max="8" data-tipo="v" aria-label="Testimonios en video"></div>
+  <div class="riel capturas" data-capturas aria-label="Mensajes de clientes"></div>
+  <p class="envase capturas-pie">Lo que escriben. Toca un mensaje para leerlo completo.</p>
 </section>
-
-<!-- ═══ 5 · QUIÉN ESCRIBE ═══ -->
-<section class="cap" id="autor" data-capitulo="Quién escribe" data-dato="Javo Katz">
- <div class="cap-in">
-  <header class="cap-cab">
-   <span class="cap-n">5</span>
-   <h2>Quién escribe.</h2>
-  </header>
-  <div class="ancho autor">
-   <figure class="lamina">
-    <img data-foto data-ancho="760" alt="Javo Katz" width="380" height="475" loading="lazy" data-quita-si-falla>
-    <figcaption>Javo Katz, en Bariloche.</figcaption>
-   </figure>
-   <div>
-    <p class="capitular">Vengo de una familia de sanadores. Mi mamá es psicoanalista, mi abuelo fue médico, y crecí viéndolos trabajar con mucho sacrificio, cansados y sin tiempo.</p>
-    <p style="margin-top:18px">A los ocho años perdí a mi papá. Ahí aprendí que el tiempo no vuelve.</p>
-    <p style="margin-top:18px">Me recibí de abogado a los veintidós, pasé por la política y por el Estado, y salté a los negocios digitales. Me mudé al sur, encontré otra forma de trabajar y la escribí. Hace más de seis años acompaño a profesionales que atienden 1 a 1, para que ganen más y tengan tiempo para los suyos.</p>
-    <ul class="lideres">
-     <li><span class="fila"><span class="t">Profesionales</span><span class="pg"></span><span class="d">más de 50</span></span></li>
-     <li><span class="fila"><span class="t">Años acompañando</span><span class="pg"></span><span class="d">más de 6</span></span></li>
-     <li><span class="fila"><span class="t">Libros escritos</span><span class="pg"></span><span class="d">8</span></span></li>
-     <li><span class="fila"><span class="t">Libros leídos</span><span class="pg"></span><span class="d">más de 300</span></span></li>
-    </ul>
-    <p class="firma">Aprendo a liderarme y te comparto todo.</p>
-   </div>
+<!-- 6 · Quién escribe -->
+<section class="fundador banda oscuro" id="autor" aria-labelledby="t-autor">
+  <div class="envase">
+    <figure class="f-foto"><img data-foto data-ancho="880" alt="Javo Katz en Bariloche" loading="lazy" width="1024" height="1280" data-quita-si-falla></figure>
+    <div class="f-txt lectura">
+      <h2 class="h2" id="t-autor">Quién escribe.</h2>
+      <p>Vengo de una familia de sanadores. Mi mamá es psicoanalista, mi abuelo fue médico, y crecí viéndolos trabajar con mucho sacrificio, cansados y sin tiempo.</p>
+      <p>A los ocho años perdí a mi papá. Ahí aprendí que el tiempo no vuelve.</p>
+      <p>Me recibí de abogado a los veintidós, pasé por la política y por el Estado, y salté a los negocios digitales. Me mudé al sur, encontré otra forma de trabajar y la escribí. Hace más de seis años acompaño a profesionales que atienden 1 a 1, para que ganen más y tengan tiempo para los suyos.</p>
+      <dl class="cifras">
+        <div><dt data-contar="50" data-pre="+">+50</dt><dd>profesionales</dd></div>
+        <div><dt data-contar="6" data-pre="+">+6</dt><dd>años acompañando</dd></div>
+        <div><dt data-contar="8">8</dt><dd>libros escritos</dd></div>
+        <div><dt data-contar="300" data-pre="+">+300</dt><dd>libros leídos</dd></div>
+      </dl>
+    </div>
   </div>
- </div>
 </section>
-
-<!-- ═══ 6 · PREGUNTAS ═══ -->
-<section class="cap" id="preguntas" data-capitulo="Antes de elegir" data-dato="6 preguntas">
- <div class="cap-in">
-  <header class="cap-cab">
-   <span class="cap-n">6</span>
-   <h2>Antes de elegir.</h2>
-  </header>
-  <div class="cuerpo faq">
-   <div class="fq"><button type="button">¿En qué formato llegan?<i></i></button><div class="r"><div><p>En PDF, con su tapa. Se leen en el celular, en la tableta o en la computadora. Están hechos para escribir en ellos: imprime las páginas que quieras o escribe sobre el PDF en una tableta.</p></div></div></div>
-   <div class="fq"><button type="button">¿Cuándo los recibo?<i></i></button><div class="r"><div><p>Apenas se confirma tu pago se abre tu página con los libros para descargar. Son tuyos, para leerlos cuantas veces quieras.</p></div></div></div>
-   <div class="fq"><button type="button">¿Tengo que leerlos en orden?<i></i></button><div class="r"><div><p>No. Cada libro se lee solo. Si quieres seguir el camino, empieza por el lago. Y si una libertad te pide más, ve directo a su libro.</p></div></div></div>
-   <div class="fq"><button type="button">¿Son para mí si no atiendo consultantes 1 a 1?<i></i></button><div class="r"><div><p>La colección está escrita para quien atiende 1 a 1, y cada libro sirve también para mirar esa parte de tu vida con un paisaje delante. <i>Héroe descapado</i> es para quien lidera un negocio o un equipo, y <i>Las 7 libertades fundamentales</i>, para cualquier persona que quiere vivir libre.</p></div></div></div>
-   <div class="fq"><button type="button">¿Qué es Tu nuevo precio?<i></i></button><div class="r"><div><p><span data-linea97>Los 8 libros y los cinco primeros días de mi app.</span> <span data-precio="obra">97</span> USD, pago único. Se llama así porque en el quinto día sellas tu precio nuevo.</p></div></div></div>
-   <div class="fq"><button type="button">¿Puedo leer antes de comprar?<i></i></button><div class="r"><div><p>Sí. El primer capítulo de cada libro se lee aquí mismo, sin costo. <a class="link" data-link="capitulo" href="#">Elige uno</a>.</p></div></div></div>
+<!-- 7 · Antes de elegir -->
+<section class="preguntas banda papel" id="preguntas" aria-labelledby="t-preg">
+  <div class="envase">
+    <div class="cabeza"><h2 class="h2" id="t-preg">Antes de elegir.</h2></div>
+    <div class="faq">
+      <div class="fq"><button type="button">¿En qué formato llegan?<i></i></button><div class="r"><div><p>En PDF, con su tapa. Se leen en el celular, en la tableta o en la computadora. Están hechos para escribir en ellos: imprime las páginas que quieras o escribe sobre el PDF en una tableta.</p></div></div></div>
+      <div class="fq"><button type="button">¿Cuándo los recibo?<i></i></button><div class="r"><div><p>Apenas se confirma tu pago se abre tu página con los libros para descargar. Son tuyos, para leerlos cuantas veces quieras.</p></div></div></div>
+      <div class="fq"><button type="button">¿Tengo que leerlos en orden?<i></i></button><div class="r"><div><p>No. Cada libro se lee solo. Si quieres seguir el camino, empieza por el lago. Y si una libertad te pide más, ve directo a su libro.</p></div></div></div>
+      <div class="fq"><button type="button">¿Son para mí si no atiendo consultantes 1 a 1?<i></i></button><div class="r"><div><p>La colección está escrita para quien atiende 1 a 1, y cada libro sirve también para mirar esa parte de tu vida con un paisaje delante. <i>Héroe descapado</i> es para quien lidera un negocio o un equipo, y <i>Las 7 libertades fundamentales</i>, para cualquier persona que quiere vivir libre.</p></div></div></div>
+      <div class="fq"><button type="button">¿Qué es Tu nuevo precio?<i></i></button><div class="r"><div><p><span data-linea97="">Los 8 libros y los cinco primeros días de mi app.</span> <span data-precio="obra">97</span> USD, pago único. Se llama así porque en el quinto día sellas tu precio nuevo.</p></div></div></div>
+      <div class="fq"><button type="button">¿Puedo leer antes de comprar?<i></i></button><div class="r"><div><p>Sí. El primer capítulo de cada libro se lee aquí mismo, sin costo. <a class="link" data-link="capitulo" href="#">Elige uno</a>.</p></div></div></div>
+    </div>
   </div>
- </div>
+</section>
+<!-- 8 · El cierre -->
+<section class="cierre banda" aria-labelledby="t-cierre">
+  <div class="envase">
+    <span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+    <h2 class="h2" id="t-cierre">Una vida libre se construye en orden, como una obra.</h2>
+    <a class="btn" href="#obra"><span>Quiero Tu nuevo precio · <span data-precio="obra">97</span>&nbsp;USD</span></a>
+  </div>
 </section>
 </main>
-
-<footer class="colofon">
- <div class="wrap">
-  <p class="cierre">Una vida libre se construye en orden, como una obra.</p>
-  <div class="acciones"><a class="btn" href="#obra">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a></div>
-  <div class="lomitos" aria-hidden="true"><i style="--c:#F2EFE7;height:84%"></i><i style="--c:#2B4E68;height:90%"></i><i style="--c:#904932;height:90%"></i><i style="--c:#B48B3F;height:90%"></i><i style="--c:#2F7A80;height:90%"></i><i style="--c:#294637;height:90%"></i><i style="--c:#F5EFE5;height:100%"></i><i style="--c:#E6E1D5;height:100%"></i></div>
-  <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="laCima" href="#">La Cima</a><a data-link="prensa" href="#">Prensa</a></nav>
-  <p class="nota-final">Compuesto en Cormorant Garamond y Literata. Escrito en Bariloche, Patagonia.</p>
-  <p class="legal">Javo Katz · Tu Clínica Digital. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
- </div>
+<footer class="pie">
+  <div class="envase">
+    <a class="marca" data-link="inicio" href="/inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
+    <nav aria-label="Más de Javo Katz"><a data-link="inicio" href="#">Inicio</a><a data-link="camino" href="#">El camino</a><a data-link="capitulo" href="#">Los primeros capítulos</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="laCima" href="#">La Cima</a><a data-link="prensa" href="#">Prensa</a></nav>
+    <nav aria-label="Redes">
+      <a href="https://www.youtube.com/@Tuclinicadigital" target="_blank" rel="noopener">YouTube</a>
+      <a data-link="instagram" href="https://www.instagram.com/javieremilianok/" target="_blank" rel="noopener">Instagram</a>
+      <a href="/privacidad">Privacidad</a>
+      <a href="/terminos">Términos</a>
+    </nav>
+    <p class="firma">Tu Clínica Digital, fundada por Javo Katz en Bariloche, Patagonia. Los resultados dependen del trabajo de cada profesional. Este sitio no forma parte de Meta ni está avalado por Meta.</p>
+  </div>
 </footer>
-
-<div class="barra"><a class="btn" href="#obra">Quiero Tu nuevo precio · <span data-precio="obra">97</span> USD</a></div>
+<div class="barra"><a class="btn" href="#obra"><span>Quiero Tu nuevo precio · <span data-precio="obra">97</span>&nbsp;USD</span></a></div>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
-
 <script>
 /* ?desde=diagnostico: quien respondió menos de 1.000 en el diagnóstico llega aquí. NoCalifica, una vez por visita. */
 (function () {
@@ -338,7 +373,7 @@
     pxc('NoCalifica', { origen: 'diagnostico' });
   })();
   if (document.getElementById('tcd-desde-diag')) return;
-  var destino = document.querySelector('.portadilla .recto');
+  var destino = document.querySelector('.hero-txt');
   if (!destino) return;
   var d = document.createElement('div');
   d.id = 'tcd-desde-diag'; d.className = 'desde-diag';
@@ -347,15 +382,14 @@
   d.querySelector('[data-precio]').textContent = ((window.TCD || {}).precios || {}).obra || 97;
 })();
 </script>
-<script>/*EDICION_JS*/</script>
+<script>/*PAISAJE_JS*/</script>
 <script>
-/* ?l=lago lleva directo al libro: lo saca del estante y baja hasta su ficha en el catálogo */
+/* ?l=lago lleva directo al libro: lo elige en la estantería y baja hasta él */
 (function () {
   try {
-    var l = new URLSearchParams(location.search).get('l');
-    if (!l || !/^[a-z]+$/.test(l)) return;
-    var el = document.getElementById(l); if (!el) return;
-    setTimeout(function () { if (window.TCD_ESTANTE) TCD_ESTANTE(l); el.scrollIntoView({ behavior: 'smooth' }); el.classList.add('marcado'); }, 400);
+    var l = new URLSearchParams(location.search).get('l') || (location.hash || '').slice(1);
+    if (!l || !/^[a-z]+$/.test(l) || !document.getElementById('t-' + l) || !window.TCD_LIBRO) return;
+    setTimeout(function () { window.TCD_LIBRO(l, true); }, 300);
   } catch (e) {}
 })();
 </script>

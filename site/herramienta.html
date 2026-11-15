@@ -476,6 +476,112 @@ body.vivo{background:var(--fondo)}
   .libro3d:nth-child(5){margin-left:0}
 }
 
+/* ═══ PAISAJE VIVO · las piezas de /libros (16 nov) ═══════════ */
+.sinpago,.sin-pago,.con-pago{display:none}
+.hero-txt .sub{font-size:clamp(24px,1.2vw + 20px,34px);font-weight:700;line-height:1.2;letter-spacing:-.025em;color:var(--piedra)}
+.hero-txt .enlace{font-size:18px}
+.aval{display:flex;align-items:center;gap:14px;max-width:34em;font-size:17px;font-weight:500;line-height:1.4;color:var(--piedra)}
+.aval img{flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--banda)}
+.aval b{color:var(--tinta)}
+.desde-diag{border-radius:18px;padding:18px 20px;background:var(--tarjeta);box-shadow:0 0 0 1px var(--linea);max-width:560px}
+.desde-diag b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.desde-diag p{font-family:var(--lectura);font-size:18px;line-height:1.5}
+
+/* la vitrina de la portada: los 8 libros, para tocar */
+.estante a.libro3d{display:block;cursor:pointer}
+.vitrina{display:grid;grid-template-columns:repeat(4,max-content);justify-content:center;align-content:center;row-gap:22px;padding:34px 22px 30px;border-radius:28px;background:var(--lago);perspective:1100px;justify-self:stretch}
+.vitrina .libro3d{width:76px;margin-left:-16px}
+.vitrina .libro3d:nth-child(4n+1){margin-left:0}
+.vitrina .libro3d:focus-visible{outline:3px solid #F4EEE3;outline-offset:4px}
+@media (min-width:600px){ .vitrina .libro3d{width:100px;margin-left:-20px} .vitrina .libro3d:nth-child(4n+1){margin-left:0} }
+@media (min-width:1000px){ .vitrina{width:min(560px,42vw);min-height:min(78svh,700px);row-gap:40px} .vitrina .libro3d{width:min(132px,9.4vw);margin-left:-26px} .vitrina .libro3d:nth-child(4n+1){margin-left:0} }
+@media (hover:hover) and (prefers-reduced-motion:no-preference){ .vitrina .libro3d:hover{transform:rotateY(6deg) translateY(-12px) scale(1.04);z-index:3} }
+
+/* los cinco días: la app real, día por día */
+.dias5 .reco-pasos .num{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--lago);color:#F4EEE3;font-size:20px;font-weight:800;opacity:.38;transition:opacity .3s,transform .3s var(--e)}
+.dias5 .reco-pasos button[aria-selected=true] .num{opacity:1;transform:scale(1.08)}
+.dias5 .reco-pasos li.sello .num{box-shadow:0 0 0 2px var(--fondo),0 0 0 3px var(--hilo)}
+.dias5 .reco-det{grid-template-columns:1fr}
+.dias5 .reco-det h3{font-size:clamp(28px,1.2vw + 22px,40px)}
+.dias5 .reco-det .que{font-size:19px}
+.nota-dias{max-width:40em;font-size:19px;line-height:1.55;color:#544D46}
+@media (min-width:1000px){
+  .dias5 .reco-pasos .num{width:40px;height:40px;font-size:18px}
+  .dias5 .reco-pasos button[aria-selected=true] .num{transform:none}
+}
+
+/* la estantería: un libro a la vez */
+.tapas-sel{display:flex;gap:12px;overflow-x:auto;padding:10px 2px 18px;margin-bottom:8px;scrollbar-width:none;scroll-snap-type:x proximity}
+.tapas-sel::-webkit-scrollbar{display:none}
+.tapas-sel button{flex:none;position:relative;width:64px;padding:0;border:0;background:transparent;cursor:pointer;scroll-snap-align:start;transition:transform .3s var(--e)}
+.tapas-sel button img{width:100%;height:auto;aspect-ratio:2/3;border-radius:3px;box-shadow:0 8px 16px -10px rgba(20,18,16,.6);opacity:.62;transition:opacity .3s}
+.tapas-sel button::after{content:"";position:absolute;left:8px;right:8px;bottom:-12px;height:4px;border-radius:2px;background:var(--c);opacity:0;transition:opacity .3s}
+.tapas-sel button[aria-selected=true]{transform:translateY(-6px)}
+.tapas-sel button[aria-selected=true] img{opacity:1}
+.tapas-sel button[aria-selected=true]::after{opacity:1}
+@media (min-width:1000px){ .tapas-sel{gap:18px} .tapas-sel button{width:82px} }
+.ficha{display:grid;gap:24px;padding:28px 22px 26px;border-radius:24px;background:var(--c);color:#F4EEE3;perspective:1100px}
+.ficha.clara{color:var(--tinta)}
+.ficha .libro3d{width:132px;margin:6px auto 0}
+.ficha .f-serie{font-size:16px;font-weight:700;opacity:.86}
+.ficha h3{font-size:clamp(32px,1.6vw + 24px,50px);font-weight:800;line-height:1.02;letter-spacing:-.04em;margin:6px 0 8px}
+.ficha .f-sub{font-size:20px;font-weight:600;line-height:1.3}
+.ficha .cita{margin:18px 0 10px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(26px,1vw + 22px,32px);line-height:1.2}
+.ficha .f-lib{font-size:17px;font-weight:700;line-height:1.4;padding-bottom:14px;border-bottom:1px solid color-mix(in srgb,currentColor 28%,transparent)}
+.ficha .lectura{display:grid;gap:12px;margin-top:14px}
+.ficha .lectura p{font-size:18px;line-height:1.6}
+.ficha .f-pie{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px 20px;margin-top:18px;font-size:17px;font-weight:600}
+.ficha .f-pie .enlace{text-decoration-color:currentColor}
+@media (prefers-reduced-motion:no-preference){ .ficha:not([hidden]){animation:entra .45s var(--e) both} }
+@media (min-width:900px){
+  .ficha{grid-template-columns:220px 1fr;gap:44px;padding:44px 48px 40px;align-items:start}
+  .ficha .libro3d{width:200px;margin:8px 0 0}
+}
+.ocho .despues{margin-top:28px}
+
+/* la oferta: todo en un solo paso */
+.caja-oferta{display:grid;gap:10px;padding:12px;border-radius:30px;background:var(--tarjeta);box-shadow:0 0 0 1px var(--linea)}
+.caja-oferta .forma-img.estante{border-radius:22px}
+.co-txt{display:grid;gap:14px;justify-items:start;padding:16px 12px 18px}
+.co-txt>.lectura{font-size:19px;line-height:1.5}
+.incluye{display:grid;width:100%;margin-top:4px}
+.incluye li{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:2px;align-items:start;padding:14px 0;border-top:1px solid var(--linea);font-size:18px;font-weight:600;line-height:1.35}
+.incluye li::before{content:"";grid-row:span 2;width:9px;height:16px;margin:2px 4px 0 3px;border:solid var(--verde);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.incluye li b{grid-column:2;font-size:16px;font-weight:600;color:var(--piedra)}
+.incluye li i{font-style:italic}
+.precio-grande{margin-top:10px;font-size:20px;font-weight:700}
+.precio-grande b{font-size:clamp(64px,4vw + 44px,96px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--tinta)}
+.pago-unico{font-size:17px;font-weight:600;color:var(--piedra)}
+.antes{font-size:17px;color:var(--piedra)}
+.antes s{text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.co-txt .btn.ancho{width:100%;min-height:62px;font-size:19px}
+.seguro{align-items:center;gap:10px;font-size:16px;font-weight:500;line-height:1.45;color:var(--piedra)}
+.seguro svg{flex:0 0 22px;width:22px;height:22px;stroke:var(--verde);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.co-txt .nota{font-family:var(--lectura);font-size:17px;line-height:1.5;color:#544D46}
+@media (min-width:1000px){
+  .caja-oferta{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:26px;padding:14px}
+  .caja-oferta .forma-img.estante{min-height:100%}
+  .co-txt{padding:30px 26px 30px 6px}
+  .co-txt .btn.ancho{width:auto;min-width:340px}
+}
+
+/* las preguntas */
+.faq{max-width:860px}
+.fq{border-bottom:1px solid var(--linea)}
+.fq:first-child{border-top:1px solid var(--linea)}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;background:none;border:0;padding:22px 0;font-size:clamp(19px,.4vw + 17px,22px);font-weight:700;line-height:1.3;letter-spacing:-.01em;cursor:pointer;color:var(--tinta)}
+.fq button i{flex:0 0 34px;height:34px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--hilo);position:relative;transition:transform .35s var(--e)}
+.fq button i::before,.fq button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;border-radius:1px;background:var(--tinta);transform:translate(-50%,-50%)}
+.fq button i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--e)}
+.fq.op button i{transform:rotate(180deg)}
+.fq.op button i::after{transform:translate(-50%,-50%) rotate(0)}
+.fq .r{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--e)}
+.fq.op .r{grid-template-rows:1fr}
+.fq .r>div{overflow:hidden}
+.fq .r p{padding:0 0 22px;font-family:var(--lectura);font-size:18px;line-height:1.6;color:#4A443E}
+.fq .r i{font-style:italic}
+.cinco .despues{margin-top:26px}
+
 </style>
 <script>
 /* ════════════════════════════════════════════════════════════════
@@ -1791,6 +1897,40 @@ function formSrc(id, dato) {
   }, { threshold: 0.4 });
   revelar.forEach(function (x) { io.observe(x); });
   contar.forEach(function (x) { io.observe(x); });
+})();
+
+/* ═══ PAISAJE VIVO · la estantería de /libros: un libro a la vez ═══ */
+(function () {
+  var d = document, quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var est = d.querySelector('[data-estanteria]');
+  if (!est) return;
+  var tabs = [].slice.call(est.querySelectorAll('[role=tab]'));
+  function elegir(k, bajar, foco) {
+    var i = -1;
+    tabs.forEach(function (t, j) {
+      var on = t.getAttribute('aria-controls') === k; if (on) i = j;
+      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+      var p = d.getElementById(t.getAttribute('aria-controls')); if (p) p.hidden = !on;
+    });
+    if (i < 0) return;
+    var sel = est.querySelector('.tapas-sel'), t = tabs[i];
+    if (sel) sel.scrollTo({ left: t.offsetLeft - (sel.clientWidth - t.clientWidth) / 2, behavior: quieto ? 'auto' : 'smooth' });
+    if (foco) t.focus();
+    if (bajar) { var y = est.getBoundingClientRect().top + scrollY - 90; window.scrollTo({ top: y, behavior: quieto ? 'auto' : 'smooth' }); }
+    if (window.pxc) window.pxc('Libro', { libro: k });
+  }
+  window.TCD_LIBRO = elegir;
+  tabs.forEach(function (t, j) {
+    t.addEventListener('click', function () { if (t.getAttribute('aria-selected') !== 'true') elegir(t.getAttribute('aria-controls')); });
+    t.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (n) { e.preventDefault(); elegir(tabs[(j + n + tabs.length) % tabs.length].getAttribute('aria-controls'), false, true); }
+    });
+  });
+  /* los libros de la portada llevan a su ficha */
+  d.querySelectorAll('a[data-libro]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); elegir(a.getAttribute('data-libro'), true); });
+  });
 })();
 
 </script>
