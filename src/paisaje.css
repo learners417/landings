@@ -1,0 +1,239 @@
+/* ═══════════════════════════════════════════════════════════════
+   PAISAJE · la piel de Tu Clínica Digital (14 nov 2026)
+   Una sola letra, grande y legible (Manrope, la misma de los reels).
+   Fotos reales: la Patagonia, los rodajes, las voces de los clientes.
+   Los cinco paisajes como color: lago, montaña, viento, río y bosque.
+   El oro solo en líneas de 1px. Sin degradés, sin brillos, sin fondo negro.
+   Nunca letra menor a 16px.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --nieve:#FAF8F4; --papel:#F1EBE0; --papel-2:#E9E1D3;
+  --tinta:#23201D; --piedra:#5A534C;
+  --hilo:#A8875A; --oro:#7A5F33; --linea:rgba(35,32,29,.14);
+  --lago:#2B4E68; --lago-2:#213D52; --montana:#904932; --viento:#B48B3F; --rio:#46979E; --bosque:#294637;
+  --m:clamp(20px,5vw,56px); --max:1200px;
+  --e:cubic-bezier(.2,.7,.2,1);
+  --f:Manrope,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--nieve);color:var(--tinta);font:400 19px/1.55 var(--f);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:hidden}
+@media (min-width:1000px){ body{font-size:20px} }
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--hilo);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+[hidden]{display:none!important}
+
+/* ── la letra ───────────────────────────────────────────────── */
+.h1{font-size:clamp(44px,4.6vw + 24px,96px);font-weight:800;line-height:1.02;letter-spacing:-.042em;text-wrap:balance}
+.h1 .l{display:block}
+.h2{font-size:clamp(36px,3vw + 24px,66px);font-weight:800;line-height:1.04;letter-spacing:-.036em;text-wrap:balance}
+.h3{font-size:clamp(28px,1.2vw + 22px,38px);font-weight:800;line-height:1.08;letter-spacing:-.03em}
+.lead{font-size:clamp(20px,.45vw + 18px,24px);font-weight:500;line-height:1.45;color:var(--piedra);text-wrap:pretty}
+.chico{font-size:16px;font-weight:600;line-height:1.4}
+
+/* ── el armado ──────────────────────────────────────────────── */
+.envase{width:min(100% - 2 * var(--m),var(--max));margin-inline:auto}
+.banda{padding-block:clamp(72px,9vw,136px)}
+.banda.papel{background:var(--papel)}
+.cabeza{display:grid;gap:16px;max-width:780px;margin-bottom:clamp(32px,4vw,56px)}
+.al-centro{text-align:center;margin-inline:auto;justify-items:center}
+
+/* ── botones y enlaces ──────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 32px;border:0;border-radius:999px;background:var(--lago);color:#fff;font:700 18px/1.2 var(--f);letter-spacing:-.01em;text-decoration:none;text-align:center;cursor:pointer;transition:background-color .25s var(--e),transform .25s var(--e)}
+.btn:hover{background:var(--lago-2)}
+.btn:active{transform:scale(.98)}
+.btn.ancho{width:100%}
+.enlace{font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px;text-decoration-color:var(--hilo)}
+.enlace:hover{text-decoration-color:currentColor}
+
+/* ── la marca: los cinco lomos y el nombre ──────────────────── */
+.lomos{display:inline-flex;gap:3px;height:24px;flex:none}
+.lomos i{width:6px;border-radius:2px;background:var(--c)}
+.lomos i:nth-child(1){--c:var(--lago)} .lomos i:nth-child(2){--c:var(--montana)} .lomos i:nth-child(3){--c:var(--viento)}
+.lomos i:nth-child(4){--c:var(--rio)} .lomos i:nth-child(5){--c:var(--bosque)}
+.marca{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:19px;letter-spacing:-.025em;text-decoration:none;white-space:nowrap}
+
+/* ── la barra de arriba ─────────────────────────────────────── */
+.top{position:sticky;top:0;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-inline:var(--m);background:rgba(250,248,244,.92);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);transition:box-shadow .3s}
+.top.con-linea{box-shadow:0 1px 0 var(--linea)}
+.top .ir{display:none;font-weight:700;font-size:17px;text-decoration:none;padding:12px 20px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.top .ir:hover{background:var(--tinta);color:var(--nieve)}
+@media (min-width:1000px){ .top .ir{display:inline-flex} }
+
+/* ── la portada ─────────────────────────────────────────────── */
+.portada{padding:6px 0 clamp(56px,7vw,104px)}
+.p-foto{position:relative;margin:0 10px;border-radius:26px;overflow:hidden;aspect-ratio:2.15/1;background:var(--papel-2)}
+.p-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+.p-texto{display:grid;gap:22px;justify-items:start;padding-top:26px}
+.p-texto .lead{max-width:34ch}
+.prueba{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;line-height:1.35;color:var(--piedra)}
+.prueba::before{content:"";flex:none;width:32px;height:1px;background:var(--hilo)}
+@media (min-width:1000px){
+  .portada{padding-top:28px}
+  .portada .envase{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:center}
+  .p-texto{padding:0}
+  .p-foto{order:2;margin:0;aspect-ratio:4/5;max-height:min(80vh,760px);width:100%;border-radius:32px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .p-foto img{animation:acerca 2.4s var(--e) both}
+  .p-texto>*{animation:sube .9s var(--e) both}
+  .p-texto>:nth-child(2){animation-delay:.12s} .p-texto>:nth-child(3){animation-delay:.22s} .p-texto>:nth-child(4){animation-delay:.3s}
+}
+@keyframes acerca{from{transform:scale(1.07)}to{transform:none}}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ── los rieles: se deslizan con el dedo ────────────────────── */
+.riel{position:relative;display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:4px max(var(--m),(100% - var(--max)) / 2) 10px;scroll-padding-inline:max(var(--m),(100% - var(--max)) / 2);scrollbar-width:none}
+.riel::-webkit-scrollbar{display:none}
+.riel>*{flex:none;scroll-snap-align:start}
+
+/* ── las voces: testimonios en formato reel ─────────────────── */
+.voces .tv{position:relative;width:min(46vw,250px);aspect-ratio:9/16;padding:0;border:0;border-radius:20px;overflow:hidden;background:var(--papel-2);cursor:pointer}
+.voces .tv video,.voces .tv img{width:100%;height:100%;object-fit:cover;background:var(--papel-2);transition:transform .5s var(--e)}
+.voces .tv:hover video,.voces .tv:hover img{transform:scale(1.03)}
+.voces .tv .play{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:8px;padding:9px 14px 9px 12px;border-radius:999px;background:rgba(250,248,244,.94);color:var(--tinta);font-size:16px;font-weight:700;line-height:1}
+.voces .tv .play::before{content:"";border-left:10px solid currentColor;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.voces .tv .play::after{content:"Escuchar"}
+.voces .tv.extra{display:none}
+.voces .mas{display:none}
+
+/* ── el cambio: hoy y en 90 días ────────────────────────────── */
+.cambio .dos{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hilo)}
+.cambio .col-t{padding:18px 0 6px;font-size:16px;font-weight:700;color:var(--piedra)}
+.cambio .col-t.luego{color:var(--bosque)}
+.cambio .fila{display:contents}
+.cambio .c{display:flex;gap:10px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--linea);font-size:clamp(18px,.5vw + 16px,24px);font-weight:600;line-height:1.3}
+.cambio .c.hoy{padding-right:14px;color:var(--piedra);text-decoration:line-through;text-decoration-color:var(--montana);text-decoration-thickness:2px}
+.cambio .c.luego{padding-left:14px;border-left:1px solid var(--linea);color:var(--tinta)}
+.cambio .c.luego::before{content:"";flex:none;width:9px;height:15px;margin:3px 4px 0 2px;border:solid var(--bosque);border-width:0 3px 3px 0;transform:rotate(45deg)}
+@media (min-width:1000px){ .cambio .c{padding:24px 0} .cambio .c.hoy{padding-right:32px} .cambio .c.luego{padding-left:32px} }
+
+/* ── el camino: cinco paisajes ──────────────────────────────── */
+.paisajes{gap:12px}
+.paisaje{--fg:#fff;width:min(84vw,380px);min-height:560px;display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px;border-radius:28px;background:var(--c);color:var(--fg);scroll-snap-align:center}
+.paisaje.lago{--c:var(--lago)} .paisaje.montana{--c:var(--montana)} .paisaje.bosque{--c:var(--bosque)}
+.paisaje.viento{--c:var(--viento);--fg:var(--tinta)} .paisaje.rio{--c:var(--rio);--fg:var(--tinta)}
+.paisaje .tapa{width:132px;height:auto;aspect-ratio:2/3;border-radius:5px;margin-bottom:18px;box-shadow:0 18px 30px -14px rgba(20,18,16,.55);background:rgba(255,255,255,.12)}
+.paisaje .dias{font-size:16px;font-weight:700;opacity:.86}
+.paisaje h3{font-size:44px;font-weight:800;line-height:.98;letter-spacing:-.04em}
+.paisaje .sis{font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.paisaje p.que{font-size:19px;line-height:1.45;font-weight:500}
+.paisaje .libertad{margin-top:auto;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--fg) 34%,transparent);font-size:17px;font-weight:700}
+.avance{display:flex;gap:8px;justify-content:center;margin-top:18px}
+.avance button{width:30px;height:8px;padding:0;border:0;border-radius:4px;background:var(--c);opacity:.32;cursor:pointer;transition:width .35s var(--e),opacity .35s}
+.avance button[aria-current=true]{width:52px;opacity:1}
+.avance button:nth-child(1){--c:var(--lago)} .avance button:nth-child(2){--c:var(--montana)} .avance button:nth-child(3){--c:var(--viento)}
+.avance button:nth-child(4){--c:var(--rio)} .avance button:nth-child(5){--c:var(--bosque)}
+.camino .despues{margin-top:28px}
+@media (min-width:1100px){
+  .paisajes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;padding-inline:0;width:min(100% - 2 * var(--m),var(--max));margin-inline:auto}
+  .paisaje{width:auto;min-height:600px;padding:22px 20px 24px}
+  .paisaje .tapa{width:min(100%,150px)}
+  .paisaje h3{font-size:40px}
+  .paisaje .sis{font-size:22px}
+  .paisaje p.que{font-size:18px}
+  .avance{display:none}
+}
+
+/* ── las formas: por dónde empiezas ─────────────────────────── */
+.selector{display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--papel-2);width:100%;max-width:520px}
+.selector button{flex:1 1 auto;min-height:50px;padding:0 10px;border:0;border-radius:999px;background:transparent;font-size:16px;font-weight:700;color:var(--piedra);cursor:pointer;white-space:nowrap;transition:background-color .25s,color .25s}
+@media (min-width:600px){ .selector button{font-size:18px;padding:0 18px} }
+.selector button[aria-selected=true]{background:var(--nieve);color:var(--tinta);box-shadow:0 0 0 1px var(--linea)}
+.forma{display:grid;gap:24px;margin-top:20px;padding:12px 12px 26px;border-radius:30px;background:var(--nieve)}
+.forma-img{border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:var(--papel-2)}
+.forma-img img{width:100%;height:100%;object-fit:cover}
+.forma-img.obra{display:grid;place-items:center;padding:18px 18px 0;background:var(--lago);aspect-ratio:auto}
+.forma-img.obra img{width:min(100%,330px);height:auto;object-fit:contain}
+.forma-txt{display:grid;gap:16px;justify-items:start;padding-inline:8px}
+.forma-txt .precio{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.forma-txt .btn{width:100%}
+@media (min-width:1000px){ .forma-txt .btn{width:auto} }
+.forma-txt .nota{font-size:16px;font-weight:600;color:var(--piedra)}
+.forma-txt ul{display:grid;gap:10px}
+.forma-txt li{display:flex;gap:12px;align-items:baseline;font-weight:500}
+.forma-txt li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--hilo);transform:translateY(-3px)}
+.aparte{margin-top:30px;font-size:18px;font-weight:500;color:var(--piedra)}
+.aparte a{color:var(--tinta)}
+@media (prefers-reduced-motion:no-preference){ .forma:not([hidden]){animation:entra .45s var(--e) both} }
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (min-width:1000px){
+  .forma{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:56px;padding:16px 56px 16px 16px}
+  .forma-img{aspect-ratio:5/4}
+  .forma-img.obra{aspect-ratio:5/4;padding:28px 28px 0}
+  .forma-txt{padding:0}
+}
+
+/* ── el canal de YouTube ────────────────────────────────────── */
+.video{display:grid;gap:12px;padding:0;border:0;background:none;text-align:left;cursor:pointer;color:var(--tinta)}
+.video .marco{position:relative;display:block;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--papel-2)}
+.video .marco img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--e)}
+.video:hover .marco img{transform:scale(1.03)}
+.video .marco::after{content:"";position:absolute;left:14px;bottom:14px;width:52px;height:52px;border-radius:50%;background:rgba(250,248,244,.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7v10l8-5z' fill='%2323201D'/%3E%3C/svg%3E") center/26px no-repeat}
+.video .t{font-size:19px;font-weight:700;line-height:1.3;letter-spacing:-.01em}
+.videos{display:grid;gap:28px}
+.videos .grande .t{font-size:clamp(22px,1vw + 18px,30px);font-weight:800;letter-spacing:-.025em}
+.videos .riel .video{width:min(72vw,320px)}
+.canal .despues{margin-top:26px}
+@media (min-width:1000px){
+  .videos{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:start;gap:40px;width:min(100% - 2 * var(--m),var(--max));margin-inline:auto}
+  .videos .riel{display:grid;grid-template-columns:1fr 1fr;gap:22px;overflow:visible;padding:0}
+  .videos .riel .video{width:auto}
+  .videos .riel .video .t{font-size:17px}
+}
+
+/* ── detrás de Tu Clínica Digital ───────────────────────────── */
+.fundador .envase{display:grid;gap:30px}
+.f-foto{border-radius:26px;overflow:hidden;aspect-ratio:4/5;max-width:440px;background:var(--papel-2)}
+.f-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.f-txt{display:grid;gap:18px;align-content:start}
+.f-txt p{max-width:38ch}
+.cifras{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:8px;padding-top:20px;border-top:1px solid var(--hilo)}
+.cifras div{display:grid}
+.cifras dt{font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.cifras dd{font-size:16px;font-weight:600;color:var(--piedra)}
+.rodajes{margin-top:clamp(40px,5vw,64px)}
+.rodajes img{height:clamp(220px,28vw,340px);width:auto;aspect-ratio:var(--a,3/2);object-fit:cover;border-radius:20px;background:var(--papel-2)}
+.rodajes-pie{margin-top:14px;font-size:16px;font-weight:600;color:var(--piedra)}
+@media (min-width:1000px){ .fundador .envase{grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:72px;align-items:center} }
+
+/* ── el cierre ──────────────────────────────────────────────── */
+.cierre{text-align:center}
+.cierre .envase{display:grid;justify-items:center;gap:26px}
+.cierre .lomos{height:44px;gap:5px}
+.cierre .lomos i{width:11px;border-radius:3px}
+
+/* ── el pie ─────────────────────────────────────────────────── */
+.pie{padding:56px 0 calc(110px + env(safe-area-inset-bottom,0px));background:var(--papel);font-size:17px}
+.pie .envase{display:grid;gap:28px}
+.pie nav{display:flex;flex-wrap:wrap;gap:12px 24px}
+.pie nav a{text-decoration:none;font-weight:600}
+.pie nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.pie .firma{color:var(--piedra);font-size:16px;font-weight:500}
+@media (min-width:1000px){ .pie{padding-bottom:56px} }
+
+/* ── la barra de abajo (celular) ────────────────────────────── */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px var(--m) calc(10px + env(safe-area-inset-bottom,0px));background:rgba(250,248,244,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--linea);transform:translateY(115%);transition:transform .45s var(--e)}
+.barra.on{transform:none}
+.barra.on.fuera{transform:translateY(115%)}
+.barra .btn{width:100%}
+@media (min-width:1000px){ .barra{display:none} }
+
+/* ── el visor: videos y testimonios en grande ───────────────── */
+.lb{position:fixed;inset:0;z-index:130;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(35,32,29,.92)}
+.lb.on{display:flex}
+.lb .caja{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;border-radius:18px;overflow:hidden;background:#1d1a17}
+.lb .caja.h{width:min(1040px,100%);aspect-ratio:16/9;max-height:none}
+.lb .caja.img{aspect-ratio:auto;width:auto;max-width:min(560px,100%);max-height:88vh;background:none;overflow:auto}
+.lb .caja.img img{width:100%;height:auto;border-radius:12px}
+.lb video,.lb iframe{width:100%;height:100%;border:0;display:block}
+.lb .cerrar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;width:52px;height:52px;border:0;border-radius:50%;background:var(--nieve);color:var(--tinta);font-size:30px;line-height:1;cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+.envase-celular{padding-inline:var(--m)}
+@media (min-width:1000px){ .envase-celular{padding:0} }

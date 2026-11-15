@@ -871,6 +871,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
   var M = C.media || '';
   document.querySelectorAll('[data-muro]').forEach(function (box) {
     var lista = (C.testimonios || []).slice();
+    var tipo = box.getAttribute('data-tipo'); if (tipo) lista = lista.filter(function (t) { return t[0] === tipo; });   /* data-tipo="v": solo los videos verticales */
     var desde = +(box.getAttribute('data-desde') || 0); if (desde) lista = lista.slice(desde).concat(lista.slice(0, desde));
     var max = +(box.getAttribute('data-max') || lista.length); lista = lista.slice(0, max);
     var ver = +(box.getAttribute('data-muro') || 8);
