@@ -88,6 +88,32 @@
     tapan.forEach(function (t) { ob.observe(t); });
   }
 
-  /* la portada: la foto queda quieta si la persona pidió menos movimiento */
-  if (quieto) d.documentElement.classList.add('quieto');
+  /* la portada en movimiento: las fotos pasan despacio; si hay video (config.js · heroVideo), entra el video */
+  var esc = d.querySelector('[data-escena]');
+  if (esc) {
+    var cs = [].slice.call(esc.querySelectorAll('img')), i = 0, reloj = 0;
+    if (!quieto && cs.length > 1) {
+      setTimeout(function () { cs[0].classList.add('zoom'); }, 60);
+      reloj = setInterval(function () {
+        cs[i].classList.remove('on', 'zoom');
+        i = (i + 1) % cs.length;
+        cs[i].classList.add('on', 'zoom');
+      }, 7000);
+    }
+    var red = navigator.connection || {};
+    if (C.heroVideo && !quieto && !red.saveData && !/2g/.test(red.effectiveType || '')) {
+      var v = d.createElement('video');
+      v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true; v.preload = 'auto';
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true');
+      if (C.heroPoster) v.poster = C.heroPoster;
+      v.addEventListener('playing', function () {
+        clearInterval(reloj);
+        v.classList.add('on');
+        setTimeout(function () { cs.forEach(function (c) { c.classList.remove('on', 'zoom'); }); }, 1300);
+      }, { once: true });
+      v.src = C.heroVideo;
+      esc.appendChild(v);
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+    }
+  }
 })();

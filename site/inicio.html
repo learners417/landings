@@ -82,25 +82,30 @@ button{font:inherit;color:inherit}
 .top .ir:hover{background:var(--tinta);color:var(--nieve)}
 @media (min-width:1000px){ .top .ir{display:inline-flex} }
 
-/* ── la portada ─────────────────────────────────────────────── */
-.portada{padding:6px 0 clamp(56px,7vw,104px)}
-.p-foto{position:relative;margin:0 calc(10px - var(--m));border-radius:26px;overflow:hidden;aspect-ratio:2.15/1;background:var(--papel-2)}
-.p-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
-.p-texto{display:grid;gap:22px;justify-items:start;padding-top:26px}
-.p-texto .lead{max-width:34ch}
+/* ── la portada: la Patagonia en movimiento, detrás del título ── */
+.portada{padding:6px 0 0}
+.p-marco{position:relative;isolation:isolate;margin:0 10px;height:calc(100svh - 84px);min-height:540px;max-height:900px;border-radius:28px;overflow:hidden;background:var(--lago);color:#fff}
+.p-medios{position:absolute;inset:0;z-index:-1}
+.p-medios>img,.p-medios>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:0;transform:scale(1.02);transition:opacity 1.6s var(--e),transform 9s linear}
+.p-medios>.on{opacity:1}
+.p-medios>.zoom{transform:scale(1.1)}
+.p-medios>video{transform:none;transition:opacity 1.2s var(--e)}
+.p-medios::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(22,20,18,.34)}
+.p-sobre{position:absolute;left:0;right:0;bottom:0;display:grid;gap:18px;justify-items:start;padding:24px 22px 26px}
+.p-sobre .h1{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.p-sobre .lead{color:#fff;max-width:34ch;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.btn.claro{background:var(--nieve);color:var(--tinta)}
+.btn.claro:hover{background:#fff}
+.portada .prueba{padding-top:20px}
 .prueba{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;line-height:1.35;color:var(--piedra)}
 .prueba::before{content:"";flex:none;width:32px;height:1px;background:var(--hilo)}
 @media (min-width:1000px){
-  .portada{padding-top:28px}
-  .portada .envase{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:center}
-  .p-texto{padding:0}
-  .portada .h1{font-size:clamp(56px,3.4vw + 26px,84px)}
-  .p-foto{order:2;margin:0;aspect-ratio:4/5;max-height:min(80vh,760px);width:100%;border-radius:32px}
+  .portada{padding-top:10px}
+  .p-marco{margin:0 var(--m);height:min(84vh,820px);border-radius:32px}
+  .p-sobre{padding:56px 64px;max-width:920px}
+  .portada .h1{font-size:clamp(56px,3.6vw + 26px,90px)}
+  .p-sobre .lead{max-width:40ch}
 }
-@media (prefers-reduced-motion:no-preference){
-  .p-foto img{animation:acerca 2.4s var(--e) both}
-}
-@keyframes acerca{from{transform:scale(1.07)}to{transform:none}}
 
 /* ── los rieles: se deslizan con el dedo ────────────────────── */
 .riel{position:relative;display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:4px max(var(--m),(100% - var(--max)) / 2) 10px;scroll-padding-inline:max(var(--m),(100% - var(--max)) / 2);scrollbar-width:none}
@@ -116,6 +121,9 @@ button{font:inherit;color:inherit}
 .voces .tv .play::after{content:"Escuchar"}
 .voces .tv.extra{display:none}
 .voces .mas{display:none}
+.capturas{margin-top:14px}
+.capturas img.cap{height:clamp(340px,40vw,440px);width:auto;max-width:78vw;object-fit:cover;object-position:top;border-radius:18px;background:var(--papel-2);box-shadow:0 0 0 1px var(--linea);cursor:zoom-in}
+.capturas-pie{margin-top:12px;font-size:16px;font-weight:600;color:var(--piedra)}
 
 /* ── el cambio: hoy y en 90 días ────────────────────────────── */
 .cambio .dos{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hilo)}
@@ -376,6 +384,8 @@ window.TCD = {
   app:       'https://app.tuclinica.digital',
   instagram: 'https://www.instagram.com/javieremilianok/',
   foto:      'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg',
+  heroVideo:  '',   // la portada de la home: un clip de la Patagonia, sin sonido (mp4 liviano). Vacío = pasan las fotos.
+  heroPoster: '',   // el primer cuadro de ese clip (imagen)
   pixel:     '1306012398373458',
   /* Clarity (Microsoft): grabaciones y mapas de calor. Si GHL ya lo cargó en la página, no se carga dos veces. */
   clarity:   'z9r79a8723',
@@ -419,24 +429,23 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 
 <main>
 
-<!-- 1 · La portada: la promesa, una sola acción -->
+<!-- 1 · La portada: la Patagonia en movimiento detrás de la promesa, una sola acción -->
 <section class="portada" data-barra-desde>
-  <div class="envase">
-    <figure class="p-foto">
-      <img src="https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png"
-        srcset="https://images.leadconnectorhq.com/image/f_webp/q_72/r_640/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 640w,
-                https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 960w,
-                https://images.leadconnectorhq.com/image/f_webp/q_72/r_1600/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 1600w"
-        sizes="(min-width:1000px) 46vw, 100vw" width="1600" height="900" fetchpriority="high" decoding="async"
-        alt="Profesionales del programa juntos en la Patagonia, frente a la montaña">
-    </figure>
-    <div class="p-texto">
+  <div class="p-marco">
+    <div class="p-medios" data-escena aria-hidden="true">
+      <img class="on" src="https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png"
+        srcset="https://images.leadconnectorhq.com/image/f_webp/q_72/r_640/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 640w, https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 960w, https://images.leadconnectorhq.com/image/f_webp/q_72/r_1600/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 1600w"
+        sizes="100vw" width="1600" height="900" fetchpriority="high" decoding="async" alt="">
+      <img data-media="67a8027f9769a75cfe604f9b.png" data-ancho="1600" decoding="async" alt="">
+      <img data-media="67a8027f8f9e7e4c006b47f6.png" data-ancho="1600" decoding="async" alt="">
+    </div>
+    <div class="p-sobre">
       <h1 class="h1"><span class="l">Ganas bien.</span> <span class="l">El problema es lo que te cuesta ganarlo.</span></h1>
       <p class="lead">En 90 días instalamos el sistema que convierte lo que sabes en un negocio que te devuelve tu tiempo.</p>
-      <a class="btn" href="#formas">Elegir por dónde empiezo</a>
-      <p class="prueba">Más de 50 profesionales en Latinoamérica, España y EE.&nbsp;UU.</p>
+      <a class="btn claro" href="#formas">Elegir por dónde empiezo</a>
     </div>
   </div>
+  <p class="envase prueba">Más de 50 profesionales en Latinoamérica, España y EE.&nbsp;UU.</p>
 </section>
 
 <!-- 2 · Las voces: la prueba, en formato reel -->
@@ -446,6 +455,8 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     <p class="lead">Profesionales que atienden 1 a 1 y ya trabajan así. Toca y escucha.</p>
   </div>
   <div class="riel" data-muro="12" data-max="12" data-tipo="v" aria-label="Testimonios en video"></div>
+  <div class="riel capturas" data-capturas aria-label="Mensajes de clientes"></div>
+  <p class="envase capturas-pie">Lo que escriben. Toca un mensaje para leerlo completo.</p>
 </section>
 
 <!-- 3 · El cambio: hoy y en 90 días -->
@@ -1221,8 +1232,34 @@ function formSrc(id, dato) {
     tapan.forEach(function (t) { ob.observe(t); });
   }
 
-  /* la portada: la foto queda quieta si la persona pidió menos movimiento */
-  if (quieto) d.documentElement.classList.add('quieto');
+  /* la portada en movimiento: las fotos pasan despacio; si hay video (config.js · heroVideo), entra el video */
+  var esc = d.querySelector('[data-escena]');
+  if (esc) {
+    var cs = [].slice.call(esc.querySelectorAll('img')), i = 0, reloj = 0;
+    if (!quieto && cs.length > 1) {
+      setTimeout(function () { cs[0].classList.add('zoom'); }, 60);
+      reloj = setInterval(function () {
+        cs[i].classList.remove('on', 'zoom');
+        i = (i + 1) % cs.length;
+        cs[i].classList.add('on', 'zoom');
+      }, 7000);
+    }
+    var red = navigator.connection || {};
+    if (C.heroVideo && !quieto && !red.saveData && !/2g/.test(red.effectiveType || '')) {
+      var v = d.createElement('video');
+      v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true; v.preload = 'auto';
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true');
+      if (C.heroPoster) v.poster = C.heroPoster;
+      v.addEventListener('playing', function () {
+        clearInterval(reloj);
+        v.classList.add('on');
+        setTimeout(function () { cs.forEach(function (c) { c.classList.remove('on', 'zoom'); }); }, 1300);
+      }, { once: true });
+      v.src = C.heroVideo;
+      esc.appendChild(v);
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+    }
+  }
 })();
 
 </script>
