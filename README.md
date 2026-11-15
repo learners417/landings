@@ -37,7 +37,9 @@ La lista de espera: formulario de GHL «Lista de espera» `YX3xdi92MbG4VuM15vPk`
 La puerta de las seis herramientas (8 nov 2026): formulario de GHL «Herramientas · para empezar» `0RGhK8342PTwkXk0MsCa`
 (nombre, correo y el campo oculto `contact.herramienta`, clave de consulta `herramienta`, con contacto fijo).
 En /phr, /guiadeprecios, /impostor, /creatuprotocolo, /generador-caja y /automatizar, cada botón a la comunidad lo abre
-con la ruta de la página puesta y, al enviarlo, lleva a Skool (y su mensaje de «Listo» trae el link a la comunidad).
+con la ruta de la página puesta y, al enviarlo, abre la herramienta (`TCD.herramientas`; desde el 15 nov 2026, antes iba a Skool).
+Cuatro herramientas viven en `/herramienta?h=<ruta>` (pages/herramienta.html: precio, 5 mensajes, protocolo y los 12 procesos);
+hora real y Neuro-Escáner, en su página de GHL. La comunidad (`TCD.comunidad`) es «Sanadores Libres», en Comunidades de GHL.
 Quien ya dejó su correo en ese navegador entra directo. En GHL, el flujo publicado «Herramientas · etiqueta» suma
 `herramientas`, `carta-semanal` y `herramienta-<ruta>` (etiqueta dinámica con el campo). No entra a «Lectores · 10 días»:
 su correo 1 dice «Tu capítulo está abierto».

@@ -395,10 +395,10 @@ function formSrc(id, dato) {
   });
 })();
 
-/* ── La puerta de las herramientas ── en las seis landings de /para-empezar, los botones a la comunidad piden
-   nombre y correo antes de abrir Skool: formulario de GHL «Herramientas · para empezar» (TCD.formHerramientas),
-   con la herramienta en el campo oculto (?herramienta=phr). Al enviarlo, lleva a la comunidad en la misma pestaña
-   (y el mensaje de «Listo» del formulario trae su propio link a la comunidad).
+/* ── La puerta de las herramientas ── en las seis landings de /para-empezar, cada botón pide nombre y correo
+   antes de abrir la herramienta: formulario de GHL «Herramientas · para empezar» (TCD.formHerramientas),
+   con la herramienta en el campo oculto (?herramienta=phr). Al enviarlo, abre la herramienta en la misma pestaña
+   (TCD.herramientas; desde el 15 nov 2026, antes iba a Skool). En /para-empezar, el botón lleva a la comunidad.
    Quien ya dejó su correo en este navegador (en una herramienta o en un capítulo) entra directo.
    Si el formulario no carga en 12 segundos, aparece el link directo. No suma eventos al píxel. */
 (function () {
@@ -408,6 +408,9 @@ function formSrc(id, dato) {
     creatuprotocolo: 'Vende el resultado', 'generador-caja': 'Los consultantes que ya tienes',
     automatizar: 'Un consultorio que funciona aunque tú pares', recursos: 'La comunidad' };
   if (!C.formHerramientas || !C.comunidad || !NOMBRE[pag]) return;
+  var DESTINO = (pag !== 'recursos' && (C.herramientas || {})[pag]) || C.comunidad;
+  var ES_COM = DESTINO === C.comunidad;
+  document.querySelectorAll('[data-link="comunidad"]').forEach(function (a) { a.href = DESTINO; });
   var CLAVE = 'tcd_lector';
   function yaEs() { try { return localStorage.getItem(CLAVE) === '1'; } catch (e) { return false; } }
   function guardar() { try { localStorage.setItem(CLAVE, '1'); } catch (e) {} }
@@ -421,11 +424,11 @@ function formSrc(id, dato) {
     listo = true; guardar();
     if (f) {
       var p = f.querySelector('.espera-p');
-      p.textContent = 'Listo. Te llevo a la comunidad. ';
-      var a = document.createElement('a'); a.className = 'link'; a.href = C.comunidad; a.textContent = 'Entrar ahora';
+      p.textContent = ES_COM ? 'Listo. Te llevo a la comunidad. ' : 'Listo. Te abro la herramienta. ';
+      var a = document.createElement('a'); a.className = 'link'; a.href = DESTINO; a.textContent = ES_COM ? 'Entrar ahora' : 'Abrirla ahora';
       p.appendChild(a);
     }
-    setTimeout(function () { location.assign(C.comunidad); }, 900);
+    setTimeout(function () { location.assign(DESTINO); }, 900);
   }
   window.addEventListener('message', function (e) {
     var d = e.data;
@@ -439,12 +442,12 @@ function formSrc(id, dato) {
     f.className = 'espera-fondo'; f.setAttribute('role', 'dialog'); f.setAttribute('aria-modal', 'true'); f.setAttribute('aria-label', NOMBRE[pag]);
     f.innerHTML = '<div class="espera card"><button type="button" class="espera-x" aria-label="Cerrar">×</button>' +
       '<span class="eti">Para empezar</span><b class="espera-t"></b>' +
-      '<p class="espera-p">' + (pag === 'recursos' ? 'Déjame tu nombre y tu correo. Te llevo a la comunidad y te escribo con lo que sigue.' : 'Déjame tu nombre y tu correo. Te llevo a la comunidad, donde está la herramienta, y te escribo con lo que sigue.') + '</p>' +
+      '<p class="espera-p">' + (ES_COM ? 'Déjame tu nombre y tu correo. Te llevo a la comunidad y te escribo con lo que sigue.' : 'Déjame tu nombre y tu correo. Te abro la herramienta y te escribo con lo que sigue.') + '</p>' +
       '<iframe title="Tu nombre y tu correo" src="' + formSrc(C.formHerramientas, 'herramienta=' + encodeURIComponent(pag)) +
       '" style="width:100%;height:330px;border:none;display:block;margin-top:14px;background:transparent"></iframe>' +
-      '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">Entra a la comunidad aquí</a>.</p></div>';
+      '<p class="espera-alt" hidden>¿No ves el formulario? <a class="link" href="#">' + (ES_COM ? 'Entra a la comunidad aquí' : 'Abre la herramienta aquí') + '</a>.</p></div>';
     f.querySelector('.espera-t').textContent = NOMBRE[pag];
-    f.querySelector('.espera-alt a').href = C.comunidad;
+    f.querySelector('.espera-alt a').href = DESTINO;
     ifr = f.querySelector('iframe');
     f.addEventListener('click', function (ev) { if (ev.target === f || ev.target.className === 'espera-x') cerrar(); });
     document.body.appendChild(f); document.documentElement.style.overflow = 'hidden';

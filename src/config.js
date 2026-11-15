@@ -46,9 +46,9 @@ window.TCD = {
      el id del formulario de GHL «Lista de espera». Vacío: el botón abre tu WhatsApp con la lista escrita. */
   formEspera: 'YX3xdi92MbG4VuM15vPk',   // «Lista de espera» (8 nov 2026): nombre, correo y el campo oculto lista (?lista=…)
 
-  /* La puerta de las seis herramientas de /para-empezar: antes de abrir Skool, nombre y correo.
+  /* La puerta de las seis herramientas de /para-empezar: antes de abrir la herramienta, nombre y correo.
      El id del formulario de GHL «Herramientas · para empezar» (nombre, correo y el campo oculto herramienta).
-     Vacío: los botones abren la comunidad directo, como antes. */
+     Vacío: los botones abren la herramienta directo. */
   formHerramientas: '0RGhK8342PTwkXk0MsCa',   // 8 nov 2026
 
   /* La línea única de Tu nuevo precio: la misma en todas las páginas (cada [data-linea97] la toma de aquí).
@@ -110,11 +110,20 @@ window.TCD = {
   /* Tu WhatsApp, solo números, con código de país. */
   whatsapp: '5492944217689',
 
-  /* Dónde está cada herramienta: los correos llevan a /herramienta?h=<ruta> y esta lista dice adónde va.
-     Vacío: la comunidad. Cuando cada herramienta tenga su página en GHL (19 nov 2026), va su ruta aquí. */
-  herramientas: { phr: '', guiadeprecios: '', impostor: '', 'generador-caja': '', creatuprotocolo: '', automatizar: '', recursos: '' },
+  /* Dónde está cada herramienta (15 nov 2026). La puerta de cada página (src/base.js) y los correos de entrega
+     (/herramienta?h=<ruta>) llevan aquí. Cuatro viven en /herramienta; hora real y Neuro-Escáner, en su página de GHL.
+     Vacío: la comunidad. */
+  herramientas: {
+    phr: 'https://tuclinica.digital/calculadora-rentabilidad-page',
+    impostor: 'https://tuclinica.digital/diagnstico-del-director-page',
+    guiadeprecios: '/herramienta?h=guiadeprecios',
+    'generador-caja': '/herramienta?h=generador-caja',
+    creatuprotocolo: '/herramienta?h=creatuprotocolo',
+    automatizar: '/herramienta?h=automatizar',
+    recursos: ''
+  },
 
-  comunidad: 'https://www.skool.com/aprendedores-4619/about?ref=465a1ed1cf944d65a86766f0cd39eba2',
+  comunidad: 'https://simzamapyvtvv8uzvlgd.app.clientclub.net/communities/groups/sanadores-libres/home',   // Sanadores Libres, en Comunidades de GHL (15 nov 2026; antes Skool, archivado)
   app:       'https://app.tuclinica.digital',
   instagram: 'https://www.instagram.com/javieremilianok/',
   foto:      'https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg',

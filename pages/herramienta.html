@@ -1,36 +1,535 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Tu herramienta · Javo Katz</title>
+<title>Tu herramienta · Tu Clínica Digital</title>
+<meta name="description" content="Las herramientas de Javo Katz para profesionales que atienden 1 a 1: tu precio, tus 5 mensajes, tu protocolo y tu consultorio en automático.">
+<meta name="theme-color" content="#FAF8F4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&display=swap">
-<style>/*EDICION_CSS*/</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap">
+<style>/*PAISAJE_CSS*/</style>
 <script>
-/* El link de los correos de entrega: /herramienta?h=phr lleva adonde está hoy esa herramienta (TCD.herramientas)
-   y, si no tiene página propia, a la comunidad. Quien llega desde el correo ya dejó su correo: no se le vuelve a pedir. */
+/* /herramienta?h=<ruta> · el destino de los correos de entrega y de la puerta de cada herramienta (15 nov 2026).
+   Cuatro herramientas viven en esta misma página (precio, mensajes, protocolo y sistema): se muestra la que pide ?h=.
+   Las otras dos (hora real y Neuro-Escáner) viven en su página de GHL: TCD.herramientas dice adónde ir.
+   Quien llega acá ya dejó su correo: no se le vuelve a pedir. */
 (function () {
   var C = window.TCD || {};
+  var AQUI = { guiadeprecios: 1, 'generador-caja': 1, creatuprotocolo: 1, automatizar: 1 };
   var h = '';
   try { h = (new URLSearchParams(location.search).get('h') || '').toLowerCase().replace(/[^a-z-]/g, ''); } catch (e) {}
-  var destino = ((C.herramientas || {})[h]) || C.comunidad || '/para-empezar';
   try { localStorage.setItem('tcd_lector', '1'); } catch (e) {}
-  window.TCD_DESTINO = destino;
-  if (!/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) location.replace(destino);
+  window.TCD_H = AQUI[h] ? h : '';
+  if (!AQUI[h] && h) {
+    var destino = ((C.herramientas || {})[h]) || C.comunidad || '/para-empezar';
+    if (destino.indexOf('/herramienta') === 0) destino = C.comunidad || '/para-empezar';
+    window.TCD_DESTINO = destino;
+    if (!/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) location.replace(destino);
+  }
 })();
 </script>
+<style>
+/* ── la página de las herramientas ── */
+.h-cab{padding-block:clamp(48px,7vw,96px) clamp(28px,4vw,48px)}
+.kick{display:inline-flex;align-items:center;gap:14px;font-weight:800;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--oro)}
+.kick::before{content:"";width:40px;height:1px;background:var(--hilo)}
+.h-cab .lead{margin-top:20px;max-width:760px}
+.tool{display:none}
+.tool.ver{display:block}
+.paso{padding-block:clamp(40px,5vw,72px);border-top:1px solid var(--linea)}
+.paso:first-of-type{border-top:0}
+.paso-n{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--hilo);font-weight:800;font-size:20px;color:var(--oro);margin-bottom:18px}
+.paso .h3{margin-bottom:12px}
+.paso .lead{max-width:760px}
+.fichas{display:grid;gap:14px;margin-top:28px}
+@media (min-width:760px){.fichas.dos{grid-template-columns:1fr 1fr}}
+.ficha{background:#fff;border:1px solid var(--linea);border-radius:24px;padding:24px 26px}
+.ficha b{display:block;font-weight:800;font-size:21px;letter-spacing:-.015em;line-height:1.25}
+.ficha p{margin-top:8px;font-size:18px;line-height:1.5;color:var(--piedra)}
+.ficha .eti{display:block;font-weight:800;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--oro);margin-bottom:8px}
+.calc{display:grid;gap:16px;margin-top:28px;background:#fff;border:1px solid var(--linea);border-radius:24px;padding:26px}
+@media (min-width:760px){.calc{grid-template-columns:1fr 1fr}}
+.campo{display:grid;gap:8px}
+.campo label{font-weight:700;font-size:18px;line-height:1.35}
+.campo input,.campo textarea{font:600 20px/1.3 var(--f);color:var(--tinta);background:var(--nieve);border:1.5px solid var(--linea);border-radius:14px;padding:14px 16px;width:100%}
+.campo textarea{min-height:96px;resize:vertical}
+.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--lago)}
+.res{grid-column:1/-1;border-top:1px solid var(--hilo);padding-top:18px;display:grid;gap:10px}
+.res-fila{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:19px}
+.res-fila b{font-weight:800;font-size:clamp(26px,6.5vw,40px);letter-spacing:-.03em;color:var(--lago);white-space:nowrap}
+.nota{font-size:17px;line-height:1.5;color:var(--piedra);margin-top:14px}
+.msg{background:#fff;border:1px solid var(--linea);border-radius:24px;padding:24px 26px;margin-top:22px}
+.msg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.msg-cab b{font-weight:800;font-size:22px;letter-spacing:-.015em}
+.dia{font-weight:800;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--oro)}
+.texto{margin-top:14px;background:var(--nieve);border-radius:16px;padding:18px 20px;font-size:19px;line-height:1.55;white-space:pre-line}
+.copiar{margin-top:14px;min-height:50px;padding:0 24px;font-size:17px}
+.por{margin-top:14px;font-size:17px;line-height:1.5;color:var(--piedra)}
+.por summary{cursor:pointer;font-weight:700;color:var(--tinta);font-size:18px}
+.por ul{margin-top:10px;display:grid;gap:8px}
+.reglas{display:grid;gap:10px;margin-top:22px}
+.regla{display:flex;gap:14px;align-items:baseline;font-size:19px;line-height:1.45}
+.regla::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--lago);flex:none;transform:translateY(-2px)}
+.si,.no{display:flex;gap:12px;align-items:baseline;font-size:19px;line-height:1.45;margin-top:10px}
+.si::before{content:"✓";font-weight:800;color:#2F5638}
+.no::before{content:"×";font-weight:800;color:#9C3626}
+.barra-av{position:sticky;top:68px;z-index:5;background:var(--nieve);padding:14px 0;border-bottom:1px solid var(--linea)}
+.barra-av .riel-av{height:10px;border-radius:99px;background:var(--papel-2);overflow:hidden}
+.barra-av .riel-av i{display:block;height:100%;width:0;background:#2F5638;transition:width .3s}
+.barra-av p{font-weight:800;font-size:18px;margin-bottom:8px}
+.semana{margin-top:34px}
+.semana h3{font-weight:800;font-size:clamp(24px,3vw,30px);letter-spacing:-.025em}
+.semana .sub{font-size:18px;color:var(--piedra);margin-top:4px}
+.chk{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-radius:20px;padding:20px 22px;margin-top:12px;cursor:pointer}
+.chk input{width:26px;height:26px;flex:none;margin-top:3px;accent-color:#2F5638}
+.chk b{display:block;font-weight:800;font-size:20px;line-height:1.3}
+.chk span{display:block;font-size:17px;line-height:1.5;color:var(--piedra);margin-top:6px}
+.chk.hecho{background:#F2F6F1;border-color:rgba(47,86,56,.3)}
+.chk.hecho b{text-decoration:line-through;text-decoration-color:rgba(47,86,56,.6)}
+.hoja{background:#fff;border:1px solid var(--hilo);border-radius:24px;padding:30px 28px;margin-top:28px}
+.hoja .kick{font-size:16px}
+.hoja h3{font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.035em;line-height:1.08;margin-top:14px}
+.hoja .frase{font-size:21px;line-height:1.45;margin-top:14px}
+.hoja ol{margin-top:18px;display:grid;gap:10px;counter-reset:e}
+.hoja ol li{counter-increment:e;display:flex;gap:14px;font-size:19px;line-height:1.4}
+.hoja ol li::before{content:counter(e);font-weight:800;color:var(--oro);min-width:22px}
+.hoja .dato{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--linea);padding-top:12px;margin-top:12px;font-size:19px}
+.hoja .dato b{font-weight:800}
+.botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn.claro{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.btn.claro:hover{background:var(--tinta);color:var(--nieve)}
+.sigue{background:var(--papel);padding-block:clamp(56px,7vw,96px)}
+.sigue .fichas{margin-top:22px}
+.menu-h{display:grid;gap:12px;margin-top:24px}
+@media (min-width:760px){.menu-h{grid-template-columns:1fr 1fr}}
+.menu-h a{display:block;text-decoration:none;background:#fff;border:1px solid var(--linea);border-radius:22px;padding:22px 24px}
+.menu-h a b{display:block;font-weight:800;font-size:21px}
+.menu-h a span{display:block;font-size:17px;color:var(--piedra);margin-top:6px}
+@media print{.top,.sigue,.botones,.copiar,.barra-av,.pie,.no-imp{display:none!important}.tool{display:none!important}.tool.ver{display:block!important}}
+</style>
 </head>
 <body data-pagina="herramienta">
-<main style="padding:18vh 0 0">
- <div class="wrap" style="max-width:640px">
-  <p class="serie">Para empezar</p>
-  <h1 style="font-size:clamp(44px,11vw,64px);line-height:1;margin-top:14px">Te llevo a tu herramienta.</h1>
-  <p class="bajada">Si en unos segundos no se abre, <a class="link" id="ir" href="#">entra aquí</a>.</p>
+
+<header class="top">
+  <a class="marca" data-link="inicio" href="/inicio" aria-label="Tu Clínica Digital, inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
+</header>
+
+<main>
+
+<!-- ═══ Si llega sin ?h= : las seis, para elegir ═══ -->
+<section class="tool" id="t-menu">
+ <div class="envase h-cab">
+  <span class="kick">Para empezar</span>
+  <h1 class="h1" style="margin-top:18px">Tus herramientas.</h1>
+  <p class="lead">Cada una te deja un número o un texto listo para usar. Si no sabes por dónde empezar, empieza por tu hora real.</p>
+  <nav class="menu-h" aria-label="Herramientas">
+   <a data-link-h="phr" href="#"><b>Tu hora real</b><span>Cuánto te queda por cada hora que de verdad trabajas.</span></a>
+   <a href="?h=guiadeprecios"><b>Tu precio, paso a paso</b><span>La fórmula, tu precio y las respuestas a las 3 objeciones.</span></a>
+   <a href="?h=generador-caja"><b>Los 5 mensajes</b><span>Para volver a hablar con quienes ya confiaron en ti.</span></a>
+   <a href="?h=creatuprotocolo"><b>Tu protocolo, en una hoja</b><span>Resultado, tiempo y método. Y el acuerdo para firmar.</span></a>
+   <a href="?h=automatizar"><b>Tu consultorio en automático</b><span>Los 12 procesos, con la herramienta para cada uno.</span></a>
+   <a data-link-h="impostor" href="#"><b>El Neuro-Escáner IA</b><span>El patrón que te frena y el primer movimiento.</span></a>
+  </nav>
  </div>
+</section>
+
+<!-- ═══ PRECIO · Tu precio, paso a paso ═══ -->
+<section class="tool" id="t-guiadeprecios" data-titulo="Tu precio, paso a paso">
+ <div class="envase h-cab">
+  <span class="kick">Herramienta · Precio</span>
+  <h1 class="h1" style="margin-top:18px">Tu precio, paso a paso.</h1>
+  <p class="lead">Lo que tu precio cubre, la fórmula con tus números y las palabras para decirlo. En 10 minutos sales con tu precio nuevo.</p>
+ </div>
+ <div class="envase">
+  <div class="paso">
+   <span class="paso-n">1</span>
+   <h2 class="h3">Tu precio cubre 4 cosas.</h2>
+   <p class="lead">La sesión es la única que se ve. Las otras tres también las pagas tú.</p>
+   <div class="fichas dos">
+    <div class="ficha"><span class="eti">1</span><b>La hora de sesión</b><p>La que se ve, y la que casi todos cuentan.</p></div>
+    <div class="ficha"><span class="eti">2</span><b>Tu formación</b><p>Años de estudio, cursos y supervisión, presentes en cada decisión.</p></div>
+    <div class="ficha"><span class="eti">3</span><b>La gestión invisible</b><p>WhatsApp, notas, coordinación y seguimiento: horas reales.</p></div>
+    <div class="ficha"><span class="eti">4</span><b>Tu sostenibilidad</b><p>Descanso, ahorro y futuro, para seguir acompañando por años.</p></div>
+   </div>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">2</span>
+   <h2 class="h3">La fórmula, con tus números.</h2>
+   <p class="lead">Empieza por lo que quieres que te quede, no por lo que cobran otros. Cambia los números y mira tu precio.</p>
+   <div class="calc" id="calc-precio">
+    <div class="campo"><label for="p-meta">¿Cuánto quieres que te quede por mes? (USD)</label><input id="p-meta" type="number" inputmode="numeric" min="0" value="5000"></div>
+    <div class="campo"><label for="p-gastos">Tus gastos fijos por mes (USD)</label><input id="p-gastos" type="number" inputmode="numeric" min="0" value="900"></div>
+    <div class="campo"><label for="p-personas">¿A cuántas personas quieres acompañar a la vez?</label><input id="p-personas" type="number" inputmode="numeric" min="1" value="10"></div>
+    <div class="campo"><label for="p-meses">¿Cuántos meses dura tu proceso?</label><input id="p-meses" type="number" inputmode="numeric" min="1" value="3"></div>
+    <div class="res">
+     <div class="res-fila"><span>Por persona, por mes</span><b id="p-mes">590 USD</b></div>
+     <div class="res-fila"><span>Tu programa completo</span><b id="p-prog">1.770 USD</b></div>
+    </div>
+   </div>
+   <p class="nota">La cuenta: (lo que quieres que te quede + tus gastos) ÷ las personas que acompañas a la vez = tu precio por mes. Por los meses del proceso = tu programa. Redondea hacia arriba: un número redondo se dice con más calma.</p>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">3</span>
+   <h2 class="h3">Por especialidad: el mismo trabajo, como programa.</h2>
+   <p class="lead">Lo que cambia el precio es vender el resultado, no la sesión. En mi método, el primer programa arranca en 1.000 USD.</p>
+   <div class="fichas dos">
+    <div class="ficha"><span class="eti">Nutrición</span><b>De la consulta suelta a «tu energía en 8 semanas»</b><p>8 encuentros, plan por etapas y seguimiento entre consultas. Se vende el cambio en su día a día.</p></div>
+    <div class="ficha"><span class="eti">Terapia</span><b>De la sesión semanal a un proceso de 12 semanas</b><p>Un objetivo acordado al empezar, etapas con nombre y un cierre con revisión de lo logrado.</p></div>
+    <div class="ficha"><span class="eti">Coaching</span><b>De la hora de coaching a un programa de 90 días</b><p>Una meta medible, sesiones con tarea y un tablero para ver el avance semana a semana.</p></div>
+    <div class="ficha"><span class="eti">Medicina y salud</span><b>De la consulta a un acompañamiento de 3 meses</b><p>Controles agendados desde el inicio, indicaciones por escrito y una vía de contacto entre consultas.</p></div>
+   </div>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">4</span>
+   <h2 class="h3">Las 3 objeciones que más vas a escuchar.</h2>
+   <p class="lead">Cada una tiene una pregunta de vuelta. Pregunta, y escucha.</p>
+   <div class="fichas">
+    <div class="ficha"><span class="eti">«Es caro»</span><b>«¿Caro comparado con qué?»</b><p>Después: «Lo que pagas es [el resultado] en [el tiempo]. ¿Cuánto te cuesta seguir como estás?»</p></div>
+    <div class="ficha"><span class="eti">«Lo tengo que pensar»</span><b>«Claro. ¿Qué parte quieres pensar: el resultado, el tiempo o la inversión?»</b><p>Casi siempre es una sola. Resuélvela ahí, en la misma conversación.</p></div>
+    <div class="ficha"><span class="eti">«¿Puedo pagar por sesión?»</span><b>«El programa se paga completo o en 2 cuotas.»</b><p>«Lo que te ofrezco es el proceso entero, con principio y final. Así es como funciona.»</p></div>
+   </div>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">5</span>
+   <h2 class="h3">Cómo decirlo.</h2>
+   <div class="hoja">
+    <span class="kick">Tu frase</span>
+    <p class="frase">«El programa dura [tiempo], logras [resultado] y la inversión es [precio]. ¿Empezamos?»</p>
+    <ol>
+     <li>Estrénalo con quien llega: el precio nuevo arranca con las personas que empiezan desde hoy.</li>
+     <li>Dilo una vez, con calma, y espera la respuesta.</li>
+     <li>Si dice que sí, manda el link de pago en ese momento.</li>
+    </ol>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CAJA · Los 5 mensajes ═══ -->
+<section class="tool" id="t-generador-caja" data-titulo="Los 5 mensajes">
+ <div class="envase h-cab">
+  <span class="kick">Herramienta · Caja</span>
+  <h1 class="h1" style="margin-top:18px">Los 5 mensajes.</h1>
+  <p class="lead">Para volver a hablar con las personas que ya confiaron en ti. Una secuencia de 10 días, con el texto exacto: copias, cambias lo que está entre corchetes y envías.</p>
+ </div>
+ <div class="envase">
+  <div class="paso">
+   <h2 class="h3">A quién se lo mandas.</h2>
+   <p class="si">Personas que atendiste en los últimos 12 meses y no volvieron.</p>
+   <p class="si">Quienes terminaron un proceso y no renovaron.</p>
+   <p class="si">Quienes preguntaron y nunca agendaron.</p>
+   <p class="no">Quien te pidió que no le escribas.</p>
+   <h2 class="h3" style="margin-top:36px">Las 4 reglas.</h2>
+   <div class="reglas">
+    <p class="regla">Una sola pregunta por mensaje.</p>
+    <p class="regla">En el 1 y el 2 no ofreces nada: primero reconectas.</p>
+    <p class="regla">Si no responde, esperas al día del siguiente mensaje.</p>
+    <p class="regla">Si dice que no, agradeces y cierras. Un no es un no.</p>
+   </div>
+  </div>
+
+  <div class="paso">
+   <div class="msg">
+    <div class="msg-cab"><b>1 · Reconectar</b><span class="dia">Día 1</span></div>
+    <div class="texto" id="m1">Hola [nombre]. Pasó un tiempo desde que nos vimos. ¿Cómo estás? ¿Cómo seguiste con [lo que trabajamos juntos]?
+Te pregunto de verdad.</div>
+    <button class="btn copiar" type="button" data-copiar="m1">Copiar el mensaje</button>
+    <details class="por"><summary>Lo que va entre corchetes, por especialidad</summary>
+     <ul>
+      <li><b>Terapia:</b> «¿cómo seguiste con lo que veníamos trabajando?»</li>
+      <li><b>Nutrición:</b> «¿cómo seguiste con los cambios en tu alimentación?»</li>
+      <li><b>Coaching:</b> «¿cómo vas con la meta que te propusiste?»</li>
+      <li><b>Medicina:</b> «¿cómo te sentiste con las indicaciones de la última consulta?»</li>
+      <li><b>Quien nunca vino:</b> «¿pudiste avanzar con lo que buscabas cuando me escribiste?»</li>
+     </ul>
+    </details>
+   </div>
+
+   <div class="msg">
+    <div class="msg-cab"><b>2 · Algo útil</b><span class="dia">Día 3</span></div>
+    <div class="texto" id="m2">Hola [nombre]. Te comparto algo que me hizo pensar en ti:
+[un consejo breve sobre lo que trabajamos juntos]
+Espero que te sirva.</div>
+    <button class="btn copiar" type="button" data-copiar="m2">Copiar el mensaje</button>
+    <p class="por">Llegas con algo en la mano. Un párrafo alcanza, siempre que sea sobre su caso.</p>
+   </div>
+
+   <div class="msg">
+    <div class="msg-cab"><b>3 · Abrir la puerta</b><span class="dia">Día 5</span></div>
+    <div class="texto" id="m3">[nombre], ¿te gustaría retomar [el proceso / las sesiones / los controles]?
+Tengo lugar esta semana y la próxima. Si quieres, hablamos 15 minutos y vemos cómo seguir desde donde lo dejamos.</div>
+    <button class="btn copiar" type="button" data-copiar="m3">Copiar el mensaje</button>
+    <p class="por">Preguntas si le gustaría. La decisión queda en sus manos.</p>
+   </div>
+
+   <div class="msg">
+    <div class="msg-cab"><b>4 · Un caso</b><span class="dia">Día 8</span></div>
+    <div class="texto" id="m4">[nombre], esta semana pasó algo que me hizo pensar en ti:
+[una frase con el resultado de otra persona, sin su nombre ni datos que la identifiquen]
+Empezó desde un lugar parecido al tuyo. ¿Lo hablamos?</div>
+    <button class="btn copiar" type="button" data-copiar="m4">Copiar el mensaje</button>
+    <p class="por">Usa solo un caso real tuyo, contado con cuidado.</p>
+   </div>
+
+   <div class="msg">
+    <div class="msg-cab"><b>5 · El cierre</b><span class="dia">Día 10</span></div>
+    <div class="texto" id="m5">[nombre], este es mi último mensaje por un tiempo.
+Cada persona tiene su momento, y lo respeto. Cuando quieras retomar, aquí estoy.
+Que estés muy bien.</div>
+    <button class="btn copiar" type="button" data-copiar="m5">Copiar el mensaje</button>
+    <p class="por">Después del 5, cierras la secuencia: 60 días sin escribirle.</p>
+   </div>
+  </div>
+
+  <div class="paso">
+   <h2 class="h3">Hazlo hoy.</h2>
+   <div class="reglas">
+    <p class="regla">Arma tu lista: nombre, teléfono y fecha de la última consulta.</p>
+    <p class="regla">Empieza por las personas de los últimos 3 meses.</p>
+    <p class="regla">Manda el mensaje 1 a cinco personas por día. A mano, desde tu WhatsApp.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ PROTOCOLO · Tu protocolo, en una hoja ═══ -->
+<section class="tool" id="t-creatuprotocolo" data-titulo="Tu protocolo, en una hoja">
+ <div class="envase h-cab">
+  <span class="kick">Herramienta · Protocolo</span>
+  <h1 class="h1" style="margin-top:18px">Tu protocolo, en una hoja.</h1>
+  <p class="lead">Resultado, tiempo y método. Completa los campos y sale tu protocolo listo para presentar. Al final, el acuerdo para firmar con cada consultante.</p>
+ </div>
+ <div class="envase">
+  <div class="paso">
+   <span class="paso-n">1</span>
+   <h2 class="h3">Completa tu protocolo.</h2>
+   <div class="calc" id="form-prot">
+    <div class="campo"><label for="pr-quien">¿Para quién es?</label><input id="pr-quien" placeholder="Mujeres de 35 a 50 con cansancio que no se va"></div>
+    <div class="campo"><label for="pr-resultado">¿Qué resultado logra?</label><input id="pr-resultado" placeholder="Recuperar su energía"></div>
+    <div class="campo"><label for="pr-semanas">¿En cuántas semanas?</label><input id="pr-semanas" type="number" inputmode="numeric" min="1" placeholder="8"></div>
+    <div class="campo"><label for="pr-nombre">El nombre de tu método</label><input id="pr-nombre" placeholder="Método Raíz"></div>
+    <div class="campo"><label for="pr-etapas">Las etapas, una por renglón (de 3 a 5)</label><textarea id="pr-etapas" placeholder="Ordenar&#10;Nutrir&#10;Sostener"></textarea></div>
+    <div class="campo"><label for="pr-incluye">Qué incluye, una cosa por renglón</label><textarea id="pr-incluye" placeholder="8 sesiones 1 a 1&#10;Plan escrito por etapa&#10;Seguimiento por WhatsApp entre sesiones"></textarea></div>
+    <div class="campo"><label for="pr-precio">La inversión (USD)</label><input id="pr-precio" type="number" inputmode="numeric" min="0" placeholder="1000"></div>
+    <div class="campo"><label for="pr-cuotas">¿En cuántas cuotas se puede pagar?</label><input id="pr-cuotas" type="number" inputmode="numeric" min="1" placeholder="2"></div>
+   </div>
+   <p class="nota">¿No sabes tu precio? <a class="enlace" href="?h=guiadeprecios">Calcúlalo con la guía de precios</a>. Lo que escribes queda guardado en este navegador.</p>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">2</span>
+   <h2 class="h3">Así queda.</h2>
+   <div class="hoja" id="hoja-prot">
+    <span class="kick" id="hp-nombre">Tu método</span>
+    <h3 id="hp-titulo">[Resultado] en [semanas] semanas.</h3>
+    <p class="frase" id="hp-quien">Para [quién es].</p>
+    <ol id="hp-etapas"></ol>
+    <div id="hp-incluye"></div>
+    <div class="dato"><span>Inversión</span><b id="hp-precio">—</b></div>
+   </div>
+   <div class="botones">
+    <button class="btn" type="button" id="copiar-prot">Copiar mi protocolo</button>
+    <button class="btn claro" type="button" onclick="window.print()">Imprimir o guardar en PDF</button>
+   </div>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">3</span>
+   <h2 class="h3">El acuerdo para firmar.</h2>
+   <p class="lead">Un compromiso de las dos partes, con lo que ya completaste. Ocho puntos, claros para los dos.</p>
+   <div class="fichas dos">
+    <div class="ficha"><span class="eti">1</span><b>Las partes</b><p>Tus datos y los de tu consultante.</p></div>
+    <div class="ficha"><span class="eti">2</span><b>El protocolo</b><p>Nombre, duración, sesiones, modalidad y qué incluye.</p></div>
+    <div class="ficha"><span class="eti">3</span><b>La inversión</b><p>El total, las cuotas y los medios de pago.</p></div>
+    <div class="ficha"><span class="eti">4</span><b>Tu garantía</b><p>Si la das: qué haces si no llega el resultado, y qué tiene que cumplir tu consultante.</p></div>
+    <div class="ficha"><span class="eti">5</span><b>Cambios de horario</b><p>Con 24 horas de aviso, se reprograma. Sin aviso, la sesión cuenta.</p></div>
+    <div class="ficha"><span class="eti">6</span><b>Si alguien termina antes</b><p>Aviso de 7 días y cómo se devuelve lo no usado.</p></div>
+    <div class="ficha"><span class="eti">7</span><b>Confidencialidad</b><p>Lo que se comparte queda entre ustedes. Testimonio, solo con su permiso.</p></div>
+    <div class="ficha"><span class="eti">8</span><b>Alcance</b><p>El protocolo acompaña y deriva cuando hace falta. Firmas y fecha.</p></div>
+   </div>
+   <div class="botones">
+    <button class="btn" type="button" id="copiar-acuerdo">Copiar el acuerdo completo</button>
+   </div>
+   <p class="nota">Antes de usarlo, revísalo con un abogado de tu país: cada país tiene sus reglas de contratos y de datos personales.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ SISTEMA · Tu consultorio en automático ═══ -->
+<section class="tool" id="t-automatizar" data-titulo="Tu consultorio en automático">
+ <div class="envase h-cab">
+  <span class="kick">Herramienta · Sistema</span>
+  <h1 class="h1" style="margin-top:18px">Tu consultorio en automático.</h1>
+  <p class="lead">Los 12 procesos que hoy te llevan horas, la herramienta para cada uno y en qué semana se hace. Tilda a medida que avanzas: queda guardado en este navegador.</p>
+ </div>
+ <div class="barra-av"><div class="envase"><p id="av-txt">0 de 12 listos</p><div class="riel-av"><i id="av-bar"></i></div></div></div>
+ <div class="envase" id="checklist">
+  <div class="semana">
+   <span class="kick">Semana 1</span>
+   <h3 style="margin-top:10px">WhatsApp Business</h3>
+   <p class="sub">Lo primero, y lo más simple. Se configura desde el celular.</p>
+   <label class="chk"><input type="checkbox" data-k="1"><div><b>1 · Mensaje de bienvenida</b><span>WhatsApp Business › Herramientas para la empresa › Mensaje de bienvenida. Saluda, di en qué ayudas y cómo se agenda.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="2"><div><b>2 · Mensaje fuera de horario</b><span>WhatsApp Business › Mensaje de ausencia. Con tu horario y cuándo respondes.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="3"><div><b>3 · Respuestas rápidas</b><span>WhatsApp Business › Respuestas rápidas: precio, horarios y modalidad. Las usas escribiendo «/».</span></div></label>
+  </div>
+  <div class="semana">
+   <span class="kick">Semana 2</span>
+   <h3 style="margin-top:10px">Tu agenda online</h3>
+   <p class="sub">Cada persona elige su horario. Tú dejas de coordinar por mensaje.</p>
+   <label class="chk"><input type="checkbox" data-k="4"><div><b>4 · Tus horarios en un calendario</b><span>Una agenda de reservas: Calendly, la de Google Calendar o la de tu sistema. Solo los horarios que quieres dar.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="5"><div><b>5 · El enlace para reservar</b><span>En tu bio de Instagram, en tu respuesta rápida de WhatsApp y en tu firma de correo.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="6"><div><b>6 · Cobro al reservar</b><span>Un link de pago (Mercado Pago, Stripe o PayPal) en la reserva o en la confirmación.</span></div></label>
+  </div>
+  <div class="semana">
+   <span class="kick">Semana 3</span>
+   <h3 style="margin-top:10px">Tu secuencia de seguimiento</h3>
+   <p class="sub">Confirma, recuerda y acompaña sola. Se arma con las automatizaciones de tu agenda o de tu sistema.</p>
+   <label class="chk"><input type="checkbox" data-k="7"><div><b>7 · Confirmación al agendar</b><span>Fecha, hora y cómo llegar o el link de la videollamada.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="8"><div><b>8 · Recordatorio 24 horas antes</b><span>Con la opción de reprogramar.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="9"><div><b>9 · Recordatorio 1 hora antes</b><span>Con el link a mano.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="10"><div><b>10 · Mensaje después de la consulta</b><span>Qué sigue y cuándo es el próximo encuentro.</span></div></label>
+  </div>
+  <div class="semana">
+   <span class="kick">Semana 4</span>
+   <h3 style="margin-top:10px">Palabras clave en Instagram</h3>
+   <p class="sub">Si ya publicas, cada palabra clave abre una conversación sola.</p>
+   <label class="chk"><input type="checkbox" data-k="11"><div><b>11 · Una palabra en cada publicación</b><span>«Comenta AGENDA y te mando el link.» Una palabra corta, la misma siempre.</span></div></label>
+   <label class="chk"><input type="checkbox" data-k="12"><div><b>12 · La respuesta automática</b><span>ManyChat o tu sistema responde el comentario y manda el mensaje con tu enlace de reserva.</span></div></label>
+  </div>
+  <div class="paso" style="border-top:0">
+   <p class="lead">Con los 12, tu consultorio confirma, recuerda, cobra y responde mientras tú estás en sesión.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ El paso siguiente: igual para todas ═══ -->
+<section class="sigue no-imp" id="sigue" hidden>
+ <div class="envase">
+  <span class="kick">Lo que sigue</span>
+  <h2 class="h2" style="margin-top:16px">Hazlo acompañado.</h2>
+  <div class="fichas dos">
+   <div class="ficha"><b>En la comunidad</b><p>Sanadores Libres: las seis herramientas, mis avisos y los vivos.</p><div class="botones"><a class="btn claro" data-link="comunidad" href="#">Entrar a la comunidad</a></div></div>
+   <div class="ficha"><b>Conmigo</b><p>En 90 días instalamos el sistema completo en tu consultorio.</p><div class="botones"><a class="btn" data-link="agenda" href="/instala-tu-clinica">Ver el video</a></div></div>
+  </div>
+ </div>
+</section>
+
 </main>
-<script>/*EDICION_JS*/</script>
-<script>(function(){var a=document.getElementById('ir');if(a&&window.TCD_DESTINO)a.href=window.TCD_DESTINO;})();</script>
+
+<footer class="pie">
+  <div class="envase">
+    <a class="marca" data-link="inicio" href="/inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
+    <nav aria-label="Páginas">
+      <a data-link="recursos" href="/para-empezar">Para empezar</a>
+      <a data-link="camino" href="/camino">El camino</a>
+      <a data-link="libros" href="/libros">Tu nuevo precio</a>
+      <a href="/privacidad">Privacidad</a>
+    </nav>
+  </div>
+</footer>
+
+<script>/*PAISAJE_JS*/</script>
+<script>
+(function () {
+  var C = window.TCD || {}, d = document, h = window.TCD_H || '';
+  function guardar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function leer(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+  function usd(n) { return (Math.round(n) || 0).toLocaleString('es-AR') + ' USD'; }
+
+  /* qué herramienta se ve */
+  var sec = d.getElementById(h ? 't-' + h : 't-menu');
+  if (sec) { sec.classList.add('ver'); if (h) { d.getElementById('sigue').hidden = false; d.title = sec.getAttribute('data-titulo') + ' · Tu Clínica Digital'; } }
+  d.querySelectorAll('[data-link-h]').forEach(function (a) { var u = (C.herramientas || {})[a.getAttribute('data-link-h')]; if (u) a.href = u; });
+
+  /* copiar */
+  function copiar(txt, b) {
+    var ok = function () { var t = b.textContent; b.textContent = 'Copiado'; setTimeout(function () { b.textContent = t; }, 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, function () { prompt('Copia el texto:', txt); });
+    else prompt('Copia el texto:', txt);
+  }
+  d.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () { copiar(d.getElementById(b.getAttribute('data-copiar')).innerText.trim(), b); });
+  });
+
+  /* PRECIO · la calculadora */
+  var ids = ['p-meta', 'p-gastos', 'p-personas', 'p-meses'];
+  function precio() {
+    var v = ids.map(function (i) { return +d.getElementById(i).value || 0; });
+    var mes = (v[0] + v[1]) / Math.max(1, v[2]);
+    d.getElementById('p-mes').textContent = usd(Math.ceil(mes / 10) * 10);
+    d.getElementById('p-prog').textContent = usd(Math.ceil(mes * Math.max(1, v[3]) / 10) * 10);
+    guardar('tcd_precio', v);
+  }
+  if (d.getElementById('p-meta')) {
+    var pv = leer('tcd_precio'); if (pv) ids.forEach(function (i, j) { d.getElementById(i).value = pv[j]; });
+    ids.forEach(function (i) { d.getElementById(i).addEventListener('input', precio); }); precio();
+  }
+
+  /* PROTOCOLO · la hoja y el acuerdo */
+  var pc = ['pr-quien', 'pr-resultado', 'pr-semanas', 'pr-nombre', 'pr-etapas', 'pr-incluye', 'pr-precio', 'pr-cuotas'];
+  function val(i) { return (d.getElementById(i).value || '').trim(); }
+  function lineas(i) { return val(i).split('\n').map(function (s) { return s.trim(); }).filter(Boolean); }
+  function prot() {
+    var nombre = val('pr-nombre') || 'Tu método', res = val('pr-resultado') || '[Resultado]', sem = val('pr-semanas') || '[semanas]';
+    d.getElementById('hp-nombre').textContent = nombre;
+    d.getElementById('hp-titulo').textContent = res.charAt(0).toUpperCase() + res.slice(1) + ' en ' + sem + ' semanas.';
+    d.getElementById('hp-quien').textContent = 'Para ' + (val('pr-quien') || '[quién es]') + '.';
+    var ol = d.getElementById('hp-etapas'); ol.innerHTML = '';
+    lineas('pr-etapas').forEach(function (e) { var li = d.createElement('li'); li.textContent = e; ol.appendChild(li); });
+    var inc = d.getElementById('hp-incluye'); inc.innerHTML = '';
+    lineas('pr-incluye').forEach(function (e) { var p = d.createElement('div'); p.className = 'dato'; p.innerHTML = '<span></span><b>✓</b>'; p.firstChild.textContent = e; inc.appendChild(p); });
+    var pr = +val('pr-precio'), cu = +val('pr-cuotas');
+    d.getElementById('hp-precio').textContent = pr ? usd(pr) + (cu > 1 ? ' · o ' + cu + ' cuotas de ' + usd(pr / cu) : '') : '—';
+    guardar('tcd_protocolo', pc.map(val));
+  }
+  function textoProt() {
+    var t = (val('pr-nombre') || 'Tu método') + '\n' + d.getElementById('hp-titulo').textContent + '\n' + d.getElementById('hp-quien').textContent + '\n\nEtapas:\n';
+    lineas('pr-etapas').forEach(function (e, i) { t += (i + 1) + '. ' + e + '\n'; });
+    t += '\nIncluye:\n'; lineas('pr-incluye').forEach(function (e) { t += '- ' + e + '\n'; });
+    return t + '\nInversión: ' + d.getElementById('hp-precio').textContent;
+  }
+  function acuerdo() {
+    var n = val('pr-nombre') || '[nombre del protocolo]', sem = val('pr-semanas') || '___', pr = val('pr-precio') || '___', cu = val('pr-cuotas') || '1';
+    return 'ACUERDO DE PROTOCOLO DE ACOMPAÑAMIENTO\n\n' +
+      '1. LAS PARTES\nProfesional: ____________________ · Documento: __________ · Matrícula (si corresponde): __________\nConsultante: ____________________ · Documento: __________ · Correo: __________ · WhatsApp: __________\n\n' +
+      '2. EL PROTOCOLO\nNombre: ' + n + '\nResultado buscado: ' + (val('pr-resultado') || '__________') + '\nDuración: ' + sem + ' semanas · Sesiones: ____ · Modalidad: presencial / online / mixta\nInicio: ___/___/____ · Fin estimado: ___/___/____\nIncluye: ' + (lineas('pr-incluye').join('; ') || '__________') + '\n\n' +
+      '3. LA INVERSIÓN\nTotal: ' + pr + ' USD, en ' + cu + ' pago(s). Medios de pago: __________.\nSi un pago se atrasa más de ___ días hábiles, el protocolo se pausa hasta regularizarlo.\n\n' +
+      '4. LA GARANTÍA (completar solo si se ofrece)\nSi al terminar el protocolo completo no se logró ' + (val('pr-resultado') || '[el resultado]') + ', la/el profesional extiende el acompañamiento ___ semanas sin cargo / devuelve el ___ % de la inversión.\nPara acceder: asistir a todas las sesiones, completar las tareas acordadas y avisarlo por escrito dentro de los 7 días posteriores al cierre.\n\n' +
+      '5. CAMBIOS DE HORARIO\nCon más de 24 horas de aviso, la sesión se reprograma. Con menos de 24 horas o sin aviso, la sesión cuenta como realizada. Si la/el profesional reprograma, la sesión se repone sin costo.\n\n' +
+      '6. SI ALGUIEN TERMINA ANTES\nCualquiera de las partes puede terminar el acuerdo con 7 días de aviso. Si termina la/el consultante, se devuelve el valor de las sesiones no realizadas, menos un cargo de ___ %. Si termina la/el profesional, se devuelve el 100 % de las sesiones no realizadas.\n\n' +
+      '7. CONFIDENCIALIDAD\nLa/el profesional guarda reserva de todo lo compartido, según la ley de datos personales del país y la ética de su profesión.\nLa/el consultante autoriza usar su caso, sin datos que lo identifiquen, con fines educativos: sí / no.\n\n' +
+      '8. ALCANCE\nEste protocolo acompaña y no reemplaza un tratamiento médico, psiquiátrico ni ninguna otra atención de salud que se necesite. Si aparece algo fuera de su alcance, la/el profesional lo dice y deriva.\n\n' +
+      'Firmas\nProfesional: ____________________ Fecha: ___/___/____\nConsultante: ____________________ Fecha: ___/___/____';
+  }
+  if (d.getElementById('pr-quien')) {
+    var pv2 = leer('tcd_protocolo'); if (pv2) pc.forEach(function (i, j) { if (pv2[j]) d.getElementById(i).value = pv2[j]; });
+    pc.forEach(function (i) { d.getElementById(i).addEventListener('input', prot); }); prot();
+    d.getElementById('copiar-prot').addEventListener('click', function () { copiar(textoProt(), this); });
+    d.getElementById('copiar-acuerdo').addEventListener('click', function () { copiar(acuerdo(), this); });
+  }
+
+  /* SISTEMA · el checklist */
+  var cks = [].slice.call(d.querySelectorAll('#checklist input[type=checkbox]'));
+  function avance() {
+    var n = 0, hechos = {};
+    cks.forEach(function (c) { c.closest('.chk').classList.toggle('hecho', c.checked); if (c.checked) { n++; hechos[c.getAttribute('data-k')] = 1; } });
+    d.getElementById('av-txt').textContent = n === 12 ? '12 de 12: tu consultorio, en automático' : n + ' de 12 listos';
+    d.getElementById('av-bar').style.width = (n / 12 * 100) + '%';
+    guardar('tcd_checklist', hechos);
+  }
+  if (cks.length) {
+    var hv = leer('tcd_checklist') || {}; cks.forEach(function (c) { c.checked = !!hv[c.getAttribute('data-k')]; c.addEventListener('change', avance); }); avance();
+  }
+
+  if (window.pxc && h) pxc('VerHerramienta', { content_name: h });
+})();
+</script>
 </body>
 </html>
