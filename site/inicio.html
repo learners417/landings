@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tu Clínica Digital">
 <meta property="og:description" content="Ganas bien. El problema es lo que te cuesta ganarlo. En 90 días instalamos el sistema que te devuelve tu tiempo.">
-<meta property="og:image" content="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a75cfe604f9b.png">
+<meta property="og:image" content="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.leadconnectorhq.com" crossorigin>
@@ -84,8 +84,8 @@ button{font:inherit;color:inherit}
 
 /* ── la portada ─────────────────────────────────────────────── */
 .portada{padding:6px 0 clamp(56px,7vw,104px)}
-.p-foto{position:relative;margin:0 10px;border-radius:26px;overflow:hidden;aspect-ratio:2.15/1;background:var(--papel-2)}
-.p-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+.p-foto{position:relative;margin:0 calc(10px - var(--m));border-radius:26px;overflow:hidden;aspect-ratio:2.15/1;background:var(--papel-2)}
+.p-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
 .p-texto{display:grid;gap:22px;justify-items:start;padding-top:26px}
 .p-texto .lead{max-width:34ch}
 .prueba{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;line-height:1.35;color:var(--piedra)}
@@ -98,11 +98,8 @@ button{font:inherit;color:inherit}
 }
 @media (prefers-reduced-motion:no-preference){
   .p-foto img{animation:acerca 2.4s var(--e) both}
-  .p-texto>*{animation:sube .9s var(--e) both}
-  .p-texto>:nth-child(2){animation-delay:.12s} .p-texto>:nth-child(3){animation-delay:.22s} .p-texto>:nth-child(4){animation-delay:.3s}
 }
 @keyframes acerca{from{transform:scale(1.07)}to{transform:none}}
-@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ── los rieles: se deslizan con el dedo ────────────────────── */
 .riel{position:relative;display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:4px max(var(--m),(100% - var(--max)) / 2) 10px;scroll-padding-inline:max(var(--m),(100% - var(--max)) / 2);scrollbar-width:none}
@@ -132,10 +129,10 @@ button{font:inherit;color:inherit}
 
 /* ── el camino: cinco paisajes ──────────────────────────────── */
 .paisajes{gap:12px}
-.paisaje{--fg:#fff;width:min(84vw,380px);min-height:560px;display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px;border-radius:28px;background:var(--c);color:var(--fg);scroll-snap-align:center}
+.paisaje{--fg:#fff;width:min(84vw,380px);min-height:520px;display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px;border-radius:28px;background:var(--c);color:var(--fg);scroll-snap-align:center}
 .paisaje.lago{--c:var(--lago)} .paisaje.montana{--c:var(--montana)} .paisaje.bosque{--c:var(--bosque)}
 .paisaje.viento{--c:var(--viento);--fg:var(--tinta)} .paisaje.rio{--c:var(--rio);--fg:var(--tinta)}
-.paisaje .tapa{width:132px;height:auto;aspect-ratio:2/3;border-radius:5px;margin-bottom:18px;box-shadow:0 18px 30px -14px rgba(20,18,16,.55);background:rgba(255,255,255,.12)}
+.paisaje .tapa{width:150px;height:auto;aspect-ratio:2/3;border-radius:5px;margin-bottom:18px;box-shadow:0 18px 30px -14px rgba(20,18,16,.55);background:rgba(255,255,255,.12)}
 .paisaje .dias{font-size:16px;font-weight:700;opacity:.86}
 .paisaje h3{font-size:44px;font-weight:800;line-height:.98;letter-spacing:-.04em}
 .paisaje .sis{font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
@@ -206,7 +203,8 @@ button{font:inherit;color:inherit}
 
 /* ── detrás de Tu Clínica Digital ───────────────────────────── */
 .fundador .envase{display:grid;gap:30px}
-.f-foto{border-radius:26px;overflow:hidden;aspect-ratio:4/5;max-width:440px;background:var(--papel-2)}
+.f-foto{border-radius:26px;overflow:hidden;aspect-ratio:4/5;width:min(62%,440px);background:var(--papel-2)}
+@media (min-width:1000px){ .f-foto{width:100%} }
 .f-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .f-txt{display:grid;gap:18px;align-content:start}
 .f-txt p{max-width:38ch}
@@ -424,12 +422,12 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
 <section class="portada" data-barra-desde>
   <div class="envase">
     <figure class="p-foto">
-      <img src="https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a75cfe604f9b.png"
-        srcset="https://images.leadconnectorhq.com/image/f_webp/q_72/r_640/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a75cfe604f9b.png 640w,
-                https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a75cfe604f9b.png 960w,
-                https://images.leadconnectorhq.com/image/f_webp/q_72/r_1600/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a75cfe604f9b.png 1600w"
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png"
+        srcset="https://images.leadconnectorhq.com/image/f_webp/q_72/r_640/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 640w,
+                https://images.leadconnectorhq.com/image/f_webp/q_72/r_960/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 960w,
+                https://images.leadconnectorhq.com/image/f_webp/q_72/r_1600/u_https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/67a8027f9769a71ac3604f9c.png 1600w"
         sizes="(min-width:1000px) 46vw, 100vw" width="1600" height="900" fetchpriority="high" decoding="async"
-        alt="Una jornada de trabajo al aire libre en la Patagonia, frente a la cordillera nevada">
+        alt="Profesionales del programa juntos en la Patagonia, frente a la montaña">
     </figure>
     <div class="p-texto">
       <h1 class="h1"><span class="l">Ganas bien.</span> <span class="l">El problema es lo que te cuesta ganarlo.</span></h1>
@@ -556,7 +554,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
     </article>
 
     <article class="forma" id="f-persona" role="tabpanel" aria-labelledby="b-persona" hidden>
-      <figure class="forma-img"><img data-media="67a8027f9769a71ac3604f9c.png" data-ancho="960" alt="Un grupo del mastermind en la Patagonia" loading="lazy" style="object-position:50% 60%"></figure>
+      <figure class="forma-img"><img data-media="67a8027f9769a75cfe604f9b.png" data-ancho="960" alt="Una jornada de trabajo al aire libre en la Patagonia" loading="lazy" style="object-position:50% 60%"></figure>
       <div class="forma-txt">
         <h3 class="h3">El mastermind y La Cima</h3>
         <p>A la mesa con los más comprometidos. Y cuatro días juntos en Bariloche, del 17 al 20 de diciembre.</p>
