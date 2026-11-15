@@ -77,6 +77,7 @@ button{font:inherit;color:inherit}
   .portada{padding-top:28px}
   .portada .envase{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:center}
   .p-texto{padding:0}
+  .portada .h1{font-size:clamp(56px,3.4vw + 26px,84px)}
   .p-foto{order:2;margin:0;aspect-ratio:4/5;max-height:min(80vh,760px);width:100%;border-radius:32px}
 }
 @media (prefers-reduced-motion:no-preference){
