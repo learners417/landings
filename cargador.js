@@ -14,7 +14,7 @@
   w.__tcdCargador = 1;
 
   var REPO = 'learners417/landings';
-  var ALIAS = { '': 'inicio' };
+  var ALIAS = { '': 'inicio', 'retiros-2027': 'retiros' };
   /* La vista previa: ?rama=edicion trae la página de esa rama de GitHub, para mirarla antes de publicarla.
      En la vista previa no se cargan el píxel ni Clarity (base.js y clarity.js miran carga.rama). */
   var rama = 'main';
