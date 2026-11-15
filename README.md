@@ -67,7 +67,7 @@ En GHL el paso tiene la misma línea de siempre (`ghl-linea.html`). El calendari
 ## Experiencias Patagónicas (/retiros) · retiros 2027
 Es `fijas/retiros.html` (copia en `site/retiros.html`): misma familia visual que /anfitriones, píxel de Experiencias Patagónicas `2031253547512073`.
 Las 7 fechas de 2027, el retiro de ejemplo (al organizador le queda el 51 %), el honorario del 12 % desde USD 1.800 y la agenda de 30 minutos con Ailu.
-Falta un dato para salir: el calendario de retiros en `data-cal` (hoy `{{CALENDARIO}}`, la página muestra el aviso). Acepta el id del calendario o su URL personalizada (slug con guiones).
+La agenda es el calendario «Tu evento en la Patagonia» de GHL, por su URL personalizada `agendasretiro` (`data-cal` acepta el id o el slug).
 En GHL, el paso /retiros se cambia a un elemento HTML con la línea del cargador y `window.TCD_PAGINA='retiros'`.
 
 ## Dónde está cada página en GHL

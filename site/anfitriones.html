@@ -478,7 +478,7 @@ footer p{font-size:16px;color:var(--muted)}
 /* ── el calendario de GHL ── */
 (function(){
   var box=document.getElementById('cal');var id=box.getAttribute('data-cal');
-  var src=/^[a-z0-9]+(-[a-z0-9]+)+$/.test(id)?'https://api.leadconnectorhq.com/widget/bookings/'+id:(/^[A-Za-z0-9]{12,}$/.test(id)?'https://api.leadconnectorhq.com/widget/booking/'+id:'');
+  var src=/^[a-z0-9]+(-[a-z0-9]+)*$/.test(id)?'https://api.leadconnectorhq.com/widget/bookings/'+id:(/^[A-Za-z0-9]{12,}$/.test(id)?'https://api.leadconnectorhq.com/widget/booking/'+id:'');
   if(!src){box.innerHTML='<p class="aviso">La agenda abre en unos minutos. Volvé a entrar más tarde.</p>';return;}
   box.innerHTML='<iframe src="'+src+'" id="'+id+'_ads" title="Agenda de 15 minutos con Ailu" scrolling="no"></iframe>';
   var s=document.createElement('script');s.src='https://link.msgsndr.com/js/form_embed.js';s.async=true;document.body.appendChild(s);
