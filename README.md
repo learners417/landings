@@ -70,6 +70,13 @@ Las 7 fechas de 2027, el retiro de ejemplo (al organizador le queda el 51 %), el
 La agenda es el calendario «Tu evento en la Patagonia» de GHL, por su URL personalizada `agendasretiro` (`data-cal` acepta el id o el slug).
 Vive en GHL en el paso «RETIROS 2027» (/retiros-2027) del embudo de Experiencias Patagónicas, con la línea del cargador y `window.TCD_PAGINA='retiros'`. La /retiros nativa con el video de Ailu sigue intacta. La agenda es el calendario «Experiencias Patagónicas · 30 minutos con Ailu» (`ep-retiros-ailu`), conectado a EP-2 y EP-3.
 
+## Experiencias Patagónicas y Anfitriones del Sur · piel «Lago» (16 nov 2026)
+Las dos páginas de Ailu se escriben en `ep/` y se arman con `python3 ep/build.py`, que deja cada una entera en
+`fijas/` y `site/`. La piel es una sola (`ep/ep.css` + `ep/ep.js`): Fraunces y Manrope, fotos de Unsplash con la misma luz,
+película de portada, calculadora, fechas, agenda de GHL y la barra fija del celular. Las fotos van como `U(photo-id,ancho)`.
+Revisión local sin red: `python3 ep/qa.py site/retiros.html site/anfitriones.html` (capturas en /tmp/qa, letra chica y desbordes).
+Vista previa de una rama: `experienciaspatagonicas.com/retiros-2027?rama=<rama>`.
+
 ## Dónde está cada página en GHL
 Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 `app.gohighlevel.com/v2/location/SImzaMApYvtVV8UzvlgD/funnels-websites/funnels/<embudo>/steps/<paso>/overview`
