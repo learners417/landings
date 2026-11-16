@@ -539,6 +539,8 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
 .lomos i{width:6px;border-radius:2px;background:var(--c)}
 .lomos i:nth-child(1){--c:#2B4E68}.lomos i:nth-child(2){--c:#904932}.lomos i:nth-child(3){--c:#B48B3F}.lomos i:nth-child(4){--c:#46979E}.lomos i:nth-child(5){--c:#294637}
 .sello text{font-family:var(--fd)!important;font-weight:800!important}
+/* en el celular, Manrope ocupa más que Cormorant: los títulos bajan un poco para que el video y el botón sigan arriba */
+@media (max-width:599px){.portada .promesa{font-size:25px!important;line-height:1.16!important}h1{font-size:30px!important}h2{font-size:30px!important}}
 /* en el celular la cabecera lleva los cinco lomos y el botón: el nombre aparece desde 460 px */
 @media (max-width:459px){.tb-marca .tm-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 
