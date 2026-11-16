@@ -3,116 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Gracias · Javo Katz</title>
+<title>Gracias · Tu Clínica Digital</title>
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#F4EEE3">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
-<style>/*BASE_CSS*/</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Literata:opsz,wght@7..72,400..600&display=swap">
+<style>/*PAISAJE_CSS*/</style>
 <style>
-.gracias{padding-top:clamp(30px,7vw,72px)}
-.paso-g{display:grid;grid-template-columns:52px 1fr;gap:18px;margin-top:34px;padding:clamp(22px,5vw,32px)}
-.paso-g .n{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--tinta);color:#F1E3C6;font-family:var(--f-titulo);font-size:28px;font-weight:600}
-.paso-g h2{font-size:clamp(30px,6.6vw,40px);line-height:1.08}
-.paso-g p{margin-top:10px;font-size:18px;color:var(--tinta-2)}
-@media (max-width:520px){ .paso-g{grid-template-columns:1fr} }
-.correo{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.correo input{flex:1 1 240px;min-height:58px;border:1px solid var(--linea);border-radius:16px;padding:0 18px;font:inherit;font-size:18px;background:var(--papel);color:var(--tinta)}
-.correo input:focus{outline:2px solid var(--oro-texto);outline-offset:2px}
-.correo .btn{flex:1 1 220px}
-.descargas{display:grid;gap:12px;margin-top:20px}
-@media (min-width:720px){ .descargas{grid-template-columns:1fr 1fr} }
-.dl{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:center;padding:14px;border:1px solid var(--linea);border-radius:16px;background:var(--papel);text-decoration:none;transition:border-color .25s,transform .25s var(--e)}
-.dl:hover{border-color:var(--tinta);transform:translateY(-2px)}
-.dl img{width:64px;border-radius:1px 3px 3px 1px;box-shadow:5px 8px 14px -8px rgba(0,0,0,.55)}
-.dl b{display:block;font-family:var(--f-titulo);font-size:23px;font-weight:600;line-height:1.1}
-.dl span{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:16px;font-weight:800;color:var(--verde)}
-.dl span::before{content:"";width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232F5638' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/18px no-repeat}
+/* ── /gracias en Paisaje vivo (16 nov 2026): lo que compraste, en tres pasos ── */
 .oculto{display:none !important}
-.ayuda{margin-top:44px;text-align:center;font-size:17px;color:var(--tinta-2)}
-.dias{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
-.dias li{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:baseline;padding-top:10px;border-top:1px solid var(--linea);font-size:18px;line-height:1.45;color:var(--tinta)}
-.dias b{font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto)}
+.g-hero{padding:clamp(44px,8vw,96px) 0 clamp(20px,3vw,32px)}
+.g-k{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--verde)}
+.g-k::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F4EEE3' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat}
+.g-hero .h1{margin-top:16px}
+.g-hero .lead{margin-top:18px;max-width:34em}
+.g-pasos{padding:0 0 clamp(56px,8vw,96px)}
+.g-pasos .envase{display:grid;gap:18px}
+.paso-g{display:grid;gap:22px;padding:clamp(24px,5vw,44px);border-radius:24px;background:var(--tarjeta);box-shadow:0 0 0 1px var(--linea)}
+.paso-g .n{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--tinta);color:var(--tarjeta);font-weight:800;font-size:21px}
+.paso-g h2{font-size:clamp(30px,2.2vw + 20px,44px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:16px}
+.paso-g .lectura p,.paso-g>div>p{margin-top:12px;font-family:var(--lectura);font-size:19px;line-height:1.6;color:var(--piedra)}
+.paso-g b{color:var(--tinta)}
+/* la app: el texto y el celular con el día 1 */
+.paso-app{background:var(--lago);color:#F4EEE3;box-shadow:none}
+.paso-app .n{background:#F4EEE3;color:var(--lago)}
+.paso-app>div>p,.paso-app b{color:#F4EEE3}
+.paso-app .lectura p{color:rgba(244,238,227,.86)}
+.app-tel{display:grid;place-items:center}
+.app-tel .tel{width:min(240px,64vw)}
+@media (min-width:900px){ .paso-app{grid-template-columns:1fr 300px;align-items:center;column-gap:56px} .app-tel{grid-row:1 / span 2;grid-column:2} }
+.correo{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.correo input{flex:1 1 240px;min-height:58px;border:0;border-radius:999px;padding:0 22px;font:600 18px/1 var(--f);background:#F4EEE3;color:var(--tinta)}
+.correo input:focus{outline:2px solid #B48B3F;outline-offset:2px}
+.correo .btn{flex:1 1 220px;background:#F4EEE3;color:var(--lago)}
+.correo .btn:hover{background:#fff}
+.dias{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:0}
+.dias li{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid rgba(244,238,227,.22);font-size:18px;line-height:1.45}
+.dias b{font-size:16px;font-weight:800;color:#F1E3C6}
+/* los libros: las tapas como objetos */
+.descargas{display:grid;gap:12px;margin-top:22px}
+@media (min-width:720px){ .descargas{grid-template-columns:1fr 1fr} }
+.dl{display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:center;padding:14px 18px 14px 14px;border-radius:18px;background:var(--fondo);box-shadow:0 0 0 1px var(--linea);text-decoration:none;color:var(--tinta);transition:transform .35s var(--e),box-shadow .35s}
+.dl:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--tinta)}
+.dl img{width:62px;height:auto;border-radius:2px 4px 4px 2px;transform:perspective(600px) rotateY(18deg);box-shadow:8px 10px 18px -10px rgba(20,18,16,.6)}
+.dl b{display:block;font-weight:800;font-size:19px;letter-spacing:-.02em;line-height:1.2}
+.dl span{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:16px;font-weight:700;color:var(--verde)}
+.dl span::before{content:"";width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232F5638' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/18px no-repeat}
+.botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn.claro{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.btn.claro:hover{background:var(--tinta);color:var(--fondo)}
+.ayuda{margin-top:18px;text-align:center;font-size:18px;color:var(--piedra)}
+.ayuda a{font-weight:700;color:var(--tinta);text-decoration-color:var(--oro);text-underline-offset:5px}
+@media (prefers-reduced-motion:no-preference){
+  .g-hero .envase>*,.paso-g{animation:sube .7s var(--e) both}
+  .g-hero .h1{animation-delay:.06s} .g-hero .lead{animation-delay:.12s}
+  .paso-g:nth-child(1){animation-delay:.18s} .paso-g:nth-child(2){animation-delay:.26s} .paso-g:nth-child(3){animation-delay:.34s}
+}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}}
 </style>
 </head>
-<body data-pagos="" data-pagina="gracias">
-
-<header class="top"><div class="top-in">
-  <a class="marca" data-link="libros" href="#">Javo Katz<small>Tu Clínica Digital</small></a>
-</div></header>
-
+<body class="vivo" data-pagos="" data-pagina="gracias">
+<header class="top">
+  <a class="marca" data-link="inicio" href="/inicio" aria-label="Tu Clínica Digital, inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
+</header>
 <main>
-<section class="sec gracias">
- <div class="wrap">
-  <span class="kick rv">Listo</span>
-  <h1 class="t1 rv d1">Gracias. <em>Ya es tuyo.</em></h1>
-  <p class="lead rv d2" data-que>Aquí tienes todo lo que necesitas para empezar hoy.</p>
-
-  <!-- 1 · la app (Tu nuevo precio; El Número quedó retirada) -->
-  <div class="paso-g card rv oculto" data-para="numero obra">
-   <div class="n">1</div>
+<section class="g-hero">
+ <div class="envase">
+  <p class="g-k">Listo</p>
+  <h1 class="h1">Gracias. Ya es tuyo.</h1>
+  <p class="lead lectura" data-que>Aquí tienes todo lo que necesitas para empezar hoy.</p>
+ </div>
+</section>
+<section class="g-pasos">
+ <div class="envase">
+  <!-- 1 · la app (Tu nuevo precio) -->
+  <div class="paso-g paso-app oculto" data-para="numero obra">
    <div>
+    <div class="n">1</div>
     <h2>Entra a la app</h2>
-    <p>En unos minutos te llega un correo para entrar a <b>app.tuclinica.digital</b>. Revisa también spam y promociones. Si en una hora no llegó, escribe aquí tu correo y mándamelo por WhatsApp: te lo activo ese mismo día.</p>
+    <div class="lectura"><p>En unos minutos te llega un correo para entrar a <b>app.tuclinica.digital</b>. Revisa también spam y promociones. Si en una hora no llegó, escribe aquí tu correo y mándamelo por WhatsApp: te lo activo ese mismo día.</p></div>
     <form class="correo" data-correo>
      <input type="email" name="correo" placeholder="tu@correo.com" autocomplete="email" required aria-label="Tu correo">
-     <button class="btn" type="submit"><span>Mandar por WhatsApp</span> <span class="fl">→</span></button>
+     <button class="btn" type="submit">Mandar por WhatsApp</button>
     </form>
-    <p>Tus 5 días de Tu nuevo precio empiezan cuando entras por primera vez.</p>
+    <div class="lectura"><p>Tus 5 días de Tu nuevo precio empiezan cuando entras por primera vez.</p></div>
     <ol class="dias oculto" data-para="obra" aria-label="Tus 5 días en la app">
-     <li><b>Día 1</b><span>Tu sentido y propósito</span></li>
-     <li><b>Día 2</b><span>Tu rueda de la vida</span></li>
-     <li><b>Día 3</b><span>Tu creencia sobre el dinero</span></li>
-     <li><b>Día 4</b><span>Tu visión de empresa</span></li>
-     <li><b>Día 5</b><span>Sellas tu precio nuevo y el valor de tu hora</span></li>
+     <li><b>Día 1</b><span>Tu punto de partida</span></li>
+     <li><b>Día 2</b><span>Tu árbol y el dinero</span></li>
+     <li><b>Día 3</b><span>Cómo te frenas y cómo te empujas</span></li>
+     <li><b>Día 4</b><span>Tu protocolo, escrito por ti</span></li>
+     <li><b>Día 5</b><span>Tu precio nuevo y lo que sueltas</span></li>
     </ol>
    </div>
+   <div class="app-tel" aria-hidden="true">
+    <div class="tel"><div class="pant"><img class="on" data-repo="imgs/app/dia1.webp" alt="" width="780" height="1688"></div></div>
+   </div>
   </div>
-
   <!-- 2 · los libros -->
-  <div class="paso-g card rv">
-   <div class="n" data-n-libros>2</div>
+  <div class="paso-g">
    <div>
+    <div class="n" data-n-libros>2</div>
     <h2 data-titulo-libros>Descarga tus libros</h2>
     <p>En PDF, con su tapa. Guárdalos en tu celular o en tu computadora; son tuyos.</p>
     <div class="descargas">
-     <a class="dl oculto" data-libro="sanadores" data-desc="Sanadores-Libres-Javo-Katz.pdf" href="#" download><img data-img="tapas/sanadores-chica.webp" alt="" width="320" height="452"><div><b>Sanadores Libres</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="lago" data-desc="Lo-que-el-lago-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/lago-chica.webp" alt="" width="320" height="480"><div><b>Lo que el lago te enseña</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="montana" data-desc="Lo-que-la-montana-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/montana-chica.webp" alt="" width="320" height="480"><div><b>Lo que la montaña te enseña</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="viento" data-desc="Lo-que-el-viento-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/viento-chica.webp" alt="" width="320" height="480"><div><b>Lo que el viento te enseña</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="rio" data-desc="Lo-que-el-rio-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/rio-chica.webp" alt="" width="320" height="480"><div><b>Lo que el río te enseña</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="bosque" data-desc="Lo-que-el-bosque-te-ensena-Javo-Katz.pdf" href="#" download><img data-img="tapas/bosque-chica.webp" alt="" width="320" height="480"><div><b>Lo que el bosque te enseña</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="heroe" data-desc="Heroe-descapado-Javo-Katz.pdf" href="#" download><img data-img="tapas/heroe-chica.webp" alt="" width="320" height="491"><div><b>Héroe descapado</b><span>Descargar</span></div></a>
-     <a class="dl oculto" data-libro="libertades" data-desc="Las-7-libertades-fundamentales-Javo-Katz.pdf" href="#" download><img data-img="tapas/libertades-chica.webp" alt="" width="320" height="491"><div><b>Las 7 libertades fundamentales</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="sanadores" data-desc="Sanadores-Libres-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/sanadores-chica.webp" alt="" width="320" height="452"><div><b>Sanadores Libres</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="lago" data-desc="Lo-que-el-lago-te-ensena-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/lago-chica.webp" alt="" width="320" height="480"><div><b>Lo que el lago te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="montana" data-desc="Lo-que-la-montana-te-ensena-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/montana-chica.webp" alt="" width="320" height="480"><div><b>Lo que la montaña te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="viento" data-desc="Lo-que-el-viento-te-ensena-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/viento-chica.webp" alt="" width="320" height="480"><div><b>Lo que el viento te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="rio" data-desc="Lo-que-el-rio-te-ensena-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/rio-chica.webp" alt="" width="320" height="480"><div><b>Lo que el río te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="bosque" data-desc="Lo-que-el-bosque-te-ensena-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/bosque-chica.webp" alt="" width="320" height="480"><div><b>Lo que el bosque te enseña</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="heroe" data-desc="Heroe-descapado-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/heroe-chica.webp" alt="" width="320" height="491"><div><b>Héroe descapado</b><span>Descargar</span></div></a>
+     <a class="dl oculto" data-libro="libertades" data-desc="Las-7-libertades-fundamentales-Javo-Katz.pdf" href="#" download><img data-repo="imgs/tapas/libertades-chica.webp" alt="" width="320" height="491"><div><b>Las 7 libertades fundamentales</b><span>Descargar</span></div></a>
     </div>
-    <div class="botones oculto" data-zip style="margin-top:18px"><a class="btn claro" data-desc="Los-8-libros-Javo-Katz.zip" href="#" download><span>Los 8 juntos, en un archivo · 16 MB</span></a></div>
+    <div class="botones oculto" data-zip><a class="btn claro" data-desc="Los-8-libros-Javo-Katz.zip" href="#" download><span>Los 8 juntos, en un archivo · 16 MB</span></a></div>
    </div>
   </div>
-
   <!-- 3 · la comunidad -->
-  <div class="paso-g card rv">
-   <div class="n" data-n-comunidad>3</div>
+  <div class="paso-g">
    <div>
+    <div class="n" data-n-comunidad>3</div>
     <h2>Súmate a la comunidad</h2>
     <p>Ahí están los profesionales que leen estos libros y hacen el camino. Entra, preséntate y cuéntanos por qué libro empiezas.</p>
-    <div class="botones" style="margin-top:20px"><a class="btn claro" data-link="comunidad" href="#" target="_blank" rel="noopener">Entrar a la comunidad <span class="fl">→</span></a></div>
+    <div class="botones"><a class="btn claro" data-link="comunidad" href="#" target="_blank" rel="noopener">Entrar a la comunidad</a></div>
    </div>
   </div>
-
-  <p class="ayuda rv">¿Algo no se descarga o no te llegó el acceso? <a class="link" data-wa="Hola Javo, ya pagué y necesito ayuda con mi acceso." href="#">Escríbeme por WhatsApp</a>.</p>
+  <p class="ayuda">¿Algo no se descarga o no te llegó el acceso? <a class="link" data-wa="Hola Javo, ya pagué y necesito ayuda con mi acceso." href="#">Escríbeme por WhatsApp</a>.</p>
  </div>
 </section>
 </main>
-
-<footer class="pie"><div class="wrap">
- <div class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
- <nav><a data-link="inicio" href="#">Inicio</a><a data-link="agenda" href="#">Mentoría e instalación</a><a data-link="libros" href="#">Los libros</a><a data-link="recursos" href="#">Recursos</a></nav>
- <p>Javo Katz · Tu Clínica Digital · Bariloche, Patagonia</p>
-</div></footer>
-
-
+<footer class="pie">
+ <div class="envase">
+  <a class="marca" data-link="inicio" href="/inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
+  <nav aria-label="Páginas"><a data-link="inicio" href="#">Inicio</a><a data-link="libros" href="#">Los libros</a><a data-link="camino" href="#">El camino</a><a data-link="recursos" href="#">Para empezar</a><a data-link="agenda" href="#">Mentoría e instalación</a></nav>
+  <p class="firma">Tu Clínica Digital, fundada por Javo Katz en Bariloche, Patagonia.</p>
+ </div>
+</footer>
 <script>
 (function(){
   var C=window.TCD||{}, P=C.precios||{};
@@ -170,7 +196,7 @@
   window.TCD_COMPRA = c ? { value: P[c]||0, currency:'USD', content_name:c } : null;
 })();
 </script>
-<script>/*BASE_JS*/</script>
+<script>/*PAISAJE_JS*/</script>
 <script>
 (function(){ var d=window.TCD_COMPRA; if(!d) return;
   try{ var k='tcd_compra_'+d.content_name; if(sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); }catch(e){}
