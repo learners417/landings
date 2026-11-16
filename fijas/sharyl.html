@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plan de negocio · Sharyll Klatic · Tu Clínica Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  Plan de negocio de Sharyll Klatic · El Punto Ciego
+  v2 · 16 nov 2026 · pasa de GHL (código pegado en el paso /sharyl) a este repo.
+  Cambios contra la v1 de septiembre: Instagram pasa a ser la casa y LinkedIn la red,
+  el llamado es «primera sesión sin costo», el formulario tiene seis preguntas,
+  el sistema muestra qué está listo y qué falta, los 30 días pasan a las fechas reales
+  hasta enero, y se suma la pestaña 12 con las dos formas de seguir.
+-->
+<style>
+:root{
+  --papel:#FAF5EA; --panel:#FFFDF7; --tinta:#1C1A16; --suave:#4A443A;
+  --oro:#B0822E; --oro-tenue:rgba(176,130,46,.26);
+  --rojo:#8C3A2B; --ambar:#9A7B2E; --verde:#3F6B4A; --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--papel);color:var(--tinta);font-family:'Figtree',system-ui,sans-serif;font-size:20px;line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+.barra{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(250,245,234,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--oro-tenue)}
+.barra .fila{max-width:780px;margin:0 auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.rotulo{font-variant:small-caps;letter-spacing:.1em;color:var(--oro);font-weight:600;font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contador{font-variant-numeric:tabular-nums;color:var(--suave);font-weight:600;font-size:17px;white-space:nowrap}
+.linea{height:2px;background:var(--oro-tenue)}
+.linea i{display:block;height:100%;background:var(--oro);width:0;transition:width .35s ease}
+.abrir{font-family:inherit;font-size:17px;font-weight:700;background:var(--tinta);border:1px solid var(--tinta);border-radius:999px;padding:11px 22px;color:var(--papel);cursor:pointer;transition:.2s;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.abrir svg{width:18px;height:18px;stroke:var(--papel);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.abrir:hover{background:#000;border-color:#000}
+.indice .abrir{background:transparent;color:var(--suave);border-color:var(--oro-tenue)}
+.indice .abrir svg{stroke:var(--suave)}
+.indice .abrir:hover{background:transparent;border-color:var(--rojo);color:var(--rojo)}
+.indice .abrir:hover svg{stroke:var(--rojo)}
+.abrir:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.indice{position:fixed;inset:0;z-index:30;background:var(--papel);overflow-y:auto;padding:26px 22px 60px;display:none}
+.indice.abierto{display:block}
+.indice .cerrar{display:flex;justify-content:flex-end;max-width:780px;margin:0 auto 18px}
+.indice ol{max-width:780px;margin:0 auto;list-style:none;counter-reset:i}
+.indice li{counter-increment:i}
+.indice button{width:100%;text-align:left;background:transparent;border:none;cursor:pointer;font-family:inherit;font-size:1.1rem;color:var(--tinta);padding:15px 0;border-bottom:1px solid rgba(176,130,46,.16);display:flex;gap:18px;align-items:baseline;transition:.2s}
+.indice button:hover{color:var(--oro)}
+.indice button::before{content:counter(i);font-variant-numeric:tabular-nums;color:var(--oro);font-weight:600;min-width:2.2ch}
+.indice button[aria-current="true"]{font-weight:700}
+main{max-width:780px;margin:0 auto;padding:118px 22px 160px;position:relative;z-index:1}
+.pag{display:none}
+.pag.activa{display:block;animation:entra .32s ease}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(2.8rem,10vw,4.6rem);line-height:1;letter-spacing:-.025em;margin-bottom:28px;font-variation-settings:'opsz' 120}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(2rem,7vw,3.1rem);line-height:1.06;letter-spacing:-.02em;margin-bottom:30px}
+h2 em,h1 em{font-style:italic;color:var(--oro)}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;line-height:1.25;margin:42px 0 14px}
+p{margin-bottom:20px;max-width:56ch;font-size:1.08rem}
+.grande{font-size:1.28rem;line-height:1.5;color:var(--suave);max-width:34ch}
+b,strong{font-weight:700}
+.cifras{display:grid;gap:2px;margin:32px 0}
+.cifra{padding:24px 0;border-bottom:1px solid rgba(176,130,46,.18);display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cifra:last-child{border-bottom:none}
+.cifra .v{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.3rem,8vw,3.2rem);line-height:1;color:var(--oro);font-variant-numeric:tabular-nums}
+.cifra .e{font-size:1.06rem;color:var(--suave);max-width:26ch;text-align:right;flex:1;min-width:180px}
+.cifra.mal .v{color:var(--rojo)}
+.cifra.bien .v{color:var(--verde)}
+.cita{font-family:'Fraunces',serif;font-size:clamp(1.6rem,5.5vw,2.3rem);line-height:1.28;font-weight:400;margin:36px 0;padding-left:26px;border-left:2px solid var(--oro);max-width:23ch}
+.bloque{background:var(--panel);border:1px solid var(--oro-tenue);border-radius:var(--r);padding:30px 28px;margin:24px 0}
+.bloque > :last-child{margin-bottom:0}
+.bloque .rot{font-variant:small-caps;letter-spacing:.1em;color:var(--oro);font-weight:600;font-size:1.04rem;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.bloque .tit{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:600;line-height:1.2;margin-bottom:14px}
+.bloque.rojo{border-left:3px solid var(--rojo)}
+.bloque.verde{border-left:3px solid var(--verde)}
+.chequeo{list-style:none;margin:24px 0}
+.chequeo li{padding:15px 0 15px 44px;position:relative;border-bottom:1px solid rgba(176,130,46,.16);font-size:1.06rem}
+.chequeo li:last-child{border-bottom:none}
+.chequeo li svg{position:absolute;left:0;top:14px;width:26px;height:26px;stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.chequeo li.si svg{stroke:var(--verde)}
+.chequeo li.no svg{stroke:var(--rojo)}
+.chequeo li.no{color:var(--suave)}
+.simple{list-style:none;margin:24px 0}
+.simple li{padding:18px 0;border-bottom:1px solid rgba(176,130,46,.16);font-size:1.06rem}
+.simple li:last-child{border-bottom:none}
+.simple li b{display:block;font-family:'Fraunces',serif;font-size:1.26rem;font-weight:600;margin-bottom:6px}
+.tabla{width:100%;border-collapse:collapse;margin:26px 0;font-size:1.05rem}
+.tabla th{text-align:left;font-variant:small-caps;letter-spacing:.08em;color:var(--oro);font-weight:600;font-size:1.04rem;padding:12px 14px 12px 0;border-bottom:1px solid var(--oro-tenue)}
+.tabla td{padding:17px 14px 17px 0;border-bottom:1px solid rgba(176,130,46,.14);vertical-align:top}
+.tabla td:first-child{font-weight:600;padding-right:22px}
+.tabla tr:last-child td{border-bottom:none}
+.puerta{background:var(--panel);border:1px solid var(--oro-tenue);border-radius:var(--r);padding:24px 26px;cursor:pointer;transition:.24s;text-align:left;width:100%;font-family:inherit;font-size:inherit;color:inherit;margin-bottom:13px;display:block}
+.puerta:hover{border-color:var(--oro)}
+.puerta:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.puerta .cab{display:flex;align-items:center;gap:16px;justify-content:space-between}
+.puerta .nom{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;line-height:1.25}
+.puerta .mas{color:var(--oro);font-weight:700;font-size:1.5rem;line-height:1;flex:none}
+.puerta .cuerpo{max-height:0;overflow:hidden;transition:max-height .34s ease,margin .34s ease}
+.puerta[aria-expanded="true"] .cuerpo{max-height:760px;margin-top:18px}
+.puerta .cuerpo p{font-size:1.05rem;color:var(--suave);margin-bottom:14px}
+.puerta .cuerpo p:last-child{margin-bottom:0}
+.versus{display:grid;gap:18px;margin:28px 0}
+.lado{border:1px solid var(--oro-tenue);border-radius:var(--r);background:var(--panel);padding:26px}
+.lado .et{font-variant:small-caps;letter-spacing:.1em;font-weight:600;font-size:1.03rem;margin-bottom:10px}
+.lado.a .et{color:var(--rojo)}
+.lado.b .et{color:var(--verde)}
+.lado .tt{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:600;line-height:1.2;margin-bottom:14px}
+.lado ul{list-style:none}
+.lado li{padding:11px 0;border-bottom:1px solid rgba(176,130,46,.14);font-size:1.03rem}
+.lado li:last-child{border-bottom:none}
+.lado p{margin:0;font-size:1.03rem;color:var(--suave)}
+.tramo{display:grid;grid-template-columns:auto 1fr;gap:0 26px;padding:24px 0;border-bottom:1px solid rgba(176,130,46,.16)}
+.tramo:last-child{border-bottom:none}
+.tramo .d{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;color:var(--oro);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tramo .t{font-family:'Fraunces',serif;font-size:1.26rem;font-weight:600;margin-bottom:8px;line-height:1.25}
+.tramo p{font-size:1.03rem;color:var(--suave);margin-bottom:10px}
+.tramo p:last-child{margin-bottom:0}
+.guion{background:var(--panel);border:1px solid var(--oro-tenue);border-left:3px solid var(--verde);border-radius:var(--r);padding:26px 28px;margin:20px 0}
+.guion .cuando{font-variant:small-caps;letter-spacing:.09em;color:var(--oro);font-weight:600;font-size:1.03rem;margin-bottom:14px;display:flex;gap:12px;align-items:center}
+.guion p{font-size:1.07rem;margin-bottom:15px;max-width:48ch}
+.guion p:last-child{margin-bottom:0}
+.nota{background:rgba(176,130,46,.07);border:1px solid var(--oro-tenue);border-radius:var(--r);padding:24px 28px;margin:28px 0}
+.nota p{font-size:1.05rem;margin-bottom:14px}
+.nota p:last-child{margin-bottom:0}
+.adn{list-style:none;margin:26px 0}
+.adn li{display:grid;grid-template-columns:auto 1fr;gap:0 18px;padding:18px 0;border-bottom:1px solid rgba(176,130,46,.16);align-items:start}
+.adn li:last-child{border-bottom:none}
+.adn .punto{width:13px;height:13px;border-radius:50%;margin-top:9px}
+.adn .listo .punto{background:var(--verde)}
+.adn .medio .punto{background:var(--ambar)}
+.adn .falta .punto{background:var(--rojo)}
+.adn .n{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600;margin-bottom:5px;line-height:1.25}
+.adn .q{font-size:1.03rem;color:var(--suave)}
+.leyenda{display:flex;gap:22px;flex-wrap:wrap;margin:24px 0;font-size:1.02rem;color:var(--suave)}
+.leyenda span{display:flex;align-items:center;gap:9px}
+.leyenda i{width:12px;height:12px;border-radius:50%;display:block}
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:20;background:rgba(250,245,234,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--oro-tenue)}
+.nav .fila{max-width:780px;margin:0 auto;padding:15px 22px;display:flex;gap:14px}
+.nav button{flex:1;font-family:inherit;font-size:1.05rem;font-weight:600;border-radius:999px;padding:16px 20px;cursor:pointer;transition:.2s;border:1px solid var(--oro-tenue);background:transparent;color:var(--suave)}
+.nav button:hover:not(:disabled){border-color:var(--oro);color:var(--tinta)}
+.nav button:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.nav .sig{background:var(--tinta);color:var(--papel);border-color:var(--tinta);flex:2}
+.nav button:disabled{opacity:.3;cursor:default}
+@media(min-width:700px){.versus{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){
+  body{font-size:19px}
+  main{padding:108px 18px 150px}
+  .tramo{grid-template-columns:1fr;gap:8px}
+  .cifra .e{text-align:left}
+  .rotulo{max-width:38vw}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ══ checklist tildable ══ */
+.barra-progreso{position:sticky;top:78px;z-index:10;background:var(--panel);border:1px solid var(--oro-tenue);border-radius:var(--r);padding:18px 22px;margin:26px 0 30px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.barra-progreso .cuenta{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;color:var(--oro);font-variant-numeric:tabular-nums;line-height:1}
+.barra-progreso .txt{font-size:1.02rem;color:var(--suave)}
+.barra-progreso .riel{flex:1 1 100%;height:4px;background:rgba(176,130,46,.18);border-radius:99px;overflow:hidden}
+.barra-progreso .riel i{display:block;height:100%;background:var(--verde);width:0;transition:width .3s ease;border-radius:99px}
+.reiniciar{font-family:inherit;font-size:1rem;font-weight:600;background:transparent;border:1px solid var(--oro-tenue);border-radius:999px;padding:7px 15px;color:var(--suave);cursor:pointer;transition:.2s}
+.reiniciar:hover{border-color:var(--rojo);color:var(--rojo)}
+.fase-cab{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:44px 0 6px}
+.fase-cab h3{margin:0}
+.fase-cuenta{font-variant-numeric:tabular-nums;font-weight:600;color:var(--oro);font-size:1.05rem;white-space:nowrap}
+.tareas-check{list-style:none;margin:18px 0}
+.tareas-check li{display:grid;grid-template-columns:auto 1fr;gap:0 18px;align-items:start;padding:18px 0;border-bottom:1px solid rgba(176,130,46,.16);cursor:pointer;transition:.2s}
+.tareas-check li:last-child{border-bottom:none}
+.tareas-check li:hover .caja{border-color:var(--oro)}
+.tareas-check .caja{width:28px;height:28px;border:1.5px solid var(--oro-tenue);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-top:3px;flex:none;transition:.2s}
+.tareas-check .caja svg{width:18px;height:18px;stroke:var(--papel);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:.2s}
+.tareas-check .txt{font-size:1.06rem}
+.tareas-check .txt b{display:block;font-family:'Fraunces',serif;font-size:1.24rem;font-weight:600;margin-bottom:5px;line-height:1.3}
+.tareas-check li.hecho .caja{background:var(--verde);border-color:var(--verde)}
+.tareas-check li.hecho .caja svg{opacity:1}
+.tareas-check li.hecho .txt{color:var(--suave)}
+.tareas-check li.hecho .txt b{text-decoration:line-through;text-decoration-color:var(--verde);text-decoration-thickness:1.5px}
+@media(max-width:560px){.barra-progreso{top:72px;padding:15px 18px}.tareas-check li{gap:0 14px}}
+
+.flujo{display:flex;flex-direction:column;margin:28px 0}
+.flujo .nodo{display:grid;grid-template-columns:auto 1fr;gap:0 20px;align-items:start;padding:18px 0}
+.flujo .nodo .ic{width:46px;height:46px;border:1px solid var(--oro-tenue);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--panel);flex:none}
+.flujo .nodo .ic svg{width:23px;height:23px;stroke:var(--oro);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.flujo .nodo .tt{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;margin-bottom:4px}
+.flujo .nodo p{margin:0;color:var(--suave);font-size:1.04rem}
+.flujo .conector{width:1px;height:20px;background:var(--oro-tenue);margin-left:23px}
+.ficha{border:1px solid var(--oro-tenue);border-radius:var(--r);background:var(--panel);padding:28px 26px;margin:22px 0}
+.ficha .et{font-variant:small-caps;letter-spacing:.1em;font-weight:600;font-size:1.02rem;color:var(--oro);margin-bottom:8px}
+.ficha .tt{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;line-height:1.15;margin-bottom:6px}
+.ficha .pr{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;color:var(--oro);margin-bottom:18px}
+.ficha ul{list-style:none;margin:6px 0 0}
+.ficha li{padding:12px 0 12px 34px;position:relative;border-bottom:1px solid rgba(176,130,46,.14);font-size:1.04rem}
+.ficha li:last-child{border-bottom:none}
+.ficha li svg{position:absolute;left:0;top:14px;width:22px;height:22px;stroke:var(--verde);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ficha.destacada{border:1px solid var(--oro)}
+.ficha .quien{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--oro-tenue);font-size:1.04rem;color:var(--suave)}
+.rama{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.rama .via{border:1px solid var(--oro-tenue);border-radius:var(--r);background:var(--panel);padding:22px}
+.rama .via .et{font-variant:small-caps;letter-spacing:.09em;font-weight:600;font-size:1rem;color:var(--oro);margin-bottom:10px;display:flex;gap:9px;align-items:center}
+.rama .via .et svg{width:20px;height:20px;stroke:var(--oro);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.rama .via p{margin:0;font-size:1.04rem}
+@media(max-width:620px){.rama{grid-template-columns:1fr}}
+.nuevo{display:inline-block;font-variant:small-caps;letter-spacing:.08em;font-size:16px;font-weight:600;color:var(--verde);border:1px solid rgba(63,107,74,.4);border-radius:99px;padding:1px 10px;margin-left:8px;vertical-align:middle}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-persona" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.2 3.6-6.5 8-6.5s8 2.3 8 6.5"/></symbol>
+<symbol id="i-personas" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.8 3.1-5.8 7-5.8s7 2 7 5.8"/><path d="M16.5 5.2a3.5 3.5 0 0 1 0 6.6M18 14.6c2.4.7 4 2.6 4 5.4"/></symbol>
+<symbol id="i-documento" viewBox="0 0 24 24"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8l-5-5Z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.8 5.2 5.2L20 6.6"/></symbol>
+<symbol id="i-cruz" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="i-mensaje" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/></symbol>
+<symbol id="i-micro" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5M9 21.5h6"/></symbol>
+<symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.4 15.4 5.1 5.1"/></symbol>
+<symbol id="i-camara" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="m15.5 11 6-3.2v8.4l-6-3.2z"/></symbol>
+<symbol id="i-embudo" viewBox="0 0 24 24"><path d="M3 4h18l-7 8v7l-4 2v-9L3 4Z"/></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.7-4.7A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.8 9.2c0 3 2.2 5.2 5.2 5.2"/></symbol>
+<symbol id="i-pantalla" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10.5 8.5 4 2.5-4 2.5z"/></symbol>
+<symbol id="i-escalera" viewBox="0 0 24 24"><path d="M3 20h4v-4h5v-4h5V8h4"/><path d="M3 20V9"/></symbol>
+<symbol id="i-flecha" viewBox="0 0 24 24"><path d="M4 12h15M13.5 6.5 20 12l-6.5 5.5"/></symbol>
+<symbol id="i-rama" viewBox="0 0 24 24"><path d="M6 3v6a3 3 0 0 0 3 3h9"/><path d="M6 12v6a3 3 0 0 0 3 3h9"/></symbol>
+</svg>
+
+<header class="barra">
+  <div class="fila">
+    <span class="rotulo" id="rotulo">Plan de negocio</span>
+    <span class="contador" id="contador">1 / 1</span>
+    <button class="abrir" id="btnIndice"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Índice</button>
+  </div>
+  <div class="linea"><i id="progreso"></i></div>
+</header>
+<div class="indice" id="indice">
+  <div class="cerrar"><button class="abrir" id="btnCerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>Cerrar</button></div>
+  <ol id="listaIndice"></ol>
+</div>
+
+<main id="main">
+
+<!-- ══════════ 01 · EL PLAN ══════════ -->
+<section class="pag activa" data-rot="01 · El plan" data-menu="01 · El plan">
+  <p class="grande" style="margin-bottom:18px">Tu <b>Clínica</b> Digital × Sharyll Klatic</p>
+  <h1>Tu plan para vender <em>El Punto Ciego.</em></h1>
+  <p class="grande">Dejas de vender sesiones y empiezas a vender una respuesta.</p>
+
+  <div class="ficha">
+    <div class="et">Tu única oferta</div>
+    <div class="tt">El Punto Ciego</div>
+    <div class="pr">$1.000 · seis semanas</div>
+    <p style="margin:0">Evaluación profunda y devolución escrita, uno a uno. Para el profesional al que sacaron de su puesto de un momento a otro, o sin ninguna explicación.</p>
+  </div>
+
+  <div class="cifras">
+    <div class="cifra bien"><span class="v">3</span><span class="e">ventas antes del 20 de diciembre · tu meta de ahora</span></div>
+    <div class="cifra"><span class="v">10</span><span class="e">ventas en tus primeros 90 días · el número que valida tu oferta</span></div>
+  </div>
+
+  <h3>El recorrido</h3>
+  <div class="flujo">
+    <div class="nodo"><span class="ic"><svg><use href="#i-persona"/></svg></span><div><div class="tt">1 · Quién eres y a quién ayudas</div><p>Pestañas 02 a 04</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-documento"/></svg></span><div><div class="tt">2 · Qué vendes</div><p>Pestañas 05 y 06</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-camara"/></svg></span><div><div class="tt">3 · El día de rodaje</div><p>Pestaña 07 · todos los guiones están ahí</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-embudo"/></svg></span><div><div class="tt">4 · Tus perfiles y tu sistema</div><p>Pestañas 08 y 09 · cómo llegan, cómo agendan y qué está listo</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-micro"/></svg></span><div><div class="tt">5 · Tu primera sesión</div><p>Pestaña 10</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-calendario"/></svg></span><div><div class="tt">6 · Tus próximas semanas</div><p>Pestaña 11 · con fechas, hasta enero</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-escalera"/></svg></span><div><div class="tt">7 · Cómo seguimos</div><p>Pestaña 12 · las dos formas de seguir juntos</p></div></div>
+  </div>
+
+  <h3>Quién hace qué</h3>
+  <div class="versus">
+    <div class="lado"><div class="et" style="color:var(--oro)">Javo</div><ul>
+      <li>Te pongo el criterio de negocio al lado</li>
+      <li>Te reviso los guiones antes de grabar</li>
+      <li>Leo tus números contigo</li>
+      <li>Te entreno la primera sesión</li>
+    </ul></div>
+    <div class="lado"><div class="et" style="color:var(--oro)">Tú</div><ul>
+      <li>Decides oferta, precio y nicho</li>
+      <li>Grabas y publicas</li>
+      <li>Escribes a tu red</li>
+      <li>Das las sesiones y cobras</li>
+    </ul></div>
+  </div>
+
+  <div class="nota">
+    <p><b>Cómo se usa.</b> No lo leas entero. Abre el índice, ve a lo que te toca esta semana, y vuelve.</p>
+    <p>De psicología sabes tú. Lo mío es el negocio. La decisión y la ejecución son tuyas, siempre.</p>
+  </div>
+</section>
+
+<!-- ══════════ 02 · TU HISTORIA ══════════ -->
+<section class="pag" data-rot="02 · Tu historia" data-menu="02 · Tu historia">
+  <h2>Tu <em>historia</em></h2>
+  <p class="grande">Es tu único activo que nadie puede copiar. Y en tu caso vale doble: es lo único que tu código sí te deja mostrar.</p>
+
+  <ul class="simple">
+    <li><b>1 · Dónde estabas</b>Veinte años en el mundo empresarial. Recursos humanos, gerencia, un MBA. Querías ser clínica y no era realista: te habías separado y tu hija dependía de ti. Atendías en paralelo, con cinco pacientes.</li>
+    <li><b>2 · El golpe</b>Enero de 2024. Te avisan con dos días que no sigues. Sin explicación. Exactamente lo que le pasa a la persona a la que ahora le hablas.</li>
+    <li><b>3 · El fondo</b>Dos años duros. Los ahorros se consumieron. Muchas veces se cruzó volver a una empresa — por miedo, no por deseo.</li>
+    <li><b>4 · El hallazgo</b>Una consultante evaluada al empezar, a los dos años y a los siete. Comparaste las tres y el cambio era estructural. Lo repetiste con otros y pasó lo mismo. Ahí dejó de ser una impresión.</li>
+    <li><b>5 · Lo que vuelves a traer</b>La respuesta que a ti nadie te dio, ordenada y por escrito, para el que está donde estuviste tú.</li>
+  </ul>
+
+  <div class="bloque verde">
+    <div class="tit">Por qué esto cierra el círculo</div>
+    <p>Tu nicho no es un nicho que estudiaste. Es tu propio enero de 2024.</p>
+    <p>Y tu propósito viene del mismo lugar: tu mentora te devolvió durante veinte años algo que no podías ver de ti misma. Escribiste que fue ella la que hizo que creyeras en ti.</p>
+    <p><b>Haces con otros exactamente lo que hicieron contigo.</b></p>
+  </div>
+
+  <h3>Tu diferencia · lo que nadie puede copiar</h3>
+  <p>Tienes las dos mitades que casi nadie tiene juntas: veinte años leyendo organizaciones y veinte leyendo psiquismos.</p>
+  <table class="tabla">
+    <tr><th>Contra</th><th>Tu ventaja</th></tr>
+    <tr><td>El psicólogo clínico</td><td>Él escucha el relato del despido. Tú sabes qué pasó en esa empresa, porque tomaste esas decisiones.</td></tr>
+    <tr><td>El coach de carrera</td><td>Él prescribe conducta. Cuando no se sostiene, no tiene con qué ver por qué.</td></tr>
+    <tr><td>Recursos humanos</td><td>Ellos evalúan para decidir sobre la persona. Tú evalúas para devolverle lo que nadie le dijo.</td></tr>
+  </table>
+
+  <div class="nota"><p><b>El límite:</b> tu historia pública son el despido, los dos años y la decisión de seguir. Lo de tu familia y el proceso de herencia es tuyo y no va a ningún lado.</p></div>
+</section>
+
+<!-- ══════════ 03 · A QUIÉN AYUDAS ══════════ -->
+<section class="pag" data-rot="03 · A quién ayudas" data-menu="03 · A quién ayudas">
+  <h2>A quién <em>ayudas</em></h2>
+
+  <div class="ficha">
+    <div class="et">Tu avatar</div>
+    <div class="tt">El profesional al que sacaron sin explicación · y que hoy tiene ingreso</div>
+    <p style="margin:12px 0 0">38 a 49 años. Jefatura o gerencia media. Banca, seguros, consultoría, recursos humanos, salud privada, retail corporativo. Cualquier país de habla hispana, atendido en línea.</p>
+  </div>
+
+  <div class="bloque">
+    <div class="tit">La segunda mitad del avatar es la que decide el negocio</div>
+    <p>No alcanza con que le haya pasado. Tiene que poder invertir mil dólares sin que eso sea un problema.</p>
+    <p>Y eso no lo define su historia: lo define el momento en que te encuentra.</p>
+  </div>
+
+  <h3>Los tres momentos · y qué tiene cada uno</h3>
+  <table class="tabla">
+    <tr><th>Momento</th><th>De dónde sale el dinero</th><th>Su urgencia</th></tr>
+    <tr><td>Volvió a trabajar y ya ve las mismas señales</td><td>Sueldo. Sin sobresaltos.</td><td>“No quiero perder este también.” La más fuerte de las tres.</td></tr>
+    <tr><td>Sigue adentro y lo ve venir</td><td>Sueldo.</td><td>Quiere entender antes de que pase.</td></tr>
+    <tr><td>Salió con indemnización cobrada</td><td>La liquidación, recién acreditada.</td><td>La pregunta en su punto más alto.</td></tr>
+  </table>
+
+  <div class="bloque verde">
+    <div class="tit">El mejor de los tres es el que ya se reinsertó.</div>
+    <p>Tiene sueldo, no tiene urgencia de caja, y acaba de confirmar lo peor: que se repite. Ese es el que compra sin discutir el precio, porque lo que está en juego es el puesto que tiene hoy.</p>
+  </div>
+
+  <div class="bloque rojo">
+    <div class="tit">Y a quién no le hablas, aunque le duela igual</div>
+    <p>Al que está sin ingreso y sin liquidación. Le pasó lo mismo, sufre lo mismo, y no puede invertir mil dólares — y si los invierte, lo hace desde un lugar que después complica el proceso.</p>
+    <p>Para él está tu contenido, que le sirve igual. No tu programa.</p>
+  </div>
+
+  <div class="versus">
+    <div class="lado b"><div class="et">Sí</div><ul>
+      <li>Tiene sueldo o liquidación cobrada</li>
+      <li>No es la primera vez, o lo ve venir</li>
+      <li>Ya intentó algo antes</li>
+      <li>Puede sostener seis semanas</li>
+    </ul></div>
+    <div class="lado a"><div class="et">No</div><ul>
+      <li>Sin ingreso y sin liquidación</li>
+      <li>Busca ayuda para conseguir trabajo rápido</li>
+      <li>Quiere que su empresa lo cubra</li>
+      <li>Tiene un proceso legal activo</li>
+    </ul></div>
+  </div>
+
+  <p><b>Lo que no vendes, aunque te lo pidan:</b> armar el currículum, preparar entrevistas, buscar trabajo. Eso lo hace un coach de carrera. Tú contestas por qué se repite.</p>
+
+  <h3>El filtro de nivel · cómo se hace sin decirlo</h3>
+  <p>No se filtra pidiendo un cargo ni diciendo “solo para gerentes”. Se filtra nombrando escenas que solo existen en ese nivel.</p>
+  <p>El que las vive se reconoce en la primera línea. El que no las vive no entiende de qué hablas y sigue de largo — que es exactamente lo que buscas.</p>
+  <div class="versus">
+    <div class="lado b"><div class="et">Escenas que filtran solo</div><ul>
+      <li>El comité al que dejaron de invitarte</li>
+      <li>Un reporte tuyo que ahora pasa por otro</li>
+      <li>La evaluación que decía que todo estaba bien</li>
+      <li>El presupuesto de tu área aprobado sin ti</li>
+      <li>El uno a uno con tu jefe, cada vez más corto</li>
+      <li>Alguien de tu nivel que ahora es tu jefe</li>
+    </ul></div>
+    <div class="lado a"><div class="et">Lo que atrae a cualquiera</div><ul>
+      <li>“Te despidieron y la estás pasando mal”</li>
+      <li>“Buscar trabajo es agotador”</li>
+      <li>“Mereces un lugar donde te valoren”</li>
+      <li>“No estás sola en esto”</li>
+    </ul></div>
+  </div>
+  <p><b>Cada pieza tiene que llevar al menos una escena de la columna izquierda.</b> Esa es toda la técnica. Ni una palabra sobre dinero, ni una sobre nivel jerárquico. Las escenas hacen el trabajo solas.</p>
+
+  <div class="nota">
+    <p><b>Una cosa a resolver antes de abrir a toda la región.</b> El MCMI-IV y las pruebas de tu batería se pueden administrar a distancia con el encuadre adecuado. El Rorschach R-PAS® es otra cosa: su administración estándar es presencial.</p>
+    <p>Así que hay una decisión tuya: o defines un protocolo remoto que puedas sostener, o el proceso a distancia se entrega sin R-PAS y eso se dice de frente en la página.</p>
+    <p>Esto lo decides tú, y decide qué prometes. Ninguna de las dos opciones baja el precio.</p>
+  </div>
+</section>
+
+<!-- ══════════ 04 · POR QUÉ COMPRAN ══════════ -->
+<section class="pag" data-rot="04 · Por qué compran" data-menu="04 · Por qué compran">
+  <h2>Por qué <em>te compran</em></h2>
+  <p class="cita">No compra evaluación psicológica. Compra dejar de no saber por qué le pasó.</p>
+
+  <h3>Dónde está y a dónde quiere llegar</h3>
+  <ul class="simple">
+    <li><b>Hoy</b>Sabe que es bueno en lo suyo y no entiende qué pasó. A los meses ya no dice “me pasó esto”: dice “yo soy así”. Y mientras tanto el cuerpo avisa, la casa se tensa y el currículum sigue sin mandarse.</li>
+    <li><b>Qué lo traba</b>Cree que necesita conseguir trabajo, porque es lo único que le ofrecieron. Nadie le devolvió nunca qué de su propio funcionamiento produjo esa salida.</li>
+    <li><b>Qué compra</b>La respuesta por escrito, sostenida con datos, y un plan de qué trabajar.</li>
+  </ul>
+
+  <div class="bloque">
+    <div class="tit">Dónde termina tu oferta</div>
+    <p>El Punto Ciego entrega la respuesta y el mapa. No el viaje.</p>
+    <p>Que no le vuelva a pasar depende del trabajo que venga después. Decirlo de frente te sube — es lo que ningún coach dice.</p>
+  </div>
+
+  <h3>Lo que le cuesta seguir así</h3>
+  <ul class="chequeo">
+    <li class="no"><svg><use href="#i-cruz"/></svg>Una pregunta sin respuesta que vuelve todas las noches</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>El cuerpo avisando: sueño, tensión, cosas que aparecen de golpe</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>Una pareja que empieza a pagar la irritabilidad</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>La vergüenza que frena la búsqueda y alarga la situación</li>
+  </ul>
+
+  <div class="nota">
+    <p><b>La cuenta que hace él solo.</b> Si ganaba cuatro o cinco mil al mes y lleva cuatro meses sin reinsertarse, ya dejó de ganar veinte mil.</p>
+    <p>Tú no dices esto. Le preguntas cuánto ganaba y cuántos meses lleva. La cuenta la hace él.</p>
+  </div>
+
+  <h3>La regla de las piezas · dónde se apunta</h3>
+  <div class="versus">
+    <div class="lado a"><div class="et">Si le hablas al dolor</div><div class="tt">“¿Te sacaron y estás mal?”</div><ul>
+      <li>Llega el que está sufriendo</li>
+      <li>Muchos comentarios, ninguna venta</li>
+      <li>Y llamadas que te desgastan</li>
+    </ul></div>
+    <div class="lado b"><div class="et">Si le hablas al obstáculo</div><div class="tt">“No mandes otro currículum hasta saber esto”</div><ul>
+      <li>Llega el que ya está intentando resolverlo</li>
+      <li>Menos comentarios, mejores</li>
+      <li>Y sesiones con personas que compran</li>
+    </ul></div>
+  </div>
+
+  <div class="bloque">
+    <div class="tit">El obstáculo siempre es una conducta. Nunca tu diagnóstico.</div>
+    <p>Lo que la persona está haciendo para resolverlo y no le funciona: mandar currículums a ciegas, contratar un coach que le arme el pitch, hablar del despido en terapia durante meses, aceptar el primer puesto que aparezca.</p>
+    <p>Eso es un obstáculo. “Tiene baja autoestima” es tu lectura clínica, y en un reel ofende en vez de enganchar.</p>
+  </div>
+
+  <div class="bloque">
+    <div class="tit">La forma del gancho, siempre la misma</div>
+    <p>Una advertencia sobre algo que ya está haciendo. Deja de hacer X. No hagas X hasta saber esto. Si haces X, pasa Y.</p>
+    <p>Y después el vacío: el reel explica por qué eso no funciona, y no dice qué sí. El qué sí está en la clase.</p>
+  </div>
+
+  <h3>Su idioma literal</h3>
+  <ul class="simple">
+    <li>“Nunca me dijeron que hacía mal mi trabajo.”</li>
+    <li>“Ya no estás en mi radar. Sigue trabajando y te avisamos.”</li>
+    <li>“Me sacaron y hasta hoy no sé qué pasó.”</li>
+    <li>“Es la segunda vez que me pasa lo mismo.”</li>
+    <li>“Sé que soy bueno en lo mío. Entonces no entiendo.”</li>
+    <li>“Fui a terapia y hablamos, pero no quedó en nada.”</li>
+  </ul>
+</section>
+
+<!-- ══════════ 05 · TU OFERTA ══════════ -->
+<section class="pag" data-rot="05 · Tu oferta" data-menu="05 · Tu oferta">
+  <h2>Tu oferta. <em>Una sola.</em></h2>
+
+  <div class="ficha">
+    <div class="et">Tu oferta</div>
+    <div class="tt">El Punto Ciego</div>
+    <div class="pr">$1.000 · o dos pagos de $550</div>
+    <p style="margin:0"><b>No te sacaron por lo que hiciste. Te sacaron por algo que no viste.</b></p>
+  </div>
+  <p>El nombre y la promesa son la misma frase. Por eso no hay que explicar qué es.</p>
+
+  <h3>Las seis semanas</h3>
+  <table class="tabla">
+    <tr><th>Semana</th><th>Qué pasa</th></tr>
+    <tr><td>1</td><td><b>Mapeo.</b> Dos encuentros. Historia clínica, autobiografía, relato escrito, entrevista de apego.</td></tr>
+    <tr><td>2 y 3</td><td><b>Medición.</b> Rorschach R-PAS®, MCMI-IV y pruebas gráficas, aplicadas y codificadas.</td></tr>
+    <tr><td>4</td><td><b>Formulación.</b> Trabajo tuyo, sin sesión.</td></tr>
+    <tr><td>5</td><td><b>Devolución.</b> Sesión estructurada, con el informe en la mano.</td></tr>
+    <tr><td>6</td><td><b>Plan.</b> Qué se trabaja, en qué orden y qué no.</td></tr>
+  </table>
+
+  <div class="nota"><p><b>Pendiente de decidir:</b> en la sesión del 22 de septiembre dijiste que podría ser en cuatro semanas. Tu página dice seis. Si lo cambias, se cambia en los dos lados el mismo día.</p></div>
+
+  <h3>Qué se lleva</h3>
+  <ul class="chequeo">
+    <li class="si"><svg><use href="#i-check"/></svg>El informe completo de formulación, escrito</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Los perfiles de los instrumentos, explicados</li>
+    <li class="si"><svg><use href="#i-check"/></svg>El plan de trabajo, ejecutable por cualquier profesional</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Diez preguntas con número al empezar y al terminar, comparadas</li>
+  </ul>
+
+  <h3>Tu promesa, en dos capas</h3>
+  <table class="tabla">
+    <tr><td>Contractual</td><td>Sales con tu formulación por escrito y con un plan. Verificable y garantizable.</td></tr>
+    <tr><td>Emocional</td><td>“Dejas de buscar en ti la razón que nadie te dio.” Es la que lo hace escribirte.</td></tr>
+    <tr><td>Fuera de la promesa</td><td>Conseguir trabajo y que no se repita: eso depende del trabajo que venga después.</td></tr>
+  </table>
+
+  <div class="guion">
+    <div class="cuando">Tu compromiso, en vez de una garantía</div>
+    <p>“No te prometo un resultado clínico: mi colegiatura no me lo permite y además sería mentira. Lo que sí te garantizo es que sales con tu formulación por escrito y con un plan. Y si el proceso no me permite llegar a una hipótesis sostenida, te lo digo y no seguimos.”</p>
+  </div>
+
+  <div class="bloque">
+    <div class="tit">Por qué filtras antes de la primera sesión</div>
+    <p>Cada proceso son veinte horas de trabajo tuyo: aplicación, codificación, integración e informe. No es un servicio que se pueda dar en serie, y eso es justamente lo que lo hace valer lo que vale.</p>
+    <p>La primera sesión es sin costo, y para llegar a ella hay que contestar seis preguntas. Así tu agenda se llena con personas que pueden empezar.</p>
+  </div>
+
+  <h3>Por qué alguien acepta un precio</h3>
+  <div class="versus">
+    <div class="lado b"><div class="et">Sube con</div><ul><li>El valor de lo que promete</li><li>La certeza de que va a pasar</li></ul></div>
+    <div class="lado a"><div class="et">Baja con</div><ul><li>El tiempo que tarda</li><li>El esfuerzo que exige</li></ul></div>
+  </div>
+  <p>Por eso el precio no se sube subiendo el número: se sube la certeza. Los instrumentos, el informe, la medición.</p>
+
+  <div class="bloque verde">
+    <div class="tit">Cuándo sube a $2.000</div>
+    <ul class="chequeo" style="margin:6px 0 0">
+      <li class="si"><svg><use href="#i-check"/></svg>Cinco vendidos a mil, sin haber bajado el número</li>
+      <li class="si"><svg><use href="#i-check"/></svg>Tres terminados de punta a punta</li>
+      <li class="si"><svg><use href="#i-check"/></svg>La clase publicada y el circuito funcionando</li>
+    </ul>
+  </div>
+
+  <p><b>Tu consultorio, aparte.</b> La terapia sigue igual. Dos reglas nuevas: la agenda se congela en veintiséis y quien entre desde ahora entra a S/ 250.</p>
+</section>
+
+<!-- ══════════ 06 · TU MÉTODO ══════════ -->
+<section class="pag" data-rot="06 · Tu método" data-menu="06 · Tu método">
+  <h2>Tu <em>método</em></h2>
+  <ul class="simple">
+    <li><b>1 · Mapeo</b>Se ordena la historia completa, no solo el último episodio.</li>
+    <li><b>2 · Medición</b>Aparece lo que no puede decir de sí mismo. El paso que nadie da.</li>
+    <li><b>3 · Formulación</b>Historia y datos en una sola hipótesis: cuál es el patrón, de dónde viene, cómo lo reproduce.</li>
+    <li><b>4 · Devolución</b>Recibe la respuesta, sustentada y por escrito.</li>
+    <li><b>5 · Plan</b>Qué se trabaja, en qué orden y qué no.</li>
+  </ul>
+
+  <h3>Por qué funciona distinto a lo que ya probó</h3>
+  <table class="tabla">
+    <tr><th>Lo que vivió</th><th>Lo que hace El Punto Ciego</th></tr>
+    <tr><td>Terapia donde habló y no quedó en nada</td><td>Una hipótesis escrita, sostenida con datos</td></tr>
+    <tr><td>Coaching que prescribe conducta</td><td>Primero el patrón, después la conducta</td></tr>
+    <tr><td>Su propia lectura de lo que pasó</td><td>Datos que no dependen de cómo se cuenta a sí mismo</td></tr>
+  </table>
+
+  <div class="bloque">
+    <div class="tit">La medición</div>
+    <p>Diez preguntas con número en el primer encuentro: cuántas noches vuelve el tema, del uno al diez cuánto le afecta el sueño, la pareja y la búsqueda, cuánta claridad tiene.</p>
+    <p>Las mismas diez en la semana seis, puestas una al lado de la otra en la devolución.</p>
+    <p><b>Al final no le dices que cambió. Se lo muestras.</b></p>
+  </div>
+
+  <div class="nota">
+    <p>El Modelo ACTIVA® es tu marco y se nombra una vez en la clase y una en tu perfil. Nada del plan depende de eso.</p>
+    <p>Y en el contenido no explicas la codificación ni los índices. Eres una aerolínea: nadie pregunta cómo funcionan las turbinas.</p>
+  </div>
+</section>
+
+<!-- ══════════ 07 · EL DÍA DE RODAJE ══════════ -->
+<section class="pag" data-rot="07 · El día de rodaje" data-menu="07 · El día de rodaje">
+  <h2>El <em>rodaje</em></h2>
+  <p class="grande">Todo lo que se graba en tu negocio está en esta pestaña.</p>
+
+  <div class="nota">
+    <p><b>Lo que cambia con Instagram como casa.</b> Las piezas son las mismas. Solo cambia la última línea según la red:</p>
+    <p><b>Instagram:</b> “Comenta PUNTO CIEGO o escríbeme por privado y te paso la clase.”<br><b>LinkedIn:</b> “Escríbeme PUNTO CIEGO por privado y te paso la clase.”</p>
+    <p>Si ya grabaste con el cierre de LinkedIn, no se regraba: el cierre de Instagram va escrito en la descripción.</p>
+  </div>
+
+  <div class="cifras">
+    <div class="cifra"><span class="v">12</span><span class="e">archivos en total</span></div>
+    <div class="cifra"><span class="v">28</span><span class="e">minutos de grabación real</span></div>
+  </div>
+
+  <h3>El orden</h3>
+  <ul class="simple">
+    <li><b>1 · La clase · 15 min</b>Primero, con la cabeza fresca. Horizontal. Va en YouTube como enlace no listado y se ve en tu página.</li>
+    <li><b>2 · Los tres fijados · 4 min</b>Vertical. Uno tras otro.</li>
+    <li><b>3 · Los siete reels y el video de antes de la sesión · 11 min</b>Vertical. Siete tomas de cincuenta segundos más una de dos minutos.</li>
+    <li><b>4 · Los carruseles</b>No se graban. Se escriben otro día.</li>
+  </ul>
+
+  <h3>La cámara</h3>
+  <ul class="chequeo">
+    <li class="si"><svg><use href="#i-check"/></svg>A la altura de tus ojos. Nunca por debajo</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Luz de ventana de frente, nunca de espaldas</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Si usas una guía escrita, también a la altura de los ojos, pegada al lado de la cámara</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Cuarto sin eco, o auriculares con micrófono</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Los reels, fuera del escritorio: preparándote un café, en otro ambiente. El escritorio queda para la clase</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>El teléfono apoyado en la mesa mirando hacia arriba</li>
+  </ul>
+
+  <h3>La lista de tomas</h3>
+  <div class="barra-progreso">
+    <span class="cuenta"><span>0</span> / <span>12</span></span>
+    <span class="txt">tomas hechas</span>
+    <button class="reiniciar" type="button">Reiniciar</button>
+    <span class="riel"><i></i></span>
+  </div>
+  <div class="fase-cab"><h3>Horizontal</h3><span class="fase-cuenta" id="c-hor">0 de 1</span></div>
+  <ul class="tareas-check" data-cuenta="c-hor">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>La clase · 15 minutos</b>El guion completo está más abajo, en esta misma pestaña.</span></li>
+  </ul>
+  <div class="fase-cab"><h3>Vertical · fijados</h3><span class="fase-cuenta" id="c-fij">0 de 3</span></div>
+  <ul class="tareas-check" data-cuenta="c-fij">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>F1 · Quién soy</b>70 segundos, con enero de 2024 adentro.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>F2 · Por qué no te explicaron</b>70 segundos. El que la hace quedarse.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>F3 · Cómo se averigua</b>80 segundos. Los cinco pasos.</span></li>
+  </ul>
+  <div class="fase-cab"><h3>Vertical · los siete reels</h3><span class="fase-cuenta" id="c-ree">0 de 8</span></div>
+  <ul class="tareas-check" data-cuenta="c-ree">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R1 · El currículum</b>“No mandes otro currículum hasta que sepas por qué te sacaron del anterior.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R2 · Trabajar el doble</b>“Trabajar el doble para que no vuelva a pasar es lo que hace que vuelva a pasar.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R3 · Revisar señales todo el día</b>“Revisar cada reunión buscando señales no es ser precavido.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R4 · La evaluación que decía que todo bien</b>“Tu última evaluación decía que estabas bien. Y aun así te sacaron.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R5 · La terapia que no devuelve</b>“Hablar del despido todas las semanas no te va a decir por qué pasó.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R6 · Lo que un coach no puede darte</b>“Un coach te puede corregir la entrevista. No te puede decir por qué te sacaron.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>R7 · La invitación</b>“Te acompaño a entender por qué te despidieron, para que no te vuelva a pasar.”</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>El video de antes de la sesión · 2 minutos</b>Va en tu página de preparación. El guion está en la pestaña 09.</span></li>
+  </ul>
+
+  <h3>Los guiones</h3>
+  <p>Todo lo que se dice, escrito. Se lee dos veces y se dice con tus palabras.</p>
+  <div class="bloque">
+    <div class="tit">La estructura de las piezas cortas</div>
+    <p><b>1 · El gancho.</b> Lo entiende cualquiera. Aquí NO se nombra al avatar.</p>
+    <p><b>2 · El cuerpo.</b> Abre el problema y lo hace más grande. No lo resuelve.</p>
+    <p><b>3 · El giro, una línea.</b> Recién aquí aparece el avatar.</p>
+    <p><b>4 · La palabra.</b> PUNTO CIEGO, con el cierre de cada red.</p>
+  </div>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">A · La clase de 15 minutos</span><span class="mas">+</span></div><div class="cuerpo">
+    <p><b>Por qué te sacaron sin explicarte, y por qué se repite.</b></p>
+    <p><b>Minuto 0 a 1 · la apertura.</b> Si te sacaron de un puesto y hasta hoy no sabes por qué —o si volviste a trabajar y ya estás viendo las mismas señales— quédate quince minutos. Te voy a mostrar lo que aprendí después de veinte años sentada de los dos lados del escritorio: en las reuniones donde se toman esas decisiones, y después en el consultorio, escuchando a las personas que las reciben. Vas a entender tres cosas. Por qué casi nunca te explican. Qué te pasa en los meses siguientes, aunque no lo notes. Y por qué, si no se mira, esto se repite en el próximo trabajo.</p>
+    <p><b>Bloque 1 · La frase · 2 minutos.</b> Hay una frase que escuché cientos de veces, siempre con las mismas palabras: “nunca me dijeron que hacía mal mi trabajo”. La dice alguien que sabe que es bueno en lo suyo, y justamente por eso no entiende. Lo que rompe no es perder el puesto. Perder un puesto se procesa. Lo que no se procesa es la falta de explicación, porque la mente no tolera un vacío. Lo llena sola. Y lo llena con lo peor que tiene disponible, que es la autoacusación.</p>
+    <p><b>Bloque 2 · Qué pasa del otro lado · 3 minutos.</b> Cuando una organización decide sacar a alguien, casi nunca se lo explica. Y no es por maldad. Son tres razones muy concretas. Legales recomienda no fundamentar, porque todo fundamento puede volver en un juicio. El jefe directo evita el conflicto. Y muchas de estas decisiones no se toman por el desempeño de la persona: se toman por presupuesto, por reestructuración, por una alianza de poder que se movió. El silencio no es una evaluación tuya. Es un procedimiento.</p>
+    <p><b>Bloque 3 · Los tres relojes · 3 minutos.</b> El del cuerpo: lo que no se elabora se somatiza. El del vínculo: la irritabilidad y el encierro desgastan la casa. Y el de la empleabilidad, el más silencioso: la vergüenza hace posponer el currículum, no escribir al contacto, no contestar el mensaje. Los tres corren mientras uno espera que se acomode solo.</p>
+    <p><b>Bloque 4 · Cuándo cambia el problema · 2 minutos.</b> Alrededor de los seis meses, la persona pasa de “me pasó esto” a “yo soy así”. Una describe un hecho, la otra una identidad. Cuando alguien llega a la segunda, lo que hay que trabajar ya no es el despido: es la conclusión que sacó, y que viaja con la persona.</p>
+    <p><b>Bloque 5 · Qué hace falta · 3 minutos.</b> La terapia que escucha hace falta, y no alcanza. El coaching de carrera hace falta, y tampoco alcanza. Lo que hace falta es una formulación: se ordena la historia completa, se busca información que no dependa de cómo la persona se cuenta a sí misma, se integra todo en una sola hipótesis y se devuelve por escrito.</p>
+    <p><b>Minuto 12 a 15 · el cierre.</b> Eso es lo que hago en un proceso de seis semanas que se llama El Punto Ciego. Te llevas un informe escrito, no una impresión. Si te reconociste en lo que conté, agenda tu primera sesión sin costo en esta misma página.</p>
+  </div></button>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">B · Los tres fijados</span><span class="mas">+</span></div><div class="cuerpo">
+    <p><b>F1 · Quién soy · 70 segundos.</b> Gancho: Ayudo a ejecutivos a entender por qué los sacaron, cuando nadie se lo explicó. — En enero de 2024 me avisaron con dos días que no seguía en la institución donde había trabajado cuatro años. No me lo explicaron. Y aunque llevaba veinte años en el mundo corporativo y sabía perfectamente cómo se toman esas decisiones, igual me pasó lo que le pasa a todo el mundo: empecé a buscar en mí la razón que nadie me había dado. Soy Sharyll Klatic, psicóloga clínica y organizacional. Hoy trabajo exactamente con eso. Si es tu caso, escríbeme PUNTO CIEGO y te paso una clase de quince minutos donde lo explico completo.</p>
+    <p><b>F2 · Por qué no te explicaron · 70 segundos.</b> Gancho: Estuve en las reuniones donde se decide a quién sacar. Te cuento por qué nunca te lo explican. — Legales recomienda no fundamentar. El jefe directo evita la conversación. Y muchas de esas decisiones ni siquiera se toman por el desempeño de la persona. Así que el silencio no es una evaluación tuya. Es un procedimiento. El problema es que quien lo recibe no lo sabe, y lo interpreta como un veredicto. Escríbeme PUNTO CIEGO y te paso la clase.</p>
+    <p><b>F3 · Cómo se averigua · 80 segundos.</b> Gancho: Cómo se averigua por qué te sacaron, cuando nadie te lo dijo. — Son cinco pasos y lleva seis semanas: mapeo, medición, formulación, devolución y plan. Eso es lo que convierte una pregunta que vuelve todas las noches en algo que se puede mirar. Escríbeme PUNTO CIEGO y te paso la clase completa.</p>
+  </div></button>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">C · Los siete reels</span><span class="mas">+</span></div><div class="cuerpo">
+    <p><b>R1 · El currículum.</b> No mandes otro currículum hasta que sepas por qué te sacaron del anterior. — En la mayoría de los casos no te lo explicaron, y la mente llena ese vacío con autoacusación. Con esa lectura adentro se entra a la entrevista defendiéndose de algo que nadie le reprochó. Giro: si estás mandando currículums sin saber qué pasó en el último trabajo, estás llevando el mismo problema al siguiente.</p>
+    <p><b>R2 · Trabajar el doble.</b> Trabajar el doble para que no vuelva a pasar es lo que hace que vuelva a pasar. — Dice sí a todo, toma la carga que nadie quiere, deja de preguntar para no molestar. Funciona unos meses, hasta que rinde peor por agotamiento o dejan de verlo como alguien con criterio propio. Giro: si volviste a trabajar y te estás sobreexigiendo para asegurar el puesto, estás resolviendo el problema equivocado.</p>
+    <p><b>R3 · Revisar señales todo el día.</b> Revisar cada reunión buscando señales no es ser precavido. Es lo que queda cuando nadie te explicó nada. — Un comité al que no la invitaron, un uno a uno que se acortó, un reporte al que le escribieron por encima. Esa alerta desgasta y no se puede sostener dos años. Giro: si volviste a trabajar y todos los días revisas señales, el problema no es este trabajo.</p>
+    <p><b>R4 · La evaluación que decía que todo bien.</b> Tu última evaluación de desempeño decía que estabas bien. Y aun así te sacaron. — La evaluación mide si cumpliste tus objetivos. Las decisiones sobre las personas se toman con otra información, que no está en ningún formulario. Giro: si tu última evaluación era buena y aun así te sacaron, ahí hay algo que no estaba en el formulario.</p>
+    <p><b>R5 · La terapia que no devuelve.</b> Hablar del despido todas las semanas no te va a decir por qué pasó. — Contarlo ordena el relato, no lo explica. Nadie es buen narrador de su propio patrón. Giro: si llevas meses hablando de lo mismo y todavía no tienes una respuesta que puedas explicar, no te falta tiempo.</p>
+    <p><b>R6 · Lo que un coach no puede darte.</b> Un coach te puede corregir la entrevista. No te puede decir por qué te sacaron. — El coaching trabaja sobre lo que haces. No puede mirar qué hay debajo de la conducta. Giro: si ya te ordenaron la presentación y sigues repitiendo el patrón, ahí es donde empieza el otro trabajo.</p>
+    <p><b>R7 · La invitación · una vez por mes.</b> Te acompaño a entender por qué te despidieron, para que no te vuelva a pasar. — En seis semanas, con una respuesta escrita en la mano: la historia completa, dos semanas de evaluación con instrumentos, y una devolución con el patrón, de dónde viene y cómo se activó, más un plan. Giro: es para profesionales a los que sacaron sin una explicación y que ya vieron que no fue la primera vez.</p>
+  </div></button>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">D · Los dos carruseles · no se graban</span><span class="mas">+</span></div><div class="cuerpo">
+    <p><b>C1 · Ocho placas.</b> 1 · No mandes otro currículum hasta saber esto. 2 · En la mayoría de los casos, cuando sacan a alguien no se lo explican. 3 · Legales recomienda no fundamentar. El jefe evita la conversación. 4 · Hasta ahí es un procedimiento. 5 · El problema empieza cuando la mente llena ese vacío sola. 6 · Y lo llena con la peor explicación disponible. 7 · Con esa lectura adentro se entra a la próxima entrevista. Y a la siguiente. 8 · Comenta PUNTO CIEGO y te paso una clase de quince minutos.</p>
+    <p><b>C2 · Siete placas.</b> 1 · Trabajar el doble para que no vuelva a pasar es lo que hace que vuelva a pasar. 2 · Entras al puesto nuevo y te propones que esta vez no. 3 · Dices sí a todo. Tomas la carga que nadie quiere. Dejas de preguntar para no molestar. 4 · Y funciona unos meses. 5 · Hasta que rindes peor por agotamiento, o dejan de verte como alguien con criterio propio. 6 · Ahí vuelven las señales que ya conoces. Y duele más, porque hiciste todo lo contrario. 7 · Comenta PUNTO CIEGO y te paso la clase.</p>
+  </div></button>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">E · La pieza de tu historia · se escribe</span><span class="mas">+</span></div><div class="cuerpo">
+    <p>En enero de 2024 me avisaron con dos días que no seguía en la institución donde había trabajado cuatro años.</p>
+    <p>No me lo explicaron. Y aunque llevaba veinte años en el mundo corporativo y sabía cómo se toman esas decisiones, igual empecé a buscar en mí la razón que nadie me había dado.</p>
+    <p>Vinieron dos años muy duros. Y muchas veces pensé en volver a una empresa, no porque lo quisiera, sino por miedo.</p>
+    <p>Lo cuento porque es exactamente el trabajo que hago hoy. Escuché esa misma frase cientos de veces en consulta: “nunca me dijeron que hacía mal mi trabajo”. Y sé, desde los dos lados del escritorio, que ese silencio casi nunca es un veredicto sobre la persona.</p>
+    <p>El problema es lo que hace la mente con ese vacío.</p>
+    <p>Grabé una clase de quince minutos sobre por qué duele tanto, qué pasa en los meses siguientes y qué hace falta para que no se repita. Escríbeme PUNTO CIEGO y te la paso.</p>
+  </div></button>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">F · Los mensajes a tu red</span><span class="mas">+</span></div><div class="cuerpo">
+    <p><b>Mensaje directo · dos por día.</b> Hola [nombre]. Grabé una clase corta sobre algo que veo hace veinte años en consulta y que me pasó a mí también: qué le sucede a un profesional cuando lo sacan de un puesto sin explicarle por qué. Son quince minutos y se puede ver desde cualquier lado. Si te interesa, o se te ocurre alguien a quien le pueda servir, te paso el enlace.</p>
+    <p><b>Grupos de WhatsApp.</b> Hola a todos. Grabé una clase de quince minutos sobre qué le pasa a un profesional al que sacan de su puesto sin una explicación, y por qué muchas veces se repite en el trabajo siguiente. Si a alguien le interesa, me escribe por privado y se la paso.</p>
+  </div></button>
+
+  <h3>Los tres carriles · qué se dice y qué no</h3>
+  <div class="versus">
+    <div class="lado a"><div class="et">Tu colegiatura · nunca</div><p>Testimonios de consultantes. Casos, ni desidentificados. Promesas de resultado clínico.</p></div>
+    <div class="lado b"><div class="et">Tu colegiatura · siempre</div><p>Tu historia. Tu criterio. Tus credenciales. Mecanismos generales. Lo que tú haces, nunca lo que le va a pasar a él.</p></div>
+  </div>
+  <div class="nota"><p><b>Para cuando haya anuncios.</b> Nada en segunda persona sobre su estado: “te sacaron”, “no duermes”. En pauta se dice en tercera persona: “hay profesionales a los que sacan sin explicación”. Mismo mensaje, sin fricción con la plataforma.</p></div>
+</section>
+
+<!-- ══════════ 08 · TUS PERFILES ══════════ -->
+<section class="pag" data-rot="08 · Tus perfiles" data-menu="08 · Tus perfiles">
+  <h2>Tus <em>perfiles</em></h2>
+  <p class="grande">Tu perfil es la página de aterrizaje. El que ve una pieza te audita en quince segundos antes de escribirte.</p>
+
+  <div class="versus">
+    <div class="lado b"><div class="et">Instagram · tu casa <span class="nuevo">nuevo</span></div><p>Aquí publicas primero. Tiene la respuesta automática (comentan la palabra y les llega la clase sola) y es donde van a correr tus anuncios cuando lleguen.</p></div>
+    <div class="lado b"><div class="et">LinkedIn · tu red</div><p>Aquí está tu autoridad y las personas que ya te conocen. La misma pieza se replica, y desde aquí salen tus mensajes directos.</p></div>
+  </div>
+
+  <h3>Tu foto</h3>
+  <ul class="chequeo">
+    <li class="si"><svg><use href="#i-check"/></svg>Rostro visible, mirada a cámara, de los hombros para arriba</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Luz natural de frente, fondo neutro y sin ruido</li>
+    <li class="si"><svg><use href="#i-check"/></svg>La misma foto en las dos redes: si te ve en una y te busca en la otra, tiene que reconocerte sin pensarlo</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>Foto lejana, de cuerpo entero, de evento o con otras personas</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>Logo en vez de rostro</li>
+  </ul>
+
+  <h3>Instagram</h3>
+  <div class="guion">
+    <div class="cuando">La biografía · tres líneas</div>
+    <p>Sharyll Klatic · Psicóloga clínica y organizacional</p>
+    <p>Por qué te sacaron de tu puesto, y por qué se repite</p>
+    <p>20 años en consulta · 20 en organizaciones · Docente universitaria</p>
+    <p>↳ La clase de 15 minutos</p>
+  </div>
+  <p>El orden es el mismo de siempre: qué logra el que trabaja contigo · qué te valida · qué hacer ahora.</p>
+  <ul class="chequeo">
+    <li class="si"><svg><use href="#i-check"/></svg>Cuenta de creador o de negocio, conectada a tu sistema</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Nombre visible: Sharyll · Punto Ciego</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Los tres fijados arriba, en orden</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Un solo enlace: tu página con la clase y la agenda</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Mínimo dieciocho publicaciones antes de traer a nadie con anuncios</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>Bienestar, crecimiento personal, frases motivacionales</li>
+  </ul>
+  <ul class="simple">
+    <li><b>Las cuatro destacadas · 1 · Quién soy</b>Tu historia, tu formación, tus instrumentos.</li>
+    <li><b>2 · Por qué no te explican</b>Lo que viste del otro lado del escritorio. La que más se guarda.</li>
+    <li><b>3 · Cómo trabajo</b>Los cinco pasos, uno por pantalla.</li>
+    <li><b>4 · El Punto Ciego</b>Qué es, para quién y el enlace. La única con llamado directo.</li>
+  </ul>
+
+  <h3>LinkedIn</h3>
+  <div class="guion">
+    <div class="cuando">El titular · 220 caracteres</div>
+    <p>Psicóloga Clínica y Organizacional · El Punto Ciego</p>
+    <p>Ayudo a ejecutivos a entender por qué los sacaron de su puesto cuando nadie se lo explicó · 20 años de clínica y de gestión en organizaciones · Rorschach R-PAS® · MCMI-IV</p>
+  </div>
+  <p>Lo primero dice qué eres y cómo se llama tu programa. Lo segundo, a quién ayudas, con la escena que filtra. Lo tercero es la prueba. <b>La prueba de que está bien:</b> alguien de recursos humanos lo lee y en cinco segundos sabe a quién le sirves.</p>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">La sección “Acerca de” · tres párrafos</span><span class="mas">+</span></div><div class="cuerpo">
+    <p>En enero de 2024 me avisaron con dos días que no seguía en la institución donde había trabajado cuatro años. No me lo explicaron. Y aunque llevaba veinte años en el mundo corporativo y sabía perfectamente cómo se toman esas decisiones, empecé a buscar en mí la razón que nadie me había dado.</p>
+    <p>Trabajé veinte años en empresas, llegué a gerencia de recursos humanos, y hace veinte años atiendo en consulta. Enseño en dos universidades. Trabajo con Rorschach R-PAS® y MCMI-IV, y escuché cientos de veces la misma frase: nunca me dijeron que hacía mal mi trabajo.</p>
+    <p>Hoy acompaño a ejecutivos a entender por qué los sacaron de su puesto, en un proceso de seis semanas del que salen con una respuesta escrita y un plan. Si es tu caso, escríbeme.</p>
+  </div></button>
+
+  <ul class="chequeo">
+    <li class="si"><svg><use href="#i-check"/></svg>Los tres videos destacados arriba, en orden: quién soy · por qué no te explicaron · cómo se averigua</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Un solo enlace: la misma página</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Experiencia con tus dos mundos visibles: la clínica y las organizaciones</li>
+    <li class="si"><svg><use href="#i-check"/></svg>Activa la insignia de “abierta a recibir mensajes”</li>
+    <li class="no"><svg><use href="#i-cruz"/></svg>Tu consulta clínica general mezclada con esto</li>
+  </ul>
+
+  <div class="nota">
+    <p><b>Una cosa que cambia el alcance en las dos redes.</b> Las primeras dos horas después de publicar deciden cuánto llega. Contesta cada comentario en ese rato, aunque sea con una línea.</p>
+    <p>Publicar a media mañana, en día hábil, es lo que suele funcionar en perfiles profesionales. Es convención de industria, no dato oficial: compruébalo con tus propios números.</p>
+  </div>
+
+  <div class="bloque">
+    <div class="tit">Un canal que casi nadie trabaja</div>
+    <p>Los derivadores. Coaches de carrera, consultores de outplacement, áreas de recursos humanos, abogados laboralistas.</p>
+    <p>Todos se cruzan con tu avatar todas las semanas y no saben a quién mandarlo. Diez conversaciones. No se les vende: se les explica en qué caso conviene derivarte.</p>
+  </div>
+</section>
+
+<!-- ══════════ 09 · TU SISTEMA ══════════ -->
+<section class="pag" data-rot="09 · Tu sistema" data-menu="09 · Tu sistema">
+  <h2>Tu <em>sistema</em></h2>
+  <p class="grande">Cómo una persona pasa de ver algo tuyo a estar sentada en una primera sesión contigo.</p>
+
+  <div class="flujo">
+    <div class="nodo"><span class="ic"><svg><use href="#i-pantalla"/></svg></span><div><div class="tt">1 · Publicas</div><p>Tres veces por semana en Instagram. La misma pieza va a LinkedIn. Ninguna vende: todas cierran con PUNTO CIEGO.</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-mensaje"/></svg></span><div><div class="tt">2 · Piden la clase</div><p>En Instagram comentan PUNTO CIEGO y el sistema le manda solo el enlace por privado. En LinkedIn te escriben y lo mandas tú, con el mensaje ya escrito.</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-pantalla"/></svg></span><div><div class="tt">3 · Tu página</div><p>Ve la clase y, si es para él, agenda su primera sesión sin costo ahí mismo.</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-calendario"/></svg></span><div><div class="tt">4 · La agenda</div><p>Elige su horario y contesta seis preguntas. Es el filtro más importante del sistema.</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-documento"/></svg></span><div><div class="tt">5 · La página de preparación</div><p>Tu video de dos minutos, tres preguntas para pensar y el botón para cambiar el horario.</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-whatsapp"/></svg></span><div><div class="tt">6 · Confirmación y recordatorios</div><p>Salen solos: al agendar, un día antes y una hora antes.</p></div></div>
+    <div class="conector"></div>
+    <div class="nodo"><span class="ic"><svg><use href="#i-micro"/></svg></span><div><div class="tt">7 · Tu primera sesión</div><p>Pestaña 10.</p></div></div>
+  </div>
+
+  <h3>Qué está listo y qué falta</h3>
+  <div class="leyenda">
+    <span><i style="background:var(--verde)"></i>Listo</span>
+    <span><i style="background:var(--ambar)"></i>A medio camino</span>
+    <span><i style="background:var(--rojo)"></i>Falta</span>
+  </div>
+  <ul class="adn">
+    <li class="listo"><span class="punto"></span><div><div class="n">Tu cuenta en el sistema</div><div class="q">Creada, con Google Calendar, Zoom e Instagram conectados.</div></div></li>
+    <li class="listo"><span class="punto"></span><div><div class="n">Tu marca aplicada</div><div class="q">Los colores y las letras de tu manual de Blueprint, en las dos páginas.</div></div></li>
+    <li class="medio"><span class="punto"></span><div><div class="n">Tu página con la clase</div><div class="q">Diseñada y escrita, con tu foto. Falta el video de YouTube, los minutos de la clase y el enlace de la agenda.</div></div></li>
+    <li class="medio"><span class="punto"></span><div><div class="n">Tu página de preparación</div><div class="q">Diseñada. Falta tu video de dos minutos y el enlace para cambiar el horario.</div></div></li>
+    <li class="medio"><span class="punto"></span><div><div class="n">El formulario</div><div class="q">Armado con cuatro preguntas. Pasa a las seis de abajo.</div></div></li>
+    <li class="falta"><span class="punto"></span><div><div class="n">La agenda</div><div class="q">Tus horarios reales, la duración, el enlace de Zoom automático y el formulario adentro.</div></div></li>
+    <li class="falta"><span class="punto"></span><div><div class="n">La respuesta automática de Instagram</div><div class="q">Comentan PUNTO CIEGO y les llega la clase por privado.</div></div></li>
+    <li class="falta"><span class="punto"></span><div><div class="n">Confirmación y recordatorios</div><div class="q">Correo y WhatsApp al agendar, un día antes y una hora antes.</div></div></li>
+  </ul>
+
+  <div class="rama">
+    <div class="via"><div class="et"><svg><use href="#i-rama"/></svg>Camino largo</div><p>No te conoce. Le llega la clase, la ve en tu página y agenda ahí. Llega más preparado y con menos objeciones.</p></div>
+    <div class="via"><div class="et"><svg><use href="#i-flecha"/></svg>Camino corto</div><p>Ya te conoce: es de tu red o se lo recomendaron. Va directo a la agenda. Es el que más rápido compra.</p></div>
+  </div>
+  <div class="bloque"><div class="tit">No fuerces el camino largo.</div><p>Si alguien de tu red te dice “cuéntame más”, mándale el enlace de la agenda y listo. La clase existe para el que no te conoce.</p></div>
+
+  <h3>La agenda · las seis preguntas <span class="nuevo">nuevo</span></h3>
+  <p>Nombre, WhatsApp con código de país y correo, obligatorios. Y después estas seis. El dinero no se pregunta: se lee en el cargo y en la situación laboral.</p>
+  <ul class="simple">
+    <li><b>1 · ¿Cuál de estas situaciones se parece más a la tuya?</b>Volví a trabajar y vivo atento a la próxima reestructuración · Sigo en mi puesto y ya veo señales · Salí hace poco y estoy evaluando ofertas · Otra.</li>
+    <li><b>2 · ¿Cuál es o era tu cargo?</b>Gerente o director · Jefe de área o mando medio · Profesional o analista · Otro.</li>
+    <li><b>3 · ¿Cómo es tu situación laboral hoy?</b>Trabajando en una empresa · Independiente o consultor · En transición, con indemnización · En transición, buscando empleo.</li>
+    <li><b>4 · En tus palabras, ¿qué pasó?</b>Respuesta larga. Llegas a la sesión sabiendo de qué hablar.</li>
+    <li><b>5 · ¿Por qué ahora?</b>Respuesta larga. Mide la urgencia.</li>
+    <li><b>6 · El Punto Ciego es un proceso privado y premium. ¿Estás en un momento para invertir en ti con seriedad?</b>Sí, estoy listo · Quiero conocer más en la sesión.</li>
+  </ul>
+  <div class="nota"><p><b>Cómo se lee.</b> Gerente o mando medio, trabajando o con indemnización: sesión prioritaria. Profesional u otro, buscando empleo: no ocupa tu agenda, le llega la clase y tu contenido.</p></div>
+
+  <h3>Por qué en LinkedIn va por privado</h3>
+  <p>LinkedIn no tiene respuesta automática a comentarios, y las herramientas que la simulan van contra sus reglas. Y lo que decide: tu red incluye a jefes, pares y recursos humanos de media industria. Comentar en una publicación sobre despidos es declarar en público que alguien está en problemas. Por privado conservas saber qué pieza lo trajo, y le quitas la exposición.</p>
+  <div class="bloque">
+    <div class="tit">Cómo se contesta sin vivir en el teléfono</div>
+    <p>Dos bloques al día, con horario fijo: uno a la mañana y uno al final de la tarde. El mensaje ya está escrito y es siempre el mismo, así que cada respuesta te lleva menos de un minuto.</p>
+    <p>El enlace vive en tu perfil. En el cuerpo de la publicación no va: es convención de industria que los enlaces externos bajan el alcance — no es documentación oficial, así que compruébalo con tus números.</p>
+  </div>
+
+  <h3>Los mensajes que salen solos</h3>
+  <div class="guion">
+    <div class="cuando">Al agendar</div>
+    <p>Hola [nombre], soy Sharyll. Ya quedó agendada nuestra primera sesión para el [día] a las [hora].</p>
+    <p>Antes de la sesión mira este video de dos minutos donde te cuento cómo va a ser: [ENLACE]</p>
+  </div>
+  <div class="guion">
+    <div class="cuando">Un día antes</div>
+    <p>Hola [nombre], nos vemos mañana a las [hora]. Si te surgió algo y prefieres moverlo, cámbialo aquí: [ENLACE]</p>
+  </div>
+  <p>Ofrecer mover la cita funciona a tu favor: el que no iba a venir te avisa y liberas el horario, y el que sí iba a venir confirma.</p>
+
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">El video de antes de la sesión · 2 minutos</span><span class="mas">+</span></div><div class="cuerpo">
+    <p>Hola, soy Sharyll. Si estás viendo esto es porque agendamos tu primera sesión, así que te cuento en dos minutos cómo va a ser.</p>
+    <p>Primero: no vengo a resolverte nada en esos veinte minutos, y tampoco vengo a convencerte de nada.</p>
+    <p>Lo que voy a hacer es preguntarte. Qué te está pasando, desde cuándo, qué intentaste hasta ahora y qué pasó con eso. Vas a hablar tú la mayor parte del tiempo, y yo voy a escuchar.</p>
+    <p>Al final te voy a decir con honestidad si creo que puedo ayudarte o no. Si creo que sí, te cuento exactamente cómo trabajo, cuánto dura y cuánto cuesta, y decides tú. Si creo que no, te lo digo igual y te oriento hacia dónde ir.</p>
+    <p>Y una cosa más: si te digo que sí, vas a entrar a un proceso de seis semanas donde vas a trabajar. No es algo que se recibe: es algo que se hace. Así que lo primero que voy a mirar es si este es tu momento.</p>
+    <p>No hace falta que prepares nada. Solo busca un lugar tranquilo donde puedas hablar sin que te interrumpan. Nos vemos.</p>
+  </div></button>
+</section>
+
+<!-- ══════════ 10 · TU PRIMERA SESIÓN ══════════ -->
+<section class="pag" data-rot="10 · Tu primera sesión" data-menu="10 · Tu primera sesión">
+  <h2>Tu primera <em>sesión</em></h2>
+  <p class="grande">Sin costo para él. Para ti es una entrevista de selección.</p>
+
+  <ul class="simple">
+    <li><b>0 · El encuadre · 3 min</b>“Gracias por agendar. No vengo a convencerte de nada.” · “Trabajo con pocas personas a la vez, porque cada proceso son veinte horas de trabajo mío.” · “Esta sesión es para que los dos veamos si esto es para ti. Si cualquiera de los dos siente que no, está perfecto.”</li>
+    <li><b>1 · El presente · 15 min</b>“Cuéntame qué pasó, con el detalle que quieras.” · “¿Qué te dijeron exactamente cuando te lo comunicaron?” · “¿Y qué te dijiste a ti mismo en los días siguientes?” · “¿Es la primera vez? Cuéntame de la otra.” · “¿En qué te está afectando fuera del trabajo? El sueño, tu pareja.” · “¿Qué intentaste hasta ahora? ¿Qué pasó con eso?” <br><br>No rescatas. No consuelas, no explicas, no interpretas.</li>
+    <li><b>2 · El futuro · 8 min</b>“Si dentro de dos meses tuvieras la respuesta por escrito, ¿qué cambiaría en tu semana?” · “¿Cómo sería entrar al próximo trabajo sabiendo qué mirar?”</li>
+    <li><b>3 · El costo · 10 min</b>“¿Y si dentro de un año sigues sin saber por qué pasó?” · “¿Cuánto ganabas? ¿Cuántos meses llevas?” <br><br>El número lo dice él, no tú.</li>
+    <li><b>4 · La invitación · 12 min</b>El mecanismo: “Te escucharon, y eso está bien. Pero nadie te devolvió qué de tu propio funcionamiento contribuyó a que pase.” · La selección: “Quiero ofrecerte un lugar.” · El qué: “Seis semanas. Mapeo, evaluación, formulación, devolución y plan. Te llevas el informe.” · El precio: “La inversión es de mil dólares en un pago.” <br><br>Dices el número y te callas. El primero que habla, pierde.</li>
+  </ul>
+
+  <div class="bloque rojo">
+    <div class="tit">Tu error mortal</div>
+    <p>No conviertas la primera sesión en una sesión de terapia. Si le das la lectura ahí mismo, ya recibió lo que vino a buscar.</p>
+    <p><b>Diagnóstico sí, tratamiento no. Él habla el 70%, tú el 30%.</b></p>
+  </div>
+
+  <h3>Las tres objeciones</h3>
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">“Es mucho, y justo ahora no tengo trabajo”</span><span class="mas">+</span></div><div class="cuerpo">
+    <p>“¿No lo tienes, o todavía no estás seguro de que esto te vaya a servir?”</p>
+    <p>Si es certeza, vuelves a sus números. Si de verdad no lo tiene, ofreces los dos pagos. Si tampoco: “entonces este no es tu momento.” Nunca bajas el número.</p>
+  </div></button>
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">“Primero consigo trabajo y después esto”</span><span class="mas">+</span></div><div class="cuerpo">
+    <p>“Si entras al próximo puesto sin saber qué pasó en este, entras con la misma lectura que traías.”</p>
+    <p>“Esto va junto con la búsqueda. La búsqueda mejora cuando dejas de cargar una pregunta sin respuesta.”</p>
+  </div></button>
+  <button class="puerta" type="button" aria-expanded="false"><div class="cab"><span class="nom">“¿Esto es terapia?”</span><span class="mas">+</span></div><div class="cuerpo">
+    <p>“Es un proceso de seis semanas con principio y final, del que sales con una respuesta por escrito.”</p>
+    <p>“Y es distinto a un test de recursos humanos: ahí te evalúan para decidir sobre ti. Aquí se evalúa para devolverte lo que nadie te dijo.”</p>
+  </div></button>
+
+  <div class="guion">
+    <div class="cuando">El “no”</div>
+    <p>“Creo que este no es tu momento, y prefiero decírtelo ahora antes que tomarte y que no funcione — porque cuando tomo a alguien, lo acompaño hasta el final. Cuando la situación esté más acomodada, escríbeme.”</p>
+  </div>
+</section>
+
+<!-- ══════════ 11 · TUS PRÓXIMAS SEMANAS ══════════ -->
+<section class="pag" data-rot="11 · Tus próximas semanas" data-menu="11 · Tus próximas semanas">
+  <h2>Tus próximas <em>semanas</em></h2>
+  <p class="grande">Con fechas reales, hasta enero. Tócalos para tacharlos.</p>
+
+  <div class="barra-progreso">
+    <span class="cuenta"><span>0</span> / <span>20</span></span>
+    <span class="txt">pasos hechos</span>
+    <button class="reiniciar" type="button">Reiniciar</button>
+    <span class="riel"><i></i></span>
+  </div>
+
+  <div class="cifras">
+    <div class="cifra bien"><span class="v">3</span><span class="e">ventas antes del 20 de diciembre</span></div>
+    <div class="cifra"><span class="v">60</span><span class="e">mensajes escritos a tu red, dos por día</span></div>
+    <div class="cifra"><span class="v">12</span><span class="e">publicaciones en Instagram, tres por semana</span></div>
+  </div>
+
+  <div class="fase-cab"><h3>17 al 21 de noviembre · Dejar el sistema andando</h3><span class="fase-cuenta" id="c-s1">0 de 6</span></div>
+  <p>La sesión 3 es para esto. Nada sale a publicarse hasta que el circuito funcione de punta a punta.</p>
+  <ul class="tareas-check" data-cuenta="c-s1">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Sube la clase a YouTube</b>Como enlace no listado. Anota cuántos minutos dura.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Decide cuatro o seis semanas</b>Y lo dices igual en tu página, en tu plan y en tu sesión.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Arma tu agenda</b>Tus horarios reales, veinte minutos, Zoom automático y las seis preguntas.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Termina tus dos páginas</b>El video y el enlace de la agenda en la primera; tu video de dos minutos en la de preparación.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Activa la respuesta automática de Instagram</b>PUNTO CIEGO → el enlace a tu página, por privado.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Prueba el circuito completo tú misma</b>Comenta, agenda desde otro teléfono y mira qué te llega. Listo cuando funcionó de punta a punta.</span></li>
+  </ul>
+
+  <div class="fase-cab"><h3>23 de noviembre al 19 de diciembre · Publicar y escribir</h3><span class="fase-cuenta" id="c-s2">0 de 8</span></div>
+  <p>Aquí se decide el año. Es el tramo más simple y el que más cuesta sostener.</p>
+  <ul class="tareas-check" data-cuenta="c-s2">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Ajusta tus dos perfiles</b>Los textos exactos están en la pestaña 08.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Publica y fija los tres videos</b>En orden, arriba de tus dos perfiles.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Publica la pieza de tu historia</b>Es la primera que sale, y la que más va a mover.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Tres publicaciones por semana en Instagram</b>Alternando reel y carrusel. La misma pieza va a LinkedIn.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Arma la lista de sesenta nombres</b>Con nombre y por dónde le escribes. Prioriza a los que hoy están trabajando.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Dos mensajes por día</b>Sesenta en el mes. Y avisa una vez en tus grupos de WhatsApp.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Da cada primera sesión con la estructura en la mano</b>Listo cuando hablaste el 30% y la otra persona el 70%.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Cierra tres ventas a $1.000</b>Cobras antes del primer encuentro, sin excepción. Sobre todo si es un conocido.</span></li>
+  </ul>
+
+  <div class="fase-cab"><h3>20 de diciembre al 20 de enero · Receso del equipo</h3><span class="fase-cuenta" id="c-s3">0 de 2</span></div>
+  <ul class="tareas-check" data-cuenta="c-s3">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Deja programadas tus publicaciones del receso</b>Tu contenido sigue saliendo y tu sistema sigue respondiendo solo.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Decide qué horarios de tu agenda dejas abiertos</b>Es tu decisión. Lo que entre, se atiende igual.</span></li>
+  </ul>
+
+  <div class="fase-cab"><h3>Desde el 20 de enero · Ir por diez</h3><span class="fase-cuenta" id="c-s4">0 de 4</span></div>
+  <ul class="tareas-check" data-cuenta="c-s4">
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Lee tus números con Javo</b>Cuántos pidieron la clase, cuántos agendaron, cuántos compraron.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Anota la primera objeción real que escuchaste</b>Textual, con sus palabras. Vale más que un mes de análisis.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Ajusta la pieza que más agendas trajo</b>Esa es la que se repite y la que después va a anuncios.</span></li>
+    <li><span class="caja"><svg><use href="#i-check"/></svg></span><span class="txt"><b>Ve por diez ventas</b>Con diez a $1.000 tu oferta queda validada y se sube a $2.000.</span></li>
+  </ul>
+
+  <div class="bloque">
+    <div class="tit">El riesgo real de estas semanas</div>
+    <p>No es que la oferta esté mal. Es pasarse el mes puliéndola. La oferta se corrige vendiendo, no pensando.</p>
+  </div>
+  <p class="cita">Si estás en la semana uno, la semana cuatro no existe.</p>
+</section>
+
+<!-- ══════════ 12 · CÓMO SEGUIMOS ══════════ -->
+<section class="pag" data-rot="12 · Cómo seguimos" data-menu="12 · Cómo seguimos">
+  <h2>Cómo <em>seguimos</em></h2>
+  <p class="grande">Este mes te deja con tu oferta, tu método, tu sistema y tu primera sesión. Lo que sigue es venderla. Hay dos formas de hacerlo juntos.</p>
+
+  <div class="ficha">
+    <div class="et">Lo que ya tienes · tu primer mes</div>
+    <ul>
+      <li><svg><use href="#i-check"/></svg>Tu nicho, tu avatar y tu oferta, El Punto Ciego</li>
+      <li><svg><use href="#i-check"/></svg>Tu método en cinco pasos y tu historia ordenada</li>
+      <li><svg><use href="#i-check"/></svg>Todos los guiones: la clase, los fijados, los reels y los mensajes</li>
+      <li><svg><use href="#i-check"/></svg>Tus dos páginas, con tu marca, y tu cuenta en el sistema</li>
+      <li><svg><use href="#i-check"/></svg>La estructura de tu primera sesión, con sus objeciones</li>
+    </ul>
+  </div>
+
+  <div class="versus">
+    <div class="ficha">
+      <div class="et">Lo hacemos juntos</div>
+      <div class="tt">Mentoría 1 a 1 · 90 días</div>
+      <div class="pr">Te quedan $2.000</div>
+      <ul>
+        <li><svg><use href="#i-check"/></svg>Noventa días de trabajo conmigo, uno a uno. El receso del 20 de diciembre al 20 de enero no se cuenta</li>
+        <li><svg><use href="#i-check"/></svg>Una sesión individual cada quince días</li>
+        <li><svg><use href="#i-check"/></svg>Consultoría y soporte por Discord, entre sesión y sesión</li>
+        <li><svg><use href="#i-check"/></svg>Revisamos juntos tus piezas antes de publicar y tus primeras sesiones grabadas</li>
+        <li><svg><use href="#i-check"/></svg>Leemos tus números y ajustamos cada quince días</li>
+      </ul>
+      <p class="quien"><b>Quién trabaja:</b> tú, o tu asistente si la tienes, graban, editan, publican y contestan. Yo pongo el criterio al lado en cada paso.</p>
+    </div>
+    <div class="ficha destacada">
+      <div class="et">Lo hacemos nosotros</div>
+      <div class="tt">Instalación completa · 90 días</div>
+      <div class="pr">Te quedan $5.000</div>
+      <ul>
+        <li><svg><use href="#i-check"/></svg>Todo lo de la mentoría, más:</li>
+        <li><svg><use href="#i-check"/></svg>Tus perfiles de Instagram y LinkedIn optimizados por nosotros</li>
+        <li><svg><use href="#i-check"/></svg>Edición de tu clase, tus fijados, tus reels y tus anuncios</li>
+        <li><svg><use href="#i-check"/></svg>Tu contenido programado, semana a semana</li>
+        <li><svg><use href="#i-check"/></svg>Tu sistema completo: respuesta automática, recordatorios, seguimiento después de la sesión y mensajes a quien vio la clase y no agendó</li>
+        <li><svg><use href="#i-check"/></svg>Tu campaña de anuncios en Meta desde febrero, armada y corrida por nosotros</li>
+        <li><svg><use href="#i-check"/></svg>Todo a tu nombre: las páginas, la cuenta y el contenido son tuyos</li>
+      </ul>
+      <p class="quien"><b>Quién trabaja:</b> nosotros. Tú grabas y das tus sesiones.</p>
+    </div>
+  </div>
+
+  <div class="cifras">
+    <div class="cifra"><span class="v">2</span><span class="e">ventas de El Punto Ciego cubren la mentoría</span></div>
+    <div class="cifra"><span class="v">5</span><span class="e">ventas de El Punto Ciego cubren la instalación</span></div>
+  </div>
+
+  <div class="bloque verde">
+    <div class="tit">Lo que ya invertiste se descuenta entero.</div>
+    <p>Pagaste $1.000 por este primer mes. La mentoría completa son $3.000 y la instalación completa son $6.000: por eso te quedan $2.000 o $5.000.</p>
+  </div>
+
+  <h3>Cuál te conviene</h3>
+  <div class="versus">
+    <div class="lado"><div class="et" style="color:var(--oro)">La mentoría, si…</div><p>Tienes quien te ayude a grabar, editar y publicar, y quieres aprender a operar tu propio sistema con alguien al lado.</p></div>
+    <div class="lado"><div class="et" style="color:var(--oro)">La instalación, si…</div><p>Tu tiempo vale más en el consultorio y en tus sesiones que frente al editor, y quieres que todo funcione sin aprender ninguna herramienta.</p></div>
+  </div>
+
+  <div class="nota"><p><b>Lo hablamos en la sesión 3.</b> Llegas con la pregunta que te haga falta y lo decides tú.</p></div>
+</section>
+
+</main>
+<nav class="nav">
+  <div class="fila">
+    <button id="ant" type="button">Anterior</button>
+    <button id="sig" class="sig" type="button">Siguiente</button>
+  </div>
+</nav>
+<script>
+(function(){
+  var pags = Array.prototype.slice.call(document.querySelectorAll('.pag'));
+  var i = 0;
+  var rotulo = document.getElementById('rotulo');
+  var contador = document.getElementById('contador');
+  var progreso = document.getElementById('progreso');
+  var ant = document.getElementById('ant');
+  var sig = document.getElementById('sig');
+  var indice = document.getElementById('indice');
+  var lista = document.getElementById('listaIndice');
+  pags.forEach(function(p, n){
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = p.dataset.menu || ('Sección ' + (n+1));
+    b.addEventListener('click', function(){ ir(n); cerrarIndice(); });
+    li.appendChild(b); lista.appendChild(li);
+  });
+  var bi = Array.prototype.slice.call(lista.querySelectorAll('button'));
+  function ir(n){
+    if(n < 0 || n >= pags.length) return;
+    pags[i].classList.remove('activa');
+    i = n;
+    pags[i].classList.add('activa');
+    rotulo.textContent = pags[i].dataset.rot || '';
+    contador.textContent = (i+1) + ' / ' + pags.length;
+    progreso.style.width = (((i+1)/pags.length)*100) + '%';
+    ant.disabled = (i === 0);
+    sig.textContent = (i === pags.length-1) ? 'Volver al inicio' : 'Siguiente';
+    bi.forEach(function(b, n2){ b.setAttribute('aria-current', n2===i ? 'true':'false'); });
+    window.scrollTo(0,0);
+  }
+  ant.addEventListener('click', function(){ ir(i-1); });
+  sig.addEventListener('click', function(){ if(i === pags.length-1){ ir(0); } else { ir(i+1); } });
+  function cerrarIndice(){ indice.classList.remove('abierto'); document.body.style.overflow=''; }
+  document.getElementById('btnIndice').addEventListener('click', function(){ indice.classList.add('abierto'); document.body.style.overflow='hidden'; });
+  document.getElementById('btnCerrar').addEventListener('click', cerrarIndice);
+  document.addEventListener('keydown', function(e){
+    if(indice.classList.contains('abierto')){ if(e.key==='Escape') cerrarIndice(); return; }
+    if(e.key === 'ArrowRight') ir(i+1);
+    if(e.key === 'ArrowLeft') ir(i-1);
+  });
+  document.querySelectorAll('.puerta').forEach(function(p){
+    p.addEventListener('click', function(){
+      var ab = p.getAttribute('aria-expanded') === 'true';
+      p.setAttribute('aria-expanded', ab ? 'false' : 'true');
+      var m = p.querySelector('.mas'); if(m) m.textContent = ab ? '+' : '–';
+    });
+  });
+  ir(0);
+})();
+
+/* ══ checklist tildable · una barra por pantalla · se recuerda en este navegador ══ */
+(function(){
+  var CLAVE = 'plan-sharyll-v2';
+  var guardado = {};
+  try { guardado = JSON.parse(localStorage.getItem(CLAVE) || '{}') || {}; } catch(e) { guardado = {}; }
+  function guardar(){ try { localStorage.setItem(CLAVE, JSON.stringify(guardado)); } catch(e) {} }
+
+  document.querySelectorAll('.pag').forEach(function(pag, np){
+    var tareas = Array.prototype.slice.call(pag.querySelectorAll('.tareas-check li'));
+    if(!tareas.length) return;
+    var barra = pag.querySelector('.barra-progreso');
+    var cuenta = barra ? barra.querySelector('.cuenta span:first-child') : null;
+    var total  = barra ? barra.querySelector('.cuenta span:last-child') : null;
+    var riel   = barra ? barra.querySelector('.riel i') : null;
+    var btn    = barra ? barra.querySelector('.reiniciar') : null;
+    if(total) total.textContent = tareas.length;
+
+    function refrescar(){
+      var n = pag.querySelectorAll('.tareas-check li.hecho').length;
+      if(cuenta) cuenta.textContent = n;
+      if(riel) riel.style.width = ((n/tareas.length)*100) + '%';
+      pag.querySelectorAll('.tareas-check').forEach(function(ul){
+        var id = ul.dataset.cuenta; if(!id) return;
+        var el = document.getElementById(id);
+        if(el) el.textContent = ul.querySelectorAll('li.hecho').length + ' de ' + ul.querySelectorAll('li').length;
+      });
+    }
+    tareas.forEach(function(li, nt){
+      var k = np + '-' + nt;
+      li.setAttribute('role','button');
+      li.setAttribute('tabindex','0');
+      if(guardado[k]) li.classList.add('hecho');
+      li.setAttribute('aria-pressed', li.classList.contains('hecho'));
+      function alternar(){
+        li.classList.toggle('hecho');
+        var h = li.classList.contains('hecho');
+        li.setAttribute('aria-pressed', h);
+        if(h) guardado[k] = 1; else delete guardado[k];
+        guardar(); refrescar();
+      }
+      li.addEventListener('click', alternar);
+      li.addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); alternar(); } });
+    });
+    if(btn) btn.addEventListener('click', function(){
+      tareas.forEach(function(li, nt){ li.classList.remove('hecho'); li.setAttribute('aria-pressed','false'); delete guardado[np + '-' + nt]; });
+      guardar(); refrescar();
+    });
+    refrescar();
+  });
+})();
+</script>
+</body>
+</html>
