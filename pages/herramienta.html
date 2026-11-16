@@ -108,10 +108,38 @@
 .menu-h a{display:block;text-decoration:none;background:#fff;border:1px solid var(--linea);border-radius:22px;padding:22px 24px}
 .menu-h a b{display:block;font-weight:800;font-size:21px}
 .menu-h a span{display:block;font-size:17px;color:var(--piedra);margin-top:6px}
+/* ── Paisaje vivo (16 nov 2026): las herramientas con la piel de la home ── */
+.kick{letter-spacing:0;text-transform:none;font-size:17px;font-weight:700;color:#7A5F33}
+.kick::before{width:28px;background:#A8875A}
+.h-cab .lead,.paso .lead,.nota,.ficha p,.menu-h a span,.semana .sub,.chk span{font-family:Literata,Georgia,serif}
+.paso{border-top-color:#DCD2C1}
+.paso-n{border:0;background:#2B2724;color:#FBF8F2;width:52px;height:52px;font-size:21px}
+/* el menú: cada herramienta con el color de su estación */
+.menu-h a{position:relative;background:#FBF8F2;border-color:#DCD2C1;padding:24px 24px 24px 34px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.menu-h a::before{content:"";position:absolute;left:14px;top:22px;bottom:22px;width:6px;border-radius:3px;background:var(--c,#2B4E68)}
+.menu-h a em{display:block;font-style:normal;font-weight:700;font-size:16px;color:var(--ct,var(--c,#2B4E68));margin-bottom:6px}
+@media (hover:hover){.menu-h a:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(43,39,36,.5)}}
+/* fichas y etiquetas: en letra normal, con su color */
+.ficha{background:#FBF8F2;border-color:#DCD2C1}
+.ficha .eti,.dia{letter-spacing:0;text-transform:none;color:#7A5F33;font-size:16px}
+.fichas.dos .ficha .eti{display:inline-grid;place-items:center;min-width:36px;height:36px;padding:0 12px;border-radius:999px;background:#EBE3D5;color:#2B2724}
+/* la calculadora: el resultado grande, del azul del lago, que salta cuando cambia */
+.calc{background:#FBF8F2;border-color:#DCD2C1}
+.campo input,.campo textarea{background:#fff}
+.res-fila b{color:#2B4E68;display:inline-block}
+@media (prefers-reduced-motion:no-preference){.res-fila b.salta{animation:salta .45s cubic-bezier(.2,.7,.2,1)}}
+@keyframes salta{40%{transform:scale(1.06)}}
+/* los mensajes: como llegan al WhatsApp */
+.msg{background:#FBF8F2;border-color:#DCD2C1}
+.msg .texto{position:relative;background:#E3ECDD;border-radius:18px 18px 18px 6px;margin-right:clamp(0px,6vw,64px);color:#1F2A20}
+/* la hoja del protocolo: un papel de verdad */
+.hoja{border:0;background:#fff;box-shadow:0 0 0 1px #DCD2C1,0 34px 60px -44px rgba(43,39,36,.55);border-top:6px solid #904932}
+.sigue{background:#EBE3D5}
+.chk{background:#FBF8F2;border-color:#DCD2C1}
 @media print{.top,.sigue,.botones,.copiar,.barra-av,.pie,.no-imp{display:none!important}.tool{display:none!important}.tool.ver{display:block!important}}
 </style>
 </head>
-<body data-pagina="herramienta">
+<body class="vivo" data-pagina="herramienta">
 
 <header class="top">
   <a class="marca" data-link="inicio" href="/inicio" aria-label="Tu Clínica Digital, inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
@@ -126,12 +154,12 @@
   <h1 class="h1" style="margin-top:18px">Tus herramientas.</h1>
   <p class="lead">Cada una te deja un número o un texto listo para usar. Si no sabes por dónde empezar, empieza por tu hora real.</p>
   <nav class="menu-h" aria-label="Herramientas">
-   <a data-link-h="phr" href="#"><b>Tu hora real</b><span>Cuánto te queda por cada hora que de verdad trabajas.</span></a>
-   <a href="?h=guiadeprecios"><b>Tu precio, paso a paso</b><span>La fórmula, tu precio y las respuestas a las 3 objeciones.</span></a>
-   <a href="?h=generador-caja"><b>Los 5 mensajes</b><span>Para volver a hablar con quienes ya confiaron en ti.</span></a>
-   <a href="?h=creatuprotocolo"><b>Tu protocolo, en una hoja</b><span>Resultado, tiempo y método. Y el acuerdo para firmar.</span></a>
-   <a href="?h=automatizar"><b>Tu consultorio en automático</b><span>Los 12 procesos, con la herramienta para cada uno.</span></a>
-   <a data-link-h="impostor" href="#"><b>El Neuro-Escáner IA</b><span>El patrón que te frena y el primer movimiento.</span></a>
+   <a data-link-h="phr" href="#" style="--c:#2B4E68"><em>El lago</em><b>Tu hora real</b><span>Cuánto te queda por cada hora que de verdad trabajas.</span></a>
+   <a href="?h=guiadeprecios" style="--c:#2B4E68"><em>El lago</em><b>Tu precio, paso a paso</b><span>La fórmula, tu precio y las respuestas a las 3 objeciones.</span></a>
+   <a href="?h=generador-caja" style="--c:#904932"><em>La montaña</em><b>Los 5 mensajes</b><span>Para volver a hablar con quienes ya confiaron en ti.</span></a>
+   <a href="?h=creatuprotocolo" style="--c:#904932"><em>La montaña</em><b>Tu protocolo, en una hoja</b><span>Resultado, tiempo y método. Y el acuerdo para firmar.</span></a>
+   <a href="?h=automatizar" style="--c:#46979E;--ct:#1F6E6E"><em>El río</em><b>Tu consultorio en automático</b><span>Los 12 procesos, con la herramienta para cada uno.</span></a>
+   <a data-link-h="impostor" href="#" style="--c:#2B4E68"><em>El lago</em><b>El Neuro-Escáner IA</b><span>El patrón que te frena y el primer movimiento.</span></a>
   </nav>
  </div>
 </section>
@@ -463,8 +491,10 @@ Que estés muy bien.</div>
   function precio() {
     var v = ids.map(function (i) { return +d.getElementById(i).value || 0; });
     var mes = (v[0] + v[1]) / Math.max(1, v[2]);
-    d.getElementById('p-mes').textContent = usd(Math.ceil(mes / 10) * 10);
-    d.getElementById('p-prog').textContent = usd(Math.ceil(mes * Math.max(1, v[3]) / 10) * 10);
+    ['p-mes', 'p-prog'].forEach(function (k, j) {
+      var el = d.getElementById(k), nuevo = usd(Math.ceil(mes * (j ? Math.max(1, v[3]) : 1) / 10) * 10);
+      if (el.textContent !== nuevo) { el.textContent = nuevo; el.classList.remove('salta'); void el.offsetWidth; el.classList.add('salta'); }
+    });
     guardar('tcd_precio', v);
   }
   if (d.getElementById('p-meta')) {
