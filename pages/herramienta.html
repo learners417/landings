@@ -13,12 +13,12 @@
 <style>/*PAISAJE_CSS*/</style>
 <script>
 /* /herramienta?h=<ruta> · el destino de los correos de entrega y de la puerta de cada herramienta (15 nov 2026).
-   Cuatro herramientas viven en esta misma página (precio, mensajes, protocolo y sistema): se muestra la que pide ?h=.
-   Las otras dos (hora real y Neuro-Escáner) viven en su página de GHL: TCD.herramientas dice adónde ir.
+   Las seis viven en esta misma página (hora real, Neuro-Escáner, precio, mensajes, protocolo y sistema): se muestra la que pide ?h=.
+   Desde el 16 nov 2026 la hora real y el Neuro-Escáner también (antes eran páginas viejas de GHL, con voseo y fondo negro).
    Quien llega acá ya dejó su correo: no se le vuelve a pedir. */
 (function () {
   var C = window.TCD || {};
-  var AQUI = { guiadeprecios: 1, 'generador-caja': 1, creatuprotocolo: 1, automatizar: 1 };
+  var AQUI = { phr: 1, impostor: 1, guiadeprecios: 1, 'generador-caja': 1, creatuprotocolo: 1, automatizar: 1 };
   var h = '';
   try { h = (new URLSearchParams(location.search).get('h') || '').toLowerCase().replace(/[^a-z-]/g, ''); } catch (e) {}
   try { localStorage.setItem('tcd_lector', '1'); } catch (e) {}
@@ -136,6 +136,44 @@
 .hoja{border:0;background:#fff;box-shadow:0 0 0 1px #DCD2C1,0 34px 60px -44px rgba(43,39,36,.55);border-top:6px solid #904932}
 .sigue{background:#EBE3D5}
 .chk{background:#FBF8F2;border-color:#DCD2C1}
+/* hora real: el desglose de horas, las barras y las palancas */
+.desglose{grid-column:1/-1}
+.desg{display:grid;gap:14px;margin-top:14px}
+@media (min-width:760px){.desg{grid-template-columns:1fr 1fr 1fr}}
+.res-hora .grande b{font-size:clamp(40px,10vw,64px)}
+.horas-b{margin-top:22px;background:#FBF8F2;border:1px solid #DCD2C1;border-radius:24px;padding:24px 26px}
+.hb-dato{font-size:20px;line-height:1.45}
+.hb-dato b{font-weight:800;color:#2B4E68}
+.hb-fila{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;margin-top:16px;font-size:17px;font-weight:600}
+.hb-fila .hb-riel{grid-column:1/-1;grid-row:2}
+@media (min-width:760px){.hb-fila{grid-template-columns:240px 1fr 64px}.hb-fila .hb-riel{grid-column:auto;grid-row:auto}}
+.hb-riel{height:14px;border-radius:99px;background:#EBE3D5;overflow:hidden}
+.hb-riel i{display:block;height:100%;width:0;border-radius:99px;background:var(--c,#2B4E68);transition:width .7s cubic-bezier(.2,.7,.2,1)}
+.hb-fila b{font-weight:800;min-width:56px;text-align:right}
+.palanca output{font-weight:800;font-size:24px;color:#2B4E68}
+.palanca input[type=range]{width:100%;accent-color:#2B4E68;height:32px}
+#pl-dif{font-size:clamp(22px,5vw,30px)}
+/* el Neuro-Escáner: las frases, la escala y los tres patrones */
+.frases{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px;counter-reset:f}
+.frases li{counter-increment:f;background:#FBF8F2;border:1px solid #DCD2C1;border-radius:22px;padding:20px 22px;transition:border-color .3s,background .3s}
+.frases li.hecha{border-color:rgba(43,78,104,.45)}
+.frases li>p{font-family:Literata,Georgia,serif;font-size:19px;line-height:1.5}
+.frases li>p::before{content:counter(f) ". ";font-family:Manrope,sans-serif;font-weight:800;color:#7A5F33}
+.escala{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.escala button{min-height:48px;border:0;border-radius:999px;background:#EBE3D5;color:#2B2724;font:700 16px/1.2 Manrope,sans-serif;cursor:pointer;padding:8px 10px;transition:background .25s,color .25s,transform .2s}
+.escala button[aria-pressed=true]{background:#2B4E68;color:#fff}
+.escala button:active{transform:scale(.97)}
+.patrones{display:grid;gap:12px;margin-top:22px}
+.patron{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;align-items:center;background:#FBF8F2;border:1px solid #DCD2C1;border-radius:20px;padding:18px 20px}
+.pt-n{grid-row:1/3;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#EBE3D5;font-weight:800;font-size:19px}
+.pt-t{font-weight:700;font-size:18px;line-height:1.3}
+.pt-riel{height:12px;border-radius:99px;background:#EBE3D5;overflow:hidden}
+.pt-riel i{display:block;height:100%;width:0;border-radius:99px;background:#904932;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.patron.gana{border-color:#904932;box-shadow:0 22px 40px -30px rgba(144,73,50,.6)}
+.patron.gana .pt-n{background:#904932;color:#fff}
+.mov-k{margin-top:22px;font-weight:800;font-size:17px;color:#7A5F33}
+.tool#t-phr .hoja,.tool#t-impostor .hoja{border-top-color:#2B4E68}
+.cita-precio{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:clamp(24px,5vw,30px);line-height:1.3}
 @media print{.top,.sigue,.botones,.copiar,.barra-av,.pie,.no-imp{display:none!important}.tool{display:none!important}.tool.ver{display:block!important}}
 </style>
 </head>
@@ -161,6 +199,140 @@
    <a href="?h=automatizar" style="--c:#46979E;--ct:#1F6E6E"><em>El río</em><b>Tu consultorio en automático</b><span>Los 12 procesos, con la herramienta para cada uno.</span></a>
    <a data-link-h="impostor" href="#" style="--c:#2B4E68"><em>El lago</em><b>El Neuro-Escáner IA</b><span>El patrón que te frena y el primer movimiento.</span></a>
   </nav>
+ </div>
+</section>
+
+<!-- ═══ HORA · Tu hora real ═══ -->
+<section class="tool" id="t-phr" data-titulo="Tu hora real">
+ <div class="envase h-cab">
+  <span class="kick">Herramienta · Hora</span>
+  <h1 class="h1" style="margin-top:18px">Tu hora real.</h1>
+  <p class="lead">Lo que te queda por cada hora que de verdad trabajas. Tres números, dos minutos. Lo que escribes queda guardado en este navegador.</p>
+ </div>
+ <div class="envase">
+  <div class="paso">
+   <span class="paso-n">1</span>
+   <h2 class="h3">Tus tres números.</h2>
+   <div class="calc" id="calc-hora">
+    <div class="campo"><label for="hr-fact">¿Cuánto facturas en un mes? (USD)</label><input id="hr-fact" type="number" inputmode="numeric" min="0" value="5000"></div>
+    <div class="campo"><label for="hr-gastos">Tus gastos fijos del mes: consultorio, plataformas y formación (USD)</label><input id="hr-gastos" type="number" inputmode="numeric" min="0" value="900"></div>
+    <div class="campo"><label for="hr-horas">Tus horas reales por semana: sesiones, WhatsApp y gestión</label><input id="hr-horas" type="number" inputmode="numeric" min="1" value="55"></div>
+    <details class="por desglose" id="hr-desglose"><summary>Súmalas aquí, una por una</summary>
+     <div class="desg">
+      <div class="campo"><label for="hd-ses">Sesiones y consultas</label><input id="hd-ses" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      <div class="campo"><label for="hd-wa">WhatsApp y mensajes</label><input id="hd-wa" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      <div class="campo"><label for="hd-adm">Turnos, cobros y gestión</label><input id="hd-adm" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      <div class="campo"><label for="hd-prep">Preparar sesiones e informes</label><input id="hd-prep" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      <div class="campo"><label for="hd-red">Redes y contenido</label><input id="hd-red" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      <div class="campo"><label for="hd-ot">Todo lo demás</label><input id="hd-ot" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+     </div>
+    </details>
+    <div class="res res-hora">
+     <div class="res-fila grande"><span>Tu hora real</span><b id="hr-phr">17 USD</b></div>
+     <div class="res-fila"><span>Lo que te queda por mes</span><b id="hr-neto">4.100 USD</b></div>
+     <div class="res-fila"><span>Horas reales por mes</span><b id="hr-mes">236 h</b></div>
+    </div>
+   </div>
+   <p class="nota">La cuenta: (lo que facturas − tus gastos fijos) ÷ (tus horas por semana × 4,3) = tu hora real. Un mes tiene unas 4,3 semanas.</p>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">2</span>
+   <h2 class="h3">Dónde se van tus horas.</h2>
+   <p class="lead" id="hb-vacio">Abre «Súmalas aquí, una por una» y carga tus horas: aquí ves cuántas cobras y cuántas se van en todo lo demás.</p>
+   <div class="horas-b" id="hb" hidden>
+    <p class="hb-dato"><b id="hb-pct">0 %</b> de tus horas son sesiones que cobras.</p>
+    <div id="hb-barras"></div>
+   </div>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">3</span>
+   <h2 class="h3">Mueve las palancas.</h2>
+   <p class="lead">Tu número depende de cómo está armada tu semana. Mueve cada palanca y mira tu hora nueva. Los números los pones tú.</p>
+   <div class="calc palancas">
+    <div class="campo palanca"><label for="pl-horas">Horas por semana que pasan a un sistema: confirmaciones, recordatorios y respuestas</label><input id="pl-horas" type="range" min="0" max="20" step="1" value="0"><output id="pl-horas-v">0 h</output></div>
+    <div class="campo palanca"><label for="pl-mas">Lo que suma por mes vender programas en lugar de sesiones sueltas (USD)</label><input id="pl-mas" type="range" min="0" max="10000" step="250" value="0"><output id="pl-mas-v">0 USD</output></div>
+    <div class="res res-hora">
+     <div class="res-fila grande"><span>Tu hora nueva</span><b id="pl-phr">17 USD</b></div>
+     <div class="res-fila"><span>Frente a hoy</span><b id="pl-dif">igual</b></div>
+    </div>
+   </div>
+   <p class="nota">Para saber cuánto cobrar por un programa, usa <a class="enlace" href="?h=guiadeprecios">Tu precio, paso a paso</a>.</p>
+  </div>
+
+  <div class="paso">
+   <span class="paso-n">4</span>
+   <h2 class="h3">Tu número, para guardar.</h2>
+   <div class="hoja" id="hoja-hora">
+    <span class="kick">Tu hora real</span>
+    <h3 id="hh-num">17 USD por hora.</h3>
+    <div class="dato"><span>Facturas por mes</span><b id="hh-fact">5.000 USD</b></div>
+    <div class="dato"><span>Gastos fijos</span><b id="hh-gas">900 USD</b></div>
+    <div class="dato"><span>Te queda</span><b id="hh-neto">4.100 USD</b></div>
+    <div class="dato"><span>Horas reales por semana</span><b id="hh-h">55 h</b></div>
+   </div>
+   <div class="botones no-imp">
+    <button class="btn" type="button" id="hr-copiar">Copiar mi número</button>
+    <button class="btn claro" type="button" onclick="window.print()">Imprimir o guardar en PDF</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ IMPOSTOR · El Neuro-Escáner IA ═══ -->
+<section class="tool" id="t-impostor" data-titulo="El Neuro-Escáner IA">
+ <div class="envase h-cab">
+  <span class="kick">Herramienta · Impostor</span>
+  <h1 class="h1" style="margin-top:18px">El Neuro-Escáner IA.</h1>
+  <p class="lead">Nueve frases, tres minutos. Marca qué tan seguido te pasa cada una: sale el patrón que más pesa en ti y el primer movimiento para cambiarlo.</p>
+ </div>
+ <div class="envase">
+  <div class="paso">
+   <span class="paso-n">1</span>
+   <h2 class="h3">¿Qué tan seguido te pasa?</h2>
+   <p class="lead"><span id="ne-cuenta">0 de 9</span> respondidas. No hay respuesta correcta: marca la que pasa de verdad.</p>
+   <ol class="frases" id="ne-frases">
+    <li data-p="A"><p>Antes de decir tu precio, ya estás pensando qué descuento ofrecer.</p></li>
+    <li data-p="B"><p>Cuando dices tu precio, lo acompañas con tus títulos y tus años de formación.</p></li>
+    <li data-p="C"><p>Respondes mensajes y seguimientos fuera de la sesión, sin cobrarlos.</p></li>
+    <li data-p="A"><p>Si la persona duda, bajas el precio aunque no te lo haya pedido.</p></li>
+    <li data-p="B"><p>Sientes que necesitas otro curso antes de cobrar más.</p></li>
+    <li data-p="C"><p>La sesión se alarga más allá del tiempo acordado.</p></li>
+    <li data-p="A"><p>Dices tu precio y enseguida agregas «pero podemos verlo».</p></li>
+    <li data-p="B"><p>Después de decir tu precio, sigues hablando para explicarlo.</p></li>
+    <li data-p="C"><p>Sumas materiales o encuentros extra para que «valga lo que pagó».</p></li>
+   </ol>
+  </div>
+
+  <div class="paso" id="ne-res" hidden>
+   <span class="paso-n">2</span>
+   <h2 class="h3">El patrón que más pesa en ti.</h2>
+   <div class="patrones" id="ne-barras">
+    <div class="patron" data-p="A"><span class="pt-n">A</span><span class="pt-t">Ofreces descuento antes de que te lo pidan</span><span class="pt-riel"><i></i></span></div>
+    <div class="patron" data-p="B"><span class="pt-n">B</span><span class="pt-t">Explicas tu precio con tu currículum</span><span class="pt-riel"><i></i></span></div>
+    <div class="patron" data-p="C"><span class="pt-n">C</span><span class="pt-t">Das de más para compensar</span><span class="pt-riel"><i></i></span></div>
+   </div>
+   <div class="hoja" id="ne-hoja">
+    <span class="kick" id="ne-k">Tu patrón</span>
+    <h3 id="ne-t"></h3>
+    <p class="frase" id="ne-que"></p>
+    <p class="mov-k">Tu primer movimiento, esta semana</p>
+    <p class="frase" id="ne-mov"></p>
+    <p class="mov-k">Tu frase</p>
+    <p class="frase cita-precio">«El programa dura [tiempo], logras [resultado] y la inversión es [precio]. ¿Empezamos?»</p>
+   </div>
+   <div class="botones no-imp">
+    <a class="btn" href="?h=guiadeprecios">Calcular mi precio</a>
+    <button class="btn claro" type="button" id="ne-copiar">Copiar mi resultado</button>
+   </div>
+   <h2 class="h3" style="margin-top:44px">Tres pasos concretos.</h2>
+   <div class="fichas">
+    <div class="ficha"><span class="eti">Paso 1</span><b>Identifica tu patrón</b><p>Ya lo tienes: es el que está arriba.</p></div>
+    <div class="ficha"><span class="eti">Paso 2</span><b>Cobra el precio correcto una vez</b><p>A una persona nueva, al precio que corresponde. Su «sí» te enseña más que cualquier teoría.</p></div>
+    <div class="ficha"><span class="eti">Paso 3</span><b>Repítelo</b><p>El segundo es más fácil. El décimo, natural.</p></div>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -559,6 +731,112 @@ Que estés muy bien.</div>
   }
 
   if (window.pxc && h) pxc('VerHerramienta', { content_name: h });
+
+  /* HORA · tu hora real (16 nov 2026: antes era una página vieja de GHL) */
+  if (d.getElementById('hr-fact')) {
+    var hIds = ['hr-fact', 'hr-gastos', 'hr-horas'], dIds = ['hd-ses', 'hd-wa', 'hd-adm', 'hd-prep', 'hd-red', 'hd-ot'];
+    var dNom = ['Sesiones y consultas', 'WhatsApp y mensajes', 'Turnos, cobros y gestión', 'Preparar sesiones e informes', 'Redes y contenido', 'Todo lo demás'];
+    var dCol = ['#2B4E68', '#904932', '#B48B3F', '#46979E', '#294637', '#8C8377'];
+    var num = function (i) { return Math.max(0, +d.getElementById(i).value || 0); };
+    var poner = function (id, txt) { var el = d.getElementById(id); if (el.textContent !== txt) { el.textContent = txt; el.classList.remove('salta'); void el.offsetWidth; el.classList.add('salta'); } };
+    var hora = function () {
+      var desg = dIds.map(num), sumaD = desg.reduce(function (a, b) { return a + b; }, 0);
+      if (sumaD > 0) d.getElementById('hr-horas').value = sumaD;
+      var f = num('hr-fact'), g = num('hr-gastos'), hs = Math.max(1, num('hr-horas')), mes = hs * 4.3, neto = f - g;
+      var phr = neto / mes;
+      poner('hr-phr', usd(phr)); poner('hr-neto', usd(neto)); poner('hr-mes', Math.round(mes) + ' h');
+      d.getElementById('hh-num').textContent = usd(phr) + ' por hora.';
+      d.getElementById('hh-fact').textContent = usd(f); d.getElementById('hh-gas').textContent = usd(g);
+      d.getElementById('hh-neto').textContent = usd(neto); d.getElementById('hh-h').textContent = hs + ' h';
+      /* dónde se van tus horas */
+      var hb = d.getElementById('hb'), vac = d.getElementById('hb-vacio');
+      hb.hidden = !(sumaD > 0); vac.hidden = sumaD > 0;
+      if (sumaD > 0) {
+        d.getElementById('hb-pct').textContent = Math.round(desg[0] / sumaD * 100) + ' %';
+        var cont = d.getElementById('hb-barras');
+        if (!cont.children.length) dNom.forEach(function (n, i) {
+          var f2 = d.createElement('div'); f2.className = 'hb-fila';
+          f2.innerHTML = '<span></span><span class="hb-riel"><i style="--c:' + dCol[i] + '"></i></span><b></b>';
+          f2.firstChild.textContent = n; cont.appendChild(f2);
+        });
+        [].forEach.call(cont.children, function (f2, i) {
+          f2.querySelector('i').style.width = (desg[i] / sumaD * 100) + '%';
+          f2.querySelector('b').textContent = desg[i] + ' h';
+        });
+      }
+      /* las palancas */
+      var menos = +d.getElementById('pl-horas').value || 0, mas = +d.getElementById('pl-mas').value || 0;
+      var hs2 = Math.max(1, hs - menos), phr2 = (neto + mas) / (hs2 * 4.3);
+      d.getElementById('pl-horas-v').textContent = menos + ' h';
+      d.getElementById('pl-mas-v').textContent = usd(mas);
+      poner('pl-phr', usd(phr2));
+      var dif = phr > 0 ? Math.round((phr2 / phr - 1) * 100) : 0;
+      d.getElementById('pl-dif').textContent = dif > 0 ? '+' + dif + ' %' : 'igual';
+      guardar('tcd_hora', hIds.map(num).concat(desg));
+    };
+    var hv = leer('tcd_hora');
+    if (hv) {
+      hIds.forEach(function (i, j) { if (hv[j] != null) d.getElementById(i).value = hv[j]; });
+      dIds.forEach(function (i, j) { var v = hv[3 + j]; d.getElementById(i).value = v ? v : ''; });
+      if (dIds.some(function (i) { return num(i) > 0; })) d.getElementById('hr-desglose').open = true;
+    }
+    ['hr-fact', 'hr-gastos'].concat(dIds, ['pl-horas', 'pl-mas']).forEach(function (i) { d.getElementById(i).addEventListener('input', hora); });
+    d.getElementById('hr-horas').addEventListener('input', function () { dIds.forEach(function (i) { d.getElementById(i).value = ''; }); hora(); });
+    hora();
+    d.getElementById('hr-copiar').addEventListener('click', function () {
+      var t = 'Mi hora real: ' + d.getElementById('hr-phr').textContent + '\nFacturo ' + usd(num('hr-fact')) + ' por mes, con ' + usd(num('hr-gastos')) + ' de gastos fijos y ' + num('hr-horas') + ' horas reales por semana.\nLo que me queda: ' + d.getElementById('hr-neto').textContent + ' por mes.\n\nTu Clínica Digital · tuclinica.digital/phr';
+      copiar(t, this);
+    });
+  }
+
+  /* IMPOSTOR · el Neuro-Escáner: nueve frases, tres patrones */
+  if (d.getElementById('ne-frases')) {
+    var PAT = {
+      A: { t: 'Ofreces descuento antes de que te lo pidan.', que: 'La persona lee duda donde había valor.', mov: 'Di tu precio una vez y quédate en silencio. Si la persona duda, pregunta «¿qué parte te genera duda?» antes de ofrecer nada.' },
+      B: { t: 'Explicas tu precio con tu currículum.', que: 'El precio se presenta con calma. Tu formación ya está en tu trabajo.', mov: 'Presenta tu precio en una sola frase: resultado, tiempo e inversión. Sin títulos ni años de formación. Y espera la respuesta.' },
+      C: { t: 'Das de más para compensar.', que: 'Sumas tiempo y seguimientos sin cobrarlos: más horas por el mismo ingreso.', mov: 'Escribe qué incluye tu acompañamiento: sesiones, mensajes y materiales. Lo que queda fuera se ofrece aparte, con su precio, o entra al programa.' }
+    };
+    var OPC = ['Casi nunca', 'A veces', 'Casi siempre'];
+    var lis = [].slice.call(d.querySelectorAll('#ne-frases li'));
+    var resp = leer('tcd_neuro') || [];
+    lis.forEach(function (li, i) {
+      var e = d.createElement('div'); e.className = 'escala'; e.setAttribute('role', 'group'); e.setAttribute('aria-label', 'Qué tan seguido te pasa');
+      OPC.forEach(function (o, v) {
+        var b = d.createElement('button'); b.type = 'button'; b.textContent = o; b.setAttribute('aria-pressed', resp[i] === v ? 'true' : 'false');
+        b.addEventListener('click', function () {
+          resp[i] = v; [].forEach.call(e.children, function (x, k) { x.setAttribute('aria-pressed', k === v ? 'true' : 'false'); });
+          li.classList.add('hecha'); guardar('tcd_neuro', resp); escanear(true);
+          var sig = lis[i + 1]; if (sig && resp[i + 1] == null && sig.getBoundingClientRect().top > innerHeight * 0.7) sig.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+        e.appendChild(b);
+      });
+      li.appendChild(e); if (resp[i] != null) li.classList.add('hecha');
+    });
+    var escanear = function (recien) {
+      var n = lis.filter(function (li, i) { return resp[i] != null; }).length;
+      d.getElementById('ne-cuenta').textContent = n + ' de 9';
+      if (n < 9) return;
+      var pts = { A: 0, B: 0, C: 0 };
+      lis.forEach(function (li, i) { pts[li.getAttribute('data-p')] += resp[i] || 0; });
+      var max = Math.max(pts.A, pts.B, pts.C), gana = ['A', 'B', 'C'].filter(function (k) { return pts[k] === max; });
+      var r = d.getElementById('ne-res'), primera = r.hidden; r.hidden = false;
+      d.querySelectorAll('#ne-barras .patron').forEach(function (el) {
+        var k = el.getAttribute('data-p'); el.classList.toggle('gana', gana.indexOf(k) >= 0 && max > 0);
+        setTimeout(function () { el.querySelector('i').style.width = Math.round(pts[k] / 6 * 100) + '%'; }, 60);
+      });
+      var k = gana[0], P = PAT[k];
+      d.getElementById('ne-k').textContent = max === 0 ? 'Tu resultado' : (gana.length > 1 ? 'Tus patrones: ' + gana.join(' y ') : 'Tu patrón: ' + k);
+      d.getElementById('ne-t').textContent = max === 0 ? 'Ningún patrón pesa en ti hoy.' : gana.map(function (g) { return PAT[g].t; }).join(' ');
+      d.getElementById('ne-que').textContent = max === 0 ? 'Tu precio ya se dice con calma. El paso que sigue es ponerle el número correcto.' : P.que;
+      d.getElementById('ne-mov').textContent = max === 0 ? 'Calcula tu precio con la guía y estrénalo con la próxima persona que llegue.' : gana.map(function (g) { return PAT[g].mov; }).join(' ');
+      if (primera && recien) setTimeout(function () { r.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 250);
+    };
+    escanear(false);
+    d.getElementById('ne-copiar').addEventListener('click', function () {
+      var t = d.getElementById('ne-k').textContent + '\n' + d.getElementById('ne-t').textContent + '\n\nMi primer movimiento: ' + d.getElementById('ne-mov').textContent + '\n\nTu Clínica Digital · tuclinica.digital/impostor';
+      copiar(t, this);
+    });
+  }
 })();
 </script>
 </body>
