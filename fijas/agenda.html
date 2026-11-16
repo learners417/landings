@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fast.wistia.com" crossorigin>
 <link rel="preconnect" href="https://assets.cdn.filesafe.space" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&family=Literata:opsz,wght@7..72,400..600&display=swap" rel="stylesheet">
 
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
@@ -518,6 +518,36 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
  .portada .sub{order:7}
  #vsl{max-width:min(100%,max(200px,calc((100vh - 300px) * .5625)));max-width:min(100%,max(200px,calc((100svh - 300px) * .5625)))}
 }
+/* ═══ PAISAJE VIVO (16 nov 2026): la piel de la home ═══
+   Manrope para lo que se mira, Literata para lo que se lee, Cormorant solo en la firma.
+   Botones redondos del azul del lago, tarjetas claras y redondas, letra normal (sin versalitas). */
+:root{--fd:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;--fb:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;--lectura:Literata,Georgia,serif;
+  --forest:#2B4E68;--forest-h:#213D52;--tarjeta:#FBF8F2;--banda:#EBE3D5;--bg:#F4EEE3}
+.grain{display:none!important}
+h1,h2,h3{font-family:var(--fd)!important;font-weight:800!important;letter-spacing:-.035em!important;line-height:1.06!important;font-style:normal}
+h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;color:inherit!important}
+.kicker,.paso-pill,.paso,.snum,.canje span,.gk,.pk,.cierre .ck,.plan .cinta,.pasos,.vfin .fk,.libro .lk,.lk,.ck{font-family:var(--fd)!important;text-transform:none!important;letter-spacing:0!important;font-weight:700!important;font-style:normal!important}
+.kicker,.gk,.pk,.cierre .ck,.libro .lk,.lk{color:#7A5F33!important;font-size:17px!important}
+.ruta .rd,.gpts b,.rn,.fn,.lista .n,.foot-brand,.ws-n,.q legend,.vs-t,.cuenta,.plan .nom{font-family:var(--fd)!important;font-weight:800!important;font-style:normal!important;letter-spacing:-.02em!important}
+.cierre .cd,.plan .que{font-family:var(--fd)!important;font-style:normal!important;font-weight:800!important}
+.gfirma{font-family:"Cormorant Garamond",Georgia,serif!important;font-style:italic!important;font-weight:500!important}
+.btn,.tb-btn,.ws-go,.fab-wa{border-radius:999px!important;box-shadow:none!important;font-family:var(--fd)!important;font-weight:700!important}
+.btn,.tb-btn,.ws-go{background:#2B4E68!important}
+.btn:hover,.tb-btn:hover,.ws-go:hover{background:#213D52!important}
+.tb-marca,.marca{display:inline-flex!important;align-items:center;gap:12px;font-family:var(--fd)!important;font-weight:800!important;letter-spacing:-.025em!important;text-transform:none!important;font-size:19px!important;color:#2B2724!important}
+.lomos{display:inline-flex;gap:3px;height:24px;flex:none}
+.lomos i{width:6px;border-radius:2px;background:var(--c)}
+.lomos i:nth-child(1){--c:#2B4E68}.lomos i:nth-child(2){--c:#904932}.lomos i:nth-child(3){--c:#B48B3F}.lomos i:nth-child(4){--c:#46979E}.lomos i:nth-child(5){--c:#294637}
+.sello text{font-family:var(--fd)!important;font-weight:800!important}
+/* en el celular la cabecera lleva los cinco lomos y el botón: el nombre aparece desde 460 px */
+@media (max-width:459px){.tb-marca .tm-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+/* lo que se lee, en Literata */
+.sub,.filtro,.dosmin,.intro,.para,.gtxt,.fr,.fa,.pacto .pt p:not(.pk),.porque p,.foot-disc{font-family:var(--lectura)!important}
+.canje .hoy,.canje .luego{font-family:var(--lectura)!important}
+/* las tarjetas: claras y redondas */
+.card,.plan,.tcard,.cupos,.cierre,.pacto .pt{border-radius:24px!important}
+.card,.plan{background:var(--tarjeta)!important}
 </style>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" async></script>
 </head>
@@ -526,7 +556,7 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 <div class="grain" aria-hidden="true"></div>
 
 <!-- ══════ CABECERA FIJA ══════ -->
-<div class="topbar"><div class="tb-in"><span class="tb-marca">Javo Katz<small>Tu Clínica Digital</small></span><a class="tb-btn" href="#agenda" data-cta="cabecera">Agendar diagnóstico</a></div></div>
+<div class="topbar"><div class="tb-in"><span class="tb-marca"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="tm-t">Tu Clínica Digital</span></span><a class="tb-btn" href="#agenda" data-cta="cabecera">Agendar diagnóstico</a></div></div>
 
 <!-- ══════ PORTADA ══════ -->
 <div class="portada">

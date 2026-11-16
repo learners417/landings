@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fast.wistia.com" crossorigin>
 <link rel="preconnect" href="https://assets.cdn.filesafe.space" crossorigin>
 <link rel="preload" as="video" href="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6aebe892e322309abfcc3019.mp4">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&family=Literata:opsz,wght@7..72,400..600&display=swap" rel="stylesheet">
 
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
@@ -324,6 +324,31 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 /* 9 nov: los cupos y los precios de 2027, debajo de los tres pasos de la llamada */
 .cupos{margin:26px auto 0;max-width:520px;padding:16px 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;font-size:17px;line-height:1.5;color:var(--muted);text-wrap:balance}
 .cupos b{color:var(--ink);font-weight:600}
+/* ═══ PAISAJE VIVO (16 nov 2026): la piel de la home ═══
+   Manrope para lo que se mira, Literata para lo que se lee, Cormorant solo en la firma.
+   Botones redondos del azul del lago, tarjetas claras y redondas, letra normal (sin versalitas). */
+:root{--fd:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;--fb:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;--lectura:Literata,Georgia,serif;
+  --forest:#2B4E68;--forest-h:#213D52;--tarjeta:#FBF8F2;--banda:#EBE3D5;--bg:#F4EEE3}
+.grain{display:none!important}
+h1,h2,h3{font-family:var(--fd)!important;font-weight:800!important;letter-spacing:-.035em!important;line-height:1.06!important;font-style:normal}
+h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;color:inherit!important}
+.kicker,.paso-pill,.paso,.snum,.canje span,.gk,.pk,.cierre .ck,.plan .cinta,.pasos,.vfin .fk,.libro .lk,.lk,.ck{font-family:var(--fd)!important;text-transform:none!important;letter-spacing:0!important;font-weight:700!important;font-style:normal!important}
+.kicker,.gk,.pk,.cierre .ck,.libro .lk,.lk{color:#7A5F33!important;font-size:17px!important}
+.ruta .rd,.gpts b,.rn,.fn,.lista .n,.foot-brand,.ws-n,.q legend,.vs-t,.cuenta,.plan .nom{font-family:var(--fd)!important;font-weight:800!important;font-style:normal!important;letter-spacing:-.02em!important}
+.cierre .cd,.plan .que{font-family:var(--fd)!important;font-style:normal!important;font-weight:800!important}
+.gfirma{font-family:"Cormorant Garamond",Georgia,serif!important;font-style:italic!important;font-weight:500!important}
+.btn,.tb-btn,.ws-go,.fab-wa{border-radius:999px!important;box-shadow:none!important;font-family:var(--fd)!important;font-weight:700!important}
+.btn,.tb-btn,.ws-go{background:#2B4E68!important}
+.btn:hover,.tb-btn:hover,.ws-go:hover{background:#213D52!important}
+.tb-marca,.marca{display:inline-flex!important;align-items:center;gap:12px;font-family:var(--fd)!important;font-weight:800!important;letter-spacing:-.025em!important;text-transform:none!important;font-size:19px!important;color:#2B2724!important}
+.lomos{display:inline-flex;gap:3px;height:24px;flex:none}
+.lomos i{width:6px;border-radius:2px;background:var(--c)}
+.lomos i:nth-child(1){--c:#2B4E68}.lomos i:nth-child(2){--c:#904932}.lomos i:nth-child(3){--c:#B48B3F}.lomos i:nth-child(4){--c:#46979E}.lomos i:nth-child(5){--c:#294637}
+.sello text{font-family:var(--fd)!important;font-weight:800!important}
+
+/* lo que se lee, en Literata */
+.lead,.intro,.foot-disc,.libro p:not(.lk){font-family:var(--lectura)!important}
+.card,.plan,.tcard,.cupos,.libro{border-radius:24px!important}
 </style>
 </head>
 <body>
@@ -334,7 +359,7 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
 <main class="stage">
  <div class="st-in">
   <div class="s-head">
-   <p class="marca">Javo Katz</p>
+   <p class="marca"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</p>
    <p class="okb"><span class="okc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Tu horario está reservado</p>
    <h1 id="titulo"><span class="w" style="--i:0">Espera:</span><br><span class="w" style="--i:1">te</span> <span class="w" style="--i:2">falta</span> <span class="g"><span class="w" style="--i:3">un</span> <span class="w" style="--i:4">paso.</span></span></h1>
    <p class="lead">Mira este video <b>antes de tu diagnóstico</b> y después confírmame por WhatsApp.</p>
