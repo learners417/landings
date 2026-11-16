@@ -4,17 +4,24 @@ name: Purga jsDelivr
 on:
   push:
     branches: [main]
-    paths: ['site/**']
+    paths: ['site/**', '.github/workflows/purga.yml']
 jobs:
   purga:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Purgar lo que cambió
         run: |
-          git diff --name-only HEAD~1 HEAD -- site/ | while read f; do
+          ANTES="${{ github.event.before }}"
+          if git cat-file -e "$ANTES^{commit}" 2>/dev/null && git diff --quiet "$ANTES" HEAD -- .github/workflows/purga.yml; then
+            LISTA=$(git diff --name-only "$ANTES" HEAD -- site/)
+          else
+            LISTA=$(git ls-files site/)   # la primera vez, o si cambió este archivo: se purga todo site/
+          fi
+          echo "$LISTA" | while read f; do
+            [ -z "$f" ] && continue
             echo "purga $f"
             curl -s -o /dev/null -w "%{http_code}\n" "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/$f" || true
             sleep 1
