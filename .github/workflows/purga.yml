@@ -1,0 +1,21 @@
+# Cada vez que se publica en main, se vacía la caché de jsDelivr de las páginas que cambiaron,
+# para que tuclinica.digital muestre la versión nueva en minutos y no en horas.
+name: Purga jsDelivr
+on:
+  push:
+    branches: [main]
+    paths: ['site/**']
+jobs:
+  purga:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Purgar lo que cambió
+        run: |
+          git diff --name-only HEAD~1 HEAD -- site/ | while read f; do
+            echo "purga $f"
+            curl -s -o /dev/null -w "%{http_code}\n" "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/$f" || true
+            sleep 1
+          done
