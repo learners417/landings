@@ -63,7 +63,8 @@ for f in sorted(p.stem for p in pathlib.Path('pages').glob('*.html')):
             if not os.path.exists(os.path.join(os.path.dirname(I.rstrip(os.sep)),k)) and k not in FALTAN: FALTAN.append(k)
     elif '/*EDICION_CSS*/' in s:   # la Edición Libres (9 nov 2026) vestida de Paisaje vivo (16 nov 2026)
         s=s.replace('<style>/*EDICION_CSS*/</style>','<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap">\n<style>\n'+ecss+'\n'+vcss+'\n</style>\n'+cabeza,1)
-        s=re.sub(r'(<a class="marca"[^>]*>)\s*Javo Katz\s*</a>', r'\1<span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>', s)
+        if f!='clinica-del-lider':   # La Clínica del Líder es otra marca (para líderes): conserva «Javo Katz»
+            s=re.sub(r'(<a class="marca"[^>]*>)\s*Javo Katz\s*</a>', r'\1<span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>', s)
         s=s.replace('Compuesto en Cormorant Garamond y Literata.','Compuesto en Manrope y Literata.')
         s=re.sub(r'<style>(.*?)</style>', lambda m: '<style>'+a_paisaje(m.group(1))+'</style>', s, flags=re.S)
         s=s.replace('<script>/*EDICION_JS*/</script>',imgs(s)+'\n<script>\n'+js+'\n</script>\n<script>\n'+ejs+'\n</script>\n<script>\n'+vjs+'\n</script>',1)
