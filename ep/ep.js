@@ -141,7 +141,7 @@
     if (!src) caja.innerHTML = '<p class="aviso">La agenda abre en unos minutos. Volvé a entrar más tarde.</p>';
     else {
       var f = d.createElement('iframe');
-      f.src = src; f.id = id + '_ads'; f.title = caja.getAttribute('data-titulo') || 'Agenda'; f.setAttribute('scrolling', 'no'); f.loading = 'lazy';
+      f.src = src; f.id = id + '_ads'; f.title = caja.getAttribute('data-titulo') || 'Agenda'; f.setAttribute('scrolling', 'no');
       caja.appendChild(f);
       var s = d.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true; d.body.appendChild(s);
       var avisado = false;

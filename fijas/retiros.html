@@ -142,7 +142,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:420;font-variation-set
 .redondo svg{width:20px;height:20px}
 .pelicula .final{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:40px 24px;background:var(--lago);z-index:2}
 .pelicula .final .foto{position:absolute;inset:0;border-radius:0;opacity:.34}
-.pelicula .final .dentro{position:relative;z-index:2;max-width:15em}
+.pelicula .final .dentro{position:relative;z-index:2;width:min(980px,100%)}
+.pelicula .final .d2{max-width:16ch;margin-inline:auto}
 .pelicula .final .d2{color:var(--blanco)}
 .pelicula .final .fila{justify-content:center;margin-top:34px}
 .pelicula .final .marca{color:var(--oro);justify-content:center;margin-bottom:26px}
@@ -778,7 +779,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
     if (!src) caja.innerHTML = '<p class="aviso">La agenda abre en unos minutos. Volvé a entrar más tarde.</p>';
     else {
       var f = d.createElement('iframe');
-      f.src = src; f.id = id + '_ads'; f.title = caja.getAttribute('data-titulo') || 'Agenda'; f.setAttribute('scrolling', 'no'); f.loading = 'lazy';
+      f.src = src; f.id = id + '_ads'; f.title = caja.getAttribute('data-titulo') || 'Agenda'; f.setAttribute('scrolling', 'no');
       caja.appendChild(f);
       var s = d.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true; d.body.appendChild(s);
       var avisado = false;
