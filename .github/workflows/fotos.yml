@@ -19,7 +19,7 @@ jobs:
             [ -f "anuncios/fotos/${id}.jpg" ] && continue
             case "$id" in
               photo-*) url="https://images.unsplash.com/${id}?auto=format&fm=jpg&fit=max&q=88&w=2400" ;;
-              *) pag=$(curl -sSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36" "https://unsplash.com/photos/${id}" || true)
+              *) pag=$(curl -sSL -H "Accept: application/json" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36" "https://unsplash.com/napi/photos/${id}" || true)
                  base=$(printf '%s' "$pag" | grep -o 'https://images.unsplash.com/photo-[0-9a-z-]*' | head -1)
                  echo "id $id -> ${base:-sin imagen} ($(printf '%s' "$pag" | wc -c) bytes)"
                  [ -z "$base" ] && { echo "falla $id"; continue; }
