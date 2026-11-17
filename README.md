@@ -94,8 +94,21 @@ Ubicación `SImzaMApYvtVV8UzvlgD`. Para abrir un paso:
 | Subir tus Precios `TFFgX8uSCcOGdx9B6Ssv` | el-numero `38121e9f-773e-47ee-8681-392800566c68` · checkout `85b82fce-6f00-4fec-99da-cf9f34d9f571` (formulario de pedido de GHL) |
 | Libros y App `eQrRazCor9k0I4bsqIXc` | libros `1dc9a7d2-b2c8-4315-afd2-4d41dee290bd` · el-numero-2245 `fd8a7ed6-c15b-4f52-b5d7-7ab9d1239439` · gracias `888ce415-3d95-4d84-af14-5c1cff8aee51` · inicio `d41fdeaf-2684-4895-b89b-583bd81cf7a1` · app `f1facb03-a0a0-42bf-8dd0-28847c3e9090` · capitulos `5385d83c-8773-4e91-8d3e-65c93e484114` · capitulo-sanadores `7aa1a856-17e6-4a3e-959a-dcab08e6ec97` · capitulo-lago `ac8818b5-79cd-4ba1-bc48-f781e3ac69a4` · capitulo-montana `fca7d210-af67-4430-b149-f513c3ea3e82` · capitulo-viento `61fb8092-c937-48f4-9850-25c17776910d` · capitulo-rio `dbfb2896-64d9-44cc-bb89-67c89a7b051e` · capitulo-bosque `3a3c0b4a-d278-4811-85e4-3ef22667df43` · capitulo-heroe `449ae758-1222-4e0a-a7f0-06be9759af7c` · capitulo-libertades `c66fe98d-d68f-42d5-a0b7-fb2f459c262d` · lo-que-el-sur-te-ensena `232ab4b0-9cad-47ad-923f-7275dc5e6e6b` · heroe-descapado `35b9c5d3-e9ea-453f-98ca-c3b73f7d7a83` · materias-pendientes `fdae5089-6820-49f8-be33-f12f40642dc2` · intangibles `adf1be94-f4fe-4e1d-ac97-7c50c6726fcd` · clinica-del-lider `804f0033-9f85-446e-a72f-81b481c7f4c9` · camino `e06b0cea-5cd5-4735-903d-2f12e471f77a` · la-cima `5262a570-a55f-4bef-85be-b0846372f121` · mastermind `f08c3674-289f-4822-a709-19617dfd0db7` · para-empezar `784dfbaf-ce61-4aae-b5b6-b219813942d3` · prensa `e520afcd-a93e-409a-974f-20c1a9cc784d` · libro/umbral `e0362c99-4d2a-4cb5-900c-1667028486e5` · libro/audio `e404337b-2c3e-4e60-ab78-5986373bc84c` · libro/lago `c9dbf653-2700-4456-b77b-ee89d8a24f16` · libro/montana `a23de7c3-b40f-415c-91c7-61a173d9d1e9` · libro/viento `312900be-c7bc-4ebd-b3f2-c1bd4c07104a` · libro/rio `7dd0a5b0-557c-4c98-b109-b9cf1d37b9c7` · libro/bosque `7fc58030-4d68-4178-bf53-bce1eeee1674` (los 12 del 8 nov 2026) |
 
+## Imagen al compartir (17 nov 2026, aprobada por Javo)
+Google, WhatsApp e Instagram no corren el cargador: leen solo el panel SEO de GHL (título, descripción e imagen).
+Cada página pública tiene su tarjeta de 1200 × 630 en `imgs/og/<clave>.jpg`: la marca de cinco lomos, la frase de la
+página y su objeto (la app, las tapas o el libro), en la piel Paisaje vivo. Se arman con `python3 og/tarjeta.py`
+(una vez: `cd og && npm i @fontsource/manrope@5 @fontsource/literata@5`). Su URL va en el panel SEO del paso, en Imágenes:
+`https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/og/<clave>.jpg`. /instala-tu-clinica conserva su foto.
+
+## Páginas viejas de GHL (17 nov 2026, decidido por Javo)
+33 páginas viejas que seguían abiertas en tuclinica.digital (las herramientas de antes, /libro-sanadores-libres, /clase-,
+/10ken90, /bienvenida…) llevan a su versión nueva con un bloque al final del código de seguimiento del Head de su embudo
+(Lead Magnets CLINICA y Embudo VSL). Copia exacta y mapa: `ghl/viejas.html`. Las de clientes, los manuales, el folleto y
+los contratos siguen como están.
+
 ## Qué hay en cada carpeta
-- `pages/` · las páginas · `src/` · base.css, base.js, config.js · `imgs/` · tapas e imágenes (van dentro de cada página)
+- `pages/` · las páginas · `src/` · base.css, base.js, config.js · `imgs/` · tapas e imágenes (van dentro de cada página) · `imgs/og/` · las tarjetas para compartir · `og/` · cómo se arman
 - `fijas/` · agenda, preparación y la capa del generador (`/generador-pp` conserva su código; la capa va debajo)
 - `tools.py` · arma las 6 páginas de herramientas · `port_capitulos.py` · arma los capítulos
 - `cargador.js` y `ghl-linea.html` · cómo llegan las páginas a GHL

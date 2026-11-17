@@ -4,3 +4,5 @@
 /panel/
 __pycache__/
 /PLAN.md
+/og/node_modules/
+/og/package*.json
