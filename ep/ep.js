@@ -154,4 +154,23 @@
       }, false);
     }
   }
+
+  /* ── el video de Ailu: arranca mudo al verse; con el botón vuelve al inicio con sonido ── */
+  $$('[data-vsl]').forEach(function (caja) {
+    var v = caja.querySelector('video'), b = caja.querySelector('.sonido'), activo = false;
+    if (!v) return;
+    if ('IntersectionObserver' in w && !quieto) {
+      new IntersectionObserver(function (en) {
+        if (activo) return;
+        if (en[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+      }, { threshold: .4 }).observe(caja);
+    }
+    if (b) b.addEventListener('click', function () {
+      activo = true; caja.classList.add('sonando');
+      v.muted = false; v.loop = false; v.controls = true; try { v.currentTime = 0; } catch (e) {}
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      evento('VideoConSonido', { pagina: location.pathname }, true);
+    });
+    v.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
+  });
 })();

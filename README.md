@@ -130,3 +130,13 @@ Cada página es un libro de la colección: portadilla, índice, capítulos y col
 Letra de 16 px o más · papel, sin fondo negro, sin degradés ni brillos · oro solo en líneas de 1 px,
 versalitas y numerales · Cormorant Garamond titula y Literata se lee · sin flechas en los botones · castellano neutro, tuteo · nunca «gente» ni «gratis» · sin señales de falta de
 dinero · datos con su fuente · sin emojis.
+
+## Piel «Cordillera» (17 nov 2026, decisión de Javo)
+Las dos páginas de Ailu pasan de la piel «Lago» al uva y la montaña de la /retiros original (la del video de Ailu):
+noche `#24142A`, uva `#5A3868`, vino `#6B2A3D` (botones), ciruela `#C98BB4` (acentos sobre oscuro) y la cresta de la
+cordillera de la original, que se dibuja al aparecer (`.cordillera`). Fondos claros, sin degradés ni brillos, con la calidad
+de la home de TCD y de NEXOS. La voz es la de Ailu en primera persona (empresa de una sola persona: «Yo produzco todo lo demás»).
+/retiros-2027 suma el video de Ailu (el VSL de /retiros, `6a809a85a6a03cda06aa203a.mp4`, 2 minutos: arranca mudo y el botón
+lo reinicia con sonido; eventos `VideoConSonido` y `VideoCompleto`) y un testimonio en video (`69b4c186fb38ca137ba3fe0a.mov`).
+Las agendas avisan que al reservar hay unas preguntas: la de 30 minutos usa el formulario «Form Agenda - Retiros»
+y la de 15 minutos «Anfitriones del Sur · Agenda 15 minutos».
