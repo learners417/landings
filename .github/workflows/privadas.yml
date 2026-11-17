@@ -1,0 +1,40 @@
+# Baja de Drive las fotos de Ailu (y cuadros de sus videos) y las guarda CIFRADAS con la clave pública
+# de anuncios/fotos-publica.pem. Nada sin cifrar entra al repo: solo quien tiene la clave privada las abre.
+name: Fotos privadas de Ailu
+on:
+  push:
+    branches: [ailu-fotos]
+    paths: ['anuncios/privadas.txt']
+permissions:
+  contents: write
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bajar, sacar cuadros y cifrar
+        run: |
+          set -u
+          mkdir -p /tmp/f anuncios/privadas
+          while read id nombre; do
+            [ -z "$id" ] && continue
+            curl -sSL "https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t" -o "/tmp/f/$nombre" || { echo "falla $nombre"; continue; }
+            if head -c 200 "/tmp/f/$nombre" | grep -qi "<html"; then echo "sin acceso $nombre"; rm -f "/tmp/f/$nombre"; continue; fi
+            echo "ok $nombre $(stat -c %s /tmp/f/$nombre)"
+            case "$nombre" in
+              *.mov|*.mp4)
+                base="${nombre%.*}"; mkdir -p "/tmp/f/$base"
+                dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/f/$nombre" | cut -d. -f1)
+                paso=$(( dur / 24 )); [ "$paso" -lt 2 ] && paso=2
+                ffmpeg -loglevel error -i "/tmp/f/$nombre" -vf "fps=1/${paso},scale='min(1800,iw)':-2" -q:v 3 "/tmp/f/$base/cuadro-%02d.jpg"
+                tar -C /tmp/f -cf "/tmp/f/$base.tar" "$base"; rm -f "/tmp/f/$nombre"; nombre="$base.tar";;
+            esac
+            clave=$(openssl rand -hex 32)
+            openssl enc -aes-256-cbc -pbkdf2 -salt -pass "pass:$clave" -in "/tmp/f/$nombre" -out "anuncios/privadas/$nombre.enc"
+            printf %s "$clave" | openssl pkeyutl -encrypt -pubin -inkey anuncios/fotos-publica.pem -out "anuncios/privadas/$nombre.clave"
+          done < anuncios/privadas.txt
+          ls -la anuncios/privadas
+      - name: Guardar
+        run: |
+          git config user.name "fotos-bot"; git config user.email "fotos-bot@users.noreply.github.com"
+          git add anuncios/privadas; git commit -m "Fotos de Ailu, cifradas" || echo "nada nuevo"; git push
