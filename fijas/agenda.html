@@ -5,11 +5,11 @@
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tu Clínica Digital · Javo Katz</title>
-<meta name="description" content="En 90 días, tu programa de 1.000 USD y el sistema que lo vende. Garantía: te vas con los 5 sistemas funcionando.">
+<meta name="description" content="En 90 días, tu programa de 1.000 USD por consultante y el sistema que lo vende. Garantía: te vas con los 5 sistemas funcionando.">
 <meta name="theme-color" content="#F4EEE3">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tu Clínica Digital · Javo Katz">
-<meta property="og:description" content="En 90 días, tu programa de 1.000 USD y el sistema que lo vende. Garantía: te vas con los 5 sistemas funcionando.">
+<meta property="og:description" content="En 90 días, tu programa de 1.000 USD por consultante y el sistema que lo vende. Garantía: te vas con los 5 sistemas funcionando.">
 <meta property="og:image" content="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/69da9fb1b30bc52371f82e69.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -718,6 +718,22 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
 .af-faq details p{margin:0;padding:0 20px 20px;font:400 18px/1.55 var(--af-l);color:var(--af-piedra)}
 .af-faq summary:focus-visible{outline:2px solid var(--af-hilo);outline-offset:2px}
 #preguntas .cta-in{margin-top:44px}
+/* 18 nov 2026 (Javo): los 5 sistemas nombrados arriba del video; en la sección, la lista en el celular;
+   en las preguntas, la respuesta con lista */
+.sis5{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;max-width:34em;margin:16px auto 0;padding:0;list-style:none}
+.sis5 li{display:inline-flex;align-items:center;gap:8px;font:700 16px/1.25 var(--af-f);color:var(--af-tinta);white-space:nowrap}
+.sis5 li::before{content:"";flex:none;width:6px;height:18px;border-radius:2px;background:var(--c)}
+.sis5 li:nth-child(1){--c:#2B4E68}.sis5 li:nth-child(2){--c:#904932}.sis5 li:nth-child(3){--c:#B48B3F}.sis5 li:nth-child(4){--c:#46979E}.sis5 li:nth-child(5){--c:#294637}
+.af-det .que b{font-weight:700}
+.af-det .que+.que{margin-top:8px}
+@media(max-width:999px){.af-pasos{display:block}.af-pasos>li{display:block;border-top:1px solid var(--af-linea)}.af-pasos>li:last-child{border-bottom:1px solid var(--af-linea)}
+ .af-pasos button{width:100%;grid-template-columns:auto 1fr;justify-items:start;align-items:center;gap:16px;padding:14px 4px}
+ .af-pasos .lomo{height:32px;width:12px}.af-pasos button[aria-selected=true] .lomo{width:12px}
+ .af-pasos .n{font-size:22px;font-weight:800;letter-spacing:-.02em}.af-det{margin:0 0 16px}}
+.af-faq details ul{margin:0;padding:0 20px 14px 40px;font:400 18px/1.55 var(--af-l);color:var(--af-piedra)}
+.af-faq details li{margin:0 0 8px}
+.af-faq details li b{font-weight:700;color:var(--af-tinta)}
+.af-faq details p+ul{margin-top:-10px}
 @media(prefers-reduced-motion:reduce){.af-faq summary::after,.js .af-mas,.af-pant img,.af-pasos .lomo{transition:none}.af-det:not([hidden]){animation:none}}
 </style>
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" async></script>
@@ -733,11 +749,12 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
 <div class="af-duo">
 <header class="af-hero">
   <p class="af-para">Para coaches, terapeutas, nutricionistas, entrenadores y médicos que atienden 1 a 1 hace años.</p>
-  <h1 class="af-h1">En 90 días, tu programa de 1.000&nbsp;USD y el sistema que lo vende.</h1>
+  <h1 class="af-h1">En 90 días, tu programa de 1.000&nbsp;USD por consultante y el sistema que lo vende.</h1>
   <p class="gar-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l7 2.9v5.4c0 4.3-2.9 7.9-7 9.3-4.1-1.4-7-5-7-9.3V6.1z"/><path d="m8.9 12.1 2.2 2.2 4.1-4.4"/></svg><span><b>Garantía:</b> te vas con los 5 sistemas funcionando.</span></p>
+  <ul class="sis5" aria-label="Los 5 sistemas"><li>Tu reset</li><li>Tu programa</li><li>Tu captación</li><li>Tu propia app</li><li>Tu ecosistema</li></ul>
 </header>
 <div class="af-video af-full">
-  <p class="paso-pill">Paso 1 · Mira el video</p>
+  <p class="paso-pill">Paso 1 · Mira el video de 4 minutos</p>
   <div class="af-cel"><div class="af-pant-v" id="vsl"><wistia-player media-id="6756q87ti6" aspect="0.5625"></wistia-player><button type="button" class="vsl-son" id="vsl-son" hidden><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.4L12 5.6v12.8l-4.6-3.9H4z"/><path d="M15.6 9.2a4 4 0 0 1 0 5.6"/><path d="M18.4 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>Toca para escucharlo</span></button></div></div>
   <a class="btn" href="#agenda" data-cta="video"><span class="bt">Elegir mi horario<svg class="fl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><small>Te atiendo yo, por videollamada</small></a>
 </div>
@@ -857,49 +874,49 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
  <div class="wrap" style="max-width:1180px">
   <p class="kicker rv">Lo que te llevas</p>
   <h2 class="af-h2 rv cen">90 días. Cinco sistemas.</h2>
-  <p class="af-lead rv">Cada paisaje es un sistema de tu negocio. Toca cada uno: el celular muestra la app de ese día.</p>
+  <p class="af-lead rv">Cada sistema tiene sus días en la app. Toca uno y mira la pantalla real de ese día.</p>
   <div class="af-reco" data-af-reco>
    <div class="af-reco-tel"><div class="af-tel"><div class="af-pant">
-     <img class="on" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia5.webp" alt="La app de Tu Clínica Digital: el lago" width="780" height="1688" loading="lazy" decoding="async">
-     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia10.webp" alt="La app de Tu Clínica Digital: la montaña" width="780" height="1688" loading="lazy" decoding="async">
-     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia30.webp" alt="La app de Tu Clínica Digital: el viento" width="780" height="1688" loading="lazy" decoding="async">
-     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia38.webp" alt="La app de Tu Clínica Digital: el río" width="780" height="1688" loading="lazy" decoding="async">
-     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia88.webp" alt="La app de Tu Clínica Digital: el bosque" width="780" height="1688" loading="lazy" decoding="async">
+     <img class="on" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia5.webp" alt="La app de Tu Clínica Digital: Tu reset" width="780" height="1688" loading="lazy" decoding="async">
+     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia10.webp" alt="La app de Tu Clínica Digital: Tu programa" width="780" height="1688" loading="lazy" decoding="async">
+     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia30.webp" alt="La app de Tu Clínica Digital: Tu captación" width="780" height="1688" loading="lazy" decoding="async">
+     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia38.webp" alt="La app de Tu Clínica Digital: Tu propia app" width="780" height="1688" loading="lazy" decoding="async">
+     <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/app/dia88.webp" alt="La app de Tu Clínica Digital: Tu ecosistema" width="780" height="1688" loading="lazy" decoding="async">
    </div></div></div>
    <ol class="af-pasos" role="tablist" aria-label="Los cinco sistemas">
     <li class="lago">
-     <button type="button" role="tab" id="af-t-lago" aria-controls="af-d-lago" aria-selected="true"><span class="lomo"></span><span class="n">Lago</span></button>
+     <button type="button" role="tab" id="af-t-lago" aria-controls="af-d-lago" aria-selected="true"><span class="lomo"></span><span class="n">Tu reset</span></button>
      <div class="af-det" id="af-d-lago" role="tabpanel" aria-labelledby="af-t-lago">
       <img class="tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/tapas/lago-grande.webp" alt="Tapa del libro Lo que el lago te enseña" width="480" height="720" loading="lazy" decoding="async">
-      <div><p class="dias">Días 1 a 7</p><h3>El lago</h3><p class="sis">Tu reset</p><p class="que">Tu reset hecho y tu precio nuevo sellado.</p><p class="libertad">Libertad mental</p></div>
+      <div><p class="dias">Días 1 a 7</p><h3>Tu reset</h3><p class="que"><b>Hoy:</b> trabajas desde el cansancio, con creencias viejas sobre el tiempo y el dinero.</p><p class="que"><b>Con este sistema:</b> calculas lo que vale tu hora, subes tu precio y llegas con la cabeza ordenada a tu etapa nueva.</p><p class="libertad">El libro de esta etapa: Lo que el lago te enseña</p></div>
      </div>
     </li>
     <li class="montana">
-     <button type="button" role="tab" id="af-t-montana" aria-controls="af-d-montana" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Montaña</span></button>
+     <button type="button" role="tab" id="af-t-montana" aria-controls="af-d-montana" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu programa</span></button>
      <div class="af-det" id="af-d-montana" role="tabpanel" aria-labelledby="af-t-montana" hidden>
       <img class="tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/tapas/montana-grande.webp" alt="Tapa del libro Lo que la montaña te enseña" width="480" height="720" loading="lazy" decoding="async">
-      <div><p class="dias">Días 8 a 14</p><h3>La montaña</h3><p class="sis">Tu programa</p><p class="que">Tu oferta sellada, con su enlace de pago, y tu preventa enviada.</p><p class="libertad">Libertad financiera</p></div>
+      <div><p class="dias">Días 8 a 14</p><h3>Tu programa</h3><p class="que"><b>Hoy:</b> vendes sesiones sueltas, con un precio distinto para cada persona.</p><p class="que"><b>Con este sistema:</b> un programa con nombre, etapas, un precio de 1.000&nbsp;USD y su enlace de pago.</p><p class="libertad">El libro de esta etapa: Lo que la montaña te enseña</p></div>
      </div>
     </li>
     <li class="viento">
-     <button type="button" role="tab" id="af-t-viento" aria-controls="af-d-viento" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Viento</span></button>
+     <button type="button" role="tab" id="af-t-viento" aria-controls="af-d-viento" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu captación</span></button>
      <div class="af-det" id="af-d-viento" role="tabpanel" aria-labelledby="af-t-viento" hidden>
       <img class="tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/tapas/viento-grande.webp" alt="Tapa del libro Lo que el viento te enseña" width="480" height="720" loading="lazy" decoding="async">
-      <div><p class="dias">Días 15 a 35</p><h3>El viento</h3><p class="sis">Tu captación y tu llamada</p><p class="que">Tu agenda se confirma sola y tienes tres ventas pagas.</p><p class="libertad">Libertad emocional</p></div>
+      <div><p class="dias">Días 15 a 35</p><h3>Tu captación</h3><p class="que"><b>Hoy:</b> esperas que alguien te recomiende.</p><p class="que"><b>Con este sistema:</b> personas que no te conocen ven tu video y agendan una llamada contigo, solas.</p><p class="libertad">El libro de esta etapa: Lo que el viento te enseña</p></div>
      </div>
     </li>
     <li class="rio">
-     <button type="button" role="tab" id="af-t-rio" aria-controls="af-d-rio" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Río</span></button>
+     <button type="button" role="tab" id="af-t-rio" aria-controls="af-d-rio" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu propia app</span></button>
      <div class="af-det" id="af-d-rio" role="tabpanel" aria-labelledby="af-t-rio" hidden>
       <img class="tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/tapas/rio-grande.webp" alt="Tapa del libro Lo que el río te enseña" width="480" height="720" loading="lazy" decoding="async">
-      <div><p class="dias">Días 36 a 84</p><h3>El río</h3><p class="sis">Tu propia app</p><p class="que">Tu app andando y horas de tu semana recuperadas.</p><p class="libertad">Libertad energética</p></div>
+      <div><p class="dias">Días 36 a 84</p><h3>Tu propia app</h3><p class="que"><b>Hoy:</b> mandas PDFs y audios por WhatsApp, a cualquier hora.</p><p class="que"><b>Con este sistema:</b> tus videos, ejercicios y planes en el celular de cada consultante, en una app con tu nombre.</p><p class="libertad">El libro de esta etapa: Lo que el río te enseña</p></div>
      </div>
     </li>
     <li class="bosque">
-     <button type="button" role="tab" id="af-t-bosque" aria-controls="af-d-bosque" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Bosque</span></button>
+     <button type="button" role="tab" id="af-t-bosque" aria-controls="af-d-bosque" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu ecosistema</span></button>
      <div class="af-det" id="af-d-bosque" role="tabpanel" aria-labelledby="af-t-bosque" hidden>
       <img class="tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/tapas/bosque-grande.webp" alt="Tapa del libro Lo que el bosque te enseña" width="480" height="720" loading="lazy" decoding="async">
-      <div><p class="dias">Días 85 a 90</p><h3>El bosque</h3><p class="sis">Tu ecosistema</p><p class="que">Tu ecosistema, tu foto de llegada y tu plan de 180 días.</p><p class="libertad">Libertad de tiempo</p></div>
+      <div><p class="dias">Días 85 a 90</p><h3>Tu ecosistema</h3><p class="que"><b>Hoy:</b> publicas cuando te acuerdas.</p><p class="que"><b>Con este sistema:</b> tus próximas doce semanas de contenido escritas y tu plan para los seis meses siguientes.</p><p class="libertad">El libro de esta etapa: Lo que el bosque te enseña</p></div>
      </div>
     </li>
    </ol>
@@ -1008,6 +1025,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
   <p class="kicker rv">Antes de agendar</p>
   <h2 class="rv cen">Lo que suelen preguntarme.</h2>
   <div class="af-faq rv">
+   <details><summary>¿Qué me instalan exactamente?</summary><p>Cinco sistemas, todos a tu nombre:</p><ul><li><b>Tu reset:</b> calculas lo que vale tu hora y subes tu precio.</li><li><b>Tu programa:</b> con nombre, etapas, un precio de 1.000&nbsp;USD por consultante y su enlace de pago.</li><li><b>Tu captación:</b> tu página, tus anuncios y tu agenda, para que personas que no te conocen agenden una llamada contigo.</li><li><b>Tu propia app:</b> tus videos, ejercicios y planes en una app con tu nombre.</li><li><b>Tu ecosistema:</b> doce semanas de contenido escritas y tu plan para los seis meses siguientes.</li></ul><p>En la mentoría los instalas conmigo, paso a paso. En la instalación te los instalamos nosotros.</p></details>
    <details><summary>¿Qué pasa en el diagnóstico?</summary><p>Son 45 minutos, tú y yo, por videollamada. Miramos tu caso, te muestro cómo se aplican los 5 sistemas y te vas con tu plan de acción escrito.</p></details>
    <details><summary>¿Cuánto cuesta?</summary><p>Te lo digo en el diagnóstico, cuando ya conozco tu caso y sé qué camino te conviene.</p></details>
    <details><summary>¿Sirve para mi profesión?</summary><p>Sí, si atiendes personas 1 a 1 hace años: coaches, terapeutas, nutricionistas, entrenadores, consultores y médicos.</p></details>
