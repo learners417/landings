@@ -1155,6 +1155,12 @@ document.querySelectorAll('#tstack img').forEach(function(im){im.addEventListene
 lb.addEventListener('click',function(){lb.classList.remove('on')});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
 
+/* ── los datos del anuncio (utm, fbclid) pasan al calendario, para que GHL guarde de qué anuncio vino cada agenda.
+   18 nov: antes lo hacía el código del embudo en GHL; con la línea del cargador ese código ya no corre. ── */
+(function(){var f=document.querySelector('#cal iframe');if(!f||!f.src)return;var q=new URLSearchParams(location.search),p=new URLSearchParams();
+  q.forEach(function(v,k){if(/^utm_|^fbclid$|^gclid$/.test(k))p.set(k,v);});var s=p.toString();
+  if(s&&!/[?&](utm_|fbclid=)/.test(f.src))f.src=f.src+(f.src.indexOf('?')<0?'?':'&')+s;})();
+
 /* ── el calendario de GHL: altura y aviso de agenda ── */
 window.addEventListener('message',function(e){
   if(typeof e.origin!=='string'||e.origin.indexOf('leadconnectorhq')<0)return;
