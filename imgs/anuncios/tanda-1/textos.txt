@@ -1,86 +1,78 @@
-PRUEBA DE EROS · v4 · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
-Reemplaza a la v3 (mismos nombres de archivo). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
+PRUEBA DE EROS · v5 (final) · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
+Reemplaza a la v4. Los carruseles ahora tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
 Las cuatro: botón «Más información». Las tarjetas van en el orden de su número.
-Lo que se vende: los sistemas, instalados. Tu programa de 1.000 USD por consultante · tus páginas · tu captación automática · tu propia app · tu sistema operativo.
-Si Meta rechaza una pieza por el monto: usar la misma pieza de la carpeta sin-monto/ (mismos nombres, dice «de alto valor») con el texto de abajo, cambiando «de 1.000 USD por consultante» por «de alto valor».
+IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
+Si Meta rechaza una pieza por el monto: usar la misma de la carpeta sin-monto/ (mismos nombres, dice «de alto valor») y en el texto cambiar «1.000 USD por consultante» por «de alto valor».
 
 ==================================================
-CARRUSEL H · ¿Cuántas sesiones voy a necesitar?  (h-1 a h-8)
+CARRUSEL H · ¿Cuántas sesiones voy a necesitar?  (h-1 a h-7)
 ==================================================
 Texto principal:
 —¿Cuántas sesiones voy a necesitar?
 —Depende.
 
-Si atiendes hace años, te la hicieron mil veces. «Depende» es la respuesta honesta. Hay otra que, además, vende: «Son 90 días, en tres etapas. El 15 de marzo vas a dormir de corrido». Eso es un programa de 1.000 USD por consultante.
+Si atiendes hace años, te la hicieron mil veces. «Depende» es la respuesta honesta. Hay otra que, además, vende: «Son 90 días. El 15 de marzo vas a dormir de corrido». Eso es un programa. Y lo cobras 1.000 USD por consultante.
 
-¿Por qué todavía no respondes así? Porque vender un programa son 4 oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes uno de tiempo completo: atender.
+¿Por qué todavía no respondes así? Porque armarlo son 4 oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes un oficio de tiempo completo: atender.
 
-Entonces la mayoría contrata afuera. La agencia hace anuncios para una oferta que todavía no está escrita. El community manager, publicaciones que no suenan a ti. Otro curso, más teoría para leer de noche. Cada uno hace una parte. Nadie te instala el sistema completo.
+La mayoría contrata una agencia, paga otro curso, publica todos los días o le pide a su sobrina que le lleve las redes. Cada uno hace una parte. Nadie te instala el sistema completo.
 
-Yo te lo instalo completo, en 90 días y a tu nombre:
-· Tu programa de 1.000 USD por consultante, diseñado por mí.
-· Tus páginas, donde te conocen, te eligen y agendan.
-· Tu captación automática de consultantes nuevos.
-· Tu propia app, con tu nombre, para tus consultantes.
-· Tu sistema operativo, para gestionar tu negocio en un solo lugar.
-Tú grabas y atiendes. Ya lo instalé a más de 50 profesionales.
+En 90 días nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo queda a tu nombre.
 
-Toca «Más información». Mira el video: ahí te muestro cómo lo instalo, paso a paso. Si ya sabes que es para ti, debajo está mi agenda para tu diagnóstico, 45 minutos conmigo.
+Soy Javo Katz. Instalé este sistema a más de 50 profesionales en Latinoamérica, España y Estados Unidos.
 
-Es una instalación a medida. Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya está llena.
+Toca «Más información». Mira el video: te muestro cómo lo instalo. Si ya sabes que es para ti, debajo está mi agenda para tu diagnóstico, 45 minutos conmigo.
 
-Título: Hay una respuesta que, además, vende
+Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya está llena.
+
+Título: Hay otra respuesta, y esa vende
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v4
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v5
 
 ==================================================
-CARRUSEL A · Deja de ofrecer sesiones 1 a 1  (a-1 a a-8)
+CARRUSEL A · Deja de ofrecer sesiones 1 a 1  (a-1 a a-7)
 ==================================================
 Texto principal:
 Deja de ofrecer sesiones 1 a 1.
 
 Llenaste tu agenda hasta mayo. Lo lograste. El paso siguiente no es otra hora. Es un programa de 1.000 USD por consultante.
 
-¿Por qué no lo armas por tu cuenta? Porque vender un programa son 4 oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes uno de tiempo completo: atender.
+¿Por qué no lo armas por tu cuenta? Porque armarlo son 4 oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes un oficio de tiempo completo: atender.
 
-Entonces la mayoría contrata afuera. La agencia hace anuncios para una oferta que todavía no está escrita. El community manager, publicaciones que no suenan a ti. Otro curso, más teoría para leer de noche. Cada uno hace una parte. Nadie te instala el sistema completo.
+La mayoría contrata una agencia, paga otro curso, publica todos los días o le pide a su sobrina que le lleve las redes. Cada uno hace una parte. Nadie te instala el sistema completo.
 
-Yo te lo instalo completo, en 90 días y a tu nombre:
-· Tu programa de 1.000 USD por consultante, diseñado por mí.
-· Tus páginas, donde te conocen, te eligen y agendan.
-· Tu captación automática de consultantes nuevos.
-· Tu propia app, con tu nombre, para tus consultantes.
-· Tu sistema operativo, para gestionar tu negocio en un solo lugar.
-Tú grabas y atiendes. Ya lo instalé a más de 50 profesionales.
+En 90 días nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo queda a tu nombre.
 
-Toca «Más información». Mira el video: ahí te muestro cómo lo instalo, paso a paso. Y si ya sabes que es para ti, agenda tu diagnóstico ahí mismo, 45 minutos conmigo.
+Soy Javo Katz. Instalé este sistema a más de 50 profesionales en Latinoamérica, España y Estados Unidos.
 
-Es una instalación a medida. Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya está llena.
+Toca «Más información». Mira el video: te muestro cómo lo instalo. Y si ya sabes que es para ti, agenda tu diagnóstico ahí mismo, 45 minutos conmigo.
+
+Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya está llena.
 
 Título: Deja de ofrecer sesiones 1 a 1
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v4
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v5
 
 ==================================================
-POST 1 · Tu clínica digital, completa  (post-1.png)
+POST 1 · Tú grabas y atiendes  (post-1.png)
 ==================================================
 Texto principal:
-Tu clínica digital, completa. Instalada por mí, en 90 días.
+Tú grabas y atiendes. Yo te instalo todo lo demás.
 
-Si atiendes 1 a 1 hace años, esto es lo que te instalo, a tu nombre:
-· Tu programa de 1.000 USD por consultante, diseñado por mí.
-· Tus páginas, donde te conocen, te eligen y agendan.
-· Tu captación automática de consultantes nuevos.
-· Tu propia app, con tu nombre, para tus consultantes.
-· Tu sistema operativo, para gestionar tu negocio en un solo lugar.
+Si atiendes 1 a 1 hace años, en 90 días te instalo, a tu nombre:
+· Tu programa de 1.000 USD por consultante.
+· Tus páginas.
+· Tu captación automática.
+· Tu propia app.
+· Tu sistema operativo.
 
-Tú grabas y atiendes. Te vas con todo funcionando. Ya lo instalé a más de 50 profesionales.
+Ya lo instalé a más de 50 profesionales.
 
-Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda tu diagnóstico conmigo. Es una instalación a medida: me quedan 3 lugares este año.
+Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
 
-Título: Tu clínica digital, completa
+Título: Tú grabas y atiendes
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-clinica-completa-v4
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v5
 
 ==================================================
 POST 2 · Tu programa, instalado por mí  (post-2.png)
@@ -90,10 +82,10 @@ Tu programa, instalado por mí. En 90 días.
 
 Si atiendes 1 a 1 hace años, ya sabes curar. Lo que falta son 4 oficios que no son el tuyo: escribir tu método, ponerle precio, que te encuentren y la tecnología.
 
-Te los instalo: tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo para gestionar tu negocio. Todo a tu nombre. Tú grabas y atiendes.
+Te los instalo: tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo a tu nombre. Tú grabas y atiendes.
 
-Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda tu diagnóstico conmigo. Es una instalación a medida: me quedan 3 lugares este año.
+Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
 
 Título: Tu programa, instalado por mí
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v4
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v5
