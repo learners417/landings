@@ -2,6 +2,7 @@ PRUEBA DE EROS · v5 (final) · 4 piezas para los dos conjuntos (mujeres de 55 o
 Reemplaza a la v4. Los carruseles ahora tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
 Las cuatro: botón «Más información». Las tarjetas van en el orden de su número.
 IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
+Posts en historias y reels: post-1-vertical.png y post-2-vertical.png (1080 × 1920), en las mismas carpetas.
 Si Meta rechaza una pieza por el monto: usar la misma de la carpeta sin-monto/ (mismos nombres, dice «de alto valor») y en el texto cambiar «1.000 USD por consultante» por «de alto valor».
 
 ==================================================
