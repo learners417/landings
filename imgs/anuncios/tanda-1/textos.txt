@@ -1,5 +1,5 @@
-PRUEBA DE EROS · v5 (final) · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
-Reemplaza a la v4. Los carruseles ahora tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
+PRUEBA DE EROS · v6 · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
+Reemplaza a la v5 (mismos textos; cambian letra, colores y fotos). Los carruseles tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
 Las cuatro: botón «Más información». Las tarjetas van en el orden de su número.
 IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
 Posts en historias y reels: post-1-vertical.png y post-2-vertical.png (1080 × 1920), en las mismas carpetas.
@@ -28,7 +28,7 @@ Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya 
 
 Título: Hay otra respuesta, y esa vende
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v5
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v6
 
 ==================================================
 CARRUSEL A · Deja de ofrecer sesiones 1 a 1  (a-1 a a-7)
@@ -52,7 +52,7 @@ Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya 
 
 Título: Deja de ofrecer sesiones 1 a 1
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v5
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v6
 
 ==================================================
 POST 1 · Tú grabas y atiendes  (post-1.png)
@@ -73,7 +73,7 @@ Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda 
 
 Título: Tú grabas y atiendes
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v5
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v6
 
 ==================================================
 POST 2 · Tu programa, instalado por mí  (post-2.png)
@@ -89,4 +89,4 @@ Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda 
 
 Título: Tu programa, instalado por mí
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v5
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v6
