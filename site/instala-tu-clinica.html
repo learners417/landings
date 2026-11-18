@@ -494,8 +494,9 @@ h1,h2,h3,.plan .nom,.cuenta,.gpts b{font-variant-numeric:lining-nums}
  .portada .sub{order:5}
  #vsl{position:relative;max-width:min(100%,max(200px,calc((100vh - 218px) * .5625)));max-width:min(100%,max(200px,calc((100svh - 218px) * .5625)))}
 }
-/* «Toca para escucharlo»: cubre el video mientras corre sin sonido (solo aparece en el celular) */
-.vsl-son{position:absolute;top:0;right:0;bottom:0;left:0;z-index:6;display:flex;align-items:flex-end;justify-content:center;margin:0;padding:0 6px 6%;border:0;background:transparent;cursor:pointer;font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+/* «Toca para escucharlo»: cubre el video mientras corre sin sonido (solo aparece en el celular).
+   La invitación va arriba del video (17 nov, decidido por Javo): al pie quedaba fuera de la primera pantalla */
+.vsl-son{position:absolute;top:0;right:0;bottom:0;left:0;z-index:6;display:flex;align-items:flex-start;justify-content:center;margin:0;padding:7% 6px 0;border:0;background:transparent;cursor:pointer;font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
 .vsl-son[hidden]{display:none}
 .vsl-son span{display:inline-flex;align-items:center;justify-content:center;gap:8px;max-width:100%;padding:13px 17px 13px 14px;border-radius:999px;border:1px solid var(--gline);background:var(--paper);color:var(--ink);font-family:var(--fb);font-weight:700;font-size:18px;line-height:1.25;text-align:center;box-shadow:0 12px 28px -14px rgba(20,24,24,.55)}
 .vsl-son svg{flex:none;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
