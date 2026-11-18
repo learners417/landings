@@ -17,7 +17,22 @@
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1306012398373458');
+/* 18 nov (Javo, con VENTAS HIGH): sin la configuración automática de eventos, y con los datos de la persona si GHL
+   los manda en el enlace (coincidencia avanzada: el píxel los cifra). Se sacan de la barra antes de avisar a Meta,
+   para que la dirección que viaja con cada evento no lleve datos personales. */
+var tcdQ=new URLSearchParams(location.search),tcdU={};window.__tcdQ=new URLSearchParams(location.search);
+(function(){
+  var g=function(){for(var i=0;i<arguments.length;i++){var v=tcdQ.get(arguments[i]);if(v)return v.trim();}return '';};
+  var em=g('email','em','contact_email').toLowerCase();if(/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))tcdU.em=em;
+  var ph=g('phone','ph','contact_phone').replace(/[^0-9]/g,'');if(ph.length>=8)tcdU.ph=ph;
+  var fn=g('first_name','firstName').toLowerCase();if(fn)tcdU.fn=fn;
+  var ln=g('last_name','lastName').toLowerCase();if(ln)tcdU.ln=ln;
+  var sacar=['email','em','contact_email','phone','ph','contact_phone','first_name','firstName','last_name','lastName','name','full_name','contact_name'],cambio=false;
+  sacar.forEach(function(k){if(tcdQ.has(k)){tcdQ.delete(k);cambio=true;}});
+  if(cambio&&history.replaceState){var qs=tcdQ.toString();history.replaceState(history.state,'',location.pathname+(qs?'?'+qs:'')+location.hash);}
+})();
+fbq('set','autoConfig',false,'1306012398373458');
+fbq('init','1306012398373458',tcdU);
 fbq('track','PageView');
 /* 9 nov: «AgendaConfirmada» sale una sola vez por navegador cada 7 días (antes salía en cada visita a esta página) */
 try{var tcdK='tcd_agenda_ok',tcdT=+localStorage.getItem(tcdK)||0;if(Date.now()-tcdT>6048e5){fbq('trackCustom','AgendaConfirmada');localStorage.setItem(tcdK,String(Date.now()));}}catch(e){fbq('trackCustom','AgendaConfirmada');}
@@ -805,7 +820,7 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
   var WA='5492944217689';
 
   /* ── nombre: si GHL lo manda en la URL, se usa en el título y en el mensaje ── */
-  var q=new URLSearchParams(location.search);
+  var q=window.__tcdQ||new URLSearchParams(location.search);
   var nom=(q.get('first_name')||q.get('firstName')||q.get('name')||q.get('full_name')||q.get('contact_name')||'').trim().split(/\s+/)[0]||'';
   nom=nom.replace(/[<>"]/g,'').slice(0,24);
   if(nom){nom=nom.charAt(0).toUpperCase()+nom.slice(1).toLowerCase();var w0=document.querySelector('#titulo .w');if(w0)w0.textContent='Espera, '+nom+':';}

@@ -20,6 +20,8 @@
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+/* 18 nov (Javo, con VENTAS HIGH): sin la configuración automática de eventos (guía de Eros, error 6) */
+fbq('set','autoConfig',false,'1306012398373458');
 fbq('init','1306012398373458');
 fbq('track','PageView');
 fbq('track','ViewContent',{content_name:'vsl-la-mentoria-joven'});
@@ -1163,7 +1165,9 @@ window.addEventListener('message',function(e){
     if(typeof h==='number'&&h>300)f.style.minHeight=h+'px';
   }
   var s=(typeof d==='string')?d:(d.type||d.event||'');s=String(s).toLowerCase();
-  if(s.indexOf('book')>-1||s.indexOf('appointment')>-1){if(window.fbq)fbq('track','Schedule');}
+  /* 18 nov (Javo, con VENTAS HIGH): el Schedule le llega a Meta una sola vez, desde GHL (servidor, con correo y teléfono).
+     Desde la página sale AgendaWeb, una vez por carga, para no contar la agenda dos veces. */
+  if((s.indexOf('book')>-1||s.indexOf('appointment')>-1)&&!window.__tcdAgendaWeb){window.__tcdAgendaWeb=1;if(window.fbq)fbq('trackCustom','AgendaWeb');}
 },false);
 </script>
 <script>

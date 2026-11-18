@@ -1050,6 +1050,7 @@ html:not(.js) .lector-nav{display:none}
   var previa = ((window.__tcdCarga || {}).rama || 'main') !== 'main';
   if (C.pixel && !previa && !/claude\.ai|claudeusercontent|localhost|^file:/.test(location.href)) {
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('set', 'autoConfig', false, C.pixel); /* 18 nov: sin la configuración automática de eventos (guía de Eros, error 6) */
     fbq('init', C.pixel); px('PageView');
     px('ViewContent', { content_name: pagina, content_category: origen || 'directo' });
   }
