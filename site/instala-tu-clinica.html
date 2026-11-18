@@ -1086,17 +1086,12 @@ document.querySelectorAll('[data-cta]').forEach(function(a){
     var t=document.getElementById('elige')||document.getElementById('agenda');if(!t)return;
     e.preventDefault();
     if(history.replaceState)history.replaceState(null,'','#agenda');
-    /* va directo al calendario y lo sostiene 3 s: si algo arriba cambia de tamaño, vuelve a alinear */
+    /* un solo salto al calendario y suelta (17 nov, decidido por Javo): antes lo sostenía 3 s y,
+       con el dedo o el mouse sobre el calendario, la página no se podía mover */
     var raiz=document.documentElement,ant=raiz.style.scrollBehavior;
     raiz.style.scrollBehavior='auto';
-    function ir(){window.scrollTo(0,t.getBoundingClientRect().top+window.pageYOffset-84);}
-    ir();
-    var fin=Date.now()+3000,tocado=false;
-    ['touchstart','wheel','keydown'].forEach(function(ev){window.addEventListener(ev,function(){tocado=true;},{passive:true,once:true});});
-    var iv=setInterval(function(){
-      if(tocado||Date.now()>fin){clearInterval(iv);raiz.style.scrollBehavior=ant;return;}
-      if(Math.abs(t.getBoundingClientRect().top-84)>4)ir();
-    },100);
+    window.scrollTo(0,t.getBoundingClientRect().top+window.pageYOffset-84);
+    raiz.style.scrollBehavior=ant;
   });
 });
 
