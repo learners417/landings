@@ -15,12 +15,36 @@
 <link rel="preconnect" href="https://images.leadconnectorhq.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Literata:opsz,wght@7..72,400..500&display=swap">
 <style>/*PAISAJE_CSS*/</style>
+<style>
+/* 18 nov 2026 · la home, clara para quien llega en frío */
+.hero-txt .para{font-size:18px;font-weight:600;line-height:1.4;color:var(--piedra);max-width:30em}
+.hero-txt .h1{font-size:clamp(40px,2.6vw + 22px,60px)}
+/* los 5 sistemas: en el celular, uno debajo del otro (los nombres completos no entran en cinco columnas) */
+@media (max-width:999px){
+  .reco-pasos{display:block}
+  .reco-pasos>li{display:block;border-top:1px solid var(--linea)}
+  .reco-pasos>li:last-child{border-bottom:1px solid var(--linea)}
+  .reco-pasos button{width:100%;grid-template-columns:auto 1fr;justify-items:start;align-items:center;gap:16px;padding:14px 4px}
+  .reco-pasos .lomo{height:32px;width:12px}
+  .reco-pasos button[aria-selected=true] .lomo{width:12px}
+  .reco-pasos .n{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .reco-det{margin:0 0 16px}
+}
+.simple-3{display:grid;gap:16px;margin-top:8px}
+.s3{border-radius:24px;padding:24px 22px;background:var(--tarjeta);box-shadow:0 0 0 1px var(--linea)}
+.s3-t{font-size:16px;font-weight:800;letter-spacing:.01em;color:var(--piedra);margin-bottom:8px}
+.s3 p:last-child{font-family:var(--lectura);font-size:20px;line-height:1.5;color:var(--tinta)}
+@media (min-width:860px){.simple-3{grid-template-columns:repeat(3,1fr);gap:20px}}
+.reco-det .que b{font-weight:700}
+.formas .forma-txt li b{font-weight:800}
+.cierre .lead{max-width:34em;margin:0 auto 22px}
+</style>
 </head>
 <body class="vivo" data-pagina="inicio" data-pagos="">
 
 <header class="top">
   <a class="marca" href="/inicio" aria-label="Tu Clínica Digital, inicio"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</a>
-  <a class="ir" href="#formas">Empezar</a>
+  <a class="ir" href="#formas">Precios</a>
 </header>
 
 <main>
@@ -28,9 +52,10 @@
 <section class="hero" data-barra-desde>
   <div class="envase hero-in">
     <div class="hero-txt">
-      <h1 class="h1"><span class="l">Ganas bien.</span> <span class="l">El problema es lo que te cuesta ganarlo.</span></h1>
-      <p class="lead lectura">En 90 días instalamos el sistema que convierte lo que sabes en un negocio que te devuelve tu tiempo.</p>
-      <a class="btn" href="#formas">Elegir por dónde empiezo</a>
+      <p class="para">Para coaches, terapeutas, nutricionistas, entrenadores y médicos que atienden 1&nbsp;a&nbsp;1 hace años.</p>
+      <h1 class="h1"><span class="l">Tu programa de 1.000&nbsp;USD por consultante,</span> <span class="l">y el sistema que lo vende.</span></h1>
+      <p class="lead lectura">En 90 días pasas de cobrar por sesión a vender tu programa, con tu página, tus anuncios y tu propia app funcionando.</p>
+      <a class="btn" href="#formas">Ver las formas y los precios</a>
       <p class="prueba">Más de 50 profesionales en Latinoamérica, España y EE.&nbsp;UU.</p>
     </div>
     <div class="peli" data-peli tabindex="0" role="region" aria-roledescription="historia" aria-label="Tu semana hoy y en 90 días, en siete escenas. Toca los costados o usa las flechas para pasar de escena.">
@@ -72,13 +97,13 @@
         <li class="esc s-forma" data-tono="claro">
           <div class="nace" aria-hidden="true">
             <span class="lomos-grandes"><i></i><i></i><i></i><i></i><i></i></span>
-            <p>90 días.<br>Cinco paisajes.</p>
+            <p>90 días.<br>Cinco sistemas.</p>
           </div>
           <p class="esc-txt">En 90 días instalas tu propio sistema.</p>
         </li>
         <li class="esc s-tel lago" data-tono="oscuro">
           <div class="tel chico" aria-hidden="true"><div class="pant"><img class="on" data-repo="imgs/app/dia5.webp" alt="" width="780" height="1688" loading="lazy"></div></div>
-          <p class="esc-txt">Día 5. Tu precio nuevo, sellado.</p>
+          <p class="esc-txt">Día 5. Ya tienes tu precio nuevo.</p>
         </li>
         <li class="esc s-tel viento" data-tono="claro">
           <div class="tel chico" aria-hidden="true"><div class="pant"><img class="on" data-repo="imgs/app/dia30.webp" alt="" width="780" height="1688" loading="lazy"></div></div>
@@ -94,11 +119,22 @@
     </div>
   </div>
 </section>
-<!-- 2 · Las voces: la prueba, en formato reel -->
+<!-- 2 · En simple: qué es, qué te llevas y cómo se hace (18 nov) -->
+<section class="simple banda" aria-labelledby="t-simple">
+  <div class="envase">
+    <div class="cabeza"><h2 class="h2" id="t-simple">Tu Clínica Digital, en simple.</h2></div>
+    <div class="simple-3">
+      <div class="s3"><p class="s3-t">Qué es</p><p>Un camino de 90 días para que pases de cobrar por sesión a vender tu programa.</p></div>
+      <div class="s3"><p class="s3-t">Qué te llevas</p><p>Tu programa con su precio, tu página, tus anuncios, tu propia app y tu plan de contenido. Todo a tu nombre.</p></div>
+      <div class="s3"><p class="s3-t">Cómo se hace</p><p>Día por día, con mi app. Lo haces tú, lo hacemos juntos en mentoría o te lo instalamos.</p></div>
+    </div>
+  </div>
+</section>
+<!-- 3 · Las voces: la prueba, en formato reel -->
 <section class="voces banda papel" aria-labelledby="t-voces">
   <div class="envase cabeza">
     <h2 class="h2" id="t-voces">Lo cuentan ellos.</h2>
-    <p class="lead">Profesionales que atienden 1 a 1 y ya trabajan así. Toca y escucha.</p>
+    <p class="lead">Profesionales que atendían 1 a 1, como tú, cuentan qué cambió. Toca un video para escucharlo.</p>
   </div>
   <div class="riel" data-muro="12" data-max="12" data-tipo="v" aria-label="Testimonios en video"></div>
   <div class="riel capturas" data-capturas aria-label="Mensajes de clientes"></div>
@@ -108,7 +144,7 @@
 <!-- 3 · El cambio: hoy y en 90 días, uno al lado del otro -->
 <section class="contraste banda" aria-labelledby="t-cambio">
   <div class="envase">
-    <div class="cabeza"><h2 class="h2" id="t-cambio">Del uno a uno a tu propio sistema.</h2></div>
+    <div class="cabeza"><h2 class="h2" id="t-cambio">Qué cambia en 90 días.</h2></div>
     <div class="dos-lados" data-revela>
       <div class="lado hoy">
         <p class="lado-t">Hoy</p>
@@ -134,96 +170,96 @@
 <section class="recorrido banda papel" id="camino" aria-labelledby="t-camino">
   <div class="envase">
     <div class="cabeza">
-      <h2 class="h2" id="t-camino">90 días. Cinco paisajes.</h2>
-      <p class="lead lectura">En cada paisaje instalas un sistema de tu negocio. Toca cada uno: el celular muestra la app de ese día.</p>
+      <h2 class="h2" id="t-camino">Los 5 sistemas, en 90 días.</h2>
+      <p class="lead lectura">Cada sistema tiene sus días en la app. Toca uno y mira la pantalla real de ese día.</p>
     </div>
     <div class="reco" data-reco data-paisaje="lago">
       <div class="reco-tel">
         <div class="tel"><div class="pant">
-          <img class="on" data-repo="imgs/app/dia5.webp" alt="La app de Tu Clínica Digital en el lago" width="780" height="1688" loading="lazy">
-          <img data-repo="imgs/app/dia10.webp" alt="La app de Tu Clínica Digital en la montaña" width="780" height="1688" loading="lazy">
-          <img data-repo="imgs/app/dia30.webp" alt="La app de Tu Clínica Digital en el viento" width="780" height="1688" loading="lazy">
-          <img data-repo="imgs/app/dia38.webp" alt="La app de Tu Clínica Digital en el río" width="780" height="1688" loading="lazy">
-          <img data-repo="imgs/app/dia88.webp" alt="La app de Tu Clínica Digital en el bosque" width="780" height="1688" loading="lazy">
+          <img class="on" data-repo="imgs/app/dia5.webp" alt="La app de Tu Clínica Digital, días 1 a 7" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia10.webp" alt="La app de Tu Clínica Digital, días 8 a 14" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia30.webp" alt="La app de Tu Clínica Digital, días 15 a 35" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia38.webp" alt="La app de Tu Clínica Digital, días 36 a 84" width="780" height="1688" loading="lazy">
+          <img data-repo="imgs/app/dia88.webp" alt="La app de Tu Clínica Digital, días 85 a 90" width="780" height="1688" loading="lazy">
         </div></div>
       </div>
-      <ol class="reco-pasos" role="tablist" aria-label="Los cinco paisajes">
+      <ol class="reco-pasos" role="tablist" aria-label="Los cinco sistemas">
         <li class="lago">
-          <button type="button" role="tab" id="t-lago" aria-controls="d-lago" aria-selected="true"><span class="lomo"></span><span class="n">Lago</span></button>
+          <button type="button" role="tab" id="t-lago" aria-controls="d-lago" aria-selected="true"><span class="lomo"></span><span class="n">Tu reset</span></button>
           <div class="reco-det" id="d-lago" role="tabpanel" aria-labelledby="t-lago">
             <img class="tapa" data-repo="imgs/tapas/lago-grande.webp" alt="Tapa del libro Lo que el lago te enseña" width="480" height="721" loading="lazy">
             <div>
               <p class="dias">Días 1 a 7</p>
-              <h3>El lago</h3>
-              <p class="sis">Tu reset</p>
-              <p class="que">Tu reset hecho y tu precio nuevo sellado.</p>
-              <p class="libertad">Libertad mental</p>
+              <h3>Tu reset</h3>
+              <p class="que"><b>Hoy:</b> trabajas desde el cansancio, con creencias viejas sobre el tiempo y el dinero.</p>
+              <p class="que"><b>Con este sistema:</b> calculas lo que vale tu hora, subes tu precio y llegas con la cabeza ordenada a tu etapa nueva.</p>
+              <p class="libertad">El libro de esta etapa: Lo que el lago te enseña</p>
             </div>
           </div>
         </li>
         <li class="montana">
-          <button type="button" role="tab" id="t-montana" aria-controls="d-montana" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Montaña</span></button>
+          <button type="button" role="tab" id="t-montana" aria-controls="d-montana" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu programa</span></button>
           <div class="reco-det" id="d-montana" role="tabpanel" aria-labelledby="t-montana" hidden>
             <img class="tapa" data-repo="imgs/tapas/montana-grande.webp" alt="Tapa del libro Lo que la montaña te enseña" width="480" height="720" loading="lazy">
             <div>
               <p class="dias">Días 8 a 14</p>
-              <h3>La montaña</h3>
-              <p class="sis">Tu programa</p>
-              <p class="que">Tu oferta sellada, con su enlace de pago, y tu preventa enviada.</p>
-              <p class="libertad">Libertad financiera</p>
+              <h3>Tu programa</h3>
+              <p class="que"><b>Hoy:</b> vendes sesiones sueltas, con un precio distinto para cada persona.</p>
+              <p class="que"><b>Con este sistema:</b> un programa con nombre, etapas, un precio de 1.000&nbsp;USD y su enlace de pago.</p>
+              <p class="libertad">El libro de esta etapa: Lo que la montaña te enseña</p>
             </div>
           </div>
         </li>
         <li class="viento">
-          <button type="button" role="tab" id="t-viento" aria-controls="d-viento" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Viento</span></button>
+          <button type="button" role="tab" id="t-viento" aria-controls="d-viento" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu captación</span></button>
           <div class="reco-det" id="d-viento" role="tabpanel" aria-labelledby="t-viento" hidden>
             <img class="tapa" data-repo="imgs/tapas/viento-grande.webp" alt="Tapa del libro Lo que el viento te enseña" width="480" height="720" loading="lazy">
             <div>
               <p class="dias">Días 15 a 35</p>
-              <h3>El viento</h3>
-              <p class="sis">Tu captación y tu llamada</p>
-              <p class="que">Tu agenda se confirma sola y tienes tres ventas pagas.</p>
-              <p class="libertad">Libertad emocional</p>
+              <h3>Tu captación</h3>
+              <p class="que"><b>Hoy:</b> esperas que alguien te recomiende.</p>
+              <p class="que"><b>Con este sistema:</b> personas que no te conocen ven tu video y agendan una llamada contigo, solas.</p>
+              <p class="libertad">El libro de esta etapa: Lo que el viento te enseña</p>
             </div>
           </div>
         </li>
         <li class="rio">
-          <button type="button" role="tab" id="t-rio" aria-controls="d-rio" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Río</span></button>
+          <button type="button" role="tab" id="t-rio" aria-controls="d-rio" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu propia app</span></button>
           <div class="reco-det" id="d-rio" role="tabpanel" aria-labelledby="t-rio" hidden>
             <img class="tapa" data-repo="imgs/tapas/rio-grande.webp" alt="Tapa del libro Lo que el río te enseña" width="480" height="721" loading="lazy">
             <div>
               <p class="dias">Días 36 a 84</p>
-              <h3>El río</h3>
-              <p class="sis">Tu propia app</p>
-              <p class="que">Tu app andando y horas de tu semana recuperadas.</p>
-              <p class="libertad">Libertad energética</p>
+              <h3>Tu propia app</h3>
+              <p class="que"><b>Hoy:</b> mandas PDFs y audios por WhatsApp, a cualquier hora.</p>
+              <p class="que"><b>Con este sistema:</b> tus videos, ejercicios y planes en el celular de cada consultante, en una app con tu nombre.</p>
+              <p class="libertad">El libro de esta etapa: Lo que el río te enseña</p>
             </div>
           </div>
         </li>
         <li class="bosque">
-          <button type="button" role="tab" id="t-bosque" aria-controls="d-bosque" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Bosque</span></button>
+          <button type="button" role="tab" id="t-bosque" aria-controls="d-bosque" aria-selected="false" tabindex="-1"><span class="lomo"></span><span class="n">Tu ecosistema</span></button>
           <div class="reco-det" id="d-bosque" role="tabpanel" aria-labelledby="t-bosque" hidden>
             <img class="tapa" data-repo="imgs/tapas/bosque-grande.webp" alt="Tapa del libro Lo que el bosque te enseña" width="480" height="720" loading="lazy">
             <div>
               <p class="dias">Días 85 a 90</p>
-              <h3>El bosque</h3>
-              <p class="sis">Tu ecosistema</p>
-              <p class="que">Tu ecosistema, tu foto de llegada y tu plan de 180 días.</p>
-              <p class="libertad">Libertad de tiempo</p>
+              <h3>Tu ecosistema</h3>
+              <p class="que"><b>Hoy:</b> publicas cuando te acuerdas.</p>
+              <p class="que"><b>Con este sistema:</b> tus próximas doce semanas de contenido escritas y tu plan para los seis meses siguientes.</p>
+              <p class="libertad">El libro de esta etapa: Lo que el bosque te enseña</p>
             </div>
           </div>
         </li>
       </ol>
     </div>
-    <p class="despues"><a class="enlace" data-link="camino" href="/camino">Ver el camino completo</a></p>
+    <p class="despues"><a class="enlace" data-link="camino" href="/camino">Ver los 90 días, día por día</a></p>
   </div>
 </section>
 <!-- 5 · Las formas: por dónde empiezas (una a la vez) -->
 <section class="formas banda" id="formas" data-barra-hasta aria-labelledby="t-formas">
   <div class="envase">
     <div class="cabeza">
-      <h2 class="h2" id="t-formas">¿Cómo quieres hacerlo?</h2>
-      <p class="lead">El mismo camino, de tres formas. Elige la tuya.</p>
+      <h2 class="h2" id="t-formas">Tres formas de hacerlo, con su precio.</h2>
+      <p class="lead">Es el mismo camino de 90 días. Cambia cuánto te acompaño.</p>
     </div>
     <div class="selector" role="tablist" aria-label="Formas de hacer el camino">
       <button type="button" role="tab" id="b-sola" aria-controls="f-sola" aria-selected="true" data-forma="por-mi-cuenta">Por mi cuenta</button>
@@ -244,10 +280,10 @@
       </div>
       <div class="forma-txt">
         <h3 class="h3">Tu nuevo precio</h3>
-        <p>Los 8 libros y los cinco primeros días de la app. En cinco días sellas tu precio nuevo.</p>
+        <p>Los 8 libros en digital y los cinco primeros días de mi app. En cinco días calculas lo que vale tu hora de verdad y subes tu precio.</p>
         <p class="precio"><span data-precio="obra">97</span>&nbsp;USD</p>
-        <a class="btn" data-link="libros" href="/libros">Quiero Tu nuevo precio</a>
-        <a class="enlace" data-link="capitulo" href="/capitulos">Antes, lee un primer capítulo</a>
+        <p class="nota">Pago único. Los libros llegan al instante.</p>
+        <a class="btn" data-link="libros" href="/libros">Ver qué incluye</a>
       </div>
     </article>
 
@@ -256,13 +292,13 @@
       <div class="forma-txt">
         <h3 class="h3">Tus 5 sistemas, instalados en 90 días</h3>
         <ul>
-          <li>Lo construyes tú, con la app.</li>
-          <li>Lo construimos juntos, en mentoría.</li>
-          <li>Lo montamos por ti, en la instalación.</li>
+          <li><b>Con la app:</b> lo construyes tú, día por día.</li>
+          <li><b>En mentoría:</b> lo construimos juntos, en grupo, tres veces por semana.</li>
+          <li><b>En instalación:</b> te lo instalamos nosotros; tú te grabas y atiendes.</li>
         </ul>
         <p class="precio">Desde 1.000&nbsp;USD</p>
-        <a class="btn" data-link="agenda" href="/instala-tu-clinica">Quiero mi diagnóstico</a>
-        <p class="nota">Una llamada de 45 minutos con Javo, para ver tu caso.</p>
+        <a class="btn" data-link="agenda" href="/instala-tu-clinica">Agendar mi llamada</a>
+        <p class="nota">Primero, una llamada de 45 minutos conmigo, por videollamada y sin costo. Vemos tu caso y te digo qué forma te conviene y su precio exacto.</p>
       </div>
     </article>
 
@@ -270,21 +306,21 @@
       <figure class="forma-img"><img data-media="67a8027f9769a71ac3604f9c.png" data-ancho="960" alt="Un grupo del programa en la Patagonia, frente a la montaña" loading="lazy" style="object-position:50% 40%"></figure>
       <div class="forma-txt">
         <h3 class="h3">El mastermind y La Cima</h3>
-        <p>A la mesa con los más comprometidos. Y cuatro días juntos en Bariloche, del 17 al 20 de diciembre.</p>
+        <p>Para quienes ya instalaron sus 5 sistemas: un grupo chico que sigue creciendo conmigo. Y La Cima: cuatro días juntos en Bariloche, del 17 al 20 de diciembre.</p>
         <a class="btn" data-link="mastermind" href="/mastermind">Ver el mastermind</a>
         <p class="nota">Por invitación.</p>
       </div>
     </article>
 
-    <p class="aparte">¿Quieres probar antes? <a class="enlace" data-link="recursos" href="/para-empezar">Empieza con seis herramientas sin costo</a>.</p>
+    <p class="aparte">¿Quieres probar antes de decidir? <a class="enlace" data-link="recursos" href="/para-empezar">Usa mis seis herramientas, sin costo</a>: tu hora real, tu precio y tu plan.</p>
   </div>
 </section>
 
 <!-- 6 · El canal: videos para ver hoy -->
 <section class="canal banda papel" aria-labelledby="t-canal">
   <div class="envase cabeza">
-    <h2 class="h2" id="t-canal">Antes de decidir, mira.</h2>
-    <p class="lead">Clases cortas del canal de YouTube, para ver hoy.</p>
+    <h2 class="h2" id="t-canal">Clases cortas, para ver hoy.</h2>
+    <p class="lead">Videos de mi canal de YouTube. Tocas uno y se abre aquí.</p>
   </div>
   <div class="videos">
     <div class="envase-celular">
@@ -308,7 +344,7 @@
   <div class="envase">
     <figure class="f-foto"><img data-media="69da9fb1b30bc52371f82e69.jpeg" data-ancho="880" alt="Javo Katz en Bariloche, Patagonia" loading="lazy" width="1024" height="1280"></figure>
     <div class="f-txt lectura">
-      <h2 class="h2" id="t-fundador">Detrás de Tu Clínica Digital.</h2>
+      <h2 class="h2" id="t-fundador">Quién soy.</h2>
       <p>Soy Javo Katz. Vengo de una familia de sanadores y crecí viéndolos trabajar con mucho sacrificio, cansados y sin tiempo.</p>
       <p>Hace más de seis años acompaño a profesionales que atienden 1 a 1, para que ganen más y tengan tiempo para los suyos.</p>
       <dl class="cifras">
@@ -330,12 +366,28 @@
   <p class="envase rodajes-pie">Rodajes, mentorías y La Cima, en la Patagonia.</p>
 </section>
 
-<!-- 8 · El cierre -->
+<!-- 8 · Las preguntas de quien llega por primera vez (18 nov) -->
+<section class="preguntas banda" id="preguntas" aria-labelledby="t-preg">
+  <div class="envase">
+    <div class="cabeza"><h2 class="h2" id="t-preg">Preguntas frecuentes.</h2></div>
+    <div class="faq">
+      <div class="fq"><button type="button">¿Qué es Tu Clínica Digital?<i></i></button><div class="r"><div><p>Un camino de 90 días para profesionales que atienden 1 a 1. Pasas de cobrar por sesión a vender tu programa, con tu página, tus anuncios y tu propia app funcionando.</p></div></div></div>
+      <div class="fq"><button type="button">¿Para quién es?<i></i></button><div class="r"><div><p>Para coaches, terapeutas, nutricionistas, entrenadores y médicos que atienden 1 a 1 hace años y quieren vender su programa. Si recién empiezas a atender, empieza por Tu nuevo precio.</p></div></div></div>
+      <div class="fq"><button type="button">¿Cuánto cuesta?<i></i></button><div class="r"><div><p>Tu nuevo precio: <span data-precio="obra">97</span> USD, pago único. Mentoría o instalación: desde 1.000 USD; el precio exacto te lo digo en la llamada, según tu caso. El mastermind es por invitación.</p></div></div></div>
+      <div class="fq"><button type="button">¿Qué pasa en la llamada?<i></i></button><div class="r"><div><p>Son 45 minutos, tú y yo, por videollamada y sin costo. Miramos tu caso, te muestro cómo se aplican los 5 sistemas y te vas con tu plan de acción escrito.</p></div></div></div>
+      <div class="fq"><button type="button">¿Y si no sé de tecnología?<i></i></button><div class="r"><div><p>En la mentoría la aprendes paso a paso, como la aprendí yo. En la instalación la manejamos nosotros: tú te grabas y atiendes.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · El cierre -->
 <section class="cierre banda papel" aria-labelledby="t-cierre">
   <div class="envase">
     <span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-    <h2 class="h2" id="t-cierre">Empieza por donde estás.</h2>
-    <a class="btn" href="#formas">Elegir por dónde empiezo</a>
+    <h2 class="h2" id="t-cierre">¿Por dónde empiezo?</h2>
+    <p class="lead">Si atiendes hace años y quieres vender tu programa, agenda tu llamada. Si prefieres ir a tu ritmo, empieza por Tu nuevo precio.</p>
+    <a class="btn" data-link="agenda" href="/instala-tu-clinica">Agendar mi llamada</a>
+    <p class="despues"><a class="enlace" data-link="libros" href="/libros">Ver Tu nuevo precio · <span data-precio="obra">97</span> USD</a></p>
   </div>
 </section>
 
@@ -364,7 +416,7 @@
   </div>
 </footer>
 
-<div class="barra"><a class="btn" href="#formas">Elegir por dónde empiezo</a></div>
+<div class="barra"><a class="btn" href="#formas">Ver las formas y los precios</a></div>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Video"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
 
 <script>/*PAISAJE_JS*/</script>
