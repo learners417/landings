@@ -8,7 +8,7 @@ import tarjeta as T
 
 T.T.clear()
 t = T.t
-t('videoteca', 'La Videoteca.', 'Todo lo que grabé, en el orden del camino: del lago al bosque.', 'lago2', T.numeral('60', 'videos, para mirar uno y hacer algo'))
+t('videoteca', 'La Videoteca.', 'Todo lo que grabé, en el orden del camino: del lago al bosque.', 'lago2', T.numeral('61', 'videos, para mirar uno y hacer algo'))
 t('empieza', 'Empieza aquí.', 'Dos videos para ordenar todo lo demás.', 'papel2', T.lomos_grandes())
 t('lago', 'El lago.', 'Mírate antes de moverte.', 'papel2', T.tapas('lago'))
 t('montana', 'La montaña.', 'Tu programa y tu precio.', 'papel2', T.tapas('montana'))
