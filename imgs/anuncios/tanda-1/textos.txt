@@ -1,45 +1,52 @@
-PRUEBA DE EROS · v7 · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
-Reemplaza a la v6 (cambian el texto de las tarjetas y del anuncio, y las fotos: Javo recortado, con el cuerpo a la vista). Ajuste del 18 nov, 23:15: la tarjeta 3 de cada carrusel («4 personas más») y su párrafo en el texto. Los carruseles tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
-Las cuatro: botón «Más información». Las tarjetas van en el orden de su número.
-YA CARGADAS EN META (18 nov, 23:20) · cuenta «tdc 06/26» (858332333990895), biblioteca de imágenes, con nombre tanda1-v7-*. Para armar los anuncios, usar estos códigos (hash):
-· a-1 457bd7c5e8e3957cd72a42bff3f6e33a · a-2 4aa0483299cc45481c55a13b458bdfc2 · a-3 7a7c4f6d9d8683d2870cc2758e461a70 · a-7 e2800b8b10ba0de6ac88cdfdd8d07b69
-· h-1 5a54023b3791ea4bd9fadfaee91e579b · h-2 1ea8e7d6524b5efc98cfb6319c9b5396 · h-3 58d50464a64ad1c585b91010e332d88c · h-7 98ac7081579f4d04fe5bc8fcfe66ca4b
-· tarjetas 4, 5 y 6 (iguales en A y H; Meta las guardó una sola vez): 4 c8adc6b88b1d979c4e00677a70150584 · 5 ebcf091bbe91daac9cadeead9ccea9aa · 6 7e6d8fd981f8895b1df632f6750d0f84
+PRUEBA DE EROS · v8 · 3 carruseles y 3 posts para los dos conjuntos (mujeres de 55 o más y abierto)
+Reemplaza a la v7. Cambia: el carrusel H entero (el chat en un celular y la reacción de Javo aparte), el cierre de los carruseles (vende el video y la agenda), los colores de los libros, y se suman el carrusel F «Solo cambió la foto» y el post 3. Los posts 1 y 2 quedan iguales a la v7 (cambia solo el párrafo final del texto).
+Carruseles: H tiene 8 tarjetas (h-1 a h-8), A tiene 7 (a-1 a a-7) y F tiene 8 (f-1 a f-8). Las últimas 4 tarjetas son iguales en los tres. Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
+Las seis piezas: botón «Más información». Las tarjetas van en el orden de su número.
+ESTADO EN META: falta cargar las imágenes de la v8 (se cargan cuando Javo dé el OK final). Los códigos de la v7 de h-* y a-* ya no sirven. Siguen sirviendo los de los posts 1 y 2:
 · post-1 39e0380f99afaa0734d7d443ee0c1474 · post-1-vertical 16fe9381a21a6eca302b703e3baf00d2
 · post-2 6726ab0f6fa2ae6444bdf58e7afe7d9c · post-2-vertical 48931f9c6f3b2fcfb98cd06d54d6cb6d
-Las de sin-monto/ no están cargadas: solo si Meta rechaza alguna.
 IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
-Posts en historias y reels: post-1-vertical.png y post-2-vertical.png (1080 × 1920), en las mismas carpetas.
+Historias y reels: post-1-vertical.png, post-2-vertical.png y post-3-vertical.png (1080 × 1920), en las mismas carpetas.
 Si Meta rechaza una pieza por el monto: usar la misma de la carpeta sin-monto/ (mismos nombres, dice «de alto valor») y en el texto cambiar «1.000 USD por consultante» por «de alto valor».
 
 ==================================================
-CARRUSEL H · ¿Cuántas sesiones voy a necesitar?  (h-1 a h-7)
+CARRUSEL H · ¿Cuántas sesiones voy a necesitar?  (h-1 a h-8)
 ==================================================
 Texto principal:
-—¿Cuántas sesiones voy a necesitar?
+—Hola. ¿Cuántas sesiones voy a necesitar?
 —Depende.
 
-Si atiendes hace años, te lo preguntaron mil veces. Y casi todos respondemos eso, porque es verdad.
+Es la respuesta más honesta. Y casi todos la damos.
 
-Pero hay otra respuesta, igual de honesta, que además vende: «Son 90 días. El 15 de marzo vas a dormir de corrido».
+Pero mira cómo sigue: viene tres veces, sale más liviano, y un lunes te escribe «esta semana no puedo, te aviso». Le preguntas si lo esperas el jueves. Te lee y no te contesta.
 
-¿Ves? Le diste una fecha y un resultado. Eso ya es un programa. Y lo cobras 1.000 USD por consultante.
+No es que no le importe. Es que nunca supo hasta dónde iba.
+
+Ahora, la misma pregunta con otra respuesta: «Hola Iván, ¿cómo estás? Te cuento: es un método validado en más de 20 años de consulta, que resumí en un programa de 90 días. Para que estabilices tu cuerpo, tus emociones y tu mente, y vuelvas a dormir de corrido todas las noches».
+
+«Me encanta. ¿Cuándo empezamos?»
+
+¿Ves? Le diste un camino y un resultado. Eso ya es un programa. Y lo cobras 1.000 USD por consultante.
 
 ¿Por qué todavía no respondes así? Porque para vender un programa, además de atender, tienes que ser 4 personas más: quien arma el método (tus años de consulta, en etapas con fecha), quien le pone precio (y dice «son 1.000 USD» sin que le tiemble la voz), quien te hace visible (para que en Instagram entiendan lo que haces) y quien conecta todo (tu página, tu agenda, tus anuncios y tu app). Y atender ya te llena la semana.
 
 Entonces pruebas lo de siempre: una agencia, otro curso, publicar todos los días, pedirle a tu sobrina que te lleve las redes. Cada uno te arma una parte. Y el resto lo terminas haciendo tú, de noche, después de atender.
 
-Por eso, en 90 días, nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Y todo queda a tu nombre.
+Por eso, en 90 días, nos repartimos así: tú grabas y atiendes, y yo te instalo 5 sistemas a tu nombre. Tu reset (tu hora y tu precio nuevo), tu programa de 1.000 USD por consultante, tu captación (página, anuncios y agenda), tu propia app y tu ecosistema de contenido.
+
+¿En qué orden? Casi todos empiezan por la captación, y por eso no les funciona.
 
 Soy Javo Katz. Ya se lo instalé a más de 50 profesionales de Latinoamérica, España y Estados Unidos.
 
-Toca «Más información». En el video te muestro cómo lo instalo. Y si ya sabes que es para ti, debajo está mi agenda para tu diagnóstico: 45 minutos conmigo.
+Toca «Más información» y elige:
+· Mira el video de 4 minutos: los 5 sistemas, en el orden en que te los instalo.
+· O, si ya sabes que es para ti, agenda tu diagnóstico ahí mismo: 45 minutos conmigo, y te vas con tu plan de acción escrito.
 
-Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años y ya tienen la agenda llena.
+Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años.
 
 Título: Hay otra respuesta, y esa vende
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v7
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v8
 
 ==================================================
 CARRUSEL A · Deja de ofrecer sesiones 1 a 1  (a-1 a a-7)
@@ -55,20 +62,56 @@ El paso siguiente es un programa de 1.000 USD por consultante.
 
 Entonces pruebas lo de siempre: una agencia, otro curso, publicar todos los días, pedirle a tu sobrina que te lleve las redes. Cada uno te arma una parte. Y el resto lo terminas haciendo tú, de noche, después de atender.
 
-Por eso, en 90 días, nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Y todo queda a tu nombre.
+Por eso, en 90 días, nos repartimos así: tú grabas y atiendes, y yo te instalo 5 sistemas a tu nombre. Tu reset (tu hora y tu precio nuevo), tu programa de 1.000 USD por consultante, tu captación (página, anuncios y agenda), tu propia app y tu ecosistema de contenido.
+
+¿En qué orden? Casi todos empiezan por la captación, y por eso no les funciona.
 
 Soy Javo Katz. Ya ayudé a más de 50 profesionales de Latinoamérica, España y Estados Unidos a dejar las sesiones sueltas.
 
-Toca «Más información». En el video te muestro cómo lo instalo. Y si ya sabes que es para ti, agenda tu diagnóstico ahí mismo: 45 minutos conmigo.
+Toca «Más información» y elige:
+· Mira el video de 4 minutos: los 5 sistemas, en el orden en que te los instalo.
+· O, si ya sabes que es para ti, agenda tu diagnóstico ahí mismo: 45 minutos conmigo, y te vas con tu plan de acción escrito.
 
-Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años y ya tienen la agenda llena.
+Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años.
 
 Título: Deja de ofrecer sesiones 1 a 1
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v7
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v8
 
 ==================================================
-POST 1 · Tú grabas y atiendes  (post-1.png)
+CARRUSEL F · Solo cambió la foto  (f-1 a f-8)
+==================================================
+Texto principal:
+Llevas 20 años atendiendo. Y en tu perfil, lo único que cambió es la foto.
+
+Tus consultantes te recomiendan. Y quien llega recomendado, antes de escribirte, mira tu Instagram. Si ahí no ve un programa, te escribe lo de siempre: «Hola, me pasó tu contacto Carla. ¿Cuánto sale la sesión?».
+
+Llegó por tus 20 años de experiencia. Pero en tu perfil no vio un programa. Entonces te pregunta por la sesión.
+
+Cuando tu perfil muestra tu programa, tu método y tus casos, te escriben para preguntar cuándo empiezan. Mismos 20 años. Otra conversación.
+
+¿Y por qué todavía no lo tienes así? Porque para vender un programa, además de atender, tienes que ser 4 personas más: quien arma el método (tus años de consulta, en etapas con fecha), quien le pone precio (y dice «son 1.000 USD» sin que le tiemble la voz), quien te hace visible (para que en Instagram entiendan lo que haces) y quien conecta todo (tu página, tu agenda, tus anuncios y tu app). Y atender ya te llena la semana.
+
+Entonces pruebas lo de siempre: una agencia, otro curso, publicar todos los días, pedirle a tu sobrina que te lleve las redes. Cada uno te arma una parte. Y el resto lo terminas haciendo tú, de noche, después de atender.
+
+Por eso, en 90 días, nos repartimos así: tú grabas y atiendes, y yo te instalo 5 sistemas a tu nombre. Tu reset (tu hora y tu precio nuevo), tu programa de 1.000 USD por consultante, tu captación (página, anuncios y agenda), tu propia app y tu ecosistema de contenido.
+
+¿En qué orden? Casi todos empiezan por la captación, y por eso no les funciona.
+
+Soy Javo Katz. Ya se lo instalé a más de 50 profesionales de Latinoamérica, España y Estados Unidos.
+
+Toca «Más información» y elige:
+· Mira el video de 4 minutos: los 5 sistemas, en el orden en que te los instalo.
+· O, si ya sabes que es para ti, agenda tu diagnóstico ahí mismo: 45 minutos conmigo, y te vas con tu plan de acción escrito.
+
+Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años.
+
+Título: Tu perfil, a la altura de tu consulta
+Botón: Más información
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c3-solo-cambio-la-foto-v8
+
+==================================================
+POST 1 · Tú grabas y atiendes  (post-1.png, igual que en la v7)
 ==================================================
 Texto principal:
 Tú grabas y atiendes. Yo, todo lo demás.
@@ -82,14 +125,14 @@ Si atiendes 1 a 1 hace años, en 90 días te instalo, a tu nombre:
 
 Ya se lo instalé a más de 50 profesionales.
 
-Toca «Más información»: en el video te muestro cómo lo hago. Y si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
+Toca «Más información» y elige: mira el video de 4 minutos, donde te muestro los 5 sistemas en el orden en que te los instalo, o agenda tu diagnóstico ahí mismo: 45 minutos conmigo, y te vas con tu plan de acción escrito. Me quedan 3 lugares este año.
 
 Título: Tú grabas y atiendes
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v7
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v8
 
 ==================================================
-POST 2 · Te instalo tu programa en 90 días  (post-2.png)
+POST 2 · Te instalo tu programa en 90 días  (post-2.png, igual que en la v7)
 ==================================================
 Texto principal:
 ¿Atiendes 1 a 1 hace años? Te instalo tu programa en 90 días.
@@ -98,8 +141,26 @@ Curar ya sabes. Lo que te frena son cuatro oficios que no son el tuyo: escribir 
 
 De eso me encargo yo: tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo a tu nombre. Tú grabas y atiendes.
 
-Toca «Más información»: en el video te muestro cómo lo hago. Y si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
+Toca «Más información» y elige: mira el video de 4 minutos, donde te muestro los 5 sistemas en el orden en que te los instalo, o agenda tu diagnóstico ahí mismo: 45 minutos conmigo, y te vas con tu plan de acción escrito. Me quedan 3 lugares este año.
 
 Título: Te instalo tu programa en 90 días
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v7
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v8
+
+==================================================
+POST 3 · Ni community manager, ni agencia, ni gurú de 19  (post-3.png)
+==================================================
+Texto principal:
+Para vender tu programa no necesitas otro community manager. Ni otra agencia. Ni un gurú del marketing de 19 años.
+
+Necesitas tu sistema: tu programa de 1.000 USD por consultante, tu página, tus anuncios, tu agenda y tu propia app, conectados entre sí y a tu nombre.
+
+Tú grabas y atiendes. Yo te lo instalo en 90 días. Ya se lo instalé a más de 50 profesionales que atienden 1 a 1, como tú.
+
+Toca «Más información» y elige: mira el video de 4 minutos, donde te muestro los 5 sistemas en el orden en que te los instalo, o agenda tu diagnóstico ahí mismo: 45 minutos conmigo, y te vas con tu plan de acción escrito.
+
+Me quedan 3 lugares este año.
+
+Título: Necesitas tu sistema
+Botón: Más información
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p3-ni-cm-ni-agencia-v8
