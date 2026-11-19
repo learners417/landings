@@ -1,6 +1,13 @@
 PRUEBA DE EROS · v7 · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
 Reemplaza a la v6 (cambian el texto de las tarjetas y del anuncio, y las fotos: Javo recortado, con el cuerpo a la vista). Ajuste del 18 nov, 23:15: la tarjeta 3 de cada carrusel («4 personas más») y su párrafo en el texto. Los carruseles tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
 Las cuatro: botón «Más información». Las tarjetas van en el orden de su número.
+YA CARGADAS EN META (18 nov, 23:20) · cuenta «tdc 06/26» (858332333990895), biblioteca de imágenes, con nombre tanda1-v7-*. Para armar los anuncios, usar estos códigos (hash):
+· a-1 457bd7c5e8e3957cd72a42bff3f6e33a · a-2 4aa0483299cc45481c55a13b458bdfc2 · a-3 7a7c4f6d9d8683d2870cc2758e461a70 · a-7 e2800b8b10ba0de6ac88cdfdd8d07b69
+· h-1 5a54023b3791ea4bd9fadfaee91e579b · h-2 1ea8e7d6524b5efc98cfb6319c9b5396 · h-3 58d50464a64ad1c585b91010e332d88c · h-7 98ac7081579f4d04fe5bc8fcfe66ca4b
+· tarjetas 4, 5 y 6 (iguales en A y H; Meta las guardó una sola vez): 4 c8adc6b88b1d979c4e00677a70150584 · 5 ebcf091bbe91daac9cadeead9ccea9aa · 6 7e6d8fd981f8895b1df632f6750d0f84
+· post-1 39e0380f99afaa0734d7d443ee0c1474 · post-1-vertical 16fe9381a21a6eca302b703e3baf00d2
+· post-2 6726ab0f6fa2ae6444bdf58e7afe7d9c · post-2-vertical 48931f9c6f3b2fcfb98cd06d54d6cb6d
+Las de sin-monto/ no están cargadas: solo si Meta rechaza alguna.
 IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
 Posts en historias y reels: post-1-vertical.png y post-2-vertical.png (1080 × 1920), en las mismas carpetas.
 Si Meta rechaza una pieza por el monto: usar la misma de la carpeta sin-monto/ (mismos nombres, dice «de alto valor») y en el texto cambiar «1.000 USD por consultante» por «de alto valor».
