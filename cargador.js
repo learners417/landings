@@ -52,6 +52,52 @@
     d.head.appendChild(tapa);
   }
 
+  /* 19 nov: la letra de la casa (Manrope) se pide al arrancar, junto con la página, y no después.
+     Antes la página aparecía con la letra del teléfono y saltaba cuando llegaba Manrope (los títulos cambiaban de alto).
+     Es el mismo archivo que da Google Fonts, con los mismos pesos que pide cada página.
+     Las páginas sin Manrope no la piden. */
+  var SIN_MANROPE = /^(app|app-745191|el-numero|generador-pp|index|modelodenegocio|sharyl)$|^libro\//;
+  var LATIN = 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD';
+  var letra = null;
+  if (!SIN_MANROPE.test(pagina) && w.FontFace && d.fonts && w.fetch) {
+    try {
+      letra = fetch('https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2')
+        .then(function (r) { if (!r.ok) throw r.status; return r.arrayBuffer(); })
+        .then(function (b) { carga.letraLlego = Math.round(performance.now()); return b; }, function () { return null; });
+    } catch (e) { letra = null; }
+  }
+  /* Las conexiones que la página usa al montarse (Google Fonts y el píxel) se abren ya. No cambia qué se carga. */
+  if (rama === 'main') {
+    ['https://fonts.googleapis.com', 'https://connect.facebook.net'].forEach(function (u) {
+      try { var l = d.createElement('link'); l.rel = 'preconnect'; l.href = u; d.head.appendChild(l); } catch (e) {}
+    });
+  }
+  /* Con la página en la mano: Manrope se declara con los pesos que pide la página en Google Fonts.
+     Si el archivo no llegó, se le dan hasta 250 ms más; si tampoco, la página sale igual y Google Fonts hace lo de siempre. */
+  function conLetra(html) {
+    try {
+      if (!letra) return html;
+      var m = /fonts\.googleapis\.com\/css2\?[^"']*family=Manrope:wght@([0-9.;]+)/.exec(html);
+      if (!m) return html;
+      var pesos = m[1].indexOf('..') > 0 ? [m[1].replace('..', ' ')] : m[1].split(';');
+      var pedido = 'family=Manrope:wght@' + m[1];
+    } catch (e) { return html; }
+    return new Promise(function (ok) {
+      var hecho = false, t = performance.now();
+      function sigue() { if (!hecho) { hecho = true; carga.esperaLetra = Math.round(performance.now() - t); ok(html); } }
+      setTimeout(sigue, 250);
+      letra.then(function (b) {
+        if (!b) return;
+        /* Si llega tarde, igual se declara: el cambio de letra pasa antes que esperando a Google Fonts. */
+        return Promise.all(pesos.map(function (p) {
+          var f = new FontFace('Manrope', b, { weight: p, style: 'normal', display: 'swap', unicodeRange: LATIN });
+          d.fonts.add(f);
+          return f.loaded;
+        })).then(function () { carga.letra = hecho ? 'tarde' : 'lista'; if (!hecho) carga.manrope = pedido; });
+      }).then(sigue, sigue);
+    });
+  }
+
   function traer(url, ms) {
     return new Promise(function (ok, no) {
       var reloj = setTimeout(function () { no('tiempo'); }, ms);
@@ -141,8 +187,24 @@
     }
   }
 
+  /* Si Manrope ya está puesta, la hoja de Google Fonts ya no la pide: así no hay dos Manrope iguales
+     (un navegador podría preferir la de Google y cambiar de letra un instante). Lo demás de la hoja queda igual. */
+  function sinManropeDeGoogle(x) {
+    if (!carga.manrope) return;
+    var l = x.querySelectorAll('link[href*="fonts.googleapis.com/css2"]');
+    for (var i = 0; i < l.length; i++) {
+      var partes = (l[i].getAttribute('href') || '').split('?');
+      if (partes.length !== 2) continue;
+      var q = partes[1].split('&'), resto = q.filter(function (p) { return p !== carga.manrope; });
+      if (resto.length === q.length) continue;
+      if (!resto.some(function (p) { return p.indexOf('family=') === 0; })) l[i].parentNode.removeChild(l[i]);
+      else l[i].setAttribute('href', partes[0] + '?' + resto.join('&'));
+    }
+  }
+
   function montar(html) {
     var x = new DOMParser().parseFromString(html, 'text/html');
+    try { sinManropeDeGoogle(x); } catch (e) {}
     var titulo = x.title;
 
     /* Los scripts esperan hasta que la página entera esté puesta. */
@@ -195,5 +257,5 @@
     tapa.textContent += 'body:before{content:"La página se está actualizando. Vuelve a abrirla en un momento.";display:block;font:20px/1.5 Georgia,serif;color:#2B2622;text-align:center;margin:30vh 24px 0}';
   }
 
-  primera().then(montar).catch(aviso);
+  primera().then(conLetra).then(montar).catch(aviso);
 })(document, window);
