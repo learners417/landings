@@ -14,6 +14,14 @@
 <link rel="preload" as="video" href="https://assets.cdn.filesafe.space/SImzaMApYvtVV8UzvlgD/media/6aebe892e322309abfcc3019.mp4">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&family=Literata:opsz,wght@7..72,400..600&display=swap" rel="stylesheet">
 
+<script>
+/* 18 nov (MEDICIÓN): la etiqueta del anuncio sigue en Clarity y la agenda confirmada se marca como evento. No toca el píxel. */
+(function(w){w.clarity=w.clarity||function(){(w.clarity.q=w.clarity.q||[]).push(arguments)};var g={};
+  try{g=JSON.parse(sessionStorage.getItem('tcd_anuncio')||'{}')||{};}catch(e){g={};}
+  Object.keys(g).forEach(function(t){try{w.clarity('set',t,g[t]);}catch(e){}});
+  try{w.clarity('event','AgendaConfirmada');}catch(e){}
+})(window);
+</script>
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');

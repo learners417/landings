@@ -17,6 +17,18 @@
 <link rel="preconnect" href="https://assets.cdn.filesafe.space" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700;800&family=Literata:opsz,wght@7..72,400..600&display=swap" rel="stylesheet">
 
+<script>
+/* 18 nov (MEDICIÓN, claude/MEDICION-EMBUDO.md): la etiqueta del anuncio y los eventos de la página también van a Clarity,
+   para leer el embudo anuncio por anuncio. No toca el píxel. La cola de Clarity es la misma que arma src/clarity.js. */
+(function(w){w.clarity=w.clarity||function(){(w.clarity.q=w.clarity.q||[]).push(arguments)};
+  var k={anuncio:'utm_content',campana:'utm_campaign',conjunto:'utm_term',fuente:'utm_source'},q=new URLSearchParams(location.search),g={};
+  try{g=JSON.parse(sessionStorage.getItem('tcd_anuncio')||'{}')||{};}catch(e){g={};}
+  Object.keys(k).forEach(function(t){var v=q.get(k[t]);if(v)g[t]=String(v).slice(0,100);});
+  try{sessionStorage.setItem('tcd_anuncio',JSON.stringify(g));}catch(e){}
+  Object.keys(g).forEach(function(t){try{w.clarity('set',t,g[t]);}catch(e){}});
+  w.tcdCl=function(ev){try{w.clarity('event',ev);}catch(e){}};
+})(window);
+</script>
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -1074,7 +1086,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
 (function(){
   if(window.__vslRet)return;window.__vslRet=1;
   var hechas={},vistos={},suma=0,ult=null,api=null;
-  function avisa(p){[25,50,75,95].forEach(function(k){if(!hechas[k]&&p>=k){hechas[k]=true;if(window.fbq)fbq('trackCustom','VSL'+k);}});}
+  function avisa(p){[25,50,75,95].forEach(function(k){if(!hechas[k]&&p>=k){hechas[k]=true;if(window.fbq)fbq('trackCustom','VSL'+k);if(window.tcdCl)tcdCl('VSL'+k);}});}
   var el=document.querySelector('wistia-player[media-id="6756q87ti6"]');
   window._wq=window._wq||[];
   window._wq.push({id:'6756q87ti6',onReady:function(v){api=v;}});
@@ -1104,6 +1116,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
 document.querySelectorAll('[data-cta]').forEach(function(a){
   a.addEventListener('click',function(e){
     if(window.fbq){fbq('trackCustom','CTA',{ubicacion:a.getAttribute('data-cta')});fbq('track','InitiateCheckout');}
+    if(window.tcdCl)tcdCl('CTA');
     var t=document.getElementById('elige')||document.getElementById('agenda');if(!t)return;
     e.preventDefault();
     if(history.replaceState)history.replaceState(null,'','#agenda');
@@ -1142,7 +1155,7 @@ document.querySelectorAll('[data-cta]').forEach(function(a){
   function cierra(){vv.pause();vv.removeAttribute('src');vv.load();var bx=document.getElementById('tvyt');bx.innerHTML='';bx.style.display='none';tv.classList.remove('on');}
   document.querySelectorAll('#tgrid .tcard, .tdest .tcard').forEach(function(b){b.addEventListener('click',function(){
     var yt=b.getAttribute('data-yt');var box=document.getElementById('tvyt');if(yt){vv.style.display='none';box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+yt+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Testimonio"></iframe>';box.style.display='block';tv.classList.add('on');}else{box.style.display='none';box.innerHTML='';vv.style.display='';vv.src=b.getAttribute('data-src');tv.classList.add('on');var p=vv.play();if(p&&p.catch)p.catch(function(){});}
-    var n=b.getAttribute('data-nombre');if(!vistos[n]){vistos[n]=true;if(window.fbq)fbq('trackCustom','TestimonioVisto',{nombre:n});}
+    var n=b.getAttribute('data-nombre');if(!vistos[n]){vistos[n]=true;if(window.fbq)fbq('trackCustom','TestimonioVisto',{nombre:n});if(window.tcdCl)tcdCl('TestimonioVisto');}
   });});
   document.getElementById('tvx').addEventListener('click',cierra);
   tv.addEventListener('click',function(e){if(e.target===tv)cierra();});
@@ -1167,7 +1180,7 @@ window.addEventListener('message',function(e){
   var s=(typeof d==='string')?d:(d.type||d.event||'');s=String(s).toLowerCase();
   /* 18 nov (Javo, con VENTAS HIGH): el Schedule le llega a Meta una sola vez, desde GHL (servidor, con correo y teléfono).
      Desde la página sale AgendaWeb, una vez por carga, para no contar la agenda dos veces. */
-  if((s.indexOf('book')>-1||s.indexOf('appointment')>-1)&&!window.__tcdAgendaWeb){window.__tcdAgendaWeb=1;if(window.fbq)fbq('trackCustom','AgendaWeb');}
+  if((s.indexOf('book')>-1||s.indexOf('appointment')>-1)&&!window.__tcdAgendaWeb){window.__tcdAgendaWeb=1;if(window.fbq)fbq('trackCustom','AgendaWeb');if(window.tcdCl)tcdCl('AgendaWeb');}
 },false);
 </script>
 <script>
@@ -1206,7 +1219,7 @@ window.addEventListener('message',function(e){
     h3.textContent=origen==='horario'?'¿No encontraste horario? Respóndeme 4 preguntas y te propongo uno.':'Respóndeme 4 preguntas y te escribo yo, en persona.';
     antes=document.activeElement;ws.hidden=false;document.body.style.overflow='hidden';pinta();
     if(i===0)setTimeout(function(){var t=f.querySelector('input[name=nombre]');if(t)t.focus();},80);
-    if(!abierto){abierto=true;if(window.fbq)fbq('trackCustom','WhatsAppAbierto',{origen:origen});}
+    if(!abierto){abierto=true;if(window.fbq)fbq('trackCustom','WhatsAppAbierto',{origen:origen});if(window.tcdCl)tcdCl('WhatsAppAbierto');}
   }
   function cierra(){ws.hidden=true;document.body.style.overflow='';if(antes&&antes.focus)antes.focus();}
   document.querySelectorAll('[data-wa]').forEach(function(b){b.addEventListener('click',abre);});
@@ -1236,6 +1249,7 @@ window.addEventListener('message',function(e){
       (g('duda')?'• Mi duda: '+g('duda')+'\n':'')+
       (origen==='horario'?'\nNo encontré horario para mi diagnóstico. ¿Me propones uno?':'\nQuiero mi diagnóstico contigo. ¿Me propones un horario?');
     if(window.fbq){fbq('track','Contact');fbq('trackCustom','WhatsAppEnviado',{agenda:g('agenda'),profesion:g('profesion'),anios:a,origen:origen});}
+    if(window.tcdCl)tcdCl('WhatsAppEnviado');
     var url='https://wa.me/5492944217689?text='+encodeURIComponent(msg);
     var w=window.open(url,'_blank');if(!w)location.href=url;
     cierra();
