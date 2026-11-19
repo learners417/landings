@@ -1,0 +1,5 @@
+# jsDelivr arma cada versión del repo con el archivo comprimido de GitHub y no sirve paquetes de más de 50 MB
+# («Package size exceeded the configured limit of 50 MB»). Desde el 19 nov, con las imágenes de anuncios, el repo pasa
+# de 60 MB. Ninguna página usa imgs/anuncios: quedan en el repo (y en git clone), pero fuera del paquete que baja jsDelivr.
+imgs/anuncios export-ignore
+imgs/anuncios/** export-ignore
