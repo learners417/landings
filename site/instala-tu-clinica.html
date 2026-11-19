@@ -64,6 +64,60 @@
   setTimeout(function(){portada(-1);},20000);
 }catch(e){}})(window,document);
 </script>
+<script>
+/* 19 nov (Javo, botón «Súmalas»): tres marcas en Clarity para ver en qué paso se van. Solo Clarity: no toca el píxel ni lo que se ve.
+   1) CalendarioVisto: el calendario entró en pantalla (un cuarto a la vista). Con él va la etiqueta «calendario»: «listo al verlo»,
+      o cuánto tardó en dar su primera señal desde que se vio (los mismos tramos de la velocidad), o «no cargó en 20 s».
+   2) CalendarioTocado: la persona tocó dentro del calendario (el foco pasa al calendario). En iPhone puede contar de menos: leerlo en Android.
+   3) El video sin sonido (el arranque solo del celular): VideoMudo3s, VideoMudo10s, VideoMudo30s y VideoMudo60s, segundos mirados
+      sin sonido; y VideoSonido cuando lo pone con sonido (el botón «Toca para escucharlo», o 2 segundos seguidos con sonido). Cada marca, una vez. */
+(function(w,d){try{
+  w.clarity=w.clarity||function(){(w.clarity.q=w.clarity.q||[]).push(arguments)};
+  var P=w.performance,hecho={},senal=0,visto=0,son=0;
+  function cl(ev){if(!hecho[ev]){hecho[ev]=1;try{w.clarity('event',ev);}catch(e){}}}
+  function cal(){return d.querySelector('#cal iframe');}
+  function tramo(ms){return ms<=2500?'tardó 0 a 2,5 s':ms<=4000?'tardó 2,5 a 4 s':ms<=8000?'tardó 4 a 8 s':'tardó más de 8 s';}
+  function etiqueta(v){if(!hecho.cal){hecho.cal=1;try{w.clarity('set','calendario',v);}catch(e){}}}
+  /* la primera señal del calendario: el primer mensaje que llega desde su ventana */
+  w.addEventListener('message',function(e){var f=cal();
+    if(senal||!f||e.source!==f.contentWindow)return;senal=P.now();if(visto)etiqueta(tramo(senal-visto));});
+  /* tocó: el foco sale de la página y queda en el calendario */
+  w.addEventListener('blur',function(){setTimeout(function(){var f=cal();if(f&&d.activeElement===f)cl('CalendarioTocado');},0);});
+  function mira(){
+    var c=d.getElementById('cal');if(!c||!('IntersectionObserver' in w))return !!c;
+    var o=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting||visto)return;
+      visto=P.now();o.disconnect();cl('CalendarioVisto');
+      if(senal)etiqueta('listo al verlo');else setTimeout(function(){if(!senal)etiqueta('no cargó en 20 s');},20000);});},{threshold:.25});
+    o.observe(c);
+    var b=d.getElementById('vsl-son');if(b)b.addEventListener('click',function(){son=1;cl('VideoSonido');});
+    return 1;
+  }
+  if(!mira())d.addEventListener('DOMContentLoaded',mira);
+  /* el video: lee el reproductor nuevo de Wistia; si no responde, la API vieja (igual que la retención) */
+  var api=null,vistos={},suma=0,ult=null,hitos=[3,10,30,60],h=0,ss=0,ini=Date.now();
+  w._wq=w._wq||[];w._wq.push({id:'6756q87ti6',onReady:function(v){api=v;}});
+  function lee(){
+    var el=d.querySelector('wistia-player[media-id="6756q87ti6"]');
+    if(el&&typeof el.play==='function'&&Number(el.duration)>0){
+      var corre=typeof el.paused==='boolean'?!el.paused:el.state==='playing';
+      return {t:Number(el.currentTime),r:Number(el.playbackRate)||1,corre:corre,mudo:!!el.muted||Number(el.volume)===0};
+    }
+    if(api&&api.duration()>0)return {t:api.time(),r:(api.playbackRate&&api.playbackRate())||1,corre:api.state()==='playing',mudo:api.isMuted()||api.volume()===0};
+    return null;
+  }
+  var iv=setInterval(function(){try{
+    var s=lee(),n=Date.now(),m=s&&s.corre&&s.mudo;
+    ss=s&&s.corre&&!s.mudo?ss+1:0;if(ss>=2){son=1;cl('VideoSonido');}
+    if(m&&ult){
+      var dt=s.t-ult.t,dw=(n-ult.w)/1000*s.r;
+      if(dt>0&&dt<=dw+1.5){for(var k=Math.floor(ult.t);k<Math.floor(s.t);k++){if(!vistos[k]){vistos[k]=1;suma++;}}}
+      while(h<hitos.length&&suma>=hitos[h]){cl('VideoMudo'+hitos[h]+'s');h++;}
+    }
+    ult=m?{t:s.t,w:n}:null;
+    if(son||n-ini>900000)clearInterval(iv);
+  }catch(e){}},1000);
+}catch(e){}})(window,document);
+</script>
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
