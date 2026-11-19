@@ -1,5 +1,5 @@
-PRUEBA DE EROS · v6 · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
-Reemplaza a la v5 (mismos textos; cambian letra, colores y fotos). Los carruseles tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
+PRUEBA DE EROS · v7 · 4 piezas para los dos conjuntos (mujeres de 55 o más y abierto)
+Reemplaza a la v6 (cambian el texto de las tarjetas y del anuncio, y las fotos: Javo recortado, con el cuerpo a la vista). Los carruseles tienen 7 tarjetas (a-1 a a-7, h-1 a h-7). Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
 Las cuatro: botón «Más información». Las tarjetas van en el orden de su número.
 IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
 Posts en historias y reels: post-1-vertical.png y post-2-vertical.png (1080 × 1920), en las mismas carpetas.
@@ -12,23 +12,27 @@ Texto principal:
 —¿Cuántas sesiones voy a necesitar?
 —Depende.
 
-Si atiendes hace años, te la hicieron mil veces. «Depende» es la respuesta honesta. Hay otra que, además, vende: «Son 90 días. El 15 de marzo vas a dormir de corrido». Eso es un programa. Y lo cobras 1.000 USD por consultante.
+Si atiendes hace años, te lo preguntaron mil veces. Y casi todos respondemos eso, porque es verdad.
 
-¿Por qué todavía no respondes así? Porque armarlo son 4 oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes un oficio de tiempo completo: atender.
+Pero hay otra respuesta, igual de honesta, que además vende: «Son 90 días. El 15 de marzo vas a dormir de corrido».
 
-La mayoría contrata una agencia, paga otro curso, publica todos los días o le pide a su sobrina que le lleve las redes. Cada uno hace una parte. Nadie te instala el sistema completo.
+¿Ves? Le diste una fecha y un resultado. Eso ya es un programa. Y lo cobras 1.000 USD por consultante.
 
-En 90 días nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo queda a tu nombre.
+¿Por qué todavía no respondes así? Porque armar un programa son cuatro oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes uno de tiempo completo: atender.
 
-Soy Javo Katz. Instalé este sistema a más de 50 profesionales en Latinoamérica, España y Estados Unidos.
+Entonces pruebas lo de siempre: una agencia, otro curso, publicar todos los días, pedirle a tu sobrina que te lleve las redes. Cada uno te arma una parte. Y el resto lo terminas haciendo tú, de noche, después de atender.
 
-Toca «Más información». Mira el video: te muestro cómo lo instalo. Si ya sabes que es para ti, debajo está mi agenda para tu diagnóstico, 45 minutos conmigo.
+Por eso, en 90 días, nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Y todo queda a tu nombre.
 
-Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya está llena.
+Soy Javo Katz. Ya se lo instalé a más de 50 profesionales de Latinoamérica, España y Estados Unidos.
+
+Toca «Más información». En el video te muestro cómo lo instalo. Y si ya sabes que es para ti, debajo está mi agenda para tu diagnóstico: 45 minutos conmigo.
+
+Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años y ya tienen la agenda llena.
 
 Título: Hay otra respuesta, y esa vende
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v6
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c8-cuantas-sesiones-v7
 
 ==================================================
 CARRUSEL A · Deja de ofrecer sesiones 1 a 1  (a-1 a a-7)
@@ -36,29 +40,31 @@ CARRUSEL A · Deja de ofrecer sesiones 1 a 1  (a-1 a a-7)
 Texto principal:
 Deja de ofrecer sesiones 1 a 1.
 
-Llenaste tu agenda hasta mayo. Lo lograste. El paso siguiente no es otra hora. Es un programa de 1.000 USD por consultante.
+Llenaste tu agenda hasta mayo. Lo lograste. ¿Y ahora qué, abres otra hora a las 8 de la noche?
 
-¿Por qué no lo armas por tu cuenta? Porque armarlo son 4 oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes un oficio de tiempo completo: atender.
+El paso siguiente es un programa de 1.000 USD por consultante.
 
-La mayoría contrata una agencia, paga otro curso, publica todos los días o le pide a su sobrina que le lleve las redes. Cada uno hace una parte. Nadie te instala el sistema completo.
+¿Y por qué no lo armas por tu cuenta? Porque armar un programa son cuatro oficios: escribir tu método, ponerle precio, que te encuentren y la tecnología. Y tú ya tienes uno de tiempo completo: atender.
 
-En 90 días nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo queda a tu nombre.
+Entonces pruebas lo de siempre: una agencia, otro curso, publicar todos los días, pedirle a tu sobrina que te lleve las redes. Cada uno te arma una parte. Y el resto lo terminas haciendo tú, de noche, después de atender.
 
-Soy Javo Katz. Instalé este sistema a más de 50 profesionales en Latinoamérica, España y Estados Unidos.
+Por eso, en 90 días, nos repartimos así. Tú grabas y atiendes. Yo te instalo tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Y todo queda a tu nombre.
 
-Toca «Más información». Mira el video: te muestro cómo lo instalo. Y si ya sabes que es para ti, agenda tu diagnóstico ahí mismo, 45 minutos conmigo.
+Soy Javo Katz. Ya ayudé a más de 50 profesionales de Latinoamérica, España y Estados Unidos a dejar las sesiones sueltas.
 
-Me quedan 3 lugares este año. Solo si atiendes 1 a 1 hace años y tu agenda ya está llena.
+Toca «Más información». En el video te muestro cómo lo instalo. Y si ya sabes que es para ti, agenda tu diagnóstico ahí mismo: 45 minutos conmigo.
+
+Me quedan 3 lugares este año. Trabajo solo con quienes atienden 1 a 1 hace años y ya tienen la agenda llena.
 
 Título: Deja de ofrecer sesiones 1 a 1
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v6
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=carrusel&utm_content=c1-no-ofrezcas-v7
 
 ==================================================
 POST 1 · Tú grabas y atiendes  (post-1.png)
 ==================================================
 Texto principal:
-Tú grabas y atiendes. Yo te instalo todo lo demás.
+Tú grabas y atiendes. Yo, todo lo demás.
 
 Si atiendes 1 a 1 hace años, en 90 días te instalo, a tu nombre:
 · Tu programa de 1.000 USD por consultante.
@@ -67,26 +73,26 @@ Si atiendes 1 a 1 hace años, en 90 días te instalo, a tu nombre:
 · Tu propia app.
 · Tu sistema operativo.
 
-Ya lo instalé a más de 50 profesionales.
+Ya se lo instalé a más de 50 profesionales.
 
-Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
+Toca «Más información»: en el video te muestro cómo lo hago. Y si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
 
 Título: Tú grabas y atiendes
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v6
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p1-tu-grabas-v7
 
 ==================================================
-POST 2 · Tu programa, instalado por mí  (post-2.png)
+POST 2 · Te instalo tu programa en 90 días  (post-2.png)
 ==================================================
 Texto principal:
-Tu programa, instalado por mí. En 90 días.
+¿Atiendes 1 a 1 hace años? Te instalo tu programa en 90 días.
 
-Si atiendes 1 a 1 hace años, ya sabes curar. Lo que falta son 4 oficios que no son el tuyo: escribir tu método, ponerle precio, que te encuentren y la tecnología.
+Curar ya sabes. Lo que te frena son cuatro oficios que no son el tuyo: escribir tu método, ponerle precio, que te encuentren y la tecnología.
 
-Te los instalo: tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo a tu nombre. Tú grabas y atiendes.
+De eso me encargo yo: tu programa de 1.000 USD por consultante, tus páginas, tu captación automática, tu propia app y tu sistema operativo. Todo a tu nombre. Tú grabas y atiendes.
 
-Toca «Más información»: mira el video y, si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
+Toca «Más información»: en el video te muestro cómo lo hago. Y si ya sabes que es para ti, agenda tu diagnóstico conmigo. Me quedan 3 lugares este año.
 
-Título: Tu programa, instalado por mí
+Título: Te instalo tu programa en 90 días
 Botón: Más información
-Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v6
+Link: https://tuclinica.digital/instala-tu-clinica?utm_source=meta&utm_medium=pago&utm_campaign=post&utm_content=p2-programa-instalado-v7
