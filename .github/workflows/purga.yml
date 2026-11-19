@@ -4,7 +4,7 @@ name: Purga jsDelivr
 on:
   push:
     branches: [main]
-    paths: ['site/**', '.github/workflows/purga.yml']
+    paths: ['site/**', 'cargador.js', '.github/workflows/purga.yml']
 jobs:
   purga:
     runs-on: ubuntu-latest
@@ -16,10 +16,13 @@ jobs:
         run: |
           ANTES="${{ github.event.before }}"
           if git cat-file -e "$ANTES^{commit}" 2>/dev/null && git diff --quiet "$ANTES" HEAD -- .github/workflows/purga.yml; then
-            LISTA=$(git diff --name-only "$ANTES" HEAD -- site/)
+            LISTA=$(git diff --name-only "$ANTES" HEAD -- site/ cargador.js)
           else
-            LISTA=$(git ls-files site/)   # la primera vez, o si cambió este archivo: se purga todo site/
+            LISTA=$(git ls-files site/ cargador.js)   # la primera vez, o si cambió este archivo: se purga todo site/ y el cargador
           fi
+          # 19 nov: se espera un minuto antes de purgar. Si se purga enseguida, jsDelivr a veces vuelve a guardar
+          # la versión anterior (todavía no vio el commit nuevo) y la página vieja queda servida por horas.
+          sleep 60
           echo "$LISTA" | while read f; do
             [ -z "$f" ] && continue
             echo "purga $f"
