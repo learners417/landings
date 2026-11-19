@@ -28,6 +28,21 @@
   ];
   var carga = w.__tcdCarga = { pagina: pagina, rama: rama, inicio: Math.round(performance.now()) };
 
+  /* 19 nov: jsDelivr dejó de servir bien este repo (con las imágenes de anuncios pasó su tope de 50 MB) y
+     responde 403 o 404 a lo que no tiene guardado. La página ya tenía respaldo (GitHub); las imágenes no.
+     Si una imagen del repo no carga desde jsDelivr, se pide la misma a GitHub, una sola vez. */
+  var CDN_IMG = 'https://cdn.jsdelivr.net/gh/' + REPO + '@';
+  d.addEventListener('error', function (e) {
+    var el = e.target;
+    if (!el || el.tagName !== 'IMG' || el.getAttribute('data-tcd-gh')) return;
+    var src = el.currentSrc || el.src || '';
+    if (src.indexOf(CDN_IMG) !== 0) return;
+    el.setAttribute('data-tcd-gh', '1');
+    if (el.getAttribute('srcset')) el.removeAttribute('srcset');
+    el.src = 'https://raw.githubusercontent.com/' + REPO + '/' + src.slice(CDN_IMG.length);
+    carga.imgGitHub = (carga.imgGitHub || 0) + 1;
+  }, true);
+
   /* La tapa: oculta lo visible de GHL mientras llega la página. */
   var tapa = d.getElementById('tcd-tapa');
   if (!tapa) {
