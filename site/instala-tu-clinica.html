@@ -29,6 +29,41 @@
   w.tcdCl=function(ev){try{w.clarity('event',ev);}catch(e){}};
 })(window);
 </script>
+<script>
+/* 19 nov (Javo, botón «Sí, súmala»): cuánto tarda en verse esta página y la portada del video, en cada visita, va a Clarity.
+   pagina_en y video_en: el tramo, con los cortes de Google para una carga (2,5 y 4 segundos) y uno más a los 8.
+   tiempos: los números de la visita: cuándo llegó la página de GHL, cuándo se vio la nuestra y la portada del video,
+   de dónde vino la nuestra (jsDelivr o GitHub) y la red del teléfono (si el teléfono la dice).
+   Se cuenta desde que la persona abrió el link. Cada etiqueta se manda una sola vez. No toca el píxel ni lo que se ve.
+   Clarity llega por el código del embudo en GHL con el primer toque o scroll: hasta entonces, lo medido espera en su cola. */
+(function(w,d){try{
+  w.clarity=w.clarity||function(){(w.clarity.q=w.clarity.q||[]).push(arguments)};
+  var P=w.performance,c=w.__tcdCarga||{},pag=0,img=null,fondo=d.visibilityState==='hidden',puesto={};
+  d.addEventListener('visibilitychange',function(){if(d.visibilityState==='hidden')fondo=true;});
+  function seg(ms){return String(Math.round(ms/100)/10).replace('.',',')+' s';}
+  function tramo(ms){return fondo?'quedó en segundo plano':ms<=2500?'0 a 2,5 s':ms<=4000?'2,5 a 4 s':ms<=8000?'4 a 8 s':'más de 8 s';}
+  function pon(k,v){if(!puesto[k]){puesto[k]=1;try{w.clarity('set',k,v);}catch(e){}}}
+  function ghl(){try{var n=P.getEntriesByType('navigation')[0];if(n&&n.responseEnd)return n.responseEnd;}catch(e){}
+    var t=P.timing;return t&&t.responseEnd&&t.navigationStart?t.responseEnd-t.navigationStart:0;}
+  function sigue(){
+    if(!pag||img===null)return;
+    var vid=img<0?-1:Math.max(img,pag),f=c.fuente||'',r=(navigator.connection||{}).effectiveType,g=ghl();
+    pon('video_en',vid<0?'no cargó':tramo(vid));
+    pon('tiempos',[g?'GHL '+seg(g):'','página '+seg(pag),vid>0?'video '+seg(vid):'video no cargó',
+      /jsdelivr/.test(f)?'jsDelivr':/githubusercontent/.test(f)?'GitHub':'',r?'red '+r:''].filter(Boolean).join(' · '));
+  }
+  function portada(t){if(img===null){img=t;sigue();}}
+  requestAnimationFrame(function(){setTimeout(function(){pag=P.now();pon('pagina_en',tramo(pag));sigue();},0);});
+  function mira(){
+    var im=d.querySelector('img.vsl-tapa');if(!im)return 0;
+    if(im.complete)portada(im.naturalWidth?P.now():-1);
+    else{im.addEventListener('load',function(){portada(P.now());});im.addEventListener('error',function(){portada(-1);});}
+    return 1;
+  }
+  if(!mira())d.addEventListener('DOMContentLoaded',function(){if(!mira())portada(-1);});
+  setTimeout(function(){portada(-1);},20000);
+}catch(e){}})(window,document);
+</script>
 <!-- ═══ PIXEL DE META ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
