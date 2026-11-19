@@ -2,9 +2,16 @@ PRUEBA DE EROS · v8 · 3 carruseles y 3 posts para los dos conjuntos (mujeres d
 Reemplaza a la v7. Cambia: el carrusel H entero (el chat en un celular y la reacción de Javo aparte), el cierre de los carruseles (vende el video y la agenda), los colores de los libros, y se suman el carrusel F «Solo cambió la foto» y el post 3. Los posts 1 y 2 quedan iguales a la v7 (cambia solo el párrafo final del texto).
 Carruseles: H tiene 8 tarjetas (h-1 a h-8), A tiene 7 (a-1 a a-7) y F tiene 8 (f-1 a f-8). Las últimas 4 tarjetas son iguales en los tres. Junto a los 2 reels que ya corren (A04 «Gasté 100k» y A05 «No ofrezcas 1 a 1»).
 Las seis piezas: botón «Más información». Las tarjetas van en el orden de su número.
-ESTADO EN META: falta cargar las imágenes de la v8 (se cargan cuando Javo dé el OK final). Los códigos de la v7 de h-* y a-* ya no sirven. Siguen sirviendo los de los posts 1 y 2:
-· post-1 39e0380f99afaa0734d7d443ee0c1474 · post-1-vertical 16fe9381a21a6eca302b703e3baf00d2
-· post-2 6726ab0f6fa2ae6444bdf58e7afe7d9c · post-2-vertical 48931f9c6f3b2fcfb98cd06d54d6cb6d
+YA CARGADAS EN META (19 nov, 1:35, con el OK de Javo) · cuenta «tdc 06/26» (858332333990895), biblioteca de imágenes, con nombre tanda1-v8-*. Para armar los anuncios, usar estos códigos (hash). Los de la v7 de h-* y a-* ya no se usan.
+· h-1 e81997e70805c4a1903fba671c74f35c · h-2 fcafd9dab512b5e930aca408f2178919 · h-3 bb6414f2f6b70d0e0f238fca13f04207 · h-4 988c3067274560a3ddfcb2efbf8b0812
+· h-5 6df2c41ab4f8170d1cb73d1bf83f695a · h-6 fda008fef842a46ebd31e51455d8769e · h-7 5cc250da6aa18fb7a41e873aad143ba7 · h-8 d18fa1b0e9716cffcf2a2bf454f38baa
+· a-1 f8bf78b37ad313e98ef0e3cd7b9baa67 · a-2 9f8b23e37c7004f6ed7353e0602f5a3e · a-3 fd7d3dcafea8c57e73aec9395f8dad1f · a-4 0a815bceeea0e20e5ea7aa21c3d478aa
+· a-5 41ce7900ee52ea358ecafc3e9b204c37 · a-6 7e6d8fd981f8895b1df632f6750d0f84 · a-7 b2af6215f3696e7e6f87f1179be78d69
+· f-1 862870426b23fdc451bb6fe6abfbb9be · f-2 9a07805bbd8aa7147f346417c417dc6c · f-3 7c23000032b7cff4147259b0a8ef612c · f-4 4182664301393f178844f657aa8d0b09
+· f-5 a f-8 son las mismas imágenes que h-5 a h-8: usar esos mismos códigos.
+· post-1 39e0380f99afaa0734d7d443ee0c1474 · post-1-vertical 16fe9381a21a6eca302b703e3baf00d2 (los de la v7, sin cambio)
+· post-2 6726ab0f6fa2ae6444bdf58e7afe7d9c · post-2-vertical 48931f9c6f3b2fcfb98cd06d54d6cb6d (los de la v7, sin cambio)
+· post-3 e145cd1e197bc4b17ec849f81d7e8436 · post-3-vertical 2ba8f9c5c4a8923d69556dac7d965254
 IMPORTANTE en Meta: apagar «Destacar tarjeta del carrusel» (antes «Mostrar primero las tarjetas con mejor rendimiento»). Viene activado y reordena las tarjetas; estos carruseles cuentan una historia en orden.
 Historias y reels: post-1-vertical.png, post-2-vertical.png y post-3-vertical.png (1080 × 1920), en las mismas carpetas.
 Si Meta rechaza una pieza por el monto: usar la misma de la carpeta sin-monto/ (mismos nombres, dice «de alto valor») y en el texto cambiar «1.000 USD por consultante» por «de alto valor».
