@@ -162,3 +162,17 @@ de la home de TCD y de NEXOS. La voz es la de Ailu en primera persona (empresa d
 lo reinicia con sonido; eventos `VideoConSonido` y `VideoCompleto`) y un testimonio en video (`69b4c186fb38ca137ba3fe0a.mov`).
 Las agendas avisan que al reservar hay unas preguntas: la de 30 minutos usa el formulario «Form Agenda - Retiros»
 y la de 15 minutos «Anfitriones del Sur · Agenda 15 minutos».
+
+## Las tres herramientas de Ani Martínez (19 nov 2026)
+Viven en `fijas/` porque son páginas enteras, con su propia marca, que no pasan por la piel de TCD:
+`publicar.py` las copia tal cual a `site/`. En la subcuenta de GHL de Ani, cada paso lleva la misma
+línea (`ghl-linea.html`) y la ruta decide el archivo.
+
+- `fijas/ani-radiografia.html` → `/ani-radiografia` · el test de 14 preguntas (tres números + semilla de 7 días). Entrada fría desde pauta y bio.
+- `fijas/ani-cuenta.html` → `/ani-cuenta` · la calculadora del costo acumulado del insomnio. Retargeting y previa a la llamada.
+- `fijas/ani-noche.html` → `/ani-noche` · el protocolo guiado de 7 minutos para las tres de la mañana. Se usa de noche; va en oscuro entero.
+
+Las tres tienen tres constantes arriba del `<script>`: el link del video, el endpoint de la IA y el webhook de GHL.
+La lectura personalizada de la radiografía llama a `ani-martinez.vercel.app/api/lectura` (la key de Anthropic
+vive ahí, nunca en la página). Mientras el endpoint no exista, la radiografía usa sus textos escritos a mano
+y no se nota.

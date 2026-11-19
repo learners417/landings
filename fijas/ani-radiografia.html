@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu Radiografía TamÍm · Ani Martínez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --oro:#C3A878; --oro-n:#D5BE9C; --tinta:#242018; --noche:#1B1712;
+ --crema:#F6F1E9; --lino:#EFE7DA; --arena:#E7DCC8; --humo:#8B7D6B;
+ --serif:'Spectral',Georgia,serif; --sans:'Lora',Georgia,serif; --micro:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--noche);color:#4A4034;font-family:var(--sans);font-weight:400;line-height:1.7;
+ -webkit-tap-highlight-color:transparent;overflow-x:hidden}
+.banda{width:100%;display:flex;justify-content:center}
+.banda>div{width:100%;max-width:560px;padding-left:22px;padding-right:22px}
+.b-lino{background:var(--lino)} .b-arena{background:var(--arena)}
+.b-noche{background:var(--noche);color:#B9AB96}
+em{font-style:italic;color:var(--oro)}
+.micro{font-family:var(--micro);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--humo);font-weight:500;display:block}
+.b-noche .micro{color:var(--oro-n)}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;text-align:left}
+:focus-visible{outline:1.5px solid var(--oro);outline-offset:3px}
+.linea{fill:none;stroke:var(--oro);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.b-noche .linea{stroke:var(--oro-n)}
+
+/* LOCKUP */
+.lock{display:flex;align-items:baseline;justify-content:center;gap:9px;padding-top:24px;padding-bottom:6px}
+.lock .an{font-family:var(--serif);font-weight:300;font-size:31px;color:var(--tinta);letter-spacing:-.01em;
+ display:inline-flex;align-items:baseline}
+.lock .ii{position:relative;display:inline-block;width:.17em}
+.lock .ii::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:0;
+ width:1.5px;height:.70em;background:var(--tinta)}
+.lock .ii svg{position:absolute;left:50%;transform:translateX(-50%);bottom:.68em;width:.20em;height:.29em}
+.lock .ape{font-family:var(--serif);font-weight:300;font-size:13.5px;color:var(--tinta);
+ text-transform:uppercase;letter-spacing:.32em}
+.b-noche .lock .an,.b-noche .lock .ape{color:var(--crema)}
+.b-noche .lock .ii::after{background:var(--crema)}
+.tamim{font-family:var(--serif);font-weight:300;color:var(--tinta);display:inline-flex;align-items:baseline}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding-top:6px;padding-bottom:58px;overflow:hidden}
+.arco-w{position:absolute;left:50%;bottom:-210px;width:260%;transform:translateX(-50%);pointer-events:none;opacity:.55}
+.hero-in{position:relative}
+.antorcha{display:block;margin:0 auto}
+.fl{transform-box:fill-box;transform-origin:50% 100%}
+.f1{animation:tit 2.6s ease-in-out infinite}
+.f2{animation:tit 3.4s ease-in-out infinite .5s}
+.f3{animation:tit 2.9s ease-in-out infinite 1.1s}
+@keyframes tit{0%,100%{transform:scaleY(1) scaleX(1);opacity:1}
+ 40%{transform:scaleY(1.07) scaleX(.96);opacity:.82}70%{transform:scaleY(.96) scaleX(1.02);opacity:1}}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,9.6vw,50px);line-height:1.03;
+ letter-spacing:-.028em;color:var(--crema);margin:16px 0 15px}
+.deck{font-size:16px;max-width:40ch;margin:0 auto;color:#B9AB96}
+.tag{display:inline-block;font-family:var(--micro);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+ font-weight:500;color:var(--oro-n);border:1px solid rgba(213,190,156,.45);padding:7px 14px;margin-bottom:18px}
+
+/* SEPARADOR */
+.sep{display:block;margin:0 auto;padding:26px 0}
+
+/* LLEVAS */
+.llevas{padding-top:36px;padding-bottom:34px}
+.llevas h2{font-family:var(--serif);font-weight:200;font-size:clamp(26px,6.6vw,34px);line-height:1.05;
+ letter-spacing:-.024em;color:var(--tinta);margin:10px 0 24px}
+.ll{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-top:1px solid rgba(195,168,120,.5)}
+.ll .hn{flex:none;font-family:var(--serif);font-weight:300;font-size:30px;color:var(--oro);
+ letter-spacing:-.02em;line-height:1;min-width:44px}
+.ll b{font-weight:500;color:var(--tinta)}
+.ll .tx{font-size:14.8px}
+
+/* ARRANQUE */
+.arranque{padding-top:34px;padding-bottom:34px}
+.arranque h2{font-family:var(--serif);font-weight:200;font-size:clamp(26px,6.8vw,35px);line-height:1.08;
+ letter-spacing:-.024em;color:var(--crema);margin:12px 0 5px}
+.arranque .sub{font-size:13.5px;color:#8E8272;margin-bottom:8px}
+.quees{padding-top:30px;padding-bottom:38px;font-size:14px;color:var(--humo);line-height:1.62}
+.quees b{font-weight:400;color:#4A4034}
+
+/* TEST */
+#test,#puerta,#cargando,#resultado{display:none}
+.tcab{display:flex;align-items:center;gap:15px;padding-top:26px;padding-bottom:26px}
+.tnum{font-family:var(--serif);font-weight:200;font-size:38px;color:var(--tinta);line-height:.85;letter-spacing:-.04em}
+.tnum small{font-size:14px;color:var(--humo);font-weight:300}
+.tbar{flex:1;height:1px;background:rgba(195,168,120,.45);position:relative}
+.tbar span{position:absolute;left:0;top:-1px;height:3px;background:var(--oro);width:0;transition:width .45s cubic-bezier(.2,.9,.2,1)}
+.preg{font-family:var(--serif);font-weight:300;font-size:clamp(24px,6.3vw,32px);line-height:1.14;
+ letter-spacing:-.02em;color:var(--tinta)}
+.pista{font-size:13.5px;color:var(--humo);margin-top:9px}
+.eco{min-height:58px;margin-top:20px;font-family:var(--serif);font-weight:300;font-style:italic;
+ font-size:21px;line-height:1.3;color:var(--oro);opacity:0;transform:translateY(6px);transition:.3s}
+.eco.on{opacity:1;transform:none}
+.atras{font-size:13px;color:var(--humo);padding-bottom:36px;display:inline-block}
+
+/* --- TIPO 1: TARJETAS --- */
+.ops{display:grid;gap:9px;margin:22px 0 2px}
+.opc{display:flex;align-items:flex-start;gap:13px;padding:16px 17px;border:1px solid rgba(195,168,120,.55);
+ background:#FFFDF8;box-shadow:0 10px 26px rgba(90,72,44,.09);
+ font-family:var(--serif);font-weight:300;font-size:18px;line-height:1.26;color:var(--tinta);letter-spacing:-.008em;
+ transition:transform .14s cubic-bezier(.3,1.5,.6,1),background .18s,border-color .18s,color .18s}
+.opc svg{width:11px;height:16px;flex:none;margin-top:3px;opacity:.45;transition:opacity .18s}
+.opc:hover{border-color:var(--oro)} .opc:active{transform:scale(.975)}
+.opc.on{background:var(--oro);border-color:var(--oro)}
+.opc.on svg{opacity:1}
+.b-noche .opc{background:rgba(255,253,248,.04);border-color:rgba(213,190,156,.32);color:var(--oro-n);box-shadow:none}
+.b-noche .opc.on{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.b-noche .opc.on .linea{stroke:var(--tinta)}
+
+/* --- TIPO 2: CHIPS --- */
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0 2px}
+.chips .opc{font-size:16px;justify-content:center;text-align:center;padding:15px 12px}
+.chips .opc svg{display:none}
+
+/* --- TIPO 3: NUMERALES EN HALO --- */
+.halos{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:24px 0 2px}
+.halo{aspect-ratio:1;display:flex;align-items:center;justify-content:center;transition:transform .14s cubic-bezier(.3,1.5,.6,1)}
+.halo svg{width:100%;height:100%}
+.halo .aro{fill:none;stroke:var(--oro);stroke-width:1.4;opacity:.55;transition:.2s}
+.halo .cif{font-family:var(--serif);font-weight:300;font-size:26px;fill:var(--tinta);text-anchor:middle;transition:.2s}
+.halo:hover .aro{opacity:1}
+.halo:active{transform:scale(.9)}
+.halo.on .aro{opacity:1;stroke-width:3.2;fill:var(--oro)}
+.halo.on .cif{fill:var(--crema)}
+
+/* --- TIPO 4: LA LLAMA QUE CRECE --- */
+.regla{margin:24px 0 2px}
+.marco{display:inline-flex;align-items:baseline;gap:9px;border:1px solid var(--oro);padding:10px 20px;margin-bottom:20px}
+.marco .cifra{font-family:var(--serif);font-weight:200;font-size:46px;line-height:.9;color:var(--tinta);letter-spacing:-.04em}
+.marco .de{font-family:var(--micro);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
+.regla input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent}
+.regla input[type=range]::-webkit-slider-runnable-track{height:1px;background:var(--oro)}
+.regla input[type=range]::-moz-range-track{height:1px;background:var(--oro)}
+.regla input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-13px;
+ background:var(--oro);border:none;cursor:grab}
+.regla input[type=range]::-moz-range-thumb{width:26px;height:26px;background:var(--oro);border:none;cursor:grab}
+.reglilla{display:flex;justify-content:space-between;margin:-6px 2px 8px}
+.reglilla i{width:1px;height:7px;background:rgba(195,168,120,.7)}
+.regla .extremos{display:flex;justify-content:space-between;font-size:12.5px;color:var(--humo);margin-bottom:20px}
+.confirmar{width:100%;border:1px solid var(--oro);background:var(--oro);color:var(--tinta);padding:16px;
+ text-align:center;font-family:var(--micro);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.llamas{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin:26px 0 2px;
+ border-bottom:1px solid rgba(195,168,120,.5);padding-bottom:12px}
+.lop{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:9px;
+ padding-top:8px;transition:transform .16s cubic-bezier(.3,1.5,.6,1)}
+.lop svg{display:block}
+.lop .et{font-family:var(--serif);font-weight:300;font-size:13.5px;color:var(--humo);text-align:center;
+ line-height:1.15;transition:.2s}
+.lop .linea{opacity:.4;transition:.2s}
+.lop:hover .linea{opacity:.75}
+.lop:active{transform:scale(.93)}
+.lop.on .linea{opacity:1;stroke-width:2.6}
+.lop.on .et{color:var(--tinta)}
+
+/* --- TIPO 5: DIBUJO --- */
+.dib{margin:22px 0 2px;position:relative;border:1px solid rgba(36,32,24,.14);background:rgba(255,255,255,.5)}
+.dib canvas{display:block;width:100%;height:190px;touch-action:none;cursor:crosshair}
+.dib-ejes{display:flex;justify-content:space-between;padding:0 8px 9px;font-size:11px;color:var(--humo)}
+.dib-y{position:absolute;left:9px;top:9px;font-size:11px;color:var(--humo)}
+.dib-y.b{top:auto;bottom:34px}
+.dib-pie{display:flex;gap:9px;margin-top:10px;align-items:center}
+.dib-pie .listo{flex:1;border:1px solid var(--oro);padding:14px;text-align:center;font-size:14px;
+ color:var(--tinta);transition:.2s;opacity:.35;pointer-events:none}
+.dib-pie .listo.ok{opacity:1;pointer-events:auto;background:var(--oro)}
+.dib-pie .borrar{font-size:13px;color:var(--humo);padding:14px 6px}
+
+/* PUERTA */
+#puerta .in{padding-top:32px;padding-bottom:42px}
+#puerta h2{font-family:var(--serif);font-weight:200;font-size:clamp(30px,7.8vw,40px);line-height:1.03;
+ letter-spacing:-.028em;color:var(--tinta);margin:12px 0 14px}
+.campo{margin-bottom:13px}
+.campo label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo);margin-bottom:6px}
+.campo input{width:100%;padding:15px 16px;border:1px solid rgba(36,32,24,.18);background:#fff;
+ font-family:inherit;font-size:16px;color:var(--tinta)}
+.campo input:focus{border-color:var(--oro);outline:none}
+.err{color:#9B3B23;font-size:13px;margin-bottom:11px;display:none}
+.cta{display:block;width:100%;background:var(--tinta);color:var(--crema);padding:19px;font-size:15px;
+ letter-spacing:.03em;font-weight:500;text-align:center;text-decoration:none;transition:.2s}
+.cta:hover{background:#3A3128}
+.cta.oro{background:var(--oro);color:var(--tinta)}.cta.oro:hover{background:#B59A68}
+.nota{font-size:12.5px;color:var(--humo);margin-top:12px;text-align:center}
+
+/* CARGANDO */
+#cargando .in{text-align:center;padding-top:90px;padding-bottom:140px}
+#cargando p{font-family:var(--serif);font-weight:300;font-size:22px;color:var(--tinta);margin-top:28px;min-height:2em}
+
+/* RESULTADO */
+.retrato{position:relative;text-align:center;padding-top:30px;padding-bottom:34px;overflow:hidden}
+.triada{display:block;margin:12px auto 0;max-width:100%}
+.tri-ghost{fill:none;stroke:var(--oro-n);stroke-width:1;opacity:.22}
+.tri-arc{fill:none;stroke:var(--oro-n);stroke-width:2.4;stroke-linecap:round;
+ transition:stroke-dashoffset 1.5s cubic-bezier(.25,.9,.25,1),opacity .8s}
+.tri-et{font-family:var(--sans);font-weight:500;font-size:9.5px;letter-spacing:.2em;fill:#8E8272}
+.tri-cif{font-family:var(--serif);font-weight:300;font-size:21px;fill:var(--oro-n)}
+.retrato .pie{font-family:var(--serif);font-weight:300;font-style:italic;font-size:16px;color:#9C8F7C;margin-top:14px}
+.veredicto{font-family:var(--serif);font-weight:200;font-size:clamp(30px,8vw,42px);line-height:1.02;
+ letter-spacing:-.03em;color:var(--tinta);text-align:center;margin:8px 0 18px}
+.lectura{font-size:16.5px;line-height:1.7;max-width:43ch;margin:0 auto 6px}
+.lectura p{margin-bottom:13px}
+.dim{padding:16px 0;border-top:1px solid rgba(195,168,120,.5)}
+.dim-top{display:flex;justify-content:space-between;align-items:baseline}
+.dim-nom{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--tinta)}
+.dim-num{font-family:var(--serif);font-weight:200;font-size:32px;color:var(--oro);letter-spacing:-.035em}
+.dim-num small{font-size:13px;color:var(--humo);font-weight:300}
+.dim-bar{height:1px;background:rgba(36,32,24,.12);margin-top:12px;position:relative}
+.dim-bar span{position:absolute;left:0;top:-1.5px;height:4px;background:var(--oro);width:0;
+ transition:width 1.2s cubic-bezier(.2,.9,.2,1)}
+.dim-txt{font-size:13.5px;color:var(--humo);margin-top:10px}
+.golpe{padding-top:36px;padding-bottom:36px}
+.golpe p{font-family:var(--serif);font-weight:200;font-size:clamp(24px,6.2vw,32px);line-height:1.13;
+ letter-spacing:-.026em;color:var(--tinta)}
+.golpe .sub{font-family:var(--sans);font-size:14px;color:#7A6E5E;margin-top:15px;line-height:1.55;font-weight:300}
+
+/* SEMILLA */
+.semilla{padding-top:38px;padding-bottom:36px}
+.semilla h2{font-family:var(--serif);font-weight:200;font-size:clamp(28px,7.2vw,37px);line-height:1.04;
+ letter-spacing:-.028em;color:var(--tinta);margin:10px 0 13px}
+.semilla .intro{font-size:15px;margin-bottom:9px}
+.hechos{display:flex;align-items:center;gap:14px;margin:26px 0 16px}
+.hechos .n{font-family:var(--serif);font-weight:200;font-size:34px;color:var(--oro);line-height:.85;
+ min-width:70px;letter-spacing:-.035em}
+.hechos .b{flex:1;height:1px;background:rgba(36,32,24,.12);position:relative}
+.hechos .b span{position:absolute;left:0;top:-1.5px;height:4px;background:var(--oro);width:0;transition:width .55s}
+.dia{border:1px solid rgba(36,32,24,.14);margin-bottom:8px;transition:.22s}
+.dia.done{border-color:var(--oro);background:rgba(195,168,120,.16)}
+.dia-btn{width:100%;display:flex;align-items:flex-start;gap:13px;padding:15px 16px}
+.tick{width:21px;height:21px;border:1px solid rgba(36,32,24,.26);flex:none;margin-top:3px;
+ display:flex;align-items:center;justify-content:center;font-size:12px;color:transparent;transition:.2s}
+.dia.done .tick{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.dia-eti{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--humo);display:block;margin-bottom:4px}
+.dia-tit{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2;color:var(--tinta);display:block}
+.dia.done .dia-tit{color:var(--humo)}
+.dia-cuerpo{padding:0 16px 16px 50px;font-size:14.3px;display:none}
+.dia.open .dia-cuerpo{display:block}
+.dia-cuerpo .porque{color:var(--humo);font-size:13px;margin-top:8px}
+.remedir{border:1px solid var(--oro);padding:22px 20px;margin-top:26px}
+.remedir h3{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--tinta);margin-bottom:8px}
+.remedir p{font-size:14.3px}
+.cierre{padding-top:38px;padding-bottom:32px}
+.cierre h2{font-family:var(--serif);font-weight:200;font-size:clamp(26px,6.6vw,34px);line-height:1.05;
+ letter-spacing:-.026em;color:var(--tinta);margin:10px 0 14px}
+.cierre p{font-size:15px;margin-bottom:9px}
+.acciones{display:flex;gap:8px;margin-top:10px}
+.acciones button{flex:1;border:1px solid rgba(36,32,24,.2);padding:14px;font-size:13px;text-align:center}
+.legal{font-size:12.5px;color:var(--humo);line-height:1.55;padding-top:24px;padding-bottom:46px}
+.cta-test{display:inline-block;background:var(--oro);color:var(--tinta);font-family:var(--micro);
+ font-weight:500;font-size:14.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+ padding:18px 34px;margin-top:6px;transition:.2s;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.cta-test:hover{background:var(--oro-n)}
+.bajo-cta{font-family:var(--micro);font-size:12px;letter-spacing:.05em;color:#8E8272;margin-top:14px}
+.fija{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(27,23,18,.96);
+ border-top:1px solid rgba(213,190,156,.22);display:none;justify-content:center;padding:11px 18px;
+ backdrop-filter:blur(8px)}
+.fija a{display:block;width:100%;max-width:420px;background:var(--oro);color:var(--tinta);text-align:center;
+ font-family:var(--micro);font-weight:500;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;
+ text-decoration:none;padding:15px}
+.rev{opacity:0;transform:translateY(14px)}
+.rev.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.fade{animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.acciones,.cta{display:none}.dia-cuerpo{display:block!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="llama" viewBox="0 0 24 44">
+ <path class="linea" d="M12 2c7 13 10 20 10 26 0 8-4.5 14-10 14S2 36 2 28C2 22 5 15 12 2z"/>
+ <path class="linea" style="stroke-width:1.2;opacity:.6" d="M13 16c-3.5 7-5 11-5 15 0 3.5 1.7 6 4 7"/>
+</symbol>
+<symbol id="antorcha" viewBox="0 0 120 262">
+ <path class="linea fl f1" d="M36 66c9 26 12 38 12 50 0 12-4.5 20-12 26-7.5-6-12-14-12-26 0-12 3-24 12-50z"/>
+ <path class="linea fl f2" d="M60 14c13.5 38 18 56 18 74 0 17-7 29-18 38-11-9-18-21-18-38 0-18 4.5-36 18-74z"/>
+ <path class="linea fl f3" d="M84 66c9 26 12 38 12 50 0 12-4.5 20-12 26-7.5-6-12-14-12-26 0-12 3-24 12-50z"/>
+ <path class="linea" d="M17 149h86"/>
+ <path class="linea" d="M28 156l32 102 32-102"/>
+</symbol>
+<symbol id="arco" viewBox="0 0 1200 300" preserveAspectRatio="none">
+ <path class="linea" style="stroke-width:1.2" d="M0 300C120 108 340 12 600 12s480 96 600 288"/>
+ <path class="linea" style="stroke-width:1;opacity:.5" d="M0 300C140 148 350 66 600 66s460 82 600 234"/>
+</symbol>
+<symbol id="separador" viewBox="0 0 360 40">
+ <path class="linea" style="stroke-width:1" d="M0 20h136M224 20h136"/>
+ <path class="linea" style="stroke-width:1.3" d="M160 8c2.6 5 3.8 7.6 3.8 9.9 0 3-1.7 5.3-3.8 5.3s-3.8-2.3-3.8-5.3c0-2.3 1.2-4.9 3.8-9.9z"/>
+ <path class="linea" style="stroke-width:1.3" d="M180 4c3.2 6.2 4.7 9.4 4.7 12.2 0 3.7-2.1 6.6-4.7 6.6s-4.7-2.9-4.7-6.6c0-2.8 1.5-6 4.7-12.2z"/>
+ <path class="linea" style="stroke-width:1.3" d="M200 8c2.6 5 3.8 7.6 3.8 9.9 0 3-1.7 5.3-3.8 5.3s-3.8-2.3-3.8-5.3c0-2.3 1.2-4.9 3.8-9.9z"/>
+</symbol>
+</defs></svg>
+
+<!-- ============ PORTADA ============ -->
+<div id="portada">
+
+<div class="banda b-noche"><div>
+  <div class="lock">
+    <span class="an">An<span class="ii"><svg viewBox="0 0 24 44"><use href="#llama"/></svg></span></span>
+    <span class="ape">Martínez</span>
+  </div>
+</div></div>
+
+<div class="banda b-noche"><div class="hero">
+  <svg class="arco-w" height="230" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><use href="#arco"/></svg>
+  <div class="hero-in">
+    <svg class="antorcha" width="86" height="188" viewBox="0 0 120 262" aria-hidden="true"><use href="#antorcha"/></svg>
+    <span class="tag">El test TamÍm</span>
+    <h1>Por fuera sostienes<br>todo. Por dentro<br>no <em>duermes</em>.</h1>
+    <p class="deck">Hay una razón concreta de por qué nada de lo que probaste te funcionó. No es falta de voluntad y no es tu cabeza. Es que trataron una sola parte de ti y quedaron dos sin tocar.</p>
+    <a class="cta-test" href="#empezar" id="btnTest">Iniciar el test ahora</a>
+    <p class="bajo-cta">14 preguntas · 4 minutos · gratis · sin escribir nada</p>
+  </div>
+</div></div>
+
+<div class="banda b-lino"><div class="llevas">
+  <span class="micro">Al terminar te llevas</span>
+  <h2>Tres cosas,<br>en cuatro <em>minutos</em></h2>
+  <div class="ll"><span class="hn">01</span>    <div class="tx"><b>Tus tres números.</b> Espíritu, alma y cuerpo. Vas a ver cuál de los tres está en cero y cuál te está sosteniendo todo.</div></div>
+  <div class="ll"><span class="hn">02</span>    <div class="tx"><b>Tu lectura.</b> Qué significan esos tres números juntos, escrita a partir de lo que respondiste, no una plantilla.</div></div>
+  <div class="ll"><span class="hn">03</span>    <div class="tx"><b>Tu semilla de siete días.</b> Una acción por día, ninguna de más de diez minutos, elegidas según lo que a ti te falta.</div></div>
+</div></div>
+
+<div class="banda b-noche" id="empezar"><div class="arranque">
+  <span class="micro">Pregunta 1 de 14 · el test empieza aquí</span>
+  <h2 id="preg0"></h2>
+  <p class="sub">Toca la que más se te parezca.</p>
+  <div id="escala0" role="group" aria-label="Elige la respuesta que más se te parece"></div>
+</div></div>
+
+<div class="banda"><div class="quees">
+  <svg class="sep" width="200" height="24" viewBox="0 0 360 40" aria-hidden="true"><use href="#separador"/></svg>
+  <p><b class="tamim">Tam<span style="position:relative;display:inline-block">&#x0131;<svg style="position:absolute;left:50%;transform:translateX(-50%);bottom:.95em;width:.32em;height:.46em" viewBox="0 0 24 44"><use href="#llama"/></svg></span>m</b> es una palabra hebrea: íntegra, completa. Es el nombre del método de Ani y es también lo que le falta a casi todo lo que ya intentaste — atender las tres partes, no una sola.</p>
+</div></div>
+
+</div>
+
+<!-- ============ TEST ============ -->
+<div class="fija" id="fija"><a href="#empezar">Iniciar el test</a></div>
+
+<div id="test" style="background:var(--crema);min-height:100vh"><div class="banda"><div>
+  <div class="tcab">
+    <svg width="26" height="57" viewBox="0 0 120 262" aria-hidden="true" id="miniTorch"><use href="#antorcha"/></svg>
+    <span class="tnum" id="conteo"></span>
+    <span class="tbar"><span id="progreso"></span></span>
+  </div>
+  <p class="preg" id="pregunta"></p>
+  <p class="pista" id="pista"></p>
+  <div id="escala" role="group"></div>
+  <p class="eco" id="eco"></p>
+  <button class="atras" id="atras">← Anterior</button>
+</div></div></div>
+
+<!-- ============ PUERTA ============ -->
+<div id="puerta" style="background:var(--crema);min-height:100vh"><div class="banda"><div class="in">
+  <span class="micro">Último paso</span>
+  <h2>Listo.<br>¿Dónde te la <em>mando</em>?</h2>
+  <p style="margin-bottom:22px;font-size:15.5px">Te llega tu radiografía, tu plan de siete días y el audio que grabó Ani para las noches en que la cabeza no se apaga.</p>
+  <div class="campo"><label for="n">Tu nombre</label><input id="n" type="text" autocomplete="given-name"></div>
+  <div class="campo"><label for="e">Tu correo</label><input id="e" type="email" autocomplete="email" inputmode="email"></div>
+  <div class="campo"><label for="w">Tu WhatsApp con código de país</label><input id="w" type="tel" autocomplete="tel" inputmode="tel" placeholder="+593 99 000 0000"></div>
+  <p class="err" id="err">Faltan datos para poder enviártela.</p>
+  <button class="cta oro" id="ver">Ver mi radiografía</button>
+  <p class="nota">Escribe Ani, y nadie más. Te puedes salir cuando quieras.</p>
+</div></div></div>
+
+<!-- ============ CARGANDO ============ -->
+<div id="cargando" style="background:var(--crema);min-height:100vh"><div class="banda"><div class="in">
+  <svg class="antorcha" width="76" height="166" viewBox="0 0 120 262" aria-hidden="true"><use href="#antorcha"/></svg>
+  <p id="cargaTxt"></p>
+</div></div></div>
+
+<!-- ============ RESULTADO ============ -->
+<div id="resultado" style="background:var(--crema);min-height:100vh">
+
+<div class="banda b-noche"><div>
+  <div class="lock">
+    <span class="an">An<span class="ii"><svg viewBox="0 0 24 44"><use href="#llama"/></svg></span></span>
+    <span class="ape">Martínez</span>
+  </div>
+</div></div>
+
+<div class="banda b-noche"><div class="retrato">
+  <span class="micro">Tu radiografía · <span id="fecha"></span></span>
+  <svg class="triada" width="360" height="240" viewBox="0 0 360 240" aria-hidden="true">
+    <path class="tri-ghost" d="M30 200A150 150 0 0 1 330 200"/>
+    <path class="tri-ghost" d="M85 200A95 95 0 0 1 275 200"/>
+    <path class="tri-ghost" d="M140 200A40 40 0 0 1 220 200"/>
+    <path id="arcC" class="tri-arc" d="M30 200A150 150 0 0 1 330 200"/>
+    <path id="arcA" class="tri-arc" d="M85 200A95 95 0 0 1 275 200"/>
+    <path id="arcE" class="tri-arc" d="M140 200A40 40 0 0 1 220 200"/>
+    <use href="#llama" x="0" y="0" width="24" height="44" transform="translate(172 166) scale(.55)"/>
+    <g class="tri-fila">
+      <text class="tri-et" x="30" y="220">CUERPO</text><text class="tri-cif" id="cifC" x="30" y="238"></text>
+      <text class="tri-et" x="150" y="220" text-anchor="middle">ALMA</text><text class="tri-cif" id="cifA" x="150" y="238" text-anchor="middle"></text>
+      <text class="tri-et" x="330" y="220" text-anchor="end">ESPÍRITU</text><text class="tri-cif" id="cifE" x="330" y="238" text-anchor="end"></text>
+    </g>
+  </svg>
+  <p class="pie">Cuanto más completo el arco, más entera esa parte.</p>
+</div></div>
+
+<div class="banda"><div>
+  <h2 class="veredicto" id="titulo"></h2>
+  <div class="lectura" id="lectura"></div>
+  <svg class="sep" width="200" height="24" viewBox="0 0 360 40" aria-hidden="true"><use href="#separador"/></svg>
+</div></div>
+
+<div class="banda b-lino"><div style="padding-top:30px;padding-bottom:32px">
+  <span class="micro" style="margin-bottom:6px">Tus tres números</span>
+  <p style="font-size:14.5px;color:var(--humo);margin-bottom:16px">No te pedí ni un solo número. Aquí están igual.</p>
+  <div id="tres"></div>
+</div></div>
+
+<div class="banda b-arena"><div class="golpe">
+  <p id="golpeTxt"></p><p class="sub" id="golpeSub"></p>
+</div></div>
+
+<div class="banda"><div class="semilla">
+  <span class="micro">Tu semilla</span>
+  <h2>Siete días,<br>una cosa <em>por día</em></h2>
+  <p class="intro" id="introSemilla"></p>
+  <p class="intro">Ninguna te lleva más de diez minutos. El orden no es al azar: empieza por el espíritu, que es la raíz, y baja. Toca cada día para abrirlo y márcalo cuando lo hagas.</p>
+  <div class="hechos"><span class="n" id="hechosN">0/7</span><span class="b"><span id="hechosB"></span></span></div>
+  <div id="dias"></div>
+  <div class="remedir">
+    <h3>Día 8: te vuelvo a medir</h3>
+    <p>Al octavo día te llega por WhatsApp el mismo termómetro. Respondes las catorce otra vez y ves tus tres arcos al lado de los de hoy. Eso es exactamente lo que pasa cada quince días dentro del Círculo, durante doce semanas.</p>
+  </div>
+</div></div>
+
+<div class="banda b-arena"><div class="cierre">
+  <span class="micro">Y después de los siete días</span>
+  <h2>Siete días mueven algo.<br>Una raíz no se saca<br>en una <em>semana</em>.</h2>
+  <p>El Círculo de Restauración son doce sesiones uno a uno en doce semanas, con Ani, siguiendo el mismo orden que acabas de ver: primero el espíritu, después el alma, al final el cuerpo.</p>
+  <p style="margin-bottom:20px">Siete lugares por grupo, se entra por postulación. El precio está a la vista antes de que hables con nadie.</p>
+  <a class="cta" href="#" id="ctaFinal">Ver el Círculo de Restauración</a>
+  <div class="acciones"><button id="imprimir">Guardar mi plan</button><button id="repetir">Responder de nuevo</button></div>
+</div></div>
+
+<div class="banda"><div><p class="legal">Esta herramienta no es un diagnóstico médico ni psicológico y no reemplaza ningún tratamiento que estés haciendo. Ani Martínez es directora de teatro y creadora del Método TamÍm; acompaña procesos, no receta ni suspende medicación. Antes de cambiar tu alimentación o tus hábitos, consúltalo con tu médico. Si estás en crisis o tienes pensamientos de hacerte daño, busca ayuda profesional hoy mismo.</p></div></div>
+
+</div>
+
+<script>
+const LANDING='https://TU-FUNNEL.gohighlevel.com/circulo';
+const AI_URL='https://ani-martinez.vercel.app/api/lectura';
+const GHL_HOOK='';
+
+/* ===== 14 PREGUNTAS · CINCO FORMAS DE RESPONDER ===== */
+const P=[
+{d:'C',t:'card',q:'Anoche, ¿cómo dormiste?',o:[['Casi no dormí',1],['Me desperté varias veces',4],['Dormí, pero me levanté cansada',7],['Dormí bien y completo',10]],
+ e:['Y hoy te levantaste igual a trabajar.','Te despertaste en el medio de la noche.','Dormiste, pero no descansaste.','Bien. Guarda eso.']},
+
+{d:'E',t:'llama',q:'Cuando todo se te viene abajo, ¿qué te sostiene?',pi:'Toca la llama que se parezca a lo tuyo.',
+ o:[['Nada',1],['Casi nada',3],['Algo, a veces',6],['Bastante',8],['Me sostiene',10]],
+ e:['Sola. Anotado.','Casi nada, entonces.','Algo hay, pero no te alcanza.','Hay una raíz.','Eso ya es una raíz firme.']},
+
+{d:'A',t:'dibujo',q:'Dibuja cómo estuvo tu cabeza cada noche de esta semana.',pi:'Arrastra el dedo de izquierda a derecha. Arriba es silencio, abajo es ruido.',
+ e:['Siete noches de ruido.','Más ruido que silencio.','Alguna noche te dejó.','Casi todas te dejaron dormir.']},
+
+{d:'E',t:'card',q:'¿Para qué haces todo lo que haces?',o:[['Ya no sé para qué',1],['Porque hay que hacerlo',4],['Más o menos lo tengo',7],['Sé exactamente para qué',10]],
+ e:['Haces mucho sin saber para qué.','Por obligación. Eso cansa distinto.','Lo tienes a medias.','Eso pesa menos.']},
+
+{d:'C',t:'halo',q:'De las últimas siete noches, ¿cuántas dormiste bien?',pi:'Arrastra hasta tu número.',max:7,izq:'Ninguna',der:'Las siete',
+ e:['Ninguna.','Una de siete.','Dos de siete.','Tres de siete.','Cuatro. Vas y vienes.','Cinco de siete.','Seis de siete.','Las siete. Guarda eso.']},
+
+{d:'A',t:'card',q:'¿Puedes decir que no?',o:[['Digo que sí a todo',1],['Digo que no y me queda la culpa',4],['Me cuesta, pero puedo',7],['Sin drama',10]],
+ e:['Dices que sí y lo pagas después.','El no te sale caro.','Te cuesta, pero puedes.','Sabes poner el límite.']},
+
+{d:'E',t:'card',q:'Lo que muestras por fuera, ¿es lo que te pasa por dentro?',o:[['Nadie sabe cómo estoy de verdad',1],['Lo saben una o dos personas',4],['Se nota bastante',7],['Soy la misma por dentro y por fuera',10]],
+ e:['Por fuera sostienes todo.','Una o dos. El resto ve el personaje.','Se te nota, y está bien.','No estás actuando.']},
+
+{d:'C',t:'halo',q:'Tu cuerpo hoy: tensión, digestión, respiración.',pi:'Arrastra hasta tu número.',max:10,izq:'En alerta',der:'En calma',
+ e:['En alerta permanente.','Casi todo el tiempo tenso.','Tenso.','Te avisa seguido.','A mitad de camino.','Va tirando.','Algún día malo.','Bastante tranquilo.','Tranquilo.','En calma.']},
+
+{d:'A',t:'card',q:'¿Puedes disfrutar algo sin que se meta la angustia?',o:[['No disfruto nada hace rato',1],['Disfruto y al rato vuelve',4],['Casi siempre puedo',7],['Sin que se meta nada',10]],
+ e:['La angustia se te metió en todo.','Te deja un rato y vuelve.','Casi siempre. Bien.','Puedes disfrutar.']},
+
+{d:'E',t:'card',q:'Y tu historia, lo que te tocó vivir, ¿dónde está?',o:[['Hay cosas que todavía me queman',1],['Prefiero no mirar ahí',4],['Lo trabajé, pero algo queda',7],['Hice las paces',10]],
+ e:['Sigue abierto.','Lo tapaste. No es lo mismo que cerrarlo.','Casi cerrado.','Hiciste las paces.']},
+
+{d:'C',t:'dibujo',q:'Dibuja tu energía de un día normal, de la mañana a la noche.',pi:'Arrastra el dedo de izquierda a derecha. Arriba es entera, abajo es en cero.',
+ e:['El día entero en reserva.','Más abajo que arriba.','Algún pico y muchas caídas.','Llegas al final con algo.']},
+
+{d:'A',t:'llama',q:'Cuando nadie te mira, ¿sabes quién eres?',pi:'Toca la llama que se parezca a lo tuyo.',
+ o:[['No lo sé',1],['Casi nunca',3],['Depende del día',6],['Casi siempre',8],['Lo sé',10]],
+ e:['Perdida por dentro.','Casi nunca.','Depende del día.','Casi siempre.','Sabes quién eres.']},
+
+{d:'X',t:'chip',q:'¿Cuánto tiempo llevas intentando resolver esto?',o:[['Menos de un año',2],['Uno a tres años',5],['Cuatro a diez años',8],['Más de diez años',10]],
+ e:['Recién empiezas.','Ya llevas un rato.','Años.','Una vida entera.']},
+
+{d:'X',t:'chip',q:'¿Qué ya probaste?',o:[['Casi nada',2],['Terapia o libros',5],['Varias cosas, varios años',8],['De todo. Y sigo igual',10]],
+ e:['Casi nada todavía.','Algo probaste.','Probaste bastante.','De todo. Y sigues igual.']}];
+
+const ACC={
+E:[{t:'Diez minutos hablando a solas',c:'Sin fórmula y sin religión. Le cuentas con tus propias palabras lo que te pesa: eso que no lograste perdonar, esa persona que te preocupa, la angustia que traes. Después te quedas callada un rato.',p:'El espíritu es la raíz. Es lo primero que se atiende y lo último que suele mirarse.'},
+{t:'Una frase, dos veces al día',c:'Elige esta y quédatela: «El corazón alegre constituye buen remedio». La lees al levantarte y antes de dormir, como si te tomaras una pastilla.',p:'Repetir una frase corta le da a tu cabeza algo a lo que agarrarse cuando arranca a girar.'},
+{t:'Escribe un nombre',c:'Un solo nombre en un papel: alguien a quien no lograste perdonar, o tú misma. No hagas nada más con él. Solo dejalo escrito.',p:'Nombrar la carga no la resuelve, pero deja de ser algo sin forma que pesa desde el fondo.'},
+{t:'Escucha durante cinco minutos',c:'Sin celular, sin música, sin resolver nada. Solo cinco minutos sentada, en silencio, esperando.',p:'Estás entrenada para hablar y sostener. Escuchar es la otra mitad y casi nadie la practica.'}],
+A:[{t:'Compra un cuaderno y escribe una página',c:'De papel, no en el celular. Escribes cómo te sientes, qué te preocupa y qué salud quieres alcanzar. Una página. Nadie lo va a leer.',p:'Escribir a mano hace un trabajo que teclear no hace: te obliga a ir despacio y a terminar la frase.'},
+{t:'Cáchate una vez en el día',c:'Una sola vez: el momento exacto en que pensaste una cosa y dijiste otra, o fingiste estar bien. Anotalo en el cuaderno. No lo corrijas todavía.',p:'Vivir en integridad empieza por notarlo en tiempo real. Corregirlo viene después.'},
+{t:'Di un no',c:'Uno chiquito. Y no lo expliques. Sin justificar, sin compensarlo con otra cosa.',p:'Complacer te anula de a poco. El primer no siempre es el más caro.'},
+{t:'Respira por la nariz donde ya estás parada',c:'En el semáforo, en el ascensor, en la fila. Seis respiraciones lentas por la nariz. Ahí, sin moverte de donde estás.',p:'No necesitas una hora de meditación. Necesitas repetirlo hasta que sea tuyo.'}],
+C:[{t:'Dos litros de agua, con sales',c:'Agua sola no alcanza: el cuerpo también necesita sales y electrolitos. Un sobre de suero oral en un litro, más dos litros de agua a lo largo del día.',p:'Estar deshidratada se siente casi igual que estar ansiosa. Muchas veces es lo primero que hay que descartar.'},
+{t:'Desayuna proteína con vegetales',c:'Huevos con brócoli, una tortilla con tomate. Lo que tengas, pero proteína y vegetales, no jugo ni pan dulce.',p:'Cómo arrancas la mañana define la energía y el humor de todo el día.'},
+{t:'Hoy, sin azúcar',c:'Solo hoy. Ni jugos ni dulces. Un día, para ver qué pasa.',p:'No es una dieta ni es para siempre. Es una prueba de un día para que notes la diferencia tú misma.'},
+{t:'Separa la fruta de la comida de sal',c:'Media hora de distancia entre una cosa y la otra. Nada más que eso.',p:'Es el cambio más chico de toda la lista y suele ser el que más se nota en la digestión.'}]};
+
+const RESPALDO={
+almaBaja:{t:'Tu cabeza no<br>te deja <em>en paz</em>.',l:'Tu número más bajo es el alma: mente, emociones, voluntad. Es la parte que más se nombra y la que más te está costando hoy. Pero fíjate en el orden. En el Método TamÍm el alma no se trabaja sola: se apoya en el espíritu, que está debajo, y en el cuerpo, que la sostiene. Tratarla aislada es exactamente lo que ya intentaste.'},
+almaAlta:{t:'Entendiste todo.<br>Y sigues <em>igual</em>.',l:'Tu alma es el número más alto de los tres, y tiene sentido: es la única parte que trabajaste. Sabes de dónde viene, lo puedes explicar, lo entendiste. Pero entender no es sanar. Tu cuerpo y tu espíritu quedaron afuera de todo eso, y son los que están sosteniendo el peso hoy.'},
+cuerpo:{t:'Tu cuerpo está<br>pagando la <em>cuenta</em>.',l:'Tu número más bajo es el cuerpo. Suele pasar así: aguantas por dentro hasta que el que empieza a hablar es el cuerpo, con el sueño, con la energía, con la tensión que no se va. Eso no es cansancio acumulado. Es una parte tuya avisando que hay dos más sin atender.'},
+espiritu:{t:'Por dentro estás<br>sin <em>raíz</em>.',l:'Tu número más bajo es el espíritu, y en el Método TamÍm esa es la raíz: la parte que sostiene a las otras dos. Cuando esa está baja, todo lo que hagas con la mente y con el cuerpo se cae a los pocos meses. Por eso se trabaja primero, no al final.'}};
+
+let i=0; const R=new Array(14).fill(null); const $=id=>document.getElementById(id);
+const prom=d=>{const v=P.map((p,k)=>p.d===d?R[k]:null).filter(x=>x!==null);
+ return v.length? v.reduce((a,b)=>a+b,0)/v.length : 0;};
+const SVGNS='http://www.w3.org/2000/svg';
+const llamaSVG=(w,h)=>'<svg viewBox="0 0 24 44" width="'+w+'" height="'+h+'"><use href="#llama"/></svg>';
+
+function llamas(){const s=$('miniTorch'); if(!s)return;
+ [['f1','E'],['f2','A'],['f3','C']].forEach(([cls,d])=>{
+  const v=P.map((p,j)=>p.d===d?R[j]:null).filter(x=>x!==null); if(!v.length)return;
+  const m=v.reduce((a,b)=>a+b,0)/v.length; const el=s.querySelector('.'+cls); if(!el)return;
+  el.style.opacity=(.22+m/10*.78).toFixed(2);});}
+
+/* ---------- CONSTRUCTORES POR TIPO ---------- */
+function construir(cont,p,idx,fin){
+ cont.innerHTML=''; cont.className='';
+ if(p.t==='card'||p.t==='chip')  return tarjetas(cont,p,idx,fin);
+ if(p.t==='halo')                return halos(cont,p,idx,fin);
+ if(p.t==='llama')               return llamitas(cont,p,idx,fin);
+ if(p.t==='dibujo')              return dibujo(cont,p,idx,fin);
+}
+
+function tarjetas(cont,p,idx,fin){
+ cont.className=p.t==='chip'?'chips':'ops';
+ p.o.forEach(([txt,val],k)=>{const b=document.createElement('button');
+  b.className='opc'+(R[idx]===val?' on':'');
+  b.innerHTML=(p.t==='chip'?'':llamaSVG(11,16))+'<span>'+txt+'</span>';
+  b.onclick=()=>{R[idx]=val; cont.querySelectorAll('.opc').forEach(o=>o.classList.remove('on'));
+   b.classList.add('on'); fin(k);};
+  cont.appendChild(b);});}
+
+function halos(cont,p,idx,fin){
+ cont.className='regla';
+ const min=1,max=p.max, ini=R[idx]||Math.round((min+max)/2);
+ cont.innerHTML='<div class="marco"><span class="cifra">'+ini+'</span><span class="de">de '+max+'</span></div>'
+  +'<input type="range" min="'+min+'" max="'+max+'" value="'+ini+'" step="1">'
+  +'<div class="reglilla">'+Array.from({length:max},(_,j)=>'<i></i>').join('')+'</div>'
+  +'<div class="extremos"><span>'+(p.izq||'Nada')+'</span><span>'+(p.der||'Todo')+'</span></div>'
+  +'<button class="confirmar">Confirmar</button>';
+ const inp=cont.querySelector('input'), cif=cont.querySelector('.cifra');
+ inp.oninput=()=>{cif.textContent=inp.value;};
+ cont.querySelector('.confirmar').onclick=()=>{const v=+inp.value;
+  R[idx]= p.max===7 ? Math.round(1+(v/7)*9) : v;
+  fin(Math.min(v-min, p.e.length-1));};}
+
+function llamitas(cont,p,idx,fin){
+ cont.className='llamas';
+ p.o.forEach(([txt,val],k)=>{const b=document.createElement('button');
+  b.className='lop'+(R[idx]===val?' on':'');
+  const h=22+k*17;
+  b.innerHTML=llamaSVG(Math.round(h*24/44),h)+'<span class="et">'+txt+'</span>';
+  b.onclick=()=>{R[idx]=val; cont.querySelectorAll('.lop').forEach(o=>o.classList.remove('on'));
+   b.classList.add('on'); fin(k);};
+  cont.appendChild(b);});}
+
+function dibujo(cont,p,idx,fin){
+ cont.className='';
+ const et=p.d==='A'?['L','M','M','J','V','S','D']:['7h','10h','13h','16h','19h','22h','24h'];
+ const caja=document.createElement('div'); caja.className='dib';
+ caja.innerHTML='<span class="dib-y">'+(p.d==='A'?'Silencio':'Entera')+'</span>'
+  +'<span class="dib-y b">'+(p.d==='A'?'Ruido':'En cero')+'</span>'
+  +'<canvas></canvas><div class="dib-ejes">'+et.map(x=>'<span>'+x+'</span>').join('')+'</div>';
+ const pie=document.createElement('div'); pie.className='dib-pie';
+ pie.innerHTML='<button class="listo">Listo</button><button class="borrar">Borrar</button>';
+ cont.appendChild(caja); cont.appendChild(pie);
+
+ const cv=caja.querySelector('canvas'), listo=pie.querySelector('.listo');
+ const N=7; let val=new Array(N).fill(null), dib=false;
+ const dpr=window.devicePixelRatio||1;
+ function medir(){cv.width=cv.clientWidth*dpr; cv.height=cv.clientHeight*dpr;}
+ function pintar(){const w=cv.clientWidth,h=cv.clientHeight,c=cv.getContext('2d');
+  c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,w,h);
+  c.strokeStyle='rgba(36,32,24,.09)'; c.lineWidth=1;
+  for(let k=1;k<N;k++){c.beginPath();c.moveTo(w*k/N,0);c.lineTo(w*k/N,h);c.stroke();}
+  c.beginPath();c.moveTo(0,h/2);c.lineTo(w,h/2);c.stroke();
+  const pts=val.map((v,k)=>v===null?null:[w*(k+.5)/N,v*h]).filter(Boolean);
+  if(pts.length){c.strokeStyle='#C3A878';c.lineWidth=2.4;c.lineJoin='round';c.lineCap='round';
+   c.beginPath();pts.forEach((pt,k)=>k?c.lineTo(pt[0],pt[1]):c.moveTo(pt[0],pt[1]));c.stroke();
+   c.fillStyle='#C3A878';pts.forEach(pt=>{c.beginPath();c.arc(pt[0],pt[1],3.4,0,7);c.fill();});}}
+ function marcar(ev){const r=cv.getBoundingClientRect();
+  const x=(ev.clientX-r.left)/r.width, y=Math.min(Math.max((ev.clientY-r.top)/r.height,.04),.96);
+  const k=Math.min(N-1,Math.max(0,Math.floor(x*N))); val[k]=y; pintar();
+  const hechos=val.filter(v=>v!==null).length;
+  listo.classList.toggle('ok',hechos>=4);}
+ cv.addEventListener('pointerdown',e=>{dib=true;cv.setPointerCapture(e.pointerId);marcar(e);});
+ cv.addEventListener('pointermove',e=>{if(dib)marcar(e);});
+ cv.addEventListener('pointerup',()=>dib=false);
+ cv.addEventListener('pointercancel',()=>dib=false);
+ pie.querySelector('.borrar').onclick=()=>{val=new Array(N).fill(null);pintar();listo.classList.remove('ok');};
+ listo.onclick=()=>{const v=val.filter(x=>x!==null);
+  const prom=v.reduce((a,b)=>a+b,0)/v.length;           // 0 arriba, 1 abajo
+  const nota=Math.min(10,Math.max(1,Math.round((1-prom)*9+1)));
+  R[idx]=nota; fin(nota<=3?0:nota<=5?1:nota<=7?2:3);};
+ requestAnimationFrame(()=>{medir();pintar();});
+ window.addEventListener('resize',()=>{medir();pintar();},{once:true});}
+
+/* ---------- FLUJO ---------- */
+function pintarPreg(){const p=P[i];
+ $('progreso').style.width=(i/14*100)+'%';
+ $('conteo').innerHTML=(i+1)+'<small>/14</small>';
+ $('pregunta').textContent=p.q;
+ $('pista').textContent=p.pi||'';
+ $('eco').classList.remove('on');
+ $('atras').style.visibility=i===0?'hidden':'visible';
+ construir($('escala'),p,i,k=>{
+  $('eco').textContent=p.e[Math.min(k,p.e.length-1)]; $('eco').classList.add('on'); llamas();
+  setTimeout(()=>{ if(i<13){i++;pintarPreg();}
+   else {$('test').style.display='none';$('puerta').style.display='block';
+    $('puerta').classList.add('fade');window.scrollTo(0,0);} },840);});}
+
+(function(){const p=P[0]; $('preg0').textContent=p.q;
+ construir($('escala0'),p,0,()=>{setTimeout(()=>{i=1;
+  $('portada').style.display='none'; $('fija').style.display='none'; $('test').style.display='block';
+  $('test').classList.add('fade'); llamas(); pintarPreg(); window.scrollTo(0,0);},340);});})();
+
+$('atras').onclick=()=>{if(i>0){i--;pintarPreg();}};
+
+$('ver').onclick=async()=>{
+ const n=$('n').value.trim(),e=$('e').value.trim(),w=$('w').value.trim();
+ if(!n||!e.includes('@')||w.length<7){$('err').style.display='block';return;}
+ $('err').style.display='none'; $('puerta').style.display='none'; $('cargando').style.display='block'; window.scrollTo(0,0);
+ const fr=['Leyendo tus catorce respuestas.','Ordenando espíritu, alma y cuerpo.','Armando tus siete días.'];
+ let f=0; $('cargaTxt').textContent=fr[0];
+ const t=setInterval(()=>{f=(f+1)%3;$('cargaTxt').textContent=fr[f];},2200);
+ enviarGHL(n,e,w); const texto=await lectura(); clearInterval(t); mostrar(n,texto);};
+
+function enviarGHL(n,e,w){ if(!GHL_HOOK)return;
+ const d={nombre:n,correo:e,whatsapp:w,espiritu:+prom('E').toFixed(1),alma:+prom('A').toFixed(1),cuerpo:+prom('C').toFixed(1)};
+ P.forEach((p,k)=>d['p'+(k+1)]=R[k]);
+ fetch(GHL_HOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(()=>{});}
+
+async function lectura(){
+ const E=prom('E'),A=prom('A'),C=prom('C');
+ const det=P.map((p,k)=>p.q+' → '+R[k]+' de 10').join('\n');
+ const prompt=`Eres la voz de Ani Martínez, creadora del Método TamÍm, escribiendo la lectura personal del resultado de una mujer que acaba de completar su radiografía de entrada.
+
+Sus respuestas, convertidas a una escala del 1 al 10 (10 es lo mejor):
+${det}
+
+Promedios — Espíritu ${E.toFixed(1)} · Alma ${A.toFixed(1)} · Cuerpo ${C.toFixed(1)}.
+
+Escribe dos párrafos, 110 palabras en total, en castellano neutro de tú.
+
+Reglas estrictas:
+- Nombra dos o tres de sus respuestas concretas para que sepa que la leíste de verdad.
+- El mecanismo central: solo le trataron la mente; el cuerpo y el espíritu quedaron sin tocar. Ese es el motivo de que nada le haya funcionado.
+- Espíritu es la raíz y va primero, después alma, después cuerpo. No cambies ese orden.
+- Nada de diagnósticos, nombres de enfermedades, medicación, alimentación ni promesas de resultado.
+- No menciones a Dios, la fe ni la Biblia.
+- No uses la palabra paciente.
+- Directa y cercana, verdad sin endulzar, como se habla en voz alta. Sin poesía, sin frases inspiracionales, sin cerrar con un consejo.
+- Devuelve solo los dos párrafos separados por un salto de línea. Sin títulos.`;
+ try{const r=await fetch(AI_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
+  const d=await r.json();
+  const t=d.content.filter(x=>x.type==='text').map(x=>x.text).join('\n').trim();
+  if(t.length<80)throw 0; return t;}catch(err){return null;}}
+
+function armarDias(E,A,C){
+ const orden=[{k:'E',v:E},{k:'A',v:A},{k:'C',v:C}].sort((a,b)=>a.v-b.v);
+ const cupo={}; cupo[orden[0].k]=3; cupo[orden[1].k]=2; cupo[orden[2].k]=2;
+ const idx={E:0,A:0,C:0}; const out=[];
+ while(out.length<7){['E','A','C'].forEach(k=>{if(out.length<7&&cupo[k]>0&&idx[k]<ACC[k].length){
+  out.push({dim:k,...ACC[k][idx[k]]}); idx[k]++; cupo[k]--;}});}
+ return out;}
+const NOM={E:'Espíritu',A:'Alma',C:'Cuerpo'};
+
+function subir(el,val){const ini=performance.now();
+ const paso=t=>{const p=Math.min((t-ini)/1000,1),f=1-Math.pow(1-p,3);
+  el.textContent=(val*f).toFixed(1); if(p<1)requestAnimationFrame(paso);
+  else el.innerHTML=val.toFixed(1)+' <small>/ 10</small>';};
+ requestAnimationFrame(paso);}
+
+function mostrar(nombre,texto){
+ const E=prom('E'),A=prom('A'),C=prom('C');
+ const dims=[{n:'Espíritu',v:E,t:'La raíz. De dónde sacas fuerza cuando no queda nada.'},
+             {n:'Alma',v:A,t:'Mente, emociones, voluntad. Lo único que la mayoría trató.'},
+             {n:'Cuerpo',v:C,t:'Sueño, energía, tensión. Lo que paga la cuenta al final.'}];
+ const menor=dims.reduce((a,b)=>a.v<=b.v?a:b);
+ const caso=(A>E&&A>C)?'almaAlta':(menor.n==='Cuerpo'?'cuerpo':menor.n==='Espíritu'?'espiritu':'almaBaja');
+ $('titulo').innerHTML=RESPALDO[caso].t;
+ $('lectura').innerHTML=(texto||RESPALDO[caso].l).split('\n').filter(x=>x.trim()).map(x=>'<p>'+x.trim()+'</p>').join('');
+ $('fecha').textContent=new Date().toLocaleDateString('es-EC',{day:'numeric',month:'long',year:'numeric'});
+ $('cargando').style.display='none'; $('resultado').style.display='block';
+ $('resultado').classList.add('fade'); window.scrollTo(0,0);
+
+ /* los tres arcos se dibujan hasta donde llega cada número */
+ [['arcE',E,'cifE'],['arcA',A,'cifA'],['arcC',C,'cifC']].forEach(([id,v,cid],k)=>{
+  const el=$(id), L=el.getTotalLength();
+  el.style.strokeDasharray=L+' '+L; el.style.strokeDashoffset=L;
+  $(cid).textContent=v.toFixed(1);
+  setTimeout(()=>{el.style.strokeDashoffset=L*(1-Math.max(v,.6)/10);},280+k*320);});
+
+ const c=$('tres'); c.innerHTML='';
+ dims.forEach((d,k)=>{const v=document.createElement('div'); v.className='dim';
+  v.innerHTML='<div class="dim-top"><span class="dim-nom">'+d.n+'</span><span class="dim-num">0.0</span></div>'
+   +'<div class="dim-bar"><span></span></div><p class="dim-txt">'+d.t+'</p>';
+  c.appendChild(v);
+  setTimeout(()=>{v.querySelector('.dim-bar span').style.width=(d.v*10)+'%';
+   subir(v.querySelector('.dim-num'),d.v);},340+k*240);});
+
+ $('golpeTxt').textContent=nombre+', tu número más bajo es '+menor.n.toLowerCase()+': '+menor.v.toFixed(1)+' de 10.';
+ $('golpeSub').textContent=((E+A+C)/3)<5
+  ? 'Nada de lo que probaste estuvo mal. Estuvo incompleto. Trataron una parte de ti y quedaron dos sin tocar.'
+  : 'Estás de pie, y eso no es poco. La pregunta es cuánto te cuesta cada día sostenerlo.';
+ $('introSemilla').textContent='De los siete días, tres son de '+menor.n.toLowerCase()+'. Ahí es donde tienes el número más bajo, así que ahí va el peso.';
+
+ const plan=armarDias(E,A,C); const cont=$('dias'); cont.innerHTML='';
+ plan.forEach((a,k)=>{const el=document.createElement('div'); el.className='dia';
+  el.innerHTML='<button class="dia-btn"><span class="tick">✓</span><span style="flex:1">'
+   +'<span class="dia-eti">Día '+(k+1)+' · '+NOM[a.dim]+'</span><span class="dia-tit">'+a.t+'</span></span></button>'
+   +'<div class="dia-cuerpo"><p>'+a.c+'</p><p class="porque">'+a.p+'</p></div>';
+  el.querySelector('.dia-btn').onclick=()=>{
+   if(!el.classList.contains('open')&&!el.classList.contains('done')){el.classList.add('open');return;}
+   el.classList.toggle('done'); const h=document.querySelectorAll('.dia.done').length;
+   $('hechosN').textContent=h+'/7'; $('hechosB').style.width=(h/7*100)+'%';};
+  cont.appendChild(el);});
+
+ $('ctaFinal').href=LANDING.includes('TU-FUNNEL')?'#':LANDING;}
+
+/* revelado escalonado, 90ms entre hermanos */
+(function(){
+ const secs=document.querySelectorAll('.hero-in>*, .llevas>*, .quees>*, .cierre>*, .semilla>*');
+ secs.forEach(el=>el.classList.add('rev'));
+ const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+   const pad=[...e.target.parentElement.children].indexOf(e.target);
+   setTimeout(()=>e.target.classList.add('in'), pad*90); io.unobserve(e.target);}});},{threshold:.12});
+ secs.forEach(el=>io.observe(el));
+ const fija=document.getElementById('fija'), disp=document.getElementById('empezar');
+ const io2=new IntersectionObserver(es=>{es.forEach(e=>{
+   fija.style.display = (e.isIntersecting||document.getElementById('portada').style.display==='none') ? 'none':'flex';});},
+   {threshold:.15});
+ if(disp) io2.observe(disp);
+ setTimeout(()=>{if(disp&&window.scrollY<40)fija.style.display='flex';},1200);
+ document.getElementById('btnTest').onclick=e=>{e.preventDefault();
+  disp.scrollIntoView({behavior:'smooth',block:'start'});};
+ fija.querySelector('a').onclick=e=>{e.preventDefault();
+  disp.scrollIntoView({behavior:'smooth',block:'start'});};
+})();
+
+$('imprimir').onclick=()=>window.print();
+$('repetir').onclick=()=>location.reload();
+</script>
+</body>
+</html>
