@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Espera: te falta un paso · Javo Katz</title>
+<title>Mira esta página y confirma tu asistencia · Tu Clínica Digital</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#F4EEE3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +86,7 @@ h1 .g,h2 .g{font-style:italic}
 
 /* ══ ESCENARIO: arriba corto, el video enseguida ══ */
 .stage{padding:18px 16px 8px}
-.st-in{max-width:1040px;margin:0 auto;display:grid;grid-template-areas:"head" "conf" "video";gap:0;justify-items:center}
+.st-in{max-width:1040px;margin:0 auto;display:grid;grid-template-areas:"head" "video" "conf";gap:0;justify-items:center}
 .marca{font-family:var(--fd);font-weight:600;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center}
 .s-head{grid-area:head;text-align:center;max-width:560px}
 .okb{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:7px 16px 7px 8px;border-radius:999px;background:var(--paper);border:1px solid var(--lakeBd);font-weight:600;font-size:16px;line-height:1.3;color:var(--forest)}
@@ -150,6 +150,15 @@ h1 .g,h2 .g{font-style:italic}
 .hecho-ok{display:none;margin-top:14px;font-size:17px;color:var(--forest);font-weight:600}
 .confirmo .hecho-ok{display:block}
 
+/* 18 nov (Javo): arriba, limpio: la marca, debajo «Tu horario está reservado», y el título */
+.s-head .marca{display:flex;justify-content:center;align-items:center;gap:10px;margin:0}
+.s-head .okb{display:flex;width:fit-content;margin:16px auto 0}
+.s-head h1{font-size:clamp(36px,9.6vw,58px)!important;line-height:1.02!important}
+.s-head .lead{font-size:20px}
+.s-video{margin-top:22px}
+.tuyo{margin-top:36px;padding:24px 22px;border-radius:24px;background:var(--paper);border:1px solid var(--line)}
+.tuyo h3{font-size:26px;line-height:1.2}
+.tuyo p{margin-top:10px;font-size:19px;line-height:1.55;color:var(--muted)}
 /* 18 nov (Javo): en la computadora se ve igual que en el celular, una sola columna */
 @media(min-width:900px){.stage{padding:34px 24px 24px}}
 
@@ -548,8 +557,8 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
   <div class="s-head">
    <p class="marca"><span class="lomos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Tu Clínica Digital</p>
    <p class="okb"><span class="okc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Tu horario está reservado</p>
-   <h1 id="titulo"><span class="w" style="--i:0">Espera:</span><br><span class="w" style="--i:1">te</span> <span class="w" style="--i:2">falta</span> <span class="g"><span class="w" style="--i:3">un</span> <span class="w" style="--i:4">paso.</span></span></h1>
-   <p class="lead">Es un solo toque, por WhatsApp.</p>
+   <h1 id="titulo"><span class="w" style="--i:0">Mira</span> <span class="w" style="--i:1">esta</span> <span class="w" style="--i:2">página</span> <span class="w" style="--i:3">y</span> <span class="w" style="--i:4">confirma</span> <span class="g"><span class="w" style="--i:5">tu</span> <span class="w" style="--i:6">asistencia.</span></span></h1>
+   <p class="lead">Primero el video. Después, un toque por WhatsApp.</p>
   </div>
 
   <div class="s-video">
@@ -591,7 +600,7 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
   <ol class="lista">
    <li class="rv"><span class="n">1</span><p>Miramos dónde está tu negocio y <b>qué lo frena.</b></p></li>
    <li class="rv"><span class="n">2</span><p>Te muestro los dos caminos, <b>te lo instalo o te enseño</b>, y te digo cuál te conviene.</p></li>
-   <li class="rv"><span class="n">3</span><p>Salga como salga, <b>te vas con tu diagnóstico escrito.</b></p></li>
+   <li class="rv"><span class="n">3</span><p>Salga como salga, <b>te vas con tu plan de acción escrito.</b></p></li>
   </ol>
   <div class="prep rv">
    <h3>Para aprovecharla al máximo</h3>
@@ -601,14 +610,10 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
     <li>Si la decisión la tomas con alguien más, súmalo al diagnóstico.</li>
    </ul>
   </div>
-  <div class="libro rv">
-   <img src="data:image/webp;base64,UklGRmgFAABXRUJQVlA4IFwFAABwGwCdASpgAIgAPm0wlUgkIqIhJDSbuIANiWkA0/1/nKgdmOOzGYWm95JAB+Vf1rzyptEUV4Wsav+x9YfQ19WewX+ufWM9F79lTJUnxsCIMuWqJ9yNN61klbQ4MzuZJFCC4v767QjeGjIBU+p3mnCGqnR6AMSsh8g7s0KzP4mYbcZEyPpuCzYQACiWoihe6hqO6ORMcBaQ37mLYD1Ar1Uz6V14kfonNhYfEBVDFUeJ83ODYKYldxHF+5vbYl1FjBQLHC44YHB2YbZrf32Ktr8ZV956kiWeO0TBAoDmw6XsJKx6NAAA/vuER11TIC2wG267Rnvf/BlBsuKMGayL8Plvpl0GKhyeqJp52lPhZ7+DfjJp3zCfQUrzSNQ24OxwBtlpR+KabhQXb2thAiNrtA6Nya1hcEx/g4dt6Yg8+4zg4hn/lEIyXdnm/sxr5KM+0ZiX+nyKSY/2JT3qPgfG2yU5qt+jy58uWJ9RfWD/ks1J3pr7r+G48f8RxrYmqPuG/pJ1K0v97sfmVvt6Sww19+Efqa/79FOARvpX7EVnZguuy8/8k8ldE7X9zzmtrn+Rlf2tdRjP6ApFdkaJUm13aPOYoqS+xtOB1Vz+jkTNVK4pbvgXCQ514ivH6IbDCbzrNf/xcT9TY+SVMSr2/lrdkNkL8D7PttyS9vFqbxPzHujfS4mv+AY3O6N8SP0pD6U8mWMhuxBXuM9Sl3OInwvOz1HvATy9BD7sxBSQd6ke6e4PYqWvMAEkLAdMTr3+ubAImS1PmsVoOn55PiuXmanJQ3FokQ/QPav/4SwdVaalA1bGqTwnx/8FbwLvl7aRLFEOoBqErocfyfhJ7QOBlCRP7u6wXI+2rFwmP4IOMy5yb8TqNKHE8IPx+9ZWkVphWKO+nBTsPf8Wm3gA88E/NnRE34RLEQ2PLEYrsLM2FZQGCoi8l9JyFPcs6KtWwQ58rL72f5yojjtZLf5PMuX9xRYssTgGukDQxKd9CSKPrGItECdy4Lxl1VgRpl+lX2ebD8lVjo4TNWXXA0XXj1ld6YgANroB6SbQBL1iC7VoWlFWhH/Z7q0U7Dr5I1Q3/RhtylkYgEeB0eUcklLoe2yB3z5/L5d+eAlx+6CqKz7+Ij5MtKFhntgsQg7tdFS7OC6mgs26NsPH+lNABbVlOWWBqGyKuqT+6VE57EGiWLfZY/xOz9g29hKVqL4yKl19cAVHLUkWCYEmi0uDFBADrxGYeJW9JLsk2vl4e7lpagwvURwOjyhe9Z1vd729u4DOsWKTSOnqmmYUDcXtvDvuU1adQa/sigCh5s7PQ8fGWJulQEWIpspiQ6G3SJeQkBSe4R4ti0ehv6s6T5g3OOC1K6e8g/3K1+fNulp+12G1WHHt3dC6sChhWs/bHJpq7dwYPOmmu2hZ0m92aTvT8yQPM0/XXGtHNC8B0VmgEwG5R7z2PlKGP3mL9U3RLK91fIuglchtbhsC/KDPtZv3nt4Bf5Zpzbdt+wpTAuOnwNoRTKenM4cCht5C4Id5P5Dn13IC9ogpnOPpnOs2ZZLhD7xxXkrmBlbbR63CK4Dqy2RXJzT5CYkeR40An+f5N47v0c+S5rKW5Rl3ZWsFpx9/m5f6uXlIdwTgbZ/lwQAM7NMAZaLRpePVWbMFhbBuVMpiSkTBwqHTXSrkcHhuDMUogjiB5l018+jyMJDY8YZnUt2Uwm9HefdBFrQ0JTpdAzd2YW4xeYFEvAegKToWfW2g5IAILJWLVZnd70Hsq/xmARXNSEI+eFeQPR44tgu1NbQqZ3KgHxmRwEnKoiJVSnZdvhYoVJyjTH0AEHHrTPN5x1isoAAAAAAA" alt="Tapa del libro Sanadores Libres, de Javo Katz" width="76" height="108" loading="lazy">
-   <div>
-    <p class="lk">Antes de tu diagnóstico</p>
-    <h3>Lee el primer capítulo de mi libro.</h3>
-    <p>Soy Javo, autor de <b><i>Sanadores Libres</i></b>. En esas páginas está tu foto de partida: llegas a tu diagnóstico con tu hora real neta calculada.</p>
-   </div>
-   <a class="bsec" id="libro" href="https://tuclinica.digital/capitulo-sanadores" target="_blank" rel="noopener">Leer el primer capítulo sin costo</a>
+  <div class="tuyo rv">
+   <h3>Este horario es tuyo.</h3>
+   <p>Hago pocos diagnósticos por semana y los guardo para profesionales que quieren lanzar su programa en los próximos 90 días. Te voy a estar esperando con tu caso leído.</p>
+   <p>Si algo cambió, avísame por WhatsApp y le doy el lugar a otra persona.</p>
   </div>
  </div>
 </section>
@@ -822,9 +827,9 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
   var q=window.__tcdQ||new URLSearchParams(location.search);
   var nom=(q.get('first_name')||q.get('firstName')||q.get('name')||q.get('full_name')||q.get('contact_name')||'').trim().split(/\s+/)[0]||'';
   nom=nom.replace(/[<>"]/g,'').slice(0,24);
-  if(nom){nom=nom.charAt(0).toUpperCase()+nom.slice(1).toLowerCase();var w0=document.querySelector('#titulo .w');if(w0)w0.textContent='Espera, '+nom+':';}
+  if(nom){nom=nom.charAt(0).toUpperCase()+nom.slice(1).toLowerCase();var w0=document.querySelector('#titulo .w');if(w0)w0.textContent=nom+', mira';}
   var soy=nom?'soy '+nom+'. ':'';
-  var msgOk='Hola Javo, '+soy+'Confirmo mi diagnóstico. Ahí voy a estar.';
+  var msgOk='Hola Javo, '+soy+'Ya miré la página y confirmo mi asistencia a la entrevista.';
   var msgMover='Hola Javo, '+soy+'Necesito mover el horario de mi diagnóstico.';
   var urlOk='https://wa.me/'+WA+'?text='+encodeURIComponent(msgOk);
 
@@ -904,7 +909,6 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){lb.classList.remove('on');if(tv.classList.contains('on'))cierra();}});
 
   /* ── libro ── */
-  var l=document.getElementById('libro');if(l)l.addEventListener('click',function(){px('trackCustom','LibroDesdeGracias');});
 
   /* ── aparición suave ── */
   var els=document.querySelectorAll('.rv');
