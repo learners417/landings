@@ -21,8 +21,10 @@ jobs:
             LISTA=$(git ls-files site/ cargador.js)   # la primera vez, o si cambió este archivo: se purga todo site/ y el cargador
           fi
           # jsDelivr ya no puede bajar el repo entero (pasa su tope de 50 MB): cada archivo lo trae de GitHub (raw),
-          # que guarda cada archivo hasta 5 minutos. Si jsDelivr lo pide en ese rato, se queda con el anterior por horas.
-          # 19 nov: por eso se purga dos veces: al minuto (casi siempre alcanza) y pasados los 5 minutos (lo corrige).
+          # que guarda cada archivo hasta 5 minutos, y además sus servidores de origen guardan su copia cerca de una hora
+          # (la purga no las borra). Si la purga cae antes, un servidor de jsDelivr se queda con el anterior por horas.
+          # 19 nov: por eso se purga tres veces: al minuto (casi siempre alcanza), pasados los 5 minutos de GitHub
+          # y a la hora y cinco, cuando ya no queda ninguna copia vieja en el origen de jsDelivr.
           purgar() {
             echo "$LISTA" | while read f; do
               [ -z "$f" ] && continue
@@ -35,4 +37,7 @@ jobs:
           purgar
           sleep 280
           echo "segunda vuelta"
+          purgar
+          sleep 3600
+          echo "tercera vuelta"
           purgar
