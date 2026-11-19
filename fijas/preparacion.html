@@ -150,18 +150,8 @@ h1 .g,h2 .g{font-style:italic}
 .hecho-ok{display:none;margin-top:14px;font-size:17px;color:var(--forest);font-weight:600}
 .confirmo .hecho-ok{display:block}
 
-/* escritorio: texto y confirmación a la izquierda, video a la derecha */
-@media(min-width:900px){
- .stage{padding:34px 24px 24px}
- .st-in{grid-template-columns:1fr 410px;grid-template-areas:"head video" "conf video";column-gap:64px;align-items:start;justify-items:stretch}
- .s-head{text-align:left;align-self:end;max-width:none}
- .s-head h1{font-size:clamp(46px,4.6vw,62px)}
- .lead{margin-left:0}
- .s-head .marca{text-align:left}
- .s-video{grid-row:1/3}
- .vf{width:410px;max-height:calc(100vh - 80px)}
- .s-conf{margin-top:28px;max-width:470px;align-self:start}
-}
+/* 18 nov (Javo): en la computadora se ve igual que en el celular, una sola columna */
+@media(min-width:900px){.stage{padding:34px 24px 24px}}
 
 /* bandas */
 .band{padding:80px 0}

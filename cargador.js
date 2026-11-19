@@ -42,13 +42,31 @@
       var reloj = setTimeout(function () { no('tiempo'); }, ms);
       fetch(url, { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw r.status; return r.text(); })
-        .then(function (t) { clearTimeout(reloj); carga.fuente = url; ok(t); },
+        .then(function (t) { clearTimeout(reloj); ok(t); },
               function (e) { clearTimeout(reloj); no(e); });
     });
   }
-  function primera(i) {
-    if (i >= FUENTES.length) return Promise.reject('sin fuente');
-    return traer(FUENTES[i], i ? 9000 : 6000).catch(function () { return primera(i + 1); });
+  /* 18 nov: si jsDelivr no contesta en 1,5 segundos, se pide también a GitHub y gana la primera que llega.
+     Antes se esperaba hasta 6 segundos a jsDelivr antes de probar GitHub. */
+  function primera() {
+    return new Promise(function (ok, no) {
+      var gano = false, fallas = 0, pedidas = 0, reserva = null;
+      function pide(i) {
+        if (i >= FUENTES.length || i < pedidas) return;
+        pedidas = i + 1;
+        traer(FUENTES[i], 12000).then(function (t) {
+          if (gano) return;
+          gano = true; clearTimeout(reserva); carga.fuente = FUENTES[i]; ok(t);
+        }, function () {
+          fallas++;
+          if (gano) return;
+          if (pedidas < FUENTES.length) { clearTimeout(reserva); pide(pedidas); }
+          else if (fallas >= FUENTES.length) no('sin fuente');
+        });
+      }
+      pide(0);
+      reserva = setTimeout(function () { if (!gano) pide(1); }, 1500);
+    });
   }
 
   /* Los estilos de GHL quedan apagados: la página trae los suyos. */
@@ -87,8 +105,19 @@
     var tipo = viejo.getAttribute('data-tipo');
     if (tipo) s.type = tipo;
     if (viejo.getAttribute('src')) {
+      /* 18 nov: un script con async (o de tipo module) no frena a los demás, como en cualquier página.
+         Antes la página esperaba a que cargara el reproductor de Wistia: en el celular, /preparacion-h quedó
+         casi un minuto en blanco (lo que aparece al bajar no se muestra hasta que corre su script). */
+      if (viejo.hasAttribute('async') || tipo === 'module') {
+        viejo.parentNode.replaceChild(s, viejo);
+        sigue();
+        return;
+      }
+      /* Los demás esperan, pero nunca más de 4 segundos. */
+      var hecho = false, seguir = function () { if (!hecho) { hecho = true; sigue(); } };
       s.async = false;
-      s.onload = s.onerror = sigue;
+      s.onload = s.onerror = seguir;
+      setTimeout(seguir, 4000);
       viejo.parentNode.replaceChild(s, viejo);
     } else {
       s.text = viejo.text;
@@ -151,5 +180,5 @@
     tapa.textContent += 'body:before{content:"La página se está actualizando. Vuelve a abrirla en un momento.";display:block;font:20px/1.5 Georgia,serif;color:#2B2622;text-align:center;margin:30vh 24px 0}';
   }
 
-  primera(0).then(montar).catch(aviso);
+  primera().then(montar).catch(aviso);
 })(document, window);

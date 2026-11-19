@@ -608,27 +608,8 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
 .af-priv{margin:6px auto 0;max-width:46ch;text-align:center;font-size:16px;line-height:1.5;color:var(--muted);text-wrap:balance}
 .af-priv a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
 
-/* en la computadora: el paso 1 (video, sobre el lago) y el paso 2 (calendario) lado a lado */
-@media(min-width:1100px){
-.af-duo{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);column-gap:64px;align-items:start;width:min(1180px,100% - 64px);margin:0 auto}
-.af-duo .af-hero{grid-column:1/-1;grid-row:1;padding:112px 0 0}
-.af-duo .af-hero h1.af-h1{max-width:24ch;font-size:clamp(46px,3.9vw,58px)!important}
-.af-duo .af-video{grid-column:1;grid-row:2;width:auto;margin:48px 0 0;padding:34px 30px 36px;border-radius:32px;background:var(--af-lago)}
-.af-duo .af-video::before{display:none}
-.af-duo .af-video .paso-pill{color:#F4EEE3!important}
-.af-duo .af-video .paso-pill::before,.af-duo .af-video .paso-pill::after{border-top-color:rgba(244,238,227,.5)!important}
-.af-duo .af-cel{width:100%}
-.af-duo #agenda{grid-column:2;grid-row:2/4;padding:48px 0 0}
-.af-duo #agenda .wrap{max-width:none;padding:0}
-.af-duo #agenda .paso-pill{flex-direction:row;gap:14px}
-.af-duo #agenda .paso-pill::before{width:26px;margin:0}
-.af-duo #agenda .paso-pill::after{display:block}
-.af-duo #agenda .ag-t{font-size:42px!important}
-.af-duo .af-dx{max-width:none;grid-template-columns:repeat(3,1fr)}
-.af-duo .af-dx li{flex-direction:column;align-items:flex-start;gap:10px;font-size:17px}
-.af-duo .cal{margin-top:16px}
-.af-duo + #testimonios{margin-top:96px}
-}
+/* 18 nov (Javo): en la computadora se ve igual que en el celular, una sola columna: el video arriba y el calendario debajo */
+@media(min-width:900px){#agenda .wrap{max-width:760px}}
 
 /* 3 · testimonios: los primeros a la vista y el resto con un toque */
 #testimonios .tcard{border-radius:18px!important;border:0;box-shadow:0 0 0 1px rgba(43,39,36,.1),0 18px 30px -22px rgba(43,39,36,.55)}
@@ -795,7 +776,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
   var iv=setInterval(function(){
     n++;
     if(nuevo()||api){clearInterval(iv);b.hidden=false;arranca();}
-    else if(n>100)clearInterval(iv);
+    else if(n>400)clearInterval(iv);
   },150);
   b.addEventListener('click',function(){
     tocado=true;b.hidden=true;
@@ -1169,6 +1150,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList
 (function(){var f=document.querySelector('#cal iframe');if(!f||!f.src)return;var q=new URLSearchParams(location.search),p=new URLSearchParams();
   q.forEach(function(v,k){if(/^utm_|^fbclid$|^gclid$/.test(k))p.set(k,v);});var s=p.toString();
   if(s&&!/[?&](utm_|fbclid=)/.test(f.src))f.src=f.src+(f.src.indexOf('?')<0?'?':'&')+s;})();
+
+/* ── 18 nov: la página de preparación se trae de antemano mientras la persona elige su horario,
+   así, al agendar, aparece enseguida (Javo la vio casi un minuto en blanco). ── */
+(function(){var hecho=false;function trae(){if(hecho)return;hecho=true;
+  try{fetch('https://cdn.jsdelivr.net/gh/learners417/landings@main/site/preparacion.html',{cache:'no-cache',credentials:'omit'}).catch(function(){});}catch(e){}}
+  window.addEventListener('message',function(e){if(/leadconnectorhq|msgsndr/.test(e.origin||''))trae();});
+  setTimeout(trae,8000);})();
 
 /* ── el calendario de GHL: altura y aviso de agenda ── */
 window.addEventListener('message',function(e){
