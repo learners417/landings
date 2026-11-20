@@ -15,7 +15,7 @@ R = pathlib.Path(__file__).resolve().parent
 RAIZ = R.parent
 PAGINAS = ['la-decision', 'la-decision-sesion', 'la-decision-gracias', 'la-decision-capitulo-1', 'la-decision-hoy']
 IMG = 'https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/'
-LOGO = 'https://assets.cdn.filesafe.space/ZvEe1VX5B2Fwixi5G6k9/media/67b0923e11feb97b00d0b754.png'
+LOGO = 'https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png'
 
 def icono(k, color='#060828'):
     return (f'<svg viewBox="0 0 24 24" fill="none" stroke="{color}" color="{color}" stroke-width="1.4" '
