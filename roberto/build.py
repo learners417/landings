@@ -1,9 +1,9 @@
 """Arma las páginas de «La decisión» de Roberto Páez (ropaez.com).
 
 Fuente: roberto/<pagina>.html + roberto/roberto.css + roberto/roberto.js (la piel «Kensho», compartida).
-Salida: fijas/roberto-<pagina>.html y site/roberto-<pagina>.html, cada una entera en un archivo.
+Salida: fijas/<pagina>.html y site/<pagina>.html, cada una entera en un archivo (el nombre es la ruta).
 En GHL (subcuenta Roberto Paez, embudo «Método Kensho»), cada paso lleva
-    <script>window.TCD_PAGINA='roberto-<pagina>'</script> + la línea del cargador (ghl-linea.html)
+    solo la línea del cargador (ghl-linea.html): la ruta decide el archivo.
 y la ruta pública es /<pagina> (por ejemplo /la-decision).
 
     python3 roberto/build.py
@@ -82,5 +82,5 @@ for p in PAGINAS:
     out = bloques(src).replace('/*KX_CSS*/', css).replace('/*KX_JS*/', js)
     assert '{{' not in out, (p, re.findall(r'\{\{[^}]*\}\}', out)[:3])
     for carpeta in ('fijas', 'site'):
-        (RAIZ / carpeta / f'roberto-{p}.html').write_text(out)
-    print(f'roberto-{p}', len(out) // 1024, 'KB')
+        (RAIZ / carpeta / f'{p}.html').write_text(out)
+    print(p, len(out) // 1024, 'KB')

@@ -181,7 +181,8 @@ y no se nota.
 Cinco páginas con la piel «Kensho» (`roberto/roberto.css` + `roberto/roberto.js`). Se editan en `roberto/`
 y `python3 roberto/build.py` las arma en `fijas/` y `site/` (logo, imágenes de `imgs/roberto/`, iconos del
 libro y los 42 días de `roberto/dias.json`, que sale del armado del libro con su página).
-En la subcuenta de Roberto, cada paso lleva la línea con `window.TCD_PAGINA='roberto-<ruta>'`.
+En la subcuenta de Roberto (embudo «Método Kensho» `OxFI1zADpxYcNRA8NDNC`, dominio ropaez.com), cada paso
+lleva solo la línea: la ruta decide el archivo, como en las de Ani.
 
 - `/la-decision` · la venta del libro (US$27, +US$17 con los correos de cada mañana).
 - `/la-decision-sesion` · la sesión de 45 min con Roberto (US$97), justo después de pagar. `noindex`.
