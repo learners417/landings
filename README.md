@@ -190,6 +190,11 @@ lleva solo la línea: la ruta decide el archivo, como en las de Ani.
 - `/la-decision-capitulo-1` · el capítulo 1 sin costo (palabra clave LIBRO). El PDF está en `imgs/roberto/`.
 - `/la-decision-hoy?d=N` · el ejercicio del día N con su página. Los correos diarios llevan aquí. `noindex`.
 
+En vivo desde el 20 nov 2026. Pasos en GHL (embudo `OxFI1zADpxYcNRA8NDNC`): la-decision `4fa3de2e-621e-4e44-b72d-818381366cb5`
+(la original, con la línea y su panel SEO) · la-decision-sesion `1bf569b3-fdc1-4b45-a472-c8b862d7bc61` ·
+la-decision-gracias `090649d7-0fc9-43db-8d0d-05ba846a8efb` · la-decision-capitulo-1 `8e7a3740-ef8d-48ed-8baf-89c38bbab413` ·
+la-decision-hoy `23ae88d7-43dc-434f-96e7-afef4390ec76` (las cuatro, clonadas de la primera; llevan su mismo panel SEO).
+
 Los links de pago, el calendario y el PDF del capítulo van en `KX` arriba de `roberto/roberto.js`.
 El libro completo NO va en este repo: su link vive solo en El Consultorio, en el valor personalizado
 «La decisión · link del libro».
