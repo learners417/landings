@@ -1,0 +1,422 @@
+[
+{
+"d": 1,
+"tipo": "Observa",
+"k": "observa",
+"texto": "Lee «Lo que te trajo hasta aquí» y subraya la frase que más te nombra.",
+"pag": 22,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 2,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tu línea de origen: los hitos que te trajeron hasta aquí.",
+"pag": 26,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 3,
+"tipo": "Decide",
+"k": "decide",
+"texto": "Marca lo que te trajo hasta aquí y arma tu mochila: lo que llevas y lo que dejas.",
+"pag": 27,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 4,
+"tipo": "Cuídate",
+"k": "cuidate",
+"texto": "Al despertar, antes del celular, quédate 10 minutos en silencio.",
+"pag": 29,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 5,
+"tipo": "Carta",
+"k": "carta",
+"texto": "Carta a lo que te trajo hasta aquí: gracias, y hasta aquí.",
+"pag": 30,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 6,
+"tipo": "Juega",
+"k": "juega",
+"texto": "Mito o verdad: ocho ideas sobre los ascensos y las decisiones.",
+"pag": 31,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 7,
+"tipo": "Cierra la semana",
+"k": "cierra",
+"texto": "Responde tu pregunta, escribe tu regla y mide tu batería.",
+"pag": 32,
+"semana": 1,
+"titulo": "Lo que te trajo hasta aquí",
+"pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"
+},
+{
+"d": 8,
+"tipo": "Observa",
+"k": "observa",
+"texto": "Lee «La historia que te cuentas».",
+"pag": 38,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 9,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Del relato de dolor al relato de valor: tres creencias tuyas.",
+"pag": 42,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 10,
+"tipo": "Decide",
+"k": "decide",
+"texto": "Tres preguntas a tu creencia más fuerte.",
+"pag": 43,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 11,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tu historia contada desde el valor. Léela en voz alta.",
+"pag": 44,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 12,
+"tipo": "Conversa",
+"k": "conversa",
+"texto": "Pregunta a alguien de confianza: «¿qué repito cuando tengo que decidir?».",
+"pag": 45,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 13,
+"tipo": "Juega",
+"k": "juega",
+"texto": "¿Cuál etapa es? Nueve preguntas para ordenar.",
+"pag": 46,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 14,
+"tipo": "Cierra la semana",
+"k": "cierra",
+"texto": "Responde tu pregunta, tu regla, tu batería y el cierre de la etapa Origen.",
+"pag": 47,
+"semana": 2,
+"titulo": "La historia que te cuentas",
+"pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"
+},
+{
+"d": 15,
+"tipo": "Observa",
+"k": "observa",
+"texto": "Lee «Tu pregunta real».",
+"pag": 56,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 16,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "La prueba del año: tus decisiones de la última semana.",
+"pag": 60,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 17,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tu pregunta real, en tres versiones hasta que quede precisa.",
+"pag": 61,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 18,
+"tipo": "Decide",
+"k": "decide",
+"texto": "La opción que desaparece: abre tu mesa de opciones.",
+"pag": 62,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 19,
+"tipo": "Prueba",
+"k": "prueba",
+"texto": "En una reunión de hoy, haz una pregunta antes de dar tu respuesta.",
+"pag": 63,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 20,
+"tipo": "Cuídate",
+"k": "cuidate",
+"texto": "Bloquea 30 minutos para pensar, sin teléfono. Respétalos como una reunión.",
+"pag": 63,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 21,
+"tipo": "Cierra la semana",
+"k": "cierra",
+"texto": "Responde tu pregunta, tu regla, tu batería y tu termómetro de mitad de camino.",
+"pag": 64,
+"semana": 3,
+"titulo": "Tu pregunta real",
+"pregunta": "¿Qué estoy resolviendo que no me toca resolver?"
+},
+{
+"d": 22,
+"tipo": "Observa",
+"k": "observa",
+"texto": "Lee «Lo que sabes y lo que sientes».",
+"pag": 70,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 23,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tus dos listas: lo que sabes hacer y lo que sientes sobre ti.",
+"pag": 74,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 24,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tus opciones sobre la mesa, con su evidencia.",
+"pag": 75,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 25,
+"tipo": "Decide",
+"k": "decide",
+"texto": "10/10/10: tu pregunta real en tres tiempos.",
+"pag": 76,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 26,
+"tipo": "Carta",
+"k": "carta",
+"texto": "Las dos cartas, desde dentro de un año: la del sí y la del no.",
+"pag": 77,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 27,
+"tipo": "Juega",
+"k": "juega",
+"texto": "El bingo de la semana, con tus palabras ancla.",
+"pag": 79,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 28,
+"tipo": "Cierra la semana",
+"k": "cierra",
+"texto": "Responde tu pregunta, tu regla, tu batería y el cierre de la etapa Claridad.",
+"pag": 80,
+"semana": 4,
+"titulo": "Lo que sabes y lo que sientes",
+"pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"
+},
+{
+"d": 29,
+"tipo": "Observa",
+"k": "observa",
+"texto": "Lee «Esto se decide acompañado».",
+"pag": 88,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 30,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "El mapa de tu decisión: a quién toca y qué necesita saber.",
+"pag": 92,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 31,
+"tipo": "Decide",
+"k": "decide",
+"texto": "Lo que le dirías a un amigo: tu caso, visto desde afuera.",
+"pag": 93,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 32,
+"tipo": "Carta",
+"k": "carta",
+"texto": "Carta a quien más toca tu decisión.",
+"pag": 94,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 33,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Prepara tu conversación más difícil.",
+"pag": 95,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 34,
+"tipo": "Conversa",
+"k": "conversa",
+"texto": "Ten esa conversación. Si hoy no se puede, ponle fecha esta semana.",
+"pag": 96,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 35,
+"tipo": "Cierra la semana",
+"k": "cierra",
+"texto": "Responde tu pregunta, escribe tu regla y mide tu batería.",
+"pag": 97,
+"semana": 5,
+"titulo": "Esto se decide acompañado",
+"pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"
+},
+{
+"d": 36,
+"tipo": "Observa",
+"k": "observa",
+"texto": "Lee «Tu decisión, por escrito».",
+"pag": 102,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+},
+{
+"d": 37,
+"tipo": "Decide",
+"k": "decide",
+"texto": "Prueba tu decisión: puerta de una vía o de dos, y tu pre-mortem.",
+"pag": 106,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+},
+{
+"d": 38,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tu decisión en una línea.",
+"pag": 108,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+},
+{
+"d": 39,
+"tipo": "Escribe",
+"k": "escribe",
+"texto": "Tus 3 acuerdos y tus primeros 30 días.",
+"pag": 109,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+},
+{
+"d": 40,
+"tipo": "Carta",
+"k": "carta",
+"texto": "Tu carta de decisión. Fírmala hoy.",
+"pag": 110,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+},
+{
+"d": 41,
+"tipo": "Conversa",
+"k": "conversa",
+"texto": "Cuéntale tu decisión a la primera persona que tiene que saberla.",
+"pag": 111,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+},
+{
+"d": 42,
+"tipo": "Cierra la semana",
+"k": "cierra",
+"texto": "Tu termómetro final, tu transformación y tu tapa.",
+"pag": 112,
+"semana": 6,
+"titulo": "Tu decisión, por escrito",
+"pregunta": "¿Qué hago el lunes a primera hora?"
+}
+]

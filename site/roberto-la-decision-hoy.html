@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu ejercicio de hoy · La decisión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+ --tinta:#060828; --papel:#F6F4EE; --lino:#EFEADF; --blanco:#FFFFFF; --oro:#C4933F; --oro-t:#A47A30;
+ --gris:#555870; --suave:#8D8FA0; --linea:#E2DACB;
+ --serif:'Playfair Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--papel)}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+
+.banda{width:100%;display:flex;justify-content:center}
+.banda>.in{width:100%;max-width:620px;padding:56px 22px}
+.banda.lino{background:var(--lino)}
+.banda.ancha>.in{max-width:980px}
+
+.lab{display:block;font:600 16px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--oro-t);margin-bottom:12px}
+.lab.tinta{color:var(--tinta)}
+h1{font:600 38px/1.12 var(--serif);letter-spacing:-.01em;margin-bottom:18px}
+h2{font:600 31px/1.18 var(--serif);margin-bottom:16px}
+h3{font:600 19px/1.35 var(--sans);margin-bottom:4px}
+p{margin-bottom:16px}
+.lead{font-size:19px;line-height:1.6}
+.it{font-family:var(--serif);font-style:italic}
+.gris{color:var(--gris)}
+.chico{font-size:16px;line-height:1.5}
+.raya{width:56px;border-top:1px solid var(--oro);margin:0 0 20px}
+.centro{text-align:center}
+.centro .raya{margin-left:auto;margin-right:auto}
+
+
+.marca{display:flex;justify-content:center;padding:22px 22px 0}
+.marca img{width:118px;height:auto}
+
+
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:60px;padding:14px 22px;border-radius:14px;
+ background:var(--tinta);color:var(--papel);font:600 18px/1.3 var(--sans);text-decoration:none;text-align:center;border:0;cursor:pointer;
+ transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 10px 26px -14px rgba(6,8,40,.7)}
+.btn:active{transform:scale(.985)}
+.btn .pr{margin-left:.45em;font-weight:500;opacity:.92}
+.btn.claro{background:transparent;color:var(--tinta);border:1px solid var(--tinta);box-shadow:none}
+.bajo{display:block;text-align:center;font-size:16px;color:var(--gris);margin-top:10px}
+.enlace{display:block;text-align:center;font-size:17px;color:var(--gris);margin-top:18px;text-decoration:underline;text-underline-offset:4px}
+
+
+.caja{background:var(--blanco);border-radius:18px;padding:26px 22px}
+.caja.oro{border:1px solid var(--oro)}
+.cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}
+.cifras div{background:var(--blanco);border-radius:14px;padding:16px 16px 14px}
+.cifras b{display:block;font:500 36px/1 var(--serif);color:var(--oro-t);margin-bottom:6px}
+.cifras span{font-size:16px;line-height:1.35;display:block}
+
+
+.lista{list-style:none;margin:6px 0 4px}
+.lista li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--linea)}
+.lista li:first-child{border-top:0}
+.disco{flex:none;width:46px;height:46px;border-radius:50%;background:var(--blanco);border:1px solid var(--oro);display:flex;align-items:center;justify-content:center}
+.disco svg{width:24px;height:24px}
+.lista p{margin:0;color:var(--gris);font-size:17px;line-height:1.5}
+
+
+.checks{list-style:none;margin:8px 0 6px}
+.checks li{position:relative;padding:8px 0 8px 34px}
+.checks li::before{content:'';position:absolute;left:2px;top:15px;width:18px;height:10px;border-left:2px solid var(--oro);border-bottom:2px solid var(--oro);transform:rotate(-45deg)}
+
+
+.escena{font:italic 400 21px/1.55 var(--serif)}
+.escena p{margin-bottom:14px}
+.firma{font:italic 400 24px var(--serif);margin-top:8px}
+
+
+.etapa{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--linea)}
+.etapa:first-of-type{border-top:0}
+.etapa .n{font:500 40px/1 var(--serif);color:var(--oro-t);width:30px;flex:none}
+.etapa .q{font:italic 400 20px/1.35 var(--serif);margin:4px 0 6px}
+.etapa .sale{font:600 16px/1.4 var(--sans);letter-spacing:.06em;color:var(--oro-t)}
+
+
+.ritmos{display:grid;gap:12px;margin-top:8px}
+.ritmo{background:var(--blanco);border-radius:16px;padding:20px}
+.ritmo .dias{font:500 46px/1 var(--serif);color:var(--tinta)}
+.ritmo .dias small{font:600 16px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--oro-t);margin-left:8px}
+.puntos{display:grid;grid-template-columns:repeat(7,14px);gap:7px 9px;margin:16px 0 14px}
+.puntos i{width:12px;height:12px;border-radius:50%;border:1px solid var(--tinta)}
+.puntos.doble i{width:14px;height:14px;background:var(--tinta)}
+
+
+.mock{margin:26px auto 6px}
+.mock.tapa{max-width:330px}
+.mock.tablet{max-width:300px}
+.pie{font-size:16px;color:var(--gris);text-align:center;margin-top:6px}
+
+
+.dec{display:grid;grid-template-columns:1fr;gap:4px;margin-top:10px}
+.dec div{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--linea)}
+.dec div:first-child{border-top:0}
+.dec h3{margin:0;font-size:18px}
+.dec p{margin:0;font-size:16px;color:var(--gris);line-height:1.4}
+
+
+.videos{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin:0 -22px;padding-left:22px;padding-right:22px}
+.video{scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;background:var(--tinta);aspect-ratio:9/16}
+.video video{width:100%;height:100%;object-fit:cover;display:block}
+.video button{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:14px;border:0;cursor:pointer;
+ background:transparent;color:var(--papel);font:600 16px var(--sans);text-align:left}
+.video button span{display:inline-flex;align-items:center;gap:10px;background:rgba(6,8,40,.72);padding:8px 14px 8px 8px;border-radius:30px}
+.video button svg{width:40px;height:40px}
+.video.sonando button{display:none}
+
+
+.oferta .precio{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:18px 0 6px;padding-top:16px;border-top:1px solid var(--linea)}
+.oferta .precio b{font:500 46px/1 var(--serif)}
+.oferta .precio>span{font-size:16px;color:var(--gris)}
+.suma{display:flex;gap:14px;align-items:flex-start;margin:18px 0 20px;padding:18px;border:1px dashed var(--oro);border-radius:14px;background:#FFFDF8;cursor:pointer}
+.suma input{flex:none;width:26px;height:26px;margin-top:3px;accent-color:var(--tinta)}
+.suma h3{margin-bottom:4px}
+.suma p{margin:0;font-size:16px;line-height:1.5;color:var(--gris)}
+.aviso{display:none;margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--lino);font-size:16px}
+.aviso.ver{display:block}
+
+
+details{border-top:1px solid var(--linea);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--linea)}
+summary{list-style:none;cursor:pointer;font:600 18px/1.4 var(--sans);display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font:400 26px/1 var(--serif);color:var(--oro-t)}
+details[open] summary::after{content:'–'}
+details p{margin:12px 0 0;color:var(--gris)}
+
+
+.pasos{counter-reset:p;list-style:none;margin-top:6px}
+.pasos li{counter-increment:p;position:relative;padding:14px 0 14px 46px;border-top:1px solid var(--linea)}
+.pasos li:first-child{border-top:0}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:10px;font:500 32px/1 var(--serif);color:var(--oro-t)}
+.pasos p{margin:2px 0 0;color:var(--gris);font-size:17px}
+
+
+
+#cal iframe{width:100%;border:0;min-height:760px;border-radius:14px;background:var(--blanco)}
+
+
+.fija{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+ background:rgba(246,244,238,.97);border-top:1px solid var(--linea);transform:translateY(110%);opacity:0;visibility:hidden;transition:transform .25s ease,opacity .25s ease,visibility 0s .25s}
+.fija.ver{transform:none;opacity:1;visibility:visible;transition:transform .25s ease,opacity .25s ease}
+.fija .t{flex:1;font:600 16px/1.3 var(--sans)}
+.fija .t small{display:block;font:400 16px var(--sans);color:var(--gris)}
+.fija .btn{width:auto;min-height:52px;padding:10px 20px;font-size:17px}
+
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+footer{padding:36px 22px 120px;text-align:center;font-size:16px;color:var(--gris)}
+footer img{width:96px;margin:0 auto 12px}
+
+@media (min-width:720px){
+ h1{font-size:50px} h2{font-size:38px}
+ .banda>.in{padding:80px 28px}
+ .cifras{grid-template-columns:repeat(3,1fr)}
+ .ritmos{grid-template-columns:1fr 1fr}
+ .dec{grid-template-columns:1fr 1fr;column-gap:28px}
+ .dec div:nth-child(2){border-top:0}
+ .videos{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:4px 0 0}
+ .fija{display:none}
+}
+.dia-n{font:500 64px/1 var(--serif);color:var(--tinta)}
+.dia-n small{font:600 16px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--oro-t);margin-left:10px}
+.tarea{display:flex;gap:16px;align-items:flex-start;margin:22px 0 6px}
+.tarea p{font:400 21px/1.5 var(--sans);margin:0}
+.pag{display:inline-block;margin-top:14px;padding:8px 16px;border:1px solid var(--oro);border-radius:30px;font:600 16px var(--sans)}
+.camino{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;max-width:300px;margin:18px 0 4px}
+.camino i{aspect-ratio:1;border-radius:50%;border:1px solid var(--tinta)}
+.camino i.ok{background:var(--suave);border-color:var(--suave)}
+.camino i.hoy{background:var(--tinta);box-shadow:0 0 0 3px var(--papel),0 0 0 4px var(--oro)}
+</style>
+</head>
+<body>
+
+<div class="marca"><img src="https://assets.cdn.filesafe.space/ZvEe1VX5B2Fwixi5G6k9/media/67b0923e11feb97b00d0b754.png" alt="KENSHO Consulting" width="118" height="40"></div>
+
+<section class="banda"><div class="in" style="padding-top:30px">
+  <span class="lab" id="etapa">Tu ejercicio de hoy</span>
+  <div class="dia-n"><span id="n">1</span><small id="sp">de 42</small></div>
+  <div class="tarea"><span class="disco" id="ico"></span><div><span class="lab tinta" id="tipo" style="margin-bottom:4px"></span><p id="texto"></p></div></div>
+  <span class="pag" id="pag"></span>
+  <div class="caja" id="sprint" hidden style="margin-top:22px"><span class="lab" style="margin-bottom:6px">Si vas en Sprint</span><p style="margin:0" id="sprint-t"></p></div>
+</div></section>
+
+<section class="banda lino"><div class="in">
+  <span class="lab" id="sem"></span>
+  <h2 id="titulo"></h2>
+  <span class="lab tinta" style="margin:18px 0 6px">La pregunta que no puedes ignorar</span>
+  <p class="it" style="font-size:22px;line-height:1.4" id="pregunta"></p>
+  <div class="camino" id="camino"></div>
+  <p class="chico gris" id="avance" style="margin-top:8px"></p>
+</div></section>
+
+<section class="banda"><div class="in">
+  <div class="escena"><p>Hoy no necesitas tener la respuesta. Necesitas hacer el ejercicio de hoy.</p></div>
+  <div class="firma">Roberto Páez</div>
+</div></section>
+
+<footer><img src="https://assets.cdn.filesafe.space/ZvEe1VX5B2Fwixi5G6k9/media/67b0923e11feb97b00d0b754.png" alt="KENSHO Consulting" width="96" height="33">Roberto Páez · KENSHO Consulting · Quito</footer>
+
+<script>/* Lo común de las páginas de «La decisión» (Roberto Páez · ropaez.com).
+   KX.pago: los links de pago de El Consultorio (PayPal). Mientras estén vacíos, el botón avisa y no lleva a ningún lado.
+   KX.calendario: el id del calendario «La decisión · sesión 1-1» (se usa en /la-decision-gracias).
+   KX.capitulo: el PDF del capítulo 1 sin costo (se usa en /la-decision-capitulo-1). */
+var KX = {
+  pixel: '862806975907599',
+  pago: { libro: '', libroMails: '', sesion: '' },
+  calendario: 'Pbmndm4WLZsadIzbIj2j',
+  capitulo: 'https://raw.githubusercontent.com/learners417/landings/main/imgs/roberto/la-decision-capitulo-1.pdf',
+  rutas: { landing: '/la-decision', sesion: '/la-decision-sesion', gracias: '/la-decision-gracias' }
+};
+(function () {
+  var d = document, w = window;
+  var $ = function (s, r) { return (r || d).querySelector(s); };
+  var $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+  var vista = (w.__tcdCarga && w.__tcdCarga.rama && w.__tcdCarga.rama !== 'main');   /* ?rama=…: vista previa, sin píxel */
+  var q = new URLSearchParams(location.search);
+
+  /* ── el píxel de Roberto: si El Consultorio ya lo cargó, se usa ese; si no, se carga aquí ── */
+  function pixel() {
+    if (vista) return null;
+    if (!w.fbq) {
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+        s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(w, d, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      w.fbq('init', KX.pixel); w.fbq('track', 'PageView');
+    }
+    return w.fbq;
+  }
+  function evento(nombre, datos, propio) {
+    var f = pixel(); if (!f) return;
+    try { f(propio ? 'trackSingleCustom' : 'trackSingle', KX.pixel, nombre, datos || {}); } catch (e) {}
+  }
+  /* una compra se cuenta una sola vez por navegador */
+  function compra(clave, valor, nombre) {
+    try { if (localStorage.getItem('kx_' + clave)) return; localStorage.setItem('kx_' + clave, '1'); } catch (e) {}
+    evento('Purchase', { value: valor, currency: 'USD', content_name: nombre });
+  }
+  w.KXevento = evento; w.KXcompra = compra;
+
+  /* ── aparecer al bajar ── */
+  var quieto = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in w && !quieto) {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 });
+    $$('.rv').forEach(function (el) { io.observe(el); });
+  } else $$('.rv').forEach(function (el) { el.classList.add('in'); });
+
+  /* ── la compra del libro, con o sin los correos de Roberto ── */
+  var suma = $('#suma'), total = $('[data-total]');
+  function conMails() { return !!(suma && suma.checked); }
+  function pintar() { if (total) total.textContent = conMails() ? '44' : '27'; }
+  if (suma) { suma.addEventListener('change', function () { pintar(); evento('SumaCorreos', { activo: conMails() }, true); }); pintar(); }
+  $$('[data-comprar]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var tipo = a.getAttribute('data-comprar');
+      if (tipo === 'ir') return;                         /* el botón de arriba baja hasta la oferta */
+      var url = tipo === 'sesion' ? KX.pago.sesion : (conMails() ? KX.pago.libroMails : KX.pago.libro);
+      var valor = tipo === 'sesion' ? 97 : (conMails() ? 44 : 27);
+      evento('InitiateCheckout', { value: valor, currency: 'USD', content_name: tipo === 'sesion' ? 'Sesión La decisión' : 'La decisión' });
+      if (!url) { e.preventDefault(); var av = $('.aviso', a.closest('section') || d); if (av) av.classList.add('ver'); return; }
+      a.href = url;
+    });
+  });
+
+  /* ── la barra fija del celular: aparece después de la portada y se esconde sobre la oferta ── */
+  var fija = $('.fija'), portada = $('#portada'), oferta = $('#comprar');
+  if (fija && portada && 'IntersectionObserver' in w) {
+    var vis = { portada: true, oferta: false };
+    var mira = function () { fija.classList.toggle('ver', !vis.portada && !vis.oferta); };
+    new IntersectionObserver(function (en) { vis.portada = en[0].isIntersecting; mira(); }).observe(portada);
+    if (oferta) new IntersectionObserver(function (en) { vis.oferta = en[0].isIntersecting; mira(); }).observe(oferta);
+  }
+
+  /* ── los videos: se cargan recién al tocarlos ── */
+  $$('.video').forEach(function (c) {
+    var v = $('video', c), b = $('button', c);
+    if (!v || !b) return;
+    b.addEventListener('click', function () {
+      $$('.video video').forEach(function (o) { if (o !== v) o.pause(); });
+      c.classList.add('sonando'); v.controls = true; v.preload = 'auto';
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      evento('VideoTestimonio', { video: c.getAttribute('data-video') || '' }, true);
+    });
+  });
+
+  /* ── lo que se compró viaja de una página a la otra (los links de pago no llevan datos) ── */
+  if (q.get('m') === '1' || q.get('m') === '0') { try { localStorage.setItem('kx_mails', q.get('m')); } catch (e) {} }
+  w.KXmails = function () { try { return localStorage.getItem('kx_mails') === '1'; } catch (e) { return false; } };
+
+  /* ── la agenda de El Consultorio ── */
+  var caja = d.getElementById('cal');
+  if (caja) {
+    var id = KX.calendario;
+    var src = /^[a-z0-9]+(-[a-z0-9]+)*$/.test(id) ? 'https://api.leadconnectorhq.com/widget/bookings/' + id
+      : (/^[A-Za-z0-9]{12,}$/.test(id) ? 'https://api.leadconnectorhq.com/widget/booking/' + id : '');
+    if (!src) caja.innerHTML = '<p class="aviso ver">La agenda se abre en unas horas. Te escribimos a tu correo para que elijas tu horario.</p>';
+    else {
+      var f = d.createElement('iframe');
+      f.src = src; f.id = id + '_kx'; f.title = 'Agenda tu sesión con Roberto'; f.setAttribute('scrolling', 'no');
+      caja.appendChild(f);
+      var s = d.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true; d.body.appendChild(s);
+      var avisado = false;
+      w.addEventListener('message', function (e) {
+        if (typeof e.origin !== 'string' || e.origin.indexOf('leadconnectorhq') < 0) return;
+        var x = e.data || {};
+        if (x && typeof x === 'object') { var h = x.height || x.iframeHeight || (x.data && x.data.height); if (typeof h === 'number' && h > 300) f.style.minHeight = h + 'px'; }
+        var t = String((typeof x === 'string') ? x : (x.type || x.event || '')).toLowerCase();
+        if (!avisado && (t.indexOf('book') > -1 || t.indexOf('appointment') > -1)) { avisado = true; evento('Schedule', { content_name: 'Sesión La decisión' }); }
+      }, false);
+    }
+  }
+
+  /* ── el capítulo 1 ── */
+  $$('[data-capitulo]').forEach(function (a) {
+    if (KX.capitulo) a.href = KX.capitulo;
+    a.addEventListener('click', function (e) {
+      if (!KX.capitulo) { e.preventDefault(); var av = $('.aviso', a.closest('section') || d); if (av) av.classList.add('ver'); return; }
+      evento('Lead', { content_name: 'Capítulo 1 · La decisión' });
+    });
+  });
+
+})();</script>
+<script>
+(function () {
+  var DIAS = [{"k": "observa", "tipo": "Observa", "texto": "Lee «Lo que te trajo hasta aquí» y subraya la frase que más te nombra.", "pag": 22, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tu línea de origen: los hitos que te trajeron hasta aquí.", "pag": 26, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "decide", "tipo": "Decide", "texto": "Marca lo que te trajo hasta aquí y arma tu mochila: lo que llevas y lo que dejas.", "pag": 27, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "cuidate", "tipo": "Cuídate", "texto": "Al despertar, antes del celular, quédate 10 minutos en silencio.", "pag": 29, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "carta", "tipo": "Carta", "texto": "Carta a lo que te trajo hasta aquí: gracias, y hasta aquí.", "pag": 30, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "juega", "tipo": "Juega", "texto": "Mito o verdad: ocho ideas sobre los ascensos y las decisiones.", "pag": 31, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "cierra", "tipo": "Cierra la semana", "texto": "Responde tu pregunta, escribe tu regla y mide tu batería.", "pag": 32, "semana": 1, "titulo": "Lo que te trajo hasta aquí", "pregunta": "¿Qué tengo que dejar de hacer para que este nivel funcione?"}, {"k": "observa", "tipo": "Observa", "texto": "Lee «La historia que te cuentas».", "pag": 38, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Del relato de dolor al relato de valor: tres creencias tuyas.", "pag": 42, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "decide", "tipo": "Decide", "texto": "Tres preguntas a tu creencia más fuerte.", "pag": 43, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tu historia contada desde el valor. Léela en voz alta.", "pag": 44, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "conversa", "tipo": "Conversa", "texto": "Pregunta a alguien de confianza: «¿qué repito cuando tengo que decidir?».", "pag": 45, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "juega", "tipo": "Juega", "texto": "¿Cuál etapa es? Nueve preguntas para ordenar.", "pag": 46, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "cierra", "tipo": "Cierra la semana", "texto": "Responde tu pregunta, tu regla, tu batería y el cierre de la etapa Origen.", "pag": 47, "semana": 2, "titulo": "La historia que te cuentas", "pregunta": "¿Qué historia sobre mí estoy repitiendo sin darme cuenta?"}, {"k": "observa", "tipo": "Observa", "texto": "Lee «Tu pregunta real».", "pag": 56, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "escribe", "tipo": "Escribe", "texto": "La prueba del año: tus decisiones de la última semana.", "pag": 60, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tu pregunta real, en tres versiones hasta que quede precisa.", "pag": 61, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "decide", "tipo": "Decide", "texto": "La opción que desaparece: abre tu mesa de opciones.", "pag": 62, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "prueba", "tipo": "Prueba", "texto": "En una reunión de hoy, haz una pregunta antes de dar tu respuesta.", "pag": 63, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "cuidate", "tipo": "Cuídate", "texto": "Bloquea 30 minutos para pensar, sin teléfono. Respétalos como una reunión.", "pag": 63, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "cierra", "tipo": "Cierra la semana", "texto": "Responde tu pregunta, tu regla, tu batería y tu termómetro de mitad de camino.", "pag": 64, "semana": 3, "titulo": "Tu pregunta real", "pregunta": "¿Qué estoy resolviendo que no me toca resolver?"}, {"k": "observa", "tipo": "Observa", "texto": "Lee «Lo que sabes y lo que sientes».", "pag": 70, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tus dos listas: lo que sabes hacer y lo que sientes sobre ti.", "pag": 74, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tus opciones sobre la mesa, con su evidencia.", "pag": 75, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "decide", "tipo": "Decide", "texto": "10/10/10: tu pregunta real en tres tiempos.", "pag": 76, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "carta", "tipo": "Carta", "texto": "Las dos cartas, desde dentro de un año: la del sí y la del no.", "pag": 77, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "juega", "tipo": "Juega", "texto": "El bingo de la semana, con tus palabras ancla.", "pag": 79, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "cierra", "tipo": "Cierra la semana", "texto": "Responde tu pregunta, tu regla, tu batería y el cierre de la etapa Claridad.", "pag": 80, "semana": 4, "titulo": "Lo que sabes y lo que sientes", "pregunta": "¿Qué decidiría hoy si confiara en mi lista de evidencia?"}, {"k": "observa", "tipo": "Observa", "texto": "Lee «Esto se decide acompañado».", "pag": 88, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "escribe", "tipo": "Escribe", "texto": "El mapa de tu decisión: a quién toca y qué necesita saber.", "pag": 92, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "decide", "tipo": "Decide", "texto": "Lo que le dirías a un amigo: tu caso, visto desde afuera.", "pag": 93, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "carta", "tipo": "Carta", "texto": "Carta a quien más toca tu decisión.", "pag": 94, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Prepara tu conversación más difícil.", "pag": 95, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "conversa", "tipo": "Conversa", "texto": "Ten esa conversación. Si hoy no se puede, ponle fecha esta semana.", "pag": 96, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "cierra", "tipo": "Cierra la semana", "texto": "Responde tu pregunta, escribe tu regla y mide tu batería.", "pag": 97, "semana": 5, "titulo": "Esto se decide acompañado", "pregunta": "¿A quién le estoy guardando esta decisión, y por qué?"}, {"k": "observa", "tipo": "Observa", "texto": "Lee «Tu decisión, por escrito».", "pag": 102, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}, {"k": "decide", "tipo": "Decide", "texto": "Prueba tu decisión: puerta de una vía o de dos, y tu pre-mortem.", "pag": 106, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tu decisión en una línea.", "pag": 108, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}, {"k": "escribe", "tipo": "Escribe", "texto": "Tus 3 acuerdos y tus primeros 30 días.", "pag": 109, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}, {"k": "carta", "tipo": "Carta", "texto": "Tu carta de decisión. Fírmala hoy.", "pag": 110, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}, {"k": "conversa", "tipo": "Conversa", "texto": "Cuéntale tu decisión a la primera persona que tiene que saberla.", "pag": 111, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}, {"k": "cierra", "tipo": "Cierra la semana", "texto": "Tu termómetro final, tu transformación y tu tapa.", "pag": 112, "semana": 6, "titulo": "Tu decisión, por escrito", "pregunta": "¿Qué hago el lunes a primera hora?"}];
+  var ICO = {"observa": "<path d=\"M2 12s3.8-6.6 10-6.6S22 12 22 12s-3.8 6.6-10 6.6S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3.3\"/><circle cx=\"12\" cy=\"12\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\"/>", "conversa": "<path d=\"M4 4.6h10.4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9.4L6 16.6v-3H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z\"/><path d=\"M19.4 9.4h.6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1.4v2.8l-3.1-2.8H12a2 2 0 0 1-1.9-1.4\"/>", "decide": "<path d=\"M12 21.5V2.8\"/><path d=\"M12 4.6h6.6l2.2 2.3-2.2 2.3H12\"/><path d=\"M12 11.6H5.4l-2.2 2.3 2.2 2.3H12\"/><path d=\"M8.6 21.5h6.8\"/>", "juega": "<path d=\"M6 21.4h12\"/><path d=\"M7.4 21.4v-1.8h9.2v1.8\"/><path d=\"M8.4 19.6c0-3.4 2.6-4.6 3.8-6.9-1.6.6-3.1.6-4.4 1.5L6 12.4l3.2-4.6c.6-2 2.1-3.4 4-3.9l.8-1.4.9 1.7c2.6 1 4.2 3.6 4.2 7.6v7.8\"/><circle cx=\"11.7\" cy=\"7.9\" r=\".8\" fill=\"currentColor\" stroke=\"none\"/>", "cierra": "<circle cx=\"12\" cy=\"9.6\" r=\"6.6\"/><circle cx=\"12\" cy=\"9.6\" r=\"4.4\" stroke-width=\".9\"/><path d=\"M8.6 15.2L7 21.6l5-2.3 5 2.3-1.6-6.4\"/>", "prueba": "<path d=\"M9.4 2.8h5.2M10 2.8v6.4L4.8 18.4a1.8 1.8 0 0 0 1.6 2.7h11.2a1.8 1.8 0 0 0 1.6-2.7L14 9.2V2.8\"/><path d=\"M7.2 15h9.6\"/><circle cx=\"10.5\" cy=\"17.6\" r=\".8\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"13.6\" cy=\"16.9\" r=\".6\" fill=\"currentColor\" stroke=\"none\"/>", "cuidate": "<path d=\"M4 10.4h12.6v4.2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z\"/><path d=\"M16.6 11.8h1.6a2.3 2.3 0 0 1 0 4.6h-2\"/><path d=\"M8.2 3.2c-1 1.3 1 2.1 0 3.8M12.2 3.2c-1 1.3 1 2.1 0 3.8\"/><path d=\"M3 21.6h15\"/>", "carta": "<rect x=\"2.8\" y=\"5.6\" width=\"18.4\" height=\"13.4\" rx=\"1.6\"/><path d=\"M3.4 6.6l8.6 6.8 8.6-6.8\"/><circle cx=\"12\" cy=\"14.6\" r=\"2.3\" fill=\"currentColor\" stroke=\"none\"/>", "escribe": "<path d=\"M12 21.2L7 12.4 9 3.6h6l2 8.8z\"/><path d=\"M12 21.2v-8.1\"/><circle cx=\"12\" cy=\"11.6\" r=\"1.4\"/><path d=\"M8.6 6.4h6.8\"/>"};
+  var ETAPAS = ['Origen', 'Origen', 'Claridad', 'Claridad', 'Dirección', 'Dirección'];
+  var q = new URLSearchParams(location.search);
+  var n = parseInt(q.get('d'), 10); if (!(n >= 1 && n <= 42)) n = 1;
+  var x = DIAS[n - 1], $ = function (i) { return document.getElementById(i); };
+  $('n').textContent = n;
+  $('sp').textContent = 'de 42';
+  $('etapa').textContent = 'Etapa ' + ETAPAS[x.semana - 1];
+  $('ico').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#060828" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICO[x.k] || '') + '</svg>';
+  $('tipo').textContent = x.tipo;
+  $('texto').textContent = x.texto;
+  $('pag').textContent = 'Página ' + x.pag + ' de tu libro';
+  if (n % 2 === 1 && n < 42) { $('sprint').hidden = false; $('sprint-t').textContent = 'Hoy también haces el día ' + (n + 1) + ', en la página ' + DIAS[n].pag + ': ' + DIAS[n].texto; }
+  $('sem').textContent = 'Semana ' + x.semana + ' de 6';
+  $('titulo').textContent = x.titulo;
+  $('pregunta').textContent = x.pregunta;
+  var c = '';
+  for (var i = (x.semana - 1) * 7 + 1; i <= x.semana * 7; i++) c += '<i class="' + (i < n ? 'ok' : (i === n ? 'hoy' : '')) + '"></i>';
+  $('camino').innerHTML = c;
+  $('avance').textContent = (n === 42) ? 'Hoy cierras el recorrido. Mide tu termómetro final y completa tu tapa.' : 'Te faltan ' + (42 - n) + ' días. Mañana sigues con el día ' + (n + 1) + '.';
+  document.title = 'Día ' + n + ' · La decisión';
+  KXevento('DiaLeido', { dia: n }, true);
+})();
+</script>
+</body>
+</html>

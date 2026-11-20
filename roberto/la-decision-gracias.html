@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu libro está en tu correo · La decisión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/*KX_CSS*/</style>
+</head>
+<body>
+
+<div class="marca"><img src="{{LOGO}}" alt="KENSHO Consulting" width="118" height="40"></div>
+
+<section class="banda"><div class="in centro" style="padding-top:30px;padding-bottom:34px">
+  <span class="lab">Compra confirmada</span>
+  <h1>Ya está. Tu libro está en tu correo.</h1>
+  <img class="mock tapa" src="{{IMG:tapa-3d.webp}}" alt="El libro La decisión" width="330" height="373" style="max-width:240px">
+</div></section>
+
+<section class="banda lino" id="sesion" hidden><div class="in">
+  <span class="lab">Tu sesión con Roberto</span>
+  <h2>Elige tu día y tu hora</h2>
+  <p>45 minutos en línea, uno a uno. Llega con tu compromiso, tu termómetro y la semana 1 hechos.</p>
+  <div id="cal"></div>
+</div></section>
+
+<section class="banda"><div class="in">
+  <span class="lab">Hoy es tu día 1</span>
+  <h2>Tres cosas para empezar hoy</h2>
+  <ol class="pasos">
+    <li><h3>Busca el correo de Roberto</h3><p>El asunto es «Tu libro La decisión». Si no lo ves en unos minutos, mira en promociones o en correo no deseado.</p></li>
+    <li><h3>Guarda el libro donde lo abras cada día</h3><p>En tu computadora para completarlo en la pantalla, o impreso junto a tu agenda.</p></li>
+    <li><h3>Haz tu día 1</h3><p>Tu compromiso, tu termómetro de entrada y el primer ejercicio. Unos 15 minutos.</p></li>
+  </ol>
+  <p class="caja" id="mails" hidden style="margin-top:18px">Mañana a primera hora te llega el primer correo de Roberto, con el ejercicio del día y su página.</p>
+</div></section>
+
+<section class="banda lino"><div class="in">
+  <div class="escena"><p>Hoy no necesitas tener la respuesta. Necesitas hacer el ejercicio de hoy.</p></div>
+  <p style="margin:0">Con mucho gusto te acompaño.</p>
+  <div class="firma">Roberto Páez</div>
+</div></section>
+
+<footer><img src="{{LOGO}}" alt="KENSHO Consulting" width="96" height="33">Roberto Páez · KENSHO Consulting · Quito</footer>
+
+<script>
+/* Quien pagó la sesión llega con ?s=1 (es la dirección de regreso del link de pago de la sesión): ve la agenda. */
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('s') === '1') document.getElementById('sesion').hidden = false;
+})();
+</script>
+<script>/*KX_JS*/</script>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('s') === '1') KXcompra('sesion', 97, 'Sesión La decisión');
+  if (KXmails()) document.getElementById('mails').hidden = false;
+})();
+</script>
+</body>
+</html>

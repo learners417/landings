@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu ejercicio de hoy · La decisión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/*KX_CSS*/
+.dia-n{font:500 64px/1 var(--serif);color:var(--tinta)}
+.dia-n small{font:600 16px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--oro-t);margin-left:10px}
+.tarea{display:flex;gap:16px;align-items:flex-start;margin:22px 0 6px}
+.tarea p{font:400 21px/1.5 var(--sans);margin:0}
+.pag{display:inline-block;margin-top:14px;padding:8px 16px;border:1px solid var(--oro);border-radius:30px;font:600 16px var(--sans)}
+.camino{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;max-width:300px;margin:18px 0 4px}
+.camino i{aspect-ratio:1;border-radius:50%;border:1px solid var(--tinta)}
+.camino i.ok{background:var(--suave);border-color:var(--suave)}
+.camino i.hoy{background:var(--tinta);box-shadow:0 0 0 3px var(--papel),0 0 0 4px var(--oro)}
+</style>
+</head>
+<body>
+
+<div class="marca"><img src="{{LOGO}}" alt="KENSHO Consulting" width="118" height="40"></div>
+
+<section class="banda"><div class="in" style="padding-top:30px">
+  <span class="lab" id="etapa">Tu ejercicio de hoy</span>
+  <div class="dia-n"><span id="n">1</span><small id="sp">de 42</small></div>
+  <div class="tarea"><span class="disco" id="ico"></span><div><span class="lab tinta" id="tipo" style="margin-bottom:4px"></span><p id="texto"></p></div></div>
+  <span class="pag" id="pag"></span>
+  <div class="caja" id="sprint" hidden style="margin-top:22px"><span class="lab" style="margin-bottom:6px">Si vas en Sprint</span><p style="margin:0" id="sprint-t"></p></div>
+</div></section>
+
+<section class="banda lino"><div class="in">
+  <span class="lab" id="sem"></span>
+  <h2 id="titulo"></h2>
+  <span class="lab tinta" style="margin:18px 0 6px">La pregunta que no puedes ignorar</span>
+  <p class="it" style="font-size:22px;line-height:1.4" id="pregunta"></p>
+  <div class="camino" id="camino"></div>
+  <p class="chico gris" id="avance" style="margin-top:8px"></p>
+</div></section>
+
+<section class="banda"><div class="in">
+  <div class="escena"><p>Hoy no necesitas tener la respuesta. Necesitas hacer el ejercicio de hoy.</p></div>
+  <div class="firma">Roberto Páez</div>
+</div></section>
+
+<footer><img src="{{LOGO}}" alt="KENSHO Consulting" width="96" height="33">Roberto Páez · KENSHO Consulting · Quito</footer>
+
+<script>/*KX_JS*/</script>
+<script>
+(function () {
+  var DIAS = {{DIAS_JSON}};
+  var ICO = {{ICONOS_JSON}};
+  var ETAPAS = ['Origen', 'Origen', 'Claridad', 'Claridad', 'Dirección', 'Dirección'];
+  var q = new URLSearchParams(location.search);
+  var n = parseInt(q.get('d'), 10); if (!(n >= 1 && n <= 42)) n = 1;
+  var x = DIAS[n - 1], $ = function (i) { return document.getElementById(i); };
+  $('n').textContent = n;
+  $('sp').textContent = 'de 42';
+  $('etapa').textContent = 'Etapa ' + ETAPAS[x.semana - 1];
+  $('ico').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#060828" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICO[x.k] || '') + '</svg>';
+  $('tipo').textContent = x.tipo;
+  $('texto').textContent = x.texto;
+  $('pag').textContent = 'Página ' + x.pag + ' de tu libro';
+  if (n % 2 === 1 && n < 42) { $('sprint').hidden = false; $('sprint-t').textContent = 'Hoy también haces el día ' + (n + 1) + ', en la página ' + DIAS[n].pag + ': ' + DIAS[n].texto; }
+  $('sem').textContent = 'Semana ' + x.semana + ' de 6';
+  $('titulo').textContent = x.titulo;
+  $('pregunta').textContent = x.pregunta;
+  var c = '';
+  for (var i = (x.semana - 1) * 7 + 1; i <= x.semana * 7; i++) c += '<i class="' + (i < n ? 'ok' : (i === n ? 'hoy' : '')) + '"></i>';
+  $('camino').innerHTML = c;
+  $('avance').textContent = (n === 42) ? 'Hoy cierras el recorrido. Mide tu termómetro final y completa tu tapa.' : 'Te faltan ' + (42 - n) + ' días. Mañana sigues con el día ' + (n + 1) + '.';
+  document.title = 'Día ' + n + ' · La decisión';
+  KXevento('DiaLeido', { dia: n }, true);
+})();
+</script>
+</body>
+</html>

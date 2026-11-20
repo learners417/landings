@@ -176,3 +176,19 @@ Las tres tienen tres constantes arriba del `<script>`: el link del video, el end
 La lectura personalizada de la radiografía llama a `ani-martinez.vercel.app/api/lectura` (la key de Anthropic
 vive ahí, nunca en la página). Mientras el endpoint no exista, la radiografía usa sus textos escritos a mano
 y no se nota.
+
+## La decisión · el libro de Roberto Páez (20 nov 2026)
+Cinco páginas con la piel «Kensho» (`roberto/roberto.css` + `roberto/roberto.js`). Se editan en `roberto/`
+y `python3 roberto/build.py` las arma en `fijas/` y `site/` (logo, imágenes de `imgs/roberto/`, iconos del
+libro y los 42 días de `roberto/dias.json`, que sale del armado del libro con su página).
+En la subcuenta de Roberto, cada paso lleva la línea con `window.TCD_PAGINA='roberto-<ruta>'`.
+
+- `/la-decision` · la venta del libro (US$27, +US$17 con los correos de cada mañana).
+- `/la-decision-sesion` · la sesión de 45 min con Roberto (US$97), justo después de pagar. `noindex`.
+- `/la-decision-gracias` · confirmación; con `?s=1` muestra el calendario de la sesión. `noindex`.
+- `/la-decision-capitulo-1` · el capítulo 1 sin costo (palabra clave LIBRO). El PDF está en `imgs/roberto/`.
+- `/la-decision-hoy?d=N` · el ejercicio del día N con su página. Los correos diarios llevan aquí. `noindex`.
+
+Los links de pago, el calendario y el PDF del capítulo van en `KX` arriba de `roberto/roberto.js`.
+El libro completo NO va en este repo: su link vive solo en El Consultorio, en el valor personalizado
+«La decisión · link del libro».

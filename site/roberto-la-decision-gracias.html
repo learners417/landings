@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu libro está en tu correo · La decisión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+ --tinta:#060828; --papel:#F6F4EE; --lino:#EFEADF; --blanco:#FFFFFF; --oro:#C4933F; --oro-t:#A47A30;
+ --gris:#555870; --suave:#8D8FA0; --linea:#E2DACB;
+ --serif:'Playfair Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--papel)}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+
+.banda{width:100%;display:flex;justify-content:center}
+.banda>.in{width:100%;max-width:620px;padding:56px 22px}
+.banda.lino{background:var(--lino)}
+.banda.ancha>.in{max-width:980px}
+
+.lab{display:block;font:600 16px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--oro-t);margin-bottom:12px}
+.lab.tinta{color:var(--tinta)}
+h1{font:600 38px/1.12 var(--serif);letter-spacing:-.01em;margin-bottom:18px}
+h2{font:600 31px/1.18 var(--serif);margin-bottom:16px}
+h3{font:600 19px/1.35 var(--sans);margin-bottom:4px}
+p{margin-bottom:16px}
+.lead{font-size:19px;line-height:1.6}
+.it{font-family:var(--serif);font-style:italic}
+.gris{color:var(--gris)}
+.chico{font-size:16px;line-height:1.5}
+.raya{width:56px;border-top:1px solid var(--oro);margin:0 0 20px}
+.centro{text-align:center}
+.centro .raya{margin-left:auto;margin-right:auto}
+
+
+.marca{display:flex;justify-content:center;padding:22px 22px 0}
+.marca img{width:118px;height:auto}
+
+
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:60px;padding:14px 22px;border-radius:14px;
+ background:var(--tinta);color:var(--papel);font:600 18px/1.3 var(--sans);text-decoration:none;text-align:center;border:0;cursor:pointer;
+ transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 10px 26px -14px rgba(6,8,40,.7)}
+.btn:active{transform:scale(.985)}
+.btn .pr{margin-left:.45em;font-weight:500;opacity:.92}
+.btn.claro{background:transparent;color:var(--tinta);border:1px solid var(--tinta);box-shadow:none}
+.bajo{display:block;text-align:center;font-size:16px;color:var(--gris);margin-top:10px}
+.enlace{display:block;text-align:center;font-size:17px;color:var(--gris);margin-top:18px;text-decoration:underline;text-underline-offset:4px}
+
+
+.caja{background:var(--blanco);border-radius:18px;padding:26px 22px}
+.caja.oro{border:1px solid var(--oro)}
+.cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}
+.cifras div{background:var(--blanco);border-radius:14px;padding:16px 16px 14px}
+.cifras b{display:block;font:500 36px/1 var(--serif);color:var(--oro-t);margin-bottom:6px}
+.cifras span{font-size:16px;line-height:1.35;display:block}
+
+
+.lista{list-style:none;margin:6px 0 4px}
+.lista li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--linea)}
+.lista li:first-child{border-top:0}
+.disco{flex:none;width:46px;height:46px;border-radius:50%;background:var(--blanco);border:1px solid var(--oro);display:flex;align-items:center;justify-content:center}
+.disco svg{width:24px;height:24px}
+.lista p{margin:0;color:var(--gris);font-size:17px;line-height:1.5}
+
+
+.checks{list-style:none;margin:8px 0 6px}
+.checks li{position:relative;padding:8px 0 8px 34px}
+.checks li::before{content:'';position:absolute;left:2px;top:15px;width:18px;height:10px;border-left:2px solid var(--oro);border-bottom:2px solid var(--oro);transform:rotate(-45deg)}
+
+
+.escena{font:italic 400 21px/1.55 var(--serif)}
+.escena p{margin-bottom:14px}
+.firma{font:italic 400 24px var(--serif);margin-top:8px}
+
+
+.etapa{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--linea)}
+.etapa:first-of-type{border-top:0}
+.etapa .n{font:500 40px/1 var(--serif);color:var(--oro-t);width:30px;flex:none}
+.etapa .q{font:italic 400 20px/1.35 var(--serif);margin:4px 0 6px}
+.etapa .sale{font:600 16px/1.4 var(--sans);letter-spacing:.06em;color:var(--oro-t)}
+
+
+.ritmos{display:grid;gap:12px;margin-top:8px}
+.ritmo{background:var(--blanco);border-radius:16px;padding:20px}
+.ritmo .dias{font:500 46px/1 var(--serif);color:var(--tinta)}
+.ritmo .dias small{font:600 16px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--oro-t);margin-left:8px}
+.puntos{display:grid;grid-template-columns:repeat(7,14px);gap:7px 9px;margin:16px 0 14px}
+.puntos i{width:12px;height:12px;border-radius:50%;border:1px solid var(--tinta)}
+.puntos.doble i{width:14px;height:14px;background:var(--tinta)}
+
+
+.mock{margin:26px auto 6px}
+.mock.tapa{max-width:330px}
+.mock.tablet{max-width:300px}
+.pie{font-size:16px;color:var(--gris);text-align:center;margin-top:6px}
+
+
+.dec{display:grid;grid-template-columns:1fr;gap:4px;margin-top:10px}
+.dec div{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--linea)}
+.dec div:first-child{border-top:0}
+.dec h3{margin:0;font-size:18px}
+.dec p{margin:0;font-size:16px;color:var(--gris);line-height:1.4}
+
+
+.videos{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin:0 -22px;padding-left:22px;padding-right:22px}
+.video{scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;background:var(--tinta);aspect-ratio:9/16}
+.video video{width:100%;height:100%;object-fit:cover;display:block}
+.video button{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:14px;border:0;cursor:pointer;
+ background:transparent;color:var(--papel);font:600 16px var(--sans);text-align:left}
+.video button span{display:inline-flex;align-items:center;gap:10px;background:rgba(6,8,40,.72);padding:8px 14px 8px 8px;border-radius:30px}
+.video button svg{width:40px;height:40px}
+.video.sonando button{display:none}
+
+
+.oferta .precio{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:18px 0 6px;padding-top:16px;border-top:1px solid var(--linea)}
+.oferta .precio b{font:500 46px/1 var(--serif)}
+.oferta .precio>span{font-size:16px;color:var(--gris)}
+.suma{display:flex;gap:14px;align-items:flex-start;margin:18px 0 20px;padding:18px;border:1px dashed var(--oro);border-radius:14px;background:#FFFDF8;cursor:pointer}
+.suma input{flex:none;width:26px;height:26px;margin-top:3px;accent-color:var(--tinta)}
+.suma h3{margin-bottom:4px}
+.suma p{margin:0;font-size:16px;line-height:1.5;color:var(--gris)}
+.aviso{display:none;margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--lino);font-size:16px}
+.aviso.ver{display:block}
+
+
+details{border-top:1px solid var(--linea);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--linea)}
+summary{list-style:none;cursor:pointer;font:600 18px/1.4 var(--sans);display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font:400 26px/1 var(--serif);color:var(--oro-t)}
+details[open] summary::after{content:'–'}
+details p{margin:12px 0 0;color:var(--gris)}
+
+
+.pasos{counter-reset:p;list-style:none;margin-top:6px}
+.pasos li{counter-increment:p;position:relative;padding:14px 0 14px 46px;border-top:1px solid var(--linea)}
+.pasos li:first-child{border-top:0}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:10px;font:500 32px/1 var(--serif);color:var(--oro-t)}
+.pasos p{margin:2px 0 0;color:var(--gris);font-size:17px}
+
+
+
+#cal iframe{width:100%;border:0;min-height:760px;border-radius:14px;background:var(--blanco)}
+
+
+.fija{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+ background:rgba(246,244,238,.97);border-top:1px solid var(--linea);transform:translateY(110%);opacity:0;visibility:hidden;transition:transform .25s ease,opacity .25s ease,visibility 0s .25s}
+.fija.ver{transform:none;opacity:1;visibility:visible;transition:transform .25s ease,opacity .25s ease}
+.fija .t{flex:1;font:600 16px/1.3 var(--sans)}
+.fija .t small{display:block;font:400 16px var(--sans);color:var(--gris)}
+.fija .btn{width:auto;min-height:52px;padding:10px 20px;font-size:17px}
+
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+footer{padding:36px 22px 120px;text-align:center;font-size:16px;color:var(--gris)}
+footer img{width:96px;margin:0 auto 12px}
+
+@media (min-width:720px){
+ h1{font-size:50px} h2{font-size:38px}
+ .banda>.in{padding:80px 28px}
+ .cifras{grid-template-columns:repeat(3,1fr)}
+ .ritmos{grid-template-columns:1fr 1fr}
+ .dec{grid-template-columns:1fr 1fr;column-gap:28px}
+ .dec div:nth-child(2){border-top:0}
+ .videos{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:4px 0 0}
+ .fija{display:none}
+}</style>
+</head>
+<body>
+
+<div class="marca"><img src="https://assets.cdn.filesafe.space/ZvEe1VX5B2Fwixi5G6k9/media/67b0923e11feb97b00d0b754.png" alt="KENSHO Consulting" width="118" height="40"></div>
+
+<section class="banda"><div class="in centro" style="padding-top:30px;padding-bottom:34px">
+  <span class="lab">Compra confirmada</span>
+  <h1>Ya está. Tu libro está en tu correo.</h1>
+  <img class="mock tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/tapa-3d.webp" alt="El libro La decisión" width="330" height="373" style="max-width:240px">
+</div></section>
+
+<section class="banda lino" id="sesion" hidden><div class="in">
+  <span class="lab">Tu sesión con Roberto</span>
+  <h2>Elige tu día y tu hora</h2>
+  <p>45 minutos en línea, uno a uno. Llega con tu compromiso, tu termómetro y la semana 1 hechos.</p>
+  <div id="cal"></div>
+</div></section>
+
+<section class="banda"><div class="in">
+  <span class="lab">Hoy es tu día 1</span>
+  <h2>Tres cosas para empezar hoy</h2>
+  <ol class="pasos">
+    <li><h3>Busca el correo de Roberto</h3><p>El asunto es «Tu libro La decisión». Si no lo ves en unos minutos, mira en promociones o en correo no deseado.</p></li>
+    <li><h3>Guarda el libro donde lo abras cada día</h3><p>En tu computadora para completarlo en la pantalla, o impreso junto a tu agenda.</p></li>
+    <li><h3>Haz tu día 1</h3><p>Tu compromiso, tu termómetro de entrada y el primer ejercicio. Unos 15 minutos.</p></li>
+  </ol>
+  <p class="caja" id="mails" hidden style="margin-top:18px">Mañana a primera hora te llega el primer correo de Roberto, con el ejercicio del día y su página.</p>
+</div></section>
+
+<section class="banda lino"><div class="in">
+  <div class="escena"><p>Hoy no necesitas tener la respuesta. Necesitas hacer el ejercicio de hoy.</p></div>
+  <p style="margin:0">Con mucho gusto te acompaño.</p>
+  <div class="firma">Roberto Páez</div>
+</div></section>
+
+<footer><img src="https://assets.cdn.filesafe.space/ZvEe1VX5B2Fwixi5G6k9/media/67b0923e11feb97b00d0b754.png" alt="KENSHO Consulting" width="96" height="33">Roberto Páez · KENSHO Consulting · Quito</footer>
+
+<script>
+/* Quien pagó la sesión llega con ?s=1 (es la dirección de regreso del link de pago de la sesión): ve la agenda. */
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('s') === '1') document.getElementById('sesion').hidden = false;
+})();
+</script>
+<script>/* Lo común de las páginas de «La decisión» (Roberto Páez · ropaez.com).
+   KX.pago: los links de pago de El Consultorio (PayPal). Mientras estén vacíos, el botón avisa y no lleva a ningún lado.
+   KX.calendario: el id del calendario «La decisión · sesión 1-1» (se usa en /la-decision-gracias).
+   KX.capitulo: el PDF del capítulo 1 sin costo (se usa en /la-decision-capitulo-1). */
+var KX = {
+  pixel: '862806975907599',
+  pago: { libro: '', libroMails: '', sesion: '' },
+  calendario: 'Pbmndm4WLZsadIzbIj2j',
+  capitulo: 'https://raw.githubusercontent.com/learners417/landings/main/imgs/roberto/la-decision-capitulo-1.pdf',
+  rutas: { landing: '/la-decision', sesion: '/la-decision-sesion', gracias: '/la-decision-gracias' }
+};
+(function () {
+  var d = document, w = window;
+  var $ = function (s, r) { return (r || d).querySelector(s); };
+  var $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+  var vista = (w.__tcdCarga && w.__tcdCarga.rama && w.__tcdCarga.rama !== 'main');   /* ?rama=…: vista previa, sin píxel */
+  var q = new URLSearchParams(location.search);
+
+  /* ── el píxel de Roberto: si El Consultorio ya lo cargó, se usa ese; si no, se carga aquí ── */
+  function pixel() {
+    if (vista) return null;
+    if (!w.fbq) {
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+        s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(w, d, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      w.fbq('init', KX.pixel); w.fbq('track', 'PageView');
+    }
+    return w.fbq;
+  }
+  function evento(nombre, datos, propio) {
+    var f = pixel(); if (!f) return;
+    try { f(propio ? 'trackSingleCustom' : 'trackSingle', KX.pixel, nombre, datos || {}); } catch (e) {}
+  }
+  /* una compra se cuenta una sola vez por navegador */
+  function compra(clave, valor, nombre) {
+    try { if (localStorage.getItem('kx_' + clave)) return; localStorage.setItem('kx_' + clave, '1'); } catch (e) {}
+    evento('Purchase', { value: valor, currency: 'USD', content_name: nombre });
+  }
+  w.KXevento = evento; w.KXcompra = compra;
+
+  /* ── aparecer al bajar ── */
+  var quieto = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in w && !quieto) {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 });
+    $$('.rv').forEach(function (el) { io.observe(el); });
+  } else $$('.rv').forEach(function (el) { el.classList.add('in'); });
+
+  /* ── la compra del libro, con o sin los correos de Roberto ── */
+  var suma = $('#suma'), total = $('[data-total]');
+  function conMails() { return !!(suma && suma.checked); }
+  function pintar() { if (total) total.textContent = conMails() ? '44' : '27'; }
+  if (suma) { suma.addEventListener('change', function () { pintar(); evento('SumaCorreos', { activo: conMails() }, true); }); pintar(); }
+  $$('[data-comprar]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var tipo = a.getAttribute('data-comprar');
+      if (tipo === 'ir') return;                         /* el botón de arriba baja hasta la oferta */
+      var url = tipo === 'sesion' ? KX.pago.sesion : (conMails() ? KX.pago.libroMails : KX.pago.libro);
+      var valor = tipo === 'sesion' ? 97 : (conMails() ? 44 : 27);
+      evento('InitiateCheckout', { value: valor, currency: 'USD', content_name: tipo === 'sesion' ? 'Sesión La decisión' : 'La decisión' });
+      if (!url) { e.preventDefault(); var av = $('.aviso', a.closest('section') || d); if (av) av.classList.add('ver'); return; }
+      a.href = url;
+    });
+  });
+
+  /* ── la barra fija del celular: aparece después de la portada y se esconde sobre la oferta ── */
+  var fija = $('.fija'), portada = $('#portada'), oferta = $('#comprar');
+  if (fija && portada && 'IntersectionObserver' in w) {
+    var vis = { portada: true, oferta: false };
+    var mira = function () { fija.classList.toggle('ver', !vis.portada && !vis.oferta); };
+    new IntersectionObserver(function (en) { vis.portada = en[0].isIntersecting; mira(); }).observe(portada);
+    if (oferta) new IntersectionObserver(function (en) { vis.oferta = en[0].isIntersecting; mira(); }).observe(oferta);
+  }
+
+  /* ── los videos: se cargan recién al tocarlos ── */
+  $$('.video').forEach(function (c) {
+    var v = $('video', c), b = $('button', c);
+    if (!v || !b) return;
+    b.addEventListener('click', function () {
+      $$('.video video').forEach(function (o) { if (o !== v) o.pause(); });
+      c.classList.add('sonando'); v.controls = true; v.preload = 'auto';
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      evento('VideoTestimonio', { video: c.getAttribute('data-video') || '' }, true);
+    });
+  });
+
+  /* ── lo que se compró viaja de una página a la otra (los links de pago no llevan datos) ── */
+  if (q.get('m') === '1' || q.get('m') === '0') { try { localStorage.setItem('kx_mails', q.get('m')); } catch (e) {} }
+  w.KXmails = function () { try { return localStorage.getItem('kx_mails') === '1'; } catch (e) { return false; } };
+
+  /* ── la agenda de El Consultorio ── */
+  var caja = d.getElementById('cal');
+  if (caja) {
+    var id = KX.calendario;
+    var src = /^[a-z0-9]+(-[a-z0-9]+)*$/.test(id) ? 'https://api.leadconnectorhq.com/widget/bookings/' + id
+      : (/^[A-Za-z0-9]{12,}$/.test(id) ? 'https://api.leadconnectorhq.com/widget/booking/' + id : '');
+    if (!src) caja.innerHTML = '<p class="aviso ver">La agenda se abre en unas horas. Te escribimos a tu correo para que elijas tu horario.</p>';
+    else {
+      var f = d.createElement('iframe');
+      f.src = src; f.id = id + '_kx'; f.title = 'Agenda tu sesión con Roberto'; f.setAttribute('scrolling', 'no');
+      caja.appendChild(f);
+      var s = d.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true; d.body.appendChild(s);
+      var avisado = false;
+      w.addEventListener('message', function (e) {
+        if (typeof e.origin !== 'string' || e.origin.indexOf('leadconnectorhq') < 0) return;
+        var x = e.data || {};
+        if (x && typeof x === 'object') { var h = x.height || x.iframeHeight || (x.data && x.data.height); if (typeof h === 'number' && h > 300) f.style.minHeight = h + 'px'; }
+        var t = String((typeof x === 'string') ? x : (x.type || x.event || '')).toLowerCase();
+        if (!avisado && (t.indexOf('book') > -1 || t.indexOf('appointment') > -1)) { avisado = true; evento('Schedule', { content_name: 'Sesión La decisión' }); }
+      }, false);
+    }
+  }
+
+  /* ── el capítulo 1 ── */
+  $$('[data-capitulo]').forEach(function (a) {
+    if (KX.capitulo) a.href = KX.capitulo;
+    a.addEventListener('click', function (e) {
+      if (!KX.capitulo) { e.preventDefault(); var av = $('.aviso', a.closest('section') || d); if (av) av.classList.add('ver'); return; }
+      evento('Lead', { content_name: 'Capítulo 1 · La decisión' });
+    });
+  });
+
+})();</script>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('s') === '1') KXcompra('sesion', 97, 'Sesión La decisión');
+  if (KXmails()) document.getElementById('mails').hidden = false;
+})();
+</script>
+</body>
+</html>
