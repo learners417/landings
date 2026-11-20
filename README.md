@@ -189,6 +189,8 @@ lleva solo la línea: la ruta decide el archivo, como en las de Ani.
 - `/la-decision-gracias` · confirmación; con `?s=1` muestra el calendario de la sesión. `noindex`.
 - `/la-decision-capitulo-1` · el capítulo 1 sin costo (palabra clave LIBRO). El PDF está en `imgs/roberto/`.
 - `/la-decision-hoy?d=N` · el ejercicio del día N con su página. Los correos diarios llevan aquí. `noindex`.
+- `/la-decision-revision` · los 6 puntos que Roberto aprueba del libro, con «Apruebo / Quiero cambiar algo»; la respuesta
+  sale por WhatsApp a Javo. Sin roberto.js (sin píxel). `noindex`. Solo títulos y páginas: el libro no va aquí.
 
 En vivo desde el 20 nov 2026. Pasos en GHL (embudo `OxFI1zADpxYcNRA8NDNC`): la-decision `4fa3de2e-621e-4e44-b72d-818381366cb5`
 (la original, con la línea y su panel SEO) · la-decision-sesion `1bf569b3-fdc1-4b45-a472-c8b862d7bc61` ·

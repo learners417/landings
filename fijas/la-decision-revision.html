@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu revisión de La decisión · Roberto Páez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+ --tinta:#060828; --papel:#F6F4EE; --lino:#EFEADF; --blanco:#FFFFFF; --oro:#C4933F; --oro-t:#A47A30;
+ --gris:#555870; --suave:#8D8FA0; --linea:#E2DACB;
+ --serif:'Playfair Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--papel)}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+
+.banda{width:100%;display:flex;justify-content:center}
+.banda>.in{width:100%;max-width:620px;padding:56px 22px}
+.banda.lino{background:var(--lino)}
+.banda.ancha>.in{max-width:980px}
+
+.lab{display:block;font:600 16px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--oro-t);margin-bottom:12px}
+.lab.tinta{color:var(--tinta)}
+h1{font:600 38px/1.12 var(--serif);letter-spacing:-.01em;margin-bottom:18px}
+h2{font:600 31px/1.18 var(--serif);margin-bottom:16px}
+h3{font:600 19px/1.35 var(--sans);margin-bottom:4px}
+p{margin-bottom:16px}
+.lead{font-size:19px;line-height:1.6}
+.it{font-family:var(--serif);font-style:italic}
+.gris{color:var(--gris)}
+.chico{font-size:16px;line-height:1.5}
+.raya{width:56px;border-top:1px solid var(--oro);margin:0 0 20px}
+.centro{text-align:center}
+.centro .raya{margin-left:auto;margin-right:auto}
+
+
+.marca{display:flex;justify-content:center;padding:22px 22px 0}
+.marca img{width:118px;height:auto}
+
+
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:60px;padding:14px 22px;border-radius:14px;
+ background:var(--tinta);color:var(--papel);font:600 18px/1.3 var(--sans);text-decoration:none;text-align:center;border:0;cursor:pointer;
+ transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 10px 26px -14px rgba(6,8,40,.7)}
+.btn:active{transform:scale(.985)}
+.btn .pr{margin-left:.45em;font-weight:500;opacity:.92}
+.btn.claro{background:transparent;color:var(--tinta);border:1px solid var(--tinta);box-shadow:none}
+.bajo{display:block;text-align:center;font-size:16px;color:var(--gris);margin-top:10px}
+.enlace{display:block;text-align:center;font-size:17px;color:var(--gris);margin-top:18px;text-decoration:underline;text-underline-offset:4px}
+
+
+.caja{background:var(--blanco);border-radius:18px;padding:26px 22px}
+.caja.oro{border:1px solid var(--oro)}
+.cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}
+.cifras div{background:var(--blanco);border-radius:14px;padding:16px 16px 14px}
+.cifras b{display:block;font:500 36px/1 var(--serif);color:var(--oro-t);margin-bottom:6px}
+.cifras span{font-size:16px;line-height:1.35;display:block}
+
+
+.lista{list-style:none;margin:6px 0 4px}
+.lista li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--linea)}
+.lista li:first-child{border-top:0}
+.disco{flex:none;width:46px;height:46px;border-radius:50%;background:var(--blanco);border:1px solid var(--oro);display:flex;align-items:center;justify-content:center}
+.disco svg{width:24px;height:24px}
+.lista p{margin:0;color:var(--gris);font-size:17px;line-height:1.5}
+
+
+.checks{list-style:none;margin:8px 0 6px}
+.checks li{position:relative;padding:8px 0 8px 34px}
+.checks li::before{content:'';position:absolute;left:2px;top:15px;width:18px;height:10px;border-left:2px solid var(--oro);border-bottom:2px solid var(--oro);transform:rotate(-45deg)}
+
+
+.escena{font:italic 400 21px/1.55 var(--serif)}
+.escena p{margin-bottom:14px}
+.firma{font:italic 400 24px var(--serif);margin-top:8px}
+
+
+.etapa{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--linea)}
+.etapa:first-of-type{border-top:0}
+.etapa .n{font:500 40px/1 var(--serif);color:var(--oro-t);width:30px;flex:none}
+.etapa .q{font:italic 400 20px/1.35 var(--serif);margin:4px 0 6px}
+.etapa .sale{font:600 16px/1.4 var(--sans);letter-spacing:.06em;color:var(--oro-t)}
+
+
+.ritmos{display:grid;gap:12px;margin-top:8px}
+.ritmo{background:var(--blanco);border-radius:16px;padding:20px}
+.ritmo .dias{font:500 46px/1 var(--serif);color:var(--tinta)}
+.ritmo .dias small{font:600 16px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--oro-t);margin-left:8px}
+.puntos{display:grid;grid-template-columns:repeat(7,14px);gap:7px 9px;margin:16px 0 14px}
+.puntos i{width:12px;height:12px;border-radius:50%;border:1px solid var(--tinta)}
+.puntos.doble i{width:14px;height:14px;background:var(--tinta)}
+
+
+.mock{margin:26px auto 6px}
+.mock.tapa{max-width:330px}
+.mock.tablet{max-width:300px}
+.pie{font-size:16px;color:var(--gris);text-align:center;margin-top:6px}
+
+
+.dec{display:grid;grid-template-columns:1fr;gap:4px;margin-top:10px}
+.dec div{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--linea)}
+.dec div:first-child{border-top:0}
+.dec h3{margin:0;font-size:18px}
+.dec p{margin:0;font-size:16px;color:var(--gris);line-height:1.4}
+
+
+.videos{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin:0 -22px;padding-left:22px;padding-right:22px}
+.video{scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;background:var(--tinta);aspect-ratio:9/16}
+.video video{width:100%;height:100%;object-fit:cover;display:block}
+.video button{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:14px;border:0;cursor:pointer;
+ background:transparent;color:var(--papel);font:600 16px var(--sans);text-align:left}
+.video button span{display:inline-flex;align-items:center;gap:10px;background:rgba(6,8,40,.72);padding:8px 14px 8px 8px;border-radius:30px}
+.video button svg{width:40px;height:40px}
+.video.sonando button{display:none}
+
+
+.oferta .precio{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:18px 0 6px;padding-top:16px;border-top:1px solid var(--linea)}
+.oferta .precio b{font:500 46px/1 var(--serif)}
+.oferta .precio>span{font-size:16px;color:var(--gris)}
+.suma{display:flex;gap:14px;align-items:flex-start;margin:18px 0 20px;padding:18px;border:1px dashed var(--oro);border-radius:14px;background:#FFFDF8;cursor:pointer}
+.suma input{flex:none;width:26px;height:26px;margin-top:3px;accent-color:var(--tinta)}
+.suma h3{margin-bottom:4px}
+.suma p{margin:0;font-size:16px;line-height:1.5;color:var(--gris)}
+.aviso{display:none;margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--lino);font-size:16px}
+.aviso.ver{display:block}
+
+
+details{border-top:1px solid var(--linea);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--linea)}
+summary{list-style:none;cursor:pointer;font:600 18px/1.4 var(--sans);display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font:400 26px/1 var(--serif);color:var(--oro-t)}
+details[open] summary::after{content:'–'}
+details p{margin:12px 0 0;color:var(--gris)}
+
+
+.pasos{counter-reset:p;list-style:none;margin-top:6px}
+.pasos li{counter-increment:p;position:relative;padding:14px 0 14px 46px;border-top:1px solid var(--linea)}
+.pasos li:first-child{border-top:0}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:10px;font:500 32px/1 var(--serif);color:var(--oro-t)}
+.pasos p{margin:2px 0 0;color:var(--gris);font-size:17px}
+
+
+
+#cal iframe{width:100%;border:0;min-height:760px;border-radius:14px;background:var(--blanco)}
+
+
+.fija{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+ background:rgba(246,244,238,.97);border-top:1px solid var(--linea);transform:translateY(110%);opacity:0;visibility:hidden;transition:transform .25s ease,opacity .25s ease,visibility 0s .25s}
+.fija.ver{transform:none;opacity:1;visibility:visible;transition:transform .25s ease,opacity .25s ease}
+.fija .t{flex:1;font:600 16px/1.3 var(--sans)}
+.fija .t small{display:block;font:400 16px var(--sans);color:var(--gris)}
+.fija .btn{width:auto;min-height:52px;padding:10px 20px;font-size:17px}
+
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+footer{padding:36px 22px 120px;text-align:center;font-size:16px;color:var(--gris)}
+footer img{width:96px;margin:0 auto 12px}
+
+@media (min-width:720px){
+ h1{font-size:50px} h2{font-size:38px}
+ .banda>.in{padding:80px 28px}
+ .cifras{grid-template-columns:repeat(3,1fr)}
+ .ritmos{grid-template-columns:1fr 1fr}
+ .dec{grid-template-columns:1fr 1fr;column-gap:28px}
+ .dec div:nth-child(2){border-top:0}
+ .videos{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:4px 0 0}
+ .fija{display:none}
+}
+.punto{scroll-margin-top:20px}
+.punto .cab{display:flex;gap:16px;align-items:baseline;margin-bottom:6px}
+.punto .num{font:500 44px/1 var(--serif);color:var(--oro-t);min-width:30px}
+.punto h2{margin:0}
+.paginas{display:inline-block;margin:6px 0 18px;padding:7px 16px;border:1px solid var(--oro);border-radius:30px;font:600 16px var(--sans)}
+.punto ul.items{list-style:none;margin:16px 0 22px;padding:0}
+.punto ul.items li{display:flex;gap:12px;justify-content:space-between;padding:12px 0;border-top:1px solid var(--linea)}
+.punto ul.items li:first-child{border-top:0}
+.punto ul.items li span{color:var(--gris);white-space:nowrap}
+.acciones{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acciones .btn{min-height:56px;font-size:17px}
+.cambio{display:none;margin-top:14px}
+.cambio.ver{display:block}
+.cambio label{display:block;font:600 16px var(--sans);margin-bottom:6px}
+.cambio textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--tinta);border-radius:14px;font:400 18px/1.5 var(--sans);color:var(--tinta);background:var(--blanco);resize:vertical}
+.estado{display:none;margin-top:14px;font:600 17px var(--sans)}
+.punto.ok .estado.si{display:flex;gap:8px;align-items:center;color:#2E7D4F}
+.punto.ok .acciones .si{background:#2E7D4F;border-color:#2E7D4F}
+.punto.cambia .estado.no{display:block;color:var(--oro-t)}
+.avance{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:300px;margin:22px auto 6px}
+.avance i{height:6px;border-radius:6px;background:var(--linea)}
+.avance i.ok{background:#2E7D4F}
+.avance i.cambia{background:var(--oro)}
+@media(max-width:380px){.acciones{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="marca"><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png" alt="KENSHO Consulting" width="118" height="40"></div>
+
+<section class="banda"><div class="in centro" style="padding-top:30px">
+  <span class="lab">La decisión · tu revisión</span>
+  <h1>Roberto, tu libro está listo para tu visto bueno.</h1>
+  <p class="lead gris">Son 6 puntos. En cada uno te indico la página del libro. Lo lees en el PDF que te mandé y marcas «Apruebo», o escribes qué cambiarías.</p>
+  <p class="chico">Antes del miércoles 25 de noviembre</p>
+  <div class="avance" id="avance"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <p class="chico gris" id="avance-t">0 de 6 revisados</p>
+</div></section>
+
+<section class="banda lino punto" id="p1" data-n="1" data-t="Las historias reales"><div class="in">
+  <div class="cab"><span class="num">1</span><h2>Las historias reales</h2></div>
+  <span class="paginas">Páginas 39, 57, 71 y 89</span>
+  <p>Son cuatro historias de lo que contaste en nuestra llamada del 29 de septiembre, sin nombres. Revisa que cada una sea fiel a lo que pasó y que estés cómodo con publicarla.</p>
+  <ul class="items">
+    <li>Semana 2 · El gerente de los números impecables<span>pág. 39</span></li>
+    <li>Semana 3 · 22 años de jefatura<span>pág. 57</span></li>
+    <li>Semana 4 · «No me siento lista», tres personas<span>pág. 71</span></li>
+    <li>Semana 5 · Los gerentes que lo cargan solos<span>pág. 89</span></li>
+  </ul>
+  <p class="chico gris">Si tienes fotos tuyas para acompañarlas, mándalas por WhatsApp junto con tu permiso para usarlas.</p>
+  <div class="acciones" style="margin-top:18px"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t1">Qué cambiarías</label><textarea id="t1" placeholder="Por ejemplo: en la historia de la semana 3, ..."></textarea></div>
+  <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
+</div></section>
+
+<section class="banda punto" id="p2" data-n="2" data-t="El termómetro"><div class="in">
+  <div class="cab"><span class="num">2</span><h2>El termómetro</h2></div>
+  <span class="paginas">Páginas 17 y 116</span>
+  <p>Cinco indicadores de 0 a 10. El lector los marca el día 1 y otra vez al final, para ver cuánto avanzó.</p>
+  <ul class="items">
+    <li>La pregunta: sé qué decisión tengo que tomar.</li>
+    <li>El origen: sé qué me trajo hasta aquí y qué de eso me sirve.</li>
+    <li>Las opciones: veo con claridad mis opciones.</li>
+    <li>La dirección: sé hacia dónde quiero ir.</li>
+    <li>La confianza: me siento capaz de sostener la decisión.</li>
+  </ul>
+  <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t2">Qué cambiarías</label><textarea id="t2"></textarea></div>
+  <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
+</div></section>
+
+<section class="banda lino punto" id="p3" data-n="3" data-t="La regla de cada semana"><div class="in">
+  <div class="cab"><span class="num">3</span><h2>La regla de cada semana</h2></div>
+  <span class="paginas">Páginas 32, 47, 64, 80, 97 y 112</span>
+  <p>Cada semana cierra con una regla para llevarse. Las seis van juntas en el afiche de la página 125.</p>
+  <ul class="items">
+    <li>Semana 1 · No sumo antes de soltar.</li>
+    <li>Semana 2 · Antes de decidir, miro qué historia está hablando.</li>
+    <li>Semana 3 · Pregunto antes de responder.</li>
+    <li>Semana 4 · Decido con evidencia.</li>
+    <li>Semana 5 · Lo que me pesa, lo digo.</li>
+    <li>Semana 6 · Lo decidido se agenda.</li>
+  </ul>
+  <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t3">Qué cambiarías</label><textarea id="t3"></textarea></div>
+  <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
+</div></section>
+
+<section class="banda punto" id="p4" data-n="4" data-t="Mi recorrido"><div class="in">
+  <div class="cab"><span class="num">4</span><h2>Mi recorrido</h2></div>
+  <span class="paginas">Página 8</span>
+  <p>Hoy dice esto:</p>
+  <ul class="items">
+    <li>Más de 30 años en empresas.</li>
+    <li>Cientos de conversaciones con ejecutivos y líderes, justo antes de decidir.</li>
+    <li>El método KENSHO: de dónde vengo, en dónde estoy, a dónde voy.</li>
+  </ul>
+  <div class="caja oro" style="margin-bottom:22px"><span class="lab" style="margin-bottom:6px">Lo que le da más fuerza</span><p style="margin:0">Tres o cuatro momentos de tu carrera con su año, su empresa y tu cargo. Escríbelos en «Quiero cambiar algo», uno por línea: año · cargo · empresa.</p></div>
+  <div class="acciones"><button type="button" class="btn si">Apruebo como está</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t4">Tus momentos, uno por línea</label><textarea id="t4" placeholder="año · cargo · empresa"></textarea></div>
+  <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
+</div></section>
+
+<section class="banda lino punto" id="p5" data-n="5" data-t="Las herramientas de otros autores"><div class="in">
+  <div class="cab"><span class="num">5</span><h2>Las herramientas de otros autores</h2></div>
+  <span class="paginas">Páginas 62 a 107 · fuentes en la 130</span>
+  <p>Junto a las tres de KENSHO (la mochila, tres preguntas a una creencia y la prueba del año), el libro usa cinco herramientas conocidas, cada una con su autor y su fuente.</p>
+  <ul class="items">
+    <li>La opción que desaparece · Chip y Dan Heath<span>pág. 62</span></li>
+    <li>10/10/10 · Suzy Welch<span>pág. 76</span></li>
+    <li>Lo que le dirías a un amigo · Igor Grossmann<span>pág. 93</span></li>
+    <li>Puerta de una vía o de dos · Jeff Bezos<span>pág. 106</span></li>
+    <li>El pre-mortem · Gary Klein<span>pág. 107</span></li>
+  </ul>
+  <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t5">Qué cambiarías</label><textarea id="t5"></textarea></div>
+  <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
+</div></section>
+
+<section class="banda punto" id="p6" data-n="6" data-t="La palabra clave y tu sesión"><div class="in">
+  <div class="cab"><span class="num">6</span><h2>La palabra clave y tu sesión</h2></div>
+  <ul class="items">
+    <li>La palabra para recibir el capítulo 1 sin costo<span>LIBRO</span></li>
+    <li>La sesión de 45 minutos sobre el libro<span>US$97</span></li>
+    <li>Sus horarios, los mismos de tu agenda de diagnóstico<span>lun a vie</span></li>
+  </ul>
+  <p>Cuéntame también cuántas sesiones quieres tomar por semana.</p>
+  <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t6">Qué cambiarías y cuántas sesiones por semana</label><textarea id="t6"></textarea></div>
+  <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
+</div></section>
+
+<section class="banda lino"><div class="in centro">
+  <span class="lab">Listo</span>
+  <h2>Mándame tu revisión</h2>
+  <p class="gris">Se abre WhatsApp con tus 6 respuestas escritas. Solo tocas enviar.</p>
+  <a class="btn" id="enviar" href="#" target="_blank" rel="noopener">Enviar mi revisión</a>
+  <p class="chico gris" style="margin-top:14px">Tus respuestas quedan guardadas en este teléfono, así que puedes seguir otro día.</p>
+  <div class="firma" style="margin-top:22px">Javo</div>
+</div></section>
+
+<footer><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png" alt="KENSHO Consulting" width="96" height="33">La decisión · Roberto Páez · KENSHO Consulting</footer>
+
+<script>
+(function () {
+  var WA = '5492944217689', CLAVE = 'kx_revision';
+  var est = {};
+  try { est = JSON.parse(localStorage.getItem(CLAVE) || '{}'); } catch (e) {}
+  function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(est)); } catch (e) {} }
+  var puntos = [].slice.call(document.querySelectorAll('.punto'));
+  function pintar() {
+    var n = 0, barras = document.querySelectorAll('#avance i');
+    puntos.forEach(function (p, i) {
+      var e = est[p.dataset.n] || {};
+      p.classList.toggle('ok', e.v === 'ok');
+      p.classList.toggle('cambia', e.v === 'cambio');
+      p.querySelector('.cambio').classList.toggle('ver', e.v === 'cambio');
+      barras[i].className = e.v === 'ok' ? 'ok' : (e.v === 'cambio' ? 'cambia' : '');
+      if (e.v) n++;
+    });
+    document.getElementById('avance-t').textContent = n + ' de 6 revisados';
+  }
+  puntos.forEach(function (p, i) {
+    var k = p.dataset.n, ta = p.querySelector('textarea');
+    if (est[k] && est[k].nota) ta.value = est[k].nota;
+    p.querySelector('.si').addEventListener('click', function () {
+      est[k] = { v: 'ok', nota: ta.value }; guardar(); pintar();
+      var sig = puntos[i + 1]; if (sig) setTimeout(function () { sig.scrollIntoView({ behavior: 'smooth' }); }, 350);
+    });
+    p.querySelector('.no').addEventListener('click', function () {
+      est[k] = { v: 'cambio', nota: ta.value }; guardar(); pintar(); ta.focus();
+    });
+    ta.addEventListener('input', function () { est[k] = { v: 'cambio', nota: ta.value }; guardar(); pintar(); });
+  });
+  document.getElementById('enviar').addEventListener('click', function () {
+    var txt = 'La decisión · mi revisión\n';
+    puntos.forEach(function (p) {
+      var e = est[p.dataset.n] || {};
+      txt += '\n' + p.dataset.n + '. ' + p.dataset.t + ': ' +
+        (e.v === 'ok' ? 'apruebo' : (e.v === 'cambio' ? 'quiero cambiar esto: ' + (e.nota || '(te lo cuento)') : 'todavía no lo revisé'));
+    });
+    this.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(txt);
+  });
+  pintar();
+})();
+</script>
+</body>
+</html>

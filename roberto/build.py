@@ -13,7 +13,7 @@ from iconos import IC
 
 R = pathlib.Path(__file__).resolve().parent
 RAIZ = R.parent
-PAGINAS = ['la-decision', 'la-decision-sesion', 'la-decision-gracias', 'la-decision-capitulo-1', 'la-decision-hoy']
+PAGINAS = ['la-decision', 'la-decision-sesion', 'la-decision-gracias', 'la-decision-capitulo-1', 'la-decision-hoy', 'la-decision-revision']
 IMG = 'https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/'
 LOGO = 'https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png'
 
@@ -78,7 +78,7 @@ css = sin_comentarios((R / 'roberto.css').read_text()).strip()
 js = (R / 'roberto.js').read_text().strip()
 for p in PAGINAS:
     src = (R / f'{p}.html').read_text()
-    assert '/*KX_CSS*/' in src and '/*KX_JS*/' in src, p
+    assert '/*KX_CSS*/' in src, p   # la revisión no lleva roberto.js: sin píxel
     out = bloques(src).replace('/*KX_CSS*/', css).replace('/*KX_JS*/', js)
     assert '{{' not in out, (p, re.findall(r'\{\{[^}]*\}\}', out)[:3])
     for carpeta in ('fijas', 'site'):
