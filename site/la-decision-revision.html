@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Tu revisión de La decisión · Roberto Páez</title>
+<title>Para Roberto · La decisión</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -176,96 +176,196 @@ footer img{width:96px;margin:0 auto 12px}
  .videos{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:4px 0 0}
  .fija{display:none}
 }
-.punto{scroll-margin-top:20px}
-.punto .cab{display:flex;gap:16px;align-items:baseline;margin-bottom:6px}
-.punto .num{font:500 44px/1 var(--serif);color:var(--oro-t);min-width:30px}
-.punto h2{margin:0}
-.paginas{display:inline-block;margin:6px 0 18px;padding:7px 16px;border:1px solid var(--oro);border-radius:30px;font:600 16px var(--sans)}
-.punto ul.items{list-style:none;margin:16px 0 22px;padding:0}
+/* Una pantalla por idea: Roberto toca «Siguiente» y avanza. */
+body{padding-bottom:110px}
+.barra{position:sticky;top:0;z-index:15;background:var(--papel);padding:12px 20px 10px}
+.barra .pista{height:4px;border-radius:4px;background:var(--linea);overflow:hidden}
+.barra .pista i{display:block;height:100%;width:0;background:var(--tinta);transition:width .35s ease}
+.barra .n{margin-top:6px;font:500 16px var(--sans);color:var(--gris);text-align:center}
+.pantalla{display:none;min-height:calc(100vh - 170px);padding:18px 20px 30px;max-width:620px;margin:0 auto;animation:entra .35s ease}
+.pantalla.ver{display:block}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pantalla{animation:none}.barra .pista i{transition:none}}
+.pantalla h1{font-size:40px}
+.pantalla .mock{display:block;margin:18px auto 22px;max-width:100%;height:auto}
+.mock.tapa{width:min(300px,78%)}
+.mock.tablet{width:min(520px,100%)}
+.navega{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:var(--papel);border-top:1px solid var(--linea)}
+.navega .btn{min-height:58px;font-size:18px}
+.navega #ant{flex:0 0 32%}
+.navega #ant[hidden]{display:none!important}
+.tres{list-style:none;margin:20px 0;padding:0;counter-reset:t}
+.tres li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--linea)}
+.tres li:first-child{border-top:0}
+.tres li::before{counter-increment:t;content:counter(t);flex:0 0 44px;height:44px;border-radius:50%;border:1px solid var(--oro);display:grid;place-items:center;font:500 22px var(--serif);color:var(--oro-t)}
+.tres li p{margin:6px 0 0;font-size:19px}
+.cuatro{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.cuatro div{background:var(--blanco);border-radius:16px;padding:16px 14px;text-align:center}
+.cuatro b{display:block;font:500 34px/1.1 var(--serif);color:var(--tinta)}
+.cuatro span{font-size:16px;color:var(--gris)}
+.escalera{list-style:none;margin:20px 0 14px;padding:0}
+.escalera li{position:relative;background:var(--blanco);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.escalera li:nth-child(2){margin-left:14px}.escalera li:nth-child(3){margin-left:28px}.escalera li:nth-child(4){margin-left:42px;border:1px solid var(--oro)}
+.escalera .p{display:block;font:500 28px/1.1 var(--serif)}
+.escalera h3{margin:4px 0 2px;font-size:19px}
+.escalera p{margin:0;font-size:17px;color:var(--gris);line-height:1.45}
+.vistas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.vistas a{display:block;text-decoration:none;color:var(--tinta);text-align:center}
+.vistas .tel{border:1px solid var(--linea);border-radius:22px;padding:7px;background:var(--blanco);box-shadow:0 10px 24px rgba(6,8,40,.08)}
+.vistas .tel img{display:block;width:100%;height:auto;border-radius:16px}
+.vistas b{display:block;margin-top:10px;font:600 17px/1.3 var(--sans)}
+.vistas span{display:inline-block;margin-top:6px;padding:6px 16px;border:1px solid var(--tinta);border-radius:30px;font:600 16px var(--sans)}
+.paginas{display:inline-block;margin:4px 0 16px;padding:7px 16px;border:1px solid var(--oro);border-radius:30px;font:600 16px var(--sans)}
+.punto ul.items{list-style:none;margin:14px 0 22px;padding:0}
 .punto ul.items li{display:flex;gap:12px;justify-content:space-between;padding:12px 0;border-top:1px solid var(--linea)}
 .punto ul.items li:first-child{border-top:0}
 .punto ul.items li span{color:var(--gris);white-space:nowrap}
 .acciones{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.acciones .btn{min-height:56px;font-size:17px}
+.acciones .btn{min-height:58px;font-size:18px}
 .cambio{display:none;margin-top:14px}
 .cambio.ver{display:block}
 .cambio label{display:block;font:600 16px var(--sans);margin-bottom:6px}
 .cambio textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--tinta);border-radius:14px;font:400 18px/1.5 var(--sans);color:var(--tinta);background:var(--blanco);resize:vertical}
-.estado{display:none;margin-top:14px;font:600 17px var(--sans)}
-.punto.ok .estado.si{display:flex;gap:8px;align-items:center;color:#2E7D4F}
+.estado{display:none;margin-top:14px;font:600 18px var(--sans)}
+.punto.ok .estado.si{display:block;color:#2E7D4F}
 .punto.ok .acciones .si{background:#2E7D4F;border-color:#2E7D4F}
 .punto.cambia .estado.no{display:block;color:var(--oro-t)}
-.avance{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:300px;margin:22px auto 6px}
-.avance i{height:6px;border-radius:6px;background:var(--linea)}
-.avance i.ok{background:#2E7D4F}
-.avance i.cambia{background:var(--oro)}
-@media(max-width:380px){.acciones{grid-template-columns:1fr}}
+.pide{list-style:none;margin:18px 0;padding:0}
+.pide li{background:var(--blanco);border-radius:16px;padding:18px;margin-bottom:12px}
+.pide h3{font-size:19px}
+.pide p{margin:4px 0 0;font-size:17px;line-height:1.5}
+.pide .btn{margin-top:12px;min-height:52px;font-size:17px}
+@media(max-width:370px){.acciones,.cuatro{grid-template-columns:1fr}.pantalla h1{font-size:34px}}
 </style>
 </head>
 <body>
 
-<div class="marca"><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png" alt="KENSHO Consulting" width="118" height="40"></div>
+<div class="barra"><div class="pista"><i id="pista"></i></div><div class="n" id="cuenta">1 de 13</div></div>
 
-<section class="banda"><div class="in centro" style="padding-top:30px">
-  <span class="lab">La decisión · tu revisión</span>
-  <h1>Roberto, tu libro está listo para tu visto bueno.</h1>
-  <p class="lead gris">Son 6 puntos. En cada uno te indico la página del libro. Lo lees en el PDF que te mandé y marcas «Apruebo», o escribes qué cambiarías.</p>
-  <p class="chico">Antes del miércoles 25 de noviembre</p>
-  <div class="avance" id="avance"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <p class="chico gris" id="avance-t">0 de 6 revisados</p>
-</div></section>
+<!-- 1 · portada -->
+<section class="pantalla centro">
+  <img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png" alt="KENSHO Consulting" width="118" height="40" style="display:block;margin:6px auto 22px">
+  <span class="lab">Para Roberto · antes del martes</span>
+  <h1>Roberto, tu libro ya existe.</h1>
+  <img class="mock tapa" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/tapa-3d.webp" alt="Tu libro La decisión" width="330" height="373">
+  <p class="lead gris">Te muestro en pocas pantallas lo que preparamos y lo que necesito de ti. Solo toca «Siguiente».</p>
+</section>
 
-<section class="banda lino punto" id="p1" data-n="1" data-t="Las historias reales"><div class="in">
-  <div class="cab"><span class="num">1</span><h2>Las historias reales</h2></div>
+<!-- 2 · por qué -->
+<section class="pantalla">
+  <span class="lab">Por qué un libro</span>
+  <h2>Para que a tu sesión lleguen personas decididas.</h2>
+  <ol class="tres">
+    <li><div><h3>Compra tu libro</h3><p>Antes de hablar contigo, ya invirtió en tu método.</p></div></li>
+    <li><div><h3>Hace tus ejercicios</h3><p>Día a día conoce tu forma de trabajar y confía en ti.</p></div></li>
+    <li><div><h3>Llega a tu sesión decidido</h3><p>Con parte del trabajo hecho y ganas de seguir contigo.</p></div></li>
+  </ol>
+  <div class="caja oro"><p style="margin:0">Y lo que entra por el libro ayuda a pagar la publicidad.</p></div>
+</section>
+
+<!-- 3 · el libro -->
+<section class="pantalla">
+  <span class="lab">El libro</span>
+  <h2>«La decisión» · KENSHO Express</h2>
+  <img class="mock tablet" src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/tablet.webp" alt="El libro abierto en una tableta" width="560" height="400">
+  <div class="cuatro">
+    <div><b>136</b><span>páginas</span></div>
+    <div><b>42</b><span>días, o 21 con apuro</span></div>
+    <div><b>3</b><span>etapas: Origen, Claridad y Dirección</span></div>
+    <div><b>1</b><span>ejercicio por día</span></div>
+  </div>
+  <p>Tu método, con tus historias (sin nombres) y tus herramientas. Te lo mandé en PDF por WhatsApp.</p>
+</section>
+
+<!-- 4 · la escalera -->
+<section class="pantalla">
+  <span class="lab">Tu escalera</span>
+  <h2>Del primer capítulo a KENSHO Senior</h2>
+  <ol class="escalera">
+    <li><span class="p">Sin costo</span><h3>Capítulo 1</h3><p>Quien escribe LIBRO en tu Instagram lo recibe.</p></li>
+    <li><span class="p">US$27</span><h3>El libro</h3><p>Con un clic suma US$17 para que le escribas cada mañana, los 42 días. Los correos salen solos, en tu nombre.</p></li>
+    <li><span class="p">US$97</span><h3>Una sesión de 45 minutos contigo</h3><p>Justo después de comprar. Si entra a KENSHO Senior en 7 días, se le descuenta.</p></li>
+    <li><span class="p">US$750</span><h3>KENSHO Senior</h3><p>Igual que hoy.</p></li>
+  </ol>
+  <p class="gris" style="font-size:17px">Tu sesión de diagnóstico y El Viaje de Martín siguen igual.</p>
+</section>
+
+<!-- 5 · las páginas -->
+<section class="pantalla">
+  <span class="lab">Ya en tu web</span>
+  <h2>Tus 4 páginas nuevas</h2>
+  <p class="gris">Tócalas para verlas como las va a ver tu cliente.</p>
+  <div class="vistas">
+    <a href="https://ropaez.com/la-decision" target="_blank" rel="noopener"><div class="tel"><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/vista-venta.webp" alt="La página de venta del libro" width="480" height="886" loading="lazy"></div><b>La venta del libro</b><span>Ver</span></a>
+    <a href="https://ropaez.com/la-decision-capitulo-1" target="_blank" rel="noopener"><div class="tel"><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/vista-capitulo.webp" alt="La página del capítulo 1" width="480" height="886" loading="lazy"></div><b>El capítulo 1</b><span>Ver</span></a>
+    <a href="https://ropaez.com/la-decision-sesion" target="_blank" rel="noopener"><div class="tel"><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/vista-sesion.webp" alt="Lo que ve quien acaba de comprar" width="480" height="886" loading="lazy"></div><b>Después de comprar</b><span>Ver</span></a>
+    <a href="https://ropaez.com/la-decision-hoy?d=1" target="_blank" rel="noopener"><div class="tel"><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/vista-hoy.webp" alt="El ejercicio de cada día" width="480" height="886" loading="lazy"></div><b>El ejercicio de cada día</b><span>Ver</span></a>
+  </div>
+</section>
+
+<!-- 6 · intro visto bueno -->
+<section class="pantalla centro">
+  <span class="lab">Tu visto bueno</span>
+  <h2>Ahora, 6 puntos para que los apruebes.</h2>
+  <p class="lead gris">En cada uno te indico la página del libro. Lo lees en el PDF y tocas «Apruebo», o escribes qué cambiarías.</p>
+  <p class="chico">Lo que quieras cambiar lo vemos juntos el martes.</p>
+</section>
+
+<!-- 7 a 12 · los 6 puntos -->
+<section class="pantalla punto" data-n="1" data-t="Las historias reales">
+  <span class="lab">Punto 1 de 6</span>
+  <h2>Las historias reales</h2>
   <span class="paginas">Páginas 39, 57, 71 y 89</span>
-  <p>Son cuatro historias de lo que contaste en nuestra llamada del 29 de septiembre, sin nombres. Revisa que cada una sea fiel a lo que pasó y que estés cómodo con publicarla.</p>
+  <p>Cuatro historias de lo que me contaste en nuestra llamada del 29 de septiembre, sin nombres. ¿Son fieles a lo que pasó y estás cómodo con publicarlas?</p>
   <ul class="items">
-    <li>Semana 2 · El gerente de los números impecables<span>pág. 39</span></li>
-    <li>Semana 3 · 22 años de jefatura<span>pág. 57</span></li>
-    <li>Semana 4 · «No me siento lista», tres personas<span>pág. 71</span></li>
-    <li>Semana 5 · Los gerentes que lo cargan solos<span>pág. 89</span></li>
+    <li>El gerente de los números impecables<span>pág. 39</span></li>
+    <li>22 años de jefatura<span>pág. 57</span></li>
+    <li>«No me siento lista», tres personas<span>pág. 71</span></li>
+    <li>Los gerentes que lo cargan solos<span>pág. 89</span></li>
   </ul>
-  <p class="chico gris">Si tienes fotos tuyas para acompañarlas, mándalas por WhatsApp junto con tu permiso para usarlas.</p>
-  <div class="acciones" style="margin-top:18px"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
-  <div class="cambio"><label for="t1">Qué cambiarías</label><textarea id="t1" placeholder="Por ejemplo: en la historia de la semana 3, ..."></textarea></div>
+  <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="cambio"><label for="t1">Qué cambiarías</label><textarea id="t1"></textarea></div>
   <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
-</div></section>
+</section>
 
-<section class="banda punto" id="p2" data-n="2" data-t="El termómetro"><div class="in">
-  <div class="cab"><span class="num">2</span><h2>El termómetro</h2></div>
+<section class="pantalla punto" data-n="2" data-t="El termómetro">
+  <span class="lab">Punto 2 de 6</span>
+  <h2>El termómetro</h2>
   <span class="paginas">Páginas 17 y 116</span>
-  <p>Cinco indicadores de 0 a 10. El lector los marca el día 1 y otra vez al final, para ver cuánto avanzó.</p>
+  <p>Cinco indicadores de 0 a 10. El lector los marca el día 1 y al final, para ver cuánto avanzó.</p>
   <ul class="items">
-    <li>La pregunta: sé qué decisión tengo que tomar.</li>
-    <li>El origen: sé qué me trajo hasta aquí y qué de eso me sirve.</li>
-    <li>Las opciones: veo con claridad mis opciones.</li>
-    <li>La dirección: sé hacia dónde quiero ir.</li>
-    <li>La confianza: me siento capaz de sostener la decisión.</li>
+    <li>Sé qué decisión tengo que tomar.</li>
+    <li>Sé qué me trajo hasta aquí y qué de eso me sirve.</li>
+    <li>Veo con claridad mis opciones.</li>
+    <li>Sé hacia dónde quiero ir.</li>
+    <li>Me siento capaz de sostener la decisión.</li>
   </ul>
   <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
   <div class="cambio"><label for="t2">Qué cambiarías</label><textarea id="t2"></textarea></div>
   <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
-</div></section>
+</section>
 
-<section class="banda lino punto" id="p3" data-n="3" data-t="La regla de cada semana"><div class="in">
-  <div class="cab"><span class="num">3</span><h2>La regla de cada semana</h2></div>
+<section class="pantalla punto" data-n="3" data-t="La regla de cada semana">
+  <span class="lab">Punto 3 de 6</span>
+  <h2>La regla de cada semana</h2>
   <span class="paginas">Páginas 32, 47, 64, 80, 97 y 112</span>
-  <p>Cada semana cierra con una regla para llevarse. Las seis van juntas en el afiche de la página 125.</p>
+  <p>Cada semana cierra con una regla para llevarse.</p>
   <ul class="items">
-    <li>Semana 1 · No sumo antes de soltar.</li>
-    <li>Semana 2 · Antes de decidir, miro qué historia está hablando.</li>
-    <li>Semana 3 · Pregunto antes de responder.</li>
-    <li>Semana 4 · Decido con evidencia.</li>
-    <li>Semana 5 · Lo que me pesa, lo digo.</li>
-    <li>Semana 6 · Lo decidido se agenda.</li>
+    <li>No sumo antes de soltar.<span>sem. 1</span></li>
+    <li>Antes de decidir, miro qué historia está hablando.<span>sem. 2</span></li>
+    <li>Pregunto antes de responder.<span>sem. 3</span></li>
+    <li>Decido con evidencia.<span>sem. 4</span></li>
+    <li>Lo que me pesa, lo digo.<span>sem. 5</span></li>
+    <li>Lo decidido se agenda.<span>sem. 6</span></li>
   </ul>
   <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
   <div class="cambio"><label for="t3">Qué cambiarías</label><textarea id="t3"></textarea></div>
   <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
-</div></section>
+</section>
 
-<section class="banda punto" id="p4" data-n="4" data-t="Mi recorrido"><div class="in">
-  <div class="cab"><span class="num">4</span><h2>Mi recorrido</h2></div>
+<section class="pantalla punto" data-n="4" data-t="Mi recorrido">
+  <span class="lab">Punto 4 de 6</span>
+  <h2>Mi recorrido</h2>
   <span class="paginas">Página 8</span>
   <p>Hoy dice esto:</p>
   <ul class="items">
@@ -273,16 +373,17 @@ footer img{width:96px;margin:0 auto 12px}
     <li>Cientos de conversaciones con ejecutivos y líderes, justo antes de decidir.</li>
     <li>El método KENSHO: de dónde vengo, en dónde estoy, a dónde voy.</li>
   </ul>
-  <div class="caja oro" style="margin-bottom:22px"><span class="lab" style="margin-bottom:6px">Lo que le da más fuerza</span><p style="margin:0">Tres o cuatro momentos de tu carrera con su año, su empresa y tu cargo. Escríbelos en «Quiero cambiar algo», uno por línea: año · cargo · empresa.</p></div>
-  <div class="acciones"><button type="button" class="btn si">Apruebo como está</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
+  <div class="caja oro" style="margin-bottom:20px"><p style="margin:0">Le da más fuerza sumar 3 o 4 momentos de tu carrera: año, cargo y empresa. Escríbelos en «Quiero cambiar algo», uno por línea.</p></div>
+  <div class="acciones"><button type="button" class="btn si">Apruebo así</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
   <div class="cambio"><label for="t4">Tus momentos, uno por línea</label><textarea id="t4" placeholder="año · cargo · empresa"></textarea></div>
   <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
-</div></section>
+</section>
 
-<section class="banda lino punto" id="p5" data-n="5" data-t="Las herramientas de otros autores"><div class="in">
-  <div class="cab"><span class="num">5</span><h2>Las herramientas de otros autores</h2></div>
-  <span class="paginas">Páginas 62 a 107 · fuentes en la 130</span>
-  <p>Junto a las tres de KENSHO (la mochila, tres preguntas a una creencia y la prueba del año), el libro usa cinco herramientas conocidas, cada una con su autor y su fuente.</p>
+<section class="pantalla punto" data-n="5" data-t="Las herramientas de otros autores">
+  <span class="lab">Punto 5 de 6</span>
+  <h2>Las herramientas de otros autores</h2>
+  <span class="paginas">Fuentes en la página 130</span>
+  <p>Junto a las tres de KENSHO, el libro usa cinco herramientas conocidas, cada una con su autor.</p>
   <ul class="items">
     <li>La opción que desaparece · Chip y Dan Heath<span>pág. 62</span></li>
     <li>10/10/10 · Suzy Welch<span>pág. 76</span></li>
@@ -293,31 +394,37 @@ footer img{width:96px;margin:0 auto 12px}
   <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
   <div class="cambio"><label for="t5">Qué cambiarías</label><textarea id="t5"></textarea></div>
   <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
-</div></section>
+</section>
 
-<section class="banda punto" id="p6" data-n="6" data-t="La palabra clave y tu sesión"><div class="in">
-  <div class="cab"><span class="num">6</span><h2>La palabra clave y tu sesión</h2></div>
+<section class="pantalla punto" data-n="6" data-t="La palabra clave y tu sesión">
+  <span class="lab">Punto 6 de 6</span>
+  <h2>La palabra clave y tu sesión</h2>
   <ul class="items">
-    <li>La palabra para recibir el capítulo 1 sin costo<span>LIBRO</span></li>
+    <li>La palabra para recibir el capítulo 1<span>LIBRO</span></li>
     <li>La sesión de 45 minutos sobre el libro<span>US$97</span></li>
-    <li>Sus horarios, los mismos de tu agenda de diagnóstico<span>lun a vie</span></li>
+    <li>Sus horarios: los de tu agenda de diagnóstico<span>lun a vie</span></li>
   </ul>
-  <p>Cuéntame también cuántas sesiones quieres tomar por semana.</p>
+  <p>¿Cuántas de estas sesiones quieres tomar por semana?</p>
   <div class="acciones"><button type="button" class="btn si">Apruebo</button><button type="button" class="btn claro no">Quiero cambiar algo</button></div>
   <div class="cambio"><label for="t6">Qué cambiarías y cuántas sesiones por semana</label><textarea id="t6"></textarea></div>
   <p class="estado si">✓ Aprobado</p><p class="estado no">Tu cambio queda anotado</p>
-</div></section>
+</section>
 
-<section class="banda lino"><div class="in centro">
+<!-- 13 · final -->
+<section class="pantalla">
   <span class="lab">Listo</span>
   <h2>Mándame tu revisión</h2>
-  <p class="gris">Se abre WhatsApp con tus 6 respuestas escritas. Solo tocas enviar.</p>
+  <p class="gris">Se abre WhatsApp con tus respuestas escritas. Solo tocas enviar.</p>
   <a class="btn" id="enviar" href="#" target="_blank" rel="noopener">Enviar mi revisión</a>
-  <p class="chico gris" style="margin-top:14px">Tus respuestas quedan guardadas en este teléfono, así que puedes seguir otro día.</p>
-  <div class="firma" style="margin-top:22px">Javo</div>
-</div></section>
+  <ul class="pide" style="margin-top:28px">
+    <li><h3>El martes, en nuestra reunión</h3><p>Conectamos PayPal en tu cuenta, juntos, para empezar a vender.</p></li>
+    <li><h3>Todos los días</h3><p>La tabla de asistencia: por cada persona que agendó, si confirmó, si llegó, si compró y, si no compró, por qué.</p><a class="btn claro" href="https://claude.ai/artifact/UBzZRZhBN7NLKXERUzZ82g" target="_blank" rel="noopener">Abrir la tabla</a></li>
+    <li><h3>Cuando puedas</h3><p>Confírmame los dos beneficios para quien decide en la llamada (la sesión para ensayar su conversación más difícil y la de seguimiento a los 30 días) y mándame en crudo los videos 1 y 2.</p></li>
+  </ul>
+  <div class="firma">Javo</div>
+</section>
 
-<footer><img src="https://cdn.jsdelivr.net/gh/learners417/landings@main/imgs/roberto/logo-kensho.png" alt="KENSHO Consulting" width="96" height="33">La decisión · Roberto Páez · KENSHO Consulting</footer>
+<nav class="navega"><button type="button" class="btn claro" id="ant">Atrás</button><button type="button" class="btn" id="sig">Siguiente</button></nav>
 
 <script>
 (function () {
@@ -325,41 +432,59 @@ footer img{width:96px;margin:0 auto 12px}
   var est = {};
   try { est = JSON.parse(localStorage.getItem(CLAVE) || '{}'); } catch (e) {}
   function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(est)); } catch (e) {} }
+
+  var pant = [].slice.call(document.querySelectorAll('.pantalla'));
+  var ant = document.getElementById('ant'), sig = document.getElementById('sig');
+  var i = 0;
+  try { i = Math.min(parseInt(localStorage.getItem(CLAVE + '_paso'), 10) || 0, pant.length - 1); } catch (e) {}
+  function ir(n) {
+    i = Math.max(0, Math.min(n, pant.length - 1));
+    pant.forEach(function (p, k) { p.classList.toggle('ver', k === i); });
+    document.getElementById('pista').style.width = ((i + 1) / pant.length * 100) + '%';
+    document.getElementById('cuenta').textContent = (i + 1) + ' de ' + pant.length;
+    ant.hidden = i === 0;
+    sig.style.display = i === pant.length - 1 ? 'none' : '';
+    sig.textContent = i === 0 ? 'Empezar' : 'Siguiente';
+    try { localStorage.setItem(CLAVE + '_paso', i); } catch (e) {}
+    window.scrollTo(0, 0);
+  }
+  ant.addEventListener('click', function () { ir(i - 1); });
+  sig.addEventListener('click', function () { ir(i + 1); });
+
   var puntos = [].slice.call(document.querySelectorAll('.punto'));
   function pintar() {
-    var n = 0, barras = document.querySelectorAll('#avance i');
-    puntos.forEach(function (p, i) {
+    puntos.forEach(function (p) {
       var e = est[p.dataset.n] || {};
       p.classList.toggle('ok', e.v === 'ok');
       p.classList.toggle('cambia', e.v === 'cambio');
       p.querySelector('.cambio').classList.toggle('ver', e.v === 'cambio');
-      barras[i].className = e.v === 'ok' ? 'ok' : (e.v === 'cambio' ? 'cambia' : '');
-      if (e.v) n++;
     });
-    document.getElementById('avance-t').textContent = n + ' de 6 revisados';
   }
-  puntos.forEach(function (p, i) {
+  puntos.forEach(function (p) {
     var k = p.dataset.n, ta = p.querySelector('textarea');
     if (est[k] && est[k].nota) ta.value = est[k].nota;
     p.querySelector('.si').addEventListener('click', function () {
       est[k] = { v: 'ok', nota: ta.value }; guardar(); pintar();
-      var sig = puntos[i + 1]; if (sig) setTimeout(function () { sig.scrollIntoView({ behavior: 'smooth' }); }, 350);
+      setTimeout(function () { ir(i + 1); }, 450);
     });
     p.querySelector('.no').addEventListener('click', function () {
       est[k] = { v: 'cambio', nota: ta.value }; guardar(); pintar(); ta.focus();
     });
     ta.addEventListener('input', function () { est[k] = { v: 'cambio', nota: ta.value }; guardar(); pintar(); });
   });
+
   document.getElementById('enviar').addEventListener('click', function () {
     var txt = 'La decisión · mi revisión\n';
     puntos.forEach(function (p) {
       var e = est[p.dataset.n] || {};
       txt += '\n' + p.dataset.n + '. ' + p.dataset.t + ': ' +
-        (e.v === 'ok' ? 'apruebo' : (e.v === 'cambio' ? 'quiero cambiar esto: ' + (e.nota || '(te lo cuento)') : 'todavía no lo revisé'));
+        (e.v === 'ok' ? 'apruebo' : (e.v === 'cambio' ? 'quiero cambiar esto: ' + (e.nota || '(te lo cuento el martes)') : 'lo vemos el martes'));
     });
     this.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(txt);
   });
+
   pintar();
+  ir(i);
 })();
 </script>
 </body>
