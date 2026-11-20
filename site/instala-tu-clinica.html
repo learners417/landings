@@ -688,6 +688,9 @@ h1 .g,h2 .g,h3 .g,.portada .promesa .g,.cuenta .tot{font-style:normal!important;
 .af-video .btn{background:#F4EEE3!important;color:#2B2724!important;margin-top:26px}
 .af-video .btn:hover{background:#FFFFFF!important}
 .af-video .btn small{color:#5A534C!important;opacity:1}
+/* 20 nov (Javo, botón «Sí, debajo del botón»): el WhatsApp con sus 5 preguntas también debajo de «Elegir mi horario». Va sobre el azul del lago: letra clara, subrayado oro. */
+.af-video .wa-v{margin:12px 0 0;font-size:17px;line-height:1.4}
+.af-video .wa-v .wa-link{color:#F4EEE3;text-decoration-color:var(--af-hilo)}
 @media(max-width:640px){.af-hero{padding-top:84px}.af-para{font-size:16px}.gar-h{margin-top:14px;padding:9px 16px 9px 12px;font-size:17px;gap:10px}.gar-h svg{width:26px;height:26px}.gar-h span{max-width:24ch}.af-video{padding-top:18px}}
 
 /* 2 · la agenda: tres líneas y el calendario, sin nada más */
@@ -874,6 +877,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
   <p class="paso-pill">Paso 1 · Mira el video de 4 minutos</p>
   <div class="af-cel"><div class="af-pant-v" id="vsl"><picture><source type="image/webp" srcset="https://embed-ssl.wistia.com/deliveries/114319ccf713e2598dfe851c95a9571bb4838ec1.webp?video_still_time=0&amp;image_resize=720"><img class="vsl-tapa" src="https://embed-ssl.wistia.com/deliveries/114319ccf713e2598dfe851c95a9571bb4838ec1.jpg?video_still_time=0&amp;image_resize=720" alt="" width="720" height="1280" fetchpriority="high" decoding="async"></picture><wistia-player media-id="6756q87ti6" aspect="0.5625"></wistia-player><button type="button" class="vsl-son" id="vsl-son" hidden><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.4L12 5.6v12.8l-4.6-3.9H4z"/><path d="M15.6 9.2a4 4 0 0 1 0 5.6"/><path d="M18.4 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>Toca para escucharlo</span></button></div></div>
   <a class="btn" href="#agenda" data-cta="video"><span class="bt">Elegir mi horario<svg class="fl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><small>Te atiendo yo, por videollamada</small></a>
+  <p class="wa-v"><button type="button" class="wa-link" data-wa="video">o escríbeme por WhatsApp</button></p>
 </div>
 <script>
 /* celular (aprobado el 7 nov): el video arranca solo, sin sonido, y encima queda «Toca para escucharlo».
@@ -1335,7 +1339,8 @@ window.addEventListener('message',function(e){
     h3.textContent=origen==='horario'?'¿No encontraste horario? Respóndeme 5 preguntas y te propongo uno.':'Respóndeme 5 preguntas y te escribo yo, en persona.';
     antes=document.activeElement;ws.hidden=false;document.body.style.overflow='hidden';pinta();
     if(i===0)setTimeout(function(){var t=f.querySelector('input[name=nombre]');if(t)t.focus();},80);
-    if(!abierto){abierto=true;if(window.fbq)fbq('trackCustom','WhatsAppAbierto',{origen:origen});if(window.tcdCl)tcdCl('WhatsAppAbierto');}
+    if(!abierto){abierto=true;if(window.fbq)fbq('trackCustom','WhatsAppAbierto',{origen:origen});if(window.tcdCl)tcdCl('WhatsAppAbierto');
+      try{window.clarity('set','whatsapp',origen);}catch(e){}}   /* 20 nov: etiqueta en Clarity con desde dónde lo abrió (video u horario) */
   }
   function cierra(){ws.hidden=true;document.body.style.overflow='';if(antes&&antes.focus)antes.focus();}
   document.querySelectorAll('[data-wa]').forEach(function(b){b.addEventListener('click',abre);});
