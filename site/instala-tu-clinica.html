@@ -1219,7 +1219,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
 /* ── cada botón avisa cuál fue ── */
 document.querySelectorAll('[data-cta]').forEach(function(a){
   a.addEventListener('click',function(e){
-    if(window.fbq){fbq('trackCustom','CTA',{ubicacion:a.getAttribute('data-cta')});fbq('track','InitiateCheckout');}
+if(window.fbq){fbq('trackCustom','CTA',{ubicacion:a.getAttribute('data-cta')});}
     if(window.tcdCl)tcdCl('CTA');
     var t=document.getElementById('elige')||document.getElementById('agenda');if(!t)return;
     e.preventDefault();
@@ -1297,7 +1297,7 @@ window.addEventListener('message',function(e){
   var s=(typeof d==='string')?d:(d.type||d.event||'');s=String(s).toLowerCase();
   /* 18 nov (Javo, con VENTAS HIGH): el Schedule le llega a Meta una sola vez, desde GHL (servidor, con correo y teléfono).
      Desde la página sale AgendaWeb, una vez por carga, para no contar la agenda dos veces. */
-  if((s.indexOf('book')>-1||s.indexOf('appointment')>-1)&&!window.__tcdAgendaWeb){window.__tcdAgendaWeb=1;if(window.fbq)fbq('trackCustom','AgendaWeb');if(window.tcdCl)tcdCl('AgendaWeb');}
+  if((s.indexOf('book')>-1||s.indexOf('appointment')>-1)&&!window.__tcdAgendaWeb){window.__tcdAgendaWeb=1;if(window.fbq)fbq('trackCustom','AgendaWeb', {value: 0, currency: 'USD'});if(window.tcdCl)tcdCl('AgendaWeb');}
 },false);
 </script>
 <script>
@@ -1372,7 +1372,7 @@ window.addEventListener('message',function(e){
       '• Mi agenda hoy: '+g('agenda')+'\n'+
       (g('duda')?'• Mi duda: '+g('duda')+'\n':'')+
       (origen==='horario'?'\nNo encontré horario para mi diagnóstico. ¿Me propones uno?':'\nQuiero mi diagnóstico contigo. ¿Me propones un horario?');
-    if(window.fbq){fbq('track','Contact');fbq('trackCustom','WhatsAppEnviado',{agenda:g('agenda'),profesion:g('profesion'),anios:a,inversion:g('inversion'),origen:origen});}
+    if(window.fbq){fbq('track','Contact', {value: 0, currency: 'USD'});fbq('trackCustom','WhatsAppEnviado',{agenda:g('agenda'),profesion:g('profesion'),anios:a,inversion:g('inversion'),origen:origen, value: 0, currency: 'USD'});}
     if(window.tcdCl)tcdCl('WhatsAppEnviado');
     var url='https://wa.me/5492944217689?text='+encodeURIComponent(msg);
     var w=window.open(url,'_blank');if(!w)location.href=url;
