@@ -18,7 +18,11 @@
   /* La vista previa: ?rama=edicion trae la página de esa rama de GitHub, para mirarla antes de publicarla.
      En la vista previa no se cargan el píxel ni Clarity (base.js y clarity.js miran carga.rama). */
   var rama = 'main';
-  try { var pedida = new URLSearchParams(location.search).get('rama'); if (pedida && /^[a-z0-9-]{2,30}$/.test(pedida)) rama = pedida; } catch (e) {}
+  try {
+    var pedida = new URLSearchParams(location.search).get('rama');
+    if (pedida && /^[a-z0-9-]{2,30}$/.test(pedida)) rama = pedida;
+  } catch (e) {}
+
   var ruta = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
   var pagina = w.TCD_PAGINA || (ruta in ALIAS ? ALIAS[ruta] : ruta);
   var archivo = '/site/' + pagina + '.html';
@@ -26,11 +30,15 @@
     'https://cdn.jsdelivr.net/gh/' + REPO + '@' + rama + archivo,
     'https://raw.githubusercontent.com/' + REPO + '/' + rama + archivo
   ];
-  var carga = w.__tcdCarga = { pagina: pagina, rama: rama, inicio: Math.round(performance.now()) };
 
-  /* 19 nov: jsDelivr dejó de servir bien este repo (con las imágenes de anuncios pasó su tope de 50 MB) y
-     responde 403 o 404 a lo que no tiene guardado. La página ya tenía respaldo (GitHub); las imágenes no.
-     Si una imagen del repo no carga desde jsDelivr, se pide la misma a GitHub, una sola vez. */
+  var carga = w.__tcdCarga = {
+    pagina: pagina,
+    rama: rama,
+    inicio: Math.round(performance.now())
+  };
+
+  /* Respaldo de imágenes: si jsDelivr falla o tiene topes en un archivo del repo,
+     pide la misma imagen una sola vez a raw.githubusercontent.com. */
   var CDN_IMG = 'https://cdn.jsdelivr.net/gh/' + REPO + '@';
   d.addEventListener('error', function (e) {
     var el = e.target;
@@ -52,10 +60,7 @@
     d.head.appendChild(tapa);
   }
 
-  /* 19 nov: la letra de la casa (Manrope) se pide al arrancar, junto con la página, y no después.
-     Antes la página aparecía con la letra del teléfono y saltaba cuando llegaba Manrope (los títulos cambiaban de alto).
-     Es el mismo archivo que da Google Fonts, con los mismos pesos que pide cada página.
-     Las páginas sin Manrope no la piden. */
+  /* Precarga de Manrope para evitar saltos tipográficos al montar. */
   var SIN_MANROPE = /^(app|app-745191|el-numero|generador-pp|index|modelodenegocio|sharyl)$|^libro\//;
   var LATIN = 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD';
   var letra = null;
@@ -66,14 +71,19 @@
         .then(function (b) { carga.letraLlego = Math.round(performance.now()); return b; }, function () { return null; });
     } catch (e) { letra = null; }
   }
-  /* Las conexiones que la página usa al montarse (Google Fonts y el píxel) se abren ya. No cambia qué se carga. */
+
+  /* Conexiones previas para fuentes y píxel en producción. */
   if (rama === 'main') {
     ['https://fonts.googleapis.com', 'https://connect.facebook.net'].forEach(function (u) {
-      try { var l = d.createElement('link'); l.rel = 'preconnect'; l.href = u; d.head.appendChild(l); } catch (e) {}
+      try {
+        var l = d.createElement('link');
+        l.rel = 'preconnect';
+        l.href = u;
+        d.head.appendChild(l);
+      } catch (e) {}
     });
   }
-  /* Con la página en la mano: Manrope se declara con los pesos que pide la página en Google Fonts.
-     Si el archivo no llegó, se le dan hasta 250 ms más; si tampoco, la página sale igual y Google Fonts hace lo de siempre. */
+
   function conLetra(html) {
     try {
       if (!letra) return html;
@@ -82,18 +92,27 @@
       var pesos = m[1].indexOf('..') > 0 ? [m[1].replace('..', ' ')] : m[1].split(';');
       var pedido = 'family=Manrope:wght@' + m[1];
     } catch (e) { return html; }
+
     return new Promise(function (ok) {
       var hecho = false, t = performance.now();
-      function sigue() { if (!hecho) { hecho = true; carga.esperaLetra = Math.round(performance.now() - t); ok(html); } }
+      function sigue() {
+        if (!hecho) {
+          hecho = true;
+          carga.esperaLetra = Math.round(performance.now() - t);
+          ok(html);
+        }
+      }
       setTimeout(sigue, 250);
       letra.then(function (b) {
         if (!b) return;
-        /* Si llega tarde, igual se declara: el cambio de letra pasa antes que esperando a Google Fonts. */
         return Promise.all(pesos.map(function (p) {
           var f = new FontFace('Manrope', b, { weight: p, style: 'normal', display: 'swap', unicodeRange: LATIN });
           d.fonts.add(f);
           return f.loaded;
-        })).then(function () { carga.letra = hecho ? 'tarde' : 'lista'; if (!hecho) carga.manrope = pedido; });
+        })).then(function () {
+          carga.letra = hecho ? 'tarde' : 'lista';
+          if (!hecho) carga.manrope = pedido;
+        });
       }).then(sigue, sigue);
     });
   }
@@ -107,8 +126,8 @@
               function (e) { clearTimeout(reloj); no(e); });
     });
   }
-  /* 18 nov: si jsDelivr no contesta en 1,5 segundos, se pide también a GitHub y gana la primera que llega.
-     Antes se esperaba hasta 6 segundos a jsDelivr antes de probar GitHub. */
+
+  /* Compite jsDelivr y GitHub: si jsDelivr no responde en 1,5 s (o falla), dispara respaldo. */
   function primera() {
     return new Promise(function (ok, no) {
       var gano = false, fallas = 0, pedidas = 0, reserva = null;
@@ -117,12 +136,21 @@
         pedidas = i + 1;
         traer(FUENTES[i], 12000).then(function (t) {
           if (gano) return;
-          gano = true; clearTimeout(reserva); carga.fuente = FUENTES[i]; ok(t);
-        }, function () {
+          gano = true;
+          clearTimeout(reserva);
+          carga.fuente = FUENTES[i];
+          carga.msFuente = Math.round(performance.now() - carga.inicio);
+          ok(t);
+        }, function (err) {
           fallas++;
+          carga['errorFuente' + i] = String(err || 'error');
           if (gano) return;
-          if (pedidas < FUENTES.length) { clearTimeout(reserva); pide(pedidas); }
-          else if (fallas >= FUENTES.length) no('sin fuente');
+          if (pedidas < FUENTES.length) {
+            clearTimeout(reserva);
+            pide(pedidas);
+          } else if (fallas >= FUENTES.length) {
+            no('sin fuente');
+          }
         });
       }
       pide(0);
@@ -130,14 +158,16 @@
     });
   }
 
-  /* Los estilos de GHL quedan apagados: la página trae los suyos. */
+  /* Apaga hojas de estilo de GHL sin tocar su lógica ni conexiones. */
   function esDeGHL(n) {
     if (n.nodeType !== 1 || n.hasAttribute('data-tcd') || n.id === 'tcd-tapa') return false;
     if (n.tagName === 'LINK') return /stylesheet/.test(n.rel) && /leadconnectorhq\.com\/_preview\//.test(n.href);
     if (n.tagName === 'STYLE') return /hl_page-preview|c-section|--headlinefont|bg-fixed/.test(n.textContent);
     return false;
   }
+
   function apagar(n) { if (n.media !== 'not all') n.media = 'not all'; }
+
   function apagarGHL() {
     var l = d.querySelectorAll('head style, head link[rel~="stylesheet"], #__nuxt style, #teleports style');
     for (var i = 0; i < l.length; i++) {
@@ -147,16 +177,19 @@
     }
     try {
       new MutationObserver(function (cambios) {
-        cambios.forEach(function (c) { [].forEach.call(c.addedNodes, function (n) { if (esDeGHL(n)) apagar(n); }); });
+        cambios.forEach(function (c) {
+          [].forEach.call(c.addedNodes, function (n) { if (esDeGHL(n)) apagar(n); });
+        });
       }).observe(d.head, { childList: true });
     } catch (e) {}
   }
 
   function copiarAtributos(de, a) {
-    for (var i = 0; i < de.attributes.length; i++) a.setAttribute(de.attributes[i].name, de.attributes[i].value);
+    for (var i = 0; i < de.attributes.length; i++) {
+      a.setAttribute(de.attributes[i].name, de.attributes[i].value);
+    }
   }
 
-  /* Un script nuevo con lo mismo: los que vienen del texto no corren solos. */
   function correr(viejo, sigue) {
     var s = d.createElement('script');
     for (var i = 0; i < viejo.attributes.length; i++) {
@@ -165,16 +198,13 @@
     }
     var tipo = viejo.getAttribute('data-tipo');
     if (tipo) s.type = tipo;
+
     if (viejo.getAttribute('src')) {
-      /* 18 nov: un script con async (o de tipo module) no frena a los demás, como en cualquier página.
-         Antes la página esperaba a que cargara el reproductor de Wistia: en el celular, /preparacion-h quedó
-         casi un minuto en blanco (lo que aparece al bajar no se muestra hasta que corre su script). */
       if (viejo.hasAttribute('async') || tipo === 'module') {
         viejo.parentNode.replaceChild(s, viejo);
         sigue();
         return;
       }
-      /* Los demás esperan, pero nunca más de 4 segundos. */
       var hecho = false, seguir = function () { if (!hecho) { hecho = true; sigue(); } };
       s.async = false;
       s.onload = s.onerror = seguir;
@@ -187,8 +217,6 @@
     }
   }
 
-  /* Si Manrope ya está puesta, la hoja de Google Fonts ya no la pide: así no hay dos Manrope iguales
-     (un navegador podría preferir la de Google y cambiar de letra un instante). Lo demás de la hoja queda igual. */
   function sinManropeDeGoogle(x) {
     if (!carga.manrope) return;
     var l = x.querySelectorAll('link[href*="fonts.googleapis.com/css2"]');
@@ -207,7 +235,6 @@
     try { sinManropeDeGoogle(x); } catch (e) {}
     var titulo = x.title;
 
-    /* Los scripts esperan hasta que la página entera esté puesta. */
     var esperan = x.querySelectorAll('script');
     for (var i = 0; i < esperan.length; i++) {
       esperan[i].setAttribute('data-tipo', esperan[i].getAttribute('type') || '');
@@ -242,13 +269,26 @@
     carga.listo = Math.round(performance.now());
     d.documentElement.setAttribute('data-tcd-pagina', pagina);
     if (location.hash) {
-      try { var meta = d.getElementById(decodeURIComponent(location.hash.slice(1))); if (meta) meta.scrollIntoView(); } catch (e) {}
+      try {
+        var meta = d.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (meta) meta.scrollIntoView();
+      } catch (e) {}
     }
-    /* GHL puede reescribir el título al terminar de cargar: vuelve el de la página. */
     if (titulo) {
-      var poner = function () { if (d.title !== titulo) d.title = titulo; };
-      try { new MutationObserver(poner).observe(d.head, { childList: true, subtree: true, characterData: true }); } catch (e) {}
-      w.addEventListener('load', poner);
+      var programado = false;
+      var poner = function () {
+        programado = false;
+        if (d.title !== titulo) d.title = titulo;
+      };
+      var agendar = function () {
+        if (programado || d.title === titulo) return;
+        programado = true;
+        w.requestAnimationFrame ? w.requestAnimationFrame(poner) : setTimeout(poner, 0);
+      };
+      try {
+        new MutationObserver(agendar).observe(d.head, { childList: true, subtree: true, characterData: true });
+      } catch (e) {}
+      w.addEventListener('load', agendar);
     }
   }
 
