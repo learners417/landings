@@ -173,4 +173,23 @@
     });
     v.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
   });
+  /* ── el video de venta en Wistia: se monta acá, porque el cargador de GHL no corre scripts de tipo módulo ── */
+  $$('[data-wistia]').forEach(function (caja) {
+    var id = caja.getAttribute('data-wistia'); if (!/^[a-z0-9]{6,14}$/.test(id)) return;
+    var p = d.createElement('wistia-player'); p.setAttribute('media-id', id); p.setAttribute('aspect', '1.7777777777777777');
+    p.style.backgroundImage = "url('https://fast.wistia.com/embed/medias/" + id + "/swatch')";
+    caja.appendChild(p);
+    var a = d.createElement('script'); a.src = 'https://fast.wistia.com/player.js'; a.async = true; d.head.appendChild(a);
+    var b = d.createElement('script'); b.src = 'https://fast.wistia.com/embed/' + id + '.js'; b.async = true; b.type = 'module'; d.head.appendChild(b);
+    var visto = false;
+    p.addEventListener('play', function () { if (!visto) { visto = true; evento('VideoConSonido', { pagina: location.pathname }, true); } });
+    p.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
+  });
+
+  /* ── los testimonios: suena uno por vez ── */
+  var videos = $$('.testis video');
+  videos.forEach(function (v) {
+    v.addEventListener('play', function () { videos.forEach(function (x) { if (x !== v) x.pause(); }); });
+    v.addEventListener('play', function () { evento('Testimonio', { cual: v.getAttribute('data-nombre') || '' }, true); }, { once: true });
+  });
 })();
