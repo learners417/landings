@@ -424,6 +424,8 @@ h1 .g,h2 .g{font-style:italic}
 .duda{display:block;margin-top:18px;font-weight:600;font-size:16px}
 .duda em{font-weight:400;color:var(--muted)}
 .duda textarea{margin-top:8px;resize:vertical}
+.q-fuera{margin:16px 0 0;padding:14px 16px;border-radius:14px;background:#F4EEE3;box-shadow:inset 0 0 0 1px var(--line);font-family:var(--fb);font-size:17px;line-height:1.45;color:var(--ink)}
+.q-fuera b{display:block;font-weight:700;margin-bottom:4px}
 .q legend .q-ctx{display:block;margin-bottom:10px;font-family:var(--fb);font-style:normal;font-weight:400;font-size:17px;line-height:1.45;letter-spacing:0;color:var(--ink)}
 .ws-nav{display:flex;gap:10px;margin-top:22px}
 .ws-back{padding:15px 18px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:600 17px var(--fb);cursor:pointer}
@@ -1175,7 +1177,7 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
   <fieldset class="q on" data-q="1"><legend><span>1/5</span>¿Cómo te llamas?</legend><input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre y apellido" required></fieldset>
   <fieldset class="q" data-q="2"><legend><span>2/5</span>¿A qué te dedicas?</legend><div class="op"><label><input type="radio" name="profesion" value="Psicología" required><b>Psicología</b></label><label><input type="radio" name="profesion" value="Terapia" required><b>Terapia</b></label><label><input type="radio" name="profesion" value="Coaching" required><b>Coaching</b></label><label><input type="radio" name="profesion" value="Nutrición" required><b>Nutrición</b></label><label><input type="radio" name="profesion" value="Medicina" required><b>Medicina</b></label><label><input type="radio" name="profesion" value="Entrenamiento" required><b>Entrenamiento</b></label><label><input type="radio" name="profesion" value="Otra" required><b>Otra</b></label></div></fieldset>
   <fieldset class="q" data-q="3"><legend><span>3/5</span>¿Hace cuántos años atiendes 1 a 1?</legend><div class="op"><label><input type="radio" name="anios" value="Menos de 2" required><b>Menos de 2</b></label><label><input type="radio" name="anios" value="De 2 a 5" required><b>De 2 a 5</b></label><label><input type="radio" name="anios" value="De 5 a 10" required><b>De 5 a 10</b></label><label><input type="radio" name="anios" value="Más de 10" required><b>Más de 10</b></label></div></fieldset>
-  <fieldset class="q" data-q="4"><legend><span>4/5</span>¿Cuánto podrías invertir hoy?</legend><div class="op col"><label><input type="radio" name="inversion" value="NO puedo invertir en mi negocio hoy" data-fuera required><b>NO puedo invertir en mi negocio hoy</b></label><label><input type="radio" name="inversion" value="Menos de 750 USD" data-fuera required><b>Menos de 750 USD</b></label><label><input type="radio" name="inversion" value="Entre 750 USD y 1500 USD" required><b>Entre 750 USD y 1500 USD</b></label><label><input type="radio" name="inversion" value="Entre 1.500 USD y 3.000 USD" required><b>Entre 1.500 USD y 3.000 USD</b></label><label><input type="radio" name="inversion" value="+ 3.000 USD" required><b>+ 3.000 USD</b></label></div></fieldset>
+  <fieldset class="q" data-q="4"><legend><span>4/5</span>¿Cuánto podrías invertir hoy?</legend><div class="op col"><label><input type="radio" name="inversion" value="NO puedo invertir en mi negocio hoy" data-fuera="herramientas" required><b>NO puedo invertir en mi negocio hoy</b></label><label><input type="radio" name="inversion" value="Menos de 750 USD" data-fuera="libros" required><b>Menos de 750 USD</b></label><label><input type="radio" name="inversion" value="Entre 750 USD y 1500 USD" required><b>Entre 750 USD y 1500 USD</b></label><label><input type="radio" name="inversion" value="Entre 1.500 USD y 3.000 USD" required><b>Entre 1.500 USD y 3.000 USD</b></label><label><input type="radio" name="inversion" value="+ 3.000 USD" required><b>+ 3.000 USD</b></label></div><p class="q-fuera" id="ws-fuera" hidden><b>Con esta respuesta, el diagnóstico 1 a 1 queda cerrado para ti.</b> Se agenda desde 750 USD de inversión. Tu paso de hoy es este:</p></fieldset>
   <fieldset class="q" data-q="5"><legend><span>5/5</span>¿Cómo está tu agenda hoy?</legend><div class="op col"><label><input type="radio" name="agenda" value="Llena, con lista de espera" required><b>Llena, con lista de espera</b></label><label><input type="radio" name="agenda" value="Casi llena" required><b>Casi llena</b></label><label><input type="radio" name="agenda" value="Con espacios disponibles" required><b>Con espacios disponibles</b></label><label><input type="radio" name="agenda" value="Recién empiezo" required><b>Recién empiezo</b></label></div>
    <label class="duda">¿Qué duda quieres que te responda? <em>(opcional)</em><textarea name="duda" rows="3" placeholder="Escríbela acá"></textarea></label></fieldset>
   <div class="ws-nav"><button type="button" class="ws-back" id="ws-back">Atrás</button><button type="submit" class="ws-go" id="ws-go">Siguiente</button></div>
@@ -1323,15 +1325,15 @@ window.addEventListener('message',function(e){
 
 /* ── WhatsApp: 5 preguntas y el mensaje sale armado ──
    La 4 es el mismo filtro del formulario del calendario: «NO puedo invertir» y «Menos de 750» no abren WhatsApp,
-   lleva a /libros?desde=diagnostico (NoCalifica y público «No califican»). El resto llega con su respuesta. */
+   llevan a /para-empezar y a /libros, con ?desde=diagnostico (NoCalifica y público «No califican»). El resto llega con su respuesta. */
 (function(){
   var ws=document.getElementById('ws'),f=document.getElementById('wsf');if(!ws||!f)return;
   var qs=[].slice.call(f.querySelectorAll('.q')),i=0,back=document.getElementById('ws-back'),go=document.getElementById('ws-go'),prog=document.getElementById('ws-prog'),abierto=false,antes=null;
   function pinta(){
     qs.forEach(function(q,k){q.classList.toggle('on',k===i);});
     back.hidden=i===0;prog.style.width=((i+1)/qs.length*100)+'%';
-    var ult=i===qs.length-1,fuera=!!qs[i].querySelector('input[data-fuera]:checked');
-    go.textContent=fuera?'Ver programas de menos de 750':(ult?'Enviar por WhatsApp':'Siguiente');go.classList.toggle('wa',ult&&!fuera);
+    var ult=i===qs.length-1,fx=qs[i].querySelector('input[data-fuera]:checked'),fuera=!!fx,av=document.getElementById('ws-fuera');if(av)av.hidden=!fuera;
+    go.textContent=fuera?(fx.getAttribute('data-fuera')==='herramientas'?'Ir a mis herramientas':'Ver programas de menos de 750'):(ult?'Enviar por WhatsApp':'Siguiente');go.classList.toggle('wa',ult&&!fuera);
   }
   var origen='flotante',h3=document.getElementById('ws-t');
   function abre(e){
@@ -1361,7 +1363,7 @@ window.addEventListener('message',function(e){
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!valida(qs[i]))return;
-    if(qs[i].querySelector('input[data-fuera]:checked')){if(window.tcdCl)tcdCl('WhatsAppNoCalifica');location.href='https://tuclinica.digital/libros?desde=diagnostico&via=whatsapp';return;}
+    var fx=qs[i].querySelector('input[data-fuera]:checked');if(fx){if(window.tcdCl)tcdCl('WhatsAppNoCalifica');location.href='https://tuclinica.digital/'+(fx.getAttribute('data-fuera')==='herramientas'?'para-empezar':'libros')+'?desde=diagnostico&via=whatsapp';return;}
     if(i<qs.length-1){i++;pinta();return;}
     var d=new FormData(f);function g(k){return String(d.get(k)||'').trim();}
     var a=g('anios');

@@ -175,5 +175,25 @@
 <div class="lb" role="dialog" aria-modal="true" aria-label="Testimonio"><button class="cerrar" type="button" aria-label="Cerrar">×</button><div class="caja"></div></div>
 
 <script>/*EDICION_JS*/</script>
+<script>
+/* ?desde=diagnostico (25 nov): quien respondió «NO puedo invertir hoy» en el diagnóstico llega aquí. NoCalifica, una vez por visita. */
+(function () {
+  if (new URLSearchParams(location.search).get('desde') !== 'diagnostico') return;
+  var vueltas = 0;
+  (function marcar() {
+    try { if (sessionStorage.getItem('tcd_nocalifica')) return; } catch (e) {}
+    if (!window.pxc) { if (vueltas++ < 40) setTimeout(marcar, 250); return; }
+    try { sessionStorage.setItem('tcd_nocalifica', '1'); } catch (e) {}
+    pxc('NoCalifica', { origen: 'diagnostico' });
+  })();
+  if (document.getElementById('tcd-desde-diag')) return;
+  var h = document.querySelector('.portadilla .recto h1');
+  if (!h) return;
+  var d = document.createElement('div');
+  d.id = 'tcd-desde-diag'; d.className = 'desde-diag'; d.style.margin = '0 0 22px';
+  d.innerHTML = '<b>El diagnóstico 1 a 1 queda cerrado para ti por ahora.</b><p>Se agenda desde 750 USD de inversión. Con lo que me contaste, tu paso de hoy es empezar aquí, con tus números.</p>';
+  h.parentNode.insertBefore(d, h.parentNode.firstChild);
+})();
+</script>
 </body>
 </html>

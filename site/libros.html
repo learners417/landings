@@ -1114,7 +1114,7 @@ if (!window.TCD.librosPorCorreo) window.TCD.pagos.obra = '';
   if (!destino) return;
   var d = document.createElement('div');
   d.id = 'tcd-desde-diag'; d.className = 'desde-diag';
-  d.innerHTML = '<b>Gracias por contarme.</b><p>Por lo que me contaste, tu mejor paso hoy es empezar por aquí: Tu nuevo precio. ' + ((window.TCD && TCD.linea97) || '') + ' <span data-precio="obra">97</span> USD.</p>';
+  d.innerHTML = '<b>El diagnóstico 1 a 1 queda cerrado para ti por ahora.</b><p>Se agenda desde 750 USD de inversión. Con lo que me contaste, tu paso de hoy es este: Tu nuevo precio. ' + ((window.TCD && TCD.linea97) || '') + ' <span data-precio="obra">97</span> USD.</p>';
   destino.insertBefore(d, destino.firstChild);
   d.querySelector('[data-precio]').textContent = ((window.TCD || {}).precios || {}).obra || 97;
 })();
