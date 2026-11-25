@@ -200,3 +200,13 @@ la-decision-hoy `23ae88d7-43dc-434f-96e7-afef4390ec76` · la-decision-revision `
 Los links de pago, el calendario y el PDF del capítulo van en `KX` arriba de `roberto/roberto.js`.
 El libro completo NO va en este repo: su link vive solo en El Consultorio, en el valor personalizado
 «La decisión · link del libro».
+
+## Experiencias Patagónicas · correcciones de Ailu (25 nov 2026)
+/retiros-2027 queda más corta y con jerga de eventos: portada con el video de venta (Wistia `kbqjv6ofp3`, lo monta `ep/ep.js`
+desde `data-wistia`, porque el cargador no corre scripts de tipo módulo), para quién (3 fotos propias), el recorrido de lo que
+resuelve Ailu, la calculadora con costos de referencia nuevos (US$ 170 casa privada y US$ 280 lodge, por persona y por noche),
+la agenda arriba de los testimonios (3 videos), honorario fijo por tamaño de grupo (US$ 1.200, 1.800 y 2.500), Ailu con su foto
+y las preguntas al final. Sin fotos de Unsplash: las fotos propias se escriben `F(carpeta/archivo,ancho)` y salen del CDN de
+imágenes de su GHL. La película de portada, el programa por días y las fechas salieron de la página.
+/retiros-preparacion es nueva (`ep/retiros-preparacion.html` → `site/retiros-preparacion.html`): la ve quien agenda. Qué traer,
+todo lo que incluye la producción, un cronograma de ejemplo y las fechas 2027. Lleva `noindex`.

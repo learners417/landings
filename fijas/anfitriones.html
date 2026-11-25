@@ -376,6 +376,42 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 @media (max-width:520px){.vsl .sonido{min-height:52px;padding:0 20px;font-size:17px}.vsl .sonido svg{width:22px;height:22px}}
 .nav .links a{white-space:nowrap}
 @media (max-width:1180px){.nav .links{display:none}.nav .caja>.btn{margin-left:auto}}
+
+
+.heroe{padding-block:clamp(36px,5vw,72px) clamp(56px,7vw,104px)}
+.heroe .arriba{display:grid;gap:22px;justify-items:center;text-align:center;margin-bottom:clamp(28px,3.4vw,48px)}
+.heroe .d1{font-size:clamp(40px,5.6vw,84px);line-height:1;max-width:15em}
+.heroe .lead{max-width:36em}
+.heroe .vsl{max-width:1040px;margin-inline:auto}
+.heroe .abajo{display:grid;gap:22px;justify-items:center;margin-top:clamp(26px,3vw,40px)}
+.heroe .sellos{justify-content:center;color:var(--niebla)}
+.vsl wistia-player{display:block;width:100%;height:100%}
+.vsl wistia-player:not(:defined){background:center/cover no-repeat;filter:blur(5px)}
+.recorrido{list-style:none;margin:0;padding:0;border-top:2px solid var(--tinta)}
+.recorrido>li{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(16px,3vw,48px);padding:clamp(22px,2.6vw,34px) 0;border-bottom:1px solid var(--linea-fuerte)}
+.recorrido .cuando{font:420 clamp(24px,2.3vw,34px)/1.1 var(--serif);font-variation-settings:"SOFT" 100,"opsz" 72;letter-spacing:-.02em;color:var(--vino)}
+.recorrido .d4{margin-bottom:8px}
+.recorrido p{font-size:19px;line-height:1.5;color:var(--tinta-2);max-width:40em}
+.oscuro .recorrido{border-color:var(--ciruela)}.oscuro .recorrido>li{border-color:rgba(247,246,243,.16)}.oscuro .recorrido .cuando{color:var(--ciruela)}.oscuro .recorrido p{color:#CDBFD2}
+@media (max-width:760px){.recorrido>li{grid-template-columns:1fr;gap:8px}}
+.niveles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,24px)}
+.nivel{border:1px solid rgba(247,246,243,.2);border-radius:var(--r-l);padding:clamp(22px,2.4vw,32px)}
+.nivel .cifra{display:block;font-size:clamp(44px,4.6vw,68px);color:var(--blanco);margin:10px 0 6px}
+.nivel p{font-size:18px;color:#CDBFD2}
+.nivel b{font:800 16px/1.3 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ciruela)}
+@media (max-width:800px){.niveles{grid-template-columns:1fr}}
+.testis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+.testis .marco{aspect-ratio:9/16;border-radius:var(--r-l);overflow:hidden;background:var(--noche)}
+.testis video{display:block;width:100%;height:100%;object-fit:cover}
+.testis p{font-size:18px;font-weight:700;margin-top:14px}
+.testis p span{display:block;font-weight:500;color:var(--tinta-2)}
+@media (max-width:760px){.testis{grid-auto-flow:column;grid-auto-columns:76%;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-right:calc(-1*var(--margen))}.testis>div{scroll-snap-align:start}}
+.anfitriona .retrato img{object-position:50% 22%}
+.cierre{text-align:center;display:grid;gap:22px;justify-items:center}
+.pie-sitio .meta a{color:inherit}
+.listado{columns:2;column-gap:clamp(24px,4vw,64px);list-style:none;margin:0;padding:0}
+.listado li{break-inside:avoid;border-top:1px solid var(--linea);padding:14px 0;font-size:19px;line-height:1.45;display:flex;gap:14px}
+@media (max-width:760px){.listado{columns:1}}
 .instala{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
 .instala>div{border-top:2px solid var(--tinta);padding-top:22px}
 .instala svg{width:40px;height:40px;color:var(--vino);margin-bottom:14px}
@@ -792,6 +828,25 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
       evento('VideoConSonido', { pagina: location.pathname }, true);
     });
     v.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
+  });
+  /* ── el video de venta en Wistia: se monta acá, porque el cargador de GHL no corre scripts de tipo módulo ── */
+  $$('[data-wistia]').forEach(function (caja) {
+    var id = caja.getAttribute('data-wistia'); if (!/^[a-z0-9]{6,14}$/.test(id)) return;
+    var p = d.createElement('wistia-player'); p.setAttribute('media-id', id); p.setAttribute('aspect', '1.7777777777777777');
+    p.style.backgroundImage = "url('https://fast.wistia.com/embed/medias/" + id + "/swatch')";
+    caja.appendChild(p);
+    var a = d.createElement('script'); a.src = 'https://fast.wistia.com/player.js'; a.async = true; d.head.appendChild(a);
+    var b = d.createElement('script'); b.src = 'https://fast.wistia.com/embed/' + id + '.js'; b.async = true; b.type = 'module'; d.head.appendChild(b);
+    var visto = false;
+    p.addEventListener('play', function () { if (!visto) { visto = true; evento('VideoConSonido', { pagina: location.pathname }, true); } });
+    p.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
+  });
+
+  /* ── los testimonios: suena uno por vez ── */
+  var videos = $$('.testis video');
+  videos.forEach(function (v) {
+    v.addEventListener('play', function () { videos.forEach(function (x) { if (x !== v) x.pause(); }); });
+    v.addEventListener('play', function () { evento('Testimonio', { cual: v.getAttribute('data-nombre') || '' }, true); }, { once: true });
   });
 })();
 </script>
