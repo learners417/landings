@@ -55,8 +55,39 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-prepar
     <div class="pasos">
       <div class="paso rv"><span class="n">1</span><h3 class="d4">Tu grupo</h3><p>Cuántas personas te siguen hoy y cuántas ya te pagan.</p></div>
       <div class="paso rv d1x"><span class="n">2</span><h3 class="d4">Tu fecha</h3><p>El mes que tenés en la cabeza. Abajo están las fechas 2027.</p></div>
-      <div class="paso rv d2x"><span class="n">3</span><h3 class="d4">Tu precio</h3><p>Cuánto le cobrarías a cada participante. Si todavía no lo sabés, lo calculamos juntos.</p></div>
+      <div class="paso rv d2x"><span class="n">3</span><h3 class="d4">Tu precio</h3><p>Cuánto le cobrarías a cada participante. Probalo acá abajo, en la calculadora.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="oscuro tramo-c" id="numeros">
+  <div class="caja">
+    <div class="encabezado">
+      <h2 class="d2 balance rv">Armá tus números <em>antes de la llamada.</em></h2>
+      <p class="lead rv d1x">Mové los números de tu evento y traé el resultado. En la llamada los ajustamos con los presupuestos reales de tu fecha.</p>
+    </div>
+    <div class="calc rv">
+      <div class="mandos-c" id="calc">
+        <div class="campo"><label for="c-per">Personas en tu evento <output id="o-per">12</output></label><input type="range" id="c-per" min="6" max="30" step="1" value="12"></div>
+        <div class="campo"><label for="c-pre">Precio por persona <output id="o-pre">US$ 1.500</output></label><input type="range" id="c-pre" min="600" max="4000" step="50" value="1500"><small>Lo que le cobrás a cada participante por el evento completo.</small></div>
+        <div class="campo"><p class="rot" id="t-noc">Noches</p><div class="chips" role="group" aria-labelledby="t-noc" data-grupo="noches"><button type="button" class="chip" data-v="2" aria-pressed="false">2 noches</button><button type="button" class="chip" data-v="3" aria-pressed="true">3 noches</button><button type="button" class="chip" data-v="4" aria-pressed="false">4 noches</button></div></div>
+        <div class="campo"><p class="rot" id="t-niv">Alojamiento</p><div class="chips" role="group" aria-labelledby="t-niv" data-grupo="nivel"><button type="button" class="chip" data-v="170" aria-pressed="true">Casa privada</button><button type="button" class="chip" data-v="280" aria-pressed="false">Lodge u hotel boutique</button></div><small>Casa privada: una casa grande para todo el grupo, con cocinera y todas las comidas. Lodge u hotel boutique: habitaciones dobles con baño privado y restaurante propio.</small></div>
+      </div>
+      <div class="resultado" aria-live="polite">
+        <div class="renglon"><span>Lo que vendés<span class="nota" id="r-ven-n">12 lugares a US$ 1.500</span></span><b id="r-ven">US$ 18.000</b></div>
+        <div class="renglon menos"><span>Alojamiento, comidas, traslados y una salida<span class="nota" id="r-pro-n">US$ 170 por persona y por noche</span></span><b id="r-pro">−US$ 6.120</b></div>
+        <div class="renglon menos"><span>Sala, fotógrafo y detalles</span><b id="r-fij">−US$ 1.100</b></div>
+        <div class="renglon menos"><span>Imprevistos, 8 %</span><b id="r-imp">−US$ 578</b></div>
+        <div class="renglon menos"><span>Honorario de Experiencias Patagónicas<span class="nota">Fijo, según el tamaño de tu grupo</span></span><b id="r-hon">−US$ 1.200</b></div>
+        <div class="total">
+          <p class="ojo">Te queda a vos</p>
+          <span class="cifra" id="r-que">US$ 9.002</span>
+          <p id="r-pct">El 50 % de lo que vendés. Con 6 lugares ya cubriste todo.</p>
+          <p class="pista" id="r-pista"></p>
+        </div>
+      </div>
+    </div>
+    <p class="meta rv" style="margin-top:22px;max-width:56em">Costos de referencia para Bariloche, temporada 2026/2027. El honorario es fijo según el tamaño de tu grupo.</p>
   </div>
 </section>
 
@@ -137,6 +168,44 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-prepar
 
 <script>
 /*EP_JS*/
+</script>
+<script>
+/* ── la calculadora del retiro ── */
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var est={noches:3,nivel:170};
+  function plata(n){return 'US$ '+Math.round(n).toLocaleString('es-AR')}
+  function cuenta(per,pre){
+    var pro=per*est.noches*est.nivel, fij=800+100*est.noches, imp=.08*(pro+fij), pres=pro+fij+imp, hon=per<=12?1200:(per<=20?1800:2500);
+    return {ven:per*pre,pro:pro,fij:fij,imp:imp,hon:hon,que:per*pre-pres-hon,costo:pres+hon};
+  }
+  function calc(){
+    var per=+$('c-per').value, pre=+$('c-pre').value, r=cuenta(per,pre);
+    $('o-per').textContent=per; $('o-pre').textContent=plata(pre);
+    $('r-ven-n').textContent=per+' lugares a '+plata(pre);
+    $('r-pro-n').textContent=plata(est.nivel)+' por persona y por noche'; $('r-ven').textContent=plata(r.ven); $('r-pro').textContent='−'+plata(r.pro); $('r-fij').textContent='−'+plata(r.fij);
+    $('r-imp').textContent='−'+plata(r.imp); $('r-hon').textContent='−'+plata(r.hon);
+    var q=$('r-que'); q.textContent=(r.que<0?'−':'')+plata(Math.abs(r.que)); var pct=r.ven?r.que/r.ven:0; q.classList.toggle('bajo',pct<.2);
+    var eq=Math.ceil(r.costo/pre); if(eq>per)eq=0;
+    $('r-pct').textContent=(r.que>0?'El '+Math.round(pct*100)+' % de lo que vendés. ':'')+(eq?'Con '+eq+(eq===1?' lugar':' lugares')+' ya cubriste todo.':'Con este precio no se cubre: subilo o pasá a Casa privada.');
+    var p=$('r-pista');
+    if(pct<.3){var sug=Math.ceil(r.costo/(per*.6)/50)*50; p.textContent='Con este precio te queda poco. A '+plata(sug)+' por persona te queda el 40 %.'; p.classList.add('ver');}
+    else p.classList.remove('ver');
+  }
+  var usada=false;
+  function uso(){if(!usada){usada=true;if(window.EP)EP.evento('CustomizeProduct',{content_name:'calculadora-retiro'});}}
+  ['c-per','c-pre'].forEach(function(i){$(i).addEventListener('input',function(){calc();uso();});});
+  [].forEach.call(document.querySelectorAll('[data-grupo]'),function(g){
+    var clave=g.getAttribute('data-grupo');
+    [].forEach.call(g.querySelectorAll('.chip'),function(b){
+      b.addEventListener('click',function(){
+        [].forEach.call(g.querySelectorAll('.chip'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+        est[clave]=+b.getAttribute('data-v'); calc(); uso();
+      });
+    });
+  });
+  calc();
+})();
 </script>
 </body>
 </html>
