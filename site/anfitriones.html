@@ -799,6 +799,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
       var f = d.createElement('iframe');
       f.src = src; f.id = id + '_ads'; f.title = caja.getAttribute('data-titulo') || 'Agenda'; f.setAttribute('scrolling', 'no');
       caja.appendChild(f);
+      try { sessionStorage.setItem('ep_agenda', nombre); } catch (e) {}
       var s = d.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true; d.body.appendChild(s);
       var avisado = false;
       w.addEventListener('message', function (e) {
@@ -806,9 +807,17 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
         var x = e.data || {};
         if (x && typeof x === 'object') { var h = x.height || x.iframeHeight || (x.data && x.data.height); if (typeof h === 'number' && h > 300) f.style.minHeight = h + 'px'; }
         var t = (typeof x === 'string') ? x : (x.type || x.event || ''); t = String(t).toLowerCase();
-        if (!avisado && (t.indexOf('book') > -1 || t.indexOf('appointment') > -1)) { avisado = true; evento('Schedule', { content_name: nombre }); }
+        if (!avisado && (t.indexOf('book') > -1 || t.indexOf('appointment') > -1)) { avisado = true; evento('Schedule', { content_name: nombre }); try { sessionStorage.setItem('ep_agendo', '1'); } catch (e2) {} }
       }, false);
     }
+  }
+
+  /* ── llegó a la página de preparación desde la agenda: la reserva se cuenta acá si la agenda redirigió sin avisar ── */
+  if (/preparacion/.test(location.pathname)) {
+    try {
+      var vino = sessionStorage.getItem('ep_agenda');
+      if (vino && !sessionStorage.getItem('ep_agendo')) { sessionStorage.setItem('ep_agendo', '1'); evento('Schedule', { content_name: vino }); }
+    } catch (e3) {}
   }
 
   /* ── el video de Ailu: arranca mudo al verse; con el botón vuelve al inicio con sonido ── */
