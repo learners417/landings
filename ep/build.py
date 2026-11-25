@@ -34,9 +34,8 @@ def ghl(archivo, w):
 
 
 def propia(m):
-    archivo, w = m.group(1), int(m.group(2))
-    chica = max(480, w // 2)
-    return f'src="{ghl(archivo, w)}" srcset="{ghl(archivo, chica)} {chica}w, {ghl(archivo, w)} {w}w"'
+    # r_ es el lado mayor: una foto vertical sale más angosta que el número, por eso va una sola medida, generosa.
+    return f'src="{ghl(m.group(1), int(m.group(2)))}"'
 
 
 def sin_comentarios(css):
