@@ -909,12 +909,23 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
     if(nuevo()||api){clearInterval(iv);b.hidden=false;arranca();}
     else if(n>400)clearInterval(iv);
   },150);
+  /* 27 nov: al arrancar, la portada sale (no se mezcla con el video); después del toque, 2,5 s en que
+     otros toques no pausan el video; y si no arrancó con sonido, el botón vuelve (hasta 2 veces). */
+  var tapa=document.querySelector('#vsl .vsl-tapa'),esc=document.createElement('div'),veces=0;
+  esc.style.cssText='position:absolute;top:0;right:0;bottom:0;left:0;z-index:5';esc.hidden=true;
+  if(b.parentNode)b.parentNode.insertBefore(esc,b);
+  function estado(){try{return nuevo()?el.state:(api?api.state():'');}catch(e){return '';}}
+  function suena(){try{return estado()==='playing'&&(nuevo()?!el.muted:!api.isMuted());}catch(e){return false;}}
+  function va(){try{return Number(nuevo()?el.currentTime:(api?api.time():0))||0;}catch(e){return 0;}}
+  var iv2=setInterval(function(){if(va()>0.4){clearInterval(iv2);if(tapa)tapa.style.visibility='hidden';}},200);
   b.addEventListener('click',function(){
-    tocado=true;b.hidden=true;
+    tocado=true;b.hidden=true;veces++;
     try{
       if(nuevo()){el.muted=false;if(Number(el.volume)===0)el.volume=1;el.currentTime=0;juega(el.play());}
       else if(api){api.unmute();if(api.volume()===0)api.volume(1);api.time(0);api.play();}
     }catch(e){}
+    esc.hidden=false;
+    setTimeout(function(){esc.hidden=true;if(!suena()&&veces<3)b.hidden=false;},2500);
   });
 })();
   </script>
