@@ -23,12 +23,14 @@ jobs:
             curl -sSfL --max-time 120 "$u" -o "$d/$nombre" && echo "ok $nombre $(stat -c %s "$d/$nombre")" || echo "falla $u"
           done < anuncios/propias/lista.txt
           # Achica: fotos a 2400 px en JPG; de los videos, un cuadro por segundo.
+          pip install -q pillow imageio-ffmpeg
+          FF=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())")
           o=$(mktemp -d)
           for f in "$d"/*; do
             b=$(basename "$f"); b="${b%.*}"
             case "$f" in
-              *.mov|*.mp4) ffmpeg -loglevel error -i "$f" -vf "fps=1,scale='min(2400,iw)':-2" -q:v 3 "$o/${b}-%02d.jpg" ;;
-              *) convert "$f" -auto-orient -resize '2400x2400>' -quality 88 "$o/${b}.jpg" ;;
+              *.mov|*.mp4) "$FF" -loglevel error -i "$f" -vf "fps=1,scale='min(2400,iw)':-2" -q:v 3 "$o/${b}-%02d.jpg" ;;
+              *) python3 -c "import sys;from PIL import Image,ImageOps;i=ImageOps.exif_transpose(Image.open(sys.argv[1])).convert('RGB');i.thumbnail((2400,2400));i.save(sys.argv[2],quality=88)" "$f" "$o/${b}.jpg" ;;
             esac
           done
           ls -la "$o"
