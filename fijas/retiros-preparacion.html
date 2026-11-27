@@ -415,15 +415,35 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 @media (max-width:760px){.listado{columns:1}}
 
 
-.galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);grid-auto-flow:dense;gap:clamp(10px,1.4vw,18px)}
+.galeria{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(150px,42vw,220px);grid-auto-flow:dense;gap:clamp(10px,1.4vw,18px)}
 .galeria .foto{margin:0;height:100%}
-.galeria .foto.grande{grid-column:span 2;grid-row:span 2}
-.galeria .foto.clip{grid-row:span 2}
-.galeria .foto.ancha{grid-column:span 2}
 .galeria video{display:block;width:100%;height:100%;object-fit:cover}
 .galeria .foto img{transition:transform .8s ease}
 .galeria .foto:hover img{transform:scale(1.04)}
-@media (max-width:760px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}}
+.galeria .arco{border-radius:999px 999px var(--r-l) var(--r-l)}
+.galeria .redonda{border-radius:50%}
+.g-a,.g-i{grid-column:span 2;grid-row:span 2}
+.g-b,.g-c,.g-g{grid-row:span 2}
+.g-j{grid-column:span 2}
+@media (min-width:761px){
+  .galeria{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);grid-template-areas:"a a b c" "a a b c" "d e i i" "g f i i" "g h j j"}
+  .g-a{grid-area:a}.g-b{grid-area:b}.g-c{grid-area:c}.g-d{grid-area:d}.g-e{grid-area:e}.g-f{grid-area:f}.g-g{grid-area:g}.g-h{grid-area:h}.g-i{grid-area:i}.g-j{grid-area:j}
+}
+
+
+.oscuro.vino{background:var(--vino)}
+.oscuro.vino .lead,.oscuro.vino .meta{color:#EBD5DE}
+.oscuro.vino .d2 em,.oscuro.vino .d3 em,.oscuro.vino .ojo{color:#F3CFE0}
+.oscuro.vino .lineas>li{border-color:rgba(247,246,243,.22)}
+.oscuro.vino .tilde{background:var(--niebla);color:var(--vino)}
+.cordillera.a-vino .masa{fill:var(--vino)}
+.cordillera.sobre-vino{background:var(--vino)}
+
+
+.sena{display:flex;align-items:center;gap:18px;width:min(100% - 2*var(--margen),var(--ancho));margin:clamp(8px,2vw,24px) auto 0;color:var(--vino)}
+.sena::before,.sena::after{content:"";flex:1;height:1px;background:var(--linea-fuerte)}
+.sena svg{width:44px;height:44px;flex:none}
+.sena.rv{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -468,11 +488,11 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
         <div class="renglon menos" id="f-sal" hidden><span>Salida extra<span class="nota" id="r-sal-n"></span></span><b id="r-sal">−US$ 0</b></div>
         <div class="renglon menos"><span>Sala, fotógrafo y detalles</span><b id="r-fij">−US$ 1.100</b></div>
         <div class="renglon menos"><span>Imprevistos, 8 %</span><b id="r-imp">−US$ 578</b></div>
-        <div class="renglon menos"><span>Honorario de Experiencias Patagónicas<span class="nota">12 % del presupuesto, desde US$ 1.800</span></span><b id="r-hon">−US$ 1.200</b></div>
+        <div class="renglon menos"><span>Honorario de Experiencias Patagónicas<span class="nota">12 % del presupuesto, desde US$ 1.800</span></span><b id="r-hon">−US$ 1.800</b></div>
         <div class="total">
           <p class="ojo">Te queda a vos</p>
-          <span class="cifra" id="r-que">US$ 9.002</span>
-          <p id="r-pct">El 50 % de lo que vendés. Con 6 lugares ya cubriste todo.</p>
+          <span class="cifra" id="r-que">US$ 8.402</span>
+          <p id="r-pct">El 47 % de lo que vendés. Con 7 lugares ya cubriste todo.</p>
           <p class="pista" id="r-pista"></p>
         </div>
       </div>
@@ -507,9 +527,12 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   <div class="caja">
     <div class="encabezado">
       <div class="pila"><p class="ojo rv">Lo que cuentan</p><h2 class="d2 balance rv">Mientras esperás la llamada, <em>escuchalos.</em></h2></div>
-      <p class="lead rv d1x">Mentores que ya llevaron a su comunidad a Bariloche, contando cómo fue.</p>
+      <p class="lead rv d1x">Anfitriones y participantes de eventos que produje cuentan cómo fue.</p>
     </div>
     <div class="testis rv">
+      <div><div class="marco"><video src="https://files.leadconnectorhq.com/file/69b4c186fb38ca5e57a3fe0b/gasti#t=0.1" data-nombre="gasti" controls playsinline preload="metadata" aria-label="Testimonio en video de un evento producido por Ailu en Bariloche"></video></div></div>
+      <div><div class="marco"><video src="https://files.leadconnectorhq.com/file/69b4c186bfc81f2b0f03f649/testimonio-jean-carlo#t=0.1" data-nombre="jean-carlo" controls playsinline preload="metadata" aria-label="Testimonio en video de un evento producido por Ailu en Bariloche"></video></div></div>
+      <div><div class="marco"><video src="https://assets.cdn.filesafe.space/Z2vTNR3p0cXAApYeIzF5/media/69b4c186fb38ca137ba3fe0a.mov#t=0.1" data-nombre="tercero" controls playsinline preload="metadata" aria-label="Testimonio en video de un evento producido por Ailu en Bariloche"></video></div></div>
       <div><div class="marco"><video src="https://files.leadconnectorhq.com/file/6b08d1032683f7092ee42a8c/img-5155.mov#t=0.1" data-nombre="testimonio-1" controls playsinline preload="metadata" aria-label="Testimonio en video de un evento producido por Ailu en Bariloche"></video></div></div>
       <div><div class="marco"><video src="https://files.leadconnectorhq.com/file/6b08d1036afbbd33f357025e/img-5153.mov#t=0.1" data-nombre="testimonio-2" controls playsinline preload="metadata" aria-label="Testimonio en video de un evento producido por Ailu en Bariloche"></video></div></div>
       <div><div class="marco"><video src="https://files.leadconnectorhq.com/file/6b08d1032683f7092ee42a92/img-5154.mov#t=0.1" data-nombre="testimonio-3" controls playsinline preload="metadata" aria-label="Testimonio en video de un evento producido por Ailu en Bariloche"></video></div></div>
@@ -523,16 +546,16 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
     <h2 class="d2 balance rv">Así se vive <em>un evento conmigo.</em></h2>
   </div>
   <div class="galeria">
-      <figure class="foto grande rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd54b9be7089840ddafd/10.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto clip rv"><video src="https://files.leadconnectorhq.com/file/6b08d11d3abd658855d6172e/img-3153.mov" data-desde="1" muted playsinline loop preload="metadata" aria-label="Tres segundos de un evento producido por Ailu en Bariloche"></video></figure>
-      <figure class="foto rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd547c27025850310598/4.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd54e041da34bec7e163/5.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd54248bef80f5fc1b05/7.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/6b08d4463abd658855d65560/diseno-sin-titulo-1.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto clip rv"><video src="https://files.leadconnectorhq.com/file/6b08d4a467b603994b7be40b/diseno-sin-titulo.mp4" data-desde="1" muted playsinline loop preload="metadata" aria-label="Tres segundos de un evento producido por Ailu en Bariloche"></video></figure>
-      <figure class="foto rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/6b08d4466afbbd33f3574552/diseno-sin-titulo-2.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/6b08d4465374a3433db4cd90/diseno-sin-titulo-1.png" sizes="(max-width:620px) 50vw, 25vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
-      <figure class="foto ancha rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://files.leadconnectorhq.com/file/6b08d44666f2f87a81f7a7d9/diseno-sin-titulo-3.png" sizes="(max-width:620px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-a rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1400/u_https://files.leadconnectorhq.com/file/69aedd54b9be7089840ddafd/10.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-b arco clip rv"><video src="https://files.leadconnectorhq.com/file/6b08d11d3abd658855d6172e/img-3153.mov" data-desde="1" muted playsinline loop preload="metadata" aria-label="Tres segundos de un evento producido por Ailu en Bariloche"></video></figure>
+      <figure class="foto g-c arco rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd547c27025850310598/4.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-d rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd54e041da34bec7e163/5.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-e rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/69aedd54248bef80f5fc1b05/7.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-i rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1400/u_https://files.leadconnectorhq.com/file/6b08d44666f2f87a81f7a7d9/diseno-sin-titulo-3.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-g arco clip rv"><video src="https://files.leadconnectorhq.com/file/6b08d4a467b603994b7be40b/diseno-sin-titulo.mp4" data-desde="1" muted playsinline loop preload="metadata" aria-label="Tres segundos de un evento producido por Ailu en Bariloche"></video></figure>
+      <figure class="foto g-f redonda rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/6b08d4463abd658855d65560/diseno-sin-titulo-1.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-h rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://files.leadconnectorhq.com/file/6b08d4466afbbd33f3574552/diseno-sin-titulo-2.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
+      <figure class="foto g-j rv"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1400/u_https://files.leadconnectorhq.com/file/6b08d4465374a3433db4cd90/diseno-sin-titulo-1.png" sizes="(max-width:760px) 100vw, 50vw" alt="Un momento de un evento producido por Ailu en Bariloche" loading="lazy"></figure>
   </div>
   <p class="meta rv" style="margin-top:22px">Fotos y videos de eventos producidos por Experiencias Patagónicas.</p>
 </section>
