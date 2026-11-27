@@ -1,0 +1,37 @@
+# Baja las fotos propias de Ailu (del CDN de su GHL) y las guarda CIFRADAS: en el repo público solo queda el cifrado.
+name: Fotos propias (cifradas)
+on:
+  push:
+    branches: [anuncios-fotos]
+    paths: ['anuncios/propias/lista.txt']
+permissions:
+  contents: write
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bajar y cifrar
+        run: |
+          set -e
+          d=$(mktemp -d)
+          n=0
+          while read u; do
+            [ -z "$u" ] && continue
+            n=$((n+1))
+            nombre="$(printf '%02d' $n)-$(basename "$u")"
+            curl -sSfL --max-time 120 "$u" -o "$d/$nombre" && echo "ok $nombre $(stat -c %s "$d/$nombre")" || echo "falla $u"
+          done < anuncios/propias/lista.txt
+          tar -czf /tmp/f.tgz -C "$d" .
+          openssl rand -out /tmp/k 32
+          openssl enc -aes-256-cbc -pbkdf2 -pass file:/tmp/k -in /tmp/f.tgz -out anuncios/propias/fotos.tgz.enc
+          openssl pkeyutl -encrypt -pubin -inkey anuncios/propias/clave.pub -in /tmp/k -out anuncios/propias/clave.enc
+          rm -f /tmp/k /tmp/f.tgz; rm -rf "$d"
+          ls -la anuncios/propias
+      - name: Guardar
+        run: |
+          git config user.name "fotos-bot"
+          git config user.email "fotos-bot@users.noreply.github.com"
+          git add anuncios/propias/fotos.tgz.enc anuncios/propias/clave.enc
+          git commit -m "Fotos propias cifradas" || echo "nada nuevo"
+          git push
