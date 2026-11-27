@@ -7,6 +7,8 @@
 <title>Arelis Marimón · Tu plan de 90 días</title>
 <!--
   Plan de 90 días de Arelis Marimón · Mentoría El Ascenso
+  v3 · 27 nov 2026 (tarde) · para la sesión: su escalera de cinco niveles, su embudo de ocho pasos, el objeto de
+  cada anuncio y su compromiso con fecha. El rodaje ya no espera al pago 2 (decidido por Javo).
   v2 · 27 nov 2026 · pasa de GHL (código pegado en el paso /arelis) a este repo, con lo acordado
   hasta hoy: su programa «Volver a elegir» corregido (12 semanas, 1.000 USD en un pago, EMA-RA,
   etapas y sesiones, texto de su página, cómo llega un paciente), los guiones con «valoración inicial»
@@ -1105,7 +1107,63 @@
       color: var(--text-secondary); line-height: 1.6; }
     #arelis-plan-90d .ap-guide-list li::before { content: ""; position: absolute; left: 4px; top: 0.7em; width: 9px; height: 9px;
       border-radius: 50%; background: var(--brand-sage); }
+    /* Escalera */
+    #arelis-plan-90d .ap-ladder { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: end; }
+    #arelis-plan-90d .ap-step { position: relative; background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-md);
+      padding: 24px 20px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 10px; }
+    #arelis-plan-90d .ap-step-1 { min-height: 330px; opacity: 0.82; }
+    #arelis-plan-90d .ap-step-2 { min-height: 370px; opacity: 0.82; }
+    #arelis-plan-90d .ap-step-3 { min-height: 450px; background: var(--brand-sage); border-color: var(--brand-sage); color: #FFFFFF;
+      box-shadow: var(--shadow-elevated); transform: translateY(-8px); padding-top: 40px; }
+    #arelis-plan-90d .ap-step-4 { min-height: 420px; }
+    #arelis-plan-90d .ap-step-5 { min-height: 460px; }
+    #arelis-plan-90d .ap-step h4 { font-size: 22px; font-weight: 800; }
+    #arelis-plan-90d .ap-step p { font-size: 17px; color: var(--text-secondary); line-height: 1.55; margin: 0; flex: 1; }
+    #arelis-plan-90d .ap-step-3 h4, #arelis-plan-90d .ap-step-3 p { color: #FFFFFF; }
+    #arelis-plan-90d .ap-step-n { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent-terra); }
+    #arelis-plan-90d .ap-step-3 .ap-step-n { color: #B7E4C7; }
+    #arelis-plan-90d .ap-step-price { font-size: 24px; font-weight: 800; color: var(--text-main); }
+    #arelis-plan-90d .ap-step-3 .ap-step-price { color: #FFFFFF; font-size: 28px; white-space: nowrap; }
+    #arelis-plan-90d .ap-step-state { font-size: 16px; font-weight: 700; color: var(--text-muted); }
+    #arelis-plan-90d .ap-step-3 .ap-step-state { color: #E2F1EA; }
+    #arelis-plan-90d .ap-step-flag { position: absolute; top: -16px; left: 10px; right: 10px; white-space: nowrap; text-align: center; background: var(--accent-terra);
+      color: #FFFFFF; font-size: 16px; font-weight: 800; border-radius: 999px; padding: 6px 12px; }
+    #arelis-plan-90d .ap-ladder-rule { margin-top: 36px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;
+      background: var(--accent-terra-soft); border: 1px solid var(--accent-terra-border); border-radius: var(--radius-md); padding: 28px 32px; }
+    #arelis-plan-90d .ap-ladder-rule > div:last-child { flex: 1; min-width: 240px; }
+    /* Embudo */
+    #arelis-plan-90d .ap-funnel-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+    #arelis-plan-90d .ap-flow { list-style: none; padding: 0; margin: 0; position: relative; }
+    #arelis-plan-90d .ap-flow::before { content: ""; position: absolute; left: 29px; top: 30px; bottom: 30px; width: 2px; background: var(--brand-sage-border); }
+    #arelis-plan-90d .ap-flow li { position: relative; display: flex; gap: 18px; align-items: flex-start; margin-bottom: 22px; }
+    #arelis-plan-90d .ap-flow-ico { position: relative; z-index: 1; width: 60px; min-width: 60px; height: 60px; border-radius: 50%; background: #FFFFFF;
+      border: 2px solid var(--brand-sage); color: var(--brand-sage); display: inline-flex; align-items: center; justify-content: center; }
+    #arelis-plan-90d .ap-flow-ico svg { width: 28px; height: 28px; stroke-width: 2; }
+    #arelis-plan-90d .ap-flow h4 { font-size: 20px; font-weight: 800; margin: 4px 0 4px; }
+    #arelis-plan-90d .ap-flow p { font-size: 18px; color: var(--text-secondary); margin: 0; }
+    #arelis-plan-90d .ap-flow li:nth-child(6) .ap-flow-ico, #arelis-plan-90d .ap-flow li:nth-child(7) .ap-flow-ico { background: var(--brand-sage); color: #FFFFFF; }
+    /* Objeto de cada anuncio */
+    #arelis-plan-90d .ap-object-card { background: var(--accent-terra-soft); border: 1px dashed var(--accent-terra); border-radius: var(--radius-sm);
+      padding: 18px 22px; margin-bottom: 16px; }
+    #arelis-plan-90d .ap-object-name { font-size: 22px; font-weight: 800; color: var(--accent-terra); margin: 4px 0; }
+    #arelis-plan-90d .ap-object-card p { font-size: 18px; margin: 0; color: var(--text-main); }
+    /* Compromiso */
+    #arelis-plan-90d .ap-commit { background: var(--brand-sage); color: #FFFFFF; border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-elevated); }
+    #arelis-plan-90d .ap-commit h3 { color: #FFFFFF; font-size: 32px; font-weight: 800; margin-bottom: 24px; }
+    #arelis-plan-90d .ap-commit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+    #arelis-plan-90d .ap-commit-item { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-md); padding: 20px; }
+    #arelis-plan-90d .ap-commit-item span { display: block; font-size: 16px; font-weight: 700; color: #B7E4C7; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+    #arelis-plan-90d .ap-commit-item strong { font-size: 22px; font-weight: 800; color: #FFFFFF; }
+    #arelis-plan-90d .ap-commit p { font-size: 19px; color: #E2F1EA; margin: 0; }
+    @media (max-width: 980px) {
+      #arelis-plan-90d .ap-ladder { grid-template-columns: 1fr; gap: 14px; }
+      #arelis-plan-90d .ap-step { min-height: 0 !important; opacity: 1; }
+      #arelis-plan-90d .ap-step-3 { transform: none; margin-top: 16px; }
+      #arelis-plan-90d .ap-funnel-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 680px) {
+      #arelis-plan-90d .ap-commit { padding: 26px; }
+      #arelis-plan-90d .ap-commit-grid { grid-template-columns: 1fr; }
       #arelis-plan-90d .ap-guide-grid { grid-template-columns: 1fr; }
       #arelis-plan-90d .ap-quote { padding: 26px; }
       #arelis-plan-90d .ap-stage-table thead { display: none; }
@@ -1132,10 +1190,12 @@
         <a href="#sec-foco" class="ap-nav-item">2. Tu foco</a>
         <a href="#sec-metodo" class="ap-nav-item">3. Método</a>
         <a href="#sec-programa" class="ap-nav-item">4. Programa</a>
-        <a href="#sec-rodaje" class="ap-nav-item">5. Rodaje</a>
-        <a href="#sec-guiones" class="ap-nav-item">6. Guiones</a>
-        <a href="#sec-calendario" class="ap-nav-item">7. 90 Días</a>
-        <a href="#sec-acuerdo" class="ap-nav-item">8. Acuerdo</a>
+        <a href="#sec-escalera" class="ap-nav-item">5. Escalera</a>
+        <a href="#sec-embudo" class="ap-nav-item">6. Embudo</a>
+        <a href="#sec-guiones" class="ap-nav-item">7. Guiones</a>
+        <a href="#sec-rodaje" class="ap-nav-item">8. Rodaje</a>
+        <a href="#sec-calendario" class="ap-nav-item">9. 90 Días</a>
+        <a href="#sec-acuerdo" class="ap-nav-item">10. Acuerdo</a>
       </div>
     </div>
   </nav>
@@ -1658,168 +1718,143 @@
     </div>
   </section>
 
-  <!-- 6. CAMINO AL RODAJE DEL LUNES 7 DE DICIEMBRE -->
-  <section id="sec-rodaje" class="ap-sec">
+  <!-- 5. TU ESCALERA DE VALOR (27 nov) -->
+  <section id="sec-escalera" class="ap-sec">
     <div class="ap-wrap">
       <div class="ap-sec-head">
-        <span class="ap-kicker">05 · Preparación audiovisual</span>
-        <h2 class="ap-sec-title">Camino al rodaje del lunes 7 de diciembre</h2>
+        <span class="ap-kicker">05 · Tu escalera de valor</span>
+        <h2 class="ap-sec-title">Cinco niveles. Hoy vendes uno solo.</h2>
         <p class="ap-sec-sub">
-          Para llegar con todo escrito te faltan cinco cosas. En la app las cierras, cada una en su día.
+          De la puerta de entrada al acompañamiento más completo. El tercero es tu programa: es el único que vendes hoy, y a él van tus anuncios y tu embudo. Los otros cuatro quedan escritos para que el tercero se entienda.
         </p>
       </div>
-
-      <div class="ap-shoot-grid">
-        <div class="ap-shoot-card">
-          <div>
-            <div class="ap-shoot-top">
-              <div class="ap-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-              </div>
-              <span class="ap-day-tag">Día 5 · Vie 27 nov</span>
-            </div>
-            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tu precio nuevo y tu link de pago</h4>
-            <p style="font-size: 17px; color: var(--text-secondary);">1.000 USD en un pago, por tu programa de 12 semanas.</p>
-          </div>
+      <div class="ap-ladder">
+        <div class="ap-step ap-step-1">
+          <span class="ap-step-n">Nivel 1 · La puerta</span>
+          <div class="ap-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+          <h4>Tu mapa</h4>
+          <p>Autoevaluación guiada de tu ruptura: tus cinco indicadores de 0 a 10 y qué te dicen.</p>
+          <div class="ap-step-price">27 USD</div>
+          <span class="ap-step-state">Se abre después</span>
         </div>
-
-        <div class="ap-shoot-card">
-          <div>
-            <div class="ap-shoot-top">
-              <div class="ap-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </div>
-              <span class="ap-day-tag">Día 8 · Lun 30 nov</span>
-            </div>
-            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">A quién le hablas</h4>
-            <p style="font-size: 17px; color: var(--text-secondary);">Profesionales de 25 a 45 años después de una ruptura.</p>
-          </div>
+        <div class="ap-step ap-step-2">
+          <span class="ap-step-n">Nivel 2 · El primer paso</span>
+          <div class="ap-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+          <h4>Soltar</h4>
+          <p>Taller grupal en vivo, 90 minutos: por qué duele así y qué hacer con los pensamientos que vuelven.</p>
+          <div class="ap-step-price">97 USD</div>
+          <span class="ap-step-state">Se abre después</span>
         </div>
-
-        <div class="ap-shoot-card">
-          <div>
-            <div class="ap-shoot-top">
-              <div class="ap-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-              </div>
-              <span class="ap-day-tag">Día 9 · Mar 1 dic</span>
-            </div>
-            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tu método</h4>
-            <p style="font-size: 17px; color: var(--text-secondary);">Cinco etapas, de comprender a elegir.</p>
-          </div>
+        <div class="ap-step ap-step-3">
+          <span class="ap-step-flag">Hoy vendes este</span>
+          <span class="ap-step-n">Nivel 3 · Tu programa</span>
+          <div class="ap-icon-box is-white"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+          <h4>Volver a elegir</h4>
+          <p>12 semanas 1 a 1, en cinco etapas, medido al entrar, en la semana 6 y al cerrar.</p>
+          <div class="ap-step-price">1.000 USD</div>
+          <span class="ap-step-state">En un pago · Anuncios y embudo van acá</span>
         </div>
-
-        <div class="ap-shoot-card">
-          <div>
-            <div class="ap-shoot-top">
-              <div class="ap-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-              </div>
-              <span class="ap-day-tag">Día 10 · Mié 2 dic</span>
-            </div>
-            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tu programa</h4>
-            <p style="font-size: 17px; color: var(--text-secondary);">Volver a elegir, 12 semanas, 1.000 USD en un pago.</p>
-          </div>
+        <div class="ap-step ap-step-4">
+          <span class="ap-step-n">Nivel 4 · Después del programa</span>
+          <div class="ap-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+          <h4>Elegir cada mes</h4>
+          <p>Para quien terminó: una sesión al mes y mensajes contigo para sostener lo logrado.</p>
+          <div class="ap-step-price">150 USD por mes</div>
+          <span class="ap-step-state">Lo ofreces en la sesión 12</span>
         </div>
-
-        <div class="ap-shoot-card">
-          <div>
-            <div class="ap-shoot-top">
-              <div class="ap-icon-box is-terra">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              </div>
-              <span class="ap-day-tag">Día 11 · Jue 3 dic</span>
-            </div>
-            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tus guiones</h4>
-            <p style="font-size: 17px; color: var(--text-secondary);">Presentación, video de tu página, 3 anuncios y preparación.</p>
-          </div>
-        </div>
-
-        <div class="ap-shoot-card is-shoot-day">
-          <div>
-            <div class="ap-shoot-top">
-              <div class="ap-icon-box is-white">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
-              </div>
-              <span class="ap-day-tag">Día 15 · Lun 7 dic</span>
-            </div>
-            <h4 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Tu rodaje</h4>
-            <p style="font-size: 18px; opacity: 0.95;">Cinco videos, en un solo día.</p>
-          </div>
+        <div class="ap-step ap-step-5">
+          <span class="ap-step-n">Nivel 5 · Lo más completo</span>
+          <div class="ap-icon-box is-terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+          <h4>Volver a elegir · Integral</h4>
+          <p>12 semanas con dos sesiones por semana, tu evaluación neuropsicológica completa y tres meses de seguimiento.</p>
+          <div class="ap-step-price">3.000 USD</div>
+          <span class="ap-step-state">Con tus primeros resultados contados</span>
         </div>
       </div>
-      <!-- Tu día de rodaje: la guía (27 nov) -->
-      <div class="ap-block" id="guia-rodaje">
-        <h3 class="ap-block-title" style="font-size:30px;">Tu día de rodaje · cómo grabas</h3>
-        <p class="ap-sec-sub" style="margin-bottom:28px;">
-          Cinco videos en una mañana, con un solo armado de cámara. Del mismo video salen el horizontal de tu página y los verticales de tus anuncios.
+      <div class="ap-ladder-rule">
+        <div class="ap-icon-box is-terra" style="background-color:#FFFFFF;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div>
+          <h4 style="font-size:22px; font-weight:800; margin-bottom:6px;">La regla de tu escalera</h4>
+          <p style="font-size:19px; color:var(--text-main); margin:0;">Cada peso de pauta y cada anuncio llevan al nivel 3. Los niveles 1 y 2 se abren después, para quien hoy no entra al programa, y nunca llevan anuncios. Tus otros dos públicos, el club de adultos mayores y la formación para adolescentes, tendrán su propia escalera más adelante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TU EMBUDO (27 nov) -->
+  <section id="sec-embudo" class="ap-sec ap-sec-alt">
+    <div class="ap-wrap">
+      <div class="ap-sec-head">
+        <span class="ap-kicker">06 · Tu embudo</span>
+        <h2 class="ap-sec-title">Del anuncio a tu programa, en ocho pasos</h2>
+        <p class="ap-sec-sub">
+          Un solo camino, hacia un solo producto. Cada paso deja pasar a quien tiene urgencia y puede invertir, y le ahorra tu tiempo a quien todavía no.
         </p>
-        <div class="ap-guide-grid">
-          <div class="ap-card">
-            <span class="ap-badge-pill ap-badge-terra">Consíguelo esta semana</span>
-            <h4 class="ap-guide-title">Lo que necesitas</h4>
-            <ul class="ap-guide-list">
-              <li>Tu teléfono, con 20 GB libres y la batería llena.</li>
-              <li>Un trípode que llegue a la altura de tus ojos.</li>
-              <li>Un micrófono corbatero inalámbrico para tu teléfono.</li>
-              <li>Tus guiones impresos en letra grande.</li>
-            </ul>
-          </div>
-          <div class="ap-card">
-            <h4 class="ap-guide-title">El lugar</h4>
-            <ul class="ap-guide-list">
-              <li>Tu consultorio o un rincón tranquilo, con la puerta cerrada y el aire y el ventilador apagados.</li>
-              <li>Detrás de ti, uno o dos metros de espacio con algo tuyo: libros, una planta. Ordenado.</li>
-              <li>La ventana de frente o a un costado, nunca detrás de ti.</li>
-              <li>Las luces del techo apagadas. Graba de mañana, con luz de día.</li>
-            </ul>
-          </div>
-          <div class="ap-card">
-            <h4 class="ap-guide-title">Tú</h4>
-            <ul class="ap-guide-list">
-              <li>La misma ropa todo el día, lisa y de un color que se distinga del fondo. Sin rayas finas, estampados ni logos.</li>
-              <li>Miras al lente, no a la pantalla.</li>
-            </ul>
-          </div>
-          <div class="ap-card">
-            <h4 class="ap-guide-title">La cámara</h4>
-            <ul class="ap-guide-list">
-              <li>Teléfono en <strong>horizontal</strong>, en el trípode, a la altura de tus ojos y a metro y medio de ti.</li>
-              <li>Cámara trasera, en 1x, 4K a 30 cuadros y HDR apagado.</li>
-              <li>De pecho para arriba, tú en el centro y con aire a los costados.</li>
-              <li>Mantén apretado el dedo sobre tu cara en la pantalla para fijar el foco y la luz.</li>
-              <li>Modo avión y no molestar.</li>
-            </ul>
-          </div>
-          <div class="ap-card ap-guide-wide" style="background-color: var(--brand-sage-soft); border-color: var(--brand-sage-border);">
-            <h4 class="ap-guide-title">Antes de empezar</h4>
-            <p style="font-size:19px; color:var(--text-main);">Graba 10 segundos, míralos y escúchalos con auriculares. Si se ve y se escucha bien, ya no miras nada hasta el final.</p>
-          </div>
-          <div class="ap-card ap-guide-wide">
-            <span class="ap-badge-pill ap-badge-sage">Unas tres horas y media</span>
-            <h4 class="ap-guide-title">El orden</h4>
+      </div>
+      <div class="ap-funnel-grid">
+        <ol class="ap-flow">
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><div><h4>Ve tu anuncio</h4><p>Uno de tus tres momentos. Se reconoce en la escena antes de saber que eres psicóloga.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><div><h4>Comenta ELEGIR o toca el botón</h4><p>Si comenta, le llega por mensaje el video de tu página. Si ya está decidida, va directo a agendar.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span><div><h4>Mira el video de tu página</h4><p>Dos minutos: qué le pasa, por qué tapar el dolor no alcanza y cómo es Volver a elegir.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span><div><h4>Agenda y responde «Antes de tu llamada»</h4><p>Cinco preguntas que filtran. Ves sus respuestas antes de la valoración.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></span><div><h4>Mira tu video de preparación</h4><p>Un minuto: llega a la valoración con una frase escrita y en un lugar tranquilo.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><div><h4>Valoración inicial, 45 minutos</h4><p>Escuchas su situación y decides si el programa es para esa persona. Si lo es, le presentas el programa y el precio.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span><div><h4>Paga con tu link</h4><p>1.000 USD en un pago.</p></div></li>
+          <li><span class="ap-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><div><h4>Incorporación</h4><p>Consentimiento informado, acuerdo de trabajo, EMA-RA y el calendario de las 12 sesiones.</p></div></li>
+        </ol>
+        <div>
+          <div class="ap-card" style="margin-bottom:24px;">
+            <span class="ap-badge-pill ap-badge-sage">El filtro</span>
+            <h4 class="ap-guide-title">«Antes de tu llamada» · las cinco preguntas</h4>
             <ol class="ap-steps">
-              <li>Los tres anuncios, uno detrás del otro. Puedes decirlos en bloques de dos o tres frases: miras el papel, levantas la vista y lo dices.</li>
-              <li>El video de tu página, de corrido, tres tomas.</li>
-              <li>El video de preparación, tres tomas como máximo.</li>
-              <li>Cuatro tomas de apoyo de 10 segundos, sin hablar: escribiendo en tu cuaderno, en tu consultorio, junto a la ventana, con un café.</li>
+              <li>¿Hace cuánto terminó tu relación?</li>
+              <li>¿Qué probaste hasta ahora para superarla?</li>
+              <li>¿Qué te cuesta más hoy: dormir, concentrarte, dejar de pensar en esa persona u otra cosa?</li>
+              <li>¿Qué te gustaría que fuera distinto dentro de 12 semanas?</li>
+              <li>Si el programa es para ti, ¿puedes invertir en tu proceso ahora? <em>Sí, ahora · En las próximas semanas · Por ahora no</em></li>
             </ol>
-            <p class="ap-block-note">Antes de cada toma dices el nombre y das una palmada: «Anuncio uno, toma dos». Tres tomas y pasas a la siguiente.</p>
           </div>
-          <div class="ap-card ap-guide-wide">
-            <h4 class="ap-guide-title">Al terminar</h4>
-            <p style="font-size:19px; color:var(--text-secondary);">Pasa los archivos a la computadora por cable o por AirDrop (por WhatsApp pierden calidad). Nómbralos «A1 toma 2», «Página toma 1», y súbelos a la app.</p>
+          <div class="ap-card">
+            <span class="ap-badge-pill ap-badge-terra">A quién le hablas</span>
+            <h4 class="ap-guide-title">Tu paciente ideal</h4>
+            <ul class="ap-deliverables">
+              <li>Profesional de 25 a 45 años, con estabilidad económica.</li>
+              <li>Terminó hace semanas o meses y emocionalmente sigue ahí.</li>
+              <li>Ya probó distraerse, salir y conocer a alguien más.</li>
+              <li>Quiere resolverlo con un proceso serio y puede invertir ahora.</li>
+            </ul>
+            <p class="ap-block-note">Quien hoy no puede invertir queda para tus niveles 1 y 2. Quien llega en crisis recibe atención adecuada y derivación cuando corresponda.</p>
           </div>
+        </div>
+      </div>
+      <div class="ap-block ap-2col-grid" style="margin-bottom:0;">
+        <div class="ap-card">
+          <h3 class="ap-block-title">Por qué tú, en un mercado lleno de cursos</h3>
+          <ul class="ap-deliverables">
+            <li><strong>Psicóloga y neuropsicóloga, 23 años.</strong> Tu título y tu experiencia van en cada pieza.</li>
+            <li><strong>Un proceso 1 a 1, no un curso.</strong> Cada persona con su valoración y su ritmo.</li>
+            <li><strong>Medido con números.</strong> EMA-RA al entrar y cinco indicadores en las semanas 1, 6 y 12.</li>
+            <li><strong>Cuidado clínico.</strong> Valoras antes de ofrecer y derivas cuando corresponde.</li>
+          </ul>
+        </div>
+        <div class="ap-card">
+          <h3 class="ap-block-title">Por qué tres anuncios distintos</h3>
+          <p style="font-size:18px; color:var(--text-secondary);">Hoy Meta decide a quién mostrarle cada anuncio por lo que ve y escucha en él. Tres momentos distintos, con tres objetos distintos en tus manos, llegan a tres personas distintas que se reconocen.</p>
+          <ul class="ap-deliverables">
+            <li>El teléfono: revisa su perfil antes de dormir.</li>
+            <li>Dos tazas en la mesa: salió con alguien nuevo y pensó en su ex.</li>
+            <li>La caja de fotos: lo borró de todos lados y sigue apareciendo.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 7. TUS 6 GUIONES LISTOS PARA LEER EN CÁMARA (TELEPROMPTER LUMINOSO) -->
-  <section id="sec-guiones" class="ap-sec ap-sec-alt">
+  <section id="sec-guiones" class="ap-sec">
     <div class="ap-wrap">
       <div class="ap-sec-head">
-        <span class="ap-kicker">06 · Teleprompter luminoso</span>
+        <span class="ap-kicker">07 · Tus guiones</span>
         <h2 class="ap-sec-title">Tus 6 guiones listos para leer en cámara</h2>
         <p class="ap-sec-sub">
           Toca cualquiera de las 6 tarjetas para abrir el guion con letra grande, separado por intención de lectura. Usa el botón naranja para copiar solo el texto hablado.
@@ -1971,6 +2006,7 @@
             </button>
           </div>
 
+          <div class="ap-object-card"><span class="ap-cue-label">Objeto en cámara · primeros dos segundos</span><div class="ap-object-name">Tu teléfono</div><p>Lo tienes en la mano con la pantalla hacia abajo. En la primera frase lo das vuelta y lo miras.</p></div>
           <div class="ap-cue-card is-hook">
             <span class="ap-cue-label">Gancho · Apertura distinta</span>
             <div class="ap-spoken-text">«Terminaste tu relación. Tomaste la decisión más difícil, y la tomaste bien. Pero pasaron tres meses y sigues revisando su perfil antes de dormir.</div>
@@ -2000,6 +2036,7 @@
             </button>
           </div>
 
+          <div class="ap-object-card"><span class="ap-cue-label">Objeto en cámara · primeros dos segundos</span><div class="ap-object-name">Dos tazas en la mesa</div><p>Una frente a ti y otra enfrente, sin tocar. Arrancas mirando la taza vacía.</p></div>
           <div class="ap-cue-card is-hook">
             <span class="ap-cue-label">Gancho · Apertura distinta</span>
             <div class="ap-spoken-text">«Saliste con alguien nuevo. Te animaste, y eso ya es un paso. Pero a mitad de la cena te diste cuenta de que seguías pensando en tu ex.</div>
@@ -2029,6 +2066,7 @@
             </button>
           </div>
 
+          <div class="ap-object-card"><span class="ap-cue-label">Objeto en cámara · primeros dos segundos</span><div class="ap-object-name">Una caja de fotos</div><p>La tienes abierta frente a ti. En la primera frase la cierras.</p></div>
           <div class="ap-cue-card is-hook">
             <span class="ap-cue-label">Gancho · Apertura distinta</span>
             <div class="ap-spoken-text">«Borraste a tu ex de todos lados: las fotos, los chats, el número. Y aun así aparece en tu cabeza cuando menos lo esperas.</div>
@@ -2077,11 +2115,190 @@
     </div>
   </section>
 
+  <!-- 6. CAMINO AL RODAJE DEL LUNES 7 DE DICIEMBRE -->
+  <section id="sec-rodaje" class="ap-sec ap-sec-alt">
+    <div class="ap-wrap">
+      <div class="ap-sec-head">
+        <span class="ap-kicker">08 · Tu rodaje</span>
+        <h2 class="ap-sec-title">Camino a tu rodaje</h2>
+        <p class="ap-sec-sub">
+          Hoy dejamos claras las cinco cosas que necesitas para grabar. En la app las cierras, cada una en su día, y grabas en la fecha que elijas.
+        </p>
+      </div>
+
+      <div class="ap-shoot-grid">
+        <div class="ap-shoot-card">
+          <div>
+            <div class="ap-shoot-top">
+              <div class="ap-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <span class="ap-day-tag">Día 5 · Vie 27 nov</span>
+            </div>
+            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tu precio nuevo y tu link de pago</h4>
+            <p style="font-size: 17px; color: var(--text-secondary);">1.000 USD en un pago, por tu programa de 12 semanas.</p>
+          </div>
+        </div>
+
+        <div class="ap-shoot-card">
+          <div>
+            <div class="ap-shoot-top">
+              <div class="ap-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <span class="ap-day-tag">Día 8 · Lun 30 nov</span>
+            </div>
+            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">A quién le hablas</h4>
+            <p style="font-size: 17px; color: var(--text-secondary);">Profesionales de 25 a 45 años después de una ruptura.</p>
+          </div>
+        </div>
+
+        <div class="ap-shoot-card">
+          <div>
+            <div class="ap-shoot-top">
+              <div class="ap-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              </div>
+              <span class="ap-day-tag">Día 9 · Mar 1 dic</span>
+            </div>
+            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tu método</h4>
+            <p style="font-size: 17px; color: var(--text-secondary);">Cinco etapas, de comprender a elegir.</p>
+          </div>
+        </div>
+
+        <div class="ap-shoot-card">
+          <div>
+            <div class="ap-shoot-top">
+              <div class="ap-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              </div>
+              <span class="ap-day-tag">Día 10 · Mié 2 dic</span>
+            </div>
+            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tu programa</h4>
+            <p style="font-size: 17px; color: var(--text-secondary);">Volver a elegir, 12 semanas, 1.000 USD en un pago.</p>
+          </div>
+        </div>
+
+        <div class="ap-shoot-card">
+          <div>
+            <div class="ap-shoot-top">
+              <div class="ap-icon-box is-terra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+              <span class="ap-day-tag">Día 11 · Jue 3 dic</span>
+            </div>
+            <h4 style="font-size: 21px; font-weight: 800; margin-bottom: 8px;">Tus guiones</h4>
+            <p style="font-size: 17px; color: var(--text-secondary);">Presentación, video de tu página, 3 anuncios y preparación.</p>
+          </div>
+        </div>
+
+        <div class="ap-shoot-card is-shoot-day">
+          <div>
+            <div class="ap-shoot-top">
+              <div class="ap-icon-box is-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              </div>
+              <span class="ap-day-tag">Tu fecha · a más tardar el lun 7 dic</span>
+            </div>
+            <h4 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Tu rodaje</h4>
+            <p style="font-size: 18px; opacity: 0.95;">Cinco videos, en una mañana.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tu día de rodaje: la guía (27 nov) -->
+      <div class="ap-block" id="guia-rodaje">
+        <h3 class="ap-block-title" style="font-size:30px;">Tu día de rodaje · cómo grabas</h3>
+        <p class="ap-sec-sub" style="margin-bottom:28px;">
+          Cinco videos en una mañana, con un solo armado de cámara. Del mismo video salen el horizontal de tu página y los verticales de tus anuncios.
+        </p>
+        <div class="ap-guide-grid">
+          <div class="ap-card">
+            <span class="ap-badge-pill ap-badge-terra">Consíguelo esta semana</span>
+            <h4 class="ap-guide-title">Lo que necesitas</h4>
+            <ul class="ap-guide-list">
+              <li>Tu teléfono, con 20 GB libres y la batería llena.</li>
+              <li>Un trípode que llegue a la altura de tus ojos.</li>
+              <li>Un micrófono corbatero inalámbrico para tu teléfono.</li>
+              <li>Tus guiones impresos en letra grande.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4 class="ap-guide-title">El lugar</h4>
+            <ul class="ap-guide-list">
+              <li>Tu consultorio o un rincón tranquilo, con la puerta cerrada y el aire y el ventilador apagados.</li>
+              <li>Detrás de ti, uno o dos metros de espacio con algo tuyo: libros, una planta. Ordenado.</li>
+              <li>La ventana de frente o a un costado, nunca detrás de ti.</li>
+              <li>Las luces del techo apagadas. Graba de mañana, con luz de día.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4 class="ap-guide-title">Tú</h4>
+            <ul class="ap-guide-list">
+              <li>La misma ropa todo el día, lisa y de un color que se distinga del fondo. Sin rayas finas, estampados ni logos.</li>
+              <li>Miras al lente, no a la pantalla.</li>
+            </ul>
+          </div>
+          <div class="ap-card">
+            <h4 class="ap-guide-title">La cámara</h4>
+            <ul class="ap-guide-list">
+              <li>Teléfono en <strong>horizontal</strong>, en el trípode, a la altura de tus ojos y a metro y medio de ti.</li>
+              <li>Cámara trasera, en 1x, 4K a 30 cuadros y HDR apagado.</li>
+              <li>De pecho para arriba, tú en el centro y con aire a los costados.</li>
+              <li>Mantén apretado el dedo sobre tu cara en la pantalla para fijar el foco y la luz.</li>
+              <li>Modo avión y no molestar.</li>
+            </ul>
+          </div>
+          <div class="ap-card ap-guide-wide" style="background-color: var(--brand-sage-soft); border-color: var(--brand-sage-border);">
+            <h4 class="ap-guide-title">Antes de empezar</h4>
+            <p style="font-size:19px; color:var(--text-main);">Graba 10 segundos, míralos y escúchalos con auriculares. Si se ve y se escucha bien, ya no miras nada hasta el final.</p>
+          </div>
+          <div class="ap-card ap-guide-wide">
+            <span class="ap-badge-pill ap-badge-sage">Unas tres horas y media</span>
+            <h4 class="ap-guide-title">El orden</h4>
+            <ol class="ap-steps">
+              <li>Los tres anuncios, uno detrás del otro. Puedes decirlos en bloques de dos o tres frases: miras el papel, levantas la vista y lo dices.</li>
+              <li>El video de tu página, de corrido, tres tomas.</li>
+              <li>El video de preparación, tres tomas como máximo.</li>
+              <li>Cuatro tomas de apoyo de 10 segundos, sin hablar: escribiendo en tu cuaderno, en tu consultorio, junto a la ventana, con un café.</li>
+            </ol>
+            <p class="ap-block-note">Antes de cada toma dices el nombre y das una palmada: «Anuncio uno, toma dos». Tres tomas y pasas a la siguiente.</p>
+          </div>
+          <div class="ap-card ap-guide-wide">
+            <h4 class="ap-guide-title">Al terminar</h4>
+            <p style="font-size:19px; color:var(--text-secondary);">Pasa los archivos a la computadora por cable o por AirDrop (por WhatsApp pierden calidad). Nómbralos «A1 toma 2», «Página toma 1», y mándaselos a Javo por la carpeta que te comparte.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tu compromiso de hoy (27 nov) -->
+      <div class="ap-block" id="compromiso">
+        <div class="ap-commit">
+          <span class="ap-badge-pill" style="background:rgba(255,255,255,0.16); color:#FFFFFF;">Lo cerramos hoy</span>
+          <h3>Tu compromiso</h3>
+          <div class="ap-commit-grid">
+            <div class="ap-commit-item">
+              <span>Tu fecha de rodaje</span>
+              <strong>La eliges hoy</strong>
+            </div>
+            <div class="ap-commit-item">
+              <span>Tus guiones</span>
+              <strong>Confirmados hoy o con tus ajustes</strong>
+            </div>
+            <div class="ap-commit-item">
+              <span>Tu trípode y tu micrófono</span>
+              <strong>Listos antes de grabar</strong>
+            </div>
+          </div>
+          <p>Grabas en tu fecha y le mandas los cinco videos a Javo. Con tu pago 2, el viernes 4 de diciembre, se enciende tu pauta y se monta tu Sistema: página, agenda y cobro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 8. TUS 90 DÍAS (23 NOV AL 20 FEB) -->
   <section id="sec-calendario" class="ap-sec">
     <div class="ap-wrap">
       <div class="ap-sec-head">
-        <span class="ap-kicker">07 · Cronograma paso a paso</span>
+        <span class="ap-kicker">09 · Cronograma paso a paso</span>
         <h2 class="ap-sec-title">Tus 90 días (23 nov al 20 feb)</h2>
         <p class="ap-sec-sub">
           Tu primera venta está planeada para el <strong>Día 26, el 18 de diciembre</strong>.
@@ -2152,9 +2369,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
           </div>
           <div>
-            <span class="ap-tl-date">7 dic · Día 15</span>
+            <span class="ap-tl-date">Hasta el 7 dic · Día 15</span>
             <h4 style="font-size:20px; font-weight:800; margin-bottom:4px;">Rodaje de tus videos</h4>
-            <p style="font-size:17px; color:var(--text-secondary);">Grabas los 5 videos en un solo día.</p>
+            <p style="font-size:17px; color:var(--text-secondary);">Grabas los 5 videos en una mañana, en la fecha que elegiste.</p>
           </div>
         </div>
 
@@ -2231,7 +2448,7 @@
   <section id="sec-acuerdo" class="ap-sec ap-sec-alt">
     <div class="ap-wrap">
       <div class="ap-sec-head">
-        <span class="ap-kicker">08 · Soporte y compromisos</span>
+        <span class="ap-kicker">10 · Soporte y compromisos</span>
         <h2 class="ap-sec-title">Tu acompañamiento y Tu acuerdo</h2>
         <p class="ap-sec-sub">
           Haces en la app. Preguntas en la comunidad. Y tres veces por semana trabajas en vivo con Javo y el grupo.
@@ -2349,7 +2566,7 @@
             <div style="font-size:32px; font-weight:800; color:var(--text-main);">2.000 USD</div>
             <div style="font-size:16px; color:var(--text-secondary); margin:4px 0 14px;">Fecha: <strong>4 dic 2026</strong> (al cerrar tu etapa 1)</div>
             <p style="font-size:17px; color:var(--text-main);">
-              <strong>Abre del día 13 a tu graduación:</strong> rodaje, página, agenda, primera venta y campañas.
+              <strong>Abre del día 13 a tu graduación:</strong> tu pauta encendida, tu Sistema montado (página, agenda y cobro), tu primera venta y tus campañas.
             </p>
           </div>
         </div>
