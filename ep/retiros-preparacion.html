@@ -72,10 +72,12 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-prepar
         <div class="campo"><label for="c-pre">Precio por persona <output id="o-pre">US$ 1.500</output></label><input type="range" id="c-pre" min="600" max="4000" step="50" value="1500"><small>Lo que le cobrás a cada participante por el evento completo.</small></div>
         <div class="campo"><p class="rot" id="t-noc">Noches</p><div class="chips" role="group" aria-labelledby="t-noc" data-grupo="noches"><button type="button" class="chip" data-v="2" aria-pressed="false">2 noches</button><button type="button" class="chip" data-v="3" aria-pressed="true">3 noches</button><button type="button" class="chip" data-v="4" aria-pressed="false">4 noches</button></div></div>
         <div class="campo"><p class="rot" id="t-niv">Alojamiento</p><div class="chips" role="group" aria-labelledby="t-niv" data-grupo="nivel"><button type="button" class="chip" data-v="170" aria-pressed="true">Casa privada</button><button type="button" class="chip" data-v="280" aria-pressed="false">Lodge u hotel boutique</button></div><small>Casa privada: una casa grande para todo el grupo, con cocinera y todas las comidas. Lodge u hotel boutique: habitaciones dobles con baño privado y restaurante propio.</small></div>
+        <div class="campo"><p class="rot" id="t-sal">Salidas</p><div class="chips" role="group" aria-labelledby="t-sal" data-grupo="salida"><button type="button" class="chip" data-v="0" aria-pressed="true">Circuito Chico</button><button type="button" class="chip" data-v="120" aria-pressed="false">+ Navegación</button><button type="button" class="chip" data-v="155" aria-pressed="false">+ Cabalgata</button></div><small>El Circuito Chico ya está incluido. Podés sumar la navegación a Isla Victoria y el Bosque de Arrayanes o una cabalgata con almuerzo.</small></div>
       </div>
       <div class="resultado" aria-live="polite">
         <div class="renglon"><span>Lo que vendés<span class="nota" id="r-ven-n">12 lugares a US$ 1.500</span></span><b id="r-ven">US$ 18.000</b></div>
-        <div class="renglon menos"><span>Alojamiento, comidas, traslados y una salida<span class="nota" id="r-pro-n">US$ 170 por persona y por noche</span></span><b id="r-pro">−US$ 6.120</b></div>
+        <div class="renglon menos"><span>Alojamiento, comidas, traslados y el Circuito Chico<span class="nota" id="r-pro-n">US$ 170 por persona y por noche</span></span><b id="r-pro">−US$ 6.120</b></div>
+        <div class="renglon menos" id="f-sal" hidden><span>Salida extra<span class="nota" id="r-sal-n"></span></span><b id="r-sal">−US$ 0</b></div>
         <div class="renglon menos"><span>Sala, fotógrafo y detalles</span><b id="r-fij">−US$ 1.100</b></div>
         <div class="renglon menos"><span>Imprevistos, 8 %</span><b id="r-imp">−US$ 578</b></div>
         <div class="renglon menos"><span>Honorario de Experiencias Patagónicas<span class="nota">Fijo, según el tamaño de tu grupo</span></span><b id="r-hon">−US$ 1.200</b></div>
@@ -88,6 +90,12 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-prepar
       </div>
     </div>
     <p class="meta rv" style="margin-top:22px;max-width:56em">Costos de referencia para Bariloche, temporada 2026/2027. El honorario es fijo según el tamaño de tu grupo.</p>
+    <div class="encabezado" style="margin-top:clamp(40px,5vw,72px)">
+      <h3 class="d3 balance rv">Lo que cuesta cada salida.</h3>
+      <p class="lead rv d1x">Valores al público de agencia en Bariloche, por persona, con entradas y tasas incluidas. Para grupos consigo tarifa.</p>
+    </div>
+    <ul class="lineas rv"><li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>Circuito Chico, medio día</b>: US$ 32 por persona.</span></li><li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>Teleférico del Cerro Otto, con traslado</b>: US$ 39 por persona.</span></li><li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>Velero por el Nahuel Huapi, 2 horas</b>: US$ 56 por persona.</span></li><li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>Cerro Tronador y Ventisquero Negro, día completo</b>: US$ 75 por persona.</span></li><li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>Isla Victoria y Bosque de Arrayanes, con traslado</b>: US$ 120 por persona.</span></li><li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>Cabalgata con almuerzo</b>: US$ 155 por persona.</span></li></ul>
+    <p class="meta rv" style="margin-top:22px;max-width:56em">Lista de agosto de 2026, pasada a dólares al cambio oficial de noviembre.</p>
   </div>
 </section>
 
@@ -173,18 +181,18 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-prepar
 /* ── la calculadora del retiro ── */
 (function(){
   var $=function(i){return document.getElementById(i)};
-  var est={noches:3,nivel:170};
+  var est={noches:3,nivel:170,salida:0};
   function plata(n){return 'US$ '+Math.round(n).toLocaleString('es-AR')}
   function cuenta(per,pre){
-    var pro=per*est.noches*est.nivel, fij=800+100*est.noches, imp=.08*(pro+fij), pres=pro+fij+imp, hon=per<=12?1200:(per<=20?1800:2500);
-    return {ven:per*pre,pro:pro,fij:fij,imp:imp,hon:hon,que:per*pre-pres-hon,costo:pres+hon};
+    var pro=per*est.noches*est.nivel, fij=800+100*est.noches, sal=per*est.salida, imp=.08*(pro+fij+sal), pres=pro+fij+sal+imp, hon=per<=12?1200:(per<=20?1800:2500);
+    return {ven:per*pre,pro:pro,fij:fij,sal:sal,imp:imp,hon:hon,que:per*pre-pres-hon,costo:pres+hon};
   }
   function calc(){
     var per=+$('c-per').value, pre=+$('c-pre').value, r=cuenta(per,pre);
     $('o-per').textContent=per; $('o-pre').textContent=plata(pre);
     $('r-ven-n').textContent=per+' lugares a '+plata(pre);
     $('r-pro-n').textContent=plata(est.nivel)+' por persona y por noche'; $('r-ven').textContent=plata(r.ven); $('r-pro').textContent='−'+plata(r.pro); $('r-fij').textContent='−'+plata(r.fij);
-    $('r-imp').textContent='−'+plata(r.imp); $('r-hon').textContent='−'+plata(r.hon);
+    $('f-sal').hidden=!r.sal; $('r-sal').textContent='−'+plata(r.sal); $('r-sal-n').textContent=plata(est.salida)+' por persona'; $('r-imp').textContent='−'+plata(r.imp); $('r-hon').textContent='−'+plata(r.hon);
     var q=$('r-que'); q.textContent=(r.que<0?'−':'')+plata(Math.abs(r.que)); var pct=r.ven?r.que/r.ven:0; q.classList.toggle('bajo',pct<.2);
     var eq=Math.ceil(r.costo/pre); if(eq>per)eq=0;
     $('r-pct').textContent=(r.que>0?'El '+Math.round(pct*100)+' % de lo que vendés. ':'')+(eq?'Con '+eq+(eq===1?' lugar':' lugares')+' ya cubriste todo.':'Con este precio no se cubre: subilo o pasá a Casa privada.');
