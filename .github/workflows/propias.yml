@@ -22,11 +22,21 @@ jobs:
             nombre="$(printf '%02d' $n)-$(basename "$u")"
             curl -sSfL --max-time 120 "$u" -o "$d/$nombre" && echo "ok $nombre $(stat -c %s "$d/$nombre")" || echo "falla $u"
           done < anuncios/propias/lista.txt
-          tar -czf /tmp/f.tgz -C "$d" .
+          # Achica: fotos a 2400 px en JPG; de los videos, un cuadro por segundo.
+          o=$(mktemp -d)
+          for f in "$d"/*; do
+            b=$(basename "$f"); b="${b%.*}"
+            case "$f" in
+              *.mov|*.mp4) ffmpeg -loglevel error -i "$f" -vf "fps=1,scale='min(2400,iw)':-2" -q:v 3 "$o/${b}-%02d.jpg" ;;
+              *) convert "$f" -auto-orient -resize '2400x2400>' -quality 88 "$o/${b}.jpg" ;;
+            esac
+          done
+          ls -la "$o"
+          tar -czf /tmp/f.tgz -C "$o" .
           openssl rand -out /tmp/k 32
           openssl enc -aes-256-cbc -pbkdf2 -pass file:/tmp/k -in /tmp/f.tgz -out anuncios/propias/fotos.tgz.enc
           openssl pkeyutl -encrypt -pubin -inkey anuncios/propias/clave.pub -in /tmp/k -out anuncios/propias/clave.enc
-          rm -f /tmp/k /tmp/f.tgz; rm -rf "$d"
+          rm -f /tmp/k /tmp/f.tgz; rm -rf "$d" "$o"
           ls -la anuncios/propias
       - name: Guardar
         run: |
