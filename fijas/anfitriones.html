@@ -412,6 +412,17 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .listado{columns:2;column-gap:clamp(24px,4vw,64px);list-style:none;margin:0;padding:0}
 .listado li{break-inside:avoid;border-top:1px solid var(--linea);padding:14px 0;font-size:19px;line-height:1.45;display:flex;gap:14px}
 @media (max-width:760px){.listado{columns:1}}
+
+
+.galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);grid-auto-flow:dense;gap:clamp(10px,1.4vw,18px)}
+.galeria .foto{margin:0;height:100%}
+.galeria .foto.grande{grid-column:span 2;grid-row:span 2}
+.galeria .foto.clip{grid-row:span 2}
+.galeria .foto.ancha{grid-column:span 2}
+.galeria video{display:block;width:100%;height:100%;object-fit:cover}
+.galeria .foto img{transition:transform .8s ease}
+.galeria .foto:hover img{transform:scale(1.04)}
+@media (max-width:760px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}}
 .instala{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
 .instala>div{border-top:2px solid var(--tinta);padding-top:22px}
 .instala svg{width:40px;height:40px;color:var(--vino);margin-bottom:14px}
@@ -851,6 +862,14 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
     p.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
   });
 
+
+  /* ── galería: cada clip muestra 3 segundos desde data-desde, en loop, solo mientras se ve ── */
+  $$('.galeria video').forEach(function (v) {
+    var desde = parseFloat(v.getAttribute('data-desde') || '0'), dura = 3;
+    v.addEventListener('loadedmetadata', function () { if (desde >= v.duration) desde = 0; v.currentTime = desde; });
+    v.addEventListener('timeupdate', function () { if (v.currentTime >= desde + dura || v.currentTime < desde) v.currentTime = desde; });
+    if ('IntersectionObserver' in w) new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }); }, { threshold: .25 }).observe(v);
+  });
   /* ── los testimonios: suena uno por vez ── */
   var videos = $$('.testis video');
   videos.forEach(function (v) {

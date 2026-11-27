@@ -195,6 +195,14 @@
     p.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
   });
 
+
+  /* ── galería: cada clip muestra 3 segundos desde data-desde, en loop, solo mientras se ve ── */
+  $$('.galeria video').forEach(function (v) {
+    var desde = parseFloat(v.getAttribute('data-desde') || '0'), dura = 3;
+    v.addEventListener('loadedmetadata', function () { if (desde >= v.duration) desde = 0; v.currentTime = desde; });
+    v.addEventListener('timeupdate', function () { if (v.currentTime >= desde + dura || v.currentTime < desde) v.currentTime = desde; });
+    if ('IntersectionObserver' in w) new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }); }, { threshold: .25 }).observe(v);
+  });
   /* ── los testimonios: suena uno por vez ── */
   var videos = $$('.testis video');
   videos.forEach(function (v) {
