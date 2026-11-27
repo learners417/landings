@@ -205,6 +205,15 @@
     var visto = false;
     p.addEventListener('play', function () { if (!visto) { visto = true; evento('VideoConSonido', { pagina: location.pathname }, true); } });
     p.addEventListener('ended', function () { evento('VideoCompleto', { pagina: location.pathname }, true); });
+    /* los tramos: una vez cada uno, cuando la reproducción pasa el 25, el 50 y el 75 % */
+    var tramos = [25, 50, 75], hechos = {};
+    p.addEventListener('time-update', function () {
+      var t = +p.currentTime, dur = +p.duration; if (!(dur > 0) || !(t >= 0)) return;
+      var pct = t / dur * 100;
+      tramos.forEach(function (n) {
+        if (pct >= n && !hechos[n]) { hechos[n] = true; evento('Video' + n, { pagina: location.pathname }, true); }
+      });
+    });
   });
 
 
