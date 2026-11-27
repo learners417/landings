@@ -444,6 +444,16 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .sena::before,.sena::after{content:"";flex:1;height:1px;background:var(--linea-fuerte)}
 .sena svg{width:44px;height:44px;flex:none}
 .sena.rv{opacity:1;transform:none}
+
+
+.lado-cal{display:grid;gap:18px;align-content:start;min-width:0}
+.filtro{background:var(--vino);color:var(--niebla);border-radius:var(--r-l);padding:clamp(24px,3vw,36px)}
+.filtro .ojo{color:#F3CFE0}
+.filtro .pregunta{font-family:var(--serif);font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(26px,2.4vw,34px);line-height:1.15;letter-spacing:-.02em;margin:14px 0 20px}
+.filtro .chips{display:flex;flex-wrap:wrap;gap:10px}
+.filtro .chip[aria-pressed=true]{background:var(--niebla);border-color:var(--niebla);color:var(--vino)}
+.filtro .otra{margin-top:22px;padding-top:22px;border-top:1px solid rgba(247,246,243,.22)}
+.filtro .otra p{font-size:19px;line-height:1.5;margin-bottom:18px;color:#EBD5DE}
 </style>
 </head>
 <body>

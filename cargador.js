@@ -25,7 +25,7 @@
 
   var ruta = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
   /* Pasos clonados en GHL que heredan el TCD_PAGINA de su original: acá la ruta manda. */
-  var RUTA_MANDA = { 'retiros-preparacion': 'retiros-preparacion' };
+  var RUTA_MANDA = { 'retiros-preparacion': 'retiros-preparacion', 'retiros-asesoria': 'retiros-asesoria' };
   var pagina = RUTA_MANDA[ruta] || w.TCD_PAGINA || (ruta in ALIAS ? ALIAS[ruta] : ruta);
   var archivo = '/site/' + pagina + '.html';
   var FUENTES = [

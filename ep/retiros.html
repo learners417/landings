@@ -69,7 +69,18 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-2027'}
         <li><span class="tilde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Lo que querés que tu grupo se lleve.</li>
       </ul>
     </div>
-    <div class="cal rv d1x" id="cal" data-cal="ep-retiros-ailu" data-evento="retiros-30-min" data-titulo="Agenda de 30 minutos con Ailu"></div>
+    <div class="lado-cal">
+      <div class="filtro rv d1x" id="filtro" hidden>
+        <p class="ojo">Antes de elegir tu horario</p>
+        <p class="pregunta">¿Podés invertir desde US$ 1.200 en la producción de tu evento?</p>
+        <div class="chips"><button type="button" class="chip" data-r="si">Sí, puedo</button><button type="button" class="chip" data-r="no">Por ahora no</button></div>
+        <div class="otra" id="filtro-no" hidden>
+          <p>Entonces tu camino es la asesoría: cuatro sesiones conmigo y producís tu evento vos, con mi plan y mis proveedores.</p>
+          <a class="btn claro" href="/retiros-asesoria" data-cta="filtro-asesoria">Ver la asesoría 1 a 1</a>
+        </div>
+      </div>
+      <div class="cal rv d1x" id="cal" data-cal="ep-retiros-ailu" data-evento="retiros-30-min" data-titulo="Agenda de 30 minutos con Ailu"></div>
+    </div>
   </div>
 </section>
 
@@ -221,6 +232,22 @@ fbq('trackSingle','2031253547512073','ViewContent',{content_name:'retiros-2027'}
 
 <script>
 /*EP_JS*/
+</script>
+<script>
+/* ── el filtro de la agenda: una pregunta antes del calendario. Sin script, el calendario se ve directo. ── */
+(function(){
+  var f=document.getElementById('filtro'), cal=document.getElementById('cal'), no=document.getElementById('filtro-no'); if(!f||!cal) return;
+  var ya=''; try{ya=sessionStorage.getItem('ep_filtro')||'';}catch(e){}
+  function aplicar(r,avisar){
+    [].forEach.call(f.querySelectorAll('.chip'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-r')===r?'true':'false');});
+    cal.hidden=r!=='si'; no.hidden=r!=='no';
+    try{sessionStorage.setItem('ep_filtro',r);}catch(e){}
+    if(avisar&&window.EP)EP.evento('Filtro',{respuesta:r});
+  }
+  f.hidden=false; cal.hidden=true;
+  if(ya)aplicar(ya,false);
+  [].forEach.call(f.querySelectorAll('.chip'),function(b){b.addEventListener('click',function(){aplicar(b.getAttribute('data-r'),true);});});
+})();
 </script>
 </body>
 </html>

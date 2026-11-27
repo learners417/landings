@@ -11,7 +11,7 @@ import pathlib, re
 
 EP = pathlib.Path(__file__).resolve().parent
 RAIZ = EP.parent
-PAGINAS = ['retiros', 'retiros-preparacion', 'anfitriones']
+PAGINAS = ['retiros', 'retiros-preparacion', 'retiros-asesoria', 'anfitriones']
 
 
 def url(pid, w, h=None):
