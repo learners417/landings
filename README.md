@@ -210,3 +210,8 @@ y las preguntas al final. Sin fotos de Unsplash: las fotos propias se escriben `
 imágenes de su GHL. La película de portada, el programa por días y las fechas salieron de la página.
 /retiros-preparacion es nueva (`ep/retiros-preparacion.html` → `site/retiros-preparacion.html`): la ve quien agenda. Qué traer,
 todo lo que incluye la producción, un cronograma de ejemplo y las fechas 2027. Lleva `noindex`.
+
+## Planes de clientes (/arelis) · privados
+- `fijas/arelis.html` → `/arelis` (embudo «Planes de Negocio», paso ARELIS) · el plan de 90 días de Arelis Marimón.
+  Hasta el 27 nov 2026 estaba pegado entero en el bloque de GHL; desde ese día va con la línea del cargador.
+  `noindex` y sin píxel. Lo que dice sale de su plan en Claude; se actualiza acá cada vez que cambia el plan.
