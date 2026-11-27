@@ -676,6 +676,18 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
     else w.fbq('trackSingle', PIXEL, nombre, datos || {});
   }
   w.EP = { evento: evento };
+
+  /* Clarity (Microsoft): grabaciones y mapas de calor, proyecto «Experiencias Patagónicas».
+     No se carga en la vista previa (?rama=) ni si la página ya lo trae. */
+  (function () {
+    var ID = 'zjymkx8rp7', carga = w.__tcdCarga;
+    if (carga && carga.rama && carga.rama !== 'main') return;
+    if (d.querySelector('script[src*="clarity.ms/"]')) return;
+    w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
+    var s = d.createElement('script'); s.async = true;
+    s.src = 'https://www.clarity.ms/tag/' + ID;
+    (d.head || d.documentElement).appendChild(s);
+  })();
   var quieto = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ── la película ── */
