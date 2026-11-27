@@ -498,16 +498,16 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
         <div class="renglon menos" id="f-sal" hidden><span>Salida extra<span class="nota" id="r-sal-n"></span></span><b id="r-sal">−US$ 0</b></div>
         <div class="renglon menos"><span>Sala, fotógrafo y detalles</span><b id="r-fij">−US$ 1.100</b></div>
         <div class="renglon menos"><span>Imprevistos, 8 %</span><b id="r-imp">−US$ 578</b></div>
-        <div class="renglon menos"><span>Honorario de Experiencias Patagónicas<span class="nota">12 % del presupuesto, desde US$ 1.800</span></span><b id="r-hon">−US$ 1.800</b></div>
+        <div class="renglon menos"><span>Honorario de Experiencias Patagónicas<span class="nota">12 % del presupuesto, desde US$ 1.200</span></span><b id="r-hon">−US$ 1.200</b></div>
         <div class="total">
           <p class="ojo">Te queda a vos</p>
-          <span class="cifra" id="r-que">US$ 8.402</span>
-          <p id="r-pct">El 47 % de lo que vendés. Con 7 lugares ya cubriste todo.</p>
+          <span class="cifra" id="r-que">US$ 9.002</span>
+          <p id="r-pct">El 50 % de lo que vendés. Con 6 lugares ya cubriste todo.</p>
           <p class="pista" id="r-pista"></p>
         </div>
       </div>
     </div>
-    <p class="meta rv" style="margin-top:22px;max-width:56em">Costos de referencia para Bariloche, temporada 2026/2027. El honorario es el 12 % del presupuesto del evento, desde US$ 1.800.</p>
+    <p class="meta rv" style="margin-top:22px;max-width:56em">Costos de referencia para Bariloche, temporada 2026/2027. El honorario es el 12 % del presupuesto del evento, desde US$ 1.200.</p>
     <div class="encabezado" style="margin-top:clamp(40px,5vw,72px)">
       <h3 class="d3 balance rv">Lo que cuesta cada salida.</h3>
       <p class="lead rv d1x">Valores al público de agencia en Bariloche, por persona, con entradas y tasas incluidas. Para grupos consigo tarifa.</p>
@@ -887,7 +887,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   var est={noches:3,nivel:170,salida:0};
   function plata(n){return 'US$ '+Math.round(n).toLocaleString('es-AR')}
   function cuenta(per,pre){
-    var pro=per*est.noches*est.nivel, fij=800+100*est.noches, sal=per*est.salida, imp=.08*(pro+fij+sal), pres=pro+fij+sal+imp, hon=Math.max(1800,.12*pres);
+    var pro=per*est.noches*est.nivel, fij=800+100*est.noches, sal=per*est.salida, imp=.08*(pro+fij+sal), pres=pro+fij+sal+imp, hon=Math.max(1200,.12*pres);
     return {ven:per*pre,pro:pro,fij:fij,sal:sal,imp:imp,hon:hon,que:per*pre-pres-hon,costo:pres+hon};
   }
   function calc(){
