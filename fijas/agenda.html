@@ -28,14 +28,6 @@
   Object.keys(g).forEach(function(t){try{w.clarity('set',t,g[t]);}catch(e){}});
   w.tcdCl=function(ev){try{w.clarity('event',ev);}catch(e){}};
 })(window);
-/* 27 nov: versión para retargeting (decidida por Javo). Con ?ver=re en el link, o con «retargeting» o «remarketing»
-   en las UTM, la página cambia el orden: título, testimonios, calendario y después el video. La página fría no cambia. */
-(function(w,d){try{
-  var q=new URLSearchParams(location.search),u=[q.get('utm_campaign'),q.get('utm_term'),q.get('utm_content')].join(' ');
-  var re=q.get('ver')==='re'||/retarg|remarketing/i.test(u);
-  try{if(re)sessionStorage.setItem('tcd_ver','re');else if(q.get('ver'))sessionStorage.removeItem('tcd_ver');else re=sessionStorage.getItem('tcd_ver')==='re';}catch(e){}
-  if(re){d.documentElement.classList.add('re');try{w.clarity('set','version','retargeting');}catch(e){}}
-}catch(e){}})(window,document);
 </script>
 <script>
 /* 19 nov (Javo, botón «Sí, súmala»): cuánto tarda en verse esta página y la portada del video, en cada visita, va a Clarity.
@@ -894,7 +886,6 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
    Al tocar, empieza de cero y con sonido. En la computadora no cambia nada. */
 (function(){
   if(window.__vslSon)return;window.__vslSon=1;
-  if(document.documentElement.classList.contains('re'))return;
   if(!(window.matchMedia&&matchMedia('(max-width:640px)').matches))return;
   var el=document.querySelector('wistia-player[media-id="6756q87ti6"]'),b=document.getElementById('vsl-son');
   if(!el||!b)return;
@@ -1003,18 +994,6 @@ section.af-noche{background:var(--af-noche)!important;border:0!important;color:#
   <div class="cta-in rv"><a class="btn" href="#agenda" data-cta="testimonios"><span class="bt">Quiero mi diagnóstico sin costo<svg class="fl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><small>Te atiendo yo, por videollamada</small></a></div>
  </div>
 </section>
-<script>
-/* retargeting: título → testimonios → calendario → video (el video no se mueve: suben los otros dos) */
-(function(d){try{
-  if(!d.documentElement.classList.contains('re'))return;
-  var duo=d.querySelector('.af-duo'),vid=d.querySelector('.af-video'),ag=d.getElementById('agenda'),te=d.getElementById('testimonios');
-  if(!duo||!vid||!ag||!te||vid.parentNode!==duo)return;
-  duo.insertBefore(te,vid);duo.insertBefore(ag,vid);
-  var p1=vid.querySelector('.paso-pill'),p2=ag.querySelector('.paso-pill');
-  if(p1)p1.textContent='El video completo · 7 minutos';
-  if(p2)p2.textContent='Agenda tu diagnóstico';
-}catch(e){}})(document);
-</script>
 
 <!-- ══════ HOY Y EN 90 DÍAS ══════ -->
 <section class="band af-sec" id="cambio">
